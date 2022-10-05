@@ -52,74 +52,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private DSSEAttestationOccurrence(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              io.grafeas.v1.Envelope.Builder subBuilder = null;
-              if (envelope_ != null) {
-                subBuilder = envelope_.toBuilder();
-              }
-              envelope_ = input.readMessage(io.grafeas.v1.Envelope.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(envelope_);
-                envelope_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              io.grafeas.v1.InTotoStatement.Builder subBuilder = null;
-              if (decodedPayloadCase_ == 2) {
-                subBuilder = ((io.grafeas.v1.InTotoStatement) decodedPayload_).toBuilder();
-              }
-              decodedPayload_ =
-                  input.readMessage(io.grafeas.v1.InTotoStatement.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.InTotoStatement) decodedPayload_);
-                decodedPayload_ = subBuilder.buildPartial();
-              }
-              decodedPayloadCase_ = 2;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.DsseAttestation
         .internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
@@ -279,7 +211,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     if (decodedPayloadCase_ == 2) {
       output.writeMessage(2, (io.grafeas.v1.InTotoStatement) decodedPayload_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -296,7 +228,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (io.grafeas.v1.InTotoStatement) decodedPayload_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -323,7 +255,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -346,7 +278,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -476,17 +408,10 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     }
 
     // Construct using io.grafeas.v1.DSSEAttestationOccurrence.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -497,6 +422,9 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       } else {
         envelope_ = null;
         envelopeBuilder_ = null;
+      }
+      if (statementBuilder_ != null) {
+        statementBuilder_.clear();
       }
       decodedPayloadCase_ = 0;
       decodedPayload_ = null;
@@ -603,7 +531,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -618,17 +546,43 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.DSSEAttestationOccurrence parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getStatementFieldBuilder().getBuilder(), extensionRegistry);
+                decodedPayloadCase_ = 2;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.DSSEAttestationOccurrence) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -999,7 +953,18 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DSSEAttestationOccurrence(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

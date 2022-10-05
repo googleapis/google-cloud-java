@@ -62,76 +62,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private AttestationOccurrence(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              serializedPayload_ = input.readBytes();
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                signatures_ = new java.util.ArrayList<io.grafeas.v1.Signature>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              signatures_.add(
-                  input.readMessage(io.grafeas.v1.Signature.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                jwts_ = new java.util.ArrayList<io.grafeas.v1.Jwt>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              jwts_.add(input.readMessage(io.grafeas.v1.Jwt.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        signatures_ = java.util.Collections.unmodifiableList(signatures_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        jwts_ = java.util.Collections.unmodifiableList(jwts_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_descriptor;
   }
@@ -379,7 +309,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < jwts_.size(); i++) {
       output.writeMessage(3, jwts_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -397,7 +327,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < jwts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, jwts_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -415,7 +345,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     if (!getSerializedPayload().equals(other.getSerializedPayload())) return false;
     if (!getSignaturesList().equals(other.getSignaturesList())) return false;
     if (!getJwtsList().equals(other.getJwtsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -436,7 +366,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + JWTS_FIELD_NUMBER;
       hash = (53 * hash) + getJwtsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -570,20 +500,10 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using io.grafeas.v1.AttestationOccurrence.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSignaturesFieldBuilder();
-        getJwtsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -593,16 +513,18 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
       if (signaturesBuilder_ == null) {
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        signatures_ = null;
         signaturesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (jwtsBuilder_ == null) {
         jwts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        jwts_ = null;
         jwtsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -754,7 +676,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -769,17 +691,61 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.AttestationOccurrence parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                serializedPayload_ = input.readBytes();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                io.grafeas.v1.Signature m =
+                    input.readMessage(io.grafeas.v1.Signature.parser(), extensionRegistry);
+                if (signaturesBuilder_ == null) {
+                  ensureSignaturesIsMutable();
+                  signatures_.add(m);
+                } else {
+                  signaturesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                io.grafeas.v1.Jwt m =
+                    input.readMessage(io.grafeas.v1.Jwt.parser(), extensionRegistry);
+                if (jwtsBuilder_ == null) {
+                  ensureJwtsIsMutable();
+                  jwts_.add(m);
+                } else {
+                  jwtsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.AttestationOccurrence) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1751,7 +1717,18 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AttestationOccurrence(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

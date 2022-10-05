@@ -58,118 +58,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private InTotoStatement(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              type_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                subject_ = new java.util.ArrayList<io.grafeas.v1.Subject>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              subject_.add(input.readMessage(io.grafeas.v1.Subject.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              predicateType_ = s;
-              break;
-            }
-          case 34:
-            {
-              io.grafeas.v1.InTotoProvenance.Builder subBuilder = null;
-              if (predicateCase_ == 4) {
-                subBuilder = ((io.grafeas.v1.InTotoProvenance) predicate_).toBuilder();
-              }
-              predicate_ =
-                  input.readMessage(io.grafeas.v1.InTotoProvenance.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.InTotoProvenance) predicate_);
-                predicate_ = subBuilder.buildPartial();
-              }
-              predicateCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              io.grafeas.v1.SlsaProvenance.Builder subBuilder = null;
-              if (predicateCase_ == 5) {
-                subBuilder = ((io.grafeas.v1.SlsaProvenance) predicate_).toBuilder();
-              }
-              predicate_ =
-                  input.readMessage(io.grafeas.v1.SlsaProvenance.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.SlsaProvenance) predicate_);
-                predicate_ = subBuilder.buildPartial();
-              }
-              predicateCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              io.grafeas.v1.SlsaProvenanceZeroTwo.Builder subBuilder = null;
-              if (predicateCase_ == 6) {
-                subBuilder = ((io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_).toBuilder();
-              }
-              predicate_ =
-                  input.readMessage(
-                      io.grafeas.v1.SlsaProvenanceZeroTwo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
-                predicate_ = subBuilder.buildPartial();
-              }
-              predicateCase_ = 6;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        subject_ = java.util.Collections.unmodifiableList(subject_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_descriptor;
   }
@@ -484,7 +372,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     if (predicateCase_ == 6) {
       output.writeMessage(6, (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -517,7 +405,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -549,7 +437,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -584,7 +472,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -714,19 +602,10 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using io.grafeas.v1.InTotoStatement.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSubjectFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -736,12 +615,22 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
 
       if (subjectBuilder_ == null) {
         subject_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        subject_ = null;
         subjectBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       predicateType_ = "";
 
+      if (provenanceBuilder_ != null) {
+        provenanceBuilder_.clear();
+      }
+      if (slsaProvenanceBuilder_ != null) {
+        slsaProvenanceBuilder_.clear();
+      }
+      if (slsaProvenanceZeroTwoBuilder_ != null) {
+        slsaProvenanceZeroTwoBuilder_.clear();
+      }
       predicateCase_ = 0;
       predicate_ = null;
       return this;
@@ -909,7 +798,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -924,17 +813,74 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.InTotoStatement parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                type_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                io.grafeas.v1.Subject m =
+                    input.readMessage(io.grafeas.v1.Subject.parser(), extensionRegistry);
+                if (subjectBuilder_ == null) {
+                  ensureSubjectIsMutable();
+                  subject_.add(m);
+                } else {
+                  subjectBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                predicateType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+                predicateCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getSlsaProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+                predicateCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getSlsaProvenanceZeroTwoFieldBuilder().getBuilder(), extensionRegistry);
+                predicateCase_ = 6;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.InTotoStatement) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1809,7 +1755,18 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InTotoStatement(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

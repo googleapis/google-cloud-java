@@ -55,66 +55,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private ComplianceOccurrence(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nonCompliantFiles_ = new java.util.ArrayList<io.grafeas.v1.NonCompliantFile>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              nonCompliantFiles_.add(
-                  input.readMessage(io.grafeas.v1.NonCompliantFile.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nonComplianceReason_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        nonCompliantFiles_ = java.util.Collections.unmodifiableList(nonCompliantFiles_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceOccurrence_descriptor;
   }
@@ -215,7 +155,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nonComplianceReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nonComplianceReason_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -231,7 +171,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nonComplianceReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nonComplianceReason_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -248,7 +188,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
 
     if (!getNonCompliantFilesList().equals(other.getNonCompliantFilesList())) return false;
     if (!getNonComplianceReason().equals(other.getNonComplianceReason())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -265,7 +205,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + NON_COMPLIANCE_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getNonComplianceReason().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -393,19 +333,10 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using io.grafeas.v1.ComplianceOccurrence.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getNonCompliantFilesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -413,10 +344,11 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       super.clear();
       if (nonCompliantFilesBuilder_ == null) {
         nonCompliantFiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        nonCompliantFiles_ = null;
         nonCompliantFilesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       nonComplianceReason_ = "";
 
       return this;
@@ -535,7 +467,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         nonComplianceReason_ = other.nonComplianceReason_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -550,17 +482,49 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.ComplianceOccurrence parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                io.grafeas.v1.NonCompliantFile m =
+                    input.readMessage(io.grafeas.v1.NonCompliantFile.parser(), extensionRegistry);
+                if (nonCompliantFilesBuilder_ == null) {
+                  ensureNonCompliantFilesIsMutable();
+                  nonCompliantFiles_.add(m);
+                } else {
+                  nonCompliantFilesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                nonComplianceReason_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.ComplianceOccurrence) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -883,7 +847,18 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ComplianceOccurrence(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
