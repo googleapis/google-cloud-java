@@ -47,17 +47,17 @@ function createProject() {
   fi
 
   # Ensure required environment variables are set.
-  if [ -z "${TF_VAR_folder_id}" ]; then
+  if [ -z "${GOOGLE_CLOUD_FOLDER_ID}" ]; then
     echo -n "GOOGLE_CLOUD_FOLDER_ID not set. GCP Folder ID: "
     read -r folder_id
     export GOOGLE_CLOUD_FOLDER_ID="${folder_id}"
   fi
-  if [ -z "${TF_VAR_billing_account}" ]; then
+  if [ -z "${GOOGLE_CLOUD_BILLING_ACCOUNT}" ]; then
     echo -n "GOOGLE_CLOUD_BILLING_ACCOUNT not set. GCP Billing Account ID: "
     read -r billing_acct
     export GOOGLE_CLOUD_BILLING_ACCOUNT="${billing_acct}"
   fi
-  if [ -z "${TF_VAR_project_prefix}" ]; then
+  if [ -z "${GOOGLE_CLOUD_PROJECT_PREFIX}" ]; then
     echo -n "GOOGLE_CLOUD_PROJECT_PREFIX not set. Prefix for New Project: "
     read -r prefix
     export GOOGLE_CLOUD_PROJECT_PREFIX="${prefix}"
