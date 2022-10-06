@@ -589,7 +589,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech-bom</artifactId>
-        <version>2.5.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>2.5.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
