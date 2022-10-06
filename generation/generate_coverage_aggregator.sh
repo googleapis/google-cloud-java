@@ -11,7 +11,7 @@ cp "${GENERATION_DIR}/coverage.pom.xml" CoverageAggregator/pom.xml
 # create aggregator project for jacoco
 module_lines=""
 # For modules that produce coverage
-for pom_file in $(find . -mindepth 2 -maxdepth 3 -name pom.xml | sort); do
+for pom_file in $(find . -mindepth 2 -maxdepth 3 -name pom.xml | sort --dictionary-order); do
 
   groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")

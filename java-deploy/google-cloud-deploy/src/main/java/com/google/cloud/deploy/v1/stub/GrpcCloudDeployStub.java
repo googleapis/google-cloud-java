@@ -17,6 +17,8 @@
 package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListRolloutsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedResponse;
@@ -28,6 +30,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.deploy.v1.AbandonReleaseRequest;
+import com.google.cloud.deploy.v1.AbandonReleaseResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
@@ -40,11 +44,15 @@ import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListJobRunsRequest;
+import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
 import com.google.cloud.deploy.v1.ListReleasesResponse;
 import com.google.cloud.deploy.v1.ListRolloutsRequest;
@@ -53,11 +61,22 @@ import com.google.cloud.deploy.v1.ListTargetsRequest;
 import com.google.cloud.deploy.v1.ListTargetsResponse;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
+import com.google.cloud.deploy.v1.RetryJobRequest;
+import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -199,6 +218,17 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AbandonReleaseRequest, AbandonReleaseResponse>
+      abandonReleaseMethodDescriptor =
+          MethodDescriptor.<AbandonReleaseRequest, AbandonReleaseResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/AbandonRelease")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AbandonReleaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AbandonReleaseResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ApproveRolloutRequest, ApproveRolloutResponse>
       approveRolloutMethodDescriptor =
           MethodDescriptor.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -238,6 +268,33 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RetryJobRequest, RetryJobResponse>
+      retryJobMethodDescriptor =
+          MethodDescriptor.<RetryJobRequest, RetryJobResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/RetryJob")
+              .setRequestMarshaller(ProtoUtils.marshaller(RetryJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RetryJobResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListJobRunsRequest, ListJobRunsResponse>
+      listJobRunsMethodDescriptor =
+          MethodDescriptor.<ListJobRunsRequest, ListJobRunsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListJobRuns")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListJobRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListJobRunsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetJobRunRequest, JobRun> getJobRunMethodDescriptor =
+      MethodDescriptor.<GetJobRunRequest, JobRun>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetJobRun")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetJobRunRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(JobRun.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
       MethodDescriptor.<GetConfigRequest, Config>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -245,6 +302,52 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetConfigRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
 
   private final UnaryCallable<ListDeliveryPipelinesRequest, ListDeliveryPipelinesResponse>
       listDeliveryPipelinesCallable;
@@ -286,6 +389,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<CreateReleaseRequest, Operation> createReleaseCallable;
   private final OperationCallable<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationCallable;
+  private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsPagedResponse>
@@ -294,7 +398,20 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<CreateRolloutRequest, Operation> createRolloutCallable;
   private final OperationCallable<CreateRolloutRequest, Rollout, OperationMetadata>
       createRolloutOperationCallable;
+  private final UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable;
+  private final UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable;
+  private final UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse>
+      listJobRunsPagedCallable;
+  private final UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -476,6 +593,17 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
+        abandonReleaseTransportSettings =
+            GrpcCallSettings.<AbandonReleaseRequest, AbandonReleaseResponse>newBuilder()
+                .setMethodDescriptor(abandonReleaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             GrpcCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -517,6 +645,36 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RetryJobRequest, RetryJobResponse> retryJobTransportSettings =
+        GrpcCallSettings.<RetryJobRequest, RetryJobResponse>newBuilder()
+            .setMethodDescriptor(retryJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("rollout", String.valueOf(request.getRollout()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListJobRunsRequest, ListJobRunsResponse> listJobRunsTransportSettings =
+        GrpcCallSettings.<ListJobRunsRequest, ListJobRunsResponse>newBuilder()
+            .setMethodDescriptor(listJobRunsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetJobRunRequest, JobRun> getJobRunTransportSettings =
+        GrpcCallSettings.<GetJobRunRequest, JobRun>newBuilder()
+            .setMethodDescriptor(getJobRunMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         GrpcCallSettings.<GetConfigRequest, Config>newBuilder()
             .setMethodDescriptor(getConfigMethodDescriptor)
@@ -527,6 +685,57 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
+                    })
+                .build();
 
     this.listDeliveryPipelinesCallable =
         callableFactory.createUnaryCallable(
@@ -630,6 +839,9 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
             settings.createReleaseOperationSettings(),
             clientContext,
             operationsStub);
+    this.abandonReleaseCallable =
+        callableFactory.createUnaryCallable(
+            abandonReleaseTransportSettings, settings.abandonReleaseSettings(), clientContext);
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
@@ -651,9 +863,41 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
             settings.createRolloutOperationSettings(),
             clientContext,
             operationsStub);
+    this.retryJobCallable =
+        callableFactory.createUnaryCallable(
+            retryJobTransportSettings, settings.retryJobSettings(), clientContext);
+    this.listJobRunsCallable =
+        callableFactory.createUnaryCallable(
+            listJobRunsTransportSettings, settings.listJobRunsSettings(), clientContext);
+    this.listJobRunsPagedCallable =
+        callableFactory.createPagedCallable(
+            listJobRunsTransportSettings, settings.listJobRunsSettings(), clientContext);
+    this.getJobRunCallable =
+        callableFactory.createUnaryCallable(
+            getJobRunTransportSettings, settings.getJobRunSettings(), clientContext);
     this.getConfigCallable =
         callableFactory.createUnaryCallable(
             getConfigTransportSettings, settings.getConfigSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -788,6 +1032,11 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
+    return abandonReleaseCallable;
+  }
+
+  @Override
   public UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable() {
     return approveRolloutCallable;
   }
@@ -819,8 +1068,60 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable() {
+    return retryJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable() {
+    return listJobRunsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse> listJobRunsPagedCallable() {
+    return listJobRunsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
+    return getJobRunCallable;
+  }
+
+  @Override
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     return getConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override
