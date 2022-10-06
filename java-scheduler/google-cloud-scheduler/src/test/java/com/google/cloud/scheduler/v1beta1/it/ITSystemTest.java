@@ -148,6 +148,8 @@ public class ITSystemTest {
   public void runJobTest() throws Exception {
     RunJobRequest jobRequest = RunJobRequest.newBuilder().setName(JOB_NAME).build();
 
+    // In a new project, the scheduler queue can take a couple of minutes to initialize
+    // after the first job is created before it is ready to accept tasks.
     retryTwiceIfResourceExhausted(
         () -> {
           ApiFuture<Job> job = client.runJobCallable().futureCall(jobRequest);
