@@ -49,6 +49,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     deployingBuild_ = "";
     etag_ = "";
     deployFailureCause_ = 0;
+    phases_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -60,219 +61,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
-  }
-
-  private Rollout(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (approveTime_ != null) {
-                subBuilder = approveTime_.toBuilder();
-              }
-              approveTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(approveTime_);
-                approveTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (enqueueTime_ != null) {
-                subBuilder = enqueueTime_.toBuilder();
-              }
-              enqueueTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(enqueueTime_);
-                enqueueTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (deployStartTime_ != null) {
-                subBuilder = deployStartTime_.toBuilder();
-              }
-              deployStartTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deployStartTime_);
-                deployStartTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (deployEndTime_ != null) {
-                subBuilder = deployEndTime_.toBuilder();
-              }
-              deployEndTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deployEndTime_);
-                deployEndTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              approvalState_ = rawValue;
-              break;
-            }
-          case 104:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 114:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              failureReason_ = s;
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deployingBuild_ = s;
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetId_ = s;
-              break;
-            }
-          case 152:
-            {
-              int rawValue = input.readEnum();
-
-              deployFailureCause_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -777,7 +565,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Well-known deployment failures.
+   * Well-known rollout failures.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.deploy.v1.Rollout.FailureCause}
@@ -836,6 +624,26 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>RELEASE_FAILED = 4;</code>
      */
     RELEASE_FAILED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Release is abandoned.
+     * </pre>
+     *
+     * <code>RELEASE_ABANDONED = 5;</code>
+     */
+    RELEASE_ABANDONED(5),
+    /**
+     *
+     *
+     * <pre>
+     * No skaffold verify configuration was found.
+     * </pre>
+     *
+     * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
+     */
+    VERIFICATION_CONFIG_NOT_FOUND(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -892,6 +700,26 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>RELEASE_FAILED = 4;</code>
      */
     public static final int RELEASE_FAILED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Release is abandoned.
+     * </pre>
+     *
+     * <code>RELEASE_ABANDONED = 5;</code>
+     */
+    public static final int RELEASE_ABANDONED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * No skaffold verify configuration was found.
+     * </pre>
+     *
+     * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
+     */
+    public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -927,6 +755,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           return DEADLINE_EXCEEDED;
         case 4:
           return RELEASE_FAILED;
+        case 5:
+          return RELEASE_ABANDONED;
+        case 6:
+          return VERIFICATION_CONFIG_NOT_FOUND;
         default:
           return null;
       }
@@ -1769,7 +1601,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Reason the build failed. Empty if the build succeeded.
+   * Output only. Additional information about the rollout failure, if available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1792,7 +1624,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Reason the build failed. Empty if the build succeeded.
+   * Output only. Additional information about the rollout failure, if available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1928,8 +1760,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason this deploy failed. This will always be unspecified while the
-   * deploy in progress.
+   * Output only. The reason this rollout failed. This will always be unspecified while the
+   * rollout is in progress.
    * </pre>
    *
    * <code>
@@ -1946,8 +1778,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason this deploy failed. This will always be unspecified while the
-   * deploy in progress.
+   * Output only. The reason this rollout failed. This will always be unspecified while the
+   * rollout is in progress.
    * </pre>
    *
    * <code>
@@ -1962,6 +1794,137 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.deploy.v1.Rollout.FailureCause result =
         com.google.cloud.deploy.v1.Rollout.FailureCause.valueOf(deployFailureCause_);
     return result == null ? com.google.cloud.deploy.v1.Rollout.FailureCause.UNRECOGNIZED : result;
+  }
+
+  public static final int PHASES_FIELD_NUMBER = 23;
+  private java.util.List<com.google.cloud.deploy.v1.Phase> phases_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.deploy.v1.Phase> getPhasesList() {
+    return phases_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.deploy.v1.PhaseOrBuilder>
+      getPhasesOrBuilderList() {
+    return phases_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPhasesCount() {
+    return phases_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Phase getPhases(int index) {
+    return phases_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PhaseOrBuilder getPhasesOrBuilder(int index) {
+    return phases_.get(index);
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 24;
+  private com.google.cloud.deploy.v1.Metadata metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata contains information about the rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata contains information about the rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Metadata getMetadata() {
+    return metadata_ == null ? com.google.cloud.deploy.v1.Metadata.getDefaultInstance() : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata contains information about the rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.MetadataOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2030,7 +1993,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.deploy.v1.Rollout.FailureCause.FAILURE_CAUSE_UNSPECIFIED.getNumber()) {
       output.writeEnum(19, deployFailureCause_);
     }
-    unknownFields.writeTo(output);
+    for (int i = 0; i < phases_.size(); i++) {
+      output.writeMessage(23, phases_.get(i));
+    }
+    if (metadata_ != null) {
+      output.writeMessage(24, getMetadata());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2107,7 +2076,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.deploy.v1.Rollout.FailureCause.FAILURE_CAUSE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, deployFailureCause_);
     }
-    size += unknownFields.getSerializedSize();
+    for (int i = 0; i < phases_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, phases_.get(i));
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getMetadata());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2154,7 +2129,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (!getDeployingBuild().equals(other.getDeployingBuild())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (deployFailureCause_ != other.deployFailureCause_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getPhasesList().equals(other.getPhasesList())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2213,7 +2193,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getEtag().hashCode();
     hash = (37 * hash) + DEPLOY_FAILURE_CAUSE_FIELD_NUMBER;
     hash = (53 * hash) + deployFailureCause_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    if (getPhasesCount() > 0) {
+      hash = (37 * hash) + PHASES_FIELD_NUMBER;
+      hash = (53 * hash) + getPhasesList().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2366,17 +2354,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.deploy.v1.Rollout.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2434,6 +2415,19 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
       deployFailureCause_ = 0;
 
+      if (phasesBuilder_ == null) {
+        phases_ = java.util.Collections.emptyList();
+      } else {
+        phases_ = null;
+        phasesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -2500,6 +2494,20 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       result.deployingBuild_ = deployingBuild_;
       result.etag_ = etag_;
       result.deployFailureCause_ = deployFailureCause_;
+      if (phasesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          phases_ = java.util.Collections.unmodifiableList(phases_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.phases_ = phases_;
+      } else {
+        result.phases_ = phasesBuilder_.build();
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2603,7 +2611,37 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (other.deployFailureCause_ != 0) {
         setDeployFailureCauseValue(other.getDeployFailureCauseValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (phasesBuilder_ == null) {
+        if (!other.phases_.isEmpty()) {
+          if (phases_.isEmpty()) {
+            phases_ = other.phases_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePhasesIsMutable();
+            phases_.addAll(other.phases_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.phases_.isEmpty()) {
+          if (phasesBuilder_.isEmpty()) {
+            phasesBuilder_.dispose();
+            phasesBuilder_ = null;
+            phases_ = other.phases_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            phasesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPhasesFieldBuilder()
+                    : null;
+          } else {
+            phasesBuilder_.addAllMessages(other.phases_);
+          }
+        }
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2618,17 +2656,161 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.deploy.v1.Rollout parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getApproveTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getEnqueueTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getDeployStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getDeployEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 96:
+              {
+                approvalState_ = input.readEnum();
+
+                break;
+              } // case 96
+            case 104:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 104
+            case 114:
+              {
+                failureReason_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 114
+            case 130:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                deployingBuild_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 146:
+              {
+                targetId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+            case 152:
+              {
+                deployFailureCause_ = input.readEnum();
+
+                break;
+              } // case 152
+            case 186:
+              {
+                com.google.cloud.deploy.v1.Phase m =
+                    input.readMessage(com.google.cloud.deploy.v1.Phase.parser(), extensionRegistry);
+                if (phasesBuilder_ == null) {
+                  ensurePhasesIsMutable();
+                  phases_.add(m);
+                } else {
+                  phasesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 186
+            case 194:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 194
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.deploy.v1.Rollout) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4698,7 +4880,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason the build failed. Empty if the build succeeded.
+     * Output only. Additional information about the rollout failure, if available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4720,7 +4902,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason the build failed. Empty if the build succeeded.
+     * Output only. Additional information about the rollout failure, if available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4742,7 +4924,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason the build failed. Empty if the build succeeded.
+     * Output only. Additional information about the rollout failure, if available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4763,7 +4945,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason the build failed. Empty if the build succeeded.
+     * Output only. Additional information about the rollout failure, if available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4780,7 +4962,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason the build failed. Empty if the build succeeded.
+     * Output only. Additional information about the rollout failure, if available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5046,8 +5228,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this deploy failed. This will always be unspecified while the
-     * deploy in progress.
+     * Output only. The reason this rollout failed. This will always be unspecified while the
+     * rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5064,8 +5246,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this deploy failed. This will always be unspecified while the
-     * deploy in progress.
+     * Output only. The reason this rollout failed. This will always be unspecified while the
+     * rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5085,8 +5267,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this deploy failed. This will always be unspecified while the
-     * deploy in progress.
+     * Output only. The reason this rollout failed. This will always be unspecified while the
+     * rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5106,8 +5288,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this deploy failed. This will always be unspecified while the
-     * deploy in progress.
+     * Output only. The reason this rollout failed. This will always be unspecified while the
+     * rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5130,8 +5312,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this deploy failed. This will always be unspecified while the
-     * deploy in progress.
+     * Output only. The reason this rollout failed. This will always be unspecified while the
+     * rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5145,6 +5327,591 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       deployFailureCause_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.deploy.v1.Phase> phases_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePhasesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        phases_ = new java.util.ArrayList<com.google.cloud.deploy.v1.Phase>(phases_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.deploy.v1.Phase,
+            com.google.cloud.deploy.v1.Phase.Builder,
+            com.google.cloud.deploy.v1.PhaseOrBuilder>
+        phasesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.deploy.v1.Phase> getPhasesList() {
+      if (phasesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(phases_);
+      } else {
+        return phasesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPhasesCount() {
+      if (phasesBuilder_ == null) {
+        return phases_.size();
+      } else {
+        return phasesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Phase getPhases(int index) {
+      if (phasesBuilder_ == null) {
+        return phases_.get(index);
+      } else {
+        return phasesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPhases(int index, com.google.cloud.deploy.v1.Phase value) {
+      if (phasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhasesIsMutable();
+        phases_.set(index, value);
+        onChanged();
+      } else {
+        phasesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPhases(int index, com.google.cloud.deploy.v1.Phase.Builder builderForValue) {
+      if (phasesBuilder_ == null) {
+        ensurePhasesIsMutable();
+        phases_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        phasesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhases(com.google.cloud.deploy.v1.Phase value) {
+      if (phasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhasesIsMutable();
+        phases_.add(value);
+        onChanged();
+      } else {
+        phasesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhases(int index, com.google.cloud.deploy.v1.Phase value) {
+      if (phasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhasesIsMutable();
+        phases_.add(index, value);
+        onChanged();
+      } else {
+        phasesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhases(com.google.cloud.deploy.v1.Phase.Builder builderForValue) {
+      if (phasesBuilder_ == null) {
+        ensurePhasesIsMutable();
+        phases_.add(builderForValue.build());
+        onChanged();
+      } else {
+        phasesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhases(int index, com.google.cloud.deploy.v1.Phase.Builder builderForValue) {
+      if (phasesBuilder_ == null) {
+        ensurePhasesIsMutable();
+        phases_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        phasesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPhases(
+        java.lang.Iterable<? extends com.google.cloud.deploy.v1.Phase> values) {
+      if (phasesBuilder_ == null) {
+        ensurePhasesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phases_);
+        onChanged();
+      } else {
+        phasesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPhases() {
+      if (phasesBuilder_ == null) {
+        phases_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        phasesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePhases(int index) {
+      if (phasesBuilder_ == null) {
+        ensurePhasesIsMutable();
+        phases_.remove(index);
+        onChanged();
+      } else {
+        phasesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Phase.Builder getPhasesBuilder(int index) {
+      return getPhasesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.PhaseOrBuilder getPhasesOrBuilder(int index) {
+      if (phasesBuilder_ == null) {
+        return phases_.get(index);
+      } else {
+        return phasesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.deploy.v1.PhaseOrBuilder>
+        getPhasesOrBuilderList() {
+      if (phasesBuilder_ != null) {
+        return phasesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(phases_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Phase.Builder addPhasesBuilder() {
+      return getPhasesFieldBuilder()
+          .addBuilder(com.google.cloud.deploy.v1.Phase.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Phase.Builder addPhasesBuilder(int index) {
+      return getPhasesFieldBuilder()
+          .addBuilder(index, com.google.cloud.deploy.v1.Phase.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The phases that represent the workflows of this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.deploy.v1.Phase.Builder> getPhasesBuilderList() {
+      return getPhasesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.deploy.v1.Phase,
+            com.google.cloud.deploy.v1.Phase.Builder,
+            com.google.cloud.deploy.v1.PhaseOrBuilder>
+        getPhasesFieldBuilder() {
+      if (phasesBuilder_ == null) {
+        phasesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.deploy.v1.Phase,
+                com.google.cloud.deploy.v1.Phase.Builder,
+                com.google.cloud.deploy.v1.PhaseOrBuilder>(
+                phases_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        phases_ = null;
+      }
+      return phasesBuilder_;
+    }
+
+    private com.google.cloud.deploy.v1.Metadata metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Metadata,
+            com.google.cloud.deploy.v1.Metadata.Builder,
+            com.google.cloud.deploy.v1.MetadataOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    public com.google.cloud.deploy.v1.Metadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null
+            ? com.google.cloud.deploy.v1.Metadata.getDefaultInstance()
+            : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMetadata(com.google.cloud.deploy.v1.Metadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMetadata(com.google.cloud.deploy.v1.Metadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMetadata(com.google.cloud.deploy.v1.Metadata value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+              com.google.cloud.deploy.v1.Metadata.newBuilder(metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Metadata.Builder getMetadataBuilder() {
+
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.MetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null
+            ? com.google.cloud.deploy.v1.Metadata.getDefaultInstance()
+            : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata contains information about the rollout.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Metadata,
+            com.google.cloud.deploy.v1.Metadata.Builder,
+            com.google.cloud.deploy.v1.MetadataOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.Metadata,
+                com.google.cloud.deploy.v1.Metadata.Builder,
+                com.google.cloud.deploy.v1.MetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     @java.lang.Override
@@ -5179,7 +5946,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Rollout(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

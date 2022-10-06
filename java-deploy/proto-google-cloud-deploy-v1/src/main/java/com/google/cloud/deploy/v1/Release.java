@@ -63,257 +63,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Release(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (renderStartTime_ != null) {
-                subBuilder = renderStartTime_.toBuilder();
-              }
-              renderStartTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(renderStartTime_);
-                renderStartTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (renderEndTime_ != null) {
-                subBuilder = renderEndTime_.toBuilder();
-              }
-              renderEndTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(renderEndTime_);
-                renderEndTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              skaffoldConfigPath_ = s;
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                buildArtifacts_ =
-                    new java.util.ArrayList<com.google.cloud.deploy.v1.BuildArtifact>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              buildArtifacts_.add(
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.BuildArtifact.parser(), extensionRegistry));
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.deploy.v1.DeliveryPipeline.Builder subBuilder = null;
-              if (deliveryPipelineSnapshot_ != null) {
-                subBuilder = deliveryPipelineSnapshot_.toBuilder();
-              }
-              deliveryPipelineSnapshot_ =
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.DeliveryPipeline.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deliveryPipelineSnapshot_);
-                deliveryPipelineSnapshot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                targetSnapshots_ = new java.util.ArrayList<com.google.cloud.deploy.v1.Target>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              targetSnapshots_.add(
-                  input.readMessage(com.google.cloud.deploy.v1.Target.parser(), extensionRegistry));
-              break;
-            }
-          case 104:
-            {
-              int rawValue = input.readEnum();
-
-              renderState_ = rawValue;
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              skaffoldConfigUri_ = s;
-              break;
-            }
-          case 154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              skaffoldVersion_ = s;
-              break;
-            }
-          case 162:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                targetArtifacts_ =
-                    com.google.protobuf.MapField.newMapField(
-                        TargetArtifactsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.deploy.v1.TargetArtifact>
-                  targetArtifacts__ =
-                      input.readMessage(
-                          TargetArtifactsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              targetArtifacts_
-                  .getMutableMap()
-                  .put(targetArtifacts__.getKey(), targetArtifacts__.getValue());
-              break;
-            }
-          case 178:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                targetRenders_ =
-                    com.google.protobuf.MapField.newMapField(
-                        TargetRendersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.deploy.v1.Release.TargetRender>
-                  targetRenders__ =
-                      input.readMessage(
-                          TargetRendersDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              targetRenders_
-                  .getMutableMap()
-                  .put(targetRenders__.getKey(), targetRenders__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        buildArtifacts_ = java.util.Collections.unmodifiableList(buildArtifacts_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        targetSnapshots_ = java.util.Collections.unmodifiableList(targetSnapshots_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_Release_descriptor;
@@ -622,6 +371,31 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      * @return The failureCause.
      */
     com.google.cloud.deploy.v1.Release.TargetRender.FailureCause getFailureCause();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the render failure, if available.
+     * </pre>
+     *
+     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The failureMessage.
+     */
+    java.lang.String getFailureMessage();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the render failure, if available.
+     * </pre>
+     *
+     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for failureMessage.
+     */
+    com.google.protobuf.ByteString getFailureMessageBytes();
   }
   /**
    *
@@ -646,6 +420,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       renderingBuild_ = "";
       renderingState_ = 0;
       failureCause_ = 0;
+      failureMessage_ = "";
     }
 
     @java.lang.Override
@@ -657,66 +432,6 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TargetRender(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                renderingBuild_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                renderingState_ = rawValue;
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                failureCause_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -943,7 +658,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
-       * because Cloud Deploy has insufficient permissions. See [required
+       * because Google Cloud Deploy has insufficient permissions. See [required
        * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
@@ -979,7 +694,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
-       * because Cloud Deploy has insufficient permissions. See [required
+       * because Google Cloud Deploy has insufficient permissions. See [required
        * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
@@ -1227,6 +942,55 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int FAILURE_MESSAGE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object failureMessage_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the render failure, if available.
+     * </pre>
+     *
+     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The failureMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getFailureMessage() {
+      java.lang.Object ref = failureMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        failureMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information about the render failure, if available.
+     * </pre>
+     *
+     * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for failureMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFailureMessageBytes() {
+      java.lang.Object ref = failureMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        failureMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1255,7 +1019,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(4, failureCause_);
       }
-      unknownFields.writeTo(output);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureMessage_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, failureMessage_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1278,7 +1045,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, failureCause_);
       }
-      size += unknownFields.getSerializedSize();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureMessage_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, failureMessage_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1297,7 +1067,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!getRenderingBuild().equals(other.getRenderingBuild())) return false;
       if (renderingState_ != other.renderingState_) return false;
       if (failureCause_ != other.failureCause_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getFailureMessage().equals(other.getFailureMessage())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1314,7 +1085,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + renderingState_;
       hash = (37 * hash) + FAILURE_CAUSE_FIELD_NUMBER;
       hash = (53 * hash) + failureCause_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + FAILURE_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getFailureMessage().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1445,17 +1218,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.deploy.v1.Release.TargetRender.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1466,6 +1232,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         renderingState_ = 0;
 
         failureCause_ = 0;
+
+        failureMessage_ = "";
 
         return this;
       }
@@ -1497,6 +1265,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         result.renderingBuild_ = renderingBuild_;
         result.renderingState_ = renderingState_;
         result.failureCause_ = failureCause_;
+        result.failureMessage_ = failureMessage_;
         onBuilt();
         return result;
       }
@@ -1559,7 +1328,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         if (other.failureCause_ != 0) {
           setFailureCauseValue(other.getFailureCauseValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        if (!other.getFailureMessage().isEmpty()) {
+          failureMessage_ = other.failureMessage_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1574,18 +1347,55 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.deploy.v1.Release.TargetRender parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  renderingBuild_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  renderingState_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 32:
+                {
+                  failureCause_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  failureMessage_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.deploy.v1.Release.TargetRender) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1929,6 +1739,112 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object failureMessage_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Additional information about the render failure, if available.
+       * </pre>
+       *
+       * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The failureMessage.
+       */
+      public java.lang.String getFailureMessage() {
+        java.lang.Object ref = failureMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          failureMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Additional information about the render failure, if available.
+       * </pre>
+       *
+       * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for failureMessage.
+       */
+      public com.google.protobuf.ByteString getFailureMessageBytes() {
+        java.lang.Object ref = failureMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          failureMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Additional information about the render failure, if available.
+       * </pre>
+       *
+       * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The failureMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailureMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        failureMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Additional information about the render failure, if available.
+       * </pre>
+       *
+       * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFailureMessage() {
+
+        failureMessage_ = getDefaultInstance().getFailureMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Additional information about the render failure, if available.
+       * </pre>
+       *
+       * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for failureMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailureMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        failureMessage_ = value;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1962,7 +1878,19 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TargetRender(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2376,6 +2304,24 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int ABANDONED_FIELD_NUMBER = 23;
+  private boolean abandoned_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether this is an abandoned release.
+   * </pre>
+   *
+   * <code>bool abandoned = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The abandoned.
+   */
+  @java.lang.Override
+  public boolean getAbandoned() {
+    return abandoned_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
@@ -3291,7 +3237,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         output, internalGetTargetArtifacts(), TargetArtifactsDefaultEntryHolder.defaultEntry, 20);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetTargetRenders(), TargetRendersDefaultEntryHolder.defaultEntry, 22);
-    unknownFields.writeTo(output);
+    if (abandoned_ != false) {
+      output.writeBool(23, abandoned_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3388,7 +3337,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, targetRenders__);
     }
-    size += unknownFields.getSerializedSize();
+    if (abandoned_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, abandoned_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3408,6 +3360,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getAbandoned() != other.getAbandoned()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -3433,7 +3386,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (!getSkaffoldVersion().equals(other.getSkaffoldVersion())) return false;
     if (!internalGetTargetArtifacts().equals(other.internalGetTargetArtifacts())) return false;
     if (!internalGetTargetRenders().equals(other.internalGetTargetRenders())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3458,6 +3411,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + ABANDONED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAbandoned());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -3500,7 +3455,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TARGET_RENDERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTargetRenders().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3662,20 +3617,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.deploy.v1.Release.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getBuildArtifactsFieldBuilder();
-        getTargetSnapshotsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3689,6 +3634,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableAnnotations().clear();
       internalGetMutableLabels().clear();
+      abandoned_ = false;
+
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -3713,10 +3660,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
 
       if (buildArtifactsBuilder_ == null) {
         buildArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        buildArtifacts_ = null;
         buildArtifactsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (deliveryPipelineSnapshotBuilder_ == null) {
         deliveryPipelineSnapshot_ = null;
       } else {
@@ -3725,10 +3673,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       if (targetSnapshotsBuilder_ == null) {
         targetSnapshots_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        targetSnapshots_ = null;
         targetSnapshotsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       renderState_ = 0;
 
       etag_ = "";
@@ -3771,6 +3720,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       result.annotations_.makeImmutable();
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.abandoned_ = abandoned_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -3881,6 +3831,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.getAbandoned() != false) {
+        setAbandoned(other.getAbandoned());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -3968,7 +3921,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableTargetArtifacts().mergeFrom(other.internalGetTargetArtifacts());
       internalGetMutableTargetRenders().mergeFrom(other.internalGetTargetRenders());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3983,17 +3936,184 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.deploy.v1.Release parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getRenderStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getRenderEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                skaffoldConfigPath_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.cloud.deploy.v1.BuildArtifact m =
+                    input.readMessage(
+                        com.google.cloud.deploy.v1.BuildArtifact.parser(), extensionRegistry);
+                if (buildArtifactsBuilder_ == null) {
+                  ensureBuildArtifactsIsMutable();
+                  buildArtifacts_.add(m);
+                } else {
+                  buildArtifactsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getDeliveryPipelineSnapshotFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.cloud.deploy.v1.Target m =
+                    input.readMessage(
+                        com.google.cloud.deploy.v1.Target.parser(), extensionRegistry);
+                if (targetSnapshotsBuilder_ == null) {
+                  ensureTargetSnapshotsIsMutable();
+                  targetSnapshots_.add(m);
+                } else {
+                  targetSnapshotsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+            case 104:
+              {
+                renderState_ = input.readEnum();
+
+                break;
+              } // case 104
+            case 130:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                skaffoldConfigUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 154:
+              {
+                skaffoldVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 154
+            case 162:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.deploy.v1.TargetArtifact>
+                    targetArtifacts__ =
+                        input.readMessage(
+                            TargetArtifactsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableTargetArtifacts()
+                    .getMutableMap()
+                    .put(targetArtifacts__.getKey(), targetArtifacts__.getValue());
+                break;
+              } // case 162
+            case 178:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.deploy.v1.Release.TargetRender>
+                    targetRenders__ =
+                        input.readMessage(
+                            TargetRendersDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableTargetRenders()
+                    .getMutableMap()
+                    .put(targetRenders__.getKey(), targetRenders__.getValue());
+                break;
+              } // case 178
+            case 184:
+              {
+                abandoned_ = input.readBool();
+
+                break;
+              } // case 184
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.deploy.v1.Release) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4727,6 +4847,58 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private boolean abandoned_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether this is an abandoned release.
+     * </pre>
+     *
+     * <code>bool abandoned = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The abandoned.
+     */
+    @java.lang.Override
+    public boolean getAbandoned() {
+      return abandoned_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether this is an abandoned release.
+     * </pre>
+     *
+     * <code>bool abandoned = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The abandoned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAbandoned(boolean value) {
+
+      abandoned_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether this is an abandoned release.
+     * </pre>
+     *
+     * <code>bool abandoned = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAbandoned() {
+
+      abandoned_ = false;
+      onChanged();
       return this;
     }
 
@@ -7251,7 +7423,18 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Release(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

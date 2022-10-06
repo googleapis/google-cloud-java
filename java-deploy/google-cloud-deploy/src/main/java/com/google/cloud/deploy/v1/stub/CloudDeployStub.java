@@ -17,6 +17,8 @@
 package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListRolloutsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedResponse;
@@ -24,6 +26,8 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedRespo
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.deploy.v1.AbandonReleaseRequest;
+import com.google.cloud.deploy.v1.AbandonReleaseResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
@@ -36,11 +40,15 @@ import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListJobRunsRequest;
+import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
 import com.google.cloud.deploy.v1.ListReleasesResponse;
 import com.google.cloud.deploy.v1.ListRolloutsRequest;
@@ -49,10 +57,21 @@ import com.google.cloud.deploy.v1.ListTargetsRequest;
 import com.google.cloud.deploy.v1.ListTargetsResponse;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
+import com.google.cloud.deploy.v1.RetryJobRequest;
+import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -180,6 +199,10 @@ public abstract class CloudDeployStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createReleaseCallable()");
   }
 
+  public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: abandonReleaseCallable()");
+  }
+
   public UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable() {
     throw new UnsupportedOperationException("Not implemented: approveRolloutCallable()");
   }
@@ -205,8 +228,50 @@ public abstract class CloudDeployStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createRolloutCallable()");
   }
 
+  public UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: retryJobCallable()");
+  }
+
+  public UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse> listJobRunsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listJobRunsPagedCallable()");
+  }
+
+  public UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listJobRunsCallable()");
+  }
+
+  public UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
+    throw new UnsupportedOperationException("Not implemented: getJobRunCallable()");
+  }
+
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getConfigCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

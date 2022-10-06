@@ -50,65 +50,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     return this.unknownFields;
   }
 
-  private SpeakerDiarizationConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              enableSpeakerDiarization_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
-              minSpeakerCount_ = input.readInt32();
-              break;
-            }
-          case 24:
-            {
-              maxSpeakerCount_ = input.readInt32();
-              break;
-            }
-          case 40:
-            {
-              speakerTag_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1p1beta1.SpeechProto
         .internal_static_google_cloud_speech_v1p1beta1_SpeakerDiarizationConfig_descriptor;
@@ -232,7 +173,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (speakerTag_ != 0) {
       output.writeInt32(5, speakerTag_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -253,7 +194,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (speakerTag_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, speakerTag_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -273,7 +214,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (getMinSpeakerCount() != other.getMinSpeakerCount()) return false;
     if (getMaxSpeakerCount() != other.getMaxSpeakerCount()) return false;
     if (getSpeakerTag() != other.getSpeakerTag()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -292,7 +233,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     hash = (53 * hash) + getMaxSpeakerCount();
     hash = (37 * hash) + SPEAKER_TAG_FIELD_NUMBER;
     hash = (53 * hash) + getSpeakerTag();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -422,17 +363,10 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
 
     // Construct using com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -539,7 +473,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       if (other.getSpeakerTag() != 0) {
         setSpeakerTag(other.getSpeakerTag());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -554,18 +488,55 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                enableSpeakerDiarization_ = input.readBool();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                minSpeakerCount_ = input.readInt32();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                maxSpeakerCount_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 40:
+              {
+                speakerTag_ = input.readInt32();
+
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.speech.v1p1beta1.SpeakerDiarizationConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -839,7 +810,18 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SpeakerDiarizationConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

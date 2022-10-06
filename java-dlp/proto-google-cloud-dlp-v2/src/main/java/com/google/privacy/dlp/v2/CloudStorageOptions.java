@@ -54,113 +54,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private CloudStorageOptions(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder subBuilder = null;
-              if (fileSet_ != null) {
-                subBuilder = fileSet_.toBuilder();
-              }
-              fileSet_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fileSet_);
-                fileSet_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              bytesLimitPerFile_ = input.readInt64();
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              fileTypes_.add(rawValue);
-              break;
-            }
-          case 42:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                fileTypes_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              sampleMethod_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              filesLimitPercent_ = input.readInt32();
-              break;
-            }
-          case 64:
-            {
-              bytesLimitPerFilePercent_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpStorage
         .internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
@@ -437,69 +330,6 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       return this.unknownFields;
     }
 
-    private FileSet(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                url_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder subBuilder = null;
-                if (regexFileSet_ != null) {
-                  subBuilder = regexFileSet_.toBuilder();
-                }
-                regexFileSet_ =
-                    input.readMessage(
-                        com.google.privacy.dlp.v2.CloudStorageRegexFileSet.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(regexFileSet_);
-                  regexFileSet_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpStorage
           .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
@@ -649,7 +479,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (regexFileSet_ != null) {
         output.writeMessage(2, getRegexFileSet());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -664,7 +494,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (regexFileSet_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRegexFileSet());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -685,7 +515,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (hasRegexFileSet()) {
         if (!getRegexFileSet().equals(other.getRegexFileSet())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -702,7 +532,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         hash = (37 * hash) + REGEX_FILE_SET_FIELD_NUMBER;
         hash = (53 * hash) + getRegexFileSet().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -834,17 +664,10 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       }
 
       // Construct using com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -950,7 +773,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         if (other.hasRegexFileSet()) {
           mergeRegexFileSet(other.getRegexFileSet());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -965,18 +788,43 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  url_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getRegexFileSetFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1350,7 +1198,19 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new FileSet(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1670,7 +1530,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     if (bytesLimitPerFilePercent_ != 0) {
       output.writeInt32(8, bytesLimitPerFilePercent_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1708,7 +1568,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     if (bytesLimitPerFilePercent_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, bytesLimitPerFilePercent_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1733,7 +1593,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     if (!fileTypes_.equals(other.fileTypes_)) return false;
     if (sampleMethod_ != other.sampleMethod_) return false;
     if (getFilesLimitPercent() != other.getFilesLimitPercent()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1760,7 +1620,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + sampleMethod_;
     hash = (37 * hash) + FILES_LIMIT_PERCENT_FIELD_NUMBER;
     hash = (53 * hash) + getFilesLimitPercent();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1890,17 +1750,10 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.privacy.dlp.v2.CloudStorageOptions.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2038,7 +1891,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       if (other.getFilesLimitPercent() != 0) {
         setFilesLimitPercent(other.getFilesLimitPercent());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2053,17 +1906,80 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.CloudStorageOptions parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getFileSetFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 32:
+              {
+                bytesLimitPerFile_ = input.readInt64();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                int tmpRaw = input.readEnum();
+                ensureFileTypesIsMutable();
+                fileTypes_.add(tmpRaw);
+                break;
+              } // case 40
+            case 42:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureFileTypesIsMutable();
+                  fileTypes_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 42
+            case 48:
+              {
+                sampleMethod_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                filesLimitPercent_ = input.readInt32();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                bytesLimitPerFilePercent_ = input.readInt32();
+
+                break;
+              } // case 64
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.CloudStorageOptions) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2826,7 +2742,18 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CloudStorageOptions(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

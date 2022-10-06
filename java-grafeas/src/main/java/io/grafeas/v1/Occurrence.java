@@ -57,277 +57,6 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Occurrence(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceUri_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              noteName_ = s;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              kind_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              remediation_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              io.grafeas.v1.VulnerabilityOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 8) {
-                subBuilder = ((io.grafeas.v1.VulnerabilityOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      io.grafeas.v1.VulnerabilityOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.VulnerabilityOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              io.grafeas.v1.BuildOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 9) {
-                subBuilder = ((io.grafeas.v1.BuildOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.BuildOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.BuildOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              io.grafeas.v1.ImageOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 10) {
-                subBuilder = ((io.grafeas.v1.ImageOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.ImageOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.ImageOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 10;
-              break;
-            }
-          case 90:
-            {
-              io.grafeas.v1.PackageOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 11) {
-                subBuilder = ((io.grafeas.v1.PackageOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.PackageOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.PackageOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              io.grafeas.v1.DeploymentOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 12) {
-                subBuilder = ((io.grafeas.v1.DeploymentOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.DeploymentOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.DeploymentOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              io.grafeas.v1.DiscoveryOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 13) {
-                subBuilder = ((io.grafeas.v1.DiscoveryOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.DiscoveryOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.DiscoveryOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 13;
-              break;
-            }
-          case 114:
-            {
-              io.grafeas.v1.AttestationOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 14) {
-                subBuilder = ((io.grafeas.v1.AttestationOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      io.grafeas.v1.AttestationOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.AttestationOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 14;
-              break;
-            }
-          case 122:
-            {
-              io.grafeas.v1.UpgradeOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 15) {
-                subBuilder = ((io.grafeas.v1.UpgradeOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.UpgradeOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.UpgradeOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              io.grafeas.v1.ComplianceOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 16) {
-                subBuilder = ((io.grafeas.v1.ComplianceOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(io.grafeas.v1.ComplianceOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.ComplianceOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 16;
-              break;
-            }
-          case 138:
-            {
-              io.grafeas.v1.DSSEAttestationOccurrence.Builder subBuilder = null;
-              if (detailsCase_ == 17) {
-                subBuilder = ((io.grafeas.v1.DSSEAttestationOccurrence) details_).toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      io.grafeas.v1.DSSEAttestationOccurrence.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.DSSEAttestationOccurrence) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 17;
-              break;
-            }
-          case 146:
-            {
-              io.grafeas.v1.Envelope.Builder subBuilder = null;
-              if (envelope_ != null) {
-                subBuilder = envelope_.toBuilder();
-              }
-              envelope_ = input.readMessage(io.grafeas.v1.Envelope.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(envelope_);
-                envelope_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_Occurrence_descriptor;
   }
@@ -1373,7 +1102,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     if (envelope_ != null) {
       output.writeMessage(18, getEnvelope());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1456,7 +1185,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     if (envelope_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEnvelope());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1523,7 +1252,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1600,7 +1329,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1726,17 +1455,10 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.Occurrence.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1763,6 +1485,36 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTime_ = null;
         updateTimeBuilder_ = null;
+      }
+      if (vulnerabilityBuilder_ != null) {
+        vulnerabilityBuilder_.clear();
+      }
+      if (buildBuilder_ != null) {
+        buildBuilder_.clear();
+      }
+      if (imageBuilder_ != null) {
+        imageBuilder_.clear();
+      }
+      if (packageBuilder_ != null) {
+        packageBuilder_.clear();
+      }
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.clear();
+      }
+      if (discoveryBuilder_ != null) {
+        discoveryBuilder_.clear();
+      }
+      if (attestationBuilder_ != null) {
+        attestationBuilder_.clear();
+      }
+      if (upgradeBuilder_ != null) {
+        upgradeBuilder_.clear();
+      }
+      if (complianceBuilder_ != null) {
+        complianceBuilder_.clear();
+      }
+      if (dsseAttestationBuilder_ != null) {
+        dsseAttestationBuilder_.clear();
       }
       if (envelopeBuilder_ == null) {
         envelope_ = null;
@@ -2021,7 +1773,7 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2036,17 +1788,139 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.Occurrence parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                resourceUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                noteName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 32:
+              {
+                kind_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                remediation_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getVulnerabilityFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getBuildFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getPackageFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getDeploymentFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getDiscoveryFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getUpgradeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getComplianceFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 16;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getDsseAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 17;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.Occurrence) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5257,7 +5131,18 @@ public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Occurrence(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

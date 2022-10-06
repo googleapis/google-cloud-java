@@ -112,4 +112,42 @@ public interface StageOrBuilder
    * @return The bytes of the profiles at the given index.
    */
   com.google.protobuf.ByteString getProfilesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The strategy to use for a `Rollout` to this stage.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Strategy strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the strategy field is set.
+   */
+  boolean hasStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The strategy to use for a `Rollout` to this stage.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Strategy strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The strategy.
+   */
+  com.google.cloud.deploy.v1.Strategy getStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The strategy to use for a `Rollout` to this stage.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Strategy strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.StrategyOrBuilder getStrategyOrBuilder();
 }

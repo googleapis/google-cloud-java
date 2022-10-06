@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <artifactId>google-cloud-shared-config</artifactId>
     <version>1.5.3</version>
   </parent>
   <properties>
