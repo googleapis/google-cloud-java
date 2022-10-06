@@ -23,24 +23,18 @@ if [[ $(terraform state list) == "" ]]; then
   exit
 fi
 
-source ./helpers/sync-env.sh
-
-# Either use given module list, or get a list of all modules in the parent directory.
-if [ -n "$1" ] && [[ $1 != "y" ]]; then
-  modules=$1
-else
-  modules=$(source ./helpers/list-all-modules.sh)
-fi
-
-# Exit code 0 if list $1 contains entry $2.
+# @returns exit code 0 if list $1 contains entry $2.
 function contains() {
   echo "$1" | grep -w -q "$2"
 }
 
+source ./helpers/sync-env.sh
+
 # Execute 'predestroy.sh' scripts for any active modules
+allModules=$(source ./helpers/list-all-modules.sh)
 activeModules=$(terraform state list | awk -F'[/.]' '{print $2}' | uniq)
 IFS=':'
-for module in $modules; do
+for module in $allModules; do
   friendlyName=$(source ./helpers/get-output-friendly-name.sh "$module")
   if ! contains "$activeModules" "$friendlyName"; then
     continue # Skip unless active.
