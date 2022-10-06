@@ -53,27 +53,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-automl</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
+        <version>2.3.17-SNAPSHOT</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-automl-v1beta1</artifactId>
-        <version>0.90.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-automl-v1beta1:current} -->
+        <version>0.90.17-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-automl-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-automl-v1</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-automl-v1:current} -->
+        <version>2.3.17-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-automl-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
-        <version>0.90.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1beta1:current} -->
+        <version>0.90.17-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1:current} -->
+        <version>2.3.17-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-automl-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

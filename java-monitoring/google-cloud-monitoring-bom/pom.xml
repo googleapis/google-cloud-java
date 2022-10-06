@@ -53,17 +53,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring</artifactId>
-        <version>3.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>3.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-        <version>3.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
+        <version>3.4.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-        <version>3.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
+        <version>3.4.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

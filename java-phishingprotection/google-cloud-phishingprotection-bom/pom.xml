@@ -53,17 +53,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-phishingprotection</artifactId>
-        <version>0.34.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+        <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.34.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-phishingprotection-v1beta1:current} -->
+        <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-phishingprotection-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.34.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-phishingprotection-v1beta1:current} -->
+        <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-phishingprotection-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

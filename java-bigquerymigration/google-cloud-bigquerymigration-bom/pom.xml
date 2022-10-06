@@ -66,27 +66,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerymigration</artifactId>
-        <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerymigration-v2alpha</artifactId>
-        <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2alpha:current} -->
+        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerymigration-v2</artifactId>
-        <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2:current} -->
+        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerymigration-v2alpha</artifactId>
-        <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
+        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerymigration-v2</artifactId>
-        <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2:current} -->
+        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

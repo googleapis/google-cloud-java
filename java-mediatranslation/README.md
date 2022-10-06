@@ -22,21 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-mediatranslation</artifactId>
-  <version>0.9.4</version>
+  <version>0.9.6</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-mediatranslation:0.9.4'
+implementation 'com.google.cloud:google-cloud-mediatranslation:0.9.6'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-mediatranslation" % "0.9.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-mediatranslation" % "0.9.6"
 ```
 
 ## Authentication
@@ -72,16 +71,6 @@ use this Media Translation API Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-mediatranslation/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Translate From File | [source code](https://github.com/googleapis/java-mediatranslation/blob/main/samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-mediatranslation&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromFile.java) |
-| Translate From Mic | [source code](https://github.com/googleapis/java-mediatranslation/blob/main/samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromMic.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-mediatranslation&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromMic.java) |
 
 
 

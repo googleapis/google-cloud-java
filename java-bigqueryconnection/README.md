@@ -19,21 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigqueryconnection</artifactId>
-  <version>2.5.4</version>
+  <version>2.5.6</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigqueryconnection:2.5.4'
+implementation 'com.google.cloud:google-cloud-bigqueryconnection:2.5.6'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryconnection" % "2.5.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryconnection" % "2.5.6"
 ```
 
 ## Authentication
@@ -69,22 +68,6 @@ use this Cloud BigQuery Connection Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-bigqueryconnection/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Aws Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/CreateAwsConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/CreateAwsConnection.java) |
-| Create Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/CreateConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/CreateConnection.java) |
-| Delete Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/DeleteConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/DeleteConnection.java) |
-| Get Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/GetConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/GetConnection.java) |
-| List Connections | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/ListConnections.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/ListConnections.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/QuickstartSample.java) |
-| Share Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/ShareConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/ShareConnection.java) |
-| Update Connection | [source code](https://github.com/googleapis/java-bigqueryconnection/blob/main/samples/snippets/src/main/java/com/example/bigqueryconnection/UpdateConnection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryconnection&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryconnection/UpdateConnection.java) |
 
 
 
