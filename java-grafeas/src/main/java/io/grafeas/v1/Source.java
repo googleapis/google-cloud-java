@@ -54,96 +54,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Source(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              artifactStorageSourceUri_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fileHashes_ =
-                    com.google.protobuf.MapField.newMapField(
-                        FileHashesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, io.grafeas.v1.FileHashes>
-                  fileHashes__ =
-                      input.readMessage(
-                          FileHashesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              fileHashes_.getMutableMap().put(fileHashes__.getKey(), fileHashes__.getValue());
-              break;
-            }
-          case 26:
-            {
-              io.grafeas.v1.SourceContext.Builder subBuilder = null;
-              if (context_ != null) {
-                subBuilder = context_.toBuilder();
-              }
-              context_ = input.readMessage(io.grafeas.v1.SourceContext.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(context_);
-                context_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                additionalContexts_ = new java.util.ArrayList<io.grafeas.v1.SourceContext>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              additionalContexts_.add(
-                  input.readMessage(io.grafeas.v1.SourceContext.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        additionalContexts_ = java.util.Collections.unmodifiableList(additionalContexts_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_Source_descriptor;
   }
@@ -497,7 +407,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < additionalContexts_.size(); i++) {
       output.writeMessage(4, additionalContexts_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -527,7 +437,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, additionalContexts_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -549,7 +459,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (!getContext().equals(other.getContext())) return false;
     }
     if (!getAdditionalContextsList().equals(other.getAdditionalContextsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -574,7 +484,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADDITIONAL_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalContextsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -719,19 +629,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.Source.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAdditionalContextsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -748,10 +649,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       if (additionalContextsBuilder_ == null) {
         additionalContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        additionalContexts_ = null;
         additionalContextsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -879,7 +781,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -894,17 +796,67 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.Source parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                artifactStorageSourceUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, io.grafeas.v1.FileHashes>
+                    fileHashes__ =
+                        input.readMessage(
+                            FileHashesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableFileHashes()
+                    .getMutableMap()
+                    .put(fileHashes__.getKey(), fileHashes__.getValue());
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                io.grafeas.v1.SourceContext m =
+                    input.readMessage(io.grafeas.v1.SourceContext.parser(), extensionRegistry);
+                if (additionalContextsBuilder_ == null) {
+                  ensureAdditionalContextsIsMutable();
+                  additionalContexts_.add(m);
+                } else {
+                  additionalContextsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.Source) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1837,7 +1789,18 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Source(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

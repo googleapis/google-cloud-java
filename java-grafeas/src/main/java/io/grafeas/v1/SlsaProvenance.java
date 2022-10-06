@@ -45,108 +45,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private SlsaProvenance(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder subBuilder = null;
-              if (builder_ != null) {
-                subBuilder = builder_.toBuilder();
-              }
-              builder_ =
-                  input.readMessage(
-                      io.grafeas.v1.SlsaProvenance.SlsaBuilder.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(builder_);
-                builder_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder subBuilder = null;
-              if (recipe_ != null) {
-                subBuilder = recipe_.toBuilder();
-              }
-              recipe_ =
-                  input.readMessage(
-                      io.grafeas.v1.SlsaProvenance.SlsaRecipe.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(recipe_);
-                recipe_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder subBuilder = null;
-              if (metadata_ != null) {
-                subBuilder = metadata_.toBuilder();
-              }
-              metadata_ =
-                  input.readMessage(
-                      io.grafeas.v1.SlsaProvenance.SlsaMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metadata_);
-                metadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                materials_ = new java.util.ArrayList<io.grafeas.v1.SlsaProvenance.Material>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              materials_.add(
-                  input.readMessage(
-                      io.grafeas.v1.SlsaProvenance.Material.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        materials_ = java.util.Collections.unmodifiableList(materials_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
   }
@@ -370,93 +268,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SlsaRecipe(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                type_ = s;
-                break;
-              }
-            case 16:
-              {
-                definedInMaterial_ = input.readInt64();
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                entryPoint_ = s;
-                break;
-              }
-            case 34:
-              {
-                com.google.protobuf.Any.Builder subBuilder = null;
-                if (arguments_ != null) {
-                  subBuilder = arguments_.toBuilder();
-                }
-                arguments_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(arguments_);
-                  arguments_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 42:
-              {
-                com.google.protobuf.Any.Builder subBuilder = null;
-                if (environment_ != null) {
-                  subBuilder = environment_.toBuilder();
-                }
-                environment_ =
-                    input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(environment_);
-                  environment_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -748,7 +559,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (environment_ != null) {
         output.writeMessage(5, getEnvironment());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -772,7 +583,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (environment_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEnvironment());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -798,7 +609,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (hasEnvironment()) {
         if (!getEnvironment().equals(other.getEnvironment())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -823,7 +634,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
         hash = (53 * hash) + getEnvironment().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -956,17 +767,10 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaRecipe.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1098,7 +902,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         if (other.hasEnvironment()) {
           mergeEnvironment(other.getEnvironment());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1113,17 +917,61 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.grafeas.v1.SlsaProvenance.SlsaRecipe parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  type_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  definedInMaterial_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  entryPoint_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getArgumentsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grafeas.v1.SlsaProvenance.SlsaRecipe) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1887,7 +1735,19 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SlsaRecipe(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1986,60 +1846,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private SlsaCompleteness(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                arguments_ = input.readBool();
-                break;
-              }
-            case 16:
-              {
-                environment_ = input.readBool();
-                break;
-              }
-            case 24:
-              {
-                materials_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
@@ -2135,7 +1941,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (materials_ != false) {
         output.writeBool(3, materials_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2153,7 +1959,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (materials_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, materials_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2172,7 +1978,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (getArguments() != other.getArguments()) return false;
       if (getEnvironment() != other.getEnvironment()) return false;
       if (getMaterials() != other.getMaterials()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2189,7 +1995,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnvironment());
       hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMaterials());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2321,17 +2127,10 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaCompleteness.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2434,7 +2233,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         if (other.getMaterials() != false) {
           setMaterials(other.getMaterials());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2449,17 +2248,49 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.grafeas.v1.SlsaProvenance.SlsaCompleteness parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  arguments_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  environment_ = input.readBool();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  materials_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grafeas.v1.SlsaProvenance.SlsaCompleteness) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2661,7 +2492,19 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SlsaCompleteness(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2868,103 +2711,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SlsaMetadata(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                buildInvocationId_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (buildStartedOn_ != null) {
-                  subBuilder = buildStartedOn_.toBuilder();
-                }
-                buildStartedOn_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(buildStartedOn_);
-                  buildStartedOn_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (buildFinishedOn_ != null) {
-                  subBuilder = buildFinishedOn_.toBuilder();
-                }
-                buildFinishedOn_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(buildFinishedOn_);
-                  buildFinishedOn_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder subBuilder = null;
-                if (completeness_ != null) {
-                  subBuilder = completeness_.toBuilder();
-                }
-                completeness_ =
-                    input.readMessage(
-                        io.grafeas.v1.SlsaProvenance.SlsaCompleteness.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(completeness_);
-                  completeness_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 40:
-              {
-                reproducible_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3230,7 +2976,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (reproducible_ != false) {
         output.writeBool(5, reproducible_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3254,7 +3000,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (reproducible_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, reproducible_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3284,7 +3030,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         if (!getCompleteness().equals(other.getCompleteness())) return false;
       }
       if (getReproducible() != other.getReproducible()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3311,7 +3057,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + REPRODUCIBLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReproducible());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3442,17 +3188,10 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaMetadata.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3591,7 +3330,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         if (other.getReproducible() != false) {
           setReproducible(other.getReproducible());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3606,17 +3345,63 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.grafeas.v1.SlsaProvenance.SlsaMetadata parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  buildInvocationId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getBuildStartedOnFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getBuildFinishedOnFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getCompletenessFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 40:
+                {
+                  reproducible_ = input.readBool();
+
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grafeas.v1.SlsaProvenance.SlsaMetadata) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4389,7 +4174,19 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SlsaMetadata(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4450,52 +4247,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SlsaBuilder(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                id_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4567,7 +4318,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4579,7 +4330,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4596,7 +4347,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           (io.grafeas.v1.SlsaProvenance.SlsaBuilder) obj;
 
       if (!getId().equals(other.getId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4609,7 +4360,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4732,17 +4483,10 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaBuilder.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4833,7 +4577,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           id_ = other.id_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4848,17 +4592,37 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.grafeas.v1.SlsaProvenance.SlsaBuilder parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  id_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grafeas.v1.SlsaProvenance.SlsaBuilder) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4971,7 +4735,19 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SlsaBuilder(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5051,68 +4827,6 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Material(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                uri_ = s;
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  digest_ =
-                      com.google.protobuf.MapField.newMapField(
-                          DigestDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
-                    input.readMessage(
-                        DigestDefaultEntryHolder.defaultEntry.getParserForType(),
-                        extensionRegistry);
-                digest_.getMutableMap().put(digest__.getKey(), digest__.getValue());
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5264,7 +4978,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetDigest(), DigestDefaultEntryHolder.defaultEntry, 2);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5286,7 +5000,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, digest__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5303,7 +5017,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
       if (!getUri().equals(other.getUri())) return false;
       if (!internalGetDigest().equals(other.internalGetDigest())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5320,7 +5034,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DIGEST_FIELD_NUMBER;
         hash = (53 * hash) + internalGetDigest().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5463,17 +5177,10 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.Material.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -5569,7 +5276,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           onChanged();
         }
         internalGetMutableDigest().mergeFrom(other.internalGetDigest());
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5584,17 +5291,48 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.grafeas.v1.SlsaProvenance.Material parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
+                      input.readMessage(
+                          DigestDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableDigest()
+                      .getMutableMap()
+                      .put(digest__.getKey(), digest__.getValue());
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.grafeas.v1.SlsaProvenance.Material) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5811,7 +5549,19 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Material(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6071,7 +5821,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < materials_.size(); i++) {
       output.writeMessage(4, materials_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6092,7 +5842,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < materials_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, materials_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -6120,7 +5870,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!getMaterialsList().equals(other.getMaterialsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -6147,7 +5897,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6265,19 +6015,10 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.SlsaProvenance.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getMaterialsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -6303,10 +6044,11 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       }
       if (materialsBuilder_ == null) {
         materials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        materials_ = null;
         materialsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -6442,7 +6184,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -6457,17 +6199,62 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.SlsaProvenance parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getBuilderFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRecipeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                io.grafeas.v1.SlsaProvenance.Material m =
+                    input.readMessage(
+                        io.grafeas.v1.SlsaProvenance.Material.parser(), extensionRegistry);
+                if (materialsBuilder_ == null) {
+                  ensureMaterialsIsMutable();
+                  materials_.add(m);
+                } else {
+                  materialsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.SlsaProvenance) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7421,7 +7208,18 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SlsaProvenance(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

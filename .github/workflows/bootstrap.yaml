@@ -38,4 +38,4 @@ jobs:
         run: |
           cd generation/monorepo/diff
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push -f monorepo main:boootstrap_output_diff_${{ github.event_name }}
+          git push -f monorepo main:bootstrap_output_diff_${{ github.event_name }}
