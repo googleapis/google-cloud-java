@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>2.5.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+  <version>2.5.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Speech</name>
   <url>https://github.com/googleapis/java-speech</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-speech-parent</artifactId>
-    <version>2.5.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+    <version>2.5.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-speech</site.installationModule>
@@ -22,6 +22,10 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-speech-v2</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -85,6 +89,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-speech-v2</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

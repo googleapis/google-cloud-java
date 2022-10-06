@@ -580,7 +580,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-speech</artifactId>
-      <version>2.5.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+      <version>2.5.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
