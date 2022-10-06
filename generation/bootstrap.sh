@@ -101,6 +101,7 @@ git add --all
 git commit -am 'chore: delete non-auto-generated samples'
 
 ../../update_versions.sh
+../../apply_current_versions.sh
 
 git add --all
 git commit -am 'chore: update versions to latest in maven'
