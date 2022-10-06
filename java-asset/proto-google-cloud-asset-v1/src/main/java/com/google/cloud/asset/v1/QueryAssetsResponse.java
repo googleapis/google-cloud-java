@@ -52,105 +52,6 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private QueryAssetsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              jobReference_ = s;
-              break;
-            }
-          case 16:
-            {
-              done_ = input.readBool();
-              break;
-            }
-          case 26:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (responseCase_ == 3) {
-                subBuilder = ((com.google.rpc.Status) response_).toBuilder();
-              }
-              response_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.rpc.Status) response_);
-                response_ = subBuilder.buildPartial();
-              }
-              responseCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.asset.v1.QueryResult.Builder subBuilder = null;
-              if (responseCase_ == 4) {
-                subBuilder = ((com.google.cloud.asset.v1.QueryResult) response_).toBuilder();
-              }
-              response_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1.QueryResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.asset.v1.QueryResult) response_);
-                response_ = subBuilder.buildPartial();
-              }
-              responseCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.asset.v1.QueryAssetsOutputConfig.Builder subBuilder = null;
-              if (responseCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.asset.v1.QueryAssetsOutputConfig) response_).toBuilder();
-              }
-              response_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1.QueryAssetsOutputConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.asset.v1.QueryAssetsOutputConfig) response_);
-                response_ = subBuilder.buildPartial();
-              }
-              responseCase_ = 5;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_QueryAssetsResponse_descriptor;
@@ -472,7 +373,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     if (responseCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.asset.v1.QueryAssetsOutputConfig) response_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -502,7 +403,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.asset.v1.QueryAssetsOutputConfig) response_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -534,7 +435,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -565,7 +466,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -694,17 +595,10 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.asset.v1.QueryAssetsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -714,6 +608,15 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
 
       done_ = false;
 
+      if (errorBuilder_ != null) {
+        errorBuilder_.clear();
+      }
+      if (queryResultBuilder_ != null) {
+        queryResultBuilder_.clear();
+      }
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.clear();
+      }
       responseCase_ = 0;
       response_ = null;
       return this;
@@ -844,7 +747,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -859,17 +762,61 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.asset.v1.QueryAssetsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                jobReference_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                done_ = input.readBool();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
+                responseCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getQueryResultFieldBuilder().getBuilder(), extensionRegistry);
+                responseCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+                responseCase_ = 5;
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.asset.v1.QueryAssetsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1719,7 +1666,18 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryAssetsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
