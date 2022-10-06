@@ -74,7 +74,7 @@ if $createdServiceAccount; then
   sleep 30
   echo "Waiting 2m for service account permissions to take effect... [30s elapsed]"
   sleep 30
-  echo "Waiting 2m for service account permissions to take effect... [1m elapsed]"
+  echo "Waiting 2m for service account permissions to take effect... [1m0s elapsed]"
   sleep 30
   echo "Waiting 2m for service account permissions to take effect... [1m30s elapsed]"
   sleep 30
