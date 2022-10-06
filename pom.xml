@@ -72,7 +72,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerystorage-bom</artifactId>
-        <version>2.23.0</version>
+        <version>2.23.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -96,7 +96,7 @@
       <dependency>
          <groupId>com.google.cloud</groupId>
          <artifactId>google-cloud-datacatalog-bom</artifactId>
-         <version>1.9.4</version>
+         <version>1.9.5</version>
          <type>pom</type>
          <scope>import</scope>
        </dependency>
@@ -104,7 +104,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog-bom</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
