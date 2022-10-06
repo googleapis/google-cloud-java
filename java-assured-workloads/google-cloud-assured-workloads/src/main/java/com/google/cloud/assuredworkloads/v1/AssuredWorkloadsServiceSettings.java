@@ -16,6 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1;
 
+import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListViolationsPagedResponse;
 import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -98,6 +99,13 @@ public class AssuredWorkloadsServiceSettings
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).updateWorkloadSettings();
   }
 
+  /** Returns the object with the settings used for calls to restrictAllowedResources. */
+  public UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings())
+        .restrictAllowedResourcesSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteWorkload. */
   public UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).deleteWorkloadSettings();
@@ -112,6 +120,24 @@ public class AssuredWorkloadsServiceSettings
   public PagedCallSettings<ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
       listWorkloadsSettings() {
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).listWorkloadsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listViolations. */
+  public PagedCallSettings<
+          ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+      listViolationsSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).listViolationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getViolation. */
+  public UnaryCallSettings<GetViolationRequest, Violation> getViolationSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).getViolationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acknowledgeViolation. */
+  public UnaryCallSettings<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).acknowledgeViolationSettings();
   }
 
   public static final AssuredWorkloadsServiceSettings create(
@@ -247,6 +273,13 @@ public class AssuredWorkloadsServiceSettings
       return getStubSettingsBuilder().updateWorkloadSettings();
     }
 
+    /** Returns the builder for the settings used for calls to restrictAllowedResources. */
+    public UnaryCallSettings.Builder<
+            RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesSettings() {
+      return getStubSettingsBuilder().restrictAllowedResourcesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteWorkload. */
     public UnaryCallSettings.Builder<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
       return getStubSettingsBuilder().deleteWorkloadSettings();
@@ -262,6 +295,24 @@ public class AssuredWorkloadsServiceSettings
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings() {
       return getStubSettingsBuilder().listWorkloadsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listViolations. */
+    public PagedCallSettings.Builder<
+            ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+        listViolationsSettings() {
+      return getStubSettingsBuilder().listViolationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getViolation. */
+    public UnaryCallSettings.Builder<GetViolationRequest, Violation> getViolationSettings() {
+      return getStubSettingsBuilder().getViolationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acknowledgeViolation. */
+    public UnaryCallSettings.Builder<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+        acknowledgeViolationSettings() {
+      return getStubSettingsBuilder().acknowledgeViolationSettings();
     }
 
     @Override

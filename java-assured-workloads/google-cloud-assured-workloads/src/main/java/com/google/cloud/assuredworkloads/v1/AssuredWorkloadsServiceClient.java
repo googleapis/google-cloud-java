@@ -397,7 +397,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param workload Required. The workload to update. The workload’s `name` field is used to
+   * @param workload Required. The workload to update. The workload's `name` field is used to
    *     identify the workload to be updated. Format:
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * @param updateMask Required. The list of fields to be updated.
@@ -471,6 +471,69 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     return stub.updateWorkloadCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restrict the list of resources allowed in the Workload environment. The current list of allowed
+   * products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
+   * addition to assuredworkloads.workload.update permission, the user should also have
+   * orgpolicy.policy.set permission on the folder resource to use this functionality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   RestrictAllowedResourcesRequest request =
+   *       RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+   *   RestrictAllowedResourcesResponse response =
+   *       assuredWorkloadsServiceClient.restrictAllowedResources(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestrictAllowedResourcesResponse restrictAllowedResources(
+      RestrictAllowedResourcesRequest request) {
+    return restrictAllowedResourcesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restrict the list of resources allowed in the Workload environment. The current list of allowed
+   * products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
+   * addition to assuredworkloads.workload.update permission, the user should also have
+   * orgpolicy.policy.set permission on the folder resource to use this functionality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   RestrictAllowedResourcesRequest request =
+   *       RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<RestrictAllowedResourcesResponse> future =
+   *       assuredWorkloadsServiceClient.restrictAllowedResourcesCallable().futureCall(request);
+   *   // Do something.
+   *   RestrictAllowedResourcesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    return stub.restrictAllowedResourcesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -886,6 +949,388 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     return stub.listWorkloadsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across
+   * multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or
+   * dash character) as a wildcard character instead of workload-id in the parent. Format
+   * `organizations/{org_id}/locations/{location}/workloads/-`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   WorkloadName parent = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
+   *   for (Violation element : assuredWorkloadsServiceClient.listViolations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Workload name. Format
+   *     `organizations/{org_id}/locations/{location}/workloads/{workload}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListViolationsPagedResponse listViolations(WorkloadName parent) {
+    ListViolationsRequest request =
+        ListViolationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listViolations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across
+   * multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or
+   * dash character) as a wildcard character instead of workload-id in the parent. Format
+   * `organizations/{org_id}/locations/{location}/workloads/-`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   String parent = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString();
+   *   for (Violation element : assuredWorkloadsServiceClient.listViolations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Workload name. Format
+   *     `organizations/{org_id}/locations/{location}/workloads/{workload}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListViolationsPagedResponse listViolations(String parent) {
+    ListViolationsRequest request = ListViolationsRequest.newBuilder().setParent(parent).build();
+    return listViolations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across
+   * multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or
+   * dash character) as a wildcard character instead of workload-id in the parent. Format
+   * `organizations/{org_id}/locations/{location}/workloads/-`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   ListViolationsRequest request =
+   *       ListViolationsRequest.newBuilder()
+   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setInterval(TimeWindow.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Violation element : assuredWorkloadsServiceClient.listViolations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListViolationsPagedResponse listViolations(ListViolationsRequest request) {
+    return listViolationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across
+   * multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or
+   * dash character) as a wildcard character instead of workload-id in the parent. Format
+   * `organizations/{org_id}/locations/{location}/workloads/-`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   ListViolationsRequest request =
+   *       ListViolationsRequest.newBuilder()
+   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setInterval(TimeWindow.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Violation> future =
+   *       assuredWorkloadsServiceClient.listViolationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Violation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListViolationsRequest, ListViolationsPagedResponse>
+      listViolationsPagedCallable() {
+    return stub.listViolationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Violations in the AssuredWorkload Environment. Callers may also choose to read across
+   * multiple Workloads as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or
+   * dash character) as a wildcard character instead of workload-id in the parent. Format
+   * `organizations/{org_id}/locations/{location}/workloads/-`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   ListViolationsRequest request =
+   *       ListViolationsRequest.newBuilder()
+   *           .setParent(WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]").toString())
+   *           .setInterval(TimeWindow.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListViolationsResponse response =
+   *         assuredWorkloadsServiceClient.listViolationsCallable().call(request);
+   *     for (Violation element : response.getViolationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListViolationsRequest, ListViolationsResponse>
+      listViolationsCallable() {
+    return stub.listViolationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves Assured Workload Violation based on ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   ViolationName name =
+   *       ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]");
+   *   Violation response = assuredWorkloadsServiceClient.getViolation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Violation to fetch (ie. Violation.name). Format:
+   *     organizations/{organization}/locations/{location}/workloads/{workload}/violations/{violation}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Violation getViolation(ViolationName name) {
+    GetViolationRequest request =
+        GetViolationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getViolation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves Assured Workload Violation based on ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   String name =
+   *       ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]").toString();
+   *   Violation response = assuredWorkloadsServiceClient.getViolation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Violation to fetch (ie. Violation.name). Format:
+   *     organizations/{organization}/locations/{location}/workloads/{workload}/violations/{violation}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Violation getViolation(String name) {
+    GetViolationRequest request = GetViolationRequest.newBuilder().setName(name).build();
+    return getViolation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves Assured Workload Violation based on ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   GetViolationRequest request =
+   *       GetViolationRequest.newBuilder()
+   *           .setName(
+   *               ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]")
+   *                   .toString())
+   *           .build();
+   *   Violation response = assuredWorkloadsServiceClient.getViolation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Violation getViolation(GetViolationRequest request) {
+    return getViolationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves Assured Workload Violation based on ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   GetViolationRequest request =
+   *       GetViolationRequest.newBuilder()
+   *           .setName(
+   *               ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Violation> future =
+   *       assuredWorkloadsServiceClient.getViolationCallable().futureCall(request);
+   *   // Do something.
+   *   Violation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
+    return stub.getViolationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Acknowledges an existing violation. By acknowledging a violation, users acknowledge the
+   * existence of a compliance violation in their workload and decide to ignore it due to a valid
+   * business justification. Acknowledgement is a permanent operation and it cannot be reverted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   AcknowledgeViolationRequest request =
+   *       AcknowledgeViolationRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setComment("comment950398559")
+   *           .setNonCompliantOrgPolicy("nonCompliantOrgPolicy-1928466552")
+   *           .build();
+   *   AcknowledgeViolationResponse response =
+   *       assuredWorkloadsServiceClient.acknowledgeViolation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AcknowledgeViolationResponse acknowledgeViolation(
+      AcknowledgeViolationRequest request) {
+    return acknowledgeViolationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Acknowledges an existing violation. By acknowledging a violation, users acknowledge the
+   * existence of a compliance violation in their workload and decide to ignore it due to a valid
+   * business justification. Acknowledgement is a permanent operation and it cannot be reverted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   AcknowledgeViolationRequest request =
+   *       AcknowledgeViolationRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setComment("comment950398559")
+   *           .setNonCompliantOrgPolicy("nonCompliantOrgPolicy-1928466552")
+   *           .build();
+   *   ApiFuture<AcknowledgeViolationResponse> future =
+   *       assuredWorkloadsServiceClient.acknowledgeViolationCallable().futureCall(request);
+   *   // Do something.
+   *   AcknowledgeViolationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationCallable() {
+    return stub.acknowledgeViolationCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -989,6 +1434,82 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
     protected ListWorkloadsFixedSizeCollection createCollection(
         List<ListWorkloadsPage> pages, int collectionSize) {
       return new ListWorkloadsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListViolationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListViolationsRequest,
+          ListViolationsResponse,
+          Violation,
+          ListViolationsPage,
+          ListViolationsFixedSizeCollection> {
+
+    public static ApiFuture<ListViolationsPagedResponse> createAsync(
+        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        ApiFuture<ListViolationsResponse> futureResponse) {
+      ApiFuture<ListViolationsPage> futurePage =
+          ListViolationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListViolationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListViolationsPagedResponse(ListViolationsPage page) {
+      super(page, ListViolationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListViolationsPage
+      extends AbstractPage<
+          ListViolationsRequest, ListViolationsResponse, Violation, ListViolationsPage> {
+
+    private ListViolationsPage(
+        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        ListViolationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListViolationsPage createEmptyPage() {
+      return new ListViolationsPage(null, null);
+    }
+
+    @Override
+    protected ListViolationsPage createPage(
+        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        ListViolationsResponse response) {
+      return new ListViolationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListViolationsPage> createPageAsync(
+        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        ApiFuture<ListViolationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListViolationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListViolationsRequest,
+          ListViolationsResponse,
+          Violation,
+          ListViolationsPage,
+          ListViolationsFixedSizeCollection> {
+
+    private ListViolationsFixedSizeCollection(List<ListViolationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListViolationsFixedSizeCollection createEmptyCollection() {
+      return new ListViolationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListViolationsFixedSizeCollection createCollection(
+        List<ListViolationsPage> pages, int collectionSize) {
+      return new ListViolationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }
