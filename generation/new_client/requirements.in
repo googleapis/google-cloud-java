@@ -3,5 +3,5 @@ attrs
 black
 click==8.0
 jinja2
-lxml==4.4.1
+lxml==4.9.1
 typing==3.7.4.1
