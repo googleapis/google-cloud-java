@@ -5,6 +5,12 @@
   <artifactId>google-cloud-recaptchaenterprise-bom</artifactId>
   <version>3.0.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
   <packaging>pom</packaging>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
 
   <name>Google Cloud reCAPTCHA Enterprise BOM</name>
   <url>https://github.com/googleapis/java-recaptchaenterprise</url>

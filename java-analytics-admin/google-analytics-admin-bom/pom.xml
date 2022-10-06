@@ -5,6 +5,12 @@
   <artifactId>google-analytics-admin-bom</artifactId>
   <version>0.13.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   <packaging>pom</packaging>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
 
   <name>Google Analytics Admin BOM</name>
   <url>https://github.com/googleapis/java-analytics-admin</url>

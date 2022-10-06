@@ -13,7 +13,6 @@
   <description>
     Java idiomatic client for Grafeas.
   </description>
-
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>

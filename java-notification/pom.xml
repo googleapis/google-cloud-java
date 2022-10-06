@@ -11,7 +11,6 @@
   <description>
     Java idiomatic client for Google Cloud Notification for GCS.
   </description>
-
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
