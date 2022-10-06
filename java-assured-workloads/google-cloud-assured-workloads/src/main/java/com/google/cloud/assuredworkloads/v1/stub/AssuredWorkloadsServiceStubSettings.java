@@ -16,6 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1.stub;
 
+import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListViolationsPagedResponse;
 import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -47,13 +48,21 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.GetViolationRequest;
 import com.google.cloud.assuredworkloads.v1.GetWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsResponse;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.Violation;
 import com.google.cloud.assuredworkloads.v1.Workload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -117,11 +126,19 @@ public class AssuredWorkloadsServiceStubSettings
           CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationSettings;
   private final UnaryCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadSettings;
+  private final UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesSettings;
   private final UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings;
   private final UnaryCallSettings<GetWorkloadRequest, Workload> getWorkloadSettings;
   private final PagedCallSettings<
           ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
       listWorkloadsSettings;
+  private final PagedCallSettings<
+          ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+      listViolationsSettings;
+  private final UnaryCallSettings<GetViolationRequest, Violation> getViolationSettings;
+  private final UnaryCallSettings<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationSettings;
 
   private static final PagedListDescriptor<ListWorkloadsRequest, ListWorkloadsResponse, Workload>
       LIST_WORKLOADS_PAGE_STR_DESC =
@@ -159,6 +176,43 @@ public class AssuredWorkloadsServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListViolationsRequest, ListViolationsResponse, Violation>
+      LIST_VIOLATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListViolationsRequest, ListViolationsResponse, Violation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListViolationsRequest injectToken(ListViolationsRequest payload, String token) {
+              return ListViolationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListViolationsRequest injectPageSize(
+                ListViolationsRequest payload, int pageSize) {
+              return ListViolationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListViolationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListViolationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Violation> extractResources(ListViolationsResponse payload) {
+              return payload.getViolationsList() == null
+                  ? ImmutableList.<Violation>of()
+                  : payload.getViolationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
       LIST_WORKLOADS_PAGE_STR_FACT =
@@ -173,6 +227,23 @@ public class AssuredWorkloadsServiceStubSettings
               PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> pageContext =
                   PageContext.create(callable, LIST_WORKLOADS_PAGE_STR_DESC, request, context);
               return ListWorkloadsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+      LIST_VIOLATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListViolationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListViolationsRequest, ListViolationsResponse> callable,
+                ListViolationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListViolationsResponse> futureResponse) {
+              PageContext<ListViolationsRequest, ListViolationsResponse, Violation> pageContext =
+                  PageContext.create(callable, LIST_VIOLATIONS_PAGE_STR_DESC, request, context);
+              return ListViolationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -192,6 +263,12 @@ public class AssuredWorkloadsServiceStubSettings
     return updateWorkloadSettings;
   }
 
+  /** Returns the object with the settings used for calls to restrictAllowedResources. */
+  public UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesSettings() {
+    return restrictAllowedResourcesSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteWorkload. */
   public UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
     return deleteWorkloadSettings;
@@ -206,6 +283,24 @@ public class AssuredWorkloadsServiceStubSettings
   public PagedCallSettings<ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
       listWorkloadsSettings() {
     return listWorkloadsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listViolations. */
+  public PagedCallSettings<
+          ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+      listViolationsSettings() {
+    return listViolationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getViolation. */
+  public UnaryCallSettings<GetViolationRequest, Violation> getViolationSettings() {
+    return getViolationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to acknowledgeViolation. */
+  public UnaryCallSettings<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationSettings() {
+    return acknowledgeViolationSettings;
   }
 
   public AssuredWorkloadsServiceStub createStub() throws IOException {
@@ -317,9 +412,13 @@ public class AssuredWorkloadsServiceStubSettings
     createWorkloadSettings = settingsBuilder.createWorkloadSettings().build();
     createWorkloadOperationSettings = settingsBuilder.createWorkloadOperationSettings().build();
     updateWorkloadSettings = settingsBuilder.updateWorkloadSettings().build();
+    restrictAllowedResourcesSettings = settingsBuilder.restrictAllowedResourcesSettings().build();
     deleteWorkloadSettings = settingsBuilder.deleteWorkloadSettings().build();
     getWorkloadSettings = settingsBuilder.getWorkloadSettings().build();
     listWorkloadsSettings = settingsBuilder.listWorkloadsSettings().build();
+    listViolationsSettings = settingsBuilder.listViolationsSettings().build();
+    getViolationSettings = settingsBuilder.getViolationSettings().build();
+    acknowledgeViolationSettings = settingsBuilder.acknowledgeViolationSettings().build();
   }
 
   /** Builder for AssuredWorkloadsServiceStubSettings. */
@@ -332,11 +431,21 @@ public class AssuredWorkloadsServiceStubSettings
             CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
         createWorkloadOperationSettings;
     private final UnaryCallSettings.Builder<UpdateWorkloadRequest, Workload> updateWorkloadSettings;
+    private final UnaryCallSettings.Builder<
+            RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesSettings;
     private final UnaryCallSettings.Builder<DeleteWorkloadRequest, Empty> deleteWorkloadSettings;
     private final UnaryCallSettings.Builder<GetWorkloadRequest, Workload> getWorkloadSettings;
     private final PagedCallSettings.Builder<
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings;
+    private final PagedCallSettings.Builder<
+            ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+        listViolationsSettings;
+    private final UnaryCallSettings.Builder<GetViolationRequest, Violation> getViolationSettings;
+    private final UnaryCallSettings.Builder<
+            AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+        acknowledgeViolationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -374,17 +483,25 @@ public class AssuredWorkloadsServiceStubSettings
       createWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createWorkloadOperationSettings = OperationCallSettings.newBuilder();
       updateWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restrictAllowedResourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listWorkloadsSettings = PagedCallSettings.newBuilder(LIST_WORKLOADS_PAGE_STR_FACT);
+      listViolationsSettings = PagedCallSettings.newBuilder(LIST_VIOLATIONS_PAGE_STR_FACT);
+      getViolationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      acknowledgeViolationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWorkloadSettings,
               updateWorkloadSettings,
+              restrictAllowedResourcesSettings,
               deleteWorkloadSettings,
               getWorkloadSettings,
-              listWorkloadsSettings);
+              listWorkloadsSettings,
+              listViolationsSettings,
+              getViolationSettings,
+              acknowledgeViolationSettings);
       initDefaults(this);
     }
 
@@ -394,17 +511,25 @@ public class AssuredWorkloadsServiceStubSettings
       createWorkloadSettings = settings.createWorkloadSettings.toBuilder();
       createWorkloadOperationSettings = settings.createWorkloadOperationSettings.toBuilder();
       updateWorkloadSettings = settings.updateWorkloadSettings.toBuilder();
+      restrictAllowedResourcesSettings = settings.restrictAllowedResourcesSettings.toBuilder();
       deleteWorkloadSettings = settings.deleteWorkloadSettings.toBuilder();
       getWorkloadSettings = settings.getWorkloadSettings.toBuilder();
       listWorkloadsSettings = settings.listWorkloadsSettings.toBuilder();
+      listViolationsSettings = settings.listViolationsSettings.toBuilder();
+      getViolationSettings = settings.getViolationSettings.toBuilder();
+      acknowledgeViolationSettings = settings.acknowledgeViolationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWorkloadSettings,
               updateWorkloadSettings,
+              restrictAllowedResourcesSettings,
               deleteWorkloadSettings,
               getWorkloadSettings,
-              listWorkloadsSettings);
+              listWorkloadsSettings,
+              listViolationsSettings,
+              getViolationSettings,
+              acknowledgeViolationSettings);
     }
 
     private static Builder createDefault() {
@@ -445,6 +570,11 @@ public class AssuredWorkloadsServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .restrictAllowedResourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .deleteWorkloadSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -456,6 +586,21 @@ public class AssuredWorkloadsServiceStubSettings
 
       builder
           .listWorkloadsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listViolationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getViolationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .acknowledgeViolationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -521,6 +666,13 @@ public class AssuredWorkloadsServiceStubSettings
       return updateWorkloadSettings;
     }
 
+    /** Returns the builder for the settings used for calls to restrictAllowedResources. */
+    public UnaryCallSettings.Builder<
+            RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesSettings() {
+      return restrictAllowedResourcesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteWorkload. */
     public UnaryCallSettings.Builder<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
       return deleteWorkloadSettings;
@@ -536,6 +688,24 @@ public class AssuredWorkloadsServiceStubSettings
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings() {
       return listWorkloadsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listViolations. */
+    public PagedCallSettings.Builder<
+            ListViolationsRequest, ListViolationsResponse, ListViolationsPagedResponse>
+        listViolationsSettings() {
+      return listViolationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getViolation. */
+    public UnaryCallSettings.Builder<GetViolationRequest, Violation> getViolationSettings() {
+      return getViolationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acknowledgeViolation. */
+    public UnaryCallSettings.Builder<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+        acknowledgeViolationSettings() {
+      return acknowledgeViolationSettings;
     }
 
     @Override

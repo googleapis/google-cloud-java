@@ -16,6 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1.stub;
 
+import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListViolationsPagedResponse;
 import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -25,13 +26,21 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.GetViolationRequest;
 import com.google.cloud.assuredworkloads.v1.GetWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsResponse;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.Violation;
 import com.google.cloud.assuredworkloads.v1.Workload;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -73,6 +82,20 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
               .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesMethodDescriptor =
+          MethodDescriptor
+              .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.assuredworkloads.v1.AssuredWorkloadsService/RestrictAllowedResources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestrictAllowedResourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RestrictAllowedResourcesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteWorkloadRequest, Empty>
       deleteWorkloadMethodDescriptor =
           MethodDescriptor.<DeleteWorkloadRequest, Empty>newBuilder()
@@ -104,15 +127,57 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListViolationsRequest, ListViolationsResponse>
+      listViolationsMethodDescriptor =
+          MethodDescriptor.<ListViolationsRequest, ListViolationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.assuredworkloads.v1.AssuredWorkloadsService/ListViolations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListViolationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListViolationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetViolationRequest, Violation>
+      getViolationMethodDescriptor =
+          MethodDescriptor.<GetViolationRequest, Violation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.assuredworkloads.v1.AssuredWorkloadsService/GetViolation")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetViolationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Violation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationMethodDescriptor =
+          MethodDescriptor.<AcknowledgeViolationRequest, AcknowledgeViolationResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.assuredworkloads.v1.AssuredWorkloadsService/AcknowledgeViolation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AcknowledgeViolationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AcknowledgeViolationResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable;
   private final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable;
   private final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable;
+  private final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable;
   private final UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable;
   private final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable;
+  private final UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable;
+  private final UnaryCallable<ListViolationsRequest, ListViolationsPagedResponse>
+      listViolationsPagedCallable;
+  private final UnaryCallable<GetViolationRequest, Violation> getViolationCallable;
+  private final UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -179,6 +244,18 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesTransportSettings =
+            GrpcCallSettings
+                .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
+                .setMethodDescriptor(restrictAllowedResourcesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadTransportSettings =
         GrpcCallSettings.<DeleteWorkloadRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkloadMethodDescriptor)
@@ -209,6 +286,20 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListViolationsRequest, ListViolationsResponse>
+        listViolationsTransportSettings =
+            GrpcCallSettings.<ListViolationsRequest, ListViolationsResponse>newBuilder()
+                .setMethodDescriptor(listViolationsMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetViolationRequest, Violation> getViolationTransportSettings =
+        GrpcCallSettings.<GetViolationRequest, Violation>newBuilder()
+            .setMethodDescriptor(getViolationMethodDescriptor)
+            .build();
+    GrpcCallSettings<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+        acknowledgeViolationTransportSettings =
+            GrpcCallSettings.<AcknowledgeViolationRequest, AcknowledgeViolationResponse>newBuilder()
+                .setMethodDescriptor(acknowledgeViolationMethodDescriptor)
+                .build();
 
     this.createWorkloadCallable =
         callableFactory.createUnaryCallable(
@@ -222,6 +313,11 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
     this.updateWorkloadCallable =
         callableFactory.createUnaryCallable(
             updateWorkloadTransportSettings, settings.updateWorkloadSettings(), clientContext);
+    this.restrictAllowedResourcesCallable =
+        callableFactory.createUnaryCallable(
+            restrictAllowedResourcesTransportSettings,
+            settings.restrictAllowedResourcesSettings(),
+            clientContext);
     this.deleteWorkloadCallable =
         callableFactory.createUnaryCallable(
             deleteWorkloadTransportSettings, settings.deleteWorkloadSettings(), clientContext);
@@ -234,6 +330,20 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
     this.listWorkloadsPagedCallable =
         callableFactory.createPagedCallable(
             listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.listViolationsCallable =
+        callableFactory.createUnaryCallable(
+            listViolationsTransportSettings, settings.listViolationsSettings(), clientContext);
+    this.listViolationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listViolationsTransportSettings, settings.listViolationsSettings(), clientContext);
+    this.getViolationCallable =
+        callableFactory.createUnaryCallable(
+            getViolationTransportSettings, settings.getViolationSettings(), clientContext);
+    this.acknowledgeViolationCallable =
+        callableFactory.createUnaryCallable(
+            acknowledgeViolationTransportSettings,
+            settings.acknowledgeViolationSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -260,6 +370,12 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
   }
 
   @Override
+  public UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    return restrictAllowedResourcesCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     return deleteWorkloadCallable;
   }
@@ -278,6 +394,28 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable() {
+    return listViolationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListViolationsRequest, ListViolationsPagedResponse>
+      listViolationsPagedCallable() {
+    return listViolationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
+    return getViolationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationCallable() {
+    return acknowledgeViolationCallable;
   }
 
   @Override
