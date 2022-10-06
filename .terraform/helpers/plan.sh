@@ -70,8 +70,14 @@ gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
 export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$service_account_email
 
 if $createdServiceAccount; then
-  echo "Waiting for 60s to allow service account permissions to take effect."
-  sleep 60
+  echo "Waiting 2m for service account permissions to take effect... [0s elapsed]"
+  sleep 30
+  echo "Waiting 2m for service account permissions to take effect... [30s elapsed]"
+  sleep 30
+  echo "Waiting 2m for service account permissions to take effect... [1m elapsed]"
+  sleep 30
+  echo "Waiting 2m for service account permissions to take effect... [1m30s elapsed]"
+  sleep 30
 fi
 
 # Create generated.auto.tfvars which will be used as input values to generated-variables.tf

@@ -70,8 +70,6 @@ function createProject() {
   gcloud services enable cloudresourcemanager.googleapis.com
   gcloud beta billing projects link "$projectId" --billing-account="$GOOGLE_CLOUD_BILLING_ACCOUNT"
   GOOGLE_CLOUD_PROJECT=$projectId
-  echo "Waiting for 30s to allow default Cloud API services to be enabled."
-  sleep 30
 }
 
 function deleteProject() {
