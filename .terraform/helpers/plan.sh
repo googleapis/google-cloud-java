@@ -54,6 +54,9 @@ service_account_email="$service_account_name@$GOOGLE_CLOUD_PROJECT.iam.gservicea
 gcloud iam service-accounts describe "$service_account_email" &>/dev/null
 if [[ $? -ne 0 ]]; then
   gcloud iam service-accounts create "$service_account_name"
+  createdServiceAccount=true
+else
+  createdServiceAccount=false
 fi
 # Assign permissions to the service account.
 gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
@@ -65,6 +68,11 @@ gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
 
 # See https://cloud.google.com/blog/topics/developers-practitioners/using-google-cloud-service-account-impersonation-your-terraform-code
 export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=$service_account_email
+
+if $createdServiceAccount; then
+  echo "Waiting for 60s to allow service account permissions to take effect."
+  sleep 60
+fi
 
 # Create generated.auto.tfvars which will be used as input values to generated-variables.tf
 touch generated.auto.tfvars
