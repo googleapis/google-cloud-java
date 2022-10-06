@@ -50,168 +50,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private ResponseMessage(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text.Builder subBuilder = null;
-              if (messageCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text) message_)
-                        .toBuilder();
-              }
-              message_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Struct.Builder subBuilder = null;
-              if (messageCase_ == 2) {
-                subBuilder = ((com.google.protobuf.Struct) message_).toBuilder();
-              }
-              message_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.protobuf.Struct) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff.Builder
-                  subBuilder = null;
-              if (messageCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff)
-                            message_)
-                        .toBuilder();
-              }
-              message_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff)
-                        message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction.Builder
-                  subBuilder = null;
-              if (messageCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction) message_)
-                        .toBuilder();
-              }
-              message_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Builder subBuilder =
-                  null;
-              if (messageCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio) message_)
-                        .toBuilder();
-              }
-              message_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall.Builder
-                  subBuilder = null;
-              if (messageCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall)
-                            message_)
-                        .toBuilder();
-              }
-              message_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall)
-                        message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 6;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_descriptor;
@@ -317,59 +155,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return this.unknownFields;
     }
 
-    private Text(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  text_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                text_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          text_ = text_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ParticipantProto
           .internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_Text_descriptor;
@@ -463,7 +248,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       for (int i = 0; i < text_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -480,7 +265,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         size += dataSize;
         size += 1 * getTextList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -497,7 +282,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           (com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text) obj;
 
       if (!getTextList().equals(other.getTextList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -512,7 +297,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getTextList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -644,17 +429,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
 
       // Construct using com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -757,7 +535,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -772,18 +550,38 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureTextIsMutable();
+                  text_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.ResponseMessage.Text) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -990,7 +788,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Text(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1092,60 +902,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return this.unknownFields;
     }
 
-    private LiveAgentHandoff(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Struct.Builder subBuilder = null;
-                if (metadata_ != null) {
-                  subBuilder = metadata_.toBuilder();
-                }
-                metadata_ =
-                    input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(metadata_);
-                  metadata_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ParticipantProto
           .internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_LiveAgentHandoff_descriptor;
@@ -1227,7 +983,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (metadata_ != null) {
         output.writeMessage(1, getMetadata());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1239,7 +995,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMetadata());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1259,7 +1015,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (hasMetadata()) {
         if (!getMetadata().equals(other.getMetadata())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1274,7 +1030,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1416,17 +1172,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1531,7 +1280,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1546,19 +1295,37 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.ResponseMessage.LiveAgentHandoff)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1785,7 +1552,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new LiveAgentHandoff(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1841,45 +1620,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return this.unknownFields;
     }
 
-    private EndInteraction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ParticipantProto
           .internal_static_google_cloud_dialogflow_v2beta1_ResponseMessage_EndInteraction_descriptor;
@@ -1909,7 +1649,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1918,7 +1658,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1934,7 +1674,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction other =
           (com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1945,7 +1685,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2079,17 +1819,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2179,7 +1912,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         if (other
             == com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction
                 .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2194,19 +1927,31 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.ResponseMessage.EndInteraction)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2245,7 +1990,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EndInteraction(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2370,64 +2127,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private MixedAudio(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  segments_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                segments_.add(
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          segments_ = java.util.Collections.unmodifiableList(segments_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2565,64 +2264,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Segment(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  content_ = input.readBytes();
-                  contentCase_ = 1;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  contentCase_ = 2;
-                  content_ = s;
-                  break;
-                }
-              case 24:
-                {
-                  allowPlaybackInterruption_ = input.readBool();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2841,7 +2482,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         if (allowPlaybackInterruption_ != false) {
           output.writeBool(3, allowPlaybackInterruption_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2862,7 +2503,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           size +=
               com.google.protobuf.CodedOutputStream.computeBoolSize(3, allowPlaybackInterruption_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2891,7 +2532,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2917,7 +2558,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3059,17 +2700,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
         // Construct using
         // com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -3195,7 +2829,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
                 break;
               }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3210,20 +2844,50 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    content_ = input.readBytes();
+                    contentCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    contentCase_ = 2;
+                    content_ = s;
+                    break;
+                  } // case 18
+                case 24:
+                  {
+                    allowPlaybackInterruption_ = input.readBool();
+
+                    break;
+                  } // case 24
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3551,7 +3215,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Segment(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3673,7 +3349,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       for (int i = 0; i < segments_.size(); i++) {
         output.writeMessage(1, segments_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3685,7 +3361,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       for (int i = 0; i < segments_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, segments_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3702,7 +3378,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           (com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio) obj;
 
       if (!getSegmentsList().equals(other.getSegmentsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3717,7 +3393,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + SEGMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getSegmentsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3851,19 +3527,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
 
       // Construct using com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getSegmentsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -3871,10 +3538,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         super.clear();
         if (segmentsBuilder_ == null) {
           segments_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          segments_ = null;
           segmentsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3994,7 +3662,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4009,19 +3677,46 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio.Segment
+                              .parser(),
+                          extensionRegistry);
+                  if (segmentsBuilder_ == null) {
+                    ensureSegmentsIsMutable();
+                    segments_.add(m);
+                  } else {
+                    segmentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.ResponseMessage.MixedAudio)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4475,7 +4170,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MixedAudio(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4611,59 +4318,6 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TelephonyTransferCall(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                endpointCase_ = 1;
-                endpoint_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                endpointCase_ = 2;
-                endpoint_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4892,7 +4546,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (endpointCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, endpoint_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4907,7 +4561,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (endpointCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, endpoint_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4935,7 +4589,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4958,7 +4612,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5099,17 +4753,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -5231,7 +4878,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5246,20 +4893,45 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  endpointCase_ = 1;
+                  endpoint_ = s;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  endpointCase_ = 2;
+                  endpoint_ = s;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5587,7 +5259,19 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TelephonyTransferCall(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6039,7 +5723,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           6, (com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall) message_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6079,7 +5763,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               6,
               (com.google.cloud.dialogflow.v2beta1.ResponseMessage.TelephonyTransferCall) message_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -6118,7 +5802,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -6157,7 +5841,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6286,22 +5970,33 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.ResponseMessage.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (textBuilder_ != null) {
+        textBuilder_.clear();
+      }
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.clear();
+      }
+      if (liveAgentHandoffBuilder_ != null) {
+        liveAgentHandoffBuilder_.clear();
+      }
+      if (endInteractionBuilder_ != null) {
+        endInteractionBuilder_.clear();
+      }
+      if (mixedAudioBuilder_ != null) {
+        mixedAudioBuilder_.clear();
+      }
+      if (telephonyTransferCallBuilder_ != null) {
+        telephonyTransferCallBuilder_.clear();
+      }
       messageCase_ = 0;
       message_ = null;
       return this;
@@ -6460,7 +6155,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -6475,18 +6170,69 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2beta1.ResponseMessage parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getTextFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getLiveAgentHandoffFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getEndInteractionFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getMixedAudioFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getTelephonyTransferCallFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 6;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.v2beta1.ResponseMessage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7914,7 +7660,18 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResponseMessage(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
