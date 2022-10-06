@@ -58,287 +58,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Note(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shortDescription_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              longDescription_ = s;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              kind_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                relatedUrl_ = new java.util.ArrayList<io.grafeas.v1.RelatedUrl>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              relatedUrl_.add(
-                  input.readMessage(io.grafeas.v1.RelatedUrl.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expirationTime_ != null) {
-                subBuilder = expirationTime_.toBuilder();
-              }
-              expirationTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expirationTime_);
-                expirationTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              relatedNoteNames_.add(s);
-              break;
-            }
-          case 82:
-            {
-              io.grafeas.v1.VulnerabilityNote.Builder subBuilder = null;
-              if (typeCase_ == 10) {
-                subBuilder = ((io.grafeas.v1.VulnerabilityNote) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(io.grafeas.v1.VulnerabilityNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.VulnerabilityNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 10;
-              break;
-            }
-          case 90:
-            {
-              io.grafeas.v1.BuildNote.Builder subBuilder = null;
-              if (typeCase_ == 11) {
-                subBuilder = ((io.grafeas.v1.BuildNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.BuildNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.BuildNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              io.grafeas.v1.ImageNote.Builder subBuilder = null;
-              if (typeCase_ == 12) {
-                subBuilder = ((io.grafeas.v1.ImageNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.ImageNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.ImageNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              io.grafeas.v1.PackageNote.Builder subBuilder = null;
-              if (typeCase_ == 13) {
-                subBuilder = ((io.grafeas.v1.PackageNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.PackageNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.PackageNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 13;
-              break;
-            }
-          case 114:
-            {
-              io.grafeas.v1.DeploymentNote.Builder subBuilder = null;
-              if (typeCase_ == 14) {
-                subBuilder = ((io.grafeas.v1.DeploymentNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.DeploymentNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.DeploymentNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 14;
-              break;
-            }
-          case 122:
-            {
-              io.grafeas.v1.DiscoveryNote.Builder subBuilder = null;
-              if (typeCase_ == 15) {
-                subBuilder = ((io.grafeas.v1.DiscoveryNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.DiscoveryNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.DiscoveryNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              io.grafeas.v1.AttestationNote.Builder subBuilder = null;
-              if (typeCase_ == 16) {
-                subBuilder = ((io.grafeas.v1.AttestationNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.AttestationNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.AttestationNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 16;
-              break;
-            }
-          case 138:
-            {
-              io.grafeas.v1.UpgradeNote.Builder subBuilder = null;
-              if (typeCase_ == 17) {
-                subBuilder = ((io.grafeas.v1.UpgradeNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.UpgradeNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.UpgradeNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 17;
-              break;
-            }
-          case 146:
-            {
-              io.grafeas.v1.ComplianceNote.Builder subBuilder = null;
-              if (typeCase_ == 18) {
-                subBuilder = ((io.grafeas.v1.ComplianceNote) type_).toBuilder();
-              }
-              type_ = input.readMessage(io.grafeas.v1.ComplianceNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.ComplianceNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 18;
-              break;
-            }
-          case 154:
-            {
-              io.grafeas.v1.DSSEAttestationNote.Builder subBuilder = null;
-              if (typeCase_ == 19) {
-                subBuilder = ((io.grafeas.v1.DSSEAttestationNote) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(io.grafeas.v1.DSSEAttestationNote.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((io.grafeas.v1.DSSEAttestationNote) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 19;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        relatedUrl_ = java.util.Collections.unmodifiableList(relatedUrl_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        relatedNoteNames_ = relatedNoteNames_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_Note_descriptor;
   }
@@ -1464,7 +1183,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     if (typeCase_ == 19) {
       output.writeMessage(19, (io.grafeas.v1.DSSEAttestationNote) type_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1555,7 +1274,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (io.grafeas.v1.DSSEAttestationNote) type_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1623,7 +1342,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1706,7 +1425,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1830,19 +1549,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.Note.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getRelatedUrlFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1858,10 +1568,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
       if (relatedUrlBuilder_ == null) {
         relatedUrl_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        relatedUrl_ = null;
         relatedUrlBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (expirationTimeBuilder_ == null) {
         expirationTime_ = null;
       } else {
@@ -1882,6 +1593,36 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
       relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (vulnerabilityBuilder_ != null) {
+        vulnerabilityBuilder_.clear();
+      }
+      if (buildBuilder_ != null) {
+        buildBuilder_.clear();
+      }
+      if (imageBuilder_ != null) {
+        imageBuilder_.clear();
+      }
+      if (packageBuilder_ != null) {
+        packageBuilder_.clear();
+      }
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.clear();
+      }
+      if (discoveryBuilder_ != null) {
+        discoveryBuilder_.clear();
+      }
+      if (attestationBuilder_ != null) {
+        attestationBuilder_.clear();
+      }
+      if (upgradeBuilder_ != null) {
+        upgradeBuilder_.clear();
+      }
+      if (complianceBuilder_ != null) {
+        complianceBuilder_.clear();
+      }
+      if (dsseAttestationBuilder_ != null) {
+        dsseAttestationBuilder_.clear();
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -2180,7 +1921,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2195,17 +1936,152 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.Note parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                shortDescription_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                longDescription_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 32:
+              {
+                kind_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                io.grafeas.v1.RelatedUrl m =
+                    input.readMessage(io.grafeas.v1.RelatedUrl.parser(), extensionRegistry);
+                if (relatedUrlBuilder_ == null) {
+                  ensureRelatedUrlIsMutable();
+                  relatedUrl_.add(m);
+                } else {
+                  relatedUrlBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRelatedNoteNamesIsMutable();
+                relatedNoteNames_.add(s);
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getVulnerabilityFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getBuildFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getPackageFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getDeploymentFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getDiscoveryFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 16;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getUpgradeFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 17;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getComplianceFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 18;
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(getDsseAttestationFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 19;
+                break;
+              } // case 154
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.Note) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5807,7 +5683,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Note(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

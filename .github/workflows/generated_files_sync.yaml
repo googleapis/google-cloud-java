@@ -50,6 +50,30 @@ jobs:
         bash generation/generate_gapic_bom.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
+
+  coverage-aggregator:
+    name: CoverageAggregator does not have diff from generated one
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: 11
+    - run: java -version
+    - uses: actions/cache@v3
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
+    - name: Generate CoverageAggregator/pom.xml
+      run: |
+        bash generation/generate_coverage_aggregator.sh
+    - name: Fail if there's any difference
+      run: git --no-pager diff --exit-code
   owlbot-py:
     name: applying templated owlbot.py config doesn't create a diff
     runs-on: ubuntu-latest
