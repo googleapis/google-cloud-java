@@ -50,3 +50,13 @@ jobs:
         bash generation/generate_gapic_bom.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
+  owlbot-py:
+    name: applying templated owlbot.py config doesn't create a diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate google-cloud-gapic-bom/pom.xml
+        run: |
+          bash generation/update_owlbot_postprocessor_config.sh
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
