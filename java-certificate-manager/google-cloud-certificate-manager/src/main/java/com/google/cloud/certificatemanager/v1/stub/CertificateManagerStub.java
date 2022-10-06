@@ -16,6 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.stub;
 
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateIssuanceConfigsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapEntriesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
@@ -26,21 +27,27 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.certificatemanager.v1.Certificate;
+import com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig;
 import com.google.cloud.certificatemanager.v1.CertificateMap;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntry;
+import com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
+import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest;
@@ -260,6 +267,51 @@ public abstract class CertificateManagerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteDnsAuthorizationRequest, Operation> deleteDnsAuthorizationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDnsAuthorizationCallable()");
+  }
+
+  public UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCertificateIssuanceConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+      listCertificateIssuanceConfigsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCertificateIssuanceConfigsCallable()");
+  }
+
+  public UnaryCallable<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getCertificateIssuanceConfigCallable()");
+  }
+
+  public OperationCallable<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCertificateIssuanceConfigOperationCallable()");
+  }
+
+  public UnaryCallable<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCertificateIssuanceConfigCallable()");
+  }
+
+  public OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteCertificateIssuanceConfigOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteCertificateIssuanceConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

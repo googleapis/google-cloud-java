@@ -54,120 +54,6 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CertificateMap(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                gclbTargets_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              gclbTargets_.add(
-                  input.readMessage(
-                      com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        gclbTargets_ = java.util.Collections.unmodifiableList(gclbTargets_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateManagerProto
         .internal_static_google_cloud_certificatemanager_v1_CertificateMap_descriptor;
@@ -203,11 +89,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1;</code>
+     * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the targetHttpsProxy field is set.
      */
@@ -216,11 +103,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1;</code>
+     * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The targetHttpsProxy.
      */
@@ -229,11 +117,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1;</code>
+     * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for targetHttpsProxy.
      */
@@ -243,11 +132,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3;</code>
+     * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the targetSslProxy field is set.
      */
@@ -256,11 +146,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3;</code>
+     * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The targetSslProxy.
      */
@@ -269,11 +160,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3;</code>
+     * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -283,12 +175,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     java.util.List<com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig>
@@ -297,12 +189,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig getIpConfigs(
@@ -311,12 +203,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     int getIpConfigsCount();
@@ -324,12 +216,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     java.util.List<
@@ -340,12 +232,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfigOrBuilder
@@ -388,79 +280,6 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private GclbTarget(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                targetProxyCase_ = 1;
-                targetProxy_ = s;
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  ipConfigs_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget
-                              .IpConfig>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                ipConfigs_.add(
-                    input.readMessage(
-                        com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                targetProxyCase_ = 3;
-                targetProxy_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          ipConfigs_ = java.util.Collections.unmodifiableList(ipConfigs_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.certificatemanager.v1.CertificateManagerProto
           .internal_static_google_cloud_certificatemanager_v1_CertificateMap_GclbTarget_descriptor;
@@ -485,10 +304,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An external IP address.
+       * Output only. An external IP address.
        * </pre>
        *
-       * <code>string ip_address = 1;</code>
+       * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The ipAddress.
        */
@@ -497,10 +316,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An external IP address.
+       * Output only. An external IP address.
        * </pre>
        *
-       * <code>string ip_address = 1;</code>
+       * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for ipAddress.
        */
@@ -510,10 +329,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Ports.
+       * Output only. Ports.
        * </pre>
        *
-       * <code>repeated uint32 ports = 3;</code>
+       * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return A list containing the ports.
        */
@@ -522,10 +341,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Ports.
+       * Output only. Ports.
        * </pre>
        *
-       * <code>repeated uint32 ports = 3;</code>
+       * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The count of ports.
        */
@@ -534,10 +353,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Ports.
+       * Output only. Ports.
        * </pre>
        *
-       * <code>repeated uint32 ports = 3;</code>
+       * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param index The index of the element to return.
        * @return The ports at the given index.
@@ -579,80 +398,6 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private IpConfig(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  ipAddress_ = s;
-                  break;
-                }
-              case 24:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    ports_ = newIntList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  ports_.addInt(input.readUInt32());
-                  break;
-                }
-              case 26:
-                {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                    ports_ = newIntList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    ports_.addInt(input.readUInt32());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            ports_.makeImmutable(); // C
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.certificatemanager.v1.CertificateManagerProto
             .internal_static_google_cloud_certificatemanager_v1_CertificateMap_GclbTarget_IpConfig_descriptor;
@@ -675,10 +420,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An external IP address.
+       * Output only. An external IP address.
        * </pre>
        *
-       * <code>string ip_address = 1;</code>
+       * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The ipAddress.
        */
@@ -698,10 +443,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * An external IP address.
+       * Output only. An external IP address.
        * </pre>
        *
-       * <code>string ip_address = 1;</code>
+       * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for ipAddress.
        */
@@ -724,10 +469,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Ports.
+       * Output only. Ports.
        * </pre>
        *
-       * <code>repeated uint32 ports = 3;</code>
+       * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return A list containing the ports.
        */
@@ -739,10 +484,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Ports.
+       * Output only. Ports.
        * </pre>
        *
-       * <code>repeated uint32 ports = 3;</code>
+       * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The count of ports.
        */
@@ -753,10 +498,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Ports.
+       * Output only. Ports.
        * </pre>
        *
-       * <code>repeated uint32 ports = 3;</code>
+       * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param index The index of the element to return.
        * @return The ports at the given index.
@@ -792,7 +537,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < ports_.size(); i++) {
           output.writeUInt32NoTag(ports_.getInt(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -817,7 +562,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
           }
           portsMemoizedSerializedSize = dataSize;
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -836,7 +581,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
 
         if (!getIpAddress().equals(other.getIpAddress())) return false;
         if (!getPortsList().equals(other.getPortsList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -853,7 +598,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + PORTS_FIELD_NUMBER;
           hash = (53 * hash) + getPortsList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -995,17 +740,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1124,7 +862,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1139,20 +877,55 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    ipAddress_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 24:
+                  {
+                    int v = input.readUInt32();
+                    ensurePortsIsMutable();
+                    ports_.addInt(v);
+                    break;
+                  } // case 24
+                case 26:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensurePortsIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      ports_.addInt(input.readUInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1163,10 +936,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * An external IP address.
+         * Output only. An external IP address.
          * </pre>
          *
-         * <code>string ip_address = 1;</code>
+         * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The ipAddress.
          */
@@ -1185,10 +958,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * An external IP address.
+         * Output only. An external IP address.
          * </pre>
          *
-         * <code>string ip_address = 1;</code>
+         * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for ipAddress.
          */
@@ -1207,10 +980,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * An external IP address.
+         * Output only. An external IP address.
          * </pre>
          *
-         * <code>string ip_address = 1;</code>
+         * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The ipAddress to set.
          * @return This builder for chaining.
@@ -1228,10 +1001,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * An external IP address.
+         * Output only. An external IP address.
          * </pre>
          *
-         * <code>string ip_address = 1;</code>
+         * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -1245,10 +1018,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * An external IP address.
+         * Output only. An external IP address.
          * </pre>
          *
-         * <code>string ip_address = 1;</code>
+         * <code>string ip_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for ipAddress to set.
          * @return This builder for chaining.
@@ -1276,10 +1049,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return A list containing the ports.
          */
@@ -1292,10 +1065,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The count of ports.
          */
@@ -1306,10 +1079,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param index The index of the element to return.
          * @return The ports at the given index.
@@ -1321,10 +1094,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param index The index to set the value at.
          * @param value The ports to set.
@@ -1340,10 +1113,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The ports to add.
          * @return This builder for chaining.
@@ -1358,10 +1131,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param values The ports to add.
          * @return This builder for chaining.
@@ -1376,10 +1149,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Ports.
+         * Output only. Ports.
          * </pre>
          *
-         * <code>repeated uint32 ports = 3;</code>
+         * <code>repeated uint32 ports = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -1426,7 +1199,19 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new IpConfig(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -1498,11 +1283,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1;</code>
+     * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the targetHttpsProxy field is set.
      */
@@ -1513,11 +1299,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1;</code>
+     * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The targetHttpsProxy.
      */
@@ -1541,11 +1328,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_https_proxy = 1;</code>
+     * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for targetHttpsProxy.
      */
@@ -1571,11 +1359,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3;</code>
+     * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the targetSslProxy field is set.
      */
@@ -1586,11 +1375,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3;</code>
+     * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The targetSslProxy.
      */
@@ -1614,11 +1404,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field returns the resource name in the following format:
+     * Output only. This field returns the resource name in the following
+     * format:
      * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 3;</code>
+     * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -1647,12 +1438,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -1664,12 +1455,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -1683,12 +1474,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -1699,12 +1490,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -1716,12 +1507,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP configurations for this Target Proxy where the
+     * Output only. IP configurations for this Target Proxy where the
      * Certificate Map is serving.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+     * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -1753,7 +1544,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
       if (targetProxyCase_ == 3) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, targetProxy_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1771,7 +1562,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
       if (targetProxyCase_ == 3) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, targetProxy_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1799,7 +1590,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1826,7 +1617,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1960,19 +1751,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getIpConfigsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -1980,10 +1762,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (ipConfigsBuilder_ == null) {
           ipConfigs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          ipConfigs_ = null;
           ipConfigsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetProxyCase_ = 0;
         targetProxy_ = null;
         return this;
@@ -2134,7 +1917,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2149,19 +1932,60 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  targetProxyCase_ = 1;
+                  targetProxy_ = s;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig m =
+                      input.readMessage(
+                          com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig
+                              .parser(),
+                          extensionRegistry);
+                  if (ipConfigsBuilder_ == null) {
+                    ensureIpConfigsIsMutable();
+                    ipConfigs_.add(m);
+                  } else {
+                    ipConfigsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  targetProxyCase_ = 3;
+                  targetProxy_ = s;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2185,11 +2009,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1;</code>
+       * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return Whether the targetHttpsProxy field is set.
        */
@@ -2201,11 +2026,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1;</code>
+       * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The targetHttpsProxy.
        */
@@ -2230,11 +2056,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1;</code>
+       * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for targetHttpsProxy.
        */
@@ -2259,11 +2086,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1;</code>
+       * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The targetHttpsProxy to set.
        * @return This builder for chaining.
@@ -2281,11 +2109,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1;</code>
+       * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2301,11 +2130,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetHttpsProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_https_proxy = 1;</code>
+       * <code>string target_https_proxy = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for targetHttpsProxy to set.
        * @return This builder for chaining.
@@ -2325,11 +2155,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3;</code>
+       * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return Whether the targetSslProxy field is set.
        */
@@ -2341,11 +2172,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3;</code>
+       * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The targetSslProxy.
        */
@@ -2370,11 +2202,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3;</code>
+       * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for targetSslProxy.
        */
@@ -2399,11 +2232,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3;</code>
+       * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The targetSslProxy to set.
        * @return This builder for chaining.
@@ -2421,11 +2255,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3;</code>
+       * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -2441,11 +2276,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field returns the resource name in the following format:
+       * Output only. This field returns the resource name in the following
+       * format:
        * `//compute.googleapis.com/projects/&#42;&#47;global/targetSslProxies/&#42;`.
        * </pre>
        *
-       * <code>string target_ssl_proxy = 3;</code>
+       * <code>string target_ssl_proxy = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for targetSslProxy to set.
        * @return This builder for chaining.
@@ -2485,12 +2321,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public java.util.List<
@@ -2506,12 +2342,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public int getIpConfigsCount() {
@@ -2525,12 +2361,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig getIpConfigs(
@@ -2545,12 +2381,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setIpConfigs(
@@ -2572,12 +2408,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setIpConfigs(
@@ -2597,12 +2433,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addIpConfigs(
@@ -2623,12 +2459,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addIpConfigs(
@@ -2650,12 +2486,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addIpConfigs(
@@ -2674,12 +2510,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addIpConfigs(
@@ -2699,12 +2535,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder addAllIpConfigs(
@@ -2725,12 +2561,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder clearIpConfigs() {
@@ -2747,12 +2583,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder removeIpConfigs(int index) {
@@ -2769,12 +2605,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig.Builder
@@ -2785,12 +2621,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfigOrBuilder
@@ -2805,12 +2641,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public java.util.List<
@@ -2828,12 +2664,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig.Builder
@@ -2847,12 +2683,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig.Builder
@@ -2867,12 +2703,12 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * IP configurations for this Target Proxy where the
+       * Output only. IP configurations for this Target Proxy where the
        * Certificate Map is serving.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2;
+       * repeated .google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.IpConfig ip_configs = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public java.util.List<
@@ -2934,7 +2770,19 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GclbTarget(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3260,6 +3108,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of GCLB targets which use this Certificate Map.
+   * A Target Proxy is only present on this list if it's attached to a
+   * Forwarding Rule.
    * </pre>
    *
    * <code>
@@ -3276,6 +3126,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of GCLB targets which use this Certificate Map.
+   * A Target Proxy is only present on this list if it's attached to a
+   * Forwarding Rule.
    * </pre>
    *
    * <code>
@@ -3293,6 +3145,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of GCLB targets which use this Certificate Map.
+   * A Target Proxy is only present on this list if it's attached to a
+   * Forwarding Rule.
    * </pre>
    *
    * <code>
@@ -3308,6 +3162,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of GCLB targets which use this Certificate Map.
+   * A Target Proxy is only present on this list if it's attached to a
+   * Forwarding Rule.
    * </pre>
    *
    * <code>
@@ -3324,6 +3180,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of GCLB targets which use this Certificate Map.
+   * A Target Proxy is only present on this list if it's attached to a
+   * Forwarding Rule.
    * </pre>
    *
    * <code>
@@ -3367,7 +3225,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(6, getUpdateTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3401,7 +3259,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3429,7 +3287,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getGclbTargetsList().equals(other.getGclbTargetsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3460,7 +3318,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GCLB_TARGETS_FIELD_NUMBER;
       hash = (53 * hash) + getGclbTargetsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3610,19 +3468,10 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.certificatemanager.v1.CertificateMap.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getGclbTargetsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3647,10 +3496,11 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       if (gclbTargetsBuilder_ == null) {
         gclbTargets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        gclbTargets_ = null;
         gclbTargetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -3794,7 +3644,7 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3809,18 +3659,80 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.certificatemanager.v1.CertificateMap parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget m =
+                    input.readMessage(
+                        com.google.cloud.certificatemanager.v1.CertificateMap.GclbTarget.parser(),
+                        extensionRegistry);
+                if (gclbTargetsBuilder_ == null) {
+                  ensureGclbTargetsIsMutable();
+                  gclbTargets_.add(m);
+                } else {
+                  gclbTargetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.certificatemanager.v1.CertificateMap) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4631,6 +4543,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4650,6 +4564,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4668,6 +4584,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4687,6 +4605,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4712,6 +4632,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4735,6 +4657,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4760,6 +4684,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4785,6 +4711,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4807,6 +4735,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4830,6 +4760,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4854,6 +4786,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4875,6 +4809,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4896,6 +4832,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4911,6 +4849,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4930,6 +4870,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4950,6 +4892,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4968,6 +4912,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -4987,6 +4933,8 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of GCLB targets which use this Certificate Map.
+     * A Target Proxy is only present on this list if it's attached to a
+     * Forwarding Rule.
      * </pre>
      *
      * <code>
@@ -5047,7 +4995,18 @@ public final class CertificateMap extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CertificateMap(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -56,191 +56,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Certificate(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate.Builder
-                  subBuilder = null;
-              if (typeCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate)
-                            type_)
-                        .toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate)
-                        type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                sanDnsnames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              sanDnsnames_.add(s);
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expireTime_ != null) {
-                subBuilder = expireTime_.toBuilder();
-              }
-              expireTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expireTime_);
-                expireTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pemCertificate_ = s;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.Builder
-                  subBuilder = null;
-              if (typeCase_ == 11) {
-                subBuilder =
-                    ((com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate) type_)
-                        .toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 11;
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              scope_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        sanDnsnames_ = sanDnsnames_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateManagerProto
         .internal_static_google_cloud_certificatemanager_v1_Certificate_descriptor;
@@ -502,59 +317,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private SelfManagedCertificate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                pemCertificate_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                pemPrivateKey_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.certificatemanager.v1.CertificateManagerProto
           .internal_static_google_cloud_certificatemanager_v1_Certificate_SelfManagedCertificate_descriptor;
@@ -691,7 +453,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemPrivateKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pemPrivateKey_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -706,7 +468,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pemPrivateKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pemPrivateKey_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -725,7 +487,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
       if (!getPemCertificate().equals(other.getPemCertificate())) return false;
       if (!getPemPrivateKey().equals(other.getPemPrivateKey())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -740,7 +502,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getPemCertificate().hashCode();
       hash = (37 * hash) + PEM_PRIVATE_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getPemPrivateKey().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -882,17 +644,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -999,7 +754,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           pemPrivateKey_ = other.pemPrivateKey_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1014,20 +769,43 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  pemCertificate_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  pemPrivateKey_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.certificatemanager.v1.Certificate.SelfManagedCertificate)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1284,7 +1062,19 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SelfManagedCertificate(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1313,8 +1103,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1326,8 +1117,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1339,8 +1131,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1353,8 +1146,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1368,7 +1162,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -1382,7 +1177,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -1396,7 +1192,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -1411,7 +1208,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -1422,6 +1220,47 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the dnsAuthorizations at the given index.
      */
     com.google.protobuf.ByteString getDnsAuthorizationsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name for a
+     * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+     * used to configure private PKI certificates in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+     * If this field is not set, the certificates will instead be publicly
+     * signed as documented at
+     * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+     * </pre>
+     *
+     * <code>
+     * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The issuanceConfig.
+     */
+    java.lang.String getIssuanceConfig();
+    /**
+     *
+     *
+     * <pre>
+     * The resource name for a
+     * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+     * used to configure private PKI certificates in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+     * If this field is not set, the certificates will instead be publicly
+     * signed as documented at
+     * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+     * </pre>
+     *
+     * <code>
+     * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for issuanceConfig.
+     */
+    com.google.protobuf.ByteString getIssuanceConfigBytes();
 
     /**
      *
@@ -1456,11 +1295,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about issues with provisioning a Managed Certificate.
+     * Output only. Information about issues with provisioning a Managed
+     * Certificate.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the provisioningIssue field is set.
@@ -1470,11 +1310,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about issues with provisioning a Managed Certificate.
+     * Output only. Information about issues with provisioning a Managed
+     * Certificate.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The provisioningIssue.
@@ -1485,11 +1326,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about issues with provisioning a Managed Certificate.
+     * Output only. Information about issues with provisioning a Managed
+     * Certificate.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssueOrBuilder
@@ -1499,8 +1341,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -1515,8 +1357,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -1529,8 +1371,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -1542,8 +1384,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -1559,8 +1401,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -1595,6 +1437,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     private ManagedCertificate() {
       domains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      issuanceConfig_ = "";
       state_ = 0;
       authorizationAttemptInfo_ = java.util.Collections.emptyList();
     }
@@ -1608,119 +1451,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ManagedCertificate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  domains_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                domains_.add(s);
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  dnsAuthorizations_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                dnsAuthorizations_.add(s);
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                        .ProvisioningIssue.Builder
-                    subBuilder = null;
-                if (provisioningIssue_ != null) {
-                  subBuilder = provisioningIssue_.toBuilder();
-                }
-                provisioningIssue_ =
-                    input.readMessage(
-                        com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                            .ProvisioningIssue.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(provisioningIssue_);
-                  provisioningIssue_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                state_ = rawValue;
-                break;
-              }
-            case 42:
-              {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  authorizationAttemptInfo_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                              .AuthorizationAttemptInfo>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                authorizationAttemptInfo_.add(
-                    input.readMessage(
-                        com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                            .AuthorizationAttemptInfo.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          domains_ = domains_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          dnsAuthorizations_ = dnsAuthorizations_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          authorizationAttemptInfo_ =
-              java.util.Collections.unmodifiableList(authorizationAttemptInfo_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1918,11 +1648,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Reason for provisioning failures.
+       * Output only. Reason for provisioning failures.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The enum numeric value on the wire for reason.
@@ -1932,11 +1662,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Reason for provisioning failures.
+       * Output only. Reason for provisioning failures.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The reason.
@@ -1948,12 +1678,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation about the issue. Provided to help address
-       * the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation about the issue. Provided to
+       * help address the configuration issues. Not guaranteed to be stable. For
+       * programmatic access use Reason enum.
        * </pre>
        *
-       * <code>string details = 2;</code>
+       * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The details.
        */
@@ -1962,12 +1692,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation about the issue. Provided to help address
-       * the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation about the issue. Provided to
+       * help address the configuration issues. Not guaranteed to be stable. For
+       * programmatic access use Reason enum.
        * </pre>
        *
-       * <code>string details = 2;</code>
+       * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for details.
        */
@@ -2007,60 +1737,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private ProvisioningIssue(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  int rawValue = input.readEnum();
-
-                  reason_ = rawValue;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  details_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2234,11 +1910,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Reason for provisioning failures.
+       * Output only. Reason for provisioning failures.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The enum numeric value on the wire for reason.
@@ -2251,11 +1927,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Reason for provisioning failures.
+       * Output only. Reason for provisioning failures.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The reason.
@@ -2282,12 +1958,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation about the issue. Provided to help address
-       * the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation about the issue. Provided to
+       * help address the configuration issues. Not guaranteed to be stable. For
+       * programmatic access use Reason enum.
        * </pre>
        *
-       * <code>string details = 2;</code>
+       * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The details.
        */
@@ -2307,12 +1983,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation about the issue. Provided to help address
-       * the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation about the issue. Provided to
+       * help address the configuration issues. Not guaranteed to be stable. For
+       * programmatic access use Reason enum.
        * </pre>
        *
-       * <code>string details = 2;</code>
+       * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for details.
        */
@@ -2352,7 +2028,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, details_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2370,7 +2046,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, details_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2394,7 +2070,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
         if (reason_ != other.reason_) return false;
         if (!getDetails().equals(other.getDetails())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2409,7 +2085,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + reason_;
         hash = (37 * hash) + DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getDetails().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2567,17 +2243,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -2694,7 +2363,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             details_ = other.details_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2709,21 +2378,43 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    reason_ = input.readEnum();
+
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    details_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                        .ProvisioningIssue)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -2732,11 +2423,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Reason for provisioning failures.
+         * Output only. Reason for provisioning failures.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return The enum numeric value on the wire for reason.
@@ -2749,11 +2440,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Reason for provisioning failures.
+         * Output only. Reason for provisioning failures.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @param value The enum numeric value on the wire for reason to set.
@@ -2769,11 +2460,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Reason for provisioning failures.
+         * Output only. Reason for provisioning failures.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return The reason.
@@ -2797,11 +2488,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Reason for provisioning failures.
+         * Output only. Reason for provisioning failures.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @param value The reason to set.
@@ -2823,11 +2514,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Reason for provisioning failures.
+         * Output only. Reason for provisioning failures.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return This builder for chaining.
@@ -2844,12 +2535,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation about the issue. Provided to help address
-         * the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation about the issue. Provided to
+         * help address the configuration issues. Not guaranteed to be stable. For
+         * programmatic access use Reason enum.
          * </pre>
          *
-         * <code>string details = 2;</code>
+         * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The details.
          */
@@ -2868,12 +2559,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation about the issue. Provided to help address
-         * the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation about the issue. Provided to
+         * help address the configuration issues. Not guaranteed to be stable. For
+         * programmatic access use Reason enum.
          * </pre>
          *
-         * <code>string details = 2;</code>
+         * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for details.
          */
@@ -2892,12 +2583,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation about the issue. Provided to help address
-         * the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation about the issue. Provided to
+         * help address the configuration issues. Not guaranteed to be stable. For
+         * programmatic access use Reason enum.
          * </pre>
          *
-         * <code>string details = 2;</code>
+         * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The details to set.
          * @return This builder for chaining.
@@ -2915,12 +2606,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation about the issue. Provided to help address
-         * the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation about the issue. Provided to
+         * help address the configuration issues. Not guaranteed to be stable. For
+         * programmatic access use Reason enum.
          * </pre>
          *
-         * <code>string details = 2;</code>
+         * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -2934,12 +2625,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation about the issue. Provided to help address
-         * the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation about the issue. Provided to
+         * help address the configuration issues. Not guaranteed to be stable. For
+         * programmatic access use Reason enum.
          * </pre>
          *
-         * <code>string details = 2;</code>
+         * <code>string details = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for details to set.
          * @return This builder for chaining.
@@ -2994,7 +2685,19 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ProvisioningIssue(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3048,11 +2751,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * State of the domain for managed certificate issuance.
+       * Output only. State of the domain for managed certificate issuance.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The enum numeric value on the wire for state.
@@ -3062,11 +2765,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * State of the domain for managed certificate issuance.
+       * Output only. State of the domain for managed certificate issuance.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The state.
@@ -3079,7 +2782,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason for failure of the authorization attempt for the domain.
+       * Output only. Reason for failure of the authorization attempt for the
+       * domain.
        * </pre>
        *
        * <code>
@@ -3093,7 +2797,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason for failure of the authorization attempt for the domain.
+       * Output only. Reason for failure of the authorization attempt for the
+       * domain.
        * </pre>
        *
        * <code>
@@ -3110,12 +2815,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation for reaching the state. Provided to help
-       * address the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation for reaching the state.
+       * Provided to help address the configuration issues. Not guaranteed to be
+       * stable. For programmatic access use FailureReason enum.
        * </pre>
        *
-       * <code>string details = 4;</code>
+       * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The details.
        */
@@ -3124,12 +2829,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation for reaching the state. Provided to help
-       * address the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation for reaching the state.
+       * Provided to help address the configuration issues. Not guaranteed to be
+       * stable. For programmatic access use FailureReason enum.
        * </pre>
        *
-       * <code>string details = 4;</code>
+       * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for details.
        */
@@ -3173,74 +2878,6 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private AuthorizationAttemptInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  domain_ = s;
-                  break;
-                }
-              case 16:
-                {
-                  int rawValue = input.readEnum();
-
-                  state_ = rawValue;
-                  break;
-                }
-              case 24:
-                {
-                  int rawValue = input.readEnum();
-
-                  failureReason_ = rawValue;
-                  break;
-                }
-              case 34:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  details_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3654,11 +3291,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * State of the domain for managed certificate issuance.
+       * Output only. State of the domain for managed certificate issuance.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The enum numeric value on the wire for state.
@@ -3671,11 +3308,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * State of the domain for managed certificate issuance.
+       * Output only. State of the domain for managed certificate issuance.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The state.
@@ -3702,7 +3339,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason for failure of the authorization attempt for the domain.
+       * Output only. Reason for failure of the authorization attempt for the
+       * domain.
        * </pre>
        *
        * <code>
@@ -3719,7 +3357,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason for failure of the authorization attempt for the domain.
+       * Output only. Reason for failure of the authorization attempt for the
+       * domain.
        * </pre>
        *
        * <code>
@@ -3750,12 +3389,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation for reaching the state. Provided to help
-       * address the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation for reaching the state.
+       * Provided to help address the configuration issues. Not guaranteed to be
+       * stable. For programmatic access use FailureReason enum.
        * </pre>
        *
-       * <code>string details = 4;</code>
+       * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The details.
        */
@@ -3775,12 +3414,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Human readable explanation for reaching the state. Provided to help
-       * address the configuration issues.
-       * Not guaranteed to be stable. For programmatic access use Reason enum.
+       * Output only. Human readable explanation for reaching the state.
+       * Provided to help address the configuration issues. Not guaranteed to be
+       * stable. For programmatic access use FailureReason enum.
        * </pre>
        *
-       * <code>string details = 4;</code>
+       * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for details.
        */
@@ -3829,7 +3468,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, details_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3856,7 +3495,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, details_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3883,7 +3522,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         if (state_ != other.state_) return false;
         if (failureReason_ != other.failureReason_) return false;
         if (!getDetails().equals(other.getDetails())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3902,7 +3541,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + failureReason_;
         hash = (37 * hash) + DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getDetails().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4062,17 +3701,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -4205,7 +3837,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             details_ = other.details_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4220,22 +3852,55 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                  .AuthorizationAttemptInfo
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    domain_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    state_ = input.readEnum();
+
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    failureReason_ = input.readEnum();
+
+                    break;
+                  } // case 24
+                case 34:
+                  {
+                    details_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
-                        .AuthorizationAttemptInfo)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4350,11 +4015,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * State of the domain for managed certificate issuance.
+         * Output only. State of the domain for managed certificate issuance.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return The enum numeric value on the wire for state.
@@ -4367,11 +4032,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * State of the domain for managed certificate issuance.
+         * Output only. State of the domain for managed certificate issuance.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @param value The enum numeric value on the wire for state to set.
@@ -4387,11 +4052,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * State of the domain for managed certificate issuance.
+         * Output only. State of the domain for managed certificate issuance.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return The state.
@@ -4415,11 +4080,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * State of the domain for managed certificate issuance.
+         * Output only. State of the domain for managed certificate issuance.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @param value The state to set.
@@ -4441,11 +4106,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * State of the domain for managed certificate issuance.
+         * Output only. State of the domain for managed certificate issuance.
          * </pre>
          *
          * <code>
-         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2;
+         * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.AuthorizationAttemptInfo.State state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return This builder for chaining.
@@ -4462,7 +4127,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Reason for failure of the authorization attempt for the domain.
+         * Output only. Reason for failure of the authorization attempt for the
+         * domain.
          * </pre>
          *
          * <code>
@@ -4479,7 +4145,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Reason for failure of the authorization attempt for the domain.
+         * Output only. Reason for failure of the authorization attempt for the
+         * domain.
          * </pre>
          *
          * <code>
@@ -4499,7 +4166,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Reason for failure of the authorization attempt for the domain.
+         * Output only. Reason for failure of the authorization attempt for the
+         * domain.
          * </pre>
          *
          * <code>
@@ -4527,7 +4195,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Reason for failure of the authorization attempt for the domain.
+         * Output only. Reason for failure of the authorization attempt for the
+         * domain.
          * </pre>
          *
          * <code>
@@ -4553,7 +4222,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Reason for failure of the authorization attempt for the domain.
+         * Output only. Reason for failure of the authorization attempt for the
+         * domain.
          * </pre>
          *
          * <code>
@@ -4574,12 +4244,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation for reaching the state. Provided to help
-         * address the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation for reaching the state.
+         * Provided to help address the configuration issues. Not guaranteed to be
+         * stable. For programmatic access use FailureReason enum.
          * </pre>
          *
-         * <code>string details = 4;</code>
+         * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The details.
          */
@@ -4598,12 +4268,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation for reaching the state. Provided to help
-         * address the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation for reaching the state.
+         * Provided to help address the configuration issues. Not guaranteed to be
+         * stable. For programmatic access use FailureReason enum.
          * </pre>
          *
-         * <code>string details = 4;</code>
+         * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for details.
          */
@@ -4622,12 +4292,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation for reaching the state. Provided to help
-         * address the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation for reaching the state.
+         * Provided to help address the configuration issues. Not guaranteed to be
+         * stable. For programmatic access use FailureReason enum.
          * </pre>
          *
-         * <code>string details = 4;</code>
+         * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The details to set.
          * @return This builder for chaining.
@@ -4645,12 +4315,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation for reaching the state. Provided to help
-         * address the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation for reaching the state.
+         * Provided to help address the configuration issues. Not guaranteed to be
+         * stable. For programmatic access use FailureReason enum.
          * </pre>
          *
-         * <code>string details = 4;</code>
+         * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -4664,12 +4334,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Human readable explanation for reaching the state. Provided to help
-         * address the configuration issues.
-         * Not guaranteed to be stable. For programmatic access use Reason enum.
+         * Output only. Human readable explanation for reaching the state.
+         * Provided to help address the configuration issues. Not guaranteed to be
+         * stable. For programmatic access use FailureReason enum.
          * </pre>
          *
-         * <code>string details = 4;</code>
+         * <code>string details = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for details to set.
          * @return This builder for chaining.
@@ -4724,7 +4394,19 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new AuthorizationAttemptInfo(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4751,8 +4433,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4766,8 +4449,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4781,8 +4465,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4797,8 +4482,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The domains for which a managed SSL certificate will be generated.
-     * Wildcard domains are only supported with DNS challenge resolution.
+     * Immutable. The domains for which a managed SSL certificate will be
+     * generated. Wildcard domains are only supported with DNS challenge
+     * resolution.
      * </pre>
      *
      * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4816,7 +4502,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -4832,7 +4519,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -4848,7 +4536,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -4865,7 +4554,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Authorizations that will be used for performing domain authorization.
+     * Immutable. Authorizations that will be used for performing domain
+     * authorization.
      * </pre>
      *
      * <code>
@@ -4877,6 +4567,71 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.protobuf.ByteString getDnsAuthorizationsBytes(int index) {
       return dnsAuthorizations_.getByteString(index);
+    }
+
+    public static final int ISSUANCE_CONFIG_FIELD_NUMBER = 6;
+    private volatile java.lang.Object issuanceConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * The resource name for a
+     * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+     * used to configure private PKI certificates in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+     * If this field is not set, the certificates will instead be publicly
+     * signed as documented at
+     * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+     * </pre>
+     *
+     * <code>
+     * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The issuanceConfig.
+     */
+    @java.lang.Override
+    public java.lang.String getIssuanceConfig() {
+      java.lang.Object ref = issuanceConfig_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        issuanceConfig_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name for a
+     * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+     * used to configure private PKI certificates in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+     * If this field is not set, the certificates will instead be publicly
+     * signed as documented at
+     * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+     * </pre>
+     *
+     * <code>
+     * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for issuanceConfig.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIssuanceConfigBytes() {
+      java.lang.Object ref = issuanceConfig_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        issuanceConfig_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STATE_FIELD_NUMBER = 4;
@@ -4929,11 +4684,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about issues with provisioning a Managed Certificate.
+     * Output only. Information about issues with provisioning a Managed
+     * Certificate.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the provisioningIssue field is set.
@@ -4946,11 +4702,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about issues with provisioning a Managed Certificate.
+     * Output only. Information about issues with provisioning a Managed
+     * Certificate.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The provisioningIssue.
@@ -4967,11 +4724,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Information about issues with provisioning a Managed Certificate.
+     * Output only. Information about issues with provisioning a Managed
+     * Certificate.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+     * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -4990,8 +4748,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -5009,8 +4767,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -5029,8 +4787,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -5045,8 +4803,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -5063,8 +4821,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Detailed state of the latest authorization attempt for each domain
-     * specified for managed certificate resource.
+     * Output only. Detailed state of the latest authorization attempt for each
+     * domain specified for managed certificate resource.
      * </pre>
      *
      * <code>
@@ -5110,7 +4868,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < authorizationAttemptInfo_.size(); i++) {
         output.writeMessage(5, authorizationAttemptInfo_.get(i));
       }
-      unknownFields.writeTo(output);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuanceConfig_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, issuanceConfig_);
+      }
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5149,7 +4910,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, authorizationAttemptInfo_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(issuanceConfig_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, issuanceConfig_);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5167,6 +4931,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
       if (!getDomainsList().equals(other.getDomainsList())) return false;
       if (!getDnsAuthorizationsList().equals(other.getDnsAuthorizationsList())) return false;
+      if (!getIssuanceConfig().equals(other.getIssuanceConfig())) return false;
       if (state_ != other.state_) return false;
       if (hasProvisioningIssue() != other.hasProvisioningIssue()) return false;
       if (hasProvisioningIssue()) {
@@ -5174,7 +4939,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!getAuthorizationAttemptInfoList().equals(other.getAuthorizationAttemptInfoList()))
         return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5193,6 +4958,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DNS_AUTHORIZATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getDnsAuthorizationsList().hashCode();
       }
+      hash = (37 * hash) + ISSUANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIssuanceConfig().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
       if (hasProvisioningIssue()) {
@@ -5203,7 +4970,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + AUTHORIZATION_ATTEMPT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAuthorizationAttemptInfoList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5340,19 +5107,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getAuthorizationAttemptInfoFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -5362,6 +5120,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
         dnsAuthorizations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        issuanceConfig_ = "";
+
         state_ = 0;
 
         if (provisioningIssueBuilder_ == null) {
@@ -5372,10 +5132,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         }
         if (authorizationAttemptInfoBuilder_ == null) {
           authorizationAttemptInfo_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          authorizationAttemptInfo_ = null;
           authorizationAttemptInfoBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -5417,6 +5178,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.dnsAuthorizations_ = dnsAuthorizations_;
+        result.issuanceConfig_ = issuanceConfig_;
         result.state_ = state_;
         if (provisioningIssueBuilder_ == null) {
           result.provisioningIssue_ = provisioningIssue_;
@@ -5509,6 +5271,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (!other.getIssuanceConfig().isEmpty()) {
+          issuanceConfig_ = other.issuanceConfig_;
+          onChanged();
+        }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
@@ -5542,7 +5308,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5557,19 +5323,81 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDomainsIsMutable();
+                  domains_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDnsAuthorizationsIsMutable();
+                  dnsAuthorizations_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getProvisioningIssueFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  state_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
+                          .AuthorizationAttemptInfo
+                      m =
+                          input.readMessage(
+                              com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
+                                  .AuthorizationAttemptInfo.parser(),
+                              extensionRegistry);
+                  if (authorizationAttemptInfoBuilder_ == null) {
+                    ensureAuthorizationAttemptInfoIsMutable();
+                    authorizationAttemptInfo_.add(m);
+                  } else {
+                    authorizationAttemptInfoBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              case 50:
+                {
+                  issuanceConfig_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5588,8 +5416,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5603,8 +5432,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5618,8 +5448,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5634,8 +5465,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5650,8 +5482,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5673,8 +5506,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5695,8 +5529,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5714,8 +5549,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5732,8 +5568,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The domains for which a managed SSL certificate will be generated.
-       * Wildcard domains are only supported with DNS challenge resolution.
+       * Immutable. The domains for which a managed SSL certificate will be
+       * generated. Wildcard domains are only supported with DNS challenge
+       * resolution.
        * </pre>
        *
        * <code>repeated string domains = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -5765,7 +5602,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5781,7 +5619,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5797,7 +5636,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5814,7 +5654,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5831,7 +5672,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5855,7 +5697,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5878,7 +5721,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5898,7 +5742,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5917,7 +5762,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Authorizations that will be used for performing domain authorization.
+       * Immutable. Authorizations that will be used for performing domain
+       * authorization.
        * </pre>
        *
        * <code>
@@ -5934,6 +5780,152 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureDnsAuthorizationsIsMutable();
         dnsAuthorizations_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object issuanceConfig_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The resource name for a
+       * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+       * used to configure private PKI certificates in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+       * If this field is not set, the certificates will instead be publicly
+       * signed as documented at
+       * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+       * </pre>
+       *
+       * <code>
+       * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The issuanceConfig.
+       */
+      public java.lang.String getIssuanceConfig() {
+        java.lang.Object ref = issuanceConfig_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          issuanceConfig_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name for a
+       * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+       * used to configure private PKI certificates in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+       * If this field is not set, the certificates will instead be publicly
+       * signed as documented at
+       * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+       * </pre>
+       *
+       * <code>
+       * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for issuanceConfig.
+       */
+      public com.google.protobuf.ByteString getIssuanceConfigBytes() {
+        java.lang.Object ref = issuanceConfig_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          issuanceConfig_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name for a
+       * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+       * used to configure private PKI certificates in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+       * If this field is not set, the certificates will instead be publicly
+       * signed as documented at
+       * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+       * </pre>
+       *
+       * <code>
+       * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The issuanceConfig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIssuanceConfig(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        issuanceConfig_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name for a
+       * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+       * used to configure private PKI certificates in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+       * If this field is not set, the certificates will instead be publicly
+       * signed as documented at
+       * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+       * </pre>
+       *
+       * <code>
+       * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIssuanceConfig() {
+
+        issuanceConfig_ = getDefaultInstance().getIssuanceConfig();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource name for a
+       * [CertificateIssuanceConfig][google.cloud.certificatemanager.v1.CertificateIssuanceConfig]
+       * used to configure private PKI certificates in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
+       * If this field is not set, the certificates will instead be publicly
+       * signed as documented at
+       * https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+       * </pre>
+       *
+       * <code>
+       * string issuance_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for issuanceConfig to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIssuanceConfigBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        issuanceConfig_ = value;
         onChanged();
         return this;
       }
@@ -6060,11 +6052,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the provisioningIssue field is set.
@@ -6076,11 +6069,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The provisioningIssue.
@@ -6100,11 +6094,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setProvisioningIssue(
@@ -6126,11 +6121,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder setProvisioningIssue(
@@ -6150,11 +6146,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder mergeProvisioningIssue(
@@ -6181,11 +6178,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public Builder clearProvisioningIssue() {
@@ -6203,11 +6201,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue
@@ -6221,11 +6220,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificate
@@ -6244,11 +6244,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Information about issues with provisioning a Managed Certificate.
+       * Output only. Information about issues with provisioning a Managed
+       * Certificate.
        * </pre>
        *
        * <code>
-       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3;
+       * .google.cloud.certificatemanager.v1.Certificate.ManagedCertificate.ProvisioningIssue provisioning_issue = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6302,8 +6303,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6324,8 +6325,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6343,8 +6344,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6364,8 +6365,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6393,8 +6394,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6419,8 +6420,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6447,8 +6448,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6476,8 +6477,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6501,8 +6502,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6527,8 +6528,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6554,8 +6555,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6576,8 +6577,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6598,8 +6599,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6615,8 +6616,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6636,8 +6637,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6659,8 +6660,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6679,8 +6680,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6700,8 +6701,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Detailed state of the latest authorization attempt for each domain
-       * specified for managed certificate resource.
+       * Output only. Detailed state of the latest authorization attempt for each
+       * domain specified for managed certificate resource.
        * </pre>
        *
        * <code>
@@ -6777,7 +6778,19 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ManagedCertificate(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7258,10 +7271,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of Subject Alternative Names of dnsName type defined in the
-   * certificate (see RFC 5280 4.2.1.6).
-   * Managed certificates that haven't been provisioned yet have this field
-   * populated with a value of the managed.domains field.
+   * Output only. The list of Subject Alternative Names of dnsName type defined
+   * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+   * haven't been provisioned yet have this field populated with a value of the
+   * managed.domains field.
    * </pre>
    *
    * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7275,10 +7288,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of Subject Alternative Names of dnsName type defined in the
-   * certificate (see RFC 5280 4.2.1.6).
-   * Managed certificates that haven't been provisioned yet have this field
-   * populated with a value of the managed.domains field.
+   * Output only. The list of Subject Alternative Names of dnsName type defined
+   * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+   * haven't been provisioned yet have this field populated with a value of the
+   * managed.domains field.
    * </pre>
    *
    * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7292,10 +7305,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of Subject Alternative Names of dnsName type defined in the
-   * certificate (see RFC 5280 4.2.1.6).
-   * Managed certificates that haven't been provisioned yet have this field
-   * populated with a value of the managed.domains field.
+   * Output only. The list of Subject Alternative Names of dnsName type defined
+   * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+   * haven't been provisioned yet have this field populated with a value of the
+   * managed.domains field.
    * </pre>
    *
    * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7310,10 +7323,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of Subject Alternative Names of dnsName type defined in the
-   * certificate (see RFC 5280 4.2.1.6).
-   * Managed certificates that haven't been provisioned yet have this field
-   * populated with a value of the managed.domains field.
+   * Output only. The list of Subject Alternative Names of dnsName type defined
+   * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+   * haven't been provisioned yet have this field populated with a value of the
+   * managed.domains field.
    * </pre>
    *
    * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7513,7 +7526,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (scope_ != com.google.cloud.certificatemanager.v1.Certificate.Scope.DEFAULT.getNumber()) {
       output.writeEnum(12, scope_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -7571,7 +7584,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     if (scope_ != com.google.cloud.certificatemanager.v1.Certificate.Scope.DEFAULT.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, scope_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7616,7 +7629,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7667,7 +7680,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -7816,17 +7829,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.certificatemanager.v1.Certificate.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -7849,6 +7855,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (selfManagedBuilder_ != null) {
+        selfManagedBuilder_.clear();
+      }
+      if (managedBuilder_ != null) {
+        managedBuilder_.clear();
+      }
       sanDnsnames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       pemCertificate_ = "";
@@ -8033,7 +8045,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -8048,18 +8060,103 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.certificatemanager.v1.Certificate parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getSelfManagedFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSanDnsnamesIsMutable();
+                sanDnsnames_.add(s);
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                pemCertificate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 90:
+              {
+                input.readMessage(getManagedFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 11;
+                break;
+              } // case 90
+            case 96:
+              {
+                scope_ = input.readEnum();
+
+                break;
+              } // case 96
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.certificatemanager.v1.Certificate) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -9333,10 +9430,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9350,10 +9447,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9367,10 +9464,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9385,10 +9482,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9403,10 +9500,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9428,10 +9525,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9452,10 +9549,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9473,10 +9570,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9493,10 +9590,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of Subject Alternative Names of dnsName type defined in the
-     * certificate (see RFC 5280 4.2.1.6).
-     * Managed certificates that haven't been provisioned yet have this field
-     * populated with a value of the managed.domains field.
+     * Output only. The list of Subject Alternative Names of dnsName type defined
+     * in the certificate (see RFC 5280 4.2.1.6). Managed certificates that
+     * haven't been provisioned yet have this field populated with a value of the
+     * managed.domains field.
      * </pre>
      *
      * <code>repeated string san_dnsnames = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9957,7 +10054,18 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Certificate(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

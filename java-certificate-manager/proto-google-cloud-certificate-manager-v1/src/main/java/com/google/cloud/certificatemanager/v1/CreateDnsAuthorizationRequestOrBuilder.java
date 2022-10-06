@@ -27,8 +27,8 @@ public interface CreateDnsAuthorizationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource of the dns authorization. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent resource of the dns authorization. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateDnsAuthorizationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource of the dns authorization. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent resource of the dns authorization. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
