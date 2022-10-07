@@ -122,6 +122,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
                   .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
                   .setBackgroundResources(
                       Collections.<BackgroundResource>singletonList(transportChannel))
+                  .setQuotaProjectId(options.getQuotaProjectId())
                   .build();
         } catch (Exception ex) {
           throw new IOException(ex);
@@ -144,6 +145,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
                 .build();
         HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
         settingsBuilder.setInternalHeaderProvider(headerProvider);
+        settingsBuilder.setQuotaProjectId(options.getQuotaProjectId());
 
         clientContext = ClientContext.create(settingsBuilder.build());
       }
