@@ -40,3 +40,5 @@ terraform fmt -list=false generated.auto.tfvars
 # See https://www.terraform.io/cli/commands/plan
 terraform plan -out generated.tfplan || exit
 terraform show -json generated.tfplan >generated.tfplan.json
+
+popd >/dev/null || exit
