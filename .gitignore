@@ -58,5 +58,5 @@ api_key
 generation/new_client/workspace
 
 # Monorepo repository generation
-monorepo/
+monorepo
 

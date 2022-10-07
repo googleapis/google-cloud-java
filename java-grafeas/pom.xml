@@ -13,10 +13,12 @@
   <description>
     Java idiomatic client for Grafeas.
   </description>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <artifactId>google-cloud-gapic-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
+    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
   </parent>
   <developers>
     <developer>
