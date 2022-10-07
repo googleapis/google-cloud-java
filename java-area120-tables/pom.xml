@@ -4,7 +4,7 @@
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
+  <version>0.7.9-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   <name>Google Area 120 Tables Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -61,17 +61,17 @@
       <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables</artifactId>
-        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
+        <version>0.7.9-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
-        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
+        <version>0.7.9-SNAPSHOT</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-area120-tables-v1alpha1</artifactId>
-        <version>0.7.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
+        <version>0.7.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
       </dependency>
 
       <dependency>

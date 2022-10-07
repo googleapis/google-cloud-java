@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastream-bom</artifactId>
-  <version>1.1.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
+  <version>1.2.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -57,27 +57,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastream</artifactId>
-        <version>1.1.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
+        <version>1.2.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datastream-v1alpha1</artifactId>
-        <version>0.6.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastream-v1alpha1:current} -->
+        <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastream-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datastream-v1</artifactId>
-        <version>1.1.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastream-v1:current} -->
+        <version>1.2.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastream-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastream-v1alpha1</artifactId>
-        <version>0.6.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastream-v1alpha1:current} -->
+        <version>0.7.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastream-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastream-v1</artifactId>
-        <version>1.1.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastream-v1:current} -->
+        <version>1.2.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastream-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
