@@ -63,244 +63,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Asset(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              assetType_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.asset.v1.Resource.Builder subBuilder = null;
-              if (resource_ != null) {
-                subBuilder = resource_.toBuilder();
-              }
-              resource_ =
-                  input.readMessage(com.google.cloud.asset.v1.Resource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resource_);
-                resource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.iam.v1.Policy.Builder subBuilder = null;
-              if (iamPolicy_ != null) {
-                subBuilder = iamPolicy_.toBuilder();
-              }
-              iamPolicy_ = input.readMessage(com.google.iam.v1.Policy.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(iamPolicy_);
-                iamPolicy_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                orgPolicy_ = new java.util.ArrayList<com.google.cloud.orgpolicy.v1.Policy>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              orgPolicy_.add(
-                  input.readMessage(
-                      com.google.cloud.orgpolicy.v1.Policy.parser(), extensionRegistry));
-              break;
-            }
-          case 58:
-            {
-              com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder subBuilder = null;
-              if (accessContextPolicyCase_ == 7) {
-                subBuilder =
-                    ((com.google.identity.accesscontextmanager.v1.AccessPolicy)
-                            accessContextPolicy_)
-                        .toBuilder();
-              }
-              accessContextPolicy_ =
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.AccessPolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.identity.accesscontextmanager.v1.AccessPolicy)
-                        accessContextPolicy_);
-                accessContextPolicy_ = subBuilder.buildPartial();
-              }
-              accessContextPolicyCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.identity.accesscontextmanager.v1.AccessLevel.Builder subBuilder = null;
-              if (accessContextPolicyCase_ == 8) {
-                subBuilder =
-                    ((com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_)
-                        .toBuilder();
-              }
-              accessContextPolicy_ =
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.AccessLevel.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.identity.accesscontextmanager.v1.AccessLevel) accessContextPolicy_);
-                accessContextPolicy_ = subBuilder.buildPartial();
-              }
-              accessContextPolicyCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.identity.accesscontextmanager.v1.ServicePerimeter.Builder subBuilder =
-                  null;
-              if (accessContextPolicyCase_ == 9) {
-                subBuilder =
-                    ((com.google.identity.accesscontextmanager.v1.ServicePerimeter)
-                            accessContextPolicy_)
-                        .toBuilder();
-              }
-              accessContextPolicy_ =
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeter.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.identity.accesscontextmanager.v1.ServicePerimeter)
-                        accessContextPolicy_);
-                accessContextPolicy_ = subBuilder.buildPartial();
-              }
-              accessContextPolicyCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                ancestors_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              ancestors_.add(s);
-              break;
-            }
-          case 90:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.osconfig.v1.Inventory.Builder subBuilder = null;
-              if (osInventory_ != null) {
-                subBuilder = osInventory_.toBuilder();
-              }
-              osInventory_ =
-                  input.readMessage(
-                      com.google.cloud.osconfig.v1.Inventory.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(osInventory_);
-                osInventory_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.asset.v1.RelatedAssets.Builder subBuilder = null;
-              if (relatedAssets_ != null) {
-                subBuilder = relatedAssets_.toBuilder();
-              }
-              relatedAssets_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1.RelatedAssets.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(relatedAssets_);
-                relatedAssets_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.asset.v1.RelatedAsset.Builder subBuilder = null;
-              if (relatedAsset_ != null) {
-                subBuilder = relatedAsset_.toBuilder();
-              }
-              relatedAsset_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1.RelatedAsset.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(relatedAsset_);
-                relatedAsset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        orgPolicy_ = java.util.Collections.unmodifiableList(orgPolicy_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        ancestors_ = ancestors_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetProto
         .internal_static_google_cloud_asset_v1_Asset_descriptor;
@@ -1201,7 +963,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (relatedAsset_ != null) {
       output.writeMessage(15, getRelatedAsset());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1261,7 +1023,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     if (relatedAsset_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRelatedAsset());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1318,7 +1080,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1381,7 +1143,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1516,19 +1278,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.asset.v1.Asset.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getOrgPolicyFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1558,9 +1311,19 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (orgPolicyBuilder_ == null) {
         orgPolicy_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        orgPolicy_ = null;
         orgPolicyBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      if (accessPolicyBuilder_ != null) {
+        accessPolicyBuilder_.clear();
+      }
+      if (accessLevelBuilder_ != null) {
+        accessLevelBuilder_.clear();
+      }
+      if (servicePerimeterBuilder_ != null) {
+        servicePerimeterBuilder_.clear();
       }
       if (osInventoryBuilder_ == null) {
         osInventory_ = null;
@@ -1812,7 +1575,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1827,17 +1590,118 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.asset.v1.Asset parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                assetType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getIamPolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 50:
+              {
+                com.google.cloud.orgpolicy.v1.Policy m =
+                    input.readMessage(
+                        com.google.cloud.orgpolicy.v1.Policy.parser(), extensionRegistry);
+                if (orgPolicyBuilder_ == null) {
+                  ensureOrgPolicyIsMutable();
+                  orgPolicy_.add(m);
+                } else {
+                  orgPolicyBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getAccessPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                accessContextPolicyCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getAccessLevelFieldBuilder().getBuilder(), extensionRegistry);
+                accessContextPolicyCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getServicePerimeterFieldBuilder().getBuilder(), extensionRegistry);
+                accessContextPolicyCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAncestorsIsMutable();
+                ancestors_.add(s);
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getOsInventoryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getRelatedAssetsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(getRelatedAssetFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.asset.v1.Asset) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4687,7 +4551,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Asset(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

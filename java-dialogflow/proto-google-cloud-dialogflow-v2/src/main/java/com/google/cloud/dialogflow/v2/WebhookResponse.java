@@ -66,135 +66,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private WebhookResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fulfillmentText_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fulfillmentMessages_ =
-                    new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent.Message>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              fulfillmentMessages_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2.Intent.Message.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              source_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Struct.Builder subBuilder = null;
-              if (payload_ != null) {
-                subBuilder = payload_.toBuilder();
-              }
-              payload_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                outputContexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Context>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              outputContexts_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2.Context.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.dialogflow.v2.EventInput.Builder subBuilder = null;
-              if (followupEventInput_ != null) {
-                subBuilder = followupEventInput_.toBuilder();
-              }
-              followupEventInput_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2.EventInput.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(followupEventInput_);
-                followupEventInput_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                sessionEntityTypes_ =
-                    new java.util.ArrayList<com.google.cloud.dialogflow.v2.SessionEntityType>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              sessionEntityTypes_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2.SessionEntityType.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        outputContexts_ = java.util.Collections.unmodifiableList(outputContexts_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        sessionEntityTypes_ = java.util.Collections.unmodifiableList(sessionEntityTypes_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.WebhookProto
         .internal_static_google_cloud_dialogflow_v2_WebhookResponse_descriptor;
@@ -738,7 +609,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < sessionEntityTypes_.size(); i++) {
       output.writeMessage(10, sessionEntityTypes_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -770,7 +641,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, sessionEntityTypes_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -799,7 +670,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       if (!getFollowupEventInput().equals(other.getFollowupEventInput())) return false;
     }
     if (!getSessionEntityTypesList().equals(other.getSessionEntityTypesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -834,7 +705,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + SESSION_ENTITY_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getSessionEntityTypesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -973,21 +844,10 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.dialogflow.v2.WebhookResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFulfillmentMessagesFieldBuilder();
-        getOutputContextsFieldBuilder();
-        getSessionEntityTypesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -997,10 +857,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
 
       if (fulfillmentMessagesBuilder_ == null) {
         fulfillmentMessages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        fulfillmentMessages_ = null;
         fulfillmentMessagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       source_ = "";
 
       if (payloadBuilder_ == null) {
@@ -1011,10 +872,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (outputContextsBuilder_ == null) {
         outputContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        outputContexts_ = null;
         outputContextsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (followupEventInputBuilder_ == null) {
         followupEventInput_ = null;
       } else {
@@ -1023,10 +885,11 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (sessionEntityTypesBuilder_ == null) {
         sessionEntityTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        sessionEntityTypes_ = null;
         sessionEntityTypesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1238,7 +1101,7 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1253,17 +1116,96 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2.WebhookResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                fulfillmentText_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.dialogflow.v2.Intent.Message m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.Intent.Message.parser(), extensionRegistry);
+                if (fulfillmentMessagesBuilder_ == null) {
+                  ensureFulfillmentMessagesIsMutable();
+                  fulfillmentMessages_.add(m);
+                } else {
+                  fulfillmentMessagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                source_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.dialogflow.v2.Context m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.Context.parser(), extensionRegistry);
+                if (outputContextsBuilder_ == null) {
+                  ensureOutputContextsIsMutable();
+                  outputContexts_.add(m);
+                } else {
+                  outputContextsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getFollowupEventInputFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 82:
+              {
+                com.google.cloud.dialogflow.v2.SessionEntityType m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.SessionEntityType.parser(),
+                        extensionRegistry);
+                if (sessionEntityTypesBuilder_ == null) {
+                  ensureSessionEntityTypesIsMutable();
+                  sessionEntityTypes_.add(m);
+                } else {
+                  sessionEntityTypesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2.WebhookResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3263,7 +3205,18 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WebhookResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

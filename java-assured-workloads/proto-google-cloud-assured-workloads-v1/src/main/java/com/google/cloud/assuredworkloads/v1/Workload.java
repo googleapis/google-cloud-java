@@ -48,6 +48,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     provisionedResourcesParent_ = "";
     resourceSettings_ = java.util.Collections.emptyList();
     kajEnrollmentState_ = 0;
+    compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    partner_ = 0;
   }
 
   @java.lang.Override
@@ -59,197 +61,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
-  }
-
-  private Workload(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                resources_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              resources_.add(
-                  input.readMessage(
-                      com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              complianceRegime_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              billingAccount_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              provisionedResourcesParent_ = s;
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.Builder subBuilder = null;
-              if (kmsSettings_ != null) {
-                subBuilder = kmsSettings_.toBuilder();
-              }
-              kmsSettings_ =
-                  input.readMessage(
-                      com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(kmsSettings_);
-                kmsSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                resourceSettings_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              resourceSettings_.add(
-                  input.readMessage(
-                      com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 136:
-            {
-              int rawValue = input.readEnum();
-
-              kajEnrollmentState_ = rawValue;
-              break;
-            }
-          case 144:
-            {
-              enableSovereignControls_ = input.readBool();
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.Builder
-                  subBuilder = null;
-              if (saaEnrollmentResponse_ != null) {
-                subBuilder = saaEnrollmentResponse_.toBuilder();
-              }
-              saaEnrollmentResponse_ =
-                  input.readMessage(
-                      com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(saaEnrollmentResponse_);
-                saaEnrollmentResponse_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        resources_ = java.util.Collections.unmodifiableList(resources_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        resourceSettings_ = java.util.Collections.unmodifiableList(resourceSettings_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -398,6 +209,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>ITAR = 10;</code>
      */
     ITAR(10),
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads for Partners;
+     * </pre>
+     *
+     * <code>ASSURED_WORKLOADS_FOR_PARTNERS = 12;</code>
+     */
+    ASSURED_WORKLOADS_FOR_PARTNERS(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -511,6 +332,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>ITAR = 10;</code>
      */
     public static final int ITAR_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads for Partners;
+     * </pre>
+     *
+     * <code>ASSURED_WORKLOADS_FOR_PARTNERS = 12;</code>
+     */
+    public static final int ASSURED_WORKLOADS_FOR_PARTNERS_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -558,6 +389,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return CA_REGIONS_AND_SUPPORT;
         case 10:
           return ITAR;
+        case 12:
+          return ASSURED_WORKLOADS_FOR_PARTNERS;
         default:
           return null;
       }
@@ -773,6 +606,141 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.assuredworkloads.v1.Workload.KajEnrollmentState)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Supported Assured Workloads Partners.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.assuredworkloads.v1.Workload.Partner}
+   */
+  public enum Partner implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unknown compliance regime.
+     * </pre>
+     *
+     * <code>PARTNER_UNSPECIFIED = 0;</code>
+     */
+    PARTNER_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * S3NS regime
+     * </pre>
+     *
+     * <code>LOCAL_CONTROLS_BY_S3NS = 1;</code>
+     */
+    LOCAL_CONTROLS_BY_S3NS(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown compliance regime.
+     * </pre>
+     *
+     * <code>PARTNER_UNSPECIFIED = 0;</code>
+     */
+    public static final int PARTNER_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * S3NS regime
+     * </pre>
+     *
+     * <code>LOCAL_CONTROLS_BY_S3NS = 1;</code>
+     */
+    public static final int LOCAL_CONTROLS_BY_S3NS_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Partner valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Partner forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PARTNER_UNSPECIFIED;
+        case 1:
+          return LOCAL_CONTROLS_BY_S3NS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Partner> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Partner> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Partner>() {
+          public Partner findValueByNumber(int number) {
+            return Partner.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.assuredworkloads.v1.Workload.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Partner[] VALUES = values();
+
+    public static Partner valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Partner(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.assuredworkloads.v1.Workload.Partner)
+  }
+
   public interface ResourceInfoOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1.Workload.ResourceInfo)
@@ -853,57 +821,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private ResourceInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                resourceId_ = input.readInt64();
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                resourceType_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
           .internal_static_google_cloud_assuredworkloads_v1_Workload_ResourceInfo_descriptor;
@@ -944,11 +861,26 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Consumer project.
+       * AssuredWorkloads Projects are no longer supported. This field will be
+       * ignored only in CreateWorkload requests. ListWorkloads and GetWorkload
+       * will continue to provide projects information.
+       * Use CONSUMER_FOLDER instead.
        * </pre>
        *
-       * <code>CONSUMER_PROJECT = 1;</code>
+       * <code>CONSUMER_PROJECT = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       CONSUMER_PROJECT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Consumer Folder.
+       * </pre>
+       *
+       * <code>CONSUMER_FOLDER = 4;</code>
+       */
+      CONSUMER_FOLDER(4),
       /**
        *
        *
@@ -987,11 +919,25 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Consumer project.
+       * AssuredWorkloads Projects are no longer supported. This field will be
+       * ignored only in CreateWorkload requests. ListWorkloads and GetWorkload
+       * will continue to provide projects information.
+       * Use CONSUMER_FOLDER instead.
        * </pre>
        *
-       * <code>CONSUMER_PROJECT = 1;</code>
+       * <code>CONSUMER_PROJECT = 1 [deprecated = true];</code>
        */
-      public static final int CONSUMER_PROJECT_VALUE = 1;
+      @java.lang.Deprecated public static final int CONSUMER_PROJECT_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Consumer Folder.
+       * </pre>
+       *
+       * <code>CONSUMER_FOLDER = 4;</code>
+       */
+      public static final int CONSUMER_FOLDER_VALUE = 4;
       /**
        *
        *
@@ -1041,6 +987,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             return RESOURCE_TYPE_UNSPECIFIED;
           case 1:
             return CONSUMER_PROJECT;
+          case 4:
+            return CONSUMER_FOLDER;
           case 2:
             return ENCRYPTION_KEYS_PROJECT;
           case 3:
@@ -1184,7 +1132,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(2, resourceType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1202,7 +1150,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, resourceType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1220,7 +1168,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
       if (getResourceId() != other.getResourceId()) return false;
       if (resourceType_ != other.resourceType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1235,7 +1183,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getResourceId());
       hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + resourceType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1367,17 +1315,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1476,7 +1417,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (other.resourceType_ != 0) {
           setResourceTypeValue(other.getResourceTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1491,18 +1432,43 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  resourceId_ = input.readInt64();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  resourceType_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1701,7 +1667,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ResourceInfo(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1720,6 +1698,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface KMSSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1.Workload.KMSSettings)
@@ -1729,9 +1708,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1745,9 +1723,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1761,9 +1738,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1776,9 +1752,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1792,9 +1768,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1808,9 +1784,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1828,6 +1804,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1.Workload.KMSSettings}
    */
+  @java.lang.Deprecated
   public static final class KMSSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1.Workload.KMSSettings)
@@ -1851,75 +1828,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private KMSSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (nextRotationTime_ != null) {
-                  subBuilder = nextRotationTime_.toBuilder();
-                }
-                nextRotationTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(nextRotationTime_);
-                  nextRotationTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (rotationPeriod_ != null) {
-                  subBuilder = rotationPeriod_.toBuilder();
-                }
-                rotationPeriod_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(rotationPeriod_);
-                  rotationPeriod_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
           .internal_static_google_cloud_assuredworkloads_v1_Workload_KMSSettings_descriptor;
@@ -1941,9 +1849,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1960,9 +1867,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1981,9 +1887,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -2001,9 +1906,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2020,9 +1925,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2041,9 +1946,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2075,7 +1980,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (rotationPeriod_ != null) {
         output.writeMessage(2, getRotationPeriod());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2090,7 +1995,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (rotationPeriod_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRotationPeriod());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2114,7 +2019,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (hasRotationPeriod()) {
         if (!getRotationPeriod().equals(other.getRotationPeriod())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2133,7 +2038,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ROTATION_PERIOD_FIELD_NUMBER;
         hash = (53 * hash) + getRotationPeriod().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2265,17 +2170,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2388,7 +2286,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (other.hasRotationPeriod()) {
           mergeRotationPeriod(other.getRotationPeriod());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2403,18 +2301,45 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.assuredworkloads.v1.Workload.KMSSettings parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getNextRotationTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getRotationPeriodFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.assuredworkloads.v1.Workload.KMSSettings) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2428,9 +2353,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2446,9 +2370,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2470,9 +2393,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2496,9 +2418,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2519,9 +2440,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2549,9 +2469,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2573,9 +2492,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2591,9 +2509,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2613,9 +2530,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2649,9 +2565,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2667,9 +2583,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2691,9 +2607,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2717,9 +2633,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2740,9 +2656,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2770,9 +2686,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2794,9 +2710,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2812,9 +2728,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2834,9 +2750,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2893,7 +2809,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new KMSSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2924,6 +2852,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -2938,6 +2868,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -3042,66 +2974,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private ResourceSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                resourceId_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                resourceType_ = rawValue;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                displayName_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
           .internal_static_google_cloud_assuredworkloads_v1_Workload_ResourceSettings_descriptor;
@@ -3126,6 +2998,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -3151,6 +3025,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -3295,7 +3171,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3316,7 +3192,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3335,7 +3211,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (!getResourceId().equals(other.getResourceId())) return false;
       if (resourceType_ != other.resourceType_) return false;
       if (!getDisplayName().equals(other.getDisplayName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3352,7 +3228,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + resourceType_;
       hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3484,17 +3360,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3602,7 +3471,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           displayName_ = other.displayName_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3617,19 +3486,49 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  resourceId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  resourceType_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  displayName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3641,6 +3540,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -3665,6 +3566,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -3689,6 +3592,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -3712,6 +3617,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -3731,6 +3638,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -4016,7 +3925,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ResourceSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4192,81 +4113,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SaaEnrollmentResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-                bitField0_ |= 0x00000001;
-                setupStatus_ = rawValue;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  setupErrors_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                setupErrors_.add(rawValue);
-                break;
-              }
-            case 18:
-              {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while (input.getBytesUntilLimit() > 0) {
-                  int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                    setupErrors_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  setupErrors_.add(rawValue);
-                }
-                input.popLimit(oldLimit);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          setupErrors_ = java.util.Collections.unmodifiableList(setupErrors_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4860,7 +4706,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < setupErrors_.size(); i++) {
         output.writeEnumNoTag(setupErrors_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4885,7 +4731,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
         setupErrorsMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4906,7 +4752,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (setupStatus_ != other.setupStatus_) return false;
       }
       if (!setupErrors_.equals(other.setupErrors_)) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4925,7 +4771,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + SETUP_ERRORS_FIELD_NUMBER;
         hash = (53 * hash) + setupErrors_.hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5059,17 +4905,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -5188,7 +5027,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5203,19 +5042,56 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  setupStatus_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureSetupErrorsIsMutable();
+                  setupErrors_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureSetupErrorsIsMutable();
+                    setupErrors_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.assuredworkloads.v1.Workload.SaaEnrollmentResponse)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5637,7 +5513,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SaaEnrollmentResponse(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5966,7 +5854,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. The billing account used for the resources which are
+   * Optional. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -5976,9 +5864,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>
-   * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-   * </code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The billingAccount.
    */
@@ -5998,7 +5884,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. The billing account used for the resources which are
+   * Optional. The billing account used for the resources which are
    * direct children of workload. This billing account is initially associated
    * with the resources created as part of Workload creation.
    * After the initial creation of these resources, the customer can change
@@ -6008,9 +5894,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * `billingAccounts/012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>
-   * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-   * </code>
+   * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for billingAccount.
    */
@@ -6182,8 +6066,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured
-   * Workload. May be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -6211,8 +6095,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured
-   * Workload. May be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -6243,18 +6127,23 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
    * @return Whether the kmsSettings field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasKmsSettings() {
     return kmsSettings_ != null;
   }
@@ -6262,18 +6151,23 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
    * @return The kmsSettings.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1.Workload.KMSSettings getKmsSettings() {
     return kmsSettings_ == null
         ? com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.getDefaultInstance()
@@ -6283,16 +6177,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1.Workload.KMSSettingsOrBuilder
       getKmsSettingsOrBuilder() {
     return getKmsSettings();
@@ -6305,9 +6202,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -6323,9 +6220,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -6342,9 +6239,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -6359,9 +6256,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -6377,9 +6274,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -6517,6 +6414,129 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     return getSaaEnrollmentResponse();
   }
 
+  public static final int COMPLIANT_BUT_DISALLOWED_SERVICES_FIELD_NUMBER = 24;
+  private com.google.protobuf.LazyStringList compliantButDisallowedServices_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the compliantButDisallowedServices.
+   */
+  public com.google.protobuf.ProtocolStringList getCompliantButDisallowedServicesList() {
+    return compliantButDisallowedServices_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of compliantButDisallowedServices.
+   */
+  public int getCompliantButDisallowedServicesCount() {
+    return compliantButDisallowedServices_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The compliantButDisallowedServices at the given index.
+   */
+  public java.lang.String getCompliantButDisallowedServices(int index) {
+    return compliantButDisallowedServices_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Urls for services which are compliant for this Assured Workload, but which
+   * are currently disallowed by the ResourceUsageRestriction org policy.
+   * Invoke RestrictAllowedResources endpoint to allow your project developers
+   * to use these services in their environment."
+   * </pre>
+   *
+   * <code>
+   * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the compliantButDisallowedServices at the given index.
+   */
+  public com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index) {
+    return compliantButDisallowedServices_.getByteString(index);
+  }
+
+  public static final int PARTNER_FIELD_NUMBER = 25;
+  private int partner_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compliance Regime associated with this workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for partner.
+   */
+  @java.lang.Override
+  public int getPartnerValue() {
+    return partner_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compliance Regime associated with this workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The partner.
+   */
+  @java.lang.Override
+  public com.google.cloud.assuredworkloads.v1.Workload.Partner getPartner() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.assuredworkloads.v1.Workload.Partner result =
+        com.google.cloud.assuredworkloads.v1.Workload.Partner.valueOf(partner_);
+    return result == null
+        ? com.google.cloud.assuredworkloads.v1.Workload.Partner.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6578,7 +6598,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (saaEnrollmentResponse_ != null) {
       output.writeMessage(20, getSaaEnrollmentResponse());
     }
-    unknownFields.writeTo(output);
+    for (int i = 0; i < compliantButDisallowedServices_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 24, compliantButDisallowedServices_.getRaw(i));
+    }
+    if (partner_
+        != com.google.cloud.assuredworkloads.v1.Workload.Partner.PARTNER_UNSPECIFIED.getNumber()) {
+      output.writeEnum(25, partner_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6645,7 +6673,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSaaEnrollmentResponse());
     }
-    size += unknownFields.getSerializedSize();
+    {
+      int dataSize = 0;
+      for (int i = 0; i < compliantButDisallowedServices_.size(); i++) {
+        dataSize += computeStringSizeNoTag(compliantButDisallowedServices_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getCompliantButDisallowedServicesList().size();
+    }
+    if (partner_
+        != com.google.cloud.assuredworkloads.v1.Workload.Partner.PARTNER_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(25, partner_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -6685,7 +6725,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     if (hasSaaEnrollmentResponse()) {
       if (!getSaaEnrollmentResponse().equals(other.getSaaEnrollmentResponse())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getCompliantButDisallowedServicesList()
+        .equals(other.getCompliantButDisallowedServicesList())) return false;
+    if (partner_ != other.partner_) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -6736,7 +6779,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SAA_ENROLLMENT_RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getSaaEnrollmentResponse().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    if (getCompliantButDisallowedServicesCount() > 0) {
+      hash = (37 * hash) + COMPLIANT_BUT_DISALLOWED_SERVICES_FIELD_NUMBER;
+      hash = (53 * hash) + getCompliantButDisallowedServicesList().hashCode();
+    }
+    hash = (37 * hash) + PARTNER_FIELD_NUMBER;
+    hash = (53 * hash) + partner_;
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6886,20 +6935,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.assuredworkloads.v1.Workload.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getResourcesFieldBuilder();
-        getResourceSettingsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -6911,10 +6950,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        resources_ = null;
         resourcesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       complianceRegime_ = 0;
 
       if (createTimeBuilder_ == null) {
@@ -6938,10 +6978,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       if (resourceSettingsBuilder_ == null) {
         resourceSettings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        resourceSettings_ = null;
         resourceSettingsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       kajEnrollmentState_ = 0;
 
       enableSovereignControls_ = false;
@@ -6952,6 +6993,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         saaEnrollmentResponse_ = null;
         saaEnrollmentResponseBuilder_ = null;
       }
+      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      partner_ = 0;
+
       return this;
     }
 
@@ -7023,6 +7068,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.saaEnrollmentResponse_ = saaEnrollmentResponseBuilder_.build();
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        compliantButDisallowedServices_ = compliantButDisallowedServices_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.compliantButDisallowedServices_ = compliantButDisallowedServices_;
+      result.partner_ = partner_;
       onBuilt();
       return result;
     }
@@ -7165,7 +7216,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSaaEnrollmentResponse()) {
         mergeSaaEnrollmentResponse(other.getSaaEnrollmentResponse());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (!other.compliantButDisallowedServices_.isEmpty()) {
+        if (compliantButDisallowedServices_.isEmpty()) {
+          compliantButDisallowedServices_ = other.compliantButDisallowedServices_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureCompliantButDisallowedServicesIsMutable();
+          compliantButDisallowedServices_.addAll(other.compliantButDisallowedServices_);
+        }
+        onChanged();
+      }
+      if (other.partner_ != 0) {
+        setPartnerValue(other.getPartnerValue());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -7180,17 +7244,150 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.assuredworkloads.v1.Workload parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo m =
+                    input.readMessage(
+                        com.google.cloud.assuredworkloads.v1.Workload.ResourceInfo.parser(),
+                        extensionRegistry);
+                if (resourcesBuilder_ == null) {
+                  ensureResourcesIsMutable();
+                  resources_.add(m);
+                } else {
+                  resourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 32:
+              {
+                complianceRegime_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                billingAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 74:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 82
+            case 106:
+              {
+                provisionedResourcesParent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getKmsSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings m =
+                    input.readMessage(
+                        com.google.cloud.assuredworkloads.v1.Workload.ResourceSettings.parser(),
+                        extensionRegistry);
+                if (resourceSettingsBuilder_ == null) {
+                  ensureResourceSettingsIsMutable();
+                  resourceSettings_.add(m);
+                } else {
+                  resourceSettingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+            case 136:
+              {
+                kajEnrollmentState_ = input.readEnum();
+
+                break;
+              } // case 136
+            case 144:
+              {
+                enableSovereignControls_ = input.readBool();
+
+                break;
+              } // case 144
+            case 162:
+              {
+                input.readMessage(
+                    getSaaEnrollmentResponseFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 194:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCompliantButDisallowedServicesIsMutable();
+                compliantButDisallowedServices_.add(s);
+                break;
+              } // case 194
+            case 200:
+              {
+                partner_ = input.readEnum();
+
+                break;
+              } // case 200
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.assuredworkloads.v1.Workload) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8209,7 +8406,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The billing account used for the resources which are
+     * Optional. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -8219,9 +8416,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>
-     * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The billingAccount.
      */
@@ -8240,7 +8435,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The billing account used for the resources which are
+     * Optional. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -8250,9 +8445,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>
-     * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for billingAccount.
      */
@@ -8271,7 +8464,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The billing account used for the resources which are
+     * Optional. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -8281,9 +8474,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>
-     * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The billingAccount to set.
      * @return This builder for chaining.
@@ -8301,7 +8492,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The billing account used for the resources which are
+     * Optional. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -8311,9 +8502,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>
-     * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -8327,7 +8516,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The billing account used for the resources which are
+     * Optional. The billing account used for the resources which are
      * direct children of workload. This billing account is initially associated
      * with the resources created as part of Workload creation.
      * After the initial creation of these resources, the customer can change
@@ -8337,9 +8526,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * `billingAccounts/012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>
-     * string billing_account = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY];
-     * </code>
+     * <code>string billing_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for billingAccount to set.
      * @return This builder for chaining.
@@ -8629,8 +8816,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -8657,8 +8844,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -8685,8 +8872,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -8712,8 +8899,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -8735,8 +8922,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -8770,17 +8957,22 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
      * @return Whether the kmsSettings field is set.
      */
+    @java.lang.Deprecated
     public boolean hasKmsSettings() {
       return kmsSettingsBuilder_ != null || kmsSettings_ != null;
     }
@@ -8788,17 +8980,22 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
      * @return The kmsSettings.
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1.Workload.KMSSettings getKmsSettings() {
       if (kmsSettingsBuilder_ == null) {
         return kmsSettings_ == null
@@ -8812,15 +9009,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setKmsSettings(com.google.cloud.assuredworkloads.v1.Workload.KMSSettings value) {
       if (kmsSettingsBuilder_ == null) {
         if (value == null) {
@@ -8838,15 +9038,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setKmsSettings(
         com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.Builder builderForValue) {
       if (kmsSettingsBuilder_ == null) {
@@ -8862,15 +9065,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeKmsSettings(
         com.google.cloud.assuredworkloads.v1.Workload.KMSSettings value) {
       if (kmsSettingsBuilder_ == null) {
@@ -8893,15 +9099,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearKmsSettings() {
       if (kmsSettingsBuilder_ == null) {
         kmsSettings_ = null;
@@ -8917,15 +9126,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1.Workload.KMSSettings.Builder
         getKmsSettingsBuilder() {
 
@@ -8936,15 +9148,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1.Workload.KMSSettingsOrBuilder
         getKmsSettingsOrBuilder() {
       if (kmsSettingsBuilder_ != null) {
@@ -8959,13 +9174,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -9007,9 +9224,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9028,9 +9245,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9048,9 +9265,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9069,9 +9286,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9096,9 +9313,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9121,9 +9338,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9148,9 +9365,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9175,9 +9392,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9199,9 +9416,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9224,9 +9441,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9249,9 +9466,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9272,9 +9489,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9295,9 +9512,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9312,9 +9529,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9333,9 +9550,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9355,9 +9572,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9374,9 +9591,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9394,9 +9611,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -9821,6 +10038,325 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return saaEnrollmentResponseBuilder_;
     }
 
+    private com.google.protobuf.LazyStringList compliantButDisallowedServices_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureCompliantButDisallowedServicesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        compliantButDisallowedServices_ =
+            new com.google.protobuf.LazyStringArrayList(compliantButDisallowedServices_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the compliantButDisallowedServices.
+     */
+    public com.google.protobuf.ProtocolStringList getCompliantButDisallowedServicesList() {
+      return compliantButDisallowedServices_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of compliantButDisallowedServices.
+     */
+    public int getCompliantButDisallowedServicesCount() {
+      return compliantButDisallowedServices_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The compliantButDisallowedServices at the given index.
+     */
+    public java.lang.String getCompliantButDisallowedServices(int index) {
+      return compliantButDisallowedServices_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the compliantButDisallowedServices at the given index.
+     */
+    public com.google.protobuf.ByteString getCompliantButDisallowedServicesBytes(int index) {
+      return compliantButDisallowedServices_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The compliantButDisallowedServices to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompliantButDisallowedServices(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCompliantButDisallowedServicesIsMutable();
+      compliantButDisallowedServices_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The compliantButDisallowedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCompliantButDisallowedServices(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCompliantButDisallowedServicesIsMutable();
+      compliantButDisallowedServices_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The compliantButDisallowedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCompliantButDisallowedServices(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureCompliantButDisallowedServicesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, compliantButDisallowedServices_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCompliantButDisallowedServices() {
+      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Urls for services which are compliant for this Assured Workload, but which
+     * are currently disallowed by the ResourceUsageRestriction org policy.
+     * Invoke RestrictAllowedResources endpoint to allow your project developers
+     * to use these services in their environment."
+     * </pre>
+     *
+     * <code>
+     * repeated string compliant_but_disallowed_services = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the compliantButDisallowedServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCompliantButDisallowedServicesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCompliantButDisallowedServicesIsMutable();
+      compliantButDisallowedServices_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int partner_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compliance Regime associated with this workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for partner.
+     */
+    @java.lang.Override
+    public int getPartnerValue() {
+      return partner_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compliance Regime associated with this workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for partner to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerValue(int value) {
+
+      partner_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compliance Regime associated with this workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The partner.
+     */
+    @java.lang.Override
+    public com.google.cloud.assuredworkloads.v1.Workload.Partner getPartner() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.assuredworkloads.v1.Workload.Partner result =
+          com.google.cloud.assuredworkloads.v1.Workload.Partner.valueOf(partner_);
+      return result == null
+          ? com.google.cloud.assuredworkloads.v1.Workload.Partner.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compliance Regime associated with this workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The partner to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartner(com.google.cloud.assuredworkloads.v1.Workload.Partner value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      partner_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compliance Regime associated with this workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.assuredworkloads.v1.Workload.Partner partner = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPartner() {
+
+      partner_ = 0;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -9853,7 +10389,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Workload(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

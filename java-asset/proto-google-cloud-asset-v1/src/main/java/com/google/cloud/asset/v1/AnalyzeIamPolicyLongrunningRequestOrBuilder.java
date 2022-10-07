@@ -117,8 +117,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output
-   * to.
+   * Required. Output configuration indicating where the results will be output to.
    * </pre>
    *
    * <code>
@@ -132,8 +131,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output
-   * to.
+   * Required. Output configuration indicating where the results will be output to.
    * </pre>
    *
    * <code>
@@ -147,8 +145,7 @@ public interface AnalyzeIamPolicyLongrunningRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output
-   * to.
+   * Required. Output configuration indicating where the results will be output to.
    * </pre>
    *
    * <code>

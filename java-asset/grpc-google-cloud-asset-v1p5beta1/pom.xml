@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-asset-v1p5beta1</artifactId>
-  <version>0.105.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p5beta1:current} -->
+  <version>0.107.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p5beta1:current} -->
   <name>grpc-google-cloud-asset-v1p5beta1</name>
   <description>GRPC library for grpc-google-cloud-asset-v1p5beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-asset-parent</artifactId>
-    <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+    <version>3.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
   </parent>
   <dependencies>
     <dependency>

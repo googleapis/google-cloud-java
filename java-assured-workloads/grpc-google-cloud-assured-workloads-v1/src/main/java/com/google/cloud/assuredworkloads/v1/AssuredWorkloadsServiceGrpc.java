@@ -131,6 +131,59 @@ public final class AssuredWorkloadsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest,
+          com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+      getRestrictAllowedResourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestrictAllowedResources",
+      requestType = com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest.class,
+      responseType = com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest,
+          com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+      getRestrictAllowedResourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest,
+            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+        getRestrictAllowedResourcesMethod;
+    if ((getRestrictAllowedResourcesMethod =
+            AssuredWorkloadsServiceGrpc.getRestrictAllowedResourcesMethod)
+        == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getRestrictAllowedResourcesMethod =
+                AssuredWorkloadsServiceGrpc.getRestrictAllowedResourcesMethod)
+            == null) {
+          AssuredWorkloadsServiceGrpc.getRestrictAllowedResourcesMethod =
+              getRestrictAllowedResourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest,
+                          com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestrictAllowedResources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier(
+                              "RestrictAllowedResources"))
+                      .build();
+        }
+      }
+    }
+    return getRestrictAllowedResourcesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest, com.google.protobuf.Empty>
       getDeleteWorkloadMethod;
 
@@ -267,6 +320,152 @@ public final class AssuredWorkloadsServiceGrpc {
     return getListWorkloadsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.ListViolationsRequest,
+          com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+      getListViolationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListViolations",
+      requestType = com.google.cloud.assuredworkloads.v1.ListViolationsRequest.class,
+      responseType = com.google.cloud.assuredworkloads.v1.ListViolationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.ListViolationsRequest,
+          com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+      getListViolationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1.ListViolationsRequest,
+            com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+        getListViolationsMethod;
+    if ((getListViolationsMethod = AssuredWorkloadsServiceGrpc.getListViolationsMethod) == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getListViolationsMethod = AssuredWorkloadsServiceGrpc.getListViolationsMethod)
+            == null) {
+          AssuredWorkloadsServiceGrpc.getListViolationsMethod =
+              getListViolationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1.ListViolationsRequest,
+                          com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListViolations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.ListViolationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.ListViolationsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier("ListViolations"))
+                      .build();
+        }
+      }
+    }
+    return getListViolationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.GetViolationRequest,
+          com.google.cloud.assuredworkloads.v1.Violation>
+      getGetViolationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetViolation",
+      requestType = com.google.cloud.assuredworkloads.v1.GetViolationRequest.class,
+      responseType = com.google.cloud.assuredworkloads.v1.Violation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.GetViolationRequest,
+          com.google.cloud.assuredworkloads.v1.Violation>
+      getGetViolationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1.GetViolationRequest,
+            com.google.cloud.assuredworkloads.v1.Violation>
+        getGetViolationMethod;
+    if ((getGetViolationMethod = AssuredWorkloadsServiceGrpc.getGetViolationMethod) == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getGetViolationMethod = AssuredWorkloadsServiceGrpc.getGetViolationMethod) == null) {
+          AssuredWorkloadsServiceGrpc.getGetViolationMethod =
+              getGetViolationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1.GetViolationRequest,
+                          com.google.cloud.assuredworkloads.v1.Violation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetViolation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.GetViolationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.Violation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier("GetViolation"))
+                      .build();
+        }
+      }
+    }
+    return getGetViolationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest,
+          com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+      getAcknowledgeViolationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AcknowledgeViolation",
+      requestType = com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.class,
+      responseType = com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest,
+          com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+      getAcknowledgeViolationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest,
+            com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+        getAcknowledgeViolationMethod;
+    if ((getAcknowledgeViolationMethod = AssuredWorkloadsServiceGrpc.getAcknowledgeViolationMethod)
+        == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getAcknowledgeViolationMethod =
+                AssuredWorkloadsServiceGrpc.getAcknowledgeViolationMethod)
+            == null) {
+          AssuredWorkloadsServiceGrpc.getAcknowledgeViolationMethod =
+              getAcknowledgeViolationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest,
+                          com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AcknowledgeViolation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier(
+                              "AcknowledgeViolation"))
+                      .build();
+        }
+      }
+    }
+    return getAcknowledgeViolationMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssuredWorkloadsServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssuredWorkloadsServiceStub> factory =
@@ -353,6 +552,27 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public void restrictAllowedResources(
+        com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestrictAllowedResourcesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
@@ -395,6 +615,59 @@ public final class AssuredWorkloadsServiceGrpc {
           getListWorkloadsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Violations in the AssuredWorkload Environment.
+     * Callers may also choose to read across multiple Workloads as per
+     * [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash
+     * character) as a wildcard character instead of workload-id in the parent.
+     * Format `organizations/{org_id}/locations/{location}/workloads/-`
+     * </pre>
+     */
+    public void listViolations(
+        com.google.cloud.assuredworkloads.v1.ListViolationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListViolationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves Assured Workload Violation based on ID.
+     * </pre>
+     */
+    public void getViolation(
+        com.google.cloud.assuredworkloads.v1.GetViolationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1.Violation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetViolationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges an existing violation. By acknowledging a violation, users
+     * acknowledge the existence of a compliance violation in their workload and
+     * decide to ignore it due to a valid business justification. Acknowledgement
+     * is a permanent operation and it cannot be reverted.
+     * </pre>
+     */
+    public void acknowledgeViolation(
+        com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAcknowledgeViolationMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -411,6 +684,13 @@ public final class AssuredWorkloadsServiceGrpc {
                       com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest,
                       com.google.cloud.assuredworkloads.v1.Workload>(
                       this, METHODID_UPDATE_WORKLOAD)))
+          .addMethod(
+              getRestrictAllowedResourcesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest,
+                      com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>(
+                      this, METHODID_RESTRICT_ALLOWED_RESOURCES)))
           .addMethod(
               getDeleteWorkloadMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -430,6 +710,27 @@ public final class AssuredWorkloadsServiceGrpc {
                       com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest,
                       com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse>(
                       this, METHODID_LIST_WORKLOADS)))
+          .addMethod(
+              getListViolationsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1.ListViolationsRequest,
+                      com.google.cloud.assuredworkloads.v1.ListViolationsResponse>(
+                      this, METHODID_LIST_VIOLATIONS)))
+          .addMethod(
+              getGetViolationMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1.GetViolationRequest,
+                      com.google.cloud.assuredworkloads.v1.Violation>(
+                      this, METHODID_GET_VIOLATION)))
+          .addMethod(
+              getAcknowledgeViolationMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest,
+                      com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>(
+                      this, METHODID_ACKNOWLEDGE_VIOLATION)))
           .build();
     }
   }
@@ -493,6 +794,29 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public void restrictAllowedResources(
+        com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestrictAllowedResourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
@@ -537,6 +861,65 @@ public final class AssuredWorkloadsServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListWorkloadsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Violations in the AssuredWorkload Environment.
+     * Callers may also choose to read across multiple Workloads as per
+     * [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash
+     * character) as a wildcard character instead of workload-id in the parent.
+     * Format `organizations/{org_id}/locations/{location}/workloads/-`
+     * </pre>
+     */
+    public void listViolations(
+        com.google.cloud.assuredworkloads.v1.ListViolationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListViolationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves Assured Workload Violation based on ID.
+     * </pre>
+     */
+    public void getViolation(
+        com.google.cloud.assuredworkloads.v1.GetViolationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1.Violation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetViolationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges an existing violation. By acknowledging a violation, users
+     * acknowledge the existence of a compliance violation in their workload and
+     * decide to ignore it due to a valid business justification. Acknowledgement
+     * is a permanent operation and it cannot be reverted.
+     * </pre>
+     */
+    public void acknowledgeViolation(
+        com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAcknowledgeViolationMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -595,6 +978,25 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse
+        restrictAllowedResources(
+            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestrictAllowedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
@@ -630,6 +1032,52 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Violations in the AssuredWorkload Environment.
+     * Callers may also choose to read across multiple Workloads as per
+     * [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash
+     * character) as a wildcard character instead of workload-id in the parent.
+     * Format `organizations/{org_id}/locations/{location}/workloads/-`
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1.ListViolationsResponse listViolations(
+        com.google.cloud.assuredworkloads.v1.ListViolationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListViolationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves Assured Workload Violation based on ID.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1.Violation getViolation(
+        com.google.cloud.assuredworkloads.v1.GetViolationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetViolationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges an existing violation. By acknowledging a violation, users
+     * acknowledge the existence of a compliance violation in their workload and
+     * decide to ignore it due to a valid business justification. Acknowledgement
+     * is a permanent operation and it cannot be reverted.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse acknowledgeViolation(
+        com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcknowledgeViolationMethod(), getCallOptions(), request);
     }
   }
 
@@ -687,6 +1135,26 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>
+        restrictAllowedResources(
+            com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestrictAllowedResourcesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
@@ -725,13 +1193,67 @@ public final class AssuredWorkloadsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListWorkloadsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Violations in the AssuredWorkload Environment.
+     * Callers may also choose to read across multiple Workloads as per
+     * [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash
+     * character) as a wildcard character instead of workload-id in the parent.
+     * Format `organizations/{org_id}/locations/{location}/workloads/-`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1.ListViolationsResponse>
+        listViolations(com.google.cloud.assuredworkloads.v1.ListViolationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListViolationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves Assured Workload Violation based on ID.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1.Violation>
+        getViolation(com.google.cloud.assuredworkloads.v1.GetViolationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetViolationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges an existing violation. By acknowledging a violation, users
+     * acknowledge the existence of a compliance violation in their workload and
+     * decide to ignore it due to a valid business justification. Acknowledgement
+     * is a permanent operation and it cannot be reverted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>
+        acknowledgeViolation(
+            com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAcknowledgeViolationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_WORKLOAD = 0;
   private static final int METHODID_UPDATE_WORKLOAD = 1;
-  private static final int METHODID_DELETE_WORKLOAD = 2;
-  private static final int METHODID_GET_WORKLOAD = 3;
-  private static final int METHODID_LIST_WORKLOADS = 4;
+  private static final int METHODID_RESTRICT_ALLOWED_RESOURCES = 2;
+  private static final int METHODID_DELETE_WORKLOAD = 3;
+  private static final int METHODID_GET_WORKLOAD = 4;
+  private static final int METHODID_LIST_WORKLOADS = 5;
+  private static final int METHODID_LIST_VIOLATIONS = 6;
+  private static final int METHODID_GET_VIOLATION = 7;
+  private static final int METHODID_ACKNOWLEDGE_VIOLATION = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -761,6 +1283,13 @@ public final class AssuredWorkloadsServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1.Workload>)
                   responseObserver);
           break;
+        case METHODID_RESTRICT_ALLOWED_RESOURCES:
+          serviceImpl.restrictAllowedResources(
+              (com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse>)
+                  responseObserver);
+          break;
         case METHODID_DELETE_WORKLOAD:
           serviceImpl.deleteWorkload(
               (com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest) request,
@@ -777,6 +1306,26 @@ public final class AssuredWorkloadsServiceGrpc {
               (com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_VIOLATIONS:
+          serviceImpl.listViolations(
+              (com.google.cloud.assuredworkloads.v1.ListViolationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.assuredworkloads.v1.ListViolationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_VIOLATION:
+          serviceImpl.getViolation(
+              (com.google.cloud.assuredworkloads.v1.GetViolationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1.Violation>)
+                  responseObserver);
+          break;
+        case METHODID_ACKNOWLEDGE_VIOLATION:
+          serviceImpl.acknowledgeViolation(
+              (com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse>)
                   responseObserver);
           break;
         default:
@@ -845,9 +1394,13 @@ public final class AssuredWorkloadsServiceGrpc {
                       .setSchemaDescriptor(new AssuredWorkloadsServiceFileDescriptorSupplier())
                       .addMethod(getCreateWorkloadMethod())
                       .addMethod(getUpdateWorkloadMethod())
+                      .addMethod(getRestrictAllowedResourcesMethod())
                       .addMethod(getDeleteWorkloadMethod())
                       .addMethod(getGetWorkloadMethod())
                       .addMethod(getListWorkloadsMethod())
+                      .addMethod(getListViolationsMethod())
+                      .addMethod(getGetViolationMethod())
+                      .addMethod(getAcknowledgeViolationMethod())
                       .build();
         }
       }

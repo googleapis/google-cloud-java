@@ -27,8 +27,8 @@ public interface GetDnsAuthorizationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A name of the dns authorization to describe. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
+   * Required. A name of the dns authorization to describe. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetDnsAuthorizationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A name of the dns authorization to describe. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
+   * Required. A name of the dns authorization to describe. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
    * </pre>
    *
    * <code>

@@ -16,6 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.stub;
 
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateIssuanceConfigsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapEntriesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
@@ -38,21 +39,27 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.certificatemanager.v1.Certificate;
+import com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig;
 import com.google.cloud.certificatemanager.v1.CertificateMap;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntry;
+import com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
+import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest;
@@ -97,6 +104,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
           .add(Certificate.getDescriptor())
           .add(CertificateMapEntry.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(CertificateIssuanceConfig.getDescriptor())
           .add(DnsAuthorization.getDescriptor())
           .build();
 
@@ -890,6 +898,168 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+      listCertificateIssuanceConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/ListCertificateIssuanceConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCertificateIssuanceConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/certificateIssuanceConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCertificateIssuanceConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCertificateIssuanceConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCertificateIssuanceConfigsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListCertificateIssuanceConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/GetCertificateIssuanceConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCertificateIssuanceConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/certificateIssuanceConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CertificateIssuanceConfig>newBuilder()
+                      .setDefaultInstance(CertificateIssuanceConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateCertificateIssuanceConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/CreateCertificateIssuanceConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCertificateIssuanceConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/certificateIssuanceConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "certificateIssuanceConfigId",
+                                request.getCertificateIssuanceConfigId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "certificateIssuanceConfig",
+                                      request.getCertificateIssuanceConfig(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateCertificateIssuanceConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCertificateIssuanceConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/DeleteCertificateIssuanceConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCertificateIssuanceConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/certificateIssuanceConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteCertificateIssuanceConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1025,6 +1195,23 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
       deleteDnsAuthorizationCallable;
   private final OperationCallable<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
       deleteDnsAuthorizationOperationCallable;
+  private final UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+      listCertificateIssuanceConfigsCallable;
+  private final UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsPagedCallable;
+  private final UnaryCallable<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigCallable;
+  private final UnaryCallable<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigCallable;
+  private final OperationCallable<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationCallable;
+  private final UnaryCallable<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigCallable;
+  private final OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1194,6 +1381,34 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
         deleteDnsAuthorizationTransportSettings =
             HttpJsonCallSettings.<DeleteDnsAuthorizationRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteDnsAuthorizationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+        listCertificateIssuanceConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listCertificateIssuanceConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+        getCertificateIssuanceConfigTransportSettings =
+            HttpJsonCallSettings
+                .<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>newBuilder()
+                .setMethodDescriptor(getCertificateIssuanceConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateCertificateIssuanceConfigRequest, Operation>
+        createCertificateIssuanceConfigTransportSettings =
+            HttpJsonCallSettings.<CreateCertificateIssuanceConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCertificateIssuanceConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
+        deleteCertificateIssuanceConfigTransportSettings =
+            HttpJsonCallSettings.<DeleteCertificateIssuanceConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteCertificateIssuanceConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
@@ -1394,6 +1609,43 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
             settings.deleteDnsAuthorizationOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listCertificateIssuanceConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listCertificateIssuanceConfigsTransportSettings,
+            settings.listCertificateIssuanceConfigsSettings(),
+            clientContext);
+    this.listCertificateIssuanceConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCertificateIssuanceConfigsTransportSettings,
+            settings.listCertificateIssuanceConfigsSettings(),
+            clientContext);
+    this.getCertificateIssuanceConfigCallable =
+        callableFactory.createUnaryCallable(
+            getCertificateIssuanceConfigTransportSettings,
+            settings.getCertificateIssuanceConfigSettings(),
+            clientContext);
+    this.createCertificateIssuanceConfigCallable =
+        callableFactory.createUnaryCallable(
+            createCertificateIssuanceConfigTransportSettings,
+            settings.createCertificateIssuanceConfigSettings(),
+            clientContext);
+    this.createCertificateIssuanceConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createCertificateIssuanceConfigTransportSettings,
+            settings.createCertificateIssuanceConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteCertificateIssuanceConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteCertificateIssuanceConfigTransportSettings,
+            settings.deleteCertificateIssuanceConfigSettings(),
+            clientContext);
+    this.deleteCertificateIssuanceConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCertificateIssuanceConfigTransportSettings,
+            settings.deleteCertificateIssuanceConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1431,6 +1683,10 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
     methodDescriptors.add(createDnsAuthorizationMethodDescriptor);
     methodDescriptors.add(updateDnsAuthorizationMethodDescriptor);
     methodDescriptors.add(deleteDnsAuthorizationMethodDescriptor);
+    methodDescriptors.add(listCertificateIssuanceConfigsMethodDescriptor);
+    methodDescriptors.add(getCertificateIssuanceConfigMethodDescriptor);
+    methodDescriptors.add(createCertificateIssuanceConfigMethodDescriptor);
+    methodDescriptors.add(deleteCertificateIssuanceConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1642,6 +1898,51 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
   public OperationCallable<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
       deleteDnsAuthorizationOperationCallable() {
     return deleteDnsAuthorizationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+      listCertificateIssuanceConfigsCallable() {
+    return listCertificateIssuanceConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsPagedCallable() {
+    return listCertificateIssuanceConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigCallable() {
+    return getCertificateIssuanceConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigCallable() {
+    return createCertificateIssuanceConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationCallable() {
+    return createCertificateIssuanceConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigCallable() {
+    return deleteCertificateIssuanceConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationCallable() {
+    return deleteCertificateIssuanceConfigOperationCallable;
   }
 
   @Override
