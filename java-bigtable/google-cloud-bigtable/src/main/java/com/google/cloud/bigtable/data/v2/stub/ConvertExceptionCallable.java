@@ -42,31 +42,32 @@ final class ConvertExceptionCallable<ReadRowsRequest, RowT>
     innerCallable.call(request, observer, context);
   }
 
-  private class ReadRowsConvertExceptionResponseObserver<RowT> implements ResponseObserver<RowT> {
+  private class ReadRowsConvertExceptionResponseObserver<RowT> extends SafeResponseObserver<RowT> {
 
     private final ResponseObserver<RowT> outerObserver;
 
     ReadRowsConvertExceptionResponseObserver(ResponseObserver<RowT> outerObserver) {
+      super(outerObserver);
       this.outerObserver = outerObserver;
     }
 
     @Override
-    public void onStart(StreamController controller) {
+    protected void onStartImpl(StreamController controller) {
       outerObserver.onStart(controller);
     }
 
     @Override
-    public void onResponse(RowT response) {
+    protected void onResponseImpl(RowT response) {
       outerObserver.onResponse(response);
     }
 
     @Override
-    public void onError(Throwable t) {
+    protected void onErrorImpl(Throwable t) {
       outerObserver.onError(convertException(t));
     }
 
     @Override
-    public void onComplete() {
+    protected void onCompleteImpl() {
       outerObserver.onComplete();
     }
   }

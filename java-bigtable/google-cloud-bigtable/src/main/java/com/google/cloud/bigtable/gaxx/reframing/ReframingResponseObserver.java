@@ -17,8 +17,8 @@ package com.google.cloud.bigtable.gaxx.reframing;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ResponseObserver;
-import com.google.api.gax.rpc.StateCheckingResponseObserver;
 import com.google.api.gax.rpc.StreamController;
+import com.google.cloud.bigtable.data.v2.stub.SafeResponseObserver;
 import com.google.common.base.Preconditions;
 import com.google.common.math.IntMath;
 import java.util.concurrent.CancellationException;
@@ -56,8 +56,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * }</pre>
  */
 @InternalApi
-public class ReframingResponseObserver<InnerT, OuterT>
-    extends StateCheckingResponseObserver<InnerT> {
+public class ReframingResponseObserver<InnerT, OuterT> extends SafeResponseObserver<InnerT> {
   // Used as a nonblocking mutex for deliver().
   // 0 means unlocked
   // 1 means locked without contention
@@ -97,6 +96,7 @@ public class ReframingResponseObserver<InnerT, OuterT>
 
   public ReframingResponseObserver(
       ResponseObserver<OuterT> observer, Reframer<OuterT, InnerT> reframer) {
+    super(observer);
     this.outerResponseObserver = observer;
     this.reframer = reframer;
   }

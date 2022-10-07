@@ -49,7 +49,7 @@
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracer$Builder</className>
     </difference>
-     change method args is ok because HeaderTracerStreamingCallable is InternalApi
+    <!-- change method args is ok because HeaderTracerStreamingCallable is InternalApi -->
     <difference>
         <differenceType>7004</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerStreamingCallable</className>
@@ -75,5 +75,10 @@
     <difference>
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/readrows/ReadRowsConvertExceptionCallable</className>
+    </difference>
+    <difference>
+        <differenceType>5001</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/reframing/ReframingResponseObserver</className>
+        <to>com/google/api/gax/rpc/StateCheckingResponseObserver</to>
     </difference>
 </differences>

@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.bigtable.v2.ResponseParams;
+import com.google.cloud.bigtable.data.v2.stub.SafeResponseObserver;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -68,7 +69,7 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
     }
   }
 
-  private class BigtableTracerResponseObserver<ResponseT> implements ResponseObserver<ResponseT> {
+  private class BigtableTracerResponseObserver<ResponseT> extends SafeResponseObserver<ResponseT> {
 
     private final BigtableTracer tracer;
     private final ResponseObserver<ResponseT> outerObserver;
@@ -78,26 +79,28 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
         ResponseObserver<ResponseT> observer,
         BigtableTracer tracer,
         GrpcResponseMetadata metadata) {
+      super(observer);
+
       this.tracer = tracer;
       this.outerObserver = observer;
       this.responseMetadata = metadata;
     }
 
     @Override
-    public void onStart(final StreamController controller) {
+    protected void onStartImpl(final StreamController controller) {
       TracedStreamController tracedController = new TracedStreamController(controller, tracer);
       outerObserver.onStart(tracedController);
     }
 
     @Override
-    public void onResponse(ResponseT response) {
+    protected void onResponseImpl(ResponseT response) {
       Stopwatch stopwatch = Stopwatch.createStarted();
       outerObserver.onResponse(response);
       tracer.afterResponse(stopwatch.elapsed(TimeUnit.MILLISECONDS));
     }
 
     @Override
-    public void onError(Throwable t) {
+    protected void onErrorImpl(Throwable t) {
       // server-timing metric will be added through GrpcResponseMetadata#onHeaders(Metadata),
       // so it's not checking trailing metadata here.
       Metadata metadata = responseMetadata.getMetadata();
@@ -122,13 +125,14 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
           }
         }
       } catch (InvalidProtocolBufferException e) {
+        t.addSuppressed(t);
       }
 
       outerObserver.onError(t);
     }
 
     @Override
-    public void onComplete() {
+    protected void onCompleteImpl() {
       Metadata metadata = responseMetadata.getMetadata();
       Long latency = Util.getGfeLatency(metadata);
       tracer.recordGfeMetadata(latency, null);
@@ -151,6 +155,9 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
           }
         }
       } catch (InvalidProtocolBufferException e) {
+        // InvalidProtocolBufferException will only throw if something changed on
+        // the server side. Location info won't be populated as a result. Ignore
+        // this error and don't bubble it up to user.
       }
 
       outerObserver.onComplete();
