@@ -14,9 +14,9 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
   <developers>
     <developer>

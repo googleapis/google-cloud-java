@@ -8,20 +8,20 @@ set -ef
 # Run this script at the root of google-cloud-java repository
 
 # First, read the values from the parent pom.xml
-parent_version=$(perl -nle 'print $1 if m|<version>(.+)</version>|' google-cloud-gapic-parent/pom.xml |head -1)
-parent_group_id=$(perl -nle 'print $1 if m|<groupId>(.+)</groupId>|' google-cloud-gapic-parent/pom.xml |head -1)
-parent_artifact_id=$(perl -nle 'print $1 if m|<artifactId>(.+)</artifactId>|' google-cloud-gapic-parent/pom.xml |head -1)
+parent_version=$(perl -nle 'print $1 if m|<version>(.+)</version>|' google-cloud-jar-parent/pom.xml |head -1)
+parent_group_id=$(perl -nle 'print $1 if m|<groupId>(.+)</groupId>|' google-cloud-jar-parent/pom.xml |head -1)
+parent_artifact_id=$(perl -nle 'print $1 if m|<artifactId>(.+)</artifactId>|' google-cloud-jar-parent/pom.xml |head -1)
 
 # Then, apply the values as the parent pom of each module
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order | xargs dirname); do
   # example value of module is "./java-accessapproval"
-  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]] || [[ "${module}" = *google-cloud-gapic-parent ]]; then
+  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]] || [[ "${module}" = *google-cloud-jar-parent ]]; then
     continue
   fi
   echo "Processing module $module"
   pushd $module
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>${parent_group_id}<\/groupId>\n    <artifactId>${parent_artifact_id}<\/artifactId>\n    <version>${parent_version}<\/version><!-- {x-version-update:${parent_artifact_id}:current} -->\n    <relativePath>..\/google-cloud-gapic-parent\/pom.xml<\/relativePath>\n  <\/parent>/s"
+  perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>${parent_group_id}<\/groupId>\n    <artifactId>${parent_artifact_id}<\/artifactId>\n    <version>${parent_version}<\/version><!-- {x-version-update:${parent_artifact_id}:current} -->\n    <relativePath>..\/google-cloud-jar-parent\/pom.xml<\/relativePath>\n  <\/parent>/s"
   # execute the replacement in pom.xml
   perl -0pe "$perl_command" pom.xml > pom.xml.new && rm pom.xml && mv pom.xml.new pom.xml
 
@@ -30,7 +30,7 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary
     BOM=$(ls -1 | grep 'bom')'/pom.xml'
     echo the bom is $BOM
     # Search for <parent> tag in module bom and replace the next three lines -- groupId, artifcatId, and version
-    perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>com.google.cloud<\/groupId>\n    <artifactId>google-cloud-shared-config<\/artifactId>\n    <version>1.5.3<\/version>\n  <\/parent>/s"
+    perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>com.google.cloud<\/groupId>\n    <artifactId>google-cloud-pom-parent<\/artifactId>\n    <version>1.0.0-SNAPSHOT<\/version>\n    <relativePath>..\/..\/pom.xml<\/relativePath>\n  <\/parent>/s"
     # execute the replacement in pom.xml
     perl -0pe "$perl_command" "$BOM" > "$BOM".new && rm "$BOM" && mv "$BOM".new "$BOM"
   fi
