@@ -18,7 +18,7 @@
 helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$helperDir/../.." >/dev/null || exit
 
-# Find all directories starting with 'java-', sort them, then join with ':' as the delimiter.
-ls -1 -d java-* | sort | paste -s -d: -
+# Find all directories starting with 'java-', sort them, then join with ',' as the delimiter.
+ls -1 -d java-* | sort | paste -s -d, -
 
 popd >/dev/null || exit

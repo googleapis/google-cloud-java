@@ -46,7 +46,7 @@ function appendAllModules() {
   else
     modules=$(source ./helpers/list-all-modules.sh)
   fi
-  IFS=':'
+  IFS=','
   for module in $modules; do
     # Only include modules with a .terraform subdirectory in the generated config.
     if [ -d "../$module/.terraform" ]; then

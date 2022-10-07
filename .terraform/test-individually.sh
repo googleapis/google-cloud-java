@@ -17,7 +17,7 @@ scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$scriptDir" >/dev/null || exit
 
 modules=$(source ./helpers/list-all-modules.sh)
-IFS=':'
+IFS=','
 for module in $modules; do
   echo "Module: $module"
   if [ -d "../$module/.terraform" ]; then

@@ -46,7 +46,7 @@ function testSingle() {
 
 function testAll() {
   # Execute 'env.sh' scripts for any active modules
-  IFS=':'
+  IFS=','
   for module in $(source ./helpers/list-all-modules.sh); do
     modifyEnvironment "$module"
   done
@@ -65,7 +65,7 @@ source ./helpers/sync-env.sh
 
 if [ -n "$1" ]; then
   # If given a specific module list, only perform integration tests on those.
-  IFS=':'
+  IFS=','
   for module in $1; do
     testSingle "$module" &
   done

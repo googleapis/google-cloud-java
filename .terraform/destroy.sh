@@ -33,7 +33,7 @@ source ./helpers/sync-env.sh
 # Execute 'predestroy.sh' scripts for any active modules
 allModules=$(source ./helpers/list-all-modules.sh)
 activeModules=$(terraform state list | awk -F'[/.]' '{print $2}' | uniq)
-IFS=':'
+IFS=','
 for module in $allModules; do
   friendlyName=$(source ./helpers/get-output-friendly-name.sh "$module")
   if ! contains "$activeModules" "$friendlyName"; then
