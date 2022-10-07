@@ -15,7 +15,7 @@
 #
 
 # Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
+source ./helpers/common.sh
 
 DIALOGFLOW_AGENT=$(getModuleOutput java-dialogflow dialogflow_agent)
 echo "Setting environment variable DIALOGFLOW_AGENT=$DIALOGFLOW_AGENT"

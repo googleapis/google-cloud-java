@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 function initializeGeneratedFiles() {
   cp ./helpers/generated-main.template.tf generated-main.tf
   cp ./helpers/generated-outputs.template.tf generated-outputs.tf
@@ -20,7 +21,7 @@ function initializeGeneratedFiles() {
 }
 
 function appendModule() {
-  friendlyName=$(source ./helpers/get-output-friendly-name.sh "$1")
+  friendlyName=$(getFriendlyOutputName "$1")
 
   # Append the given module to the generated-main.tf configuration to be
   # included in the project's resources during 'terraform apply'.
@@ -44,7 +45,7 @@ function appendAllModules() {
   if [ -n "$1" ]; then
     modules=$1
   else
-    modules=$(source ./helpers/list-all-modules.sh)
+    modules=$(listAllModules)
   fi
   IFS=','
   for module in $modules; do
@@ -59,6 +60,7 @@ function appendAllModules() {
 generateDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$generateDir/.." >/dev/null || exit
 
+source ./helpers/common.sh
 initializeGeneratedFiles
 appendAllModules "$1"
 

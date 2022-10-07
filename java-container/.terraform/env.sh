@@ -15,7 +15,7 @@
 #
 
 # Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
+source ./helpers/common.sh
 
 CONTAINER_NETWORK_NAME=$(getModuleOutput java-container container_network_name)
 echo "Setting environment variable CONTAINER_NETWORK_NAME=$CONTAINER_NETWORK_NAME"

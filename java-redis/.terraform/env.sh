@@ -16,7 +16,7 @@
 #
 
 # Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
+source ./helpers/common.sh
 
 REDIS_NETWORK=$(getModuleOutput java-redis redis_network)
 echo "Setting environment variable REDIS_NETWORK=$REDIS_NETWORK"

@@ -28,30 +28,12 @@ function mvnVerify() {
     -fae \
     verify || exit
 }
-
-function modifyEnvironment() {
-  # Set module-specific environment variables for upcoming integration test(s)
-  if [[ -f "../$1/.terraform/env.sh" ]]; then
-    # shellcheck disable=SC1090
-    source "../$1/.terraform/env.sh"
-  fi
-}
-
 function testSingle() {
-  modifyEnvironment "$1"
   pushd "../$1" >/dev/null || exit
   mvnVerify
   popd >/dev/null || exit
 }
-
 function testAll() {
-  # Execute 'env.sh' scripts for any active modules
-  IFS=','
-  for module in $(source ./helpers/list-all-modules.sh); do
-    modifyEnvironment "$module"
-  done
-
-  # Perform mvn verify on parent project, excluding the given submodules
   pushd "../" >/dev/null || exit
   mvnVerify -pl -:google-cloud-os-login,-:google-cloud-recommender,-:google-cloud-talent
   popd >/dev/null || exit
@@ -61,7 +43,8 @@ function testAll() {
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$scriptDir" >/dev/null || exit
 
-source ./helpers/sync-env.sh
+source ./helpers/gcloud-sync-env.sh
+source ./helpers/populate-env.sh
 
 if [ -n "$1" ]; then
   # If given a specific module list, only perform integration tests on those.

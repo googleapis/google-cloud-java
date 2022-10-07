@@ -15,8 +15,5 @@
 #
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$scriptDir" >/dev/null || exit
-
-source ./setup.sh "$1"
-source ./verify.sh "$1"
-
+time (source ./setup.sh "$1" && source ./verify.sh "$1")
 popd >/dev/null || exit

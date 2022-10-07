@@ -16,7 +16,7 @@
 #
 
 # Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
+source ./helpers/common.sh
 
 MY_SQL_DATABASE=$(getModuleOutput java-bigqueryconnection db_name)
 echo "Setting environment variable MY_SQL_DATABASE=$MY_SQL_DATABASE"

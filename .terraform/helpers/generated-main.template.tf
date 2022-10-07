@@ -18,10 +18,8 @@ locals {
   # needed, and we pass it to every module.
   data = {
     project_id                     = var.project_id
-    project_number                 = var.project_number
     region                         = var.region
     zone                           = var.zone
-    service_account                = var.service_account
     should_enable_apis_on_apply    = var.should_enable_apis_on_apply
     should_disable_apis_on_destroy = var.should_disable_apis_on_destroy
   }

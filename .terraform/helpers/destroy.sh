@@ -14,11 +14,25 @@
 # limitations under the License.
 #
 
-# Ensure current directory is repo root.
 helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$helperDir/../.." >/dev/null || exit
+pushd "$helperDir/.." >/dev/null || exit
 
-# Find all directories starting with 'java-', sort them, then join with ',' as the delimiter.
-ls -1 -d java-* | sort | paste -s -d, -
+# Execute 'predestroy.sh' scripts for any active modules
+source ./helpers/common.sh
+allModules=$(listAllModules)
+activeModules=$(getActiveTerraformModules)
+IFS=','
+for module in $allModules; do
+  friendlyName=$(getFriendlyOutputName "$module")
+  if ! contains "$activeModules" "$friendlyName"; then
+    continue # Skip unless active.
+  fi
 
+  if [[ -f "../$module/.terraform/predestroy.sh" ]]; then
+    # shellcheck disable=SC1090
+    source "../$module/.terraform/predestroy.sh"
+  fi
+done
+
+terraform destroy -auto-approve || exit
 popd >/dev/null || exit

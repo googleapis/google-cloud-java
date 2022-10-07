@@ -17,6 +17,9 @@ scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$scriptDir" >/dev/null || exit
 
 source ./helpers/init.sh "$1"
+source ./helpers/gcloud-login.sh
+source ./helpers/gcloud-create-project.sh
+source ./helpers/gcloud-create-service-account.sh
 source ./helpers/plan.sh
 source ./helpers/apply.sh
 

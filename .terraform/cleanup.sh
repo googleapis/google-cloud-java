@@ -14,4 +14,17 @@
 # limitations under the License.
 #
 
-echo "$1" | tr '-' _
+scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+pushd "$scriptDir" >/dev/null || exit
+
+# Ensure GCP project environment variables are initialized.
+if [[ $(terraform state list) == "" ]]; then
+  echo "Nothing to destroy."
+  exit
+fi
+
+source ./helpers/gcloud-sync-env.sh
+source ./helpers/destroy.sh
+source ./helpers/gcloud-delete-project.sh
+
+popd >/dev/null || exit
