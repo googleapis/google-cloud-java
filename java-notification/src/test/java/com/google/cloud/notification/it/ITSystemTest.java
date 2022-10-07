@@ -59,6 +59,7 @@ public class ITSystemTest {
   private static final Logger log = Logger.getLogger(ITSystemTest.class.getName());
   private static final String STORAGE_SERVICE_AGENT =
       Optional.ofNullable(System.getenv("GOOGLE_STORAGE_SERVICE_AGENT"))
+          .map(agent -> "serviceAccount:" + agent)
           .orElse("allAuthenticatedUsers");
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
@@ -103,11 +104,7 @@ public class ITSystemTest {
 
     Policy policy = topicAdminClient.getIamPolicy(topic.toString());
     Binding binding =
-        Binding.newBuilder()
-            .setRole("roles/owner")
-            .addMembers("serviceAccount:" + STORAGE_SERVICE_AGENT)
-            // .addMembers("allUsers")
-            .build();
+        Binding.newBuilder().setRole("roles/owner").addMembers(STORAGE_SERVICE_AGENT).build();
     Policy newPolicy =
         topicAdminClient.setIamPolicy(
             topic.toString(), policy.toBuilder().addBindings(binding).build());
