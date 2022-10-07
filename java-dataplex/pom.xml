@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataplex-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
+  <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
   <name>Google Cloud Dataplex Parent</name>
   <url>https://github.com/googleapis/java-dataplex</url>
   <description>
@@ -13,9 +13,8 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -70,17 +69,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataplex</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
+        <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataplex-v1</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataplex-v1:current} -->
+        <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataplex-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataplex-v1</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataplex-v1:current} -->
+        <version>1.1.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataplex-v1:current} -->
       </dependency>
 
       <dependency>

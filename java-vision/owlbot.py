@@ -234,7 +234,7 @@ s.remove_staging_dirs()
 java.common_templates(excludes=[
     ".github/*",
     ".kokoro/*",
-    ".samples/*",
+    "samples/*",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",

@@ -4,19 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-notification</artifactId>
-  <version>0.123.10-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
+  <version>0.123.17-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Pub/Sub Notifications for GCS</name>
   <url>https://github.com/googleapis/java-notification</url>
   <description>
     Java idiomatic client for Google Cloud Notification for GCS.
   </description>
-
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
   <developers>
     <developer>

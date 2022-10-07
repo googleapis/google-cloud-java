@@ -216,9 +216,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-   * single domain and its wildcard, e.g. authorization for `example.com` can
-   * be used to issue certificates for `example.com` and `*.example.com`.
+   * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+   * resource covers a single domain and its wildcard, e.g. authorization for
+   * `example.com` can be used to issue certificates for `example.com` and
+   * `*.example.com`.
    * </pre>
    *
    * <code>
@@ -232,9 +233,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-   * single domain and its wildcard, e.g. authorization for `example.com` can
-   * be used to issue certificates for `example.com` and `*.example.com`.
+   * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+   * resource covers a single domain and its wildcard, e.g. authorization for
+   * `example.com` can be used to issue certificates for `example.com` and
+   * `*.example.com`.
    * </pre>
    *
    * <code>
@@ -249,7 +251,8 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Output only. DNS Resource Record that needs to be added to DNS configuration.
+   * Output only. DNS Resource Record that needs to be added to DNS
+   * configuration.
    * </pre>
    *
    * <code>
@@ -263,7 +266,8 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Output only. DNS Resource Record that needs to be added to DNS configuration.
+   * Output only. DNS Resource Record that needs to be added to DNS
+   * configuration.
    * </pre>
    *
    * <code>
@@ -277,7 +281,8 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Output only. DNS Resource Record that needs to be added to DNS configuration.
+   * Output only. DNS Resource Record that needs to be added to DNS
+   * configuration.
    * </pre>
    *
    * <code>

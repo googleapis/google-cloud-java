@@ -53,75 +53,6 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private CreateWorkloadRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.assuredworkloads.v1.Workload.Builder subBuilder = null;
-              if (workload_ != null) {
-                subBuilder = workload_.toBuilder();
-              }
-              workload_ =
-                  input.readMessage(
-                      com.google.cloud.assuredworkloads.v1.Workload.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workload_);
-                workload_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              externalId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
         .internal_static_google_cloud_assuredworkloads_v1_CreateWorkloadRequest_descriptor;
@@ -252,8 +183,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. A identifier associated with the workload and underlying projects
-   * which allows for the break down of billing costs for a workload. The value
+   * Optional. A identifier associated with the workload and underlying projects which
+   * allows for the break down of billing costs for a workload. The value
    * provided for the identifier will add a label to the workload and contained
    * projects with the identifier as the value.
    * </pre>
@@ -278,8 +209,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. A identifier associated with the workload and underlying projects
-   * which allows for the break down of billing costs for a workload. The value
+   * Optional. A identifier associated with the workload and underlying projects which
+   * allows for the break down of billing costs for a workload. The value
    * provided for the identifier will add a label to the workload and contained
    * projects with the identifier as the value.
    * </pre>
@@ -324,7 +255,7 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, externalId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -342,7 +273,7 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, externalId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -364,7 +295,7 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
       if (!getWorkload().equals(other.getWorkload())) return false;
     }
     if (!getExternalId().equals(other.getExternalId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -383,7 +314,7 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getExternalId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -513,17 +444,10 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -634,7 +558,7 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
         externalId_ = other.externalId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -649,18 +573,49 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getWorkloadFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                externalId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -994,8 +949,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects
-     * which allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects which
+     * allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -1019,8 +974,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects
-     * which allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects which
+     * allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -1044,8 +999,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects
-     * which allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects which
+     * allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -1068,8 +1023,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects
-     * which allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects which
+     * allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -1088,8 +1043,8 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects
-     * which allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects which
+     * allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -1142,7 +1097,18 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateWorkloadRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -59,97 +59,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private DataProfileJobConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.privacy.dlp.v2.DataProfileLocation.Builder subBuilder = null;
-              if (location_ != null) {
-                subBuilder = location_.toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.DataProfileLocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(location_);
-                location_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              projectId_ = s;
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                dataProfileActions_ =
-                    new java.util.ArrayList<com.google.privacy.dlp.v2.DataProfileAction>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              dataProfileActions_.add(
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.DataProfileAction.parser(), extensionRegistry));
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                inspectTemplates_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              inspectTemplates_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        dataProfileActions_ = java.util.Collections.unmodifiableList(dataProfileActions_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        inspectTemplates_ = inspectTemplates_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DataProfileJobConfig_descriptor;
@@ -471,7 +380,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < inspectTemplates_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, inspectTemplates_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -498,7 +407,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 1 * getInspectTemplatesList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -521,7 +430,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getInspectTemplatesList().equals(other.getInspectTemplatesList())) return false;
     if (!getDataProfileActionsList().equals(other.getDataProfileActionsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -546,7 +455,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + DATA_PROFILE_ACTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getDataProfileActionsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -680,19 +589,10 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.privacy.dlp.v2.DataProfileJobConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDataProfileActionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -710,10 +610,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00000001);
       if (dataProfileActionsBuilder_ == null) {
         dataProfileActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        dataProfileActions_ = null;
         dataProfileActionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -855,7 +756,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -870,17 +771,63 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.DataProfileJobConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 42:
+              {
+                projectId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.privacy.dlp.v2.DataProfileAction m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.DataProfileAction.parser(), extensionRegistry);
+                if (dataProfileActionsBuilder_ == null) {
+                  ensureDataProfileActionsIsMutable();
+                  dataProfileActions_.add(m);
+                } else {
+                  dataProfileActionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInspectTemplatesIsMutable();
+                inspectTemplates_.add(s);
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.DataProfileJobConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1856,7 +1803,18 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DataProfileJobConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

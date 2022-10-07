@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+  <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <name>Google Cloud Container Analysis Parent</name>
   <url>https://github.com/googleapis/java-containeranalysis</url>
   <description>
@@ -13,9 +13,8 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -62,27 +61,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1</artifactId>
-        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
+        <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.94.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.94.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.94.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.94.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1</artifactId>
-        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
+        <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis</artifactId>
-        <version>2.4.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
 
       <dependency>

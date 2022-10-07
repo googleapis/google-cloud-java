@@ -1044,6 +1044,225 @@ public final class CertificateManagerGrpc {
     return getDeleteDnsAuthorizationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest,
+          com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
+      getListCertificateIssuanceConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCertificateIssuanceConfigs",
+      requestType =
+          com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest.class,
+      responseType =
+          com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest,
+          com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
+      getListCertificateIssuanceConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest,
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
+        getListCertificateIssuanceConfigsMethod;
+    if ((getListCertificateIssuanceConfigsMethod =
+            CertificateManagerGrpc.getListCertificateIssuanceConfigsMethod)
+        == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getListCertificateIssuanceConfigsMethod =
+                CertificateManagerGrpc.getListCertificateIssuanceConfigsMethod)
+            == null) {
+          CertificateManagerGrpc.getListCertificateIssuanceConfigsMethod =
+              getListCertificateIssuanceConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1
+                              .ListCertificateIssuanceConfigsRequest,
+                          com.google.cloud.certificatemanager.v1
+                              .ListCertificateIssuanceConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListCertificateIssuanceConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1
+                                  .ListCertificateIssuanceConfigsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1
+                                  .ListCertificateIssuanceConfigsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier(
+                              "ListCertificateIssuanceConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListCertificateIssuanceConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
+          com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+      getGetCertificateIssuanceConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCertificateIssuanceConfig",
+      requestType =
+          com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest.class,
+      responseType = com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
+          com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+      getGetCertificateIssuanceConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
+            com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+        getGetCertificateIssuanceConfigMethod;
+    if ((getGetCertificateIssuanceConfigMethod =
+            CertificateManagerGrpc.getGetCertificateIssuanceConfigMethod)
+        == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getGetCertificateIssuanceConfigMethod =
+                CertificateManagerGrpc.getGetCertificateIssuanceConfigMethod)
+            == null) {
+          CertificateManagerGrpc.getGetCertificateIssuanceConfigMethod =
+              getGetCertificateIssuanceConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
+                          com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetCertificateIssuanceConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1
+                                  .GetCertificateIssuanceConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier(
+                              "GetCertificateIssuanceConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetCertificateIssuanceConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest,
+          com.google.longrunning.Operation>
+      getCreateCertificateIssuanceConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCertificateIssuanceConfig",
+      requestType =
+          com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest,
+          com.google.longrunning.Operation>
+      getCreateCertificateIssuanceConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest,
+            com.google.longrunning.Operation>
+        getCreateCertificateIssuanceConfigMethod;
+    if ((getCreateCertificateIssuanceConfigMethod =
+            CertificateManagerGrpc.getCreateCertificateIssuanceConfigMethod)
+        == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getCreateCertificateIssuanceConfigMethod =
+                CertificateManagerGrpc.getCreateCertificateIssuanceConfigMethod)
+            == null) {
+          CertificateManagerGrpc.getCreateCertificateIssuanceConfigMethod =
+              getCreateCertificateIssuanceConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1
+                              .CreateCertificateIssuanceConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateCertificateIssuanceConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1
+                                  .CreateCertificateIssuanceConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier(
+                              "CreateCertificateIssuanceConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCertificateIssuanceConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
+          com.google.longrunning.Operation>
+      getDeleteCertificateIssuanceConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCertificateIssuanceConfig",
+      requestType =
+          com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
+          com.google.longrunning.Operation>
+      getDeleteCertificateIssuanceConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
+            com.google.longrunning.Operation>
+        getDeleteCertificateIssuanceConfigMethod;
+    if ((getDeleteCertificateIssuanceConfigMethod =
+            CertificateManagerGrpc.getDeleteCertificateIssuanceConfigMethod)
+        == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getDeleteCertificateIssuanceConfigMethod =
+                CertificateManagerGrpc.getDeleteCertificateIssuanceConfigMethod)
+            == null) {
+          CertificateManagerGrpc.getDeleteCertificateIssuanceConfigMethod =
+              getDeleteCertificateIssuanceConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1
+                              .DeleteCertificateIssuanceConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteCertificateIssuanceConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1
+                                  .DeleteCertificateIssuanceConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier(
+                              "DeleteCertificateIssuanceConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCertificateIssuanceConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CertificateManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CertificateManagerStub> factory =
@@ -1405,6 +1624,66 @@ public final class CertificateManagerGrpc {
           getDeleteDnsAuthorizationMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateIssuanceConfigs in a given project and location.
+     * </pre>
+     */
+    public void listCertificateIssuanceConfigs(
+        com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCertificateIssuanceConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public void getCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCertificateIssuanceConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateIssuanceConfig in a given project and location.
+     * </pre>
+     */
+    public void createCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCertificateIssuanceConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public void deleteCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCertificateIssuanceConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1539,6 +1818,35 @@ public final class CertificateManagerGrpc {
                   new MethodHandlers<
                       com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_DNS_AUTHORIZATION)))
+          .addMethod(
+              getListCertificateIssuanceConfigsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest,
+                      com.google.cloud.certificatemanager.v1
+                          .ListCertificateIssuanceConfigsResponse>(
+                      this, METHODID_LIST_CERTIFICATE_ISSUANCE_CONFIGS)))
+          .addMethod(
+              getGetCertificateIssuanceConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
+                      com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>(
+                      this, METHODID_GET_CERTIFICATE_ISSUANCE_CONFIG)))
+          .addMethod(
+              getCreateCertificateIssuanceConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_CREATE_CERTIFICATE_ISSUANCE_CONFIG)))
+          .addMethod(
+              getDeleteCertificateIssuanceConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
+                      com.google.longrunning.Operation>(
+                      this, METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG)))
           .build();
     }
   }
@@ -1912,6 +2220,74 @@ public final class CertificateManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateIssuanceConfigs in a given project and location.
+     * </pre>
+     */
+    public void listCertificateIssuanceConfigs(
+        com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCertificateIssuanceConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public void getCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCertificateIssuanceConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateIssuanceConfig in a given project and location.
+     * </pre>
+     */
+    public void createCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCertificateIssuanceConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public void deleteCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCertificateIssuanceConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2214,6 +2590,60 @@ public final class CertificateManagerGrpc {
         com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateIssuanceConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse
+        listCertificateIssuanceConfigs(
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCertificateIssuanceConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
+        getCertificateIssuanceConfig(
+            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateIssuanceConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCertificateIssuanceConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -2537,6 +2967,67 @@ public final class CertificateManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteDnsAuthorizationMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateIssuanceConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
+        listCertificateIssuanceConfigs(
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCertificateIssuanceConfigsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
+        getCertificateIssuanceConfig(
+            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCertificateIssuanceConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateIssuanceConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createCertificateIssuanceConfig(
+            com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCertificateIssuanceConfigMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteCertificateIssuanceConfig(
+            com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCertificateIssuanceConfigMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_CERTIFICATES = 0;
@@ -2559,6 +3050,10 @@ public final class CertificateManagerGrpc {
   private static final int METHODID_CREATE_DNS_AUTHORIZATION = 17;
   private static final int METHODID_UPDATE_DNS_AUTHORIZATION = 18;
   private static final int METHODID_DELETE_DNS_AUTHORIZATION = 19;
+  private static final int METHODID_LIST_CERTIFICATE_ISSUANCE_CONFIGS = 20;
+  private static final int METHODID_GET_CERTIFICATE_ISSUANCE_CONFIG = 21;
+  private static final int METHODID_CREATE_CERTIFICATE_ISSUANCE_CONFIG = 22;
+  private static final int METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG = 23;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2690,6 +3185,34 @@ public final class CertificateManagerGrpc {
               (com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_LIST_CERTIFICATE_ISSUANCE_CONFIGS:
+          serviceImpl.listCertificateIssuanceConfigs(
+              (com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.certificatemanager.v1
+                          .ListCertificateIssuanceConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CERTIFICATE_ISSUANCE_CONFIG:
+          serviceImpl.getCertificateIssuanceConfig(
+              (com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CERTIFICATE_ISSUANCE_CONFIG:
+          serviceImpl.createCertificateIssuanceConfig(
+              (com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG:
+          serviceImpl.deleteCertificateIssuanceConfig(
+              (com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2774,6 +3297,10 @@ public final class CertificateManagerGrpc {
                       .addMethod(getCreateDnsAuthorizationMethod())
                       .addMethod(getUpdateDnsAuthorizationMethod())
                       .addMethod(getDeleteDnsAuthorizationMethod())
+                      .addMethod(getListCertificateIssuanceConfigsMethod())
+                      .addMethod(getGetCertificateIssuanceConfigMethod())
+                      .addMethod(getCreateCertificateIssuanceConfigMethod())
+                      .addMethod(getDeleteCertificateIssuanceConfigMethod())
                       .build();
         }
       }

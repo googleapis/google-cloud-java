@@ -27,8 +27,8 @@ public interface DeleteCertificateMapEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A name of the certificate map entry to delete. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
+   * Required. A name of the certificate map entry to delete. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface DeleteCertificateMapEntryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A name of the certificate map entry to delete. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
+   * Required. A name of the certificate map entry to delete. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
    * </pre>
    *
    * <code>

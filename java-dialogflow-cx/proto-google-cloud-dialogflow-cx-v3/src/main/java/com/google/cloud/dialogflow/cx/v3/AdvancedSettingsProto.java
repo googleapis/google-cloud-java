@@ -46,21 +46,25 @@ public final class AdvancedSettingsProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/dialogflow/cx/v3/advanced"
           + "_settings.proto\022\035google.cloud.dialogflow"
-          + ".cx.v3\"\310\001\n\020AdvancedSettings\022Y\n\020logging_s"
-          + "ettings\030\006 \001(\0132?.google.cloud.dialogflow."
-          + "cx.v3.AdvancedSettings.LoggingSettings\032Y"
-          + "\n\017LoggingSettings\022\"\n\032enable_stackdriver_"
-          + "logging\030\002 \001(\010\022\"\n\032enable_interaction_logg"
-          + "ing\030\003 \001(\010B\311\001\n!com.google.cloud.dialogflo"
-          + "w.cx.v3B\025AdvancedSettingsProtoP\001Z?google"
-          + ".golang.org/genproto/googleapis/cloud/di"
-          + "alogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud"
-          + ".Dialogflow.Cx.V3\352\002!Google::Cloud::Dialo"
-          + "gflow::CX::V3b\006proto3"
+          + ".cx.v3\032\037google/api/field_behavior.proto\""
+          + "\310\001\n\020AdvancedSettings\022Y\n\020logging_settings"
+          + "\030\006 \001(\0132?.google.cloud.dialogflow.cx.v3.A"
+          + "dvancedSettings.LoggingSettings\032Y\n\017Loggi"
+          + "ngSettings\022\"\n\032enable_stackdriver_logging"
+          + "\030\002 \001(\010\022\"\n\032enable_interaction_logging\030\003 \001"
+          + "(\010B\311\001\n!com.google.cloud.dialogflow.cx.v3"
+          + "B\025AdvancedSettingsProtoP\001Z?google.golang"
+          + ".org/genproto/googleapis/cloud/dialogflo"
+          + "w/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialog"
+          + "flow.Cx.V3\352\002!Google::Cloud::Dialogflow::"
+          + "CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
     internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_fieldAccessorTable =
@@ -79,6 +83,7 @@ public final class AdvancedSettingsProto {
             new java.lang.String[] {
               "EnableStackdriverLogging", "EnableInteractionLogging",
             });
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

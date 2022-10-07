@@ -16,6 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1;
 
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateIssuanceConfigsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapEntriesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
@@ -292,6 +293,52 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
       deleteDnsAuthorizationOperationSettings() {
     return ((CertificateManagerStubSettings) getStubSettings())
         .deleteDnsAuthorizationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCertificateIssuanceConfigs. */
+  public PagedCallSettings<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .listCertificateIssuanceConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCertificateIssuanceConfig. */
+  public UnaryCallSettings<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .getCertificateIssuanceConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCertificateIssuanceConfig. */
+  public UnaryCallSettings<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .createCertificateIssuanceConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCertificateIssuanceConfig. */
+  public OperationCallSettings<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .createCertificateIssuanceConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCertificateIssuanceConfig. */
+  public UnaryCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .deleteCertificateIssuanceConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCertificateIssuanceConfig. */
+  public OperationCallSettings<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .deleteCertificateIssuanceConfigOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -625,6 +672,47 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
     public OperationCallSettings.Builder<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings() {
       return getStubSettingsBuilder().deleteDnsAuthorizationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCertificateIssuanceConfigs. */
+    public PagedCallSettings.Builder<
+            ListCertificateIssuanceConfigsRequest,
+            ListCertificateIssuanceConfigsResponse,
+            ListCertificateIssuanceConfigsPagedResponse>
+        listCertificateIssuanceConfigsSettings() {
+      return getStubSettingsBuilder().listCertificateIssuanceConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+        getCertificateIssuanceConfigSettings() {
+      return getStubSettingsBuilder().getCertificateIssuanceConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<CreateCertificateIssuanceConfigRequest, Operation>
+        createCertificateIssuanceConfigSettings() {
+      return getStubSettingsBuilder().createCertificateIssuanceConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCertificateIssuanceConfig. */
+    public OperationCallSettings.Builder<
+            CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+        createCertificateIssuanceConfigOperationSettings() {
+      return getStubSettingsBuilder().createCertificateIssuanceConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<DeleteCertificateIssuanceConfigRequest, Operation>
+        deleteCertificateIssuanceConfigSettings() {
+      return getStubSettingsBuilder().deleteCertificateIssuanceConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */
+    public OperationCallSettings.Builder<
+            DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+        deleteCertificateIssuanceConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteCertificateIssuanceConfigOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

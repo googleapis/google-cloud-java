@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.124.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+  <version>0.124.15-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   <name>Google Cloud Error Reporting Parent</name>
   <url>https://github.com/googleapis/java-errorreporting</url>
   <description>
@@ -13,9 +13,8 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -62,18 +61,18 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting</artifactId>
-        <version>0.124.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+        <version>0.124.15-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.90.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.90.15-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
-        <version>0.90.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
+        <version>0.90.15-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
 
       <dependency>

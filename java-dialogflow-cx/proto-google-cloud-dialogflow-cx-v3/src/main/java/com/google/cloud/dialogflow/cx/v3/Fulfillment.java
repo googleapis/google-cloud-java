@@ -64,115 +64,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Fulfillment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                messages_ =
-                    new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.ResponseMessage>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              messages_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.ResponseMessage.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              webhook_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tag_ = s;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                setParameterActions_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              setParameterActions_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                conditionalCases_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              conditionalCases_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 64:
-            {
-              returnPartialResponses_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        messages_ = java.util.Collections.unmodifiableList(messages_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        setParameterActions_ = java.util.Collections.unmodifiableList(setParameterActions_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        conditionalCases_ = java.util.Collections.unmodifiableList(conditionalCases_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
         .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_descriptor;
@@ -285,66 +176,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SetParameterAction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                parameter_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Value.Builder subBuilder = null;
-                if (value_ != null) {
-                  subBuilder = value_.toBuilder();
-                }
-                value_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(value_);
-                  value_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -477,7 +308,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (value_ != null) {
         output.writeMessage(2, getValue());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -492,7 +323,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (value_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getValue());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -513,7 +344,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       if (hasValue()) {
         if (!getValue().equals(other.getValue())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -530,7 +361,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getValue().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -664,17 +495,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -785,7 +609,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         if (other.hasValue()) {
           mergeValue(other.getValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -800,19 +624,43 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  parameter_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1135,7 +983,19 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SetParameterAction(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1253,64 +1113,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ConditionalCases(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  cases_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                cases_.add(
-                    input.readMessage(
-                        com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          cases_ = java.util.Collections.unmodifiableList(cases_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1473,73 +1275,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private Case(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  condition_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    caseContent_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
-                                .CaseContent>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  caseContent_.add(
-                      input.readMessage(
-                          com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
-                              .CaseContent.parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            caseContent_ = java.util.Collections.unmodifiableList(caseContent_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
             .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_Case_descriptor;
@@ -1669,89 +1404,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private CaseContent(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    com.google.cloud.dialogflow.cx.v3.ResponseMessage.Builder subBuilder = null;
-                    if (casesOrMessageCase_ == 1) {
-                      subBuilder =
-                          ((com.google.cloud.dialogflow.cx.v3.ResponseMessage) casesOrMessage_)
-                              .toBuilder();
-                    }
-                    casesOrMessage_ =
-                        input.readMessage(
-                            com.google.cloud.dialogflow.cx.v3.ResponseMessage.parser(),
-                            extensionRegistry);
-                    if (subBuilder != null) {
-                      subBuilder.mergeFrom(
-                          (com.google.cloud.dialogflow.cx.v3.ResponseMessage) casesOrMessage_);
-                      casesOrMessage_ = subBuilder.buildPartial();
-                    }
-                    casesOrMessageCase_ = 1;
-                    break;
-                  }
-                case 18:
-                  {
-                    com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Builder
-                        subBuilder = null;
-                    if (casesOrMessageCase_ == 2) {
-                      subBuilder =
-                          ((com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases)
-                                  casesOrMessage_)
-                              .toBuilder();
-                    }
-                    casesOrMessage_ =
-                        input.readMessage(
-                            com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.parser(),
-                            extensionRegistry);
-                    if (subBuilder != null) {
-                      subBuilder.mergeFrom(
-                          (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases)
-                              casesOrMessage_);
-                      casesOrMessage_ = subBuilder.buildPartial();
-                    }
-                    casesOrMessageCase_ = 2;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1950,7 +1602,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 2,
                 (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases) casesOrMessage_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -1971,7 +1623,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                     (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases)
                         casesOrMessage_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -2000,7 +1652,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             case 0:
             default:
           }
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -2023,7 +1675,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             case 0:
             default:
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -2183,22 +1835,21 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            if (messageBuilder_ != null) {
+              messageBuilder_.clear();
+            }
+            if (additionalCasesBuilder_ != null) {
+              additionalCasesBuilder_.clear();
+            }
             casesOrMessageCase_ = 0;
             casesOrMessage_ = null;
             return this;
@@ -2324,7 +1975,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                   break;
                 }
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -2339,20 +1990,44 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(getMessageFieldBuilder().getBuilder(), extensionRegistry);
+                      casesOrMessageCase_ = 1;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      input.readMessage(
+                          getAdditionalCasesFieldBuilder().getBuilder(), extensionRegistry);
+                      casesOrMessageCase_ = 2;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -2856,7 +2531,19 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new CaseContent(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -3044,7 +2731,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < caseContent_.size(); i++) {
           output.writeMessage(2, caseContent_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3059,7 +2746,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < caseContent_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, caseContent_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3077,7 +2764,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
         if (!getCondition().equals(other.getCondition())) return false;
         if (!getCaseContentList().equals(other.getCaseContentList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3094,7 +2781,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + CASE_CONTENT_FIELD_NUMBER;
           hash = (53 * hash) + getCaseContentList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3231,19 +2918,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getCaseContentFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -3253,10 +2931,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
           if (caseContentBuilder_ == null) {
             caseContent_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            caseContent_ = null;
             caseContentBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -3385,7 +3064,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3400,19 +3079,53 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    condition_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
+                        m =
+                            input.readMessage(
+                                com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
+                                    .CaseContent.parser(),
+                                extensionRegistry);
+                    if (caseContentBuilder_ == null) {
+                      ensureCaseContentIsMutable();
+                      caseContent_.add(m);
+                    } else {
+                      caseContentBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4019,7 +3732,19 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Case(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4134,7 +3859,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < cases_.size(); i++) {
         output.writeMessage(1, cases_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4146,7 +3871,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < cases_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, cases_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4163,7 +3888,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases) obj;
 
       if (!getCasesList().equals(other.getCasesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4178,7 +3903,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CASES_FIELD_NUMBER;
         hash = (53 * hash) + getCasesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4311,19 +4036,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getCasesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -4331,10 +4047,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (casesBuilder_ == null) {
           cases_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          cases_ = null;
           casesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4454,7 +4171,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4469,19 +4186,46 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case m =
+                      input.readMessage(
+                          com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case
+                              .parser(),
+                          extensionRegistry);
+                  if (casesBuilder_ == null) {
+                    ensureCasesIsMutable();
+                    cases_.add(m);
+                  } else {
+                    casesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4916,7 +4660,19 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConditionalCases(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5344,7 +5100,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     if (returnPartialResponses_ != false) {
       output.writeBool(8, returnPartialResponses_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -5372,7 +5128,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     if (returnPartialResponses_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, returnPartialResponses_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -5394,7 +5150,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     if (!getTag().equals(other.getTag())) return false;
     if (!getSetParameterActionsList().equals(other.getSetParameterActionsList())) return false;
     if (!getConditionalCasesList().equals(other.getConditionalCasesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -5423,7 +5179,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONDITIONAL_CASES_FIELD_NUMBER;
       hash = (53 * hash) + getConditionalCasesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -5560,21 +5316,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3.Fulfillment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getMessagesFieldBuilder();
-        getSetParameterActionsFieldBuilder();
-        getConditionalCasesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -5582,10 +5327,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        messages_ = null;
         messagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       webhook_ = "";
 
       returnPartialResponses_ = false;
@@ -5594,16 +5340,18 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
       if (setParameterActionsBuilder_ == null) {
         setParameterActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        setParameterActions_ = null;
         setParameterActionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (conditionalCasesBuilder_ == null) {
         conditionalCases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        conditionalCases_ = null;
         conditionalCasesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -5803,7 +5551,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5818,17 +5566,91 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.cx.v3.Fulfillment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.dialogflow.cx.v3.ResponseMessage m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3.ResponseMessage.parser(),
+                        extensionRegistry);
+                if (messagesBuilder_ == null) {
+                  ensureMessagesIsMutable();
+                  messages_.add(m);
+                } else {
+                  messagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                webhook_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                tag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction.parser(),
+                        extensionRegistry);
+                if (setParameterActionsBuilder_ == null) {
+                  ensureSetParameterActionsIsMutable();
+                  setParameterActions_.add(m);
+                } else {
+                  setParameterActionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.parser(),
+                        extensionRegistry);
+                if (conditionalCasesBuilder_ == null) {
+                  ensureConditionalCasesIsMutable();
+                  conditionalCases_.add(m);
+                } else {
+                  conditionalCasesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 64:
+              {
+                returnPartialResponses_ = input.readBool();
+
+                break;
+              } // case 64
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.cx.v3.Fulfillment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7360,7 +7182,18 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Fulfillment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

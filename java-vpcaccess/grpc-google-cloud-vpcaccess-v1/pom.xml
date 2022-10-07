@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-vpcaccess-v1</artifactId>
-  <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vpcaccess-v1:current} -->
+  <version>2.4.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vpcaccess-v1:current} -->
   <name>grpc-google-cloud-vpcaccess-v1</name>
   <description>GRPC library for google-cloud-vpcaccess</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vpcaccess-parent</artifactId>
-    <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
+    <version>2.4.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
   </parent>
   <dependencies>
     <dependency>

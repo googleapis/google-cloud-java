@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-live-stream-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+  <version>0.5.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   <name>Google Cloud Live Stream Parent</name>
   <url>https://github.com/googleapis/java-video-live-stream</url>
   <description>
@@ -13,9 +13,8 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -70,17 +69,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-live-stream</artifactId>
-        <version>0.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+        <version>0.5.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-live-stream-v1</artifactId>
-        <version>0.5.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-live-stream-v1:current} -->
+        <version>0.5.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-live-stream-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-live-stream-v1</artifactId>
-        <version>0.5.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
+        <version>0.5.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
       </dependency>
 
       <dependency>

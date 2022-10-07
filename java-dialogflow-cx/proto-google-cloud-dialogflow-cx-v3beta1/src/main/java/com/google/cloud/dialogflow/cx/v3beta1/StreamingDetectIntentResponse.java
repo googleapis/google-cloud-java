@@ -67,86 +67,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     return this.unknownFields;
   }
 
-  private StreamingDetectIntentResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult.Builder subBuilder =
-                  null;
-              if (responseCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult) response_)
-                        .toBuilder();
-              }
-              response_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult) response_);
-                response_ = subBuilder.buildPartial();
-              }
-              responseCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.Builder subBuilder = null;
-              if (responseCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse) response_)
-                        .toBuilder();
-              }
-              response_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse) response_);
-                response_ = subBuilder.buildPartial();
-              }
-              responseCase_ = 2;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_StreamingDetectIntentResponse_descriptor;
@@ -341,7 +261,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       output.writeMessage(
           2, (com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse) response_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -360,7 +280,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse) response_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -387,7 +307,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -410,7 +330,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -559,22 +479,21 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
     // Construct using
     // com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (recognitionResultBuilder_ != null) {
+        recognitionResultBuilder_.clear();
+      }
+      if (detectIntentResponseBuilder_ != null) {
+        detectIntentResponseBuilder_.clear();
+      }
       responseCase_ = 0;
       response_ = null;
       return this;
@@ -690,7 +609,7 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -705,19 +624,45 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getRecognitionResultFieldBuilder().getBuilder(), extensionRegistry);
+                responseCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getDetectIntentResponseFieldBuilder().getBuilder(), extensionRegistry);
+                responseCase_ = 2;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1226,7 +1171,18 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingDetectIntentResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

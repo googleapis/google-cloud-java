@@ -16,6 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1;
 
+import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListViolationsPagedResponse;
 import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -104,6 +105,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -164,6 +166,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,6 +227,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -254,6 +258,46 @@ public class AssuredWorkloadsServiceClientTest {
       Workload workload = Workload.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkload(workload, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restrictAllowedResourcesTest() throws Exception {
+    RestrictAllowedResourcesResponse expectedResponse =
+        RestrictAllowedResourcesResponse.newBuilder().build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    RestrictAllowedResourcesRequest request =
+        RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+
+    RestrictAllowedResourcesResponse actualResponse = client.restrictAllowedResources(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestrictAllowedResourcesRequest actualRequest =
+        ((RestrictAllowedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getRestrictionType(), actualRequest.getRestrictionType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restrictAllowedResourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      RestrictAllowedResourcesRequest request =
+          RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+      client.restrictAllowedResources(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -344,6 +388,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -393,6 +438,7 @@ public class AssuredWorkloadsServiceClientTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -508,6 +554,248 @@ public class AssuredWorkloadsServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listWorkloads(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listViolationsTest() throws Exception {
+    Violation responsesElement = Violation.newBuilder().build();
+    ListViolationsResponse expectedResponse =
+        ListViolationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllViolations(Arrays.asList(responsesElement))
+            .build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    WorkloadName parent = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
+
+    ListViolationsPagedResponse pagedListResponse = client.listViolations(parent);
+
+    List<Violation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getViolationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListViolationsRequest actualRequest = ((ListViolationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listViolationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      WorkloadName parent = WorkloadName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]");
+      client.listViolations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listViolationsTest2() throws Exception {
+    Violation responsesElement = Violation.newBuilder().build();
+    ListViolationsResponse expectedResponse =
+        ListViolationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllViolations(Arrays.asList(responsesElement))
+            .build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListViolationsPagedResponse pagedListResponse = client.listViolations(parent);
+
+    List<Violation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getViolationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListViolationsRequest actualRequest = ((ListViolationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listViolationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listViolations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getViolationTest() throws Exception {
+    Violation expectedResponse =
+        Violation.newBuilder()
+            .setName(
+                ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setBeginTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResolveTime(Timestamp.newBuilder().build())
+            .setCategory("category50511102")
+            .setOrgPolicyConstraint("orgPolicyConstraint-2139427917")
+            .setAuditLogLink("auditLogLink-1120762621")
+            .setNonCompliantOrgPolicy("nonCompliantOrgPolicy-1928466552")
+            .setRemediation(Violation.Remediation.newBuilder().build())
+            .setAcknowledged(true)
+            .setAcknowledgementTime(Timestamp.newBuilder().build())
+            .build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    ViolationName name =
+        ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]");
+
+    Violation actualResponse = client.getViolation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetViolationRequest actualRequest = ((GetViolationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getViolationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      ViolationName name =
+          ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]");
+      client.getViolation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getViolationTest2() throws Exception {
+    Violation expectedResponse =
+        Violation.newBuilder()
+            .setName(
+                ViolationName.of("[ORGANIZATION]", "[LOCATION]", "[WORKLOAD]", "[VIOLATION]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setBeginTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setResolveTime(Timestamp.newBuilder().build())
+            .setCategory("category50511102")
+            .setOrgPolicyConstraint("orgPolicyConstraint-2139427917")
+            .setAuditLogLink("auditLogLink-1120762621")
+            .setNonCompliantOrgPolicy("nonCompliantOrgPolicy-1928466552")
+            .setRemediation(Violation.Remediation.newBuilder().build())
+            .setAcknowledged(true)
+            .setAcknowledgementTime(Timestamp.newBuilder().build())
+            .build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Violation actualResponse = client.getViolation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetViolationRequest actualRequest = ((GetViolationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getViolationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getViolation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void acknowledgeViolationTest() throws Exception {
+    AcknowledgeViolationResponse expectedResponse =
+        AcknowledgeViolationResponse.newBuilder().build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    AcknowledgeViolationRequest request =
+        AcknowledgeViolationRequest.newBuilder()
+            .setName("name3373707")
+            .setComment("comment950398559")
+            .setNonCompliantOrgPolicy("nonCompliantOrgPolicy-1928466552")
+            .build();
+
+    AcknowledgeViolationResponse actualResponse = client.acknowledgeViolation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AcknowledgeViolationRequest actualRequest =
+        ((AcknowledgeViolationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getComment(), actualRequest.getComment());
+    Assert.assertEquals(
+        request.getNonCompliantOrgPolicy(), actualRequest.getNonCompliantOrgPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void acknowledgeViolationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      AcknowledgeViolationRequest request =
+          AcknowledgeViolationRequest.newBuilder()
+              .setName("name3373707")
+              .setComment("comment950398559")
+              .setNonCompliantOrgPolicy("nonCompliantOrgPolicy-1928466552")
+              .build();
+      client.acknowledgeViolation(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

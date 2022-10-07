@@ -118,11 +118,3 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
 done
 
 echo "These artifacts don't exist: ${missing_artifacts[*]}"
-
-echo "Generating the release-please configurations..."
-./generation/generate_release_please_config.sh
-echo "Done generating release-please configurations..."
-
-echo "Copying over the README and CHANGELOG files"
-./generation/copy_readme_changelog.sh
-echo "Done copying over the README and CHANGELOG files"

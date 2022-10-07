@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data-bom</artifactId>
-  <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
+  <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   <packaging>pom</packaging>
-
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <name>Google Analytics Data BOM</name>
@@ -57,27 +57,27 @@
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-data</artifactId>
-        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
+        <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-data-v1beta</artifactId>
-        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
+        <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-data-v1alpha</artifactId>
-        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1alpha:current} -->
+        <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-data-v1beta</artifactId>
-        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
+        <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-data-v1alpha</artifactId>
-        <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
+        <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

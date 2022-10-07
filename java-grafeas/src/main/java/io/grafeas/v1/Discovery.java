@@ -36,6 +36,10 @@ public final class Discovery {
       internal_static_grafeas_v1_DiscoveryOccurrence_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_DiscoveryOccurrence_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -50,24 +54,28 @@ public final class Discovery {
           + "e/protobuf/timestamp.proto\032\027google/rpc/s"
           + "tatus.proto\032\027grafeas/v1/common.proto\"<\n\r"
           + "DiscoveryNote\022+\n\ranalysis_kind\030\001 \001(\0162\024.g"
-          + "rafeas.v1.NoteKind\"\303\004\n\023DiscoveryOccurren"
+          + "rafeas.v1.NoteKind\"\374\005\n\023DiscoveryOccurren"
           + "ce\022O\n\023continuous_analysis\030\001 \001(\01622.grafea"
           + "s.v1.DiscoveryOccurrence.ContinuousAnaly"
           + "sis\022G\n\017analysis_status\030\002 \001(\0162..grafeas.v"
-          + "1.DiscoveryOccurrence.AnalysisStatus\0221\n\025"
-          + "analysis_status_error\030\003 \001(\0132\022.google.rpc"
-          + ".Status\022\013\n\003cpe\030\004 \001(\t\0222\n\016last_scan_time\030\005"
-          + " \001(\0132\032.google.protobuf.Timestamp\0225\n\014arch"
-          + "ive_time\030\006 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\"S\n\022ContinuousAnalysis\022#\n\037CONTINU"
-          + "OUS_ANALYSIS_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014"
-          + "\n\010INACTIVE\020\002\"\221\001\n\016AnalysisStatus\022\037\n\033ANALY"
-          + "SIS_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n"
-          + "\010SCANNING\020\002\022\024\n\020FINISHED_SUCCESS\020\003\022\023\n\017FIN"
-          + "ISHED_FAILED\020\004\022\030\n\024FINISHED_UNSUPPORTED\020\005"
-          + "BQ\n\rio.grafeas.v1P\001Z8google.golang.org/g"
-          + "enproto/googleapis/grafeas/v1;grafeas\242\002\003"
-          + "GRAb\006proto3"
+          + "1.DiscoveryOccurrence.AnalysisStatus\022M\n\022"
+          + "analysis_completed\030\007 \001(\01321.grafeas.v1.Di"
+          + "scoveryOccurrence.AnalysisCompleted\022*\n\016a"
+          + "nalysis_error\030\010 \003(\0132\022.google.rpc.Status\022"
+          + "1\n\025analysis_status_error\030\003 \001(\0132\022.google."
+          + "rpc.Status\022\013\n\003cpe\030\004 \001(\t\0222\n\016last_scan_tim"
+          + "e\030\005 \001(\0132\032.google.protobuf.Timestamp\0225\n\014a"
+          + "rchive_time\030\006 \001(\0132\032.google.protobuf.Time"
+          + "stampB\003\340A\003\032*\n\021AnalysisCompleted\022\025\n\ranaly"
+          + "sis_type\030\001 \003(\t\"S\n\022ContinuousAnalysis\022#\n\037"
+          + "CONTINUOUS_ANALYSIS_UNSPECIFIED\020\000\022\n\n\006ACT"
+          + "IVE\020\001\022\014\n\010INACTIVE\020\002\"\243\001\n\016AnalysisStatus\022\037"
+          + "\n\033ANALYSIS_STATUS_UNSPECIFIED\020\000\022\013\n\007PENDI"
+          + "NG\020\001\022\014\n\010SCANNING\020\002\022\024\n\020FINISHED_SUCCESS\020\003"
+          + "\022\014\n\010COMPLETE\020\003\022\023\n\017FINISHED_FAILED\020\004\022\030\n\024F"
+          + "INISHED_UNSUPPORTED\020\005\032\002\020\001BQ\n\rio.grafeas."
+          + "v1P\001Z8google.golang.org/genproto/googlea"
+          + "pis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -93,10 +101,20 @@ public final class Discovery {
             new java.lang.String[] {
               "ContinuousAnalysis",
               "AnalysisStatus",
+              "AnalysisCompleted",
+              "AnalysisError",
               "AnalysisStatusError",
               "Cpe",
               "LastScanTime",
               "ArchiveTime",
+            });
+    internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor =
+        internal_static_grafeas_v1_DiscoveryOccurrence_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor,
+            new java.lang.String[] {
+              "AnalysisType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

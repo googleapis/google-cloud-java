@@ -13,6 +13,9 @@
             "CreateCertificate": {
               "methods": ["createCertificateAsync", "createCertificateAsync", "createCertificateAsync", "createCertificateOperationCallable", "createCertificateCallable"]
             },
+            "CreateCertificateIssuanceConfig": {
+              "methods": ["createCertificateIssuanceConfigAsync", "createCertificateIssuanceConfigAsync", "createCertificateIssuanceConfigAsync", "createCertificateIssuanceConfigOperationCallable", "createCertificateIssuanceConfigCallable"]
+            },
             "CreateCertificateMap": {
               "methods": ["createCertificateMapAsync", "createCertificateMapAsync", "createCertificateMapAsync", "createCertificateMapOperationCallable", "createCertificateMapCallable"]
             },
@@ -24,6 +27,9 @@
             },
             "DeleteCertificate": {
               "methods": ["deleteCertificateAsync", "deleteCertificateAsync", "deleteCertificateAsync", "deleteCertificateOperationCallable", "deleteCertificateCallable"]
+            },
+            "DeleteCertificateIssuanceConfig": {
+              "methods": ["deleteCertificateIssuanceConfigAsync", "deleteCertificateIssuanceConfigAsync", "deleteCertificateIssuanceConfigAsync", "deleteCertificateIssuanceConfigOperationCallable", "deleteCertificateIssuanceConfigCallable"]
             },
             "DeleteCertificateMap": {
               "methods": ["deleteCertificateMapAsync", "deleteCertificateMapAsync", "deleteCertificateMapAsync", "deleteCertificateMapOperationCallable", "deleteCertificateMapCallable"]
@@ -37,6 +43,9 @@
             "GetCertificate": {
               "methods": ["getCertificate", "getCertificate", "getCertificate", "getCertificateCallable"]
             },
+            "GetCertificateIssuanceConfig": {
+              "methods": ["getCertificateIssuanceConfig", "getCertificateIssuanceConfig", "getCertificateIssuanceConfig", "getCertificateIssuanceConfigCallable"]
+            },
             "GetCertificateMap": {
               "methods": ["getCertificateMap", "getCertificateMap", "getCertificateMap", "getCertificateMapCallable"]
             },
@@ -48,6 +57,9 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCertificateIssuanceConfigs": {
+              "methods": ["listCertificateIssuanceConfigs", "listCertificateIssuanceConfigs", "listCertificateIssuanceConfigs", "listCertificateIssuanceConfigsPagedCallable", "listCertificateIssuanceConfigsCallable"]
             },
             "ListCertificateMapEntries": {
               "methods": ["listCertificateMapEntries", "listCertificateMapEntries", "listCertificateMapEntries", "listCertificateMapEntriesPagedCallable", "listCertificateMapEntriesCallable"]

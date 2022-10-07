@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-assured-workloads-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
+  <version>2.2.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
   <name>Google Assured Workloads for Government Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -13,9 +13,8 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gapic-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-parent:current} -->
-    <relativePath>../google-cloud-gapic-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -62,27 +61,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-assured-workloads</artifactId>
-        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
+        <version>2.2.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-assured-workloads-v1</artifactId>
-        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-assured-workloads-v1:current} -->
+        <version>2.2.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-assured-workloads-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-assured-workloads-v1</artifactId>
-        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-assured-workloads-v1:current} -->
+        <version>2.2.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-assured-workloads-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-assured-workloads-v1beta1</artifactId>
-        <version>0.13.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-assured-workloads-v1beta1:current} -->
+        <version>0.14.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-assured-workloads-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-assured-workloads-v1beta1</artifactId>
-        <version>0.13.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-assured-workloads-v1beta1:current} -->
+        <version>0.14.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-assured-workloads-v1beta1:current} -->
       </dependency>
 
       <dependency>

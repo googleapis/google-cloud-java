@@ -27,11 +27,11 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization, folder, or project the assets belong
-   * to. Format: "organizations/[organization-number]" (such as
-   * "organizations/123"), "projects/[project-id]" (such as
-   * "projects/my-project-id"), "projects/[project-number]" (such as
-   * "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
+   * Required. Name of the organization, folder, or project the assets belong to. Format:
+   * "organizations/[organization-number]" (such as "organizations/123"),
+   * "projects/[project-id]" (such as "projects/my-project-id"),
+   * "projects/[project-number]" (such as "projects/12345"), or
+   * "folders/[folder-number]" (such as "folders/12345").
    * </pre>
    *
    * <code>
@@ -45,11 +45,11 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization, folder, or project the assets belong
-   * to. Format: "organizations/[organization-number]" (such as
-   * "organizations/123"), "projects/[project-id]" (such as
-   * "projects/my-project-id"), "projects/[project-number]" (such as
-   * "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
+   * Required. Name of the organization, folder, or project the assets belong to. Format:
+   * "organizations/[organization-number]" (such as "organizations/123"),
+   * "projects/[project-id]" (such as "projects/my-project-id"),
+   * "projects/[project-number]" (such as "projects/12345"), or
+   * "folders/[folder-number]" (such as "folders/12345").
    * </pre>
    *
    * <code>

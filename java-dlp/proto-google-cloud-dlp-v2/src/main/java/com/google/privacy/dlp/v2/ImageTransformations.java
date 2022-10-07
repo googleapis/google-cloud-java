@@ -52,63 +52,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private ImageTransformations(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                transforms_ =
-                    new java.util.ArrayList<
-                        com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              transforms_.add(
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        transforms_ = java.util.Collections.unmodifiableList(transforms_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ImageTransformations_descriptor;
@@ -336,138 +279,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this.unknownFields;
     }
 
-    private ImageTransformation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26:
-              {
-                com.google.privacy.dlp.v2.Color.Builder subBuilder = null;
-                if (redactionColor_ != null) {
-                  subBuilder = redactionColor_.toBuilder();
-                }
-                redactionColor_ =
-                    input.readMessage(com.google.privacy.dlp.v2.Color.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(redactionColor_);
-                  redactionColor_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes
-                        .Builder
-                    subBuilder = null;
-                if (targetCase_ == 4) {
-                  subBuilder =
-                      ((com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                                  .SelectedInfoTypes)
-                              target_)
-                          .toBuilder();
-                }
-                target_ =
-                    input.readMessage(
-                        com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                            .SelectedInfoTypes.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                              .SelectedInfoTypes)
-                          target_);
-                  target_ = subBuilder.buildPartial();
-                }
-                targetCase_ = 4;
-                break;
-              }
-            case 42:
-              {
-                com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes
-                        .Builder
-                    subBuilder = null;
-                if (targetCase_ == 5) {
-                  subBuilder =
-                      ((com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                                  .AllInfoTypes)
-                              target_)
-                          .toBuilder();
-                }
-                target_ =
-                    input.readMessage(
-                        com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                            .AllInfoTypes.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                              .AllInfoTypes)
-                          target_);
-                  target_ = subBuilder.buildPartial();
-                }
-                targetCase_ = 5;
-                break;
-              }
-            case 50:
-              {
-                com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText.Builder
-                    subBuilder = null;
-                if (targetCase_ == 6) {
-                  subBuilder =
-                      ((com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText)
-                              target_)
-                          .toBuilder();
-                }
-                target_ =
-                    input.readMessage(
-                        com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText)
-                          target_);
-                  target_ = subBuilder.buildPartial();
-                }
-                targetCase_ = 6;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_descriptor;
@@ -590,61 +401,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return this.unknownFields;
       }
 
-      private SelectedInfoTypes(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 42:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoType>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  infoTypes_.add(
-                      input.readMessage(
-                          com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_SelectedInfoTypes_descriptor;
@@ -763,7 +519,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         for (int i = 0; i < infoTypes_.size(); i++) {
           output.writeMessage(5, infoTypes_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -775,7 +531,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         for (int i = 0; i < infoTypes_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, infoTypes_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -795,7 +551,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                 obj;
 
         if (!getInfoTypesList().equals(other.getInfoTypesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -810,7 +566,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           hash = (37 * hash) + INFO_TYPES_FIELD_NUMBER;
           hash = (53 * hash) + getInfoTypesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -968,19 +724,10 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
         // Construct using
         // com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getInfoTypesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -988,10 +735,11 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           super.clear();
           if (infoTypesBuilder_ == null) {
             infoTypes_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            infoTypes_ = null;
             infoTypesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -1124,7 +872,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1139,21 +887,44 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.SelectedInfoTypes
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 42:
+                  {
+                    com.google.privacy.dlp.v2.InfoType m =
+                        input.readMessage(
+                            com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
+                    if (infoTypesBuilder_ == null) {
+                      ensureInfoTypesIsMutable();
+                      infoTypes_.add(m);
+                    } else {
+                      infoTypesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation
-                        .SelectedInfoTypes)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1604,7 +1375,19 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new SelectedInfoTypes(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -1661,46 +1444,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return this.unknownFields;
       }
 
-      private AllInfoTypes(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_AllInfoTypes_descriptor;
@@ -1732,7 +1475,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1741,7 +1484,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         if (size != -1) return size;
 
         size = 0;
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1759,7 +1502,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes other =
             (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes) obj;
 
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1770,7 +1513,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1915,17 +1658,10 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
         // Construct using
         // com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -2022,7 +1758,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           if (other
               == com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes
                   .getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2037,20 +1773,31 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllInfoTypes)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -2091,7 +1838,19 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new AllInfoTypes(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2147,46 +1906,6 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         return this.unknownFields;
       }
 
-      private AllText(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.privacy.dlp.v2.DlpProto
             .internal_static_google_privacy_dlp_v2_ImageTransformations_ImageTransformation_AllText_descriptor;
@@ -2217,7 +1936,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2226,7 +1945,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         if (size != -1) return size;
 
         size = 0;
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2244,7 +1963,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText other =
             (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText) obj;
 
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2255,7 +1974,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2398,17 +2117,10 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
         // Construct using
         // com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -2502,7 +2214,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           if (other
               == com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText
                   .getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2517,20 +2229,31 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -2571,7 +2294,19 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new AllText(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2921,7 +2656,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             6,
             (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText) target_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2955,7 +2690,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                 (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.AllText)
                     target_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2989,7 +2724,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3020,7 +2755,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3154,22 +2889,24 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
 
       // Construct using
       // com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (selectedInfoTypesBuilder_ != null) {
+          selectedInfoTypesBuilder_.clear();
+        }
+        if (allInfoTypesBuilder_ != null) {
+          allInfoTypesBuilder_.clear();
+        }
+        if (allTextBuilder_ != null) {
+          allTextBuilder_.clear();
+        }
         if (redactionColorBuilder_ == null) {
           redactionColor_ = null;
         } else {
@@ -3313,7 +3050,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3328,19 +3065,57 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26:
+                {
+                  input.readMessage(
+                      getRedactionColorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getSelectedInfoTypesFieldBuilder().getBuilder(), extensionRegistry);
+                  targetCase_ = 4;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getAllInfoTypesFieldBuilder().getBuilder(), extensionRegistry);
+                  targetCase_ = 5;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(getAllTextFieldBuilder().getBuilder(), extensionRegistry);
+                  targetCase_ = 6;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4369,7 +4144,19 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ImageTransformation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4455,7 +4242,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < transforms_.size(); i++) {
       output.writeMessage(2, transforms_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4467,7 +4254,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < transforms_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, transforms_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4484,7 +4271,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         (com.google.privacy.dlp.v2.ImageTransformations) obj;
 
     if (!getTransformsList().equals(other.getTransformsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4499,7 +4286,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + TRANSFORMS_FIELD_NUMBER;
       hash = (53 * hash) + getTransformsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4628,19 +4415,10 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.privacy.dlp.v2.ImageTransformations.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTransformsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -4648,10 +4426,11 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       super.clear();
       if (transformsBuilder_ == null) {
         transforms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        transforms_ = null;
         transformsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -4765,7 +4544,7 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4780,17 +4559,45 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.ImageTransformations parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation.parser(),
+                        extensionRegistry);
+                if (transformsBuilder_ == null) {
+                  ensureTransformsIsMutable();
+                  transforms_.add(m);
+                } else {
+                  transformsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.ImageTransformations) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5131,7 +4938,18 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ImageTransformations(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

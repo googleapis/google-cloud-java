@@ -95,12 +95,6 @@ git commit -am 'chore: create google-cloud-gapic-bom'
 
 cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 
-# Generate Release Please configuration files
-bash ../../generate_release_please_config.sh
-
-git add --all
-git commit -am 'chore: create release please configuration'
-
 ../../generate_coverage_aggregator.sh
 
 git add --all
@@ -112,9 +106,16 @@ git add --all
 git commit -am 'chore: delete non-auto-generated samples'
 
 ../../update_versions.sh
+../../apply_current_versions.sh
 
 git add --all
 git commit -am 'chore: update versions to latest in maven'
+
+# Generate Release Please configuration files
+bash ../../generate_release_please_config.sh
+
+git add --all
+git commit -am 'chore: create release please configuration'
 
 ../../update_owlbot_postprocessor_config.sh
 

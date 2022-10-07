@@ -41,6 +41,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   private DiscoveryOccurrence() {
     continuousAnalysis_ = 0;
     analysisStatus_ = 0;
+    analysisError_ = java.util.Collections.emptyList();
     cpe_ = "";
   }
 
@@ -53,111 +54,6 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
-  }
-
-  private DiscoveryOccurrence(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              continuousAnalysis_ = rawValue;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              analysisStatus_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (analysisStatusError_ != null) {
-                subBuilder = analysisStatusError_.toBuilder();
-              }
-              analysisStatusError_ =
-                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(analysisStatusError_);
-                analysisStatusError_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cpe_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastScanTime_ != null) {
-                subBuilder = lastScanTime_.toBuilder();
-              }
-              lastScanTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastScanTime_);
-                lastScanTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (archiveTime_ != null) {
-                subBuilder = archiveTime_.toBuilder();
-              }
-              archiveTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(archiveTime_);
-                archiveTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,7 +249,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * <code>ANALYSIS_STATUS_UNSPECIFIED = 0;</code>
      */
-    ANALYSIS_STATUS_UNSPECIFIED(0),
+    ANALYSIS_STATUS_UNSPECIFIED(0, 0),
     /**
      *
      *
@@ -363,7 +259,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * <code>PENDING = 1;</code>
      */
-    PENDING(1),
+    PENDING(1, 1),
     /**
      *
      *
@@ -373,7 +269,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * <code>SCANNING = 2;</code>
      */
-    SCANNING(2),
+    SCANNING(2, 2),
     /**
      *
      *
@@ -383,7 +279,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * <code>FINISHED_SUCCESS = 3;</code>
      */
-    FINISHED_SUCCESS(3),
+    FINISHED_SUCCESS(3, 3),
     /**
      *
      *
@@ -394,20 +290,30 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      * <code>FINISHED_FAILED = 4;</code>
      */
-    FINISHED_FAILED(4),
+    FINISHED_FAILED(5, 4),
     /**
      *
      *
      * <pre>
-     * The resource is known not to be supported
+     * The resource is known not to be supported.
      * </pre>
      *
      * <code>FINISHED_UNSUPPORTED = 5;</code>
      */
-    FINISHED_UNSUPPORTED(5),
-    UNRECOGNIZED(-1),
+    FINISHED_UNSUPPORTED(6, 5),
+    UNRECOGNIZED(-1, -1),
     ;
 
+    /**
+     *
+     *
+     * <pre>
+     * Analysis has completed.
+     * </pre>
+     *
+     * <code>COMPLETE = 3;</code>
+     */
+    public static final AnalysisStatus COMPLETE = FINISHED_SUCCESS;
     /**
      *
      *
@@ -452,6 +358,16 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Analysis has completed.
+     * </pre>
+     *
+     * <code>COMPLETE = 3;</code>
+     */
+    public static final int COMPLETE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * Analysis has finished unsuccessfully, the analysis itself is in a bad
      * state.
      * </pre>
@@ -463,7 +379,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource is known not to be supported
+     * The resource is known not to be supported.
      * </pre>
      *
      * <code>FINISHED_UNSUPPORTED = 5;</code>
@@ -471,7 +387,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public static final int FINISHED_UNSUPPORTED_VALUE = 5;
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
@@ -523,11 +439,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return getDescriptor().getValues().get(index);
     }
 
     public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
@@ -538,7 +454,19 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       return io.grafeas.v1.DiscoveryOccurrence.getDescriptor().getEnumTypes().get(1);
     }
 
-    private static final AnalysisStatus[] VALUES = values();
+    private static final AnalysisStatus[] VALUES = getStaticValuesArray();
+
+    private static AnalysisStatus[] getStaticValuesArray() {
+      return new AnalysisStatus[] {
+        ANALYSIS_STATUS_UNSPECIFIED,
+        PENDING,
+        SCANNING,
+        FINISHED_SUCCESS,
+        COMPLETE,
+        FINISHED_FAILED,
+        FINISHED_UNSUPPORTED,
+      };
+    }
 
     public static AnalysisStatus valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -550,13 +478,669 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       return VALUES[desc.getIndex()];
     }
 
+    private final int index;
     private final int value;
 
-    private AnalysisStatus(int value) {
+    private AnalysisStatus(int index, int value) {
+      this.index = index;
       this.value = value;
     }
 
     // @@protoc_insertion_point(enum_scope:grafeas.v1.DiscoveryOccurrence.AnalysisStatus)
+  }
+
+  public interface AnalysisCompletedOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @return A list containing the analysisType.
+     */
+    java.util.List<java.lang.String> getAnalysisTypeList();
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @return The count of analysisType.
+     */
+    int getAnalysisTypeCount();
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The analysisType at the given index.
+     */
+    java.lang.String getAnalysisType(int index);
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the analysisType at the given index.
+     */
+    com.google.protobuf.ByteString getAnalysisTypeBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which analysis completed successfully. Multiple types of
+   * analysis can be performed on a single resource.
+   * </pre>
+   *
+   * Protobuf type {@code grafeas.v1.DiscoveryOccurrence.AnalysisCompleted}
+   */
+  public static final class AnalysisCompleted extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)
+      AnalysisCompletedOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AnalysisCompleted.newBuilder() to construct.
+    private AnalysisCompleted(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AnalysisCompleted() {
+      analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AnalysisCompleted();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.Discovery
+          .internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.grafeas.v1.Discovery
+          .internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.class,
+              io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder.class);
+    }
+
+    public static final int ANALYSIS_TYPE_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList analysisType_;
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @return A list containing the analysisType.
+     */
+    public com.google.protobuf.ProtocolStringList getAnalysisTypeList() {
+      return analysisType_;
+    }
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @return The count of analysisType.
+     */
+    public int getAnalysisTypeCount() {
+      return analysisType_.size();
+    }
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The analysisType at the given index.
+     */
+    public java.lang.String getAnalysisType(int index) {
+      return analysisType_.get(index);
+    }
+    /**
+     * <code>repeated string analysis_type = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the analysisType at the given index.
+     */
+    public com.google.protobuf.ByteString getAnalysisTypeBytes(int index) {
+      return analysisType_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < analysisType_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, analysisType_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < analysisType_.size(); i++) {
+          dataSize += computeStringSizeNoTag(analysisType_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAnalysisTypeList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)) {
+        return super.equals(obj);
+      }
+      io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted other =
+          (io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted) obj;
+
+      if (!getAnalysisTypeList().equals(other.getAnalysisTypeList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAnalysisTypeCount() > 0) {
+        hash = (37 * hash) + ANALYSIS_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getAnalysisTypeList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which analysis completed successfully. Multiple types of
+     * analysis can be performed on a single resource.
+     * </pre>
+     *
+     * Protobuf type {@code grafeas.v1.DiscoveryOccurrence.AnalysisCompleted}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.class,
+                io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder.class);
+      }
+
+      // Construct using io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.Discovery
+            .internal_static_grafeas_v1_DiscoveryOccurrence_AnalysisCompleted_descriptor;
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getDefaultInstanceForType() {
+        return io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted build() {
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted buildPartial() {
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result =
+            new io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          analysisType_ = analysisType_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.analysisType_ = analysisType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted) {
+          return mergeFrom((io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted other) {
+        if (other == io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance())
+          return this;
+        if (!other.analysisType_.isEmpty()) {
+          if (analysisType_.isEmpty()) {
+            analysisType_ = other.analysisType_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAnalysisTypeIsMutable();
+            analysisType_.addAll(other.analysisType_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAnalysisTypeIsMutable();
+                  analysisType_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList analysisType_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureAnalysisTypeIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          analysisType_ = new com.google.protobuf.LazyStringArrayList(analysisType_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @return A list containing the analysisType.
+       */
+      public com.google.protobuf.ProtocolStringList getAnalysisTypeList() {
+        return analysisType_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @return The count of analysisType.
+       */
+      public int getAnalysisTypeCount() {
+        return analysisType_.size();
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The analysisType at the given index.
+       */
+      public java.lang.String getAnalysisType(int index) {
+        return analysisType_.get(index);
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the analysisType at the given index.
+       */
+      public com.google.protobuf.ByteString getAnalysisTypeBytes(int index) {
+        return analysisType_.getByteString(index);
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The analysisType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnalysisType(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnalysisTypeIsMutable();
+        analysisType_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @param value The analysisType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAnalysisType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnalysisTypeIsMutable();
+        analysisType_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @param values The analysisType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAnalysisType(java.lang.Iterable<java.lang.String> values) {
+        ensureAnalysisTypeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, analysisType_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAnalysisType() {
+        analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string analysis_type = 1;</code>
+       *
+       * @param value The bytes of the analysisType to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAnalysisTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAnalysisTypeIsMutable();
+        analysisType_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)
+    }
+
+    // @@protoc_insertion_point(class_scope:grafeas.v1.DiscoveryOccurrence.AnalysisCompleted)
+    private static final io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted();
+    }
+
+    public static io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AnalysisCompleted> PARSER =
+        new com.google.protobuf.AbstractParser<AnalysisCompleted>() {
+          @java.lang.Override
+          public AnalysisCompleted parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AnalysisCompleted> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AnalysisCompleted> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
@@ -631,6 +1215,108 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus result =
         io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.valueOf(analysisStatus_);
     return result == null ? io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.UNRECOGNIZED : result;
+  }
+
+  public static final int ANALYSIS_COMPLETED_FIELD_NUMBER = 7;
+  private io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysisCompleted_;
+  /**
+   * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+   *
+   * @return Whether the analysisCompleted field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnalysisCompleted() {
+    return analysisCompleted_ != null;
+  }
+  /**
+   * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+   *
+   * @return The analysisCompleted.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getAnalysisCompleted() {
+    return analysisCompleted_ == null
+        ? io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance()
+        : analysisCompleted_;
+  }
+  /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+  @java.lang.Override
+  public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder
+      getAnalysisCompletedOrBuilder() {
+    return getAnalysisCompleted();
+  }
+
+  public static final int ANALYSIS_ERROR_FIELD_NUMBER = 8;
+  private java.util.List<com.google.rpc.Status> analysisError_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.rpc.Status> getAnalysisErrorList() {
+    return analysisError_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder> getAnalysisErrorOrBuilderList() {
+    return analysisError_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  @java.lang.Override
+  public int getAnalysisErrorCount() {
+    return analysisError_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getAnalysisError(int index) {
+    return analysisError_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getAnalysisErrorOrBuilder(int index) {
+    return analysisError_.get(index);
   }
 
   public static final int ANALYSIS_STATUS_ERROR_FIELD_NUMBER = 3;
@@ -869,7 +1555,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (archiveTime_ != null) {
       output.writeMessage(6, getArchiveTime());
     }
-    unknownFields.writeTo(output);
+    if (analysisCompleted_ != null) {
+      output.writeMessage(7, getAnalysisCompleted());
+    }
+    for (int i = 0; i < analysisError_.size(); i++) {
+      output.writeMessage(8, analysisError_.get(i));
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -900,7 +1592,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (archiveTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getArchiveTime());
     }
-    size += unknownFields.getSerializedSize();
+    if (analysisCompleted_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAnalysisCompleted());
+    }
+    for (int i = 0; i < analysisError_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, analysisError_.get(i));
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -917,6 +1615,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
     if (continuousAnalysis_ != other.continuousAnalysis_) return false;
     if (analysisStatus_ != other.analysisStatus_) return false;
+    if (hasAnalysisCompleted() != other.hasAnalysisCompleted()) return false;
+    if (hasAnalysisCompleted()) {
+      if (!getAnalysisCompleted().equals(other.getAnalysisCompleted())) return false;
+    }
+    if (!getAnalysisErrorList().equals(other.getAnalysisErrorList())) return false;
     if (hasAnalysisStatusError() != other.hasAnalysisStatusError()) return false;
     if (hasAnalysisStatusError()) {
       if (!getAnalysisStatusError().equals(other.getAnalysisStatusError())) return false;
@@ -930,7 +1633,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     if (hasArchiveTime()) {
       if (!getArchiveTime().equals(other.getArchiveTime())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -945,6 +1648,14 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + continuousAnalysis_;
     hash = (37 * hash) + ANALYSIS_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + analysisStatus_;
+    if (hasAnalysisCompleted()) {
+      hash = (37 * hash) + ANALYSIS_COMPLETED_FIELD_NUMBER;
+      hash = (53 * hash) + getAnalysisCompleted().hashCode();
+    }
+    if (getAnalysisErrorCount() > 0) {
+      hash = (37 * hash) + ANALYSIS_ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getAnalysisErrorList().hashCode();
+    }
     if (hasAnalysisStatusError()) {
       hash = (37 * hash) + ANALYSIS_STATUS_ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getAnalysisStatusError().hashCode();
@@ -959,7 +1670,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + ARCHIVE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getArchiveTime().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1086,17 +1797,10 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using io.grafeas.v1.DiscoveryOccurrence.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1106,6 +1810,19 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
 
       analysisStatus_ = 0;
 
+      if (analysisCompletedBuilder_ == null) {
+        analysisCompleted_ = null;
+      } else {
+        analysisCompleted_ = null;
+        analysisCompletedBuilder_ = null;
+      }
+      if (analysisErrorBuilder_ == null) {
+        analysisError_ = java.util.Collections.emptyList();
+      } else {
+        analysisError_ = null;
+        analysisErrorBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (analysisStatusErrorBuilder_ == null) {
         analysisStatusError_ = null;
       } else {
@@ -1151,8 +1868,23 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public io.grafeas.v1.DiscoveryOccurrence buildPartial() {
       io.grafeas.v1.DiscoveryOccurrence result = new io.grafeas.v1.DiscoveryOccurrence(this);
+      int from_bitField0_ = bitField0_;
       result.continuousAnalysis_ = continuousAnalysis_;
       result.analysisStatus_ = analysisStatus_;
+      if (analysisCompletedBuilder_ == null) {
+        result.analysisCompleted_ = analysisCompleted_;
+      } else {
+        result.analysisCompleted_ = analysisCompletedBuilder_.build();
+      }
+      if (analysisErrorBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          analysisError_ = java.util.Collections.unmodifiableList(analysisError_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.analysisError_ = analysisError_;
+      } else {
+        result.analysisError_ = analysisErrorBuilder_.build();
+      }
       if (analysisStatusErrorBuilder_ == null) {
         result.analysisStatusError_ = analysisStatusError_;
       } else {
@@ -1224,6 +1956,36 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (other.analysisStatus_ != 0) {
         setAnalysisStatusValue(other.getAnalysisStatusValue());
       }
+      if (other.hasAnalysisCompleted()) {
+        mergeAnalysisCompleted(other.getAnalysisCompleted());
+      }
+      if (analysisErrorBuilder_ == null) {
+        if (!other.analysisError_.isEmpty()) {
+          if (analysisError_.isEmpty()) {
+            analysisError_ = other.analysisError_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAnalysisErrorIsMutable();
+            analysisError_.addAll(other.analysisError_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.analysisError_.isEmpty()) {
+          if (analysisErrorBuilder_.isEmpty()) {
+            analysisErrorBuilder_.dispose();
+            analysisErrorBuilder_ = null;
+            analysisError_ = other.analysisError_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            analysisErrorBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAnalysisErrorFieldBuilder()
+                    : null;
+          } else {
+            analysisErrorBuilder_.addAllMessages(other.analysisError_);
+          }
+        }
+      }
       if (other.hasAnalysisStatusError()) {
         mergeAnalysisStatusError(other.getAnalysisStatusError());
       }
@@ -1237,7 +1999,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (other.hasArchiveTime()) {
         mergeArchiveTime(other.getArchiveTime());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1252,19 +2014,91 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grafeas.v1.DiscoveryOccurrence parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                continuousAnalysis_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                analysisStatus_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getAnalysisStatusErrorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                cpe_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getLastScanTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getArchiveTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAnalysisCompletedFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (analysisErrorBuilder_ == null) {
+                  ensureAnalysisErrorIsMutable();
+                  analysisError_.add(m);
+                } else {
+                  analysisErrorBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grafeas.v1.DiscoveryOccurrence) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int continuousAnalysis_ = 0;
     /**
@@ -1451,6 +2285,488 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       analysisStatus_ = 0;
       onChanged();
       return this;
+    }
+
+    private io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysisCompleted_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted,
+            io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder,
+            io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder>
+        analysisCompletedBuilder_;
+    /**
+     * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+     *
+     * @return Whether the analysisCompleted field is set.
+     */
+    public boolean hasAnalysisCompleted() {
+      return analysisCompletedBuilder_ != null || analysisCompleted_ != null;
+    }
+    /**
+     * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+     *
+     * @return The analysisCompleted.
+     */
+    public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getAnalysisCompleted() {
+      if (analysisCompletedBuilder_ == null) {
+        return analysisCompleted_ == null
+            ? io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance()
+            : analysisCompleted_;
+      } else {
+        return analysisCompletedBuilder_.getMessage();
+      }
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    public Builder setAnalysisCompleted(io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted value) {
+      if (analysisCompletedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        analysisCompleted_ = value;
+        onChanged();
+      } else {
+        analysisCompletedBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    public Builder setAnalysisCompleted(
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder builderForValue) {
+      if (analysisCompletedBuilder_ == null) {
+        analysisCompleted_ = builderForValue.build();
+        onChanged();
+      } else {
+        analysisCompletedBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    public Builder mergeAnalysisCompleted(
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted value) {
+      if (analysisCompletedBuilder_ == null) {
+        if (analysisCompleted_ != null) {
+          analysisCompleted_ =
+              io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.newBuilder(analysisCompleted_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          analysisCompleted_ = value;
+        }
+        onChanged();
+      } else {
+        analysisCompletedBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    public Builder clearAnalysisCompleted() {
+      if (analysisCompletedBuilder_ == null) {
+        analysisCompleted_ = null;
+        onChanged();
+      } else {
+        analysisCompleted_ = null;
+        analysisCompletedBuilder_ = null;
+      }
+
+      return this;
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder
+        getAnalysisCompletedBuilder() {
+
+      onChanged();
+      return getAnalysisCompletedFieldBuilder().getBuilder();
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder
+        getAnalysisCompletedOrBuilder() {
+      if (analysisCompletedBuilder_ != null) {
+        return analysisCompletedBuilder_.getMessageOrBuilder();
+      } else {
+        return analysisCompleted_ == null
+            ? io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance()
+            : analysisCompleted_;
+      }
+    }
+    /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted,
+            io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder,
+            io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder>
+        getAnalysisCompletedFieldBuilder() {
+      if (analysisCompletedBuilder_ == null) {
+        analysisCompletedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted,
+                io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder,
+                io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder>(
+                getAnalysisCompleted(), getParentForChildren(), isClean());
+        analysisCompleted_ = null;
+      }
+      return analysisCompletedBuilder_;
+    }
+
+    private java.util.List<com.google.rpc.Status> analysisError_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAnalysisErrorIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        analysisError_ = new java.util.ArrayList<com.google.rpc.Status>(analysisError_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        analysisErrorBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public java.util.List<com.google.rpc.Status> getAnalysisErrorList() {
+      if (analysisErrorBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(analysisError_);
+      } else {
+        return analysisErrorBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public int getAnalysisErrorCount() {
+      if (analysisErrorBuilder_ == null) {
+        return analysisError_.size();
+      } else {
+        return analysisErrorBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public com.google.rpc.Status getAnalysisError(int index) {
+      if (analysisErrorBuilder_ == null) {
+        return analysisError_.get(index);
+      } else {
+        return analysisErrorBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder setAnalysisError(int index, com.google.rpc.Status value) {
+      if (analysisErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnalysisErrorIsMutable();
+        analysisError_.set(index, value);
+        onChanged();
+      } else {
+        analysisErrorBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder setAnalysisError(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (analysisErrorBuilder_ == null) {
+        ensureAnalysisErrorIsMutable();
+        analysisError_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        analysisErrorBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder addAnalysisError(com.google.rpc.Status value) {
+      if (analysisErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnalysisErrorIsMutable();
+        analysisError_.add(value);
+        onChanged();
+      } else {
+        analysisErrorBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder addAnalysisError(int index, com.google.rpc.Status value) {
+      if (analysisErrorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAnalysisErrorIsMutable();
+        analysisError_.add(index, value);
+        onChanged();
+      } else {
+        analysisErrorBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder addAnalysisError(com.google.rpc.Status.Builder builderForValue) {
+      if (analysisErrorBuilder_ == null) {
+        ensureAnalysisErrorIsMutable();
+        analysisError_.add(builderForValue.build());
+        onChanged();
+      } else {
+        analysisErrorBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder addAnalysisError(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (analysisErrorBuilder_ == null) {
+        ensureAnalysisErrorIsMutable();
+        analysisError_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        analysisErrorBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder addAllAnalysisError(java.lang.Iterable<? extends com.google.rpc.Status> values) {
+      if (analysisErrorBuilder_ == null) {
+        ensureAnalysisErrorIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, analysisError_);
+        onChanged();
+      } else {
+        analysisErrorBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder clearAnalysisError() {
+      if (analysisErrorBuilder_ == null) {
+        analysisError_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        analysisErrorBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public Builder removeAnalysisError(int index) {
+      if (analysisErrorBuilder_ == null) {
+        ensureAnalysisErrorIsMutable();
+        analysisError_.remove(index);
+        onChanged();
+      } else {
+        analysisErrorBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public com.google.rpc.Status.Builder getAnalysisErrorBuilder(int index) {
+      return getAnalysisErrorFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public com.google.rpc.StatusOrBuilder getAnalysisErrorOrBuilder(int index) {
+      if (analysisErrorBuilder_ == null) {
+        return analysisError_.get(index);
+      } else {
+        return analysisErrorBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder>
+        getAnalysisErrorOrBuilderList() {
+      if (analysisErrorBuilder_ != null) {
+        return analysisErrorBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(analysisError_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public com.google.rpc.Status.Builder addAnalysisErrorBuilder() {
+      return getAnalysisErrorFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public com.google.rpc.Status.Builder addAnalysisErrorBuilder(int index) {
+      return getAnalysisErrorFieldBuilder()
+          .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates any errors encountered during analysis of a resource. There
+     * could be 0 or more of these errors.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+     */
+    public java.util.List<com.google.rpc.Status.Builder> getAnalysisErrorBuilderList() {
+      return getAnalysisErrorFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getAnalysisErrorFieldBuilder() {
+      if (analysisErrorBuilder_ == null) {
+        analysisErrorBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                analysisError_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        analysisError_ = null;
+      }
+      return analysisErrorBuilder_;
     }
 
     private com.google.rpc.Status analysisStatusError_;
@@ -2178,7 +3494,18 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DiscoveryOccurrence(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

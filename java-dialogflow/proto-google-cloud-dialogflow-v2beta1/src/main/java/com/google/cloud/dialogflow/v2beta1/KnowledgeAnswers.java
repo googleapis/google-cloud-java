@@ -52,63 +52,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private KnowledgeAnswers(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                answers_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              answers_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        answers_ = java.util.Collections.unmodifiableList(answers_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.SessionProto
         .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
@@ -308,78 +251,6 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Answer(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                source_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                faqQuestion_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                answer_ = s;
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                matchConfidenceLevel_ = rawValue;
-                break;
-              }
-            case 45:
-              {
-                matchConfidence_ = input.readFloat();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -851,7 +722,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
         output.writeFloat(5, matchConfidence_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -878,7 +749,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, matchConfidence_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -900,7 +771,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       if (matchConfidenceLevel_ != other.matchConfidenceLevel_) return false;
       if (java.lang.Float.floatToIntBits(getMatchConfidence())
           != java.lang.Float.floatToIntBits(other.getMatchConfidence())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -921,7 +792,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + matchConfidenceLevel_;
       hash = (37 * hash) + MATCH_CONFIDENCE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getMatchConfidence());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1053,17 +924,10 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1183,7 +1047,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         if (other.getMatchConfidence() != 0F) {
           setMatchConfidence(other.getMatchConfidence());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1198,19 +1062,61 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  source_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  faqQuestion_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  answer_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  matchConfidenceLevel_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 45:
+                {
+                  matchConfidence_ = input.readFloat();
+
+                  break;
+                } // case 45
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1793,7 +1699,19 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Answer(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1901,7 +1819,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < answers_.size(); i++) {
       output.writeMessage(1, answers_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1913,7 +1831,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < answers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, answers_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1930,7 +1848,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) obj;
 
     if (!getAnswersList().equals(other.getAnswersList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1945,7 +1863,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ANSWERS_FIELD_NUMBER;
       hash = (53 * hash) + getAnswersList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2074,19 +1992,10 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAnswersFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2094,10 +2003,11 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       super.clear();
       if (answersBuilder_ == null) {
         answers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        answers_ = null;
         answersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -2212,7 +2122,7 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2227,18 +2137,45 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.parser(),
+                        extensionRegistry);
+                if (answersBuilder_ == null) {
+                  ensureAnswersIsMutable();
+                  answers_.add(m);
+                } else {
+                  answersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2641,7 +2578,18 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KnowledgeAnswers(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
