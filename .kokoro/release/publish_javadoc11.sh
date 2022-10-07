@@ -34,7 +34,7 @@ doclet_name="java-docfx-doclet-1.7.0.jar"
 
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+excluded_modules=('google-cloud-gapic-bom')
 
 for module in $modules
 do

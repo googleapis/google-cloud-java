@@ -19,7 +19,6 @@
   </properties>
 
   <modules>
-    <module>CoverageAggregator</module>
     <module>google-cloud-gapic-bom</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
@@ -156,27 +155,7 @@
   </modules>
 
   <build>
-    <plugins>
-      <!-- jacoco code coverage -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>test</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+    <plugins>Ï
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>

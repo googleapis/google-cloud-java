@@ -318,13 +318,6 @@ def generate(
         ],
         cwd=monorepo_root,
     )
-    print("Regenerating CoverageAggregator")
-    subprocess.check_call(
-        [
-            "bash", "generation/generate_coverage_aggregator.sh"
-        ],
-        cwd=monorepo_root,
-    )
 
     print("Applying the versions")
     subprocess.check_call(

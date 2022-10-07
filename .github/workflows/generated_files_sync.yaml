@@ -77,9 +77,6 @@ jobs:
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
-    - name: Generate CoverageAggregator/pom.xml
-      run: |
-        bash generation/generate_coverage_aggregator.sh
     - name: Apply versions from versions.txt files
       run: |
         bash generation/apply_current_versions.sh
