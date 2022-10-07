@@ -489,6 +489,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-publicca</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
       <version>3.0.12-SNAPSHOT</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
     </dependency>
