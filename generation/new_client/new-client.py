@@ -326,6 +326,14 @@ def generate(
         cwd=monorepo_root,
     )
 
+    print("Applying the versions")
+    subprocess.check_call(
+        [
+            "bash", "generation/apply_current_versions.sh"
+        ],
+        cwd=monorepo_root,
+    )
+
     # Add the files to commit
     subprocess.check_call([
         "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
