@@ -47,6 +47,7 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
+      source ./.terraform/helpers/init.sh "$module_list"
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
