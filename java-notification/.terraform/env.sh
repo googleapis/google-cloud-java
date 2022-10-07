@@ -16,7 +16,7 @@
 #
 
 # Current working directory will be <repo-root>/.terraform/
-source ./helpers/get-module-output.sh
+source ./helpers/common.sh
 
 GOOGLE_STORAGE_SERVICE_AGENT=$(getModuleOutput java-notification storage_service_agent)
 echo "Setting environment variable GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"

@@ -3,6 +3,3 @@
 output "project_id" {
   value = local.data.project_id
 }
-output "service_account" {
-  value = local.data.service_account
-}
