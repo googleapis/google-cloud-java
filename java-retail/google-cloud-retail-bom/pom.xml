@@ -5,11 +5,11 @@
   <artifactId>google-cloud-retail-bom</artifactId>
   <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-retail:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.3</version>
   </parent>
 
   <name>Google Cloud Retail BOM</name>
