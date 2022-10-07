@@ -28,8 +28,12 @@ jobs:
     - name: Generate root pom.xml file
       run: |
         bash generation/print_root_pom.sh > pom.xml
+    - name: Apply versions from versions.txt files
+      run: |
+        bash generation/apply_current_versions.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
+
   release-please-config:
     name: Release Please config files do not have diff from generated ones
     runs-on: ubuntu-latest
@@ -40,6 +44,7 @@ jobs:
         bash generation/generate_release_please_config.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
+
   gapic-bom:
     name: google-cloud-gapic-bom does not have diff from generated one
     runs-on: ubuntu-latest
@@ -48,6 +53,9 @@ jobs:
     - name: Generate google-cloud-gapic-bom/pom.xml
       run: |
         bash generation/generate_gapic_bom.sh
+    - name: Apply versions from versions.txt files
+      run: |
+        bash generation/apply_current_versions.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
@@ -72,6 +80,9 @@ jobs:
     - name: Generate CoverageAggregator/pom.xml
       run: |
         bash generation/generate_coverage_aggregator.sh
+    - name: Apply versions from versions.txt files
+      run: |
+        bash generation/apply_current_versions.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
   owlbot-py:
@@ -79,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Generate google-cloud-gapic-bom/pom.xml
+      - name: Generate owlbot.py files
         run: |
           bash generation/update_owlbot_postprocessor_config.sh
       - name: Fail if there's any difference
