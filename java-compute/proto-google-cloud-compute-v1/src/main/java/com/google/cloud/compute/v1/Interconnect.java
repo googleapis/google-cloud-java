@@ -69,227 +69,6 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Interconnect(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000040;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              name_ = s;
-              break;
-            }
-          case 29323874:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              customerName_ = s;
-              break;
-            }
-          case 112582658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
-              nocContactEmail_ = s;
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 360411096:
-            {
-              bitField0_ |= 0x00010000;
-              requestedLinkCount_ = input.readInt32();
-              break;
-            }
-          case 878060682:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
-              state_ = s;
-              break;
-            }
-          case 1318718842:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                circuitInfos_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.InterconnectCircuitInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              circuitInfos_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectCircuitInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 1608566778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              operationalStatus_ = s;
-              break;
-            }
-          case 1661886154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              peerIpAddress_ = s;
-              break;
-            }
-          case 2115872986:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                expectedOutages_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.InterconnectOutageNotification>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              expectedOutages_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectOutageNotification.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -1971520086:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
-              location_ = s;
-              break;
-            }
-          case -1007858776:
-            {
-              bitField0_ |= 0x00008000;
-              provisionedLinkCount_ = input.readInt32();
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              description_ = s;
-              break;
-            }
-          case -891859974:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                interconnectAttachments_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
-              }
-              interconnectAttachments_.add(s);
-              break;
-            }
-          case -750119662:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              googleIpAddress_ = s;
-              break;
-            }
-          case -729566584:
-            {
-              bitField0_ |= 0x00000001;
-              adminEnabled_ = input.readBool();
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00040000;
-              selfLink_ = s;
-              break;
-            }
-          case -447253160:
-            {
-              bitField0_ |= 0x00020000;
-              satisfiesPzs_ = input.readBool();
-              break;
-            }
-          case -173645222:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              interconnectType_ = s;
-              break;
-            }
-          case -109305094:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              linkType_ = s;
-              break;
-            }
-          case -15411542:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              googleReferenceId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        circuitInfos_ = java.util.Collections.unmodifiableList(circuitInfos_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        expectedOutages_ = java.util.Collections.unmodifiableList(expectedOutages_);
-      }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
-        interconnectAttachments_ = interconnectAttachments_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_Interconnect_descriptor;
@@ -2401,7 +2180,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 534944469, googleReferenceId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2492,7 +2271,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(534944469, googleReferenceId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2591,7 +2370,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2694,7 +2473,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2823,20 +2602,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.Interconnect.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCircuitInfosFieldBuilder();
-        getExpectedOutagesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2846,10 +2615,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       if (circuitInfosBuilder_ == null) {
         circuitInfos_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        circuitInfos_ = null;
         circuitInfosBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       customerName_ = "";
@@ -2858,10 +2628,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       if (expectedOutagesBuilder_ == null) {
         expectedOutages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        expectedOutages_ = null;
         expectedOutagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       googleIpAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       googleReferenceId_ = "";
@@ -3232,7 +3003,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         state_ = other.state_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3247,17 +3018,186 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.Interconnect parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 26989658
+            case 29323874:
+              {
+                customerName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 29323874
+            case 112582658:
+              {
+                nocContactEmail_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 112582658
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 244202930
+            case 360411096:
+              {
+                requestedLinkCount_ = input.readInt32();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 360411096
+            case 878060682:
+              {
+                state_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 878060682
+            case 1318718842:
+              {
+                com.google.cloud.compute.v1.InterconnectCircuitInfo m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.InterconnectCircuitInfo.parser(),
+                        extensionRegistry);
+                if (circuitInfosBuilder_ == null) {
+                  ensureCircuitInfosIsMutable();
+                  circuitInfos_.add(m);
+                } else {
+                  circuitInfosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1318718842
+            case 1608566778:
+              {
+                operationalStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 1608566778
+            case 1661886154:
+              {
+                peerIpAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 1661886154
+            case 2115872986:
+              {
+                com.google.cloud.compute.v1.InterconnectOutageNotification m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.InterconnectOutageNotification.parser(),
+                        extensionRegistry);
+                if (expectedOutagesBuilder_ == null) {
+                  ensureExpectedOutagesIsMutable();
+                  expectedOutages_.add(m);
+                } else {
+                  expectedOutagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 2115872986
+            case -1971520086:
+              {
+                location_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -1971520086
+            case -1007858776:
+              {
+                provisionedLinkCount_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -1007858776
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -911466526
+            case -891859974:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInterconnectAttachmentsIsMutable();
+                interconnectAttachments_.add(s);
+                break;
+              } // case -891859974
+            case -750119662:
+              {
+                googleIpAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -750119662
+            case -729566584:
+              {
+                adminEnabled_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -729566584
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case -645248918
+            case -447253160:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case -447253160
+            case -173645222:
+              {
+                interconnectType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case -173645222
+            case -109305094:
+              {
+                linkType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case -109305094
+            case -15411542:
+              {
+                googleReferenceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case -15411542
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.Interconnect) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6407,7 +6347,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Interconnect(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

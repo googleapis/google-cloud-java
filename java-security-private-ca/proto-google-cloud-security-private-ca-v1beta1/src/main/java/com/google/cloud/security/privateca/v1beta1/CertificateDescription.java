@@ -54,185 +54,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private CertificateDescription(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.security.privateca.v1beta1.CertificateDescription.SubjectDescription
-                      .Builder
-                  subBuilder = null;
-              if (subjectDescription_ != null) {
-                subBuilder = subjectDescription_.toBuilder();
-              }
-              subjectDescription_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1beta1.CertificateDescription
-                          .SubjectDescription.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(subjectDescription_);
-                subjectDescription_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.Builder subBuilder =
-                  null;
-              if (configValues_ != null) {
-                subBuilder = configValues_.toBuilder();
-              }
-              configValues_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configValues_);
-                configValues_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.security.privateca.v1beta1.PublicKey.Builder subBuilder = null;
-              if (publicKey_ != null) {
-                subBuilder = publicKey_.toBuilder();
-              }
-              publicKey_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1beta1.PublicKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(publicKey_);
-                publicKey_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId.Builder
-                  subBuilder = null;
-              if (subjectKeyId_ != null) {
-                subBuilder = subjectKeyId_.toBuilder();
-              }
-              subjectKeyId_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(subjectKeyId_);
-                subjectKeyId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId.Builder
-                  subBuilder = null;
-              if (authorityKeyId_ != null) {
-                subBuilder = authorityKeyId_.toBuilder();
-              }
-              authorityKeyId_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authorityKeyId_);
-                authorityKeyId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                crlDistributionPoints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              crlDistributionPoints_.add(s);
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                aiaIssuingCertificateUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              aiaIssuingCertificateUrls_.add(s);
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.security.privateca.v1beta1.CertificateDescription
-                      .CertificateFingerprint.Builder
-                  subBuilder = null;
-              if (certFingerprint_ != null) {
-                subBuilder = certFingerprint_.toBuilder();
-              }
-              certFingerprint_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1beta1.CertificateDescription
-                          .CertificateFingerprint.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(certFingerprint_);
-                certFingerprint_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        crlDistributionPoints_ = crlDistributionPoints_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        aiaIssuingCertificateUrls_ = aiaIssuingCertificateUrls_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1beta1_CertificateDescription_descriptor;
@@ -517,139 +338,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SubjectDescription(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.security.privateca.v1beta1.Subject.Builder subBuilder = null;
-                if (subject_ != null) {
-                  subBuilder = subject_.toBuilder();
-                }
-                subject_ =
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1beta1.Subject.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(subject_);
-                  subject_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                commonName_ = s;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.security.privateca.v1beta1.SubjectAltNames.Builder subBuilder =
-                    null;
-                if (subjectAltName_ != null) {
-                  subBuilder = subjectAltName_.toBuilder();
-                }
-                subjectAltName_ =
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1beta1.SubjectAltNames.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(subjectAltName_);
-                  subjectAltName_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                hexSerialNumber_ = s;
-                break;
-              }
-            case 42:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (lifetime_ != null) {
-                  subBuilder = lifetime_.toBuilder();
-                }
-                lifetime_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(lifetime_);
-                  lifetime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 50:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (notBeforeTime_ != null) {
-                  subBuilder = notBeforeTime_.toBuilder();
-                }
-                notBeforeTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(notBeforeTime_);
-                  notBeforeTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 58:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (notAfterTime_ != null) {
-                  subBuilder = notAfterTime_.toBuilder();
-                }
-                notAfterTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(notAfterTime_);
-                  notAfterTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1044,7 +732,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (notAfterTime_ != null) {
         output.writeMessage(7, getNotAfterTime());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1074,7 +762,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (notAfterTime_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getNotAfterTime());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1115,7 +803,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (hasNotAfterTime()) {
         if (!getNotAfterTime().equals(other.getNotAfterTime())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1150,7 +838,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + NOT_AFTER_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getNotAfterTime().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1307,17 +995,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.cloud.security.privateca.v1beta1.CertificateDescription.SubjectDescription.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1501,7 +1182,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         if (other.hasNotAfterTime()) {
           mergeNotAfterTime(other.getNotAfterTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1516,21 +1197,74 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1beta1.CertificateDescription.SubjectDescription
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getSubjectFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  commonName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getSubjectAltNameFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  hexSerialNumber_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getLifetimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(getNotBeforeTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(getNotAfterTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1beta1.CertificateDescription
-                      .SubjectDescription)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2720,7 +2454,19 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SubjectDescription(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2807,52 +2553,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private KeyId(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                keyId_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1beta1_CertificateDescription_KeyId_descriptor;
@@ -2937,7 +2637,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keyId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2949,7 +2649,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, keyId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2967,7 +2667,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
           (com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId) obj;
 
       if (!getKeyId().equals(other.getKeyId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2980,7 +2680,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getKeyId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3121,17 +2821,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3231,7 +2924,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
           keyId_ = other.keyId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3246,20 +2939,37 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  keyId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1beta1.CertificateDescription.KeyId)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3410,7 +3120,19 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new KeyId(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3493,52 +3215,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private CertificateFingerprint(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                sha256Hash_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3624,7 +3300,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sha256Hash_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sha256Hash_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3636,7 +3312,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sha256Hash_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sha256Hash_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3659,7 +3335,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
                   obj;
 
       if (!getSha256Hash().equals(other.getSha256Hash())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3672,7 +3348,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SHA256_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getSha256Hash().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3828,17 +3504,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.cloud.security.privateca.v1beta1.CertificateDescription.CertificateFingerprint.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3949,7 +3618,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
           sha256Hash_ = other.sha256Hash_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3964,21 +3633,37 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1beta1.CertificateDescription.CertificateFingerprint
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sha256Hash_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1beta1.CertificateDescription
-                      .CertificateFingerprint)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4127,7 +3812,19 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CertificateFingerprint(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4656,7 +4353,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     if (certFingerprint_ != null) {
       output.writeMessage(8, getCertFingerprint());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4699,7 +4396,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     if (certFingerprint_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCertFingerprint());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4742,7 +4439,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     if (hasCertFingerprint()) {
       if (!getCertFingerprint().equals(other.getCertFingerprint())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4785,7 +4482,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + CERT_FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getCertFingerprint().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4918,17 +4615,10 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
 
     // Construct using
     // com.google.cloud.security.privateca.v1beta1.CertificateDescription.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -5135,7 +4825,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (other.hasCertFingerprint()) {
         mergeCertFingerprint(other.getCertFingerprint());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5150,19 +4840,82 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1beta1.CertificateDescription parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getSubjectDescriptionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getConfigValuesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getPublicKeyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getSubjectKeyIdFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getAuthorityKeyIdFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCrlDistributionPointsIsMutable();
+                crlDistributionPoints_.add(s);
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAiaIssuingCertificateUrlsIsMutable();
+                aiaIssuingCertificateUrls_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getCertFingerprintFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.security.privateca.v1beta1.CertificateDescription)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6853,7 +6606,18 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CertificateDescription(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

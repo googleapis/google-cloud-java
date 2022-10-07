@@ -54,107 +54,6 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private TopologyConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                computations_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.ComputationTopology>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              computations_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.ComputationTopology.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                dataDiskAssignments_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.DataDiskAssignment>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              dataDiskAssignments_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.DataDiskAssignment.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                userStageToComputationNameMap_ =
-                    com.google.protobuf.MapField.newMapField(
-                        UserStageToComputationNameMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  userStageToComputationNameMap__ =
-                      input.readMessage(
-                          UserStageToComputationNameMapDefaultEntryHolder.defaultEntry
-                              .getParserForType(),
-                          extensionRegistry);
-              userStageToComputationNameMap_
-                  .getMutableMap()
-                  .put(
-                      userStageToComputationNameMap__.getKey(),
-                      userStageToComputationNameMap__.getValue());
-              break;
-            }
-          case 32:
-            {
-              forwardingKeyBits_ = input.readInt32();
-              break;
-            }
-          case 40:
-            {
-              persistentStateVersion_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        computations_ = java.util.Collections.unmodifiableList(computations_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        dataDiskAssignments_ = java.util.Collections.unmodifiableList(dataDiskAssignments_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.StreamingProto
         .internal_static_google_dataflow_v1beta3_TopologyConfig_descriptor;
@@ -493,7 +392,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     if (persistentStateVersion_ != 0) {
       output.writeInt32(5, persistentStateVersion_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -528,7 +427,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     if (persistentStateVersion_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, persistentStateVersion_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -550,7 +449,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         .equals(other.internalGetUserStageToComputationNameMap())) return false;
     if (getForwardingKeyBits() != other.getForwardingKeyBits()) return false;
     if (getPersistentStateVersion() != other.getPersistentStateVersion()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -577,7 +476,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getForwardingKeyBits();
     hash = (37 * hash) + PERSISTENT_STATE_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getPersistentStateVersion();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -727,20 +626,10 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.dataflow.v1beta3.TopologyConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getComputationsFieldBuilder();
-        getDataDiskAssignmentsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -748,16 +637,18 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (computationsBuilder_ == null) {
         computations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        computations_ = null;
         computationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (dataDiskAssignmentsBuilder_ == null) {
         dataDiskAssignments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        dataDiskAssignments_ = null;
         dataDiskAssignmentsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableUserStageToComputationNameMap().clear();
       forwardingKeyBits_ = 0;
 
@@ -924,7 +815,7 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getPersistentStateVersion() != 0) {
         setPersistentStateVersion(other.getPersistentStateVersion());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -939,17 +830,85 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.dataflow.v1beta3.TopologyConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.dataflow.v1beta3.ComputationTopology m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.ComputationTopology.parser(),
+                        extensionRegistry);
+                if (computationsBuilder_ == null) {
+                  ensureComputationsIsMutable();
+                  computations_.add(m);
+                } else {
+                  computationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.dataflow.v1beta3.DataDiskAssignment m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.DataDiskAssignment.parser(), extensionRegistry);
+                if (dataDiskAssignmentsBuilder_ == null) {
+                  ensureDataDiskAssignmentsIsMutable();
+                  dataDiskAssignments_.add(m);
+                } else {
+                  dataDiskAssignmentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    userStageToComputationNameMap__ =
+                        input.readMessage(
+                            UserStageToComputationNameMapDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableUserStageToComputationNameMap()
+                    .getMutableMap()
+                    .put(
+                        userStageToComputationNameMap__.getKey(),
+                        userStageToComputationNameMap__.getValue());
+                break;
+              } // case 26
+            case 32:
+              {
+                forwardingKeyBits_ = input.readInt32();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                persistentStateVersion_ = input.readInt32();
+
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.dataflow.v1beta3.TopologyConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1975,7 +1934,18 @@ public final class TopologyConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TopologyConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

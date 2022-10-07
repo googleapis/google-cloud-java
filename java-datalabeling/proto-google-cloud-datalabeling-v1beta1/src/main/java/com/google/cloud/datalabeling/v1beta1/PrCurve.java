@@ -44,91 +44,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PrCurve(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder subBuilder = null;
-              if (annotationSpec_ != null) {
-                subBuilder = annotationSpec_.toBuilder();
-              }
-              annotationSpec_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.AnnotationSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(annotationSpec_);
-                annotationSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 21:
-            {
-              areaUnderCurve_ = input.readFloat();
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                confidenceMetricsEntries_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              confidenceMetricsEntries_.add(
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 37:
-            {
-              meanAveragePrecision_ = input.readFloat();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        confidenceMetricsEntries_ =
-            java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_PrCurve_descriptor;
@@ -309,95 +224,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ConfidenceMetricsEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13:
-              {
-                confidenceThreshold_ = input.readFloat();
-                break;
-              }
-            case 21:
-              {
-                recall_ = input.readFloat();
-                break;
-              }
-            case 29:
-              {
-                precision_ = input.readFloat();
-                break;
-              }
-            case 37:
-              {
-                f1Score_ = input.readFloat();
-                break;
-              }
-            case 45:
-              {
-                recallAt1_ = input.readFloat();
-                break;
-              }
-            case 53:
-              {
-                precisionAt1_ = input.readFloat();
-                break;
-              }
-            case 61:
-              {
-                f1ScoreAt1_ = input.readFloat();
-                break;
-              }
-            case 69:
-              {
-                recallAt5_ = input.readFloat();
-                break;
-              }
-            case 77:
-              {
-                precisionAt5_ = input.readFloat();
-                break;
-              }
-            case 85:
-              {
-                f1ScoreAt5_ = input.readFloat();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -647,7 +473,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Float.floatToRawIntBits(f1ScoreAt5_) != 0) {
         output.writeFloat(10, f1ScoreAt5_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -686,7 +512,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Float.floatToRawIntBits(f1ScoreAt5_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(10, f1ScoreAt5_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -722,7 +548,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
           != java.lang.Float.floatToIntBits(other.getPrecisionAt5())) return false;
       if (java.lang.Float.floatToIntBits(getF1ScoreAt5())
           != java.lang.Float.floatToIntBits(other.getF1ScoreAt5())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -753,7 +579,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getPrecisionAt5());
       hash = (37 * hash) + F1_SCORE_AT5_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getF1ScoreAt5());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -879,17 +705,10 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1040,7 +859,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         if (other.getF1ScoreAt5() != 0F) {
           setF1ScoreAt5(other.getF1ScoreAt5());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1055,19 +874,91 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  confidenceThreshold_ = input.readFloat();
+
+                  break;
+                } // case 13
+              case 21:
+                {
+                  recall_ = input.readFloat();
+
+                  break;
+                } // case 21
+              case 29:
+                {
+                  precision_ = input.readFloat();
+
+                  break;
+                } // case 29
+              case 37:
+                {
+                  f1Score_ = input.readFloat();
+
+                  break;
+                } // case 37
+              case 45:
+                {
+                  recallAt1_ = input.readFloat();
+
+                  break;
+                } // case 45
+              case 53:
+                {
+                  precisionAt1_ = input.readFloat();
+
+                  break;
+                } // case 53
+              case 61:
+                {
+                  f1ScoreAt1_ = input.readFloat();
+
+                  break;
+                } // case 61
+              case 69:
+                {
+                  recallAt5_ = input.readFloat();
+
+                  break;
+                } // case 69
+              case 77:
+                {
+                  precisionAt5_ = input.readFloat();
+
+                  break;
+                } // case 77
+              case 85:
+                {
+                  f1ScoreAt5_ = input.readFloat();
+
+                  break;
+                } // case 85
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1650,7 +1541,19 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConfidenceMetricsEntry(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1877,7 +1780,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToRawIntBits(meanAveragePrecision_) != 0) {
       output.writeFloat(4, meanAveragePrecision_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1900,7 +1803,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToRawIntBits(meanAveragePrecision_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, meanAveragePrecision_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1926,7 +1829,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       return false;
     if (java.lang.Float.floatToIntBits(getMeanAveragePrecision())
         != java.lang.Float.floatToIntBits(other.getMeanAveragePrecision())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1949,7 +1852,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MEAN_AVERAGE_PRECISION_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getMeanAveragePrecision());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2070,19 +1973,10 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.PrCurve.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getConfidenceMetricsEntriesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2098,10 +1992,11 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
 
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        confidenceMetricsEntries_ = null;
         confidenceMetricsEntriesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       meanAveragePrecision_ = 0F;
 
       return this;
@@ -2234,7 +2129,7 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       if (other.getMeanAveragePrecision() != 0F) {
         setMeanAveragePrecision(other.getMeanAveragePrecision());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2249,17 +2144,64 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.PrCurve parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getAnnotationSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 21:
+              {
+                areaUnderCurve_ = input.readFloat();
+
+                break;
+              } // case 21
+            case 26:
+              {
+                com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry m =
+                    input.readMessage(
+                        com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry
+                            .parser(),
+                        extensionRegistry);
+                if (confidenceMetricsEntriesBuilder_ == null) {
+                  ensureConfidenceMetricsEntriesIsMutable();
+                  confidenceMetricsEntries_.add(m);
+                } else {
+                  confidenceMetricsEntriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 37:
+              {
+                meanAveragePrecision_ = input.readFloat();
+
+                break;
+              } // case 37
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.datalabeling.v1beta1.PrCurve) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3042,7 +2984,18 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PrCurve(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

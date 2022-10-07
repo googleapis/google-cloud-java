@@ -53,108 +53,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private SoftwareConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              imageVersion_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                airflowConfigOverrides_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AirflowConfigOverridesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  airflowConfigOverrides__ =
-                      input.readMessage(
-                          AirflowConfigOverridesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              airflowConfigOverrides_
-                  .getMutableMap()
-                  .put(airflowConfigOverrides__.getKey(), airflowConfigOverrides__.getValue());
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pypiPackages_ =
-                    com.google.protobuf.MapField.newMapField(
-                        PypiPackagesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> pypiPackages__ =
-                  input.readMessage(
-                      PypiPackagesDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              pypiPackages_.getMutableMap().put(pypiPackages__.getKey(), pypiPackages__.getValue());
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                envVariables_ =
-                    com.google.protobuf.MapField.newMapField(
-                        EnvVariablesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> envVariables__ =
-                  input.readMessage(
-                      EnvVariablesDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              envVariables_.getMutableMap().put(envVariables__.getKey(), envVariables__.getValue());
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pythonVersion_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1beta1_SoftwareConfig_descriptor;
@@ -819,7 +717,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pythonVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pythonVersion_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -864,7 +762,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pythonVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pythonVersion_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -886,7 +784,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetPypiPackages().equals(other.internalGetPypiPackages())) return false;
     if (!internalGetEnvVariables().equals(other.internalGetEnvVariables())) return false;
     if (!getPythonVersion().equals(other.getPythonVersion())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -913,7 +811,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PYTHON_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getPythonVersion().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1073,17 +971,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
     // Construct using
     // com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1199,7 +1090,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         pythonVersion_ = other.pythonVersion_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1214,19 +1105,78 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                imageVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    airflowConfigOverrides__ =
+                        input.readMessage(
+                            AirflowConfigOverridesDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAirflowConfigOverrides()
+                    .getMutableMap()
+                    .put(airflowConfigOverrides__.getKey(), airflowConfigOverrides__.getValue());
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> pypiPackages__ =
+                    input.readMessage(
+                        PypiPackagesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutablePypiPackages()
+                    .getMutableMap()
+                    .put(pypiPackages__.getKey(), pypiPackages__.getValue());
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> envVariables__ =
+                    input.readMessage(
+                        EnvVariablesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableEnvVariables()
+                    .getMutableMap()
+                    .put(envVariables__.getKey(), envVariables__.getValue());
+                break;
+              } // case 34
+            case 50:
+              {
+                pythonVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2348,7 +2298,18 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SoftwareConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

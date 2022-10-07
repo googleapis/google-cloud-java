@@ -51,68 +51,6 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     return this.unknownFields;
   }
 
-  private StreamingTranslateSpeechConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.Builder subBuilder =
-                  null;
-              if (audioConfig_ != null) {
-                subBuilder = audioConfig_.toBuilder();
-              }
-              audioConfig_ =
-                  input.readMessage(
-                      com.google.cloud.mediatranslation.v1beta1.TranslateSpeechConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(audioConfig_);
-                audioConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 16:
-            {
-              singleUtterance_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.mediatranslation.v1beta1.MediaTranslationProto
         .internal_static_google_cloud_mediatranslation_v1beta1_StreamingTranslateSpeechConfig_descriptor;
@@ -233,7 +171,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     if (singleUtterance_ != false) {
       output.writeBool(2, singleUtterance_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -248,7 +186,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     if (singleUtterance_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, singleUtterance_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -270,7 +208,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       if (!getAudioConfig().equals(other.getAudioConfig())) return false;
     }
     if (getSingleUtterance() != other.getSingleUtterance()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -287,7 +225,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
     }
     hash = (37 * hash) + SINGLE_UTTERANCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleUtterance());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -420,17 +358,10 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
 
     // Construct using
     // com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -540,7 +471,7 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
       if (other.getSingleUtterance() != false) {
         setSingleUtterance(other.getSingleUtterance());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -555,19 +486,43 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 16:
+              {
+                singleUtterance_ = input.readBool();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -903,7 +858,18 @@ public final class StreamingTranslateSpeechConfig extends com.google.protobuf.Ge
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingTranslateSpeechConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

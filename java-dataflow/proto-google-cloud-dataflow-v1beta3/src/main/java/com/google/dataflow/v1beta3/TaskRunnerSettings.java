@@ -66,188 +66,6 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private TaskRunnerSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              taskUser_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              taskGroup_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oauthScopes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              oauthScopes_.add(s);
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseUrl_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dataflowApiVersion_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.dataflow.v1beta3.WorkerSettings.Builder subBuilder = null;
-              if (parallelWorkerSettings_ != null) {
-                subBuilder = parallelWorkerSettings_.toBuilder();
-              }
-              parallelWorkerSettings_ =
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.WorkerSettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(parallelWorkerSettings_);
-                parallelWorkerSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseTaskDir_ = s;
-              break;
-            }
-          case 64:
-            {
-              continueOnException_ = input.readBool();
-              break;
-            }
-          case 72:
-            {
-              logToSerialconsole_ = input.readBool();
-              break;
-            }
-          case 80:
-            {
-              alsologtostderr_ = input.readBool();
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              logUploadLocation_ = s;
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              logDir_ = s;
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tempStoragePrefix_ = s;
-              break;
-            }
-          case 114:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              harnessCommand_ = s;
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              workflowFileName_ = s;
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              commandlinesFileName_ = s;
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vmId_ = s;
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              languageHint_ = s;
-              break;
-            }
-          case 154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              streamingWorkerMainClass_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.EnvironmentProto
         .internal_static_google_dataflow_v1beta3_TaskRunnerSettings_descriptor;
@@ -1224,7 +1042,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamingWorkerMainClass_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, streamingWorkerMainClass_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1297,7 +1115,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(19, streamingWorkerMainClass_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1335,7 +1153,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     if (!getVmId().equals(other.getVmId())) return false;
     if (!getLanguageHint().equals(other.getLanguageHint())) return false;
     if (!getStreamingWorkerMainClass().equals(other.getStreamingWorkerMainClass())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1388,7 +1206,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getLanguageHint().hashCode();
     hash = (37 * hash) + STREAMING_WORKER_MAIN_CLASS_FIELD_NUMBER;
     hash = (53 * hash) + getStreamingWorkerMainClass().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1517,17 +1335,10 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.dataflow.v1beta3.TaskRunnerSettings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1757,7 +1568,7 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         streamingWorkerMainClass_ = other.streamingWorkerMainClass_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1772,17 +1583,147 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.dataflow.v1beta3.TaskRunnerSettings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                taskUser_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                taskGroup_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureOauthScopesIsMutable();
+                oauthScopes_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                baseUrl_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                dataflowApiVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getParallelWorkerSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                baseTaskDir_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 64:
+              {
+                continueOnException_ = input.readBool();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                logToSerialconsole_ = input.readBool();
+
+                break;
+              } // case 72
+            case 80:
+              {
+                alsologtostderr_ = input.readBool();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                logUploadLocation_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                logDir_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 106:
+              {
+                tempStoragePrefix_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 106
+            case 114:
+              {
+                harnessCommand_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 114
+            case 122:
+              {
+                workflowFileName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            case 130:
+              {
+                commandlinesFileName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                vmId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 146:
+              {
+                languageHint_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+            case 154:
+              {
+                streamingWorkerMainClass_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 154
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.dataflow.v1beta3.TaskRunnerSettings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3917,7 +3858,18 @@ public final class TaskRunnerSettings extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TaskRunnerSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

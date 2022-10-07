@@ -53,82 +53,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CelebrityTrack(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                celebrities_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack
-                            .RecognizedCelebrity>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              celebrities_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack
-                          .RecognizedCelebrity.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.videointelligence.v1p3beta1.Track.Builder subBuilder = null;
-              if (faceTrack_ != null) {
-                subBuilder = faceTrack_.toBuilder();
-              }
-              faceTrack_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.Track.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(faceTrack_);
-                faceTrack_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        celebrities_ = java.util.Collections.unmodifiableList(celebrities_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p3beta1_CelebrityTrack_descriptor;
@@ -228,67 +152,6 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private RecognizedCelebrity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.videointelligence.v1p3beta1.Celebrity.Builder subBuilder = null;
-                if (celebrity_ != null) {
-                  subBuilder = celebrity_.toBuilder();
-                }
-                celebrity_ =
-                    input.readMessage(
-                        com.google.cloud.videointelligence.v1p3beta1.Celebrity.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(celebrity_);
-                  celebrity_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 21:
-              {
-                confidence_ = input.readFloat();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -393,7 +256,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         output.writeFloat(2, confidence_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -408,7 +271,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -432,7 +295,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       if (java.lang.Float.floatToIntBits(getConfidence())
           != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -449,7 +312,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -591,17 +454,10 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -718,7 +574,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         if (other.getConfidence() != 0F) {
           setConfidence(other.getConfidence());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -733,20 +589,43 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getCelebrityFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 21:
+                {
+                  confidence_ = input.readFloat();
+
+                  break;
+                } // case 21
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1026,7 +905,19 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new RecognizedCelebrity(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1202,7 +1093,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     if (faceTrack_ != null) {
       output.writeMessage(3, getFaceTrack());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1217,7 +1108,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     if (faceTrack_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFaceTrack());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1238,7 +1129,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     if (hasFaceTrack()) {
       if (!getFaceTrack().equals(other.getFaceTrack())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1257,7 +1148,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FACE_TRACK_FIELD_NUMBER;
       hash = (53 * hash) + getFaceTrack().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1388,19 +1279,10 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCelebritiesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1408,10 +1290,11 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (celebritiesBuilder_ == null) {
         celebrities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        celebrities_ = null;
         celebritiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (faceTrackBuilder_ == null) {
         faceTrack_ = null;
       } else {
@@ -1540,7 +1423,7 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFaceTrack()) {
         mergeFaceTrack(other.getFaceTrack());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1555,18 +1438,52 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack
+                            .RecognizedCelebrity.parser(),
+                        extensionRegistry);
+                if (celebritiesBuilder_ == null) {
+                  ensureCelebritiesIsMutable();
+                  celebrities_.add(m);
+                } else {
+                  celebritiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 26:
+              {
+                input.readMessage(getFaceTrackFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2213,7 +2130,18 @@ public final class CelebrityTrack extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CelebrityTrack(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

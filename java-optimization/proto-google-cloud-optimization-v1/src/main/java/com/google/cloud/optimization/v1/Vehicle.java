@@ -64,400 +64,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Vehicle(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              travelMode_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.type.LatLng.Builder subBuilder = null;
-              if (startLocation_ != null) {
-                subBuilder = startLocation_.toBuilder();
-              }
-              startLocation_ =
-                  input.readMessage(com.google.type.LatLng.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startLocation_);
-                startLocation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.optimization.v1.Waypoint.Builder subBuilder = null;
-              if (startWaypoint_ != null) {
-                subBuilder = startWaypoint_.toBuilder();
-              }
-              startWaypoint_ =
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.Waypoint.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startWaypoint_);
-                startWaypoint_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.type.LatLng.Builder subBuilder = null;
-              if (endLocation_ != null) {
-                subBuilder = endLocation_.toBuilder();
-              }
-              endLocation_ = input.readMessage(com.google.type.LatLng.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endLocation_);
-                endLocation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.optimization.v1.Waypoint.Builder subBuilder = null;
-              if (endWaypoint_ != null) {
-                subBuilder = endWaypoint_.toBuilder();
-              }
-              endWaypoint_ =
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.Waypoint.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endWaypoint_);
-                endWaypoint_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                startTags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              startTags_.add(s);
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                endTags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              endTags_.add(s);
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                startTimeWindows_ =
-                    new java.util.ArrayList<com.google.cloud.optimization.v1.TimeWindow>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              startTimeWindows_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.TimeWindow.parser(), extensionRegistry));
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                endTimeWindows_ =
-                    new java.util.ArrayList<com.google.cloud.optimization.v1.TimeWindow>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              endTimeWindows_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.TimeWindow.parser(), extensionRegistry));
-              break;
-            }
-          case 89:
-            {
-              bitField0_ |= 0x00000001;
-              travelDurationMultiple_ = input.readDouble();
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              unloadingPolicy_ = rawValue;
-              break;
-            }
-          case 106:
-            {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
-                capacities_ =
-                    new java.util.ArrayList<com.google.cloud.optimization.v1.CapacityQuantity>();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              capacities_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.CapacityQuantity.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 114:
-            {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                startLoadIntervals_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.optimization.v1.CapacityQuantityInterval>();
-                mutable_bitField0_ |= 0x00000200;
-              }
-              startLoadIntervals_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.CapacityQuantityInterval.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 122:
-            {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
-                endLoadIntervals_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.optimization.v1.CapacityQuantityInterval>();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              endLoadIntervals_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.CapacityQuantityInterval.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 129:
-            {
-              costPerHour_ = input.readDouble();
-              break;
-            }
-          case 137:
-            {
-              costPerTraveledHour_ = input.readDouble();
-              break;
-            }
-          case 145:
-            {
-              costPerKilometer_ = input.readDouble();
-              break;
-            }
-          case 153:
-            {
-              fixedCost_ = input.readDouble();
-              break;
-            }
-          case 160:
-            {
-              usedIfRouteIsEmpty_ = input.readBool();
-              break;
-            }
-          case 170:
-            {
-              com.google.cloud.optimization.v1.Vehicle.DurationLimit.Builder subBuilder = null;
-              if (routeDurationLimit_ != null) {
-                subBuilder = routeDurationLimit_.toBuilder();
-              }
-              routeDurationLimit_ =
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.Vehicle.DurationLimit.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(routeDurationLimit_);
-                routeDurationLimit_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 178:
-            {
-              com.google.cloud.optimization.v1.Vehicle.DurationLimit.Builder subBuilder = null;
-              if (travelDurationLimit_ != null) {
-                subBuilder = travelDurationLimit_.toBuilder();
-              }
-              travelDurationLimit_ =
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.Vehicle.DurationLimit.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(travelDurationLimit_);
-                travelDurationLimit_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 186:
-            {
-              com.google.cloud.optimization.v1.DistanceLimit.Builder subBuilder = null;
-              if (routeDistanceLimit_ != null) {
-                subBuilder = routeDistanceLimit_.toBuilder();
-              }
-              routeDistanceLimit_ =
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.DistanceLimit.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(routeDistanceLimit_);
-                routeDistanceLimit_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 194:
-            {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                extraVisitDurationForVisitType_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ExtraVisitDurationForVisitTypeDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Duration>
-                  extraVisitDurationForVisitType__ =
-                      input.readMessage(
-                          ExtraVisitDurationForVisitTypeDefaultEntryHolder.defaultEntry
-                              .getParserForType(),
-                          extensionRegistry);
-              extraVisitDurationForVisitType_
-                  .getMutableMap()
-                  .put(
-                      extraVisitDurationForVisitType__.getKey(),
-                      extraVisitDurationForVisitType__.getValue());
-              break;
-            }
-          case 202:
-            {
-              com.google.cloud.optimization.v1.BreakRule.Builder subBuilder = null;
-              if (breakRule_ != null) {
-                subBuilder = breakRule_.toBuilder();
-              }
-              breakRule_ =
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.BreakRule.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(breakRule_);
-                breakRule_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 218:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              label_ = s;
-              break;
-            }
-          case 224:
-            {
-              ignore_ = input.readBool();
-              break;
-            }
-          case 232:
-            {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                breakRuleIndices_ = newIntList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              breakRuleIndices_.addInt(input.readInt32());
-              break;
-            }
-          case 234:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000080) != 0) && input.getBytesUntilLimit() > 0) {
-                breakRuleIndices_ = newIntList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                breakRuleIndices_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 242:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                loadLimits_ =
-                    com.google.protobuf.MapField.newMapField(
-                        LoadLimitsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit>
-                  loadLimits__ =
-                      input.readMessage(
-                          LoadLimitsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              loadLimits_.getMutableMap().put(loadLimits__.getKey(), loadLimits__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        startTags_ = startTags_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        endTags_ = endTags_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        startTimeWindows_ = java.util.Collections.unmodifiableList(startTimeWindows_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        endTimeWindows_ = java.util.Collections.unmodifiableList(endTimeWindows_);
-      }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
-        capacities_ = java.util.Collections.unmodifiableList(capacities_);
-      }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
-        startLoadIntervals_ = java.util.Collections.unmodifiableList(startLoadIntervals_);
-      }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
-        endLoadIntervals_ = java.util.Collections.unmodifiableList(endLoadIntervals_);
-      }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        breakRuleIndices_.makeImmutable(); // C
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.FleetRoutingProto
         .internal_static_google_cloud_optimization_v1_Vehicle_descriptor;
@@ -955,98 +561,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private LoadLimit(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                bitField0_ |= 0x00000001;
-                maxLoad_ = input.readInt64();
-                break;
-              }
-            case 16:
-              {
-                softMaxLoad_ = input.readInt64();
-                break;
-              }
-            case 25:
-              {
-                costPerUnitAboveSoftMax_ = input.readDouble();
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.Builder subBuilder =
-                    null;
-                if (startLoadInterval_ != null) {
-                  subBuilder = startLoadInterval_.toBuilder();
-                }
-                startLoadInterval_ =
-                    input.readMessage(
-                        com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(startLoadInterval_);
-                  startLoadInterval_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 42:
-              {
-                com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.Builder subBuilder =
-                    null;
-                if (endLoadInterval_ != null) {
-                  subBuilder = endLoadInterval_.toBuilder();
-                }
-                endLoadInterval_ =
-                    input.readMessage(
-                        com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(endLoadInterval_);
-                  endLoadInterval_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.optimization.v1.FleetRoutingProto
           .internal_static_google_cloud_optimization_v1_Vehicle_LoadLimit_descriptor;
@@ -1142,58 +656,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private Interval(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  min_ = input.readInt64();
-                  break;
-                }
-              case 16:
-                {
-                  bitField0_ |= 0x00000001;
-                  max_ = input.readInt64();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.optimization.v1.FleetRoutingProto
             .internal_static_google_cloud_optimization_v1_Vehicle_LoadLimit_Interval_descriptor;
@@ -1286,7 +748,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeInt64(2, max_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1301,7 +763,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, max_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1322,7 +784,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (hasMax()) {
           if (getMax() != other.getMax()) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1339,7 +801,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + MAX_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMax());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1471,17 +933,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1587,7 +1042,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           if (other.hasMax()) {
             setMax(other.getMax());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1602,19 +1057,43 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    min_ = input.readInt64();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    max_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.optimization.v1.Vehicle.LoadLimit.Interval)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1785,7 +1264,19 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Interval(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2008,7 +1499,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (endLoadInterval_ != null) {
         output.writeMessage(5, getEndLoadInterval());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2033,7 +1524,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (endLoadInterval_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndLoadInterval());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2064,7 +1555,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (hasEndLoadInterval()) {
         if (!getEndLoadInterval().equals(other.getEndLoadInterval())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2094,7 +1585,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + END_LOAD_INTERVAL_FIELD_NUMBER;
         hash = (53 * hash) + getEndLoadInterval().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2226,17 +1717,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.optimization.v1.Vehicle.LoadLimit.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2373,7 +1857,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (other.hasEndLoadInterval()) {
           mergeEndLoadInterval(other.getEndLoadInterval());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2388,18 +1872,63 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.optimization.v1.Vehicle.LoadLimit parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  maxLoad_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  softMaxLoad_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 25:
+                {
+                  costPerUnitAboveSoftMax_ = input.readDouble();
+
+                  break;
+                } // case 25
+              case 34:
+                {
+                  input.readMessage(
+                      getStartLoadIntervalFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getEndLoadIntervalFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.optimization.v1.Vehicle.LoadLimit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3018,7 +2547,19 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new LoadLimit(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3291,103 +2832,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private DurationLimit(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (maxDuration_ != null) {
-                  subBuilder = maxDuration_.toBuilder();
-                }
-                maxDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(maxDuration_);
-                  maxDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (softMaxDuration_ != null) {
-                  subBuilder = softMaxDuration_.toBuilder();
-                }
-                softMaxDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(softMaxDuration_);
-                  softMaxDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 25:
-              {
-                bitField0_ |= 0x00000001;
-                costPerHourAfterSoftMax_ = input.readDouble();
-                break;
-              }
-            case 34:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (quadraticSoftMaxDuration_ != null) {
-                  subBuilder = quadraticSoftMaxDuration_.toBuilder();
-                }
-                quadraticSoftMaxDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(quadraticSoftMaxDuration_);
-                  quadraticSoftMaxDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 41:
-              {
-                bitField0_ |= 0x00000002;
-                costPerSquareHourAfterQuadraticSoftMax_ = input.readDouble();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3706,7 +3150,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeDouble(5, costPerSquareHourAfterQuadraticSoftMax_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3735,7 +3179,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeDoubleSize(
                 5, costPerSquareHourAfterQuadraticSoftMax_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3776,7 +3220,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             != java.lang.Double.doubleToLongBits(other.getCostPerSquareHourAfterQuadraticSoftMax()))
           return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3813,7 +3257,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                 + com.google.protobuf.Internal.hashLong(
                     java.lang.Double.doubleToLongBits(getCostPerSquareHourAfterQuadraticSoftMax()));
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3948,17 +3392,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.optimization.v1.Vehicle.DurationLimit.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4107,7 +3544,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           setCostPerSquareHourAfterQuadraticSoftMax(
               other.getCostPerSquareHourAfterQuadraticSoftMax());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4122,18 +3559,63 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.optimization.v1.Vehicle.DurationLimit parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getMaxDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getSoftMaxDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 25:
+                {
+                  costPerHourAfterSoftMax_ = input.readDouble();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 25
+              case 34:
+                {
+                  input.readMessage(
+                      getQuadraticSoftMaxDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 41:
+                {
+                  costPerSquareHourAfterQuadraticSoftMax_ = input.readDouble();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 41
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.optimization.v1.Vehicle.DurationLimit) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5017,7 +4499,19 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DurationLimit(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6881,7 +6375,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLoadLimits(), LoadLimitsDefaultEntryHolder.defaultEntry, 30);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -7021,7 +6515,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, loadLimits__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7097,7 +6591,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     if (!getCapacitiesList().equals(other.getCapacitiesList())) return false;
     if (!getStartLoadIntervalsList().equals(other.getStartLoadIntervalsList())) return false;
     if (!getEndLoadIntervalsList().equals(other.getEndLoadIntervalsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7217,7 +6711,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_LOAD_INTERVALS_FIELD_NUMBER;
       hash = (53 * hash) + getEndLoadIntervalsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -7372,23 +6866,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.optimization.v1.Vehicle.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getStartTimeWindowsFieldBuilder();
-        getEndTimeWindowsFieldBuilder();
-        getCapacitiesFieldBuilder();
-        getStartLoadIntervalsFieldBuilder();
-        getEndLoadIntervalsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -7426,16 +6907,18 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       if (startTimeWindowsBuilder_ == null) {
         startTimeWindows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        startTimeWindows_ = null;
         startTimeWindowsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (endTimeWindowsBuilder_ == null) {
         endTimeWindows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        endTimeWindows_ = null;
         endTimeWindowsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       travelDurationMultiple_ = 0D;
       bitField0_ = (bitField0_ & ~0x00000010);
       unloadingPolicy_ = 0;
@@ -7484,22 +6967,25 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       if (capacitiesBuilder_ == null) {
         capacities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
+        capacities_ = null;
         capacitiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (startLoadIntervalsBuilder_ == null) {
         startLoadIntervals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
+        startLoadIntervals_ = null;
         startLoadIntervalsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (endLoadIntervalsBuilder_ == null) {
         endLoadIntervals_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
+        endLoadIntervals_ = null;
         endLoadIntervalsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -7919,7 +7405,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -7934,17 +7420,270 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.optimization.v1.Vehicle parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                travelMode_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 26:
+              {
+                input.readMessage(getStartLocationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getStartWaypointFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getEndLocationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getEndWaypointFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStartTagsIsMutable();
+                startTags_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureEndTagsIsMutable();
+                endTags_.add(s);
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.optimization.v1.TimeWindow m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.TimeWindow.parser(), extensionRegistry);
+                if (startTimeWindowsBuilder_ == null) {
+                  ensureStartTimeWindowsIsMutable();
+                  startTimeWindows_.add(m);
+                } else {
+                  startTimeWindowsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.cloud.optimization.v1.TimeWindow m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.TimeWindow.parser(), extensionRegistry);
+                if (endTimeWindowsBuilder_ == null) {
+                  ensureEndTimeWindowsIsMutable();
+                  endTimeWindows_.add(m);
+                } else {
+                  endTimeWindowsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 89:
+              {
+                travelDurationMultiple_ = input.readDouble();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 89
+            case 96:
+              {
+                unloadingPolicy_ = input.readEnum();
+
+                break;
+              } // case 96
+            case 106:
+              {
+                com.google.cloud.optimization.v1.CapacityQuantity m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.CapacityQuantity.parser(),
+                        extensionRegistry);
+                if (capacitiesBuilder_ == null) {
+                  ensureCapacitiesIsMutable();
+                  capacities_.add(m);
+                } else {
+                  capacitiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+            case 114:
+              {
+                com.google.cloud.optimization.v1.CapacityQuantityInterval m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.CapacityQuantityInterval.parser(),
+                        extensionRegistry);
+                if (startLoadIntervalsBuilder_ == null) {
+                  ensureStartLoadIntervalsIsMutable();
+                  startLoadIntervals_.add(m);
+                } else {
+                  startLoadIntervalsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+            case 122:
+              {
+                com.google.cloud.optimization.v1.CapacityQuantityInterval m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.CapacityQuantityInterval.parser(),
+                        extensionRegistry);
+                if (endLoadIntervalsBuilder_ == null) {
+                  ensureEndLoadIntervalsIsMutable();
+                  endLoadIntervals_.add(m);
+                } else {
+                  endLoadIntervalsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+            case 129:
+              {
+                costPerHour_ = input.readDouble();
+
+                break;
+              } // case 129
+            case 137:
+              {
+                costPerTraveledHour_ = input.readDouble();
+
+                break;
+              } // case 137
+            case 145:
+              {
+                costPerKilometer_ = input.readDouble();
+
+                break;
+              } // case 145
+            case 153:
+              {
+                fixedCost_ = input.readDouble();
+
+                break;
+              } // case 153
+            case 160:
+              {
+                usedIfRouteIsEmpty_ = input.readBool();
+
+                break;
+              } // case 160
+            case 170:
+              {
+                input.readMessage(
+                    getRouteDurationLimitFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getTravelDurationLimitFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getRouteDistanceLimitFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
+            case 194:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Duration>
+                    extraVisitDurationForVisitType__ =
+                        input.readMessage(
+                            ExtraVisitDurationForVisitTypeDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableExtraVisitDurationForVisitType()
+                    .getMutableMap()
+                    .put(
+                        extraVisitDurationForVisitType__.getKey(),
+                        extraVisitDurationForVisitType__.getValue());
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(getBreakRuleFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 202
+            case 218:
+              {
+                label_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 218
+            case 224:
+              {
+                ignore_ = input.readBool();
+
+                break;
+              } // case 224
+            case 232:
+              {
+                int v = input.readInt32();
+                ensureBreakRuleIndicesIsMutable();
+                breakRuleIndices_.addInt(v);
+                break;
+              } // case 232
+            case 234:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureBreakRuleIndicesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  breakRuleIndices_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 234
+            case 242:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.optimization.v1.Vehicle.LoadLimit>
+                    loadLimits__ =
+                        input.readMessage(
+                            LoadLimitsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableLoadLimits()
+                    .getMutableMap()
+                    .put(loadLimits__.getKey(), loadLimits__.getValue());
+                break;
+              } // case 242
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.optimization.v1.Vehicle) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -13742,7 +13481,18 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Vehicle(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

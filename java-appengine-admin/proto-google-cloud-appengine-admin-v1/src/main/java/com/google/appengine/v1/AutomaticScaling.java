@@ -51,196 +51,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private AutomaticScaling(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (coolDownPeriod_ != null) {
-                subBuilder = coolDownPeriod_.toBuilder();
-              }
-              coolDownPeriod_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(coolDownPeriod_);
-                coolDownPeriod_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.appengine.v1.CpuUtilization.Builder subBuilder = null;
-              if (cpuUtilization_ != null) {
-                subBuilder = cpuUtilization_.toBuilder();
-              }
-              cpuUtilization_ =
-                  input.readMessage(
-                      com.google.appengine.v1.CpuUtilization.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(cpuUtilization_);
-                cpuUtilization_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 24:
-            {
-              maxConcurrentRequests_ = input.readInt32();
-              break;
-            }
-          case 32:
-            {
-              maxIdleInstances_ = input.readInt32();
-              break;
-            }
-          case 40:
-            {
-              maxTotalInstances_ = input.readInt32();
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (maxPendingLatency_ != null) {
-                subBuilder = maxPendingLatency_.toBuilder();
-              }
-              maxPendingLatency_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(maxPendingLatency_);
-                maxPendingLatency_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 56:
-            {
-              minIdleInstances_ = input.readInt32();
-              break;
-            }
-          case 64:
-            {
-              minTotalInstances_ = input.readInt32();
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (minPendingLatency_ != null) {
-                subBuilder = minPendingLatency_.toBuilder();
-              }
-              minPendingLatency_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(minPendingLatency_);
-                minPendingLatency_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.appengine.v1.RequestUtilization.Builder subBuilder = null;
-              if (requestUtilization_ != null) {
-                subBuilder = requestUtilization_.toBuilder();
-              }
-              requestUtilization_ =
-                  input.readMessage(
-                      com.google.appengine.v1.RequestUtilization.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestUtilization_);
-                requestUtilization_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              com.google.appengine.v1.DiskUtilization.Builder subBuilder = null;
-              if (diskUtilization_ != null) {
-                subBuilder = diskUtilization_.toBuilder();
-              }
-              diskUtilization_ =
-                  input.readMessage(
-                      com.google.appengine.v1.DiskUtilization.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(diskUtilization_);
-                diskUtilization_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.appengine.v1.NetworkUtilization.Builder subBuilder = null;
-              if (networkUtilization_ != null) {
-                subBuilder = networkUtilization_.toBuilder();
-              }
-              networkUtilization_ =
-                  input.readMessage(
-                      com.google.appengine.v1.NetworkUtilization.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(networkUtilization_);
-                networkUtilization_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 162:
-            {
-              com.google.appengine.v1.StandardSchedulerSettings.Builder subBuilder = null;
-              if (standardSchedulerSettings_ != null) {
-                subBuilder = standardSchedulerSettings_.toBuilder();
-              }
-              standardSchedulerSettings_ =
-                  input.readMessage(
-                      com.google.appengine.v1.StandardSchedulerSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(standardSchedulerSettings_);
-                standardSchedulerSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.VersionProto
         .internal_static_google_appengine_v1_AutomaticScaling_descriptor;
@@ -811,7 +621,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     if (standardSchedulerSettings_ != null) {
       output.writeMessage(20, getStandardSchedulerSettings());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -861,7 +671,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, getStandardSchedulerSettings());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -914,7 +724,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       if (!getStandardSchedulerSettings().equals(other.getStandardSchedulerSettings()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -967,7 +777,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + STANDARD_SCHEDULER_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getStandardSchedulerSettings().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1097,17 +907,10 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.appengine.v1.AutomaticScaling.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1331,7 +1134,7 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       if (other.hasStandardSchedulerSettings()) {
         mergeStandardSchedulerSettings(other.getStandardSchedulerSettings());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1346,17 +1149,114 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.appengine.v1.AutomaticScaling parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getCoolDownPeriodFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCpuUtilizationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 24:
+              {
+                maxConcurrentRequests_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                maxIdleInstances_ = input.readInt32();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                maxTotalInstances_ = input.readInt32();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    getMaxPendingLatencyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 56:
+              {
+                minIdleInstances_ = input.readInt32();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                minTotalInstances_ = input.readInt32();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    getMinPendingLatencyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getRequestUtilizationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getDiskUtilizationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getNetworkUtilizationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 162:
+              {
+                input.readMessage(
+                    getStandardSchedulerSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.appengine.v1.AutomaticScaling) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3223,7 +3123,18 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AutomaticScaling(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -62,127 +62,6 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private CapacityCommitment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              slotCount_ = input.readInt64();
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              plan_ = rawValue;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (commitmentEndTime_ != null) {
-                subBuilder = commitmentEndTime_.toBuilder();
-              }
-              commitmentEndTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(commitmentEndTime_);
-                commitmentEndTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (failureStatus_ != null) {
-                subBuilder = failureStatus_.toBuilder();
-              }
-              failureStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(failureStatus_);
-                failureStatus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              renewalPlan_ = rawValue;
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (commitmentStartTime_ != null) {
-                subBuilder = commitmentStartTime_.toBuilder();
-              }
-              commitmentStartTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(commitmentStartTime_);
-                commitmentStartTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              multiRegionAuxiliary_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_CapacityCommitment_descriptor;
@@ -1043,7 +922,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     if (multiRegionAuxiliary_ != false) {
       output.writeBool(10, multiRegionAuxiliary_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1087,7 +966,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     if (multiRegionAuxiliary_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, multiRegionAuxiliary_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1121,7 +1000,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
     if (renewalPlan_ != other.renewalPlan_) return false;
     if (getMultiRegionAuxiliary() != other.getMultiRegionAuxiliary()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1156,7 +1035,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + renewalPlan_;
     hash = (37 * hash) + MULTI_REGION_AUXILIARY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiRegionAuxiliary());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1293,17 +1172,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.bigquery.reservation.v1.CapacityCommitment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1465,7 +1337,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       if (other.getMultiRegionAuxiliary() != false) {
         setMultiRegionAuxiliary(other.getMultiRegionAuxiliary());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1480,18 +1352,87 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.reservation.v1.CapacityCommitment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                slotCount_ = input.readInt64();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                plan_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getCommitmentEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 58:
+              {
+                input.readMessage(getFailureStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 64:
+              {
+                renewalPlan_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    getCommitmentStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 80:
+              {
+                multiRegionAuxiliary_ = input.readBool();
+
+                break;
+              } // case 80
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.reservation.v1.CapacityCommitment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2696,7 +2637,18 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CapacityCommitment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

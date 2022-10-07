@@ -45,122 +45,6 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     return this.unknownFields;
   }
 
-  private ComputeThreatListDiffResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (recommendedNextDiff_ != null) {
-                subBuilder = recommendedNextDiff_.toBuilder();
-              }
-              recommendedNextDiff_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(recommendedNextDiff_);
-                recommendedNextDiff_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              responseType_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.webrisk.v1beta1.ThreatEntryAdditions.Builder subBuilder = null;
-              if (additions_ != null) {
-                subBuilder = additions_.toBuilder();
-              }
-              additions_ =
-                  input.readMessage(
-                      com.google.webrisk.v1beta1.ThreatEntryAdditions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(additions_);
-                additions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.webrisk.v1beta1.ThreatEntryRemovals.Builder subBuilder = null;
-              if (removals_ != null) {
-                subBuilder = removals_.toBuilder();
-              }
-              removals_ =
-                  input.readMessage(
-                      com.google.webrisk.v1beta1.ThreatEntryRemovals.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(removals_);
-                removals_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              newVersionToken_ = input.readBytes();
-              break;
-            }
-          case 66:
-            {
-              com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum.Builder subBuilder =
-                  null;
-              if (checksum_ != null) {
-                subBuilder = checksum_.toBuilder();
-              }
-              checksum_ =
-                  input.readMessage(
-                      com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(checksum_);
-                checksum_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1beta1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1beta1_ComputeThreatListDiffResponse_descriptor;
@@ -392,50 +276,6 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       return this.unknownFields;
     }
 
-    private Checksum(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                sha256_ = input.readBytes();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.webrisk.v1beta1.WebRiskProto
           .internal_static_google_cloud_webrisk_v1beta1_ComputeThreatListDiffResponse_Checksum_descriptor;
@@ -487,7 +327,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       if (!sha256_.isEmpty()) {
         output.writeBytes(1, sha256_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -499,7 +339,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       if (!sha256_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, sha256_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -516,7 +356,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
           (com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum) obj;
 
       if (!getSha256().equals(other.getSha256())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -529,7 +369,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SHA256_FIELD_NUMBER;
       hash = (53 * hash) + getSha256().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -663,17 +503,10 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
 
       // Construct using
       // com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -769,7 +602,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         if (other.getSha256() != com.google.protobuf.ByteString.EMPTY) {
           setSha256(other.getSha256());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -784,19 +617,37 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sha256_ = input.readBytes();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.Checksum)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -893,7 +744,19 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Checksum(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1225,7 +1088,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     if (checksum_ != null) {
       output.writeMessage(8, getChecksum());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1255,7 +1118,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     if (checksum_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getChecksum());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1289,7 +1152,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     if (hasRecommendedNextDiff()) {
       if (!getRecommendedNextDiff().equals(other.getRecommendedNextDiff())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1320,7 +1183,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       hash = (37 * hash) + RECOMMENDED_NEXT_DIFF_FIELD_NUMBER;
       hash = (53 * hash) + getRecommendedNextDiff().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1442,17 +1305,10 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
     }
 
     // Construct using com.google.webrisk.v1beta1.ComputeThreatListDiffResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1603,7 +1459,7 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
       if (other.hasRecommendedNextDiff()) {
         mergeRecommendedNextDiff(other.getRecommendedNextDiff());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1618,18 +1474,68 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.webrisk.v1beta1.ComputeThreatListDiffResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(
+                    getRecommendedNextDiffFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 32:
+              {
+                responseType_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getAdditionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getRemovalsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                newVersionToken_ = input.readBytes();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getChecksumFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.webrisk.v1beta1.ComputeThreatListDiffResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2650,7 +2556,18 @@ public final class ComputeThreatListDiffResponse extends com.google.protobuf.Gen
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ComputeThreatListDiffResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

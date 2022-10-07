@@ -56,132 +56,6 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CustomJobSpec(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                workerPoolSpecs_ =
-                    new java.util.ArrayList<com.google.cloud.aiplatform.v1.WorkerPoolSpec>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              workerPoolSpecs_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.WorkerPoolSpec.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.aiplatform.v1.Scheduling.Builder subBuilder = null;
-              if (scheduling_ != null) {
-                subBuilder = scheduling_.toBuilder();
-              }
-              scheduling_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.Scheduling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduling_);
-                scheduling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccount_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.aiplatform.v1.GcsDestination.Builder subBuilder = null;
-              if (baseOutputDirectory_ != null) {
-                subBuilder = baseOutputDirectory_.toBuilder();
-              }
-              baseOutputDirectory_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.GcsDestination.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(baseOutputDirectory_);
-                baseOutputDirectory_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tensorboard_ = s;
-              break;
-            }
-          case 80:
-            {
-              enableWebAccess_ = input.readBool();
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              reservedIpRanges_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        workerPoolSpecs_ = java.util.Collections.unmodifiableList(workerPoolSpecs_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.CustomJobProto
         .internal_static_google_cloud_aiplatform_v1_CustomJobSpec_descriptor;
@@ -759,7 +633,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, reservedIpRanges_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -797,7 +671,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getReservedIpRangesList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -827,7 +701,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTensorboard().equals(other.getTensorboard())) return false;
     if (getEnableWebAccess() != other.getEnableWebAccess()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -862,7 +736,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getTensorboard().hashCode();
     hash = (37 * hash) + ENABLE_WEB_ACCESS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWebAccess());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -991,19 +865,10 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1.CustomJobSpec.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getWorkerPoolSpecsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1011,10 +876,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (workerPoolSpecsBuilder_ == null) {
         workerPoolSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        workerPoolSpecs_ = null;
         workerPoolSpecsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (schedulingBuilder_ == null) {
         scheduling_ = null;
       } else {
@@ -1200,7 +1066,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableWebAccess() != false) {
         setEnableWebAccess(other.getEnableWebAccess());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1215,17 +1081,88 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1.CustomJobSpec parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.aiplatform.v1.WorkerPoolSpec m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.WorkerPoolSpec.parser(), extensionRegistry);
+                if (workerPoolSpecsBuilder_ == null) {
+                  ensureWorkerPoolSpecsIsMutable();
+                  workerPoolSpecs_.add(m);
+                } else {
+                  workerPoolSpecsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 26:
+              {
+                input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                network_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getBaseOutputDirectoryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                tensorboard_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 80:
+              {
+                enableWebAccess_ = input.readBool();
+
+                break;
+              } // case 80
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReservedIpRangesIsMutable();
+                reservedIpRanges_.add(s);
+                break;
+              } // case 106
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.aiplatform.v1.CustomJobSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2915,7 +2852,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CustomJobSpec(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

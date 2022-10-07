@@ -61,169 +61,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Document(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              sourceCase_ = 1;
-              source_ = s;
-              break;
-            }
-          case 18:
-            {
-              source_ = input.readBytes();
-              sourceCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              mimeType_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              text_ = s;
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                textStyles_ =
-                    new java.util.ArrayList<com.google.cloud.documentai.v1beta1.Document.Style>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              textStyles_.add(
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta1.Document.Style.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pages_ =
-                    new java.util.ArrayList<com.google.cloud.documentai.v1beta1.Document.Page>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              pages_.add(
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta1.Document.Page.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                entities_ =
-                    new java.util.ArrayList<com.google.cloud.documentai.v1beta1.Document.Entity>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              entities_.add(
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta1.Document.Entity.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                entityRelations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.documentai.v1beta1.Document.EntityRelation>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              entityRelations_.add(
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta1.Document.EntityRelation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.documentai.v1beta1.Document.ShardInfo.Builder subBuilder = null;
-              if (shardInfo_ != null) {
-                subBuilder = shardInfo_.toBuilder();
-              }
-              shardInfo_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta1.Document.ShardInfo.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shardInfo_);
-                shardInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (error_ != null) {
-                subBuilder = error_.toBuilder();
-              }
-              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(error_);
-                error_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        textStyles_ = java.util.Collections.unmodifiableList(textStyles_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        pages_ = java.util.Collections.unmodifiableList(pages_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        entities_ = java.util.Collections.unmodifiableList(entities_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        entityRelations_ = java.util.Collections.unmodifiableList(entityRelations_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta1.DocumentProto
         .internal_static_google_cloud_documentai_v1beta1_Document_descriptor;
@@ -317,60 +154,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ShardInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                shardIndex_ = input.readInt64();
-                break;
-              }
-            case 16:
-              {
-                shardCount_ = input.readInt64();
-                break;
-              }
-            case 24:
-              {
-                textOffset_ = input.readInt64();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -467,7 +250,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (textOffset_ != 0L) {
         output.writeInt64(3, textOffset_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -485,7 +268,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (textOffset_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, textOffset_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -504,7 +287,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (getShardIndex() != other.getShardIndex()) return false;
       if (getShardCount() != other.getShardCount()) return false;
       if (getTextOffset() != other.getTextOffset()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -521,7 +304,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getShardCount());
       hash = (37 * hash) + TEXT_OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTextOffset());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -655,17 +438,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.documentai.v1beta1.Document.ShardInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -768,7 +544,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (other.getTextOffset() != 0L) {
           setTextOffset(other.getTextOffset());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -783,18 +559,49 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta1.Document.ShardInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  shardIndex_ = input.readInt64();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  shardCount_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  textOffset_ = input.readInt64();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta1.Document.ShardInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -993,7 +800,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ShardInfo(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1280,130 +1099,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Style(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.documentai.v1beta1.Document.TextAnchor.Builder subBuilder = null;
-                if (textAnchor_ != null) {
-                  subBuilder = textAnchor_.toBuilder();
-                }
-                textAnchor_ =
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.TextAnchor.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(textAnchor_);
-                  textAnchor_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.type.Color.Builder subBuilder = null;
-                if (color_ != null) {
-                  subBuilder = color_.toBuilder();
-                }
-                color_ = input.readMessage(com.google.type.Color.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(color_);
-                  color_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.type.Color.Builder subBuilder = null;
-                if (backgroundColor_ != null) {
-                  subBuilder = backgroundColor_.toBuilder();
-                }
-                backgroundColor_ =
-                    input.readMessage(com.google.type.Color.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(backgroundColor_);
-                  backgroundColor_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                fontWeight_ = s;
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                textStyle_ = s;
-                break;
-              }
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                textDecoration_ = s;
-                break;
-              }
-            case 58:
-              {
-                com.google.cloud.documentai.v1beta1.Document.Style.FontSize.Builder subBuilder =
-                    null;
-                if (fontSize_ != null) {
-                  subBuilder = fontSize_.toBuilder();
-                }
-                fontSize_ =
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Style.FontSize.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(fontSize_);
-                  fontSize_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta1.DocumentProto
           .internal_static_google_cloud_documentai_v1beta1_Document_Style_descriptor;
@@ -1494,58 +1189,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private FontSize(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13:
-                {
-                  size_ = input.readFloat();
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  unit_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1650,7 +1293,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unit_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1665,7 +1308,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, unit_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1684,7 +1327,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (java.lang.Float.floatToIntBits(getSize())
             != java.lang.Float.floatToIntBits(other.getSize())) return false;
         if (!getUnit().equals(other.getUnit())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1699,7 +1342,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getSize());
         hash = (37 * hash) + UNIT_FIELD_NUMBER;
         hash = (53 * hash) + getUnit().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1831,17 +1474,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Style.FontSize.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1942,7 +1578,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             unit_ = other.unit_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1957,19 +1593,43 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Style.FontSize parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13:
+                  {
+                    size_ = input.readFloat();
+
+                    break;
+                  } // case 13
+                case 18:
+                  {
+                    unit_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Style.FontSize)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -2166,7 +1826,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new FontSize(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2571,7 +2243,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (fontSize_ != null) {
         output.writeMessage(7, getFontSize());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2601,7 +2273,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (fontSize_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFontSize());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2636,7 +2308,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (hasFontSize()) {
         if (!getFontSize().equals(other.getFontSize())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2669,7 +2341,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FONT_SIZE_FIELD_NUMBER;
         hash = (53 * hash) + getFontSize().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2801,17 +2473,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.documentai.v1beta1.Document.Style.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2973,7 +2638,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (other.hasFontSize()) {
           mergeFontSize(other.getFontSize());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2988,18 +2653,74 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta1.Document.Style parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getTextAnchorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getColorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getBackgroundColorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  fontWeight_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  textStyle_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  textDecoration_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(getFontSizeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta1.Document.Style) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4114,7 +3835,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Style(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4749,222 +4482,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Page(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                pageNumber_ = input.readInt32();
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.documentai.v1beta1.Document.Page.Dimension.Builder subBuilder =
-                    null;
-                if (dimension_ != null) {
-                  subBuilder = dimension_.toBuilder();
-                }
-                dimension_ =
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Dimension.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(dimension_);
-                  dimension_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder = null;
-                if (layout_ != null) {
-                  subBuilder = layout_.toBuilder();
-                }
-                layout_ =
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(layout_);
-                  layout_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  detectedLanguages_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                detectedLanguages_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 42:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  blocks_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.Block>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                blocks_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Block.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 50:
-              {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  paragraphs_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.Paragraph>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                paragraphs_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Paragraph.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 58:
-              {
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                  lines_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.Line>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                lines_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Line.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 66:
-              {
-                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                  tokens_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.Token>();
-                  mutable_bitField0_ |= 0x00000010;
-                }
-                tokens_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Token.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 74:
-              {
-                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                  visualElements_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.VisualElement>();
-                  mutable_bitField0_ |= 0x00000020;
-                }
-                visualElements_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.VisualElement.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 82:
-              {
-                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                  tables_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.Table>();
-                  mutable_bitField0_ |= 0x00000040;
-                }
-                tables_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.Table.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 90:
-              {
-                if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                  formFields_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.Page.FormField>();
-                  mutable_bitField0_ |= 0x00000080;
-                }
-                formFields_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.Page.FormField.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          blocks_ = java.util.Collections.unmodifiableList(blocks_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          paragraphs_ = java.util.Collections.unmodifiableList(paragraphs_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          lines_ = java.util.Collections.unmodifiableList(lines_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          tokens_ = java.util.Collections.unmodifiableList(tokens_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          visualElements_ = java.util.Collections.unmodifiableList(visualElements_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          tables_ = java.util.Collections.unmodifiableList(tables_);
-        }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          formFields_ = java.util.Collections.unmodifiableList(formFields_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta1.DocumentProto
           .internal_static_google_cloud_documentai_v1beta1_Document_Page_descriptor;
@@ -5068,63 +4585,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Dimension(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 13:
-                {
-                  width_ = input.readFloat();
-                  break;
-                }
-              case 21:
-                {
-                  height_ = input.readFloat();
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  unit_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5250,7 +4710,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, unit_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5268,7 +4728,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, unit_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5289,7 +4749,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (java.lang.Float.floatToIntBits(getHeight())
             != java.lang.Float.floatToIntBits(other.getHeight())) return false;
         if (!getUnit().equals(other.getUnit())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5306,7 +4766,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getHeight());
         hash = (37 * hash) + UNIT_FIELD_NUMBER;
         hash = (53 * hash) + getUnit().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5438,17 +4898,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Dimension.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -5555,7 +5008,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             unit_ = other.unit_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5570,19 +5023,49 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Dimension parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13:
+                  {
+                    width_ = input.readFloat();
+
+                    break;
+                  } // case 13
+                case 21:
+                  {
+                    height_ = input.readFloat();
+
+                    break;
+                  } // case 21
+                case 26:
+                  {
+                    unit_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Dimension)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -5831,7 +5314,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Dimension(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -6010,92 +5505,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Layout(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.TextAnchor.Builder subBuilder = null;
-                  if (textAnchor_ != null) {
-                    subBuilder = textAnchor_.toBuilder();
-                  }
-                  textAnchor_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.TextAnchor.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(textAnchor_);
-                    textAnchor_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 21:
-                {
-                  confidence_ = input.readFloat();
-                  break;
-                }
-              case 26:
-                {
-                  com.google.cloud.documentai.v1beta1.BoundingPoly.Builder subBuilder = null;
-                  if (boundingPoly_ != null) {
-                    subBuilder = boundingPoly_.toBuilder();
-                  }
-                  boundingPoly_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.BoundingPoly.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(boundingPoly_);
-                    boundingPoly_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 32:
-                {
-                  int rawValue = input.readEnum();
-
-                  orientation_ = rawValue;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6522,7 +5931,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           output.writeEnum(4, orientation_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -6546,7 +5955,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, orientation_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -6573,7 +5982,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
         }
         if (orientation_ != other.orientation_) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -6596,7 +6005,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         hash = (37 * hash) + ORIENTATION_FIELD_NUMBER;
         hash = (53 * hash) + orientation_;
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -6728,17 +6137,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Layout.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -6865,7 +6267,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (other.orientation_ != 0) {
             setOrientationValue(other.getOrientationValue());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -6880,18 +6282,56 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Layout parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getTextAnchorFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    confidence_ = input.readFloat();
+
+                    break;
+                  } // case 21
+                case 26:
+                  {
+                    input.readMessage(
+                        getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 26
+                case 32:
+                  {
+                    orientation_ = input.readEnum();
+
+                    break;
+                  } // case 32
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Layout) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -7494,7 +6934,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Layout(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -7655,83 +7107,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Block(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (layout_ != null) {
-                    subBuilder = layout_.toBuilder();
-                  }
-                  layout_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(layout_);
-                    layout_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    detectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  detectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7905,7 +7280,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(2, detectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -7922,7 +7297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   2, detectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -7943,7 +7318,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (!getLayout().equals(other.getLayout())) return false;
         }
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -7962,7 +7337,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -8095,19 +7470,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Block.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -8121,10 +7487,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (detectedLanguagesBuilder_ == null) {
             detectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            detectedLanguages_ = null;
             detectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -8249,7 +7616,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -8264,18 +7631,52 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Block parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (detectedLanguagesBuilder_ == null) {
+                      ensureDetectedLanguagesIsMutable();
+                      detectedLanguages_.add(m);
+                    } else {
+                      detectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Block) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -8926,7 +8327,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Block(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -9086,83 +8499,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Paragraph(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (layout_ != null) {
-                    subBuilder = layout_.toBuilder();
-                  }
-                  layout_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(layout_);
-                    layout_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    detectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  detectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9336,7 +8672,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(2, detectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -9353,7 +8689,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   2, detectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -9374,7 +8710,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (!getLayout().equals(other.getLayout())) return false;
         }
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -9393,7 +8729,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -9525,19 +8861,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Paragraph.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -9551,10 +8878,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (detectedLanguagesBuilder_ == null) {
             detectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            detectedLanguages_ = null;
             detectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -9682,7 +9010,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -9697,19 +9025,52 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Paragraph parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (detectedLanguagesBuilder_ == null) {
+                      ensureDetectedLanguagesIsMutable();
+                      detectedLanguages_.add(m);
+                    } else {
+                      detectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Paragraph)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -10362,7 +9723,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Paragraph(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -10524,83 +9897,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Line(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (layout_ != null) {
-                    subBuilder = layout_.toBuilder();
-                  }
-                  layout_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(layout_);
-                    layout_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    detectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  detectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10774,7 +10070,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(2, detectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -10791,7 +10087,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   2, detectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -10812,7 +10108,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (!getLayout().equals(other.getLayout())) return false;
         }
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -10831,7 +10127,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -10964,19 +10260,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Line.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -10990,10 +10277,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (detectedLanguagesBuilder_ == null) {
             detectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            detectedLanguages_ = null;
             detectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -11118,7 +10406,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -11133,18 +10421,52 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Line parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (detectedLanguagesBuilder_ == null) {
+                      ensureDetectedLanguagesIsMutable();
+                      detectedLanguages_.add(m);
+                    } else {
+                      detectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Line) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -11795,7 +11117,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Line(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -12002,102 +11336,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private Token(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (layout_ != null) {
-                    subBuilder = layout_.toBuilder();
-                  }
-                  layout_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(layout_);
-                    layout_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.Builder
-                      subBuilder = null;
-                  if (detectedBreak_ != null) {
-                    subBuilder = detectedBreak_.toBuilder();
-                  }
-                  detectedBreak_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak
-                              .parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(detectedBreak_);
-                    detectedBreak_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 26:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    detectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  detectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta1.DocumentProto
             .internal_static_google_cloud_documentai_v1beta1_Document_Page_Token_descriptor;
@@ -12178,53 +11416,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private DetectedBreak(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8:
-                  {
-                    int rawValue = input.readEnum();
-
-                    type_ = rawValue;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12491,7 +11682,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   .getNumber()) {
             output.writeEnum(1, type_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -12506,7 +11697,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   .getNumber()) {
             size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -12524,7 +11715,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak) obj;
 
           if (type_ != other.type_) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -12537,7 +11728,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (19 * hash) + getDescriptor().hashCode();
           hash = (37 * hash) + TYPE_FIELD_NUMBER;
           hash = (53 * hash) + type_;
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -12682,17 +11873,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -12791,7 +11975,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             if (other.type_ != 0) {
               setTypeValue(other.getTypeValue());
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -12806,20 +11990,37 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak parsedMessage =
-                null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      type_ = input.readEnum();
+
+                      break;
+                    } // case 8
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.documentai.v1beta1.Document.Page.Token.DetectedBreak)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -12961,7 +12162,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new DetectedBreak(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -13200,7 +12413,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(3, detectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -13220,7 +12433,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   3, detectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -13245,7 +12458,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (!getDetectedBreak().equals(other.getDetectedBreak())) return false;
         }
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -13268,7 +12481,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -13400,19 +12613,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Token.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -13432,10 +12636,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (detectedLanguagesBuilder_ == null) {
             detectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            detectedLanguages_ = null;
             detectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -13568,7 +12773,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -13583,18 +12788,59 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Token parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getDetectedBreakFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (detectedLanguagesBuilder_ == null) {
+                      ensureDetectedLanguagesIsMutable();
+                      detectedLanguages_.add(m);
+                    } else {
+                      detectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Token) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -14468,7 +13714,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Token(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -14657,90 +13915,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private VisualElement(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (layout_ != null) {
-                    subBuilder = layout_.toBuilder();
-                  }
-                  layout_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(layout_);
-                    layout_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  type_ = s;
-                  break;
-                }
-              case 26:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    detectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  detectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -14968,7 +14142,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(3, detectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -14988,7 +14162,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   3, detectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -15010,7 +14184,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         if (!getType().equals(other.getType())) return false;
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -15031,7 +14205,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -15167,19 +14341,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.documentai.v1beta1.Document.Page.VisualElement.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -15195,10 +14360,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
           if (detectedLanguagesBuilder_ == null) {
             detectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            detectedLanguages_ = null;
             detectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -15333,7 +14499,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -15348,19 +14514,58 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.VisualElement parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    type_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (detectedLanguagesBuilder_ == null) {
+                      ensureDetectedLanguagesIsMutable();
+                      detectedLanguages_.add(m);
+                    } else {
+                      detectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.VisualElement)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -16124,7 +15329,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new VisualElement(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -16414,117 +15631,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private Table(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (layout_ != null) {
-                    subBuilder = layout_.toBuilder();
-                  }
-                  layout_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(layout_);
-                    layout_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    headerRows_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  headerRows_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.parser(),
-                          extensionRegistry));
-                  break;
-                }
-              case 26:
-                {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                    bodyRows_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow>();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  bodyRows_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.parser(),
-                          extensionRegistry));
-                  break;
-                }
-              case 34:
-                {
-                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                    detectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000004;
-                  }
-                  detectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            headerRows_ = java.util.Collections.unmodifiableList(headerRows_);
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            bodyRows_ = java.util.Collections.unmodifiableList(bodyRows_);
-          }
-          if (((mutable_bitField0_ & 0x00000004) != 0)) {
-            detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta1.DocumentProto
             .internal_static_google_cloud_documentai_v1beta1_Document_Page_Table_descriptor;
@@ -16640,65 +15746,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return this.unknownFields;
         }
 
-        private TableRow(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                      cells_ =
-                          new java.util.ArrayList<
-                              com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell>();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    cells_.add(
-                        input.readMessage(
-                            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
-                                .parser(),
-                            extensionRegistry));
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            if (((mutable_bitField0_ & 0x00000001) != 0)) {
-              cells_ = java.util.Collections.unmodifiableList(cells_);
-            }
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.documentai.v1beta1.DocumentProto
               .internal_static_google_cloud_documentai_v1beta1_Document_Page_Table_TableRow_descriptor;
@@ -16812,7 +15859,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < cells_.size(); i++) {
             output.writeMessage(1, cells_.get(i));
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -16824,7 +15871,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < cells_.size(); i++) {
             size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, cells_.get(i));
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -16841,7 +15888,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow) obj;
 
           if (!getCellsList().equals(other.getCellsList())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -16856,7 +15903,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + CELLS_FIELD_NUMBER;
             hash = (53 * hash) + getCellsList().hashCode();
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -16992,19 +16039,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-              getCellsFieldBuilder();
-            }
           }
 
           @java.lang.Override
@@ -17012,10 +16050,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             super.clear();
             if (cellsBuilder_ == null) {
               cells_ = java.util.Collections.emptyList();
-              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
+              cells_ = null;
               cellsBuilder_.clear();
             }
+            bitField0_ = (bitField0_ & ~0x00000001);
             return this;
           }
 
@@ -17138,7 +16177,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 }
               }
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -17153,19 +16192,46 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell m =
+                          input.readMessage(
+                              com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell
+                                  .parser(),
+                              extensionRegistry);
+                      if (cellsBuilder_ == null) {
+                        ensureCellsIsMutable();
+                        cells_.add(m);
+                      } else {
+                        cellsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -17618,7 +16684,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new TableRow(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -17806,93 +16884,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private TableCell(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                        null;
-                    if (layout_ != null) {
-                      subBuilder = layout_.toBuilder();
-                    }
-                    layout_ =
-                        input.readMessage(
-                            com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                            extensionRegistry);
-                    if (subBuilder != null) {
-                      subBuilder.mergeFrom(layout_);
-                      layout_ = subBuilder.buildPartial();
-                    }
-
-                    break;
-                  }
-                case 16:
-                  {
-                    rowSpan_ = input.readInt32();
-                    break;
-                  }
-                case 24:
-                  {
-                    colSpan_ = input.readInt32();
-                    break;
-                  }
-                case 34:
-                  {
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                      detectedLanguages_ =
-                          new java.util.ArrayList<
-                              com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    detectedLanguages_.add(
-                        input.readMessage(
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                                .parser(),
-                            extensionRegistry));
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            if (((mutable_bitField0_ & 0x00000001) != 0)) {
-              detectedLanguages_ = java.util.Collections.unmodifiableList(detectedLanguages_);
-            }
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -18110,7 +17101,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < detectedLanguages_.size(); i++) {
             output.writeMessage(4, detectedLanguages_.get(i));
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -18133,7 +17124,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedOutputStream.computeMessageSize(
                     4, detectedLanguages_.get(i));
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -18156,7 +17147,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (getRowSpan() != other.getRowSpan()) return false;
           if (getColSpan() != other.getColSpan()) return false;
           if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -18179,7 +17170,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
             hash = (53 * hash) + getDetectedLanguagesList().hashCode();
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -18316,19 +17307,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-              getDetectedLanguagesFieldBuilder();
-            }
           }
 
           @java.lang.Override
@@ -18346,10 +17328,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
             if (detectedLanguagesBuilder_ == null) {
               detectedLanguages_ = java.util.Collections.emptyList();
-              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
+              detectedLanguages_ = null;
               detectedLanguagesBuilder_.clear();
             }
+            bitField0_ = (bitField0_ & ~0x00000001);
             return this;
           }
 
@@ -18489,7 +17472,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 }
               }
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -18504,19 +17487,64 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                      break;
+                    } // case 10
+                  case 16:
+                    {
+                      rowSpan_ = input.readInt32();
+
+                      break;
+                    } // case 16
+                  case 24:
+                    {
+                      colSpan_ = input.readInt32();
+
+                      break;
+                    } // case 24
+                  case 34:
+                    {
+                      com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                          input.readMessage(
+                              com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                  .parser(),
+                              extensionRegistry);
+                      if (detectedLanguagesBuilder_ == null) {
+                        ensureDetectedLanguagesIsMutable();
+                        detectedLanguages_.add(m);
+                      } else {
+                        detectedLanguagesBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 34
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.documentai.v1beta1.Document.Page.Table.TableCell)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -19276,7 +18304,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new TableCell(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -19621,7 +18661,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(4, detectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -19644,7 +18684,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   4, detectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -19667,7 +18707,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!getHeaderRowsList().equals(other.getHeaderRowsList())) return false;
         if (!getBodyRowsList().equals(other.getBodyRowsList())) return false;
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -19694,7 +18734,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -19826,21 +18866,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.Table.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getHeaderRowsFieldBuilder();
-            getBodyRowsFieldBuilder();
-            getDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -19854,22 +18883,25 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (headerRowsBuilder_ == null) {
             headerRows_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            headerRows_ = null;
             headerRowsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           if (bodyRowsBuilder_ == null) {
             bodyRows_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
+            bodyRows_ = null;
             bodyRowsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000002);
           if (detectedLanguagesBuilder_ == null) {
             detectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
+            detectedLanguages_ = null;
             detectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -20066,7 +19098,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -20081,18 +19113,82 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.Table parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                .parser(),
+                            extensionRegistry);
+                    if (headerRowsBuilder_ == null) {
+                      ensureHeaderRowsIsMutable();
+                      headerRows_.add(m);
+                    } else {
+                      headerRowsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.Table.TableRow
+                                .parser(),
+                            extensionRegistry);
+                    if (bodyRowsBuilder_ == null) {
+                      ensureBodyRowsIsMutable();
+                      bodyRows_.add(m);
+                    } else {
+                      bodyRowsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (detectedLanguagesBuilder_ == null) {
+                      ensureDetectedLanguagesIsMutable();
+                      detectedLanguages_.add(m);
+                    } else {
+                      detectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.Table) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -21568,7 +20664,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Table(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -21839,120 +20947,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private FormField(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (fieldName_ != null) {
-                    subBuilder = fieldName_.toBuilder();
-                  }
-                  fieldName_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(fieldName_);
-                    fieldName_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  com.google.cloud.documentai.v1beta1.Document.Page.Layout.Builder subBuilder =
-                      null;
-                  if (fieldValue_ != null) {
-                    subBuilder = fieldValue_.toBuilder();
-                  }
-                  fieldValue_ =
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.Layout.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(fieldValue_);
-                    fieldValue_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 26:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    nameDetectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  nameDetectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              case 34:
-                {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                    valueDetectedLanguages_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage>();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  valueDetectedLanguages_.add(
-                      input.readMessage(
-                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
-                              .parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            nameDetectedLanguages_ = java.util.Collections.unmodifiableList(nameDetectedLanguages_);
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            valueDetectedLanguages_ =
-                java.util.Collections.unmodifiableList(valueDetectedLanguages_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -22274,7 +21268,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < valueDetectedLanguages_.size(); i++) {
           output.writeMessage(4, valueDetectedLanguages_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -22299,7 +21293,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   4, valueDetectedLanguages_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -22327,7 +21321,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return false;
         if (!getValueDetectedLanguagesList().equals(other.getValueDetectedLanguagesList()))
           return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -22354,7 +21348,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + VALUE_DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getValueDetectedLanguagesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -22486,20 +21480,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
 
         // Construct using com.google.cloud.documentai.v1beta1.Document.Page.FormField.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getNameDetectedLanguagesFieldBuilder();
-            getValueDetectedLanguagesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -22519,16 +21503,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           if (nameDetectedLanguagesBuilder_ == null) {
             nameDetectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            nameDetectedLanguages_ = null;
             nameDetectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           if (valueDetectedLanguagesBuilder_ == null) {
             valueDetectedLanguages_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
+            valueDetectedLanguages_ = null;
             valueDetectedLanguagesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -22702,7 +21688,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -22717,19 +21703,73 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.FormField parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getFieldNameFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getFieldValueFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (nameDetectedLanguagesBuilder_ == null) {
+                      ensureNameDetectedLanguagesIsMutable();
+                      nameDetectedLanguages_.add(m);
+                    } else {
+                      nameDetectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                                .parser(),
+                            extensionRegistry);
+                    if (valueDetectedLanguagesBuilder_ == null) {
+                      ensureValueDetectedLanguagesIsMutable();
+                      valueDetectedLanguages_.add(m);
+                    } else {
+                      valueDetectedLanguagesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.FormField)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -24018,7 +23058,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new FormField(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -24117,58 +23169,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private DetectedLanguage(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  languageCode_ = s;
-                  break;
-                }
-              case 21:
-                {
-                  confidence_ = input.readFloat();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -24277,7 +23277,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           output.writeFloat(2, confidence_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -24292,7 +23292,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
           size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -24311,7 +23311,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!getLanguageCode().equals(other.getLanguageCode())) return false;
         if (java.lang.Float.floatToIntBits(getConfidence())
             != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -24326,7 +23326,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getLanguageCode().hashCode();
         hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
         hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -24461,17 +23461,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -24575,7 +23568,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (other.getConfidence() != 0F) {
             setConfidence(other.getConfidence());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -24590,19 +23583,43 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    languageCode_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    confidence_ = input.readFloat();
+
+                    break;
+                  } // case 21
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -24809,7 +23826,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DetectedLanguage(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -25628,7 +24657,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < formFields_.size(); i++) {
         output.writeMessage(11, formFields_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -25671,7 +24700,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < formFields_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, formFields_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -25704,7 +24733,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!getVisualElementsList().equals(other.getVisualElementsList())) return false;
       if (!getTablesList().equals(other.getTablesList())) return false;
       if (!getFormFieldsList().equals(other.getFormFieldsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -25757,7 +24786,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FORM_FIELDS_FIELD_NUMBER;
         hash = (53 * hash) + getFormFieldsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -25888,26 +24917,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.documentai.v1beta1.Document.Page.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getDetectedLanguagesFieldBuilder();
-          getBlocksFieldBuilder();
-          getParagraphsFieldBuilder();
-          getLinesFieldBuilder();
-          getTokensFieldBuilder();
-          getVisualElementsFieldBuilder();
-          getTablesFieldBuilder();
-          getFormFieldsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -25929,52 +24942,60 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         if (detectedLanguagesBuilder_ == null) {
           detectedLanguages_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          detectedLanguages_ = null;
           detectedLanguagesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (blocksBuilder_ == null) {
           blocks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          blocks_ = null;
           blocksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (paragraphsBuilder_ == null) {
           paragraphs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          paragraphs_ = null;
           paragraphsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (linesBuilder_ == null) {
           lines_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          lines_ = null;
           linesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (tokensBuilder_ == null) {
           tokens_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          tokens_ = null;
           tokensBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (visualElementsBuilder_ == null) {
           visualElements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
+          visualElements_ = null;
           visualElementsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (tablesBuilder_ == null) {
           tables_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          tables_ = null;
           tablesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (formFieldsBuilder_ == null) {
           formFields_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
+          formFields_ = null;
           formFieldsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -26363,7 +25384,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -26378,18 +25399,162 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta1.Document.Page parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  pageNumber_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(getDimensionFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getLayoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.DetectedLanguage
+                              .parser(),
+                          extensionRegistry);
+                  if (detectedLanguagesBuilder_ == null) {
+                    ensureDetectedLanguagesIsMutable();
+                    detectedLanguages_.add(m);
+                  } else {
+                    detectedLanguagesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              case 42:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.Block m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.Block.parser(),
+                          extensionRegistry);
+                  if (blocksBuilder_ == null) {
+                    ensureBlocksIsMutable();
+                    blocks_.add(m);
+                  } else {
+                    blocksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              case 50:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.Paragraph m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.Paragraph.parser(),
+                          extensionRegistry);
+                  if (paragraphsBuilder_ == null) {
+                    ensureParagraphsIsMutable();
+                    paragraphs_.add(m);
+                  } else {
+                    paragraphsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 50
+              case 58:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.Line m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.Line.parser(),
+                          extensionRegistry);
+                  if (linesBuilder_ == null) {
+                    ensureLinesIsMutable();
+                    lines_.add(m);
+                  } else {
+                    linesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 58
+              case 66:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.Token m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.Token.parser(),
+                          extensionRegistry);
+                  if (tokensBuilder_ == null) {
+                    ensureTokensIsMutable();
+                    tokens_.add(m);
+                  } else {
+                    tokensBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 66
+              case 74:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.VisualElement m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.VisualElement.parser(),
+                          extensionRegistry);
+                  if (visualElementsBuilder_ == null) {
+                    ensureVisualElementsIsMutable();
+                    visualElements_.add(m);
+                  } else {
+                    visualElementsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 74
+              case 82:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.Table m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.Table.parser(),
+                          extensionRegistry);
+                  if (tablesBuilder_ == null) {
+                    ensureTablesIsMutable();
+                    tables_.add(m);
+                  } else {
+                    tablesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+              case 90:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.Page.FormField m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.Page.FormField.parser(),
+                          extensionRegistry);
+                  if (formFieldsBuilder_ == null) {
+                    ensureFormFieldsIsMutable();
+                    formFields_.add(m);
+                  } else {
+                    formFieldsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 90
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta1.Document.Page) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -30021,7 +29186,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Page(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -30198,83 +29375,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Entity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.documentai.v1beta1.Document.TextAnchor.Builder subBuilder = null;
-                if (textAnchor_ != null) {
-                  subBuilder = textAnchor_.toBuilder();
-                }
-                textAnchor_ =
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.TextAnchor.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(textAnchor_);
-                  textAnchor_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                type_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                mentionText_ = s;
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                mentionId_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -30522,7 +29622,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mentionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mentionId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -30543,7 +29643,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mentionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mentionId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -30566,7 +29666,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!getType().equals(other.getType())) return false;
       if (!getMentionText().equals(other.getMentionText())) return false;
       if (!getMentionId().equals(other.getMentionId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -30587,7 +29687,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getMentionText().hashCode();
       hash = (37 * hash) + MENTION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMentionId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -30720,17 +29820,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.documentai.v1beta1.Document.Entity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -30850,7 +29943,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           mentionId_ = other.mentionId_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -30865,18 +29958,55 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta1.Document.Entity parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getTextAnchorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  type_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  mentionText_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  mentionId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta1.Document.Entity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -31443,7 +30573,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Entity(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -31577,66 +30719,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private EntityRelation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                subjectId_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                objectId_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                relation_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -31824,7 +30906,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relation_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, relation_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -31842,7 +30924,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relation_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, relation_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -31861,7 +30943,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!getSubjectId().equals(other.getSubjectId())) return false;
       if (!getObjectId().equals(other.getObjectId())) return false;
       if (!getRelation().equals(other.getRelation())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -31878,7 +30960,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getObjectId().hashCode();
       hash = (37 * hash) + RELATION_FIELD_NUMBER;
       hash = (53 * hash) + getRelation().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -32011,17 +31093,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.documentai.v1beta1.Document.EntityRelation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -32129,7 +31204,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           relation_ = other.relation_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -32144,19 +31219,49 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta1.Document.EntityRelation parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  subjectId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  objectId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  relation_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta1.Document.EntityRelation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -32512,7 +31617,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EntityRelation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -32641,64 +31758,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private TextAnchor(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  textSegments_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                textSegments_.add(
-                    input.readMessage(
-                        com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          textSegments_ = java.util.Collections.unmodifiableList(textSegments_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta1.DocumentProto
           .internal_static_google_cloud_documentai_v1beta1_Document_TextAnchor_descriptor;
@@ -32785,56 +31844,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private TextSegment(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  startIndex_ = input.readInt64();
-                  break;
-                }
-              case 16:
-                {
-                  endIndex_ = input.readInt64();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.documentai.v1beta1.DocumentProto
             .internal_static_google_cloud_documentai_v1beta1_Document_TextAnchor_TextSegment_descriptor;
@@ -32910,7 +31919,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (endIndex_ != 0L) {
           output.writeInt64(2, endIndex_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -32925,7 +31934,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (endIndex_ != 0L) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, endIndex_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -32943,7 +31952,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
         if (getStartIndex() != other.getStartIndex()) return false;
         if (getEndIndex() != other.getEndIndex()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -32958,7 +31967,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStartIndex());
         hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEndIndex());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -33098,17 +32107,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -33212,7 +32214,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (other.getEndIndex() != 0L) {
             setEndIndex(other.getEndIndex());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -33227,19 +32229,43 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    startIndex_ = input.readInt64();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    endIndex_ = input.readInt64();
+
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -33395,7 +32421,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new TextSegment(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -33521,7 +32559,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < textSegments_.size(); i++) {
         output.writeMessage(1, textSegments_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -33533,7 +32571,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < textSegments_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, textSegments_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -33550,7 +32588,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.documentai.v1beta1.Document.TextAnchor) obj;
 
       if (!getTextSegmentsList().equals(other.getTextSegmentsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -33565,7 +32603,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + TEXT_SEGMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getTextSegmentsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -33698,19 +32736,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.documentai.v1beta1.Document.TextAnchor.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getTextSegmentsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -33718,10 +32747,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (textSegmentsBuilder_ == null) {
           textSegments_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          textSegments_ = null;
           textSegmentsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -33838,7 +32868,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -33853,18 +32883,46 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta1.Document.TextAnchor parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta1.Document.TextAnchor.TextSegment
+                              .parser(),
+                          extensionRegistry);
+                  if (textSegmentsBuilder_ == null) {
+                    ensureTextSegmentsIsMutable();
+                    textSegments_.add(m);
+                  } else {
+                    textSegmentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta1.Document.TextAnchor) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -34337,7 +33395,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TextAnchor(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -35079,7 +34149,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (error_ != null) {
       output.writeMessage(10, getError());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -35120,7 +34190,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getError());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -35161,7 +34231,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -35212,7 +34282,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -35345,22 +34415,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.documentai.v1beta1.Document.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTextStylesFieldBuilder();
-        getPagesFieldBuilder();
-        getEntitiesFieldBuilder();
-        getEntityRelationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -35372,28 +34430,32 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       if (textStylesBuilder_ == null) {
         textStyles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        textStyles_ = null;
         textStylesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (pagesBuilder_ == null) {
         pages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        pages_ = null;
         pagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        entities_ = null;
         entitiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (entityRelationsBuilder_ == null) {
         entityRelations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        entityRelations_ = null;
         entityRelationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (shardInfoBuilder_ == null) {
         shardInfo_ = null;
       } else {
@@ -35680,7 +34742,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -35695,17 +34757,124 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.documentai.v1beta1.Document parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 1;
+                source_ = s;
+                break;
+              } // case 10
+            case 18:
+              {
+                source_ = input.readBytes();
+                sourceCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                mimeType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                text_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.documentai.v1beta1.Document.Style m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta1.Document.Style.parser(),
+                        extensionRegistry);
+                if (textStylesBuilder_ == null) {
+                  ensureTextStylesIsMutable();
+                  textStyles_.add(m);
+                } else {
+                  textStylesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.cloud.documentai.v1beta1.Document.Page m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta1.Document.Page.parser(),
+                        extensionRegistry);
+                if (pagesBuilder_ == null) {
+                  ensurePagesIsMutable();
+                  pages_.add(m);
+                } else {
+                  pagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.cloud.documentai.v1beta1.Document.Entity m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta1.Document.Entity.parser(),
+                        extensionRegistry);
+                if (entitiesBuilder_ == null) {
+                  ensureEntitiesIsMutable();
+                  entities_.add(m);
+                } else {
+                  entitiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.documentai.v1beta1.Document.EntityRelation m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta1.Document.EntityRelation.parser(),
+                        extensionRegistry);
+                if (entityRelationsBuilder_ == null) {
+                  ensureEntityRelationsIsMutable();
+                  entityRelations_.add(m);
+                } else {
+                  entityRelationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getShardInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.documentai.v1beta1.Document) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -38130,7 +37299,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Document(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

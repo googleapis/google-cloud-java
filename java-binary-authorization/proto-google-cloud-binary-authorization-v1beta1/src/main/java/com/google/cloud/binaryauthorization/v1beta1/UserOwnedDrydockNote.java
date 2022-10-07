@@ -55,77 +55,6 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private UserOwnedDrydockNote(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              noteReference_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                publicKeys_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              publicKeys_.add(
-                  input.readMessage(
-                      com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              delegationServiceAccountEmail_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        publicKeys_ = java.util.Collections.unmodifiableList(publicKeys_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationResourcesProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_UserOwnedDrydockNote_descriptor;
@@ -401,7 +330,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(delegationServiceAccountEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, delegationServiceAccountEmail_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -421,7 +350,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               3, delegationServiceAccountEmail_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -441,7 +370,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     if (!getPublicKeysList().equals(other.getPublicKeysList())) return false;
     if (!getDelegationServiceAccountEmail().equals(other.getDelegationServiceAccountEmail()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -460,7 +389,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + DELEGATION_SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getDelegationServiceAccountEmail().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -593,19 +522,10 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
 
     // Construct using
     // com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPublicKeysFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -615,10 +535,11 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
 
       if (publicKeysBuilder_ == null) {
         publicKeys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        publicKeys_ = null;
         publicKeysBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       delegationServiceAccountEmail_ = "";
 
       return this;
@@ -748,7 +669,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         delegationServiceAccountEmail_ = other.delegationServiceAccountEmail_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -763,19 +684,57 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                noteReference_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey m =
+                    input.readMessage(
+                        com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey.parser(),
+                        extensionRegistry);
+                if (publicKeysBuilder_ == null) {
+                  ensurePublicKeysIsMutable();
+                  publicKeys_.add(m);
+                } else {
+                  publicKeysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                delegationServiceAccountEmail_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1608,7 +1567,18 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UserOwnedDrydockNote(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

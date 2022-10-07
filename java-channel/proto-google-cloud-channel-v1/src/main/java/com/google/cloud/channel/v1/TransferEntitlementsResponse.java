@@ -53,60 +53,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private TransferEntitlementsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                entitlements_ = new java.util.ArrayList<com.google.cloud.channel.v1.Entitlement>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              entitlements_.add(
-                  input.readMessage(
-                      com.google.cloud.channel.v1.Entitlement.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        entitlements_ = java.util.Collections.unmodifiableList(entitlements_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_TransferEntitlementsResponse_descriptor;
@@ -208,7 +154,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     for (int i = 0; i < entitlements_.size(); i++) {
       output.writeMessage(1, entitlements_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -220,7 +166,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     for (int i = 0; i < entitlements_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, entitlements_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -237,7 +183,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         (com.google.cloud.channel.v1.TransferEntitlementsResponse) obj;
 
     if (!getEntitlementsList().equals(other.getEntitlementsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -252,7 +198,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       hash = (37 * hash) + ENTITLEMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getEntitlementsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -383,19 +329,10 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.cloud.channel.v1.TransferEntitlementsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getEntitlementsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -403,10 +340,11 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       super.clear();
       if (entitlementsBuilder_ == null) {
         entitlements_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        entitlements_ = null;
         entitlementsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -521,7 +459,7 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -536,18 +474,44 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.channel.v1.TransferEntitlementsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.channel.v1.Entitlement m =
+                    input.readMessage(
+                        com.google.cloud.channel.v1.Entitlement.parser(), extensionRegistry);
+                if (entitlementsBuilder_ == null) {
+                  ensureEntitlementsIsMutable();
+                  entitlements_.add(m);
+                } else {
+                  entitlementsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.channel.v1.TransferEntitlementsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -936,7 +900,18 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TransferEntitlementsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

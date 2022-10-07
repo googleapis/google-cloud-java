@@ -59,199 +59,6 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private JobConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                inputs_ = new java.util.ArrayList<com.google.cloud.video.transcoder.v1.Input>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              inputs_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.Input.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                editList_ =
-                    new java.util.ArrayList<com.google.cloud.video.transcoder.v1.EditAtom>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              editList_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.EditAtom.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                elementaryStreams_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.video.transcoder.v1.ElementaryStream>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              elementaryStreams_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.ElementaryStream.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                muxStreams_ =
-                    new java.util.ArrayList<com.google.cloud.video.transcoder.v1.MuxStream>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              muxStreams_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.MuxStream.parser(), extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                manifests_ =
-                    new java.util.ArrayList<com.google.cloud.video.transcoder.v1.Manifest>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              manifests_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.Manifest.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.video.transcoder.v1.Output.Builder subBuilder = null;
-              if (output_ != null) {
-                subBuilder = output_.toBuilder();
-              }
-              output_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.Output.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(output_);
-                output_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                adBreaks_ = new java.util.ArrayList<com.google.cloud.video.transcoder.v1.AdBreak>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              adBreaks_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.AdBreak.parser(), extensionRegistry));
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.video.transcoder.v1.PubsubDestination.Builder subBuilder = null;
-              if (pubsubDestination_ != null) {
-                subBuilder = pubsubDestination_.toBuilder();
-              }
-              pubsubDestination_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PubsubDestination.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pubsubDestination_);
-                pubsubDestination_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                spriteSheets_ =
-                    new java.util.ArrayList<com.google.cloud.video.transcoder.v1.SpriteSheet>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              spriteSheets_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.SpriteSheet.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                overlays_ = new java.util.ArrayList<com.google.cloud.video.transcoder.v1.Overlay>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              overlays_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.Overlay.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        inputs_ = java.util.Collections.unmodifiableList(inputs_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        editList_ = java.util.Collections.unmodifiableList(editList_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        elementaryStreams_ = java.util.Collections.unmodifiableList(elementaryStreams_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        muxStreams_ = java.util.Collections.unmodifiableList(muxStreams_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        manifests_ = java.util.Collections.unmodifiableList(manifests_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        adBreaks_ = java.util.Collections.unmodifiableList(adBreaks_);
-      }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
-        spriteSheets_ = java.util.Collections.unmodifiableList(spriteSheets_);
-      }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        overlays_ = java.util.Collections.unmodifiableList(overlays_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_JobConfig_descriptor;
@@ -983,7 +790,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < overlays_.size(); i++) {
       output.writeMessage(10, overlays_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1023,7 +830,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < overlays_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, overlays_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1055,7 +862,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSpriteSheetsList().equals(other.getSpriteSheetsList())) return false;
     if (!getOverlaysList().equals(other.getOverlaysList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1106,7 +913,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + OVERLAYS_FIELD_NUMBER;
       hash = (53 * hash) + getOverlaysList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1235,26 +1042,10 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.transcoder.v1.JobConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInputsFieldBuilder();
-        getEditListFieldBuilder();
-        getElementaryStreamsFieldBuilder();
-        getMuxStreamsFieldBuilder();
-        getManifestsFieldBuilder();
-        getAdBreaksFieldBuilder();
-        getSpriteSheetsFieldBuilder();
-        getOverlaysFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1262,34 +1053,39 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (inputsBuilder_ == null) {
         inputs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        inputs_ = null;
         inputsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (editListBuilder_ == null) {
         editList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        editList_ = null;
         editListBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (elementaryStreamsBuilder_ == null) {
         elementaryStreams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        elementaryStreams_ = null;
         elementaryStreamsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (muxStreamsBuilder_ == null) {
         muxStreams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        muxStreams_ = null;
         muxStreamsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (manifestsBuilder_ == null) {
         manifests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        manifests_ = null;
         manifestsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (outputBuilder_ == null) {
         output_ = null;
       } else {
@@ -1298,10 +1094,11 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (adBreaksBuilder_ == null) {
         adBreaks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        adBreaks_ = null;
         adBreaksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (pubsubDestinationBuilder_ == null) {
         pubsubDestination_ = null;
       } else {
@@ -1310,16 +1107,18 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (spriteSheetsBuilder_ == null) {
         spriteSheets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
+        spriteSheets_ = null;
         spriteSheetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (overlaysBuilder_ == null) {
         overlays_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
+        overlays_ = null;
         overlaysBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -1701,7 +1500,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1716,17 +1515,150 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.transcoder.v1.JobConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.video.transcoder.v1.Input m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.Input.parser(), extensionRegistry);
+                if (inputsBuilder_ == null) {
+                  ensureInputsIsMutable();
+                  inputs_.add(m);
+                } else {
+                  inputsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.video.transcoder.v1.EditAtom m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.EditAtom.parser(), extensionRegistry);
+                if (editListBuilder_ == null) {
+                  ensureEditListIsMutable();
+                  editList_.add(m);
+                } else {
+                  editListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.video.transcoder.v1.ElementaryStream m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.ElementaryStream.parser(),
+                        extensionRegistry);
+                if (elementaryStreamsBuilder_ == null) {
+                  ensureElementaryStreamsIsMutable();
+                  elementaryStreams_.add(m);
+                } else {
+                  elementaryStreamsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.video.transcoder.v1.MuxStream m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.MuxStream.parser(), extensionRegistry);
+                if (muxStreamsBuilder_ == null) {
+                  ensureMuxStreamsIsMutable();
+                  muxStreams_.add(m);
+                } else {
+                  muxStreamsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.video.transcoder.v1.Manifest m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.Manifest.parser(), extensionRegistry);
+                if (manifestsBuilder_ == null) {
+                  ensureManifestsIsMutable();
+                  manifests_.add(m);
+                } else {
+                  manifestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getOutputFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.cloud.video.transcoder.v1.AdBreak m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.AdBreak.parser(), extensionRegistry);
+                if (adBreaksBuilder_ == null) {
+                  ensureAdBreaksIsMutable();
+                  adBreaks_.add(m);
+                } else {
+                  adBreaksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getPubsubDestinationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.video.transcoder.v1.SpriteSheet m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.SpriteSheet.parser(),
+                        extensionRegistry);
+                if (spriteSheetsBuilder_ == null) {
+                  ensureSpriteSheetsIsMutable();
+                  spriteSheets_.add(m);
+                } else {
+                  spriteSheetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.cloud.video.transcoder.v1.Overlay m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.Overlay.parser(), extensionRegistry);
+                if (overlaysBuilder_ == null) {
+                  ensureOverlaysIsMutable();
+                  overlays_.add(m);
+                } else {
+                  overlaysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.video.transcoder.v1.JobConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5038,7 +4970,18 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new JobConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

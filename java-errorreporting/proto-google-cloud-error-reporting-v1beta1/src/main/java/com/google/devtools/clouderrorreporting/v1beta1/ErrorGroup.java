@@ -55,84 +55,6 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ErrorGroup(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              groupId_ = s;
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                trackingIssues_ =
-                    new java.util.ArrayList<
-                        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              trackingIssues_.add(
-                  input.readMessage(
-                      com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              resolutionStatus_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        trackingIssues_ = java.util.Collections.unmodifiableList(trackingIssues_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
@@ -400,7 +322,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(5, resolutionStatus_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -424,7 +346,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, resolutionStatus_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -444,7 +366,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getGroupId().equals(other.getGroupId())) return false;
     if (!getTrackingIssuesList().equals(other.getTrackingIssuesList())) return false;
     if (resolutionStatus_ != other.resolutionStatus_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -465,7 +387,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + RESOLUTION_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + resolutionStatus_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -595,19 +517,10 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTrackingIssuesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -619,10 +532,11 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
 
       if (trackingIssuesBuilder_ == null) {
         trackingIssues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        trackingIssues_ = null;
         trackingIssuesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       resolutionStatus_ = 0;
 
       return this;
@@ -753,7 +667,7 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
       if (other.resolutionStatus_ != 0) {
         setResolutionStatusValue(other.getResolutionStatusValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -768,18 +682,63 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                groupId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue m =
+                    input.readMessage(
+                        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.parser(),
+                        extensionRegistry);
+                if (trackingIssuesBuilder_ == null) {
+                  ensureTrackingIssuesIsMutable();
+                  trackingIssues_.add(m);
+                } else {
+                  trackingIssuesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 40:
+              {
+                resolutionStatus_ = input.readEnum();
+
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1551,7 +1510,18 @@ public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ErrorGroup(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

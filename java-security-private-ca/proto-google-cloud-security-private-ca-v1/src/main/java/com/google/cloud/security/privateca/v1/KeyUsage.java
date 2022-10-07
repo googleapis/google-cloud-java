@@ -53,99 +53,6 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private KeyUsage(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions.Builder subBuilder =
-                  null;
-              if (baseKeyUsage_ != null) {
-                subBuilder = baseKeyUsage_.toBuilder();
-              }
-              baseKeyUsage_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(baseKeyUsage_);
-                baseKeyUsage_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions.Builder
-                  subBuilder = null;
-              if (extendedKeyUsage_ != null) {
-                subBuilder = extendedKeyUsage_.toBuilder();
-              }
-              extendedKeyUsage_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(extendedKeyUsage_);
-                extendedKeyUsage_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unknownExtendedKeyUsages_ =
-                    new java.util.ArrayList<com.google.cloud.security.privateca.v1.ObjectId>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unknownExtendedKeyUsages_.add(
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.ObjectId.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        unknownExtendedKeyUsages_ =
-            java.util.Collections.unmodifiableList(unknownExtendedKeyUsages_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1_KeyUsage_descriptor;
@@ -315,90 +222,6 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private KeyUsageOptions(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                digitalSignature_ = input.readBool();
-                break;
-              }
-            case 16:
-              {
-                contentCommitment_ = input.readBool();
-                break;
-              }
-            case 24:
-              {
-                keyEncipherment_ = input.readBool();
-                break;
-              }
-            case 32:
-              {
-                dataEncipherment_ = input.readBool();
-                break;
-              }
-            case 40:
-              {
-                keyAgreement_ = input.readBool();
-                break;
-              }
-            case 48:
-              {
-                certSign_ = input.readBool();
-                break;
-              }
-            case 56:
-              {
-                crlSign_ = input.readBool();
-                break;
-              }
-            case 64:
-              {
-                encipherOnly_ = input.readBool();
-                break;
-              }
-            case 72:
-              {
-                decipherOnly_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -620,7 +443,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       if (decipherOnly_ != false) {
         output.writeBool(9, decipherOnly_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -656,7 +479,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       if (decipherOnly_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, decipherOnly_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -681,7 +504,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       if (getCrlSign() != other.getCrlSign()) return false;
       if (getEncipherOnly() != other.getEncipherOnly()) return false;
       if (getDecipherOnly() != other.getDecipherOnly()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -710,7 +533,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEncipherOnly());
       hash = (37 * hash) + DECIPHER_ONLY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDecipherOnly());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -845,17 +668,10 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -997,7 +813,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         if (other.getDecipherOnly() != false) {
           setDecipherOnly(other.getDecipherOnly());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1012,19 +828,85 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  digitalSignature_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  contentCommitment_ = input.readBool();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  keyEncipherment_ = input.readBool();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  dataEncipherment_ = input.readBool();
+
+                  break;
+                } // case 32
+              case 40:
+                {
+                  keyAgreement_ = input.readBool();
+
+                  break;
+                } // case 40
+              case 48:
+                {
+                  certSign_ = input.readBool();
+
+                  break;
+                } // case 48
+              case 56:
+                {
+                  crlSign_ = input.readBool();
+
+                  break;
+                } // case 56
+              case 64:
+                {
+                  encipherOnly_ = input.readBool();
+
+                  break;
+                } // case 64
+              case 72:
+                {
+                  decipherOnly_ = input.readBool();
+
+                  break;
+                } // case 72
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1.KeyUsage.KeyUsageOptions)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1534,7 +1416,19 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new KeyUsageOptions(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1674,75 +1568,6 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ExtendedKeyUsageOptions(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                serverAuth_ = input.readBool();
-                break;
-              }
-            case 16:
-              {
-                clientAuth_ = input.readBool();
-                break;
-              }
-            case 24:
-              {
-                codeSigning_ = input.readBool();
-                break;
-              }
-            case 32:
-              {
-                emailProtection_ = input.readBool();
-                break;
-              }
-            case 40:
-              {
-                timeStamping_ = input.readBool();
-                break;
-              }
-            case 48:
-              {
-                ocspSigning_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1907,7 +1732,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       if (ocspSigning_ != false) {
         output.writeBool(6, ocspSigning_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1934,7 +1759,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       if (ocspSigning_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, ocspSigning_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1957,7 +1782,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       if (getEmailProtection() != other.getEmailProtection()) return false;
       if (getTimeStamping() != other.getTimeStamping()) return false;
       if (getOcspSigning() != other.getOcspSigning()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1980,7 +1805,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTimeStamping());
       hash = (37 * hash) + OCSP_SIGNING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOcspSigning());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2116,17 +1941,10 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2255,7 +2073,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         if (other.getOcspSigning() != false) {
           setOcspSigning(other.getOcspSigning());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2270,20 +2088,67 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  serverAuth_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  clientAuth_ = input.readBool();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  codeSigning_ = input.readBool();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  emailProtection_ = input.readBool();
+
+                  break;
+                } // case 32
+              case 40:
+                {
+                  timeStamping_ = input.readBool();
+
+                  break;
+                } // case 40
+              case 48:
+                {
+                  ocspSigning_ = input.readBool();
+
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1.KeyUsage.ExtendedKeyUsageOptions)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2653,7 +2518,19 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ExtendedKeyUsageOptions(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2883,7 +2760,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < unknownExtendedKeyUsages_.size(); i++) {
       output.writeMessage(3, unknownExtendedKeyUsages_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2903,7 +2780,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, unknownExtendedKeyUsages_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2929,7 +2806,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getUnknownExtendedKeyUsagesList().equals(other.getUnknownExtendedKeyUsagesList()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2952,7 +2829,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UNKNOWN_EXTENDED_KEY_USAGES_FIELD_NUMBER;
       hash = (53 * hash) + getUnknownExtendedKeyUsagesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3082,19 +2959,10 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.security.privateca.v1.KeyUsage.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getUnknownExtendedKeyUsagesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3114,10 +2982,11 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
       }
       if (unknownExtendedKeyUsagesBuilder_ == null) {
         unknownExtendedKeyUsages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        unknownExtendedKeyUsages_ = null;
         unknownExtendedKeyUsagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -3249,7 +3118,7 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3264,17 +3133,58 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1.KeyUsage parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getBaseKeyUsageFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getExtendedKeyUsageFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.security.privateca.v1.ObjectId m =
+                    input.readMessage(
+                        com.google.cloud.security.privateca.v1.ObjectId.parser(),
+                        extensionRegistry);
+                if (unknownExtendedKeyUsagesBuilder_ == null) {
+                  ensureUnknownExtendedKeyUsagesIsMutable();
+                  unknownExtendedKeyUsages_.add(m);
+                } else {
+                  unknownExtendedKeyUsagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.security.privateca.v1.KeyUsage) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4116,7 +4026,18 @@ public final class KeyUsage extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KeyUsage(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

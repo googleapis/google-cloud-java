@@ -57,150 +57,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Volume(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              storageType_ = rawValue;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 32:
-            {
-              requestedSizeGib_ = input.readInt64();
-              break;
-            }
-          case 40:
-            {
-              currentSizeGib_ = input.readInt64();
-              break;
-            }
-          case 48:
-            {
-              autoGrownSizeGib_ = input.readInt64();
-              break;
-            }
-          case 56:
-            {
-              remainingSpaceGib_ = input.readInt64();
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail.Builder
-                  subBuilder = null;
-              if (snapshotReservationDetail_ != null) {
-                subBuilder = snapshotReservationDetail_.toBuilder();
-              }
-              snapshotReservationDetail_ =
-                  input.readMessage(
-                      com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(snapshotReservationDetail_);
-                snapshotReservationDetail_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              snapshotAutoDeleteBehavior_ = rawValue;
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 98:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 104:
-            {
-              snapshotEnabled_ = input.readBool();
-              break;
-            }
-          case 112:
-            {
-              emergencySizeGib_ = input.readInt64();
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pod_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.VolumeProto
         .internal_static_google_cloud_baremetalsolution_v2_Volume_descriptor;
@@ -845,65 +701,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private SnapshotReservationDetail(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                reservedSpaceGib_ = input.readInt64();
-                break;
-              }
-            case 16:
-              {
-                reservedSpaceUsedPercent_ = input.readInt32();
-                break;
-              }
-            case 24:
-              {
-                reservedSpaceRemainingGib_ = input.readInt64();
-                break;
-              }
-            case 32:
-              {
-                reservedSpacePercent_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.baremetalsolution.v2.VolumeProto
           .internal_static_google_cloud_baremetalsolution_v2_Volume_SnapshotReservationDetail_descriptor;
@@ -1025,7 +822,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (reservedSpacePercent_ != 0) {
         output.writeInt32(4, reservedSpacePercent_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1048,7 +845,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (reservedSpacePercent_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, reservedSpacePercent_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1069,7 +866,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (getReservedSpaceUsedPercent() != other.getReservedSpaceUsedPercent()) return false;
       if (getReservedSpaceRemainingGib() != other.getReservedSpaceRemainingGib()) return false;
       if (getReservedSpacePercent() != other.getReservedSpacePercent()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1088,7 +885,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReservedSpaceRemainingGib());
       hash = (37 * hash) + RESERVED_SPACE_PERCENT_FIELD_NUMBER;
       hash = (53 * hash) + getReservedSpacePercent();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1223,17 +1020,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1349,7 +1139,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         if (other.getReservedSpacePercent() != 0) {
           setReservedSpacePercent(other.getReservedSpacePercent());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1364,19 +1154,55 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  reservedSpaceGib_ = input.readInt64();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  reservedSpaceUsedPercent_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  reservedSpaceRemainingGib_ = input.readInt64();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  reservedSpacePercent_ = input.readInt32();
+
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1648,7 +1474,19 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SnapshotReservationDetail(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2273,7 +2111,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, pod_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2339,7 +2177,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, pod_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2373,7 +2211,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getSnapshotEnabled() != other.getSnapshotEnabled()) return false;
     if (!getPod().equals(other.getPod())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2416,7 +2254,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSnapshotEnabled());
     hash = (37 * hash) + POD_FIELD_NUMBER;
     hash = (53 * hash) + getPod().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2565,17 +2403,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.baremetalsolution.v2.Volume.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2751,7 +2582,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         pod_ = other.pod_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2766,17 +2597,121 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.baremetalsolution.v2.Volume parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                storageType_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                requestedSizeGib_ = input.readInt64();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                currentSizeGib_ = input.readInt64();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                autoGrownSizeGib_ = input.readInt64();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                remainingSpaceGib_ = input.readInt64();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(
+                    getSnapshotReservationDetailFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 72:
+              {
+                snapshotAutoDeleteBehavior_ = input.readEnum();
+
+                break;
+              } // case 72
+            case 90:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 98
+            case 104:
+              {
+                snapshotEnabled_ = input.readBool();
+
+                break;
+              } // case 104
+            case 112:
+              {
+                emergencySizeGib_ = input.readInt64();
+
+                break;
+              } // case 112
+            case 122:
+              {
+                pod_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.baremetalsolution.v2.Volume) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4143,7 +4078,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Volume(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

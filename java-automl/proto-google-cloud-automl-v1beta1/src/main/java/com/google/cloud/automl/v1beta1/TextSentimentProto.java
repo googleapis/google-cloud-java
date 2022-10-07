@@ -88,50 +88,6 @@ public final class TextSentimentProto {
       return this.unknownFields;
     }
 
-    private TextSentimentAnnotation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                sentiment_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.automl.v1beta1.TextSentimentProto
           .internal_static_google_cloud_automl_v1beta1_TextSentimentAnnotation_descriptor;
@@ -194,7 +150,7 @@ public final class TextSentimentProto {
       if (sentiment_ != 0) {
         output.writeInt32(1, sentiment_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -206,7 +162,7 @@ public final class TextSentimentProto {
       if (sentiment_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, sentiment_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -224,7 +180,7 @@ public final class TextSentimentProto {
           (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation) obj;
 
       if (getSentiment() != other.getSentiment()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -237,7 +193,7 @@ public final class TextSentimentProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SENTIMENT_FIELD_NUMBER;
       hash = (53 * hash) + getSentiment();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -377,17 +333,10 @@ public final class TextSentimentProto {
 
       // Construct using
       // com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -486,7 +435,7 @@ public final class TextSentimentProto {
         if (other.getSentiment() != 0) {
           setSentiment(other.getSentiment());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -501,20 +450,37 @@ public final class TextSentimentProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  sentiment_ = input.readInt32();
+
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -639,7 +605,19 @@ public final class TextSentimentProto {
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TextSentimentAnnotation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -911,114 +889,6 @@ public final class TextSentimentProto {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TextSentimentEvaluationMetrics(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13:
-              {
-                precision_ = input.readFloat();
-                break;
-              }
-            case 21:
-              {
-                recall_ = input.readFloat();
-                break;
-              }
-            case 29:
-              {
-                f1Score_ = input.readFloat();
-                break;
-              }
-            case 37:
-              {
-                meanAbsoluteError_ = input.readFloat();
-                break;
-              }
-            case 45:
-              {
-                meanSquaredError_ = input.readFloat();
-                break;
-              }
-            case 53:
-              {
-                linearKappa_ = input.readFloat();
-                break;
-              }
-            case 61:
-              {
-                quadraticKappa_ = input.readFloat();
-                break;
-              }
-            case 66:
-              {
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
-                        .ConfusionMatrix.Builder
-                    subBuilder = null;
-                if (confusionMatrix_ != null) {
-                  subBuilder = confusionMatrix_.toBuilder();
-                }
-                confusionMatrix_ =
-                    input.readMessage(
-                        com.google.cloud.automl.v1beta1.ClassificationProto
-                            .ClassificationEvaluationMetrics.ConfusionMatrix.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(confusionMatrix_);
-                  confusionMatrix_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 74:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                annotationSpecId_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1353,7 +1223,7 @@ public final class TextSentimentProto {
       for (int i = 0; i < annotationSpecId_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, annotationSpecId_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1394,7 +1264,7 @@ public final class TextSentimentProto {
         size += dataSize;
         size += 1 * getAnnotationSpecIdList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1431,7 +1301,7 @@ public final class TextSentimentProto {
         if (!getConfusionMatrix().equals(other.getConfusionMatrix())) return false;
       }
       if (!getAnnotationSpecIdList().equals(other.getAnnotationSpecIdList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1464,7 +1334,7 @@ public final class TextSentimentProto {
         hash = (37 * hash) + ANNOTATION_SPEC_ID_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotationSpecIdList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1606,17 +1476,10 @@ public final class TextSentimentProto {
 
       // Construct using
       // com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1787,7 +1650,7 @@ public final class TextSentimentProto {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1802,20 +1665,87 @@ public final class TextSentimentProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  precision_ = input.readFloat();
+
+                  break;
+                } // case 13
+              case 21:
+                {
+                  recall_ = input.readFloat();
+
+                  break;
+                } // case 21
+              case 29:
+                {
+                  f1Score_ = input.readFloat();
+
+                  break;
+                } // case 29
+              case 37:
+                {
+                  meanAbsoluteError_ = input.readFloat();
+
+                  break;
+                } // case 37
+              case 45:
+                {
+                  meanSquaredError_ = input.readFloat();
+
+                  break;
+                } // case 45
+              case 53:
+                {
+                  linearKappa_ = input.readFloat();
+
+                  break;
+                } // case 53
+              case 61:
+                {
+                  quadraticKappa_ = input.readFloat();
+
+                  break;
+                } // case 61
+              case 66:
+                {
+                  input.readMessage(
+                      getConfusionMatrixFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 66
+              case 74:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAnnotationSpecIdIsMutable();
+                  annotationSpecId_.add(s);
+                  break;
+                } // case 74
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2688,7 +2618,19 @@ public final class TextSentimentProto {
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TextSentimentEvaluationMetrics(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 

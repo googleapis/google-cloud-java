@@ -62,148 +62,6 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private PublicDelegatedPrefix(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000008;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              name_ = s;
-              break;
-            }
-          case 121871930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              parentPrefix_ = s;
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 784938578:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              ipCidrRange_ = s;
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              region_ = s;
-              break;
-            }
-          case 1450082194:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              status_ = s;
-              break;
-            }
-          case 1511520354:
-            {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                publicDelegatedSubPrefixs_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1
-                            .PublicDelegatedPrefixPublicDelegatedSubPrefix>();
-                mutable_bitField0_ |= 0x00000200;
-              }
-              publicDelegatedSubPrefixs_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              fingerprint_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
-              selfLink_ = s;
-              break;
-            }
-          case -200376448:
-            {
-              bitField0_ |= 0x00000020;
-              isLiveMigration_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
-        publicDelegatedSubPrefixs_ =
-            java.util.Collections.unmodifiableList(publicDelegatedSubPrefixs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_PublicDelegatedPrefix_descriptor;
@@ -1270,7 +1128,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(511823856, isLiveMigration_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1321,7 +1179,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(511823856, isLiveMigration_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1387,7 +1245,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (hasStatus()) {
       if (!getStatus().equals(other.getStatus())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1450,7 +1308,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1579,19 +1437,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.compute.v1.PublicDelegatedPrefix.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPublicDelegatedSubPrefixsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1617,10 +1466,11 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000100);
       if (publicDelegatedSubPrefixsBuilder_ == null) {
         publicDelegatedSubPrefixs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
       } else {
+        publicDelegatedSubPrefixs_ = null;
         publicDelegatedSubPrefixsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000200);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       selfLink_ = "";
@@ -1848,7 +1698,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         status_ = other.status_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1863,18 +1713,118 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.PublicDelegatedPrefix parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 26989658
+            case 121871930:
+              {
+                parentPrefix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 121871930
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 244202930
+            case 784938578:
+              {
+                ipCidrRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 784938578
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 1111570338
+            case 1450082194:
+              {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 1450082194
+            case 1511520354:
+              {
+                com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
+                            .parser(),
+                        extensionRegistry);
+                if (publicDelegatedSubPrefixsBuilder_ == null) {
+                  ensurePublicDelegatedSubPrefixsIsMutable();
+                  publicDelegatedSubPrefixs_.add(m);
+                } else {
+                  publicDelegatedSubPrefixsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1511520354
+            case 1877428002:
+              {
+                fingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1877428002
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -911466526
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case -645248918
+            case -200376448:
+              {
+                isLiveMigration_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -200376448
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.PublicDelegatedPrefix) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3671,7 +3621,18 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PublicDelegatedPrefix(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

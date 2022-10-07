@@ -52,90 +52,6 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private TransferableSku(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 74:
-            {
-              com.google.cloud.channel.v1.TransferEligibility.Builder subBuilder = null;
-              if (transferEligibility_ != null) {
-                subBuilder = transferEligibility_.toBuilder();
-              }
-              transferEligibility_ =
-                  input.readMessage(
-                      com.google.cloud.channel.v1.TransferEligibility.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(transferEligibility_);
-                transferEligibility_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.channel.v1.Sku.Builder subBuilder = null;
-              if (sku_ != null) {
-                subBuilder = sku_.toBuilder();
-              }
-              sku_ = input.readMessage(com.google.cloud.channel.v1.Sku.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sku_);
-                sku_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.channel.v1.Sku.Builder subBuilder = null;
-              if (legacySku_ != null) {
-                subBuilder = legacySku_.toBuilder();
-              }
-              legacySku_ =
-                  input.readMessage(com.google.cloud.channel.v1.Sku.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(legacySku_);
-                legacySku_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.EntitlementsProto
         .internal_static_google_cloud_channel_v1_TransferableSku_descriptor;
@@ -318,7 +234,7 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (legacySku_ != null) {
       output.writeMessage(12, getLegacySku());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -336,7 +252,7 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (legacySku_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLegacySku());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -364,7 +280,7 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     if (hasLegacySku()) {
       if (!getLegacySku().equals(other.getLegacySku())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -387,7 +303,7 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + LEGACY_SKU_FIELD_NUMBER;
       hash = (53 * hash) + getLegacySku().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -518,17 +434,10 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.channel.v1.TransferableSku.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -652,7 +561,7 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
       if (other.hasLegacySku()) {
         mergeLegacySku(other.getLegacySku());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -667,17 +576,50 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.channel.v1.TransferableSku parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 74:
+              {
+                input.readMessage(
+                    getTransferEligibilityFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 90:
+              {
+                input.readMessage(getSkuFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getLegacySkuFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.channel.v1.TransferableSku) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1272,7 +1214,18 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TransferableSku(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -50,243 +50,6 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private AnnotationValue(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation.Builder
-                  subBuilder = null;
-              if (valueTypeCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation)
-                            valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation)
-                        valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.Builder subBuilder =
-                  null;
-              if (valueTypeCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation) valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation) valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation.Builder
-                  subBuilder = null;
-              if (valueTypeCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation)
-                            valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation)
-                        valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation.Builder
-                  subBuilder = null;
-              if (valueTypeCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation)
-                            valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation)
-                        valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation.Builder
-                  subBuilder = null;
-              if (valueTypeCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation)
-                            valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation)
-                        valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.Builder subBuilder = null;
-              if (valueTypeCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation) valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation) valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 6;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.Builder subBuilder =
-                  null;
-              if (valueTypeCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation) valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation) valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.Builder subBuilder =
-                  null;
-              if (valueTypeCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation) valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation) valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder
-                  subBuilder = null;
-              if (valueTypeCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation)
-                            valueType_)
-                        .toBuilder();
-              }
-              valueType_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation)
-                        valueType_);
-                valueType_ = subBuilder.buildPartial();
-              }
-              valueTypeCase_ = 10;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_AnnotationValue_descriptor;
@@ -958,7 +721,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           10, (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1013,7 +776,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
               10,
               (com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation) valueType_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1068,7 +831,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1119,7 +882,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1249,22 +1012,42 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.AnnotationValue.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (imageClassificationAnnotationBuilder_ != null) {
+        imageClassificationAnnotationBuilder_.clear();
+      }
+      if (imageBoundingPolyAnnotationBuilder_ != null) {
+        imageBoundingPolyAnnotationBuilder_.clear();
+      }
+      if (imagePolylineAnnotationBuilder_ != null) {
+        imagePolylineAnnotationBuilder_.clear();
+      }
+      if (imageSegmentationAnnotationBuilder_ != null) {
+        imageSegmentationAnnotationBuilder_.clear();
+      }
+      if (textClassificationAnnotationBuilder_ != null) {
+        textClassificationAnnotationBuilder_.clear();
+      }
+      if (textEntityExtractionAnnotationBuilder_ != null) {
+        textEntityExtractionAnnotationBuilder_.clear();
+      }
+      if (videoClassificationAnnotationBuilder_ != null) {
+        videoClassificationAnnotationBuilder_.clear();
+      }
+      if (videoObjectTrackingAnnotationBuilder_ != null) {
+        videoObjectTrackingAnnotationBuilder_.clear();
+      }
+      if (videoEventAnnotationBuilder_ != null) {
+        videoEventAnnotationBuilder_.clear();
+      }
       valueTypeCase_ = 0;
       valueType_ = null;
       return this;
@@ -1459,7 +1242,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1474,18 +1257,95 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.AnnotationValue parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getImageClassificationAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getImageBoundingPolyAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getTextClassificationAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getVideoClassificationAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getVideoObjectTrackingAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getVideoEventAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 6;
+                break;
+              } // case 50
+            case 66:
+              {
+                input.readMessage(
+                    getImagePolylineAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getImageSegmentationAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+                valueTypeCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getTextEntityExtractionAnnotationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                valueTypeCase_ = 10;
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.AnnotationValue) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3725,7 +3585,18 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AnnotationValue(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

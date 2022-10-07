@@ -54,70 +54,6 @@ public final class FirewallPoliciesListAssociationsResponse
     return this.unknownFields;
   }
 
-  private FirewallPoliciesListAssociationsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              kind_ = s;
-              break;
-            }
-          case -225075054:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                associations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.FirewallPolicyAssociation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              associations_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FirewallPolicyAssociation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        associations_ = java.util.Collections.unmodifiableList(associations_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_FirewallPoliciesListAssociationsResponse_descriptor;
@@ -294,7 +230,7 @@ public final class FirewallPoliciesListAssociationsResponse
     for (int i = 0; i < associations_.size(); i++) {
       output.writeMessage(508736530, associations_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -310,7 +246,7 @@ public final class FirewallPoliciesListAssociationsResponse
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(508736530, associations_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -331,7 +267,7 @@ public final class FirewallPoliciesListAssociationsResponse
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -350,7 +286,7 @@ public final class FirewallPoliciesListAssociationsResponse
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -481,19 +417,10 @@ public final class FirewallPoliciesListAssociationsResponse
 
     // Construct using
     // com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAssociationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -501,10 +428,11 @@ public final class FirewallPoliciesListAssociationsResponse
       super.clear();
       if (associationsBuilder_ == null) {
         associations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        associations_ = null;
         associationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -637,7 +565,7 @@ public final class FirewallPoliciesListAssociationsResponse
         kind_ = other.kind_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -652,19 +580,51 @@ public final class FirewallPoliciesListAssociationsResponse
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26336418
+            case -225075054:
+              {
+                com.google.cloud.compute.v1.FirewallPolicyAssociation m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FirewallPolicyAssociation.parser(),
+                        extensionRegistry);
+                if (associationsBuilder_ == null) {
+                  ensureAssociationsIsMutable();
+                  associations_.add(m);
+                } else {
+                  associationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -225075054
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1202,7 +1162,18 @@ public final class FirewallPoliciesListAssociationsResponse
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FirewallPoliciesListAssociationsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

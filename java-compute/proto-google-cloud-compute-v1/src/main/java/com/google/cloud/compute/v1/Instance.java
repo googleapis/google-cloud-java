@@ -76,499 +76,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Instance(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    int mutable_bitField1_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000400;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
-              name_ = s;
-              break;
-            }
-          case 28418250:
-            {
-              com.google.cloud.compute.v1.Tags.Builder subBuilder = null;
-              if (((bitField1_ & 0x00000008) != 0)) {
-                subBuilder = tags_.toBuilder();
-              }
-              tags_ =
-                  input.readMessage(com.google.cloud.compute.v1.Tags.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tags_);
-                tags_ = subBuilder.buildPartial();
-              }
-              bitField1_ |= 0x00000008;
-              break;
-            }
-          case 29957474:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField1_ |= 0x00000010;
-              zone_ = s;
-              break;
-            }
-          case 102903210:
-            {
-              com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x10000000) != 0)) {
-                subBuilder = shieldedInstanceConfig_.toBuilder();
-              }
-              shieldedInstanceConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ShieldedInstanceConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shieldedInstanceConfig_);
-                shieldedInstanceConfig_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x10000000;
-              break;
-            }
-          case 174158330:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x40000000;
-              sourceMachineImage_ = s;
-              break;
-            }
-          case 177763082:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x20000000) != 0)) {
-                resourcePolicies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x20000000;
-              }
-              resourcePolicies_.add(s);
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 386216050:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00800000;
-              privateIpv6GoogleAccess_ = s;
-              break;
-            }
-          case 421881946:
-            {
-              if (!((mutable_bitField0_ & 0x01000000) != 0)) {
-                networkInterfaces_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.NetworkInterface>();
-                mutable_bitField0_ |= 0x01000000;
-              }
-              networkInterfaces_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NetworkInterface.parser(), extensionRegistry));
-              break;
-            }
-          case 626510898:
-            {
-              com.google.cloud.compute.v1.InstanceParams.Builder subBuilder = null;
-              if (((bitField0_ & 0x00400000) != 0)) {
-                subBuilder = params_.toBuilder();
-              }
-              params_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InstanceParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(params_);
-                params_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00400000;
-              break;
-            }
-          case 694933882:
-            {
-              com.google.cloud.compute.v1.Metadata.Builder subBuilder = null;
-              if (((bitField0_ & 0x00040000) != 0)) {
-                subBuilder = metadata_.toBuilder();
-              }
-              metadata_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Metadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metadata_);
-                metadata_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00040000;
-              break;
-            }
-          case 764752818:
-            {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                disks_ = new java.util.ArrayList<com.google.cloud.compute.v1.AttachedDisk>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              disks_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AttachedDisk.parser(), extensionRegistry));
-              break;
-            }
-          case 989545152:
-            {
-              bitField1_ |= 0x00000001;
-              startRestricted_ = input.readBool();
-              break;
-            }
-          case 1262805466:
-            {
-              com.google.cloud.compute.v1.ReservationAffinity.Builder subBuilder = null;
-              if (((bitField0_ & 0x01000000) != 0)) {
-                subBuilder = reservationAffinity_.toBuilder();
-              }
-              reservationAffinity_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ReservationAffinity.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(reservationAffinity_);
-                reservationAffinity_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x01000000;
-              break;
-            }
-          case 1309575354:
-            {
-              com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.Builder subBuilder = null;
-              if (((bitField0_ & 0x20000000) != 0)) {
-                subBuilder = shieldedInstanceIntegrityPolicy_.toBuilder();
-              }
-              shieldedInstanceIntegrityPolicy_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shieldedInstanceIntegrityPolicy_);
-                shieldedInstanceIntegrityPolicy_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x20000000;
-              break;
-            }
-          case 1424998602:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              labelFingerprint_ = s;
-              break;
-            }
-          case 1450082194:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField1_ |= 0x00000002;
-              status_ = s;
-              break;
-            }
-          case 1542712602:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x80000000) != 0)) {
-                subBuilder = sourceMachineImageEncryptionKey_.toBuilder();
-              }
-              sourceMachineImageEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceMachineImageEncryptionKey_);
-                sourceMachineImageEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x80000000;
-              break;
-            }
-          case 1821688210:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
-              machineType_ = s;
-              break;
-            }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              fingerprint_ = s;
-              break;
-            }
-          case 1887531794:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              keyRevocationActionType_ = s;
-              break;
-            }
-          case 1896538522:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              hostname_ = s;
-              break;
-            }
-          case 1943302074:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
-              minCpuPlatform_ = s;
-              break;
-            }
-          case 2071471002:
-            {
-              com.google.cloud.compute.v1.DisplayDevice.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) != 0)) {
-                subBuilder = displayDevice_.toBuilder();
-              }
-              displayDevice_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.DisplayDevice.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(displayDevice_);
-                displayDevice_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000080;
-              break;
-            }
-          case -2074668670:
-            {
-              if (!((mutable_bitField1_ & 0x00000002) != 0)) {
-                serviceAccounts_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>();
-                mutable_bitField1_ |= 0x00000002;
-              }
-              serviceAccounts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry));
-              break;
-            }
-          case -1915542062:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField1_ |= 0x00000004;
-              statusMessage_ = s;
-              break;
-            }
-          case -1444764598:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
-              lastSuspendedTimestamp_ = s;
-              break;
-            }
-          case -1201460062:
-            {
-              com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
-              if (((bitField0_ & 0x04000000) != 0)) {
-                subBuilder = scheduling_.toBuilder();
-              }
-              scheduling_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Scheduling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduling_);
-                scheduling_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x04000000;
-              break;
-            }
-          case -1108320494:
-            {
-              com.google.cloud.compute.v1.NetworkPerformanceConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00200000) != 0)) {
-                subBuilder = networkPerformanceConfig_.toBuilder();
-              }
-              networkPerformanceConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NetworkPerformanceConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(networkPerformanceConfig_);
-                networkPerformanceConfig_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00200000;
-              break;
-            }
-          case -1017799278:
-            {
-              com.google.cloud.compute.v1.AdvancedMachineFeatures.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = advancedMachineFeatures_.toBuilder();
-              }
-              advancedMachineFeatures_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AdvancedMachineFeatures.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(advancedMachineFeatures_);
-                advancedMachineFeatures_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-          case -1012684462:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              cpuPlatform_ = s;
-              break;
-            }
-          case -992383214:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
-              lastStopTimestamp_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              description_ = s;
-              break;
-            }
-          case -744321406:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              lastStartTimestamp_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x08000000;
-              selfLink_ = s;
-              break;
-            }
-          case -630849712:
-            {
-              bitField0_ |= 0x00000020;
-              deletionProtection_ = input.readBool();
-              break;
-            }
-          case -586206342:
-            {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
-                guestAccelerators_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              guestAccelerators_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry));
-              break;
-            }
-          case -553116704:
-            {
-              bitField0_ |= 0x00000002;
-              canIpForward_ = input.readBool();
-              break;
-            }
-          case -447253160:
-            {
-              bitField0_ |= 0x02000000;
-              satisfiesPzs_ = input.readBool();
-              break;
-            }
-          case -369865814:
-            {
-              com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = confidentialInstanceConfig_.toBuilder();
-              }
-              confidentialInstanceConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ConfidentialInstanceConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confidentialInstanceConfig_);
-                confidentialInstanceConfig_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-          case -293404678:
-            {
-              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00010000;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x20000000) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x01000000) != 0)) {
-        networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
-      }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        disks_ = java.util.Collections.unmodifiableList(disks_);
-      }
-      if (((mutable_bitField1_ & 0x00000002) != 0)) {
-        serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
-      }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
-        guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_Instance_descriptor;
@@ -3909,7 +3416,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4091,7 +3598,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4265,7 +3772,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasZone()) {
       if (!getZone().equals(other.getZone())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4448,7 +3955,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ZONE_FIELD_NUMBER;
       hash = (53 * hash) + getZone().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4653,10 +4160,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       if (disksBuilder_ == null) {
         disks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
+        disks_ = null;
         disksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (displayDeviceBuilder_ == null) {
         displayDevice_ = null;
       } else {
@@ -4667,10 +4175,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000200);
       if (guestAcceleratorsBuilder_ == null) {
         guestAccelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
       } else {
+        guestAccelerators_ = null;
         guestAcceleratorsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000400);
       hostname_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       id_ = 0L;
@@ -4702,10 +4211,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00800000);
       if (networkInterfacesBuilder_ == null) {
         networkInterfaces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
       } else {
+        networkInterfaces_ = null;
         networkInterfacesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x01000000);
       if (networkPerformanceConfigBuilder_ == null) {
         networkPerformanceConfig_ = null;
       } else {
@@ -4740,10 +4250,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField1_ = (bitField1_ & ~0x00000001);
       if (serviceAccountsBuilder_ == null) {
         serviceAccounts_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000002);
       } else {
+        serviceAccounts_ = null;
         serviceAccountsBuilder_.clear();
       }
+      bitField1_ = (bitField1_ & ~0x00000002);
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = null;
       } else {
@@ -5368,7 +4879,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         zone_ = other.zone_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5383,17 +4894,332 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.Instance parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 26989658
+            case 28418250:
+              {
+                input.readMessage(getTagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000200;
+                break;
+              } // case 28418250
+            case 29957474:
+              {
+                zone_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000400;
+                break;
+              } // case 29957474
+            case 102903210:
+              {
+                input.readMessage(
+                    getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 102903210
+            case 174158330:
+              {
+                sourceMachineImage_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 174158330
+            case 177763082:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureResourcePoliciesIsMutable();
+                resourcePolicies_.add(s);
+                break;
+              } // case 177763082
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 244202930
+            case 386216050:
+              {
+                privateIpv6GoogleAccess_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 386216050
+            case 421881946:
+              {
+                com.google.cloud.compute.v1.NetworkInterface m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.NetworkInterface.parser(), extensionRegistry);
+                if (networkInterfacesBuilder_ == null) {
+                  ensureNetworkInterfacesIsMutable();
+                  networkInterfaces_.add(m);
+                } else {
+                  networkInterfacesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 421881946
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 626510898
+            case 694933882:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 694933882
+            case 764752818:
+              {
+                com.google.cloud.compute.v1.AttachedDisk m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.AttachedDisk.parser(), extensionRegistry);
+                if (disksBuilder_ == null) {
+                  ensureDisksIsMutable();
+                  disks_.add(m);
+                } else {
+                  disksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 764752818
+            case 989545152:
+              {
+                startRestricted_ = input.readBool();
+                bitField1_ |= 0x00000040;
+                break;
+              } // case 989545152
+            case 1262805466:
+              {
+                input.readMessage(
+                    getReservationAffinityFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 1262805466
+            case 1309575354:
+              {
+                input.readMessage(
+                    getShieldedInstanceIntegrityPolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 1309575354
+            case 1424998602:
+              {
+                labelFingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 1424998602
+            case 1450082194:
+              {
+                status_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000080;
+                break;
+              } // case 1450082194
+            case 1542712602:
+              {
+                input.readMessage(
+                    getSourceMachineImageEncryptionKeyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 1542712602
+            case 1821688210:
+              {
+                machineType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 1821688210
+            case 1877428002:
+              {
+                fingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1877428002
+            case 1887531794:
+              {
+                keyRevocationActionType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1887531794
+            case 1896538522:
+              {
+                hostname_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 1896538522
+            case 1943302074:
+              {
+                minCpuPlatform_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 1943302074
+            case 2071471002:
+              {
+                input.readMessage(getDisplayDeviceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 2071471002
+            case -2074668670:
+              {
+                com.google.cloud.compute.v1.ServiceAccount m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry);
+                if (serviceAccountsBuilder_ == null) {
+                  ensureServiceAccountsIsMutable();
+                  serviceAccounts_.add(m);
+                } else {
+                  serviceAccountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -2074668670
+            case -1915542062:
+              {
+                statusMessage_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000100;
+                break;
+              } // case -1915542062
+            case -1444764598:
+              {
+                lastSuspendedTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case -1444764598
+            case -1201460062:
+              {
+                input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x80000000;
+                break;
+              } // case -1201460062
+            case -1108320494:
+              {
+                input.readMessage(
+                    getNetworkPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case -1108320494
+            case -1017799278:
+              {
+                input.readMessage(
+                    getAdvancedMachineFeaturesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1017799278
+            case -1012684462:
+              {
+                cpuPlatform_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1012684462
+            case -992383214:
+              {
+                lastStopTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -992383214
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -911466526
+            case -744321406:
+              {
+                lastStartTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case -744321406
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case -645248918
+            case -630849712:
+              {
+                deletionProtection_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -630849712
+            case -586206342:
+              {
+                com.google.cloud.compute.v1.AcceleratorConfig m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry);
+                if (guestAcceleratorsBuilder_ == null) {
+                  ensureGuestAcceleratorsIsMutable();
+                  guestAccelerators_.add(m);
+                } else {
+                  guestAcceleratorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -586206342
+            case -553116704:
+              {
+                canIpForward_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -553116704
+            case -447253160:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case -447253160
+            case -369865814:
+              {
+                input.readMessage(
+                    getConfidentialInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -369865814
+            case -293404678:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case -293404678
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.Instance) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -12146,7 +11972,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Instance(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -56,185 +56,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private BackupPlan(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cluster_ = s;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.Builder subBuilder = null;
-              if (retentionPolicy_ != null) {
-                subBuilder = retentionPolicy_.toBuilder();
-              }
-              retentionPolicy_ =
-                  input.readMessage(
-                      com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(retentionPolicy_);
-                retentionPolicy_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.gkebackup.v1.BackupPlan.Schedule.Builder subBuilder = null;
-              if (backupSchedule_ != null) {
-                subBuilder = backupSchedule_.toBuilder();
-              }
-              backupSchedule_ =
-                  input.readMessage(
-                      com.google.cloud.gkebackup.v1.BackupPlan.Schedule.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(backupSchedule_);
-                backupSchedule_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 88:
-            {
-              deactivated_ = input.readBool();
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.Builder subBuilder = null;
-              if (backupConfig_ != null) {
-                subBuilder = backupConfig_.toBuilder();
-              }
-              backupConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(backupConfig_);
-                backupConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 104:
-            {
-              protectedPodCount_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.BackupPlanProto
         .internal_static_google_cloud_gkebackup_v1_BackupPlan_descriptor;
@@ -358,60 +179,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private RetentionPolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                backupDeleteLockDays_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                backupRetainDays_ = input.readInt32();
-                break;
-              }
-            case 24:
-              {
-                locked_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gkebackup.v1.BackupPlanProto
           .internal_static_google_cloud_gkebackup_v1_BackupPlan_RetentionPolicy_descriptor;
@@ -525,7 +292,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (locked_ != false) {
         output.writeBool(3, locked_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -543,7 +310,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (locked_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, locked_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -562,7 +329,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (getBackupDeleteLockDays() != other.getBackupDeleteLockDays()) return false;
       if (getBackupRetainDays() != other.getBackupRetainDays()) return false;
       if (getLocked() != other.getLocked()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -579,7 +346,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getBackupRetainDays();
       hash = (37 * hash) + LOCKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -711,17 +478,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -824,7 +584,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         if (other.getLocked() != false) {
           setLocked(other.getLocked());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -839,18 +599,49 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  backupDeleteLockDays_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  backupRetainDays_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  locked_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1106,7 +897,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new RetentionPolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1207,57 +1010,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Schedule(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                cronSchedule_ = s;
-                break;
-              }
-            case 16:
-              {
-                paused_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1368,7 +1120,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (paused_ != false) {
         output.writeBool(2, paused_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1383,7 +1135,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (paused_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, paused_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1401,7 +1153,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
 
       if (!getCronSchedule().equals(other.getCronSchedule())) return false;
       if (getPaused() != other.getPaused()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1416,7 +1168,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getCronSchedule().hashCode();
       hash = (37 * hash) + PAUSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPaused());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1548,17 +1300,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.gkebackup.v1.BackupPlan.Schedule.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1656,7 +1401,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         if (other.getPaused() != false) {
           setPaused(other.getPaused());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1671,18 +1416,43 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.gkebackup.v1.BackupPlan.Schedule parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  cronSchedule_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  paused_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.gkebackup.v1.BackupPlan.Schedule) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1893,7 +1663,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Schedule(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2123,112 +1905,6 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private BackupConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                backupScope_ = input.readBool();
-                backupScopeCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.gkebackup.v1.Namespaces.Builder subBuilder = null;
-                if (backupScopeCase_ == 2) {
-                  subBuilder =
-                      ((com.google.cloud.gkebackup.v1.Namespaces) backupScope_).toBuilder();
-                }
-                backupScope_ =
-                    input.readMessage(
-                        com.google.cloud.gkebackup.v1.Namespaces.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.cloud.gkebackup.v1.Namespaces) backupScope_);
-                  backupScope_ = subBuilder.buildPartial();
-                }
-                backupScopeCase_ = 2;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.gkebackup.v1.NamespacedNames.Builder subBuilder = null;
-                if (backupScopeCase_ == 3) {
-                  subBuilder =
-                      ((com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_).toBuilder();
-                }
-                backupScope_ =
-                    input.readMessage(
-                        com.google.cloud.gkebackup.v1.NamespacedNames.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_);
-                  backupScope_ = subBuilder.buildPartial();
-                }
-                backupScopeCase_ = 3;
-                break;
-              }
-            case 32:
-              {
-                includeVolumeData_ = input.readBool();
-                break;
-              }
-            case 40:
-              {
-                includeSecrets_ = input.readBool();
-                break;
-              }
-            case 50:
-              {
-                com.google.cloud.gkebackup.v1.EncryptionKey.Builder subBuilder = null;
-                if (encryptionKey_ != null) {
-                  subBuilder = encryptionKey_.toBuilder();
-                }
-                encryptionKey_ =
-                    input.readMessage(
-                        com.google.cloud.gkebackup.v1.EncryptionKey.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(encryptionKey_);
-                  encryptionKey_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2566,7 +2242,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (encryptionKey_ != null) {
         output.writeMessage(6, getEncryptionKey());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2599,7 +2275,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (encryptionKey_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEncryptionKey());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2635,7 +2311,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2670,7 +2346,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2803,22 +2479,21 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (selectedNamespacesBuilder_ != null) {
+          selectedNamespacesBuilder_.clear();
+        }
+        if (selectedApplicationsBuilder_ != null) {
+          selectedApplicationsBuilder_.clear();
+        }
         includeVolumeData_ = false;
 
         includeSecrets_ = false;
@@ -2965,7 +2640,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2980,18 +2655,69 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  backupScope_ = input.readBool();
+                  backupScopeCase_ = 1;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      getSelectedNamespacesFieldBuilder().getBuilder(), extensionRegistry);
+                  backupScopeCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getSelectedApplicationsFieldBuilder().getBuilder(), extensionRegistry);
+                  backupScopeCase_ = 3;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  includeVolumeData_ = input.readBool();
+
+                  break;
+                } // case 32
+              case 40:
+                {
+                  includeSecrets_ = input.readBool();
+
+                  break;
+                } // case 40
+              case 50:
+                {
+                  input.readMessage(getEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.gkebackup.v1.BackupPlan.BackupConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3873,7 +3599,19 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new BackupConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4605,7 +4343,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (protectedPodCount_ != 0) {
       output.writeInt32(13, protectedPodCount_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4660,7 +4398,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (protectedPodCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, protectedPodCount_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4703,7 +4441,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (!getBackupConfig().equals(other.getBackupConfig())) return false;
     }
     if (getProtectedPodCount() != other.getProtectedPodCount()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4752,7 +4490,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PROTECTED_POD_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getProtectedPodCount();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4901,17 +4639,10 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gkebackup.v1.BackupPlan.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -5115,7 +4846,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (other.getProtectedPodCount() != 0) {
         setProtectedPodCount(other.getProtectedPodCount());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5130,17 +4861,114 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkebackup.v1.BackupPlan parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                cluster_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getRetentionPolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getBackupScheduleFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            case 88:
+              {
+                deactivated_ = input.readBool();
+
+                break;
+              } // case 88
+            case 98:
+              {
+                input.readMessage(getBackupConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 104:
+              {
+                protectedPodCount_ = input.readInt32();
+
+                break;
+              } // case 104
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gkebackup.v1.BackupPlan) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7037,7 +6865,18 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BackupPlan(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

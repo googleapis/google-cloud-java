@@ -55,90 +55,6 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private AllocateQuotaResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              operationId_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                allocateErrors_ =
-                    new java.util.ArrayList<com.google.api.servicecontrol.v1.QuotaError>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              allocateErrors_.add(
-                  input.readMessage(
-                      com.google.api.servicecontrol.v1.QuotaError.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                quotaMetrics_ =
-                    new java.util.ArrayList<com.google.api.servicecontrol.v1.MetricValueSet>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              quotaMetrics_.add(
-                  input.readMessage(
-                      com.google.api.servicecontrol.v1.MetricValueSet.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceConfigId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        allocateErrors_ = java.util.Collections.unmodifiableList(allocateErrors_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        quotaMetrics_ = java.util.Collections.unmodifiableList(quotaMetrics_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicecontrol.v1.QuotaControllerProto
         .internal_static_google_api_servicecontrol_v1_AllocateQuotaResponse_descriptor;
@@ -455,7 +371,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceConfigId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -476,7 +392,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceConfigId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceConfigId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -496,7 +412,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     if (!getAllocateErrorsList().equals(other.getAllocateErrorsList())) return false;
     if (!getQuotaMetricsList().equals(other.getQuotaMetricsList())) return false;
     if (!getServiceConfigId().equals(other.getServiceConfigId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -519,7 +435,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + SERVICE_CONFIG_ID_FIELD_NUMBER;
     hash = (53 * hash) + getServiceConfigId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -649,20 +565,10 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.api.servicecontrol.v1.AllocateQuotaResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAllocateErrorsFieldBuilder();
-        getQuotaMetricsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -672,16 +578,18 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
 
       if (allocateErrorsBuilder_ == null) {
         allocateErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        allocateErrors_ = null;
         allocateErrorsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (quotaMetricsBuilder_ == null) {
         quotaMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        quotaMetrics_ = null;
         quotaMetricsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       serviceConfigId_ = "";
 
       return this;
@@ -844,7 +752,7 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         serviceConfigId_ = other.serviceConfigId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -859,18 +767,70 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.servicecontrol.v1.AllocateQuotaResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                operationId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.api.servicecontrol.v1.QuotaError m =
+                    input.readMessage(
+                        com.google.api.servicecontrol.v1.QuotaError.parser(), extensionRegistry);
+                if (allocateErrorsBuilder_ == null) {
+                  ensureAllocateErrorsIsMutable();
+                  allocateErrors_.add(m);
+                } else {
+                  allocateErrorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.api.servicecontrol.v1.MetricValueSet m =
+                    input.readMessage(
+                        com.google.api.servicecontrol.v1.MetricValueSet.parser(),
+                        extensionRegistry);
+                if (quotaMetricsBuilder_ == null) {
+                  ensureQuotaMetricsIsMutable();
+                  quotaMetrics_.add(m);
+                } else {
+                  quotaMetricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                serviceConfigId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.api.servicecontrol.v1.AllocateQuotaResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1962,7 +1922,18 @@ public final class AllocateQuotaResponse extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AllocateQuotaResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

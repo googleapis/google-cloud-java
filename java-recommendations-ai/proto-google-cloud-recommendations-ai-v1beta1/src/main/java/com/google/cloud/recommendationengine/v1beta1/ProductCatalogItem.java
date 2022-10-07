@@ -55,149 +55,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ProductCatalogItem(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice.Builder
-                  subBuilder = null;
-              if (priceCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice)
-                            price_)
-                        .toBuilder();
-              }
-              price_ =
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice)
-                        price_);
-                price_ = subBuilder.buildPartial();
-              }
-              priceCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange.Builder
-                  subBuilder = null;
-              if (priceCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange)
-                            price_)
-                        .toBuilder();
-              }
-              price_ =
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange)
-                        price_);
-                price_ = subBuilder.buildPartial();
-              }
-              priceCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                costs_ =
-                    com.google.protobuf.MapField.newMapField(CostsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> costs__ =
-                  input.readMessage(
-                      CostsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              costs_.getMutableMap().put(costs__.getKey(), costs__.getValue());
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currencyCode_ = s;
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              stockState_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              availableQuantity_ = input.readInt64();
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              canonicalProductUri_ = s;
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                images_ =
-                    new java.util.ArrayList<com.google.cloud.recommendationengine.v1beta1.Image>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              images_.add(
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.Image.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        images_ = java.util.Collections.unmodifiableList(images_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.Catalog
         .internal_static_google_cloud_recommendationengine_v1beta1_ProductCatalogItem_descriptor;
@@ -498,55 +355,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private ExactPrice(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13:
-              {
-                displayPrice_ = input.readFloat();
-                break;
-              }
-            case 21:
-              {
-                originalPrice_ = input.readFloat();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.recommendationengine.v1beta1.Catalog
           .internal_static_google_cloud_recommendationengine_v1beta1_ProductCatalogItem_ExactPrice_descriptor;
@@ -620,7 +428,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
         output.writeFloat(2, originalPrice_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -635,7 +443,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (java.lang.Float.floatToRawIntBits(originalPrice_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, originalPrice_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -656,7 +464,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           != java.lang.Float.floatToIntBits(other.getDisplayPrice())) return false;
       if (java.lang.Float.floatToIntBits(getOriginalPrice())
           != java.lang.Float.floatToIntBits(other.getOriginalPrice())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -671,7 +479,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getDisplayPrice());
       hash = (37 * hash) + ORIGINAL_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getOriginalPrice());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -811,17 +619,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -927,7 +728,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         if (other.getOriginalPrice() != 0F) {
           setOriginalPrice(other.getOriginalPrice());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -942,20 +743,43 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  displayPrice_ = input.readFloat();
+
+                  break;
+                } // case 13
+              case 21:
+                {
+                  originalPrice_ = input.readFloat();
+
+                  break;
+                } // case 21
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.ExactPrice)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1102,7 +926,19 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ExactPrice(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1186,55 +1022,6 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private PriceRange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13:
-              {
-                min_ = input.readFloat();
-                break;
-              }
-            case 21:
-              {
-                max_ = input.readFloat();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.recommendationengine.v1beta1.Catalog
           .internal_static_google_cloud_recommendationengine_v1beta1_ProductCatalogItem_PriceRange_descriptor;
@@ -1307,7 +1094,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (java.lang.Float.floatToRawIntBits(max_) != 0) {
         output.writeFloat(2, max_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1322,7 +1109,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       if (java.lang.Float.floatToRawIntBits(max_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, max_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1343,7 +1130,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           != java.lang.Float.floatToIntBits(other.getMin())) return false;
       if (java.lang.Float.floatToIntBits(getMax())
           != java.lang.Float.floatToIntBits(other.getMax())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1358,7 +1145,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getMin());
       hash = (37 * hash) + MAX_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getMax());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1499,17 +1286,10 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1615,7 +1395,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         if (other.getMax() != 0F) {
           setMax(other.getMax());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1630,20 +1410,43 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  min_ = input.readFloat();
+
+                  break;
+                } // case 13
+              case 21:
+                {
+                  max_ = input.readFloat();
+
+                  break;
+                } // case 21
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.PriceRange)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1787,7 +1590,19 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PriceRange(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2380,7 +2195,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < images_.size(); i++) {
       output.writeMessage(8, images_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2429,7 +2244,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < images_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, images_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2462,7 +2277,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2501,7 +2316,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2651,24 +2466,21 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getImagesFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (exactPriceBuilder_ != null) {
+        exactPriceBuilder_.clear();
+      }
+      if (priceRangeBuilder_ != null) {
+        priceRangeBuilder_.clear();
+      }
       internalGetMutableCosts().clear();
       currencyCode_ = "";
 
@@ -2680,10 +2492,11 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
 
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        images_ = null;
         imagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       priceCase_ = 0;
       price_ = null;
       return this;
@@ -2855,7 +2668,7 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2870,19 +2683,89 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getExactPriceFieldBuilder().getBuilder(), extensionRegistry);
+                priceCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
+                priceCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Float> costs__ =
+                    input.readMessage(
+                        CostsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableCosts().getMutableMap().put(costs__.getKey(), costs__.getValue());
+                break;
+              } // case 26
+            case 34:
+              {
+                currencyCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 40:
+              {
+                stockState_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                availableQuantity_ = input.readInt64();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                canonicalProductUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.recommendationengine.v1beta1.Image m =
+                    input.readMessage(
+                        com.google.cloud.recommendationengine.v1beta1.Image.parser(),
+                        extensionRegistry);
+                if (imagesBuilder_ == null) {
+                  ensureImagesIsMutable();
+                  images_.add(m);
+                } else {
+                  imagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4388,7 +4271,18 @@ public final class ProductCatalogItem extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProductCatalogItem(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

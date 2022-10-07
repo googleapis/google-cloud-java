@@ -52,72 +52,6 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
     return this.unknownFields;
   }
 
-  private MigrationTaskOrchestrationResult(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2alpha
-                                .AssessmentOrchestrationResultDetails)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha
-                          .AssessmentOrchestrationResultDetails.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2alpha
-                            .AssessmentOrchestrationResultDetails)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 1;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.MigrationEntitiesProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_MigrationTaskOrchestrationResult_descriptor;
@@ -261,7 +195,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
           (com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails)
               details_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -277,7 +211,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
               (com.google.cloud.bigquery.migration.v2alpha.AssessmentOrchestrationResultDetails)
                   details_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -302,7 +236,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -321,7 +255,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -460,22 +394,18 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
 
     // Construct using
     // com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (assessmentDetailsBuilder_ != null) {
+        assessmentDetailsBuilder_.clear();
+      }
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -582,7 +512,7 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -597,20 +527,38 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult parsedMessage =
-          null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getAssessmentDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 1;
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.migration.v2alpha.MigrationTaskOrchestrationResult)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -916,7 +864,18 @@ public final class MigrationTaskOrchestrationResult extends com.google.protobuf.
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MigrationTaskOrchestrationResult(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

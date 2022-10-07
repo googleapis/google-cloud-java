@@ -50,325 +50,6 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Dialect(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.bigquery.migration.v2.BigQueryDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.BigQueryDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.BigQueryDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.BigQueryDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.bigquery.migration.v2.HiveQLDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.HiveQLDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.HiveQLDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.HiveQLDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.bigquery.migration.v2.RedshiftDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.RedshiftDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.RedshiftDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.RedshiftDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.bigquery.migration.v2.TeradataDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.TeradataDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.TeradataDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.TeradataDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.bigquery.migration.v2.OracleDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.OracleDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.OracleDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.OracleDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.bigquery.migration.v2.SparkSQLDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.SparkSQLDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.SparkSQLDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.SparkSQLDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.bigquery.migration.v2.SnowflakeDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.SnowflakeDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.SnowflakeDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.SnowflakeDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.bigquery.migration.v2.NetezzaDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.NetezzaDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.NetezzaDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.NetezzaDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.bigquery.migration.v2.AzureSynapseDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.AzureSynapseDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.AzureSynapseDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.AzureSynapseDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.bigquery.migration.v2.VerticaDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.VerticaDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.VerticaDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.VerticaDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 10;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 11) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.SQLServerDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 12) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.PostgresqlDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 13) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.PrestoDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 13;
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.bigquery.migration.v2.MySQLDialect.Builder subBuilder = null;
-              if (dialectValueCase_ == 14) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_)
-                        .toBuilder();
-              }
-              dialectValue_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.MySQLDialect.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_);
-                dialectValue_ = subBuilder.buildPartial();
-              }
-              dialectValueCase_ = 14;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.TranslationConfigProto
         .internal_static_google_cloud_bigquery_migration_v2_Dialect_descriptor;
@@ -1256,7 +937,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     if (dialectValueCase_ == 14) {
       output.writeMessage(14, (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1335,7 +1016,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.cloud.bigquery.migration.v2.MySQLDialect) dialectValue_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1398,7 +1079,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1469,7 +1150,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1598,22 +1279,57 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.bigquery.migration.v2.Dialect.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (bigqueryDialectBuilder_ != null) {
+        bigqueryDialectBuilder_.clear();
+      }
+      if (hiveqlDialectBuilder_ != null) {
+        hiveqlDialectBuilder_.clear();
+      }
+      if (redshiftDialectBuilder_ != null) {
+        redshiftDialectBuilder_.clear();
+      }
+      if (teradataDialectBuilder_ != null) {
+        teradataDialectBuilder_.clear();
+      }
+      if (oracleDialectBuilder_ != null) {
+        oracleDialectBuilder_.clear();
+      }
+      if (sparksqlDialectBuilder_ != null) {
+        sparksqlDialectBuilder_.clear();
+      }
+      if (snowflakeDialectBuilder_ != null) {
+        snowflakeDialectBuilder_.clear();
+      }
+      if (netezzaDialectBuilder_ != null) {
+        netezzaDialectBuilder_.clear();
+      }
+      if (azureSynapseDialectBuilder_ != null) {
+        azureSynapseDialectBuilder_.clear();
+      }
+      if (verticaDialectBuilder_ != null) {
+        verticaDialectBuilder_.clear();
+      }
+      if (sqlServerDialectBuilder_ != null) {
+        sqlServerDialectBuilder_.clear();
+      }
+      if (postgresqlDialectBuilder_ != null) {
+        postgresqlDialectBuilder_.clear();
+      }
+      if (prestoDialectBuilder_ != null) {
+        prestoDialectBuilder_.clear();
+      }
+      if (mysqlDialectBuilder_ != null) {
+        mysqlDialectBuilder_.clear();
+      }
       dialectValueCase_ = 0;
       dialectValue_ = null;
       return this;
@@ -1867,7 +1583,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1882,17 +1598,119 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.migration.v2.Dialect parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getBigqueryDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getHiveqlDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getRedshiftDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getTeradataDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getOracleDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getSparksqlDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getSnowflakeDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getNetezzaDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getAzureSynapseDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getVerticaDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getSqlServerDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getPostgresqlDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getPrestoDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getMysqlDialectFieldBuilder().getBuilder(), extensionRegistry);
+                dialectValueCase_ = 14;
+                break;
+              } // case 114
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.bigquery.migration.v2.Dialect) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4957,7 +4775,18 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Dialect(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

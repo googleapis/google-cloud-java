@@ -56,306 +56,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Job(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.dataproc.v1.JobReference.Builder subBuilder = null;
-              if (reference_ != null) {
-                subBuilder = reference_.toBuilder();
-              }
-              reference_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.JobReference.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(reference_);
-                reference_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.dataproc.v1.JobPlacement.Builder subBuilder = null;
-              if (placement_ != null) {
-                subBuilder = placement_.toBuilder();
-              }
-              placement_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.JobPlacement.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(placement_);
-                placement_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dataproc.v1.HadoopJob.Builder subBuilder = null;
-              if (typeJobCase_ == 3) {
-                subBuilder = ((com.google.cloud.dataproc.v1.HadoopJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.HadoopJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.HadoopJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.dataproc.v1.SparkJob.Builder subBuilder = null;
-              if (typeJobCase_ == 4) {
-                subBuilder = ((com.google.cloud.dataproc.v1.SparkJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.SparkJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.SparkJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.dataproc.v1.PySparkJob.Builder subBuilder = null;
-              if (typeJobCase_ == 5) {
-                subBuilder = ((com.google.cloud.dataproc.v1.PySparkJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.PySparkJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.PySparkJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.dataproc.v1.HiveJob.Builder subBuilder = null;
-              if (typeJobCase_ == 6) {
-                subBuilder = ((com.google.cloud.dataproc.v1.HiveJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.HiveJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.HiveJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.dataproc.v1.PigJob.Builder subBuilder = null;
-              if (typeJobCase_ == 7) {
-                subBuilder = ((com.google.cloud.dataproc.v1.PigJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.PigJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.PigJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.dataproc.v1.JobStatus.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
-              }
-              status_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.JobStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                yarnApplications_ =
-                    new java.util.ArrayList<com.google.cloud.dataproc.v1.YarnApplication>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              yarnApplications_.add(
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.YarnApplication.parser(), extensionRegistry));
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.dataproc.v1.SparkSqlJob.Builder subBuilder = null;
-              if (typeJobCase_ == 12) {
-                subBuilder = ((com.google.cloud.dataproc.v1.SparkSqlJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.SparkSqlJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.SparkSqlJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.JobStatus>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              statusHistory_.add(
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.JobStatus.parser(), extensionRegistry));
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              driverControlFilesUri_ = s;
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              driverOutputResourceUri_ = s;
-              break;
-            }
-          case 146:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.dataproc.v1.JobScheduling.Builder subBuilder = null;
-              if (scheduling_ != null) {
-                subBuilder = scheduling_.toBuilder();
-              }
-              scheduling_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.JobScheduling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduling_);
-                scheduling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 170:
-            {
-              com.google.cloud.dataproc.v1.SparkRJob.Builder subBuilder = null;
-              if (typeJobCase_ == 21) {
-                subBuilder = ((com.google.cloud.dataproc.v1.SparkRJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.SparkRJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.SparkRJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 21;
-              break;
-            }
-          case 178:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              jobUuid_ = s;
-              break;
-            }
-          case 186:
-            {
-              com.google.cloud.dataproc.v1.PrestoJob.Builder subBuilder = null;
-              if (typeJobCase_ == 23) {
-                subBuilder = ((com.google.cloud.dataproc.v1.PrestoJob) typeJob_).toBuilder();
-              }
-              typeJob_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.PrestoJob.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.PrestoJob) typeJob_);
-                typeJob_ = subBuilder.buildPartial();
-              }
-              typeJobCase_ = 23;
-              break;
-            }
-          case 192:
-            {
-              done_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.JobsProto
         .internal_static_google_cloud_dataproc_v1_Job_descriptor;
@@ -1669,7 +1369,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (done_ != false) {
       output.writeBool(24, done_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1759,7 +1459,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (done_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, done_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1826,7 +1526,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1909,7 +1609,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2057,20 +1757,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataproc.v1.Job.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getStatusHistoryFieldBuilder();
-        getYarnApplicationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2088,6 +1778,30 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         placement_ = null;
         placementBuilder_ = null;
       }
+      if (hadoopJobBuilder_ != null) {
+        hadoopJobBuilder_.clear();
+      }
+      if (sparkJobBuilder_ != null) {
+        sparkJobBuilder_.clear();
+      }
+      if (pysparkJobBuilder_ != null) {
+        pysparkJobBuilder_.clear();
+      }
+      if (hiveJobBuilder_ != null) {
+        hiveJobBuilder_.clear();
+      }
+      if (pigJobBuilder_ != null) {
+        pigJobBuilder_.clear();
+      }
+      if (sparkRJobBuilder_ != null) {
+        sparkRJobBuilder_.clear();
+      }
+      if (sparkSqlJobBuilder_ != null) {
+        sparkSqlJobBuilder_.clear();
+      }
+      if (prestoJobBuilder_ != null) {
+        prestoJobBuilder_.clear();
+      }
       if (statusBuilder_ == null) {
         status_ = null;
       } else {
@@ -2096,16 +1810,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        statusHistory_ = null;
         statusHistoryBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (yarnApplicationsBuilder_ == null) {
         yarnApplications_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        yarnApplications_ = null;
         yarnApplicationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       driverOutputResourceUri_ = "";
 
       driverControlFilesUri_ = "";
@@ -2428,7 +2144,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2443,17 +2159,164 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.Job parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getReferenceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getPlacementFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getHadoopJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getSparkJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getPysparkJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getHiveJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getPigJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.dataproc.v1.YarnApplication m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.YarnApplication.parser(), extensionRegistry);
+                if (yarnApplicationsBuilder_ == null) {
+                  ensureYarnApplicationsIsMutable();
+                  yarnApplications_.add(m);
+                } else {
+                  yarnApplicationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 98:
+              {
+                input.readMessage(getSparkSqlJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                com.google.cloud.dataproc.v1.JobStatus m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.JobStatus.parser(), extensionRegistry);
+                if (statusHistoryBuilder_ == null) {
+                  ensureStatusHistoryIsMutable();
+                  statusHistory_.add(m);
+                } else {
+                  statusHistoryBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+            case 122:
+              {
+                driverControlFilesUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            case 138:
+              {
+                driverOutputResourceUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 146:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 146
+            case 162:
+              {
+                input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(getSparkRJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 21;
+                break;
+              } // case 170
+            case 178:
+              {
+                jobUuid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(getPrestoJobFieldBuilder().getBuilder(), extensionRegistry);
+                typeJobCase_ = 23;
+                break;
+              } // case 186
+            case 192:
+              {
+                done_ = input.readBool();
+
+                break;
+              } // case 192
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.Job) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6612,7 +6475,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Job(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

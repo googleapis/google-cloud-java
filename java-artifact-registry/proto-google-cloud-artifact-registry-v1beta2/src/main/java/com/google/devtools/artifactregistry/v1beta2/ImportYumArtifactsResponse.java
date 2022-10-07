@@ -53,81 +53,6 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     return this.unknownFields;
   }
 
-  private ImportYumArtifactsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                yumArtifacts_ =
-                    new java.util.ArrayList<
-                        com.google.devtools.artifactregistry.v1beta2.YumArtifact>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              yumArtifacts_.add(
-                  input.readMessage(
-                      com.google.devtools.artifactregistry.v1beta2.YumArtifact.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                errors_ =
-                    new java.util.ArrayList<
-                        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              errors_.add(
-                  input.readMessage(
-                      com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        yumArtifacts_ = java.util.Collections.unmodifiableList(yumArtifacts_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        errors_ = java.util.Collections.unmodifiableList(errors_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.artifactregistry.v1beta2.YumArtifactProto
         .internal_static_google_devtools_artifactregistry_v1beta2_ImportYumArtifactsResponse_descriptor;
@@ -319,7 +244,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(2, errors_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -334,7 +259,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, errors_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -352,7 +277,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
 
     if (!getYumArtifactsList().equals(other.getYumArtifactsList())) return false;
     if (!getErrorsList().equals(other.getErrorsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -371,7 +296,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       hash = (37 * hash) + ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getErrorsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -504,20 +429,10 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
 
     // Construct using
     // com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getYumArtifactsFieldBuilder();
-        getErrorsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -525,16 +440,18 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
       super.clear();
       if (yumArtifactsBuilder_ == null) {
         yumArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        yumArtifacts_ = null;
         yumArtifactsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        errors_ = null;
         errorsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -692,7 +609,7 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -707,19 +624,60 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.devtools.artifactregistry.v1beta2.YumArtifact m =
+                    input.readMessage(
+                        com.google.devtools.artifactregistry.v1beta2.YumArtifact.parser(),
+                        extensionRegistry);
+                if (yumArtifactsBuilder_ == null) {
+                  ensureYumArtifactsIsMutable();
+                  yumArtifacts_.add(m);
+                } else {
+                  yumArtifactsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo m =
+                    input.readMessage(
+                        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo
+                            .parser(),
+                        extensionRegistry);
+                if (errorsBuilder_ == null) {
+                  ensureErrorsIsMutable();
+                  errors_.add(m);
+                } else {
+                  errorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1555,7 +1513,18 @@ public final class ImportYumArtifactsResponse extends com.google.protobuf.Genera
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ImportYumArtifactsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

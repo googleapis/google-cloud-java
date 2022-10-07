@@ -52,62 +52,6 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private BatchAnnotateImagesResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                responses_ =
-                    new java.util.ArrayList<com.google.cloud.vision.v1.AnnotateImageResponse>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              responses_.add(
-                  input.readMessage(
-                      com.google.cloud.vision.v1.AnnotateImageResponse.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        responses_ = java.util.Collections.unmodifiableList(responses_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_BatchAnnotateImagesResponse_descriptor;
@@ -210,7 +154,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
     for (int i = 0; i < responses_.size(); i++) {
       output.writeMessage(1, responses_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -222,7 +166,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
     for (int i = 0; i < responses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, responses_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -239,7 +183,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         (com.google.cloud.vision.v1.BatchAnnotateImagesResponse) obj;
 
     if (!getResponsesList().equals(other.getResponsesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -254,7 +198,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       hash = (37 * hash) + RESPONSES_FIELD_NUMBER;
       hash = (53 * hash) + getResponsesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -384,19 +328,10 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.cloud.vision.v1.BatchAnnotateImagesResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getResponsesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -404,10 +339,11 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
       super.clear();
       if (responsesBuilder_ == null) {
         responses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        responses_ = null;
         responsesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -522,7 +458,7 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -537,18 +473,45 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vision.v1.BatchAnnotateImagesResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.vision.v1.AnnotateImageResponse m =
+                    input.readMessage(
+                        com.google.cloud.vision.v1.AnnotateImageResponse.parser(),
+                        extensionRegistry);
+                if (responsesBuilder_ == null) {
+                  ensureResponsesIsMutable();
+                  responses_.add(m);
+                } else {
+                  responsesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.vision.v1.BatchAnnotateImagesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -938,7 +901,18 @@ public final class BatchAnnotateImagesResponse extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchAnnotateImagesResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
