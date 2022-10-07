@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.6](https://github.com/googleapis/java-logging/compare/v3.11.5...v3.11.6) (2022-10-07)
+
+
+### Bug Fixes
+
+* Logging SDK not applying quota limits for project set using quotaProjectId ([#1125](https://github.com/googleapis/java-logging/issues/1125)) ([70fc6ee](https://github.com/googleapis/java-logging/commit/70fc6ee9c0fdc845a06e031ca82c50b8def2bb3b))
+
 ## [3.11.5](https://github.com/googleapis/java-logging/compare/v3.11.4...v3.11.5) (2022-10-03)
 
 
