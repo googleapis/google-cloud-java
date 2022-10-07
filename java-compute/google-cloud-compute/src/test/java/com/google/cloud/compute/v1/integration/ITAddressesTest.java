@@ -35,6 +35,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore("Address insertion is flaky. https://github.com/googleapis/google-cloud-java/issues/8552")
 public class ITAddressesTest extends BaseTest {
 
   private static List<Address> addresses;
