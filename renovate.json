@@ -3,6 +3,7 @@
     "config:base"
   ],
   "includePaths": [
-    "pom.xml"
+    "pom.xml",
+    "google-cloud-jar-parent/pom.xml"
   ]
 }
