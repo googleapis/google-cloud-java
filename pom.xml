@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -51,9 +51,9 @@
   </licenses>
 
   <modules>
-    <module>google-cloud-jar-parent</module>
     <module>CoverageAggregator</module>
     <module>google-cloud-gapic-bom</module>
+    <module>google-cloud-jar-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-aiplatform</module>
@@ -188,4 +188,23 @@
 
   </modules>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skip>${skipUnitTests}</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <forkCount>1C</forkCount>
+          <reuseForks>true</reuseForks>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
