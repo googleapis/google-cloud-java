@@ -65,6 +65,7 @@ echo "Working directory: $(pwd)"
 
 cp ../../../license-checks.xml .
 cp ../../../java.header .
+cp -R ../../../google-cloud-jar-parent google-cloud-jar-parent
 
 git add --all
 git commit -m 'chore: add template files'
@@ -80,10 +81,10 @@ bash ../../set_parent_pom.sh
 git add --all
 git commit -am 'chore: point modules to the aggregator pom as parent'
 
-../../consolidate_dependency_management.sh
+../../consolidate_config.sh
 
 git add --all
-git commit -am 'chore: consolidate dependency management to parent'
+git commit -am 'chore: consolidate config to parent'
 
 ../../generate_gapic_bom.sh
 

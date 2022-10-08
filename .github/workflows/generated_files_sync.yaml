@@ -85,6 +85,7 @@ jobs:
         bash generation/apply_current_versions.sh
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
+
   owlbot-py:
     name: applying templated owlbot.py config doesn't create a diff
     runs-on: ubuntu-latest
@@ -93,5 +94,16 @@ jobs:
       - name: Generate owlbot.py files
         run: |
           bash generation/update_owlbot_postprocessor_config.sh
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
+
+  consolidate-config:
+    name: parent handles config for child modules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Apply consolidate_config.sh
+        run: |
+          bash generation/consolide_config.sh
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code

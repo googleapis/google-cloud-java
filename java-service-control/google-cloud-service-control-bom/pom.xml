@@ -19,39 +19,9 @@
     BOM for Service Control API
   </description>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>chingor13</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google LLC</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/googleapis/java-service-control.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-service-control.git</developerConnection>
-    <url>https://github.com/googleapis/java-service-control</url>
-  </scm>
-
   <properties>
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 
   <dependencyManagement>
     <dependencies>

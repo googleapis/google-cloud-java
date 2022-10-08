@@ -18,38 +18,6 @@
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
-  <developers>
-    <developer>
-      <id>chingor</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/java-orgpolicy.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-orgpolicy.git</developerConnection>
-    <url>https://github.com/googleapis/java-orgpolicy</url>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <url>https://github.com/googleapis/java-orgpolicy/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
-
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -79,20 +47,6 @@
         <artifactId>grpc-google-cloud-orgpolicy-v2</artifactId>
         <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-orgpolicy-v2:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.4</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -121,74 +75,4 @@
     <module>proto-google-cloud-orgpolicy-v2</module>
     <module>google-cloud-orgpolicy-bom</module>
   </modules>
-
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.4.1</version>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>index</report>
-              <report>dependency-info</report>
-              <report>team</report>
-              <report>ci-management</report>
-              <report>issue-management</report>
-              <report>licenses</report>
-              <report>scm</report>
-              <report>dependency-management</report>
-              <report>distribution-management</report>
-              <report>summary</report>
-              <report>modules</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-        <configuration>
-          <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-          <artifactId>${site.installationModule}</artifactId>
-          <packaging>jar</packaging>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.4.1</version>
-        <reportSets>
-          <reportSet>
-            <id>html</id>
-            <reports>
-              <report>aggregate</report>
-              <report>javadoc</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-        <configuration>
-          <doclint>none</doclint>
-          <show>protected</show>
-          <nohelp>true</nohelp>
-          <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-          <groups>
-            <group>
-              <title>Test helpers packages</title>
-              <packages>com.google.cloud.testing</packages>
-            </group>
-            <group>
-              <title>SPI packages</title>
-              <packages>com.google.cloud.spi*</packages>
-            </group>
-          </groups>
-
-          <links>
-            <link>https://grpc.io/grpc-java/javadoc/</link>
-            <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-            <link>https://googleapis.dev/java/google-auth-library/latest/</link>
-            <link>https://googleapis.dev/java/gax/latest/</link>
-            <link>https://googleapis.github.io/api-common-java/</link>
-          </links>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
 </project>
