@@ -45,7 +45,7 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort --dictionary-
   if ls ${module}/*-bom 1> /dev/null 2>&1; then
     continue
   fi
-  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+  if ! test -f "${module}/.repo-metadata.json"; then
     continue
   fi
 
