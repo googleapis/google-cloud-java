@@ -101,11 +101,6 @@
 
     <!-- Test dependencies -->
     <dependency>
-      <groupId>org.easymock</groupId>
-      <artifactId>easymock</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-translate-v3beta1</artifactId>
       <scope>test</scope>
