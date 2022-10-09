@@ -23,10 +23,16 @@ function runRegexOnPoms {
   done
 }
 
+function removeArtifact {
+  type=$1
+  name=$2
+  perl_command="s/\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>.*?<\/${type}>//s"
+  runRegexOnPoms "$perl_command" "$name"
+}
+
 function removeDependency {
   dependency=$1
-  perl_command="s/\s*<dependency>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${dependency//-/\-}<\/artifactId>.*?<\/dependency>//s"
-  runRegexOnPoms "$perl_command" "$dependency"
+  removeArtifact 'dependency' "${dependency}"
 }
 
 function removeElement {
@@ -46,3 +52,4 @@ removeElement 'scm'
 removeElement 'issueManagement'
 removeElement 'licenses'
 removeElement 'junit.version'
+removeArtifact 'plugin' 'nexus-staging-maven-plugin'
