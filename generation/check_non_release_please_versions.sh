@@ -4,6 +4,9 @@ set -e
 
 violations=0
 for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
+  if [[ "${module}" = *google-cloud-jar-parent ]]; then
+    continue
+  fi
 
   if grep -n '<version>.*</version>' "$pomFile" | grep -v 'x-version-update'; then
     echo "Found version declaration(s) without x-version-update in: $pomFile"
