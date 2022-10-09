@@ -16,6 +16,7 @@ function runRegexOnPoms {
 
     if grep -q "${search}" "$pomFile"; then
       # execute the replacement in pom.xml
+      echo "Applying $perl_command for $pomFile"
       perl -0pe "$perl_command" "$pomFile" > "$pomfile".new && rm "$pomFile" && mv "$pomfile".new "$pomFile"
     fi
 
@@ -24,7 +25,7 @@ function runRegexOnPoms {
 
 function removeDependency {
   dependency=$1
-  perl_command="s/\s*<dependency>\s*<groupId>[a-z\.]*<\/groupId>\s*<artifactId>${dependency}<\/artifactId>.*?<\/dependency>//s"
+  perl_command="s/\s*<dependency>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${dependency//-/\-}<\/artifactId>.*?<\/dependency>//s"
   runRegexOnPoms "$perl_command" "$dependency"
 }
 
@@ -36,9 +37,12 @@ function removeElement {
 
 removeDependency 'google-cloud-shared-dependencies'
 removeDependency 'junit'
+removeDependency 'joda-time'
+removeDependency 'truth'
 removeElement 'reporting'
 removeElement 'developers'
 removeElement 'organization'
 removeElement 'scm'
 removeElement 'issueManagement'
 removeElement 'licenses'
+removeElement 'junit.version'
