@@ -62,12 +62,6 @@
       <artifactId>easymock</artifactId>
       <version>4.3</version>
       <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.objenesis</groupId>
-          <artifactId>objenesis</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
   </dependencies>
 
