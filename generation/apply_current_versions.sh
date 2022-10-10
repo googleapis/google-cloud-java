@@ -20,7 +20,7 @@ for versions_file in $(find . -mindepth 0 -maxdepth 2 -name versions.txt \
     SED_OPTIONS="$SED_OPTIONS -e /x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}"
   done
 done
-pom_files="$(find . -maxdepth 3 -name pom.xml |sort --dictionary-order)"
-for P in $pom_files; do
-  sed -i.bak $SED_OPTIONS $P && rm ${P}.bak
-done
+
+echo "Running sed command. It may take few minutes."
+find . -maxdepth 3 -name pom.xml |sort --dictionary-order |xargs sed -i.bak $SED_OPTIONS
+find . -maxdepth 3 -name pom.xml.bak |xargs rm
