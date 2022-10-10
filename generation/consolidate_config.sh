@@ -14,10 +14,10 @@ function runRegexOnPoms {
       continue
     fi
 
-    if grep -q "${search}" "$pomFile"; then
+    if grep -q "${search}" "$pomFile" && [[ $(wc -c < "$pomFile") !=  $(perl -0pe "$perl_command" "$pomFile" | wc -c) ]]; then
       # execute the replacement in pom.xml
       echo "Applying $perl_command for $pomFile"
-      perl -0pe "$perl_command" "$pomFile" > "$pomfile".new && rm "$pomFile" && mv "$pomfile".new "$pomFile"
+      perl -i -0pe "$perl_command" "$pomFile"
     fi
 
   done
@@ -28,6 +28,13 @@ function removeArtifact {
   name=$2
   parent=$3
   perl_command="s/(<${parent}>.*?)\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>.*?<\/${type}>/\$1/s"
+  runRegexOnPoms "$perl_command" "$name"
+}
+
+function removeArtifactVersion {
+  type=$1
+  name=$2
+  perl_command="s/(\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>\s*<scope>.*?<\/scope>)\s*?<version>.*?<\/version>(.*?<\/${type}>)/\$1\$2/s"
   runRegexOnPoms "$perl_command" "$name"
 }
 
@@ -55,3 +62,4 @@ removeElement 'issueManagement'
 removeElement 'licenses'
 removeElement 'junit.version'
 removeArtifact 'plugin' 'nexus-staging-maven-plugin' 'pluginManagement'
+removeArtifactVersion 'dependency' 'junit'

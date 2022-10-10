@@ -18,7 +18,7 @@ function replaceParent {
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
   perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>${parent_group_id}<\/groupId>\n    <artifactId>${parent_artifact_id}<\/artifactId>\n    <version>${parent_version}<\/version><!-- {x-version-update:${parent_artifact_id}:current} -->\n    <relativePath>${relativePath}<\/relativePath>\n  <\/parent>/s"
   # execute the replacement in pom.xml
-  perl -0pe "$perl_command" pom.xml > pom.xml.new && rm pom.xml && mv pom.xml.new pom.xml
+  perl -i -0pe "$perl_command" pom.xml
 }
 
 # Then, apply the values as the parent pom of each module
