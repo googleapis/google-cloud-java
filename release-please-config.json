@@ -384,6 +384,10 @@
       "component": "google-cloud-profiler",
       "skip-github-release": true
     },
+    "java-publicca": {
+      "component": "google-cloud-publicca",
+      "skip-github-release": true
+    },
     "java-recaptchaenterprise": {
       "component": "google-cloud-recaptchaenterprise",
       "skip-github-release": true
