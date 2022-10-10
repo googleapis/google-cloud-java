@@ -27,14 +27,14 @@ function removeArtifact {
   type=$1
   name=$2
   parent=$3
-  perl_command="s/(<${parent}>.*?)\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>.*?<\/${type}>/\$1/s"
+  perl_command="s/(<${parent}>.*?)\s*<${type}>\s*?<groupId>[a-z\-\.]*<\/groupId>\s*?<artifactId>${name//-/\-}<\/artifactId>.*?<\/${type}>(.*?<\/${parent}>)/\$1\$2/s"
   runRegexOnPoms "$perl_command" "$name"
 }
 
 function removeArtifactVersion {
   type=$1
   name=$2
-  perl_command="s/(\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>\s*<scope>.*?<\/scope>)\s*?<version>.*?<\/version>(.*?<\/${type}>)/\$1\$2/s"
+  perl_command="s/(\s*<${type}>\s*?<groupId>[a-z\-\.]*<\/groupId>\s*?<artifactId>${name//-/\-}<\/artifactId>\s*?(<scope>.*?<\/scope>)?)\s*?<version>.*?<\/version>(.*?<\/${type}>)/\$1\$3/s"
   runRegexOnPoms "$perl_command" "$name"
 }
 
@@ -63,3 +63,4 @@ removeElement 'licenses'
 removeElement 'junit.version'
 removeArtifact 'plugin' 'nexus-staging-maven-plugin' 'pluginManagement'
 removeArtifactVersion 'dependency' 'junit'
+removeArtifactVersion 'dependency' 'easymock'
