@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-dashboard-bom</artifactId>
-  <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -53,17 +53,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-dashboard</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-dashboard-v1</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-dashboard-v1:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-monitoring-dashboard-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-dashboard-v1</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-dashboard-v1:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-monitoring-dashboard-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
