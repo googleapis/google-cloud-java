@@ -13,10 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 if [ -n "${GOOGLE_CLOUD_PROJECT}" ]; then
   helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-  pushd "$helperDir/.." >/dev/null || exit
+  pushd "$helperDir/.." >/dev/null
 
   # Always verify whether or not to destroy the project.
   echo -n "Delete project ($GOOGLE_CLOUD_PROJECT)? (y/N): "
@@ -30,5 +31,5 @@ if [ -n "${GOOGLE_CLOUD_PROJECT}" ]; then
     rm ./generated.auto.tfvars
   fi
 
-  popd >/dev/null || exit
+  popd >/dev/null
 fi

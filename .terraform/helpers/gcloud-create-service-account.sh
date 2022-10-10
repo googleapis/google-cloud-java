@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 # Use the project ID in gcloud set-quota-project. Clear the existing quota project directly from
 # the configuration, and re-set.

@@ -13,17 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 # Find all directories starting with 'java-', sort them, then join
 # with ',' as the delimiter.
 function listAllModules() {
   # Ensure current directory is repo root.
   helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-  pushd "$helperDir/../.." >/dev/null || exit
+  pushd "$helperDir/../.." >/dev/null
 
   ls -1 -d java-* | sort | paste -s -d, -
 
-  popd >/dev/null || exit
+  popd >/dev/null
 }
 
 # Replaces '-' with '_' to get a Terraform output-friendly label
@@ -34,7 +35,7 @@ function getFriendlyOutputName() {
 # Get the output object in JSON format for the given module.
 function getOutput() {
   friendlyName=$(getFriendlyOutputName "$1")
-  terraform output -json "$friendlyName" || exit
+  terraform output -json "$friendlyName"
 }
 
 # Parse stdin and get the value associated with the given key.

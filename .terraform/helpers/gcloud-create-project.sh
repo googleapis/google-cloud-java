@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 if [ -n "${GOOGLE_CLOUD_PROJECT}" ]; then
   echo "Using current GOOGLE_CLOUD_PROJECT: $GOOGLE_CLOUD_PROJECT"

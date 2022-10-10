@@ -13,9 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null || exit
+pushd "$scriptDir" >/dev/null
 
 # Ensure GCP project environment variables are initialized.
 if [[ $(terraform state list) == "" ]]; then
@@ -27,4 +28,4 @@ source ./helpers/gcloud-sync-env.sh
 source ./helpers/destroy.sh
 source ./helpers/gcloud-delete-project.sh
 
-popd >/dev/null || exit
+popd >/dev/null

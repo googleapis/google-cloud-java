@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 function initializeGeneratedFiles() {
   cp ./helpers/generated-main.template.tf generated-main.tf
@@ -58,10 +59,10 @@ function appendAllModules() {
 
 # Ensure current directory is <root>/.terraform.
 generateDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$generateDir/.." >/dev/null || exit
+pushd "$generateDir/.." >/dev/null
 
 source ./helpers/common.sh
 initializeGeneratedFiles
 appendAllModules "$1"
 
-popd >/dev/null || exit
+popd >/dev/null

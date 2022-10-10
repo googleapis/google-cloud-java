@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 if ! terraform output -json project_id &>/dev/null; then
   if ! terraform refresh &>/dev/null; then

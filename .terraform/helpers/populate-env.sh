@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 # @returns exit code 0 if list $1 contains entry $2.
 function contains() {
@@ -28,7 +29,7 @@ function modifyEnvironment() {
 }
 
 helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$helperDir/.." >/dev/null || exit
+pushd "$helperDir/.." >/dev/null
 
 # Invoking 'modifyEnvironment' for any active Terraform mdoule
 source ./helpers/common.sh
@@ -44,4 +45,4 @@ for module in $allModules; do
   modifyEnvironment "$module"
 done
 
-popd >/dev/null || exit
+popd >/dev/null

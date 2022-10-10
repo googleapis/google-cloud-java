@@ -13,8 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
+
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null || exit
+pushd "$scriptDir" >/dev/null
 
 modules=$(source ./helpers/list-all-modules.sh)
 IFS=','
@@ -27,4 +29,4 @@ for module in $modules; do
   fi
 done
 
-popd >/dev/null || exit
+popd >/dev/null
