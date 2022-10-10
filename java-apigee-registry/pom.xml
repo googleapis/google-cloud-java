@@ -68,5 +68,4 @@
     <module>proto-google-cloud-apigee-registry-v1</module>
     <module>google-cloud-apigee-registry-bom</module>
   </modules>
-
 </project>

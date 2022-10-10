@@ -26,13 +26,14 @@ function runRegexOnPoms {
 function removeArtifact {
   type=$1
   name=$2
-  perl_command="s/\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>.*?<\/${type}>//s"
+  parent=$3
+  perl_command="s/(<${parent}>.*?)\s*<${type}>\s*<groupId>[a-z\-\.]*<\/groupId>\s*<artifactId>${name//-/\-}<\/artifactId>.*?<\/${type}>/\$1/s"
   runRegexOnPoms "$perl_command" "$name"
 }
 
-function removeDependency {
+function removeManagedDependency {
   dependency=$1
-  removeArtifact 'dependency' "${dependency}"
+  removeArtifact 'dependency' "${dependency}" "dependencyManagement"
 }
 
 function removeElement {
@@ -41,11 +42,11 @@ function removeElement {
   runRegexOnPoms "$perl_command" "<${element}>"
 }
 
-removeDependency 'google-cloud-shared-dependencies'
-removeDependency 'junit'
-removeDependency 'joda-time'
-removeDependency 'truth'
-removeDependency 'easymock'
+removeManagedDependency 'google-cloud-shared-dependencies'
+removeManagedDependency 'junit'
+removeManagedDependency 'joda-time'
+removeManagedDependency 'truth'
+removeManagedDependency 'easymock'
 removeElement 'reporting'
 removeElement 'developers'
 removeElement 'organization'
@@ -53,4 +54,4 @@ removeElement 'scm'
 removeElement 'issueManagement'
 removeElement 'licenses'
 removeElement 'junit.version'
-removeArtifact 'plugin' 'nexus-staging-maven-plugin'
+removeArtifact 'plugin' 'nexus-staging-maven-plugin' 'pluginManagement'

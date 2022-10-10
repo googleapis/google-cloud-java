@@ -69,6 +69,12 @@
     </dependency>
 
     <!-- Test dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <version>4.13.2</version>
+    </dependency>
 
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
