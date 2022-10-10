@@ -132,9 +132,6 @@ def generate(
         f"https://cloud.google.com/{language}/docs/reference/{distribution_name_short}/latest/overview"
     )
 
-    if destination_name is None:
-        destination_name = api_shortname
-
     if proto_path is None:
         proto_path = f"/google/cloud/{api_shortname}"
 
@@ -214,26 +211,28 @@ def generate(
     print("Cloning googleapis-gen...")
     subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
-    print("Running copy-code...")
+    copy_code_parameters = [
+        "docker",
+        "run",
+        "--rm",
+        "--user",
+        f"{user}:{group}",
+        "-v",
+        f"{workdir.resolve()}:/repo",
+        "-v",
+        ""f"{workdir.resolve()}""/gen/googleapis-gen:/googleapis-gen",
+        "-w",
+        "/repo",
+        "--env", "HOME=/tmp",
+        "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest",
+        "copy-code",
+        "--source-repo=/googleapis-gen",
+        f"--config-file={owlbot_yaml_location_from_module}"
+    ]
+    print("Running copy-code: " + str(copy_code_parameters))
+    print("  in directory: " + str(workdir))
     subprocess.check_call(
-        [
-            "docker",
-            "run",
-            "--rm",
-            "--user",
-            f"{user}:{group}",
-            "-v",
-            f"{workdir.resolve()}:/repo",
-            "-v",
-            ""f"{workdir.resolve()}""/gen/googleapis-gen:/googleapis-gen",
-            "-w",
-            "/repo",
-            "--env", "HOME=/tmp",
-            "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest",
-            "copy-code",
-            "--source-repo=/googleapis-gen",
-            f"--config-file={owlbot_yaml_location_from_module}"
-        ],
+        copy_code_parameters,
         cwd=workdir,
     )
 
