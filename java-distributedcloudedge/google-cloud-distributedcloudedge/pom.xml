@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-distributedcloudedge</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
   <packaging>jar</packaging>
   <name>Google Google Distributed Cloud Edge</name>
   <url>https://github.com/googleapis/java-distributedcloudedge</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-distributedcloudedge-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-distributedcloudedge</site.installationModule>
