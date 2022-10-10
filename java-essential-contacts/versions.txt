@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-essential-contacts:2.3.5:2.3.6-SNAPSHOT
-grpc-google-cloud-essential-contacts-v1:2.3.5:2.3.6-SNAPSHOT
-proto-google-cloud-essential-contacts-v1:2.3.5:2.3.6-SNAPSHOT
+google-cloud-essential-contacts:2.3.6:2.3.6
+grpc-google-cloud-essential-contacts-v1:2.3.6:2.3.6
+proto-google-cloud-essential-contacts-v1:2.3.6:2.3.6

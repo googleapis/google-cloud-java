@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-apigee-registry:0.3.1:0.3.2-SNAPSHOT
-proto-google-cloud-apigee-registry-v1:0.3.1:0.3.2-SNAPSHOT
-grpc-google-cloud-apigee-registry-v1:0.3.1:0.3.2-SNAPSHOT
+google-cloud-apigee-registry:0.3.1:0.3.1
+proto-google-cloud-apigee-registry-v1:0.3.1:0.3.1
+grpc-google-cloud-apigee-registry-v1:0.3.1:0.3.1

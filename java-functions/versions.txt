@@ -1,12 +1,12 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-functions:2.5.3:2.5.4-SNAPSHOT
-grpc-google-cloud-functions-v1:2.5.3:2.5.4-SNAPSHOT
-proto-google-cloud-functions-v1:2.5.3:2.5.4-SNAPSHOT
-proto-google-cloud-functions-v2beta:2.5.3:2.5.4-SNAPSHOT
-proto-google-cloud-functions-v2alpha:2.5.3:2.5.4-SNAPSHOT
-grpc-google-cloud-functions-v2beta:2.5.3:2.5.4-SNAPSHOT
-grpc-google-cloud-functions-v2alpha:2.5.3:2.5.4-SNAPSHOT
-proto-google-cloud-functions-v2:2.5.3:2.5.4-SNAPSHOT
-grpc-google-cloud-functions-v2:2.5.3:2.5.4-SNAPSHOT
+google-cloud-functions:2.5.4:2.5.4
+grpc-google-cloud-functions-v1:2.5.4:2.5.4
+proto-google-cloud-functions-v1:2.5.4:2.5.4
+proto-google-cloud-functions-v2beta:2.5.4:2.5.4
+proto-google-cloud-functions-v2alpha:2.5.4:2.5.4
+grpc-google-cloud-functions-v2beta:2.5.4:2.5.4
+grpc-google-cloud-functions-v2alpha:2.5.4:2.5.4
+proto-google-cloud-functions-v2:2.5.4:2.5.4
+grpc-google-cloud-functions-v2:2.5.4:2.5.4

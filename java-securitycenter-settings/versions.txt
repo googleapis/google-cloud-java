@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-securitycenter-settings:0.6.6:0.6.7-SNAPSHOT
-grpc-google-cloud-securitycenter-settings-v1beta1:0.6.6:0.6.7-SNAPSHOT
-proto-google-cloud-securitycenter-settings-v1beta1:0.6.6:0.6.7-SNAPSHOT
+google-cloud-securitycenter-settings:0.6.6:0.6.6
+grpc-google-cloud-securitycenter-settings-v1beta1:0.6.6:0.6.6
+proto-google-cloud-securitycenter-settings-v1beta1:0.6.6:0.6.6
