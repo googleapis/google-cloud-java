@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-webrisk:2.2.5:2.2.6-SNAPSHOT
-grpc-google-cloud-webrisk-v1:2.2.5:2.2.6-SNAPSHOT
-grpc-google-cloud-webrisk-v1beta1:0.39.5:0.39.6-SNAPSHOT
-proto-google-cloud-webrisk-v1:2.2.5:2.2.6-SNAPSHOT
-proto-google-cloud-webrisk-v1beta1:0.39.5:0.39.6-SNAPSHOT
+google-cloud-webrisk:2.3.0:2.3.0
+grpc-google-cloud-webrisk-v1:2.3.0:2.3.0
+grpc-google-cloud-webrisk-v1beta1:0.40.0:0.40.0
+proto-google-cloud-webrisk-v1:2.3.0:2.3.0
+proto-google-cloud-webrisk-v1beta1:0.40.0:0.40.0

@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-websecurityscanner-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+  <version>2.4.0</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
   <name>Google Cloud Web Security Scanner Parent</name>
   <url>https://github.com/googleapis/java-websecurityscanner</url>
   <description>
@@ -61,37 +61,37 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
+        <version>0.91.0</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
+        <version>0.91.0</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1</artifactId>
-        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
+        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
-        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
+        <version>0.91.0</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
-        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+        <version>0.91.0</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1</artifactId>
-        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
+        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-websecurityscanner</artifactId>
-        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
       </dependency>
 
       <dependency>
