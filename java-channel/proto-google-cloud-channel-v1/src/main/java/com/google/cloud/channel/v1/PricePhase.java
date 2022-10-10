@@ -55,92 +55,6 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PricePhase(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              periodType_ = rawValue;
-              break;
-            }
-          case 16:
-            {
-              firstPeriod_ = input.readInt32();
-              break;
-            }
-          case 24:
-            {
-              lastPeriod_ = input.readInt32();
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.channel.v1.Price.Builder subBuilder = null;
-              if (price_ != null) {
-                subBuilder = price_.toBuilder();
-              }
-              price_ =
-                  input.readMessage(com.google.cloud.channel.v1.Price.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(price_);
-                price_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                priceTiers_ = new java.util.ArrayList<com.google.cloud.channel.v1.PriceTier>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              priceTiers_.add(
-                  input.readMessage(
-                      com.google.cloud.channel.v1.PriceTier.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        priceTiers_ = java.util.Collections.unmodifiableList(priceTiers_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.OffersProto
         .internal_static_google_cloud_channel_v1_PricePhase_descriptor;
@@ -372,7 +286,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < priceTiers_.size(); i++) {
       output.writeMessage(5, priceTiers_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -396,7 +310,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < priceTiers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, priceTiers_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -419,7 +333,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       if (!getPrice().equals(other.getPrice())) return false;
     }
     if (!getPriceTiersList().equals(other.getPriceTiersList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -444,7 +358,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRICE_TIERS_FIELD_NUMBER;
       hash = (53 * hash) + getPriceTiersList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -575,19 +489,10 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.channel.v1.PricePhase.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPriceTiersFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -607,10 +512,11 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
       }
       if (priceTiersBuilder_ == null) {
         priceTiers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        priceTiers_ = null;
         priceTiersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -744,7 +650,7 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -759,17 +665,68 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.channel.v1.PricePhase parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                periodType_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                firstPeriod_ = input.readInt32();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                lastPeriod_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(getPriceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.channel.v1.PriceTier m =
+                    input.readMessage(
+                        com.google.cloud.channel.v1.PriceTier.parser(), extensionRegistry);
+                if (priceTiersBuilder_ == null) {
+                  ensurePriceTiersIsMutable();
+                  priceTiers_.add(m);
+                } else {
+                  priceTiersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.channel.v1.PricePhase) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1530,7 +1487,18 @@ public final class PricePhase extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PricePhase(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

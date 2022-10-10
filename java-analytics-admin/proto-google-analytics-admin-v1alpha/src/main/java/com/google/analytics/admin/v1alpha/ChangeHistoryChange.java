@@ -53,97 +53,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private ChangeHistoryChange(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              action_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.Builder
-                  subBuilder = null;
-              if (resourceBeforeChange_ != null) {
-                subBuilder = resourceBeforeChange_.toBuilder();
-              }
-              resourceBeforeChange_ =
-                  input.readMessage(
-                      com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resourceBeforeChange_);
-                resourceBeforeChange_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.Builder
-                  subBuilder = null;
-              if (resourceAfterChange_ != null) {
-                subBuilder = resourceAfterChange_.toBuilder();
-              }
-              resourceAfterChange_ =
-                  input.readMessage(
-                      com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resourceAfterChange_);
-                resourceAfterChange_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_ChangeHistoryChange_descriptor;
@@ -726,314 +635,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ChangeHistoryResource(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.analytics.admin.v1alpha.Account.Builder subBuilder = null;
-                if (resourceCase_ == 1) {
-                  subBuilder = ((com.google.analytics.admin.v1alpha.Account) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.Account.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.Account) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                com.google.analytics.admin.v1alpha.Property.Builder subBuilder = null;
-                if (resourceCase_ == 2) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.Property) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.Property.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.Property) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 2;
-                break;
-              }
-            case 50:
-              {
-                com.google.analytics.admin.v1alpha.FirebaseLink.Builder subBuilder = null;
-                if (resourceCase_ == 6) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.FirebaseLink) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.FirebaseLink.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.FirebaseLink) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 6;
-                break;
-              }
-            case 58:
-              {
-                com.google.analytics.admin.v1alpha.GoogleAdsLink.Builder subBuilder = null;
-                if (resourceCase_ == 7) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.GoogleAdsLink) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.GoogleAdsLink.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.GoogleAdsLink) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 7;
-                break;
-              }
-            case 66:
-              {
-                com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder subBuilder = null;
-                if (resourceCase_ == 8) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.GoogleSignalsSettings.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.GoogleSignalsSettings) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 8;
-                break;
-              }
-            case 74:
-              {
-                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder
-                    subBuilder = null;
-                if (resourceCase_ == 9) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 9;
-                break;
-              }
-            case 82:
-              {
-                com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder
-                    subBuilder = null;
-                if (resourceCase_ == 10) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
-                              resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal)
-                          resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 10;
-                break;
-              }
-            case 90:
-              {
-                com.google.analytics.admin.v1alpha.ConversionEvent.Builder subBuilder = null;
-                if (resourceCase_ == 11) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.ConversionEvent) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.ConversionEvent.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.ConversionEvent) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 11;
-                break;
-              }
-            case 98:
-              {
-                com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder subBuilder =
-                    null;
-                if (resourceCase_ == 12) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.MeasurementProtocolSecret) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 12;
-                break;
-              }
-            case 106:
-              {
-                com.google.analytics.admin.v1alpha.CustomDimension.Builder subBuilder = null;
-                if (resourceCase_ == 13) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.CustomDimension) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.CustomDimension.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.CustomDimension) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 13;
-                break;
-              }
-            case 114:
-              {
-                com.google.analytics.admin.v1alpha.CustomMetric.Builder subBuilder = null;
-                if (resourceCase_ == 14) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.CustomMetric) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.CustomMetric.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.CustomMetric) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 14;
-                break;
-              }
-            case 122:
-              {
-                com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder subBuilder = null;
-                if (resourceCase_ == 15) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.DataRetentionSettings.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.DataRetentionSettings) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 15;
-                break;
-              }
-            case 146:
-              {
-                com.google.analytics.admin.v1alpha.DataStream.Builder subBuilder = null;
-                if (resourceCase_ == 18) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.DataStream) resource_).toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.DataStream.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.analytics.admin.v1alpha.DataStream) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 18;
-                break;
-              }
-            case 162:
-              {
-                com.google.analytics.admin.v1alpha.AttributionSettings.Builder subBuilder = null;
-                if (resourceCase_ == 20) {
-                  subBuilder =
-                      ((com.google.analytics.admin.v1alpha.AttributionSettings) resource_)
-                          .toBuilder();
-                }
-                resource_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.AttributionSettings.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
-                  resource_ = subBuilder.buildPartial();
-                }
-                resourceCase_ = 20;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1954,7 +1555,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (resourceCase_ == 20) {
         output.writeMessage(20, (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2035,7 +1636,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 20, (com.google.analytics.admin.v1alpha.AttributionSettings) resource_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2103,7 +1704,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2174,7 +1775,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2316,22 +1917,57 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
 
       // Construct using
       // com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (accountBuilder_ != null) {
+          accountBuilder_.clear();
+        }
+        if (propertyBuilder_ != null) {
+          propertyBuilder_.clear();
+        }
+        if (firebaseLinkBuilder_ != null) {
+          firebaseLinkBuilder_.clear();
+        }
+        if (googleAdsLinkBuilder_ != null) {
+          googleAdsLinkBuilder_.clear();
+        }
+        if (googleSignalsSettingsBuilder_ != null) {
+          googleSignalsSettingsBuilder_.clear();
+        }
+        if (displayVideo360AdvertiserLinkBuilder_ != null) {
+          displayVideo360AdvertiserLinkBuilder_.clear();
+        }
+        if (displayVideo360AdvertiserLinkProposalBuilder_ != null) {
+          displayVideo360AdvertiserLinkProposalBuilder_.clear();
+        }
+        if (conversionEventBuilder_ != null) {
+          conversionEventBuilder_.clear();
+        }
+        if (measurementProtocolSecretBuilder_ != null) {
+          measurementProtocolSecretBuilder_.clear();
+        }
+        if (customDimensionBuilder_ != null) {
+          customDimensionBuilder_.clear();
+        }
+        if (customMetricBuilder_ != null) {
+          customMetricBuilder_.clear();
+        }
+        if (dataRetentionSettingsBuilder_ != null) {
+          dataRetentionSettingsBuilder_.clear();
+        }
+        if (dataStreamBuilder_ != null) {
+          dataStreamBuilder_.clear();
+        }
+        if (attributionSettingsBuilder_ != null) {
+          attributionSettingsBuilder_.clear();
+        }
         resourceCase_ = 0;
         resource_ = null;
         return this;
@@ -2598,7 +2234,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2613,20 +2249,125 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getAccountFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 2;
+                  break;
+                } // case 18
+              case 50:
+                {
+                  input.readMessage(getFirebaseLinkFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 6;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(getGoogleAdsLinkFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 7;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getGoogleSignalsSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 8;
+                  break;
+                } // case 66
+              case 74:
+                {
+                  input.readMessage(
+                      getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  resourceCase_ = 9;
+                  break;
+                } // case 74
+              case 82:
+                {
+                  input.readMessage(
+                      getDisplayVideo360AdvertiserLinkProposalFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  resourceCase_ = 10;
+                  break;
+                } // case 82
+              case 90:
+                {
+                  input.readMessage(
+                      getConversionEventFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 11;
+                  break;
+                } // case 90
+              case 98:
+                {
+                  input.readMessage(
+                      getMeasurementProtocolSecretFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 12;
+                  break;
+                } // case 98
+              case 106:
+                {
+                  input.readMessage(
+                      getCustomDimensionFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 13;
+                  break;
+                } // case 106
+              case 114:
+                {
+                  input.readMessage(getCustomMetricFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 14;
+                  break;
+                } // case 114
+              case 122:
+                {
+                  input.readMessage(
+                      getDataRetentionSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 15;
+                  break;
+                } // case 122
+              case 146:
+                {
+                  input.readMessage(getDataStreamFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 18;
+                  break;
+                } // case 146
+              case 162:
+                {
+                  input.readMessage(
+                      getAttributionSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 20;
+                  break;
+                } // case 162
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5781,7 +5522,19 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ChangeHistoryResource(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6035,7 +5788,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     if (resourceAfterChange_ != null) {
       output.writeMessage(4, getResourceAfterChange());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6058,7 +5811,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     if (resourceAfterChange_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getResourceAfterChange());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -6084,7 +5837,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     if (hasResourceAfterChange()) {
       if (!getResourceAfterChange().equals(other.getResourceAfterChange())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -6107,7 +5860,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + RESOURCE_AFTER_CHANGE_FIELD_NUMBER;
       hash = (53 * hash) + getResourceAfterChange().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6237,17 +5990,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.analytics.admin.v1alpha.ChangeHistoryChange.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -6371,7 +6117,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (other.hasResourceAfterChange()) {
         mergeResourceAfterChange(other.getResourceAfterChange());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -6386,18 +6132,57 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.admin.v1alpha.ChangeHistoryChange parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                resource_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                action_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getResourceBeforeChangeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getResourceAfterChangeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.analytics.admin.v1alpha.ChangeHistoryChange) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7080,7 +6865,18 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChangeHistoryChange(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

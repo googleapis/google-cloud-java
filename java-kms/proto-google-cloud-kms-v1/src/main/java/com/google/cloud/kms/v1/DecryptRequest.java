@@ -55,92 +55,6 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DecryptRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              ciphertext_ = input.readBytes();
-              break;
-            }
-          case 26:
-            {
-              additionalAuthenticatedData_ = input.readBytes();
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (ciphertextCrc32C_ != null) {
-                subBuilder = ciphertextCrc32C_.toBuilder();
-              }
-              ciphertextCrc32C_ =
-                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ciphertextCrc32C_);
-                ciphertextCrc32C_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (additionalAuthenticatedDataCrc32C_ != null) {
-                subBuilder = additionalAuthenticatedDataCrc32C_.toBuilder();
-              }
-              additionalAuthenticatedDataCrc32C_ =
-                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(additionalAuthenticatedDataCrc32C_);
-                additionalAuthenticatedDataCrc32C_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto
         .internal_static_google_cloud_kms_v1_DecryptRequest_descriptor;
@@ -496,7 +410,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
     if (additionalAuthenticatedDataCrc32C_ != null) {
       output.writeMessage(6, getAdditionalAuthenticatedDataCrc32C());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -523,7 +437,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, getAdditionalAuthenticatedDataCrc32C());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -552,7 +466,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getAdditionalAuthenticatedDataCrc32C()
           .equals(other.getAdditionalAuthenticatedDataCrc32C())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -577,7 +491,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADDITIONAL_AUTHENTICATED_DATA_CRC32C_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalAuthenticatedDataCrc32C().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -707,17 +621,10 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.kms.v1.DecryptRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -847,7 +754,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAdditionalAuthenticatedDataCrc32C()) {
         mergeAdditionalAuthenticatedDataCrc32C(other.getAdditionalAuthenticatedDataCrc32C());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -862,17 +769,64 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.DecryptRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                ciphertext_ = input.readBytes();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                additionalAuthenticatedData_ = input.readBytes();
+
+                break;
+              } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    getCiphertextCrc32CFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getAdditionalAuthenticatedDataCrc32CFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.kms.v1.DecryptRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1886,7 +1840,18 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DecryptRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

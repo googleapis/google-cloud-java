@@ -53,96 +53,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private ReviewDocumentRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              humanReviewConfig_ = s;
-              break;
-            }
-          case 24:
-            {
-              enableSchemaValidation_ = input.readBool();
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.documentai.v1.Document.Builder subBuilder = null;
-              if (sourceCase_ == 4) {
-                subBuilder = ((com.google.cloud.documentai.v1.Document) source_).toBuilder();
-              }
-              source_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1.Document.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.documentai.v1.Document) source_);
-                source_ = subBuilder.buildPartial();
-              }
-              sourceCase_ = 4;
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              priority_ = rawValue;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.documentai.v1.DocumentSchema.Builder subBuilder = null;
-              if (documentSchema_ != null) {
-                subBuilder = documentSchema_.toBuilder();
-              }
-              documentSchema_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1.DocumentSchema.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(documentSchema_);
-                documentSchema_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1_ReviewDocumentRequest_descriptor;
@@ -581,7 +491,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     if (documentSchema_ != null) {
       output.writeMessage(6, getDocumentSchema());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -608,7 +518,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     if (documentSchema_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDocumentSchema());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -639,7 +549,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -668,7 +578,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -797,22 +707,18 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.documentai.v1.ReviewDocumentRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (inlineDocumentBuilder_ != null) {
+        inlineDocumentBuilder_.clear();
+      }
       humanReviewConfig_ = "";
 
       enableSchemaValidation_ = false;
@@ -944,7 +850,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -959,18 +865,61 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.documentai.v1.ReviewDocumentRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                humanReviewConfig_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 24:
+              {
+                enableSchemaValidation_ = input.readBool();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(getInlineDocumentFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 4;
+                break;
+              } // case 34
+            case 40:
+              {
+                priority_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.documentai.v1.ReviewDocumentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1683,7 +1632,18 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReviewDocumentRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -50,78 +50,6 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     return this.unknownFields;
   }
 
-  private KubernetesSoftwareConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                componentVersion_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ComponentVersionDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> componentVersion__ =
-                  input.readMessage(
-                      ComponentVersionDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              componentVersion_
-                  .getMutableMap()
-                  .put(componentVersion__.getKey(), componentVersion__.getValue());
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                properties_ =
-                    com.google.protobuf.MapField.newMapField(
-                        PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
-                  input.readMessage(
-                      PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              properties_.getMutableMap().put(properties__.getKey(), properties__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.SharedProto
         .internal_static_google_cloud_dataproc_v1_KubernetesSoftwareConfig_descriptor;
@@ -404,7 +332,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
         output, internalGetComponentVersion(), ComponentVersionDefaultEntryHolder.defaultEntry, 1);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 2);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -433,7 +361,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, properties__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -451,7 +379,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
 
     if (!internalGetComponentVersion().equals(other.internalGetComponentVersion())) return false;
     if (!internalGetProperties().equals(other.internalGetProperties())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -470,7 +398,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetProperties().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -624,17 +552,10 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     }
 
     // Construct using com.google.cloud.dataproc.v1.KubernetesSoftwareConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -726,7 +647,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
         return this;
       internalGetMutableComponentVersion().mergeFrom(other.internalGetComponentVersion());
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -741,18 +662,54 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.KubernetesSoftwareConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    componentVersion__ =
+                        input.readMessage(
+                            ComponentVersionDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableComponentVersion()
+                    .getMutableMap()
+                    .put(componentVersion__.getKey(), componentVersion__.getValue());
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+                    input.readMessage(
+                        PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableProperties()
+                    .getMutableMap()
+                    .put(properties__.getKey(), properties__.getValue());
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dataproc.v1.KubernetesSoftwareConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1179,7 +1136,18 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KubernetesSoftwareConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -55,130 +55,6 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private RegisterParameters(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              domainName_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              availability_ = rawValue;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                supportedPrivacy_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              supportedPrivacy_.add(rawValue);
-              break;
-            }
-          case 26:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  supportedPrivacy_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                supportedPrivacy_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                domainNotices_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              domainNotices_.add(rawValue);
-              break;
-            }
-          case 34:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  domainNotices_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                domainNotices_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 42:
-            {
-              com.google.type.Money.Builder subBuilder = null;
-              if (yearlyPrice_ != null) {
-                subBuilder = yearlyPrice_.toBuilder();
-              }
-              yearlyPrice_ = input.readMessage(com.google.type.Money.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(yearlyPrice_);
-                yearlyPrice_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        supportedPrivacy_ = java.util.Collections.unmodifiableList(supportedPrivacy_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        domainNotices_ = java.util.Collections.unmodifiableList(domainNotices_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1beta1.DomainsProto
         .internal_static_google_cloud_domains_v1beta1_RegisterParameters_descriptor;
@@ -776,7 +652,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     if (yearlyPrice_ != null) {
       output.writeMessage(5, getYearlyPrice());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -822,7 +698,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     if (yearlyPrice_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getYearlyPrice());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -846,7 +722,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     if (hasYearlyPrice()) {
       if (!getYearlyPrice().equals(other.getYearlyPrice())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -873,7 +749,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + YEARLY_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + getYearlyPrice().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1002,17 +878,10 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.domains.v1beta1.RegisterParameters.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1157,7 +1026,7 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
       if (other.hasYearlyPrice()) {
         mergeYearlyPrice(other.getYearlyPrice());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1172,18 +1041,87 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.domains.v1beta1.RegisterParameters parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                domainName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                availability_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSupportedPrivacyIsMutable();
+                supportedPrivacy_.add(tmpRaw);
+                break;
+              } // case 24
+            case 26:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSupportedPrivacyIsMutable();
+                  supportedPrivacy_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 26
+            case 32:
+              {
+                int tmpRaw = input.readEnum();
+                ensureDomainNoticesIsMutable();
+                domainNotices_.add(tmpRaw);
+                break;
+              } // case 32
+            case 34:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureDomainNoticesIsMutable();
+                  domainNotices_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getYearlyPriceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.domains.v1beta1.RegisterParameters) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2051,7 +1989,18 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RegisterParameters(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -53,62 +53,6 @@ public final class TargetPoolsRemoveHealthCheckRequest
     return this.unknownFields;
   }
 
-  private TargetPoolsRemoveHealthCheckRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case -708002446:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                healthChecks_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.HealthCheckReference>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              healthChecks_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.HealthCheckReference.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        healthChecks_ = java.util.Collections.unmodifiableList(healthChecks_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_TargetPoolsRemoveHealthCheckRequest_descriptor;
@@ -211,7 +155,7 @@ public final class TargetPoolsRemoveHealthCheckRequest
     for (int i = 0; i < healthChecks_.size(); i++) {
       output.writeMessage(448370606, healthChecks_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -224,7 +168,7 @@ public final class TargetPoolsRemoveHealthCheckRequest
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(448370606, healthChecks_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -241,7 +185,7 @@ public final class TargetPoolsRemoveHealthCheckRequest
         (com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest) obj;
 
     if (!getHealthChecksList().equals(other.getHealthChecksList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -256,7 +200,7 @@ public final class TargetPoolsRemoveHealthCheckRequest
       hash = (37 * hash) + HEALTH_CHECKS_FIELD_NUMBER;
       hash = (53 * hash) + getHealthChecksList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -385,19 +329,10 @@ public final class TargetPoolsRemoveHealthCheckRequest
     }
 
     // Construct using com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getHealthChecksFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -405,10 +340,11 @@ public final class TargetPoolsRemoveHealthCheckRequest
       super.clear();
       if (healthChecksBuilder_ == null) {
         healthChecks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        healthChecks_ = null;
         healthChecksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -526,7 +462,7 @@ public final class TargetPoolsRemoveHealthCheckRequest
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -541,19 +477,45 @@ public final class TargetPoolsRemoveHealthCheckRequest
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case -708002446:
+              {
+                com.google.cloud.compute.v1.HealthCheckReference m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.HealthCheckReference.parser(),
+                        extensionRegistry);
+                if (healthChecksBuilder_ == null) {
+                  ensureHealthChecksIsMutable();
+                  healthChecks_.add(m);
+                } else {
+                  healthChecksBuilder_.addMessage(m);
+                }
+                break;
+              } // case -708002446
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -968,7 +930,18 @@ public final class TargetPoolsRemoveHealthCheckRequest
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TargetPoolsRemoveHealthCheckRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

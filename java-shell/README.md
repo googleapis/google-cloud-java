@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-shell</artifactId>
-  <version>2.2.7</version>
+  <version>2.2.8</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-shell:2.2.7'
+implementation 'com.google.cloud:google-cloud-shell:2.2.8'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-shell" % "2.2.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-shell" % "2.2.8"
 ```
 
 ## Authentication

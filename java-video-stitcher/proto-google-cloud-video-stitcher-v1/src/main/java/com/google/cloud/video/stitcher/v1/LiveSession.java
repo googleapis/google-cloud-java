@@ -58,149 +58,6 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private LiveSession(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              playUri_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceUri_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              defaultAdTagId_ = s;
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                adTagMap_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AdTagMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.video.stitcher.v1.AdTag>
-                  adTagMap__ =
-                      input.readMessage(
-                          AdTagMapDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              adTagMap_.getMutableMap().put(adTagMap__.getKey(), adTagMap__.getValue());
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                adTagMacros_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AdTagMacrosDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> adTagMacros__ =
-                  input.readMessage(
-                      AdTagMacrosDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              adTagMacros_.getMutableMap().put(adTagMacros__.getKey(), adTagMacros__.getValue());
-              break;
-            }
-          case 56:
-            {
-              clientAdTracking_ = input.readBool();
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              defaultSlateId_ = s;
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              stitchingPolicy_ = rawValue;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.video.stitcher.v1.ManifestOptions.Builder subBuilder = null;
-              if (manifestOptions_ != null) {
-                subBuilder = manifestOptions_.toBuilder();
-              }
-              manifestOptions_ =
-                  input.readMessage(
-                      com.google.cloud.video.stitcher.v1.ManifestOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(manifestOptions_);
-                manifestOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              streamId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.SessionsProto
         .internal_static_google_cloud_video_stitcher_v1_LiveSession_descriptor;
@@ -1097,7 +954,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, streamId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1157,7 +1014,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, streamId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1187,7 +1044,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (!getManifestOptions().equals(other.getManifestOptions())) return false;
     }
     if (!getStreamId().equals(other.getStreamId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1226,7 +1083,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STREAM_ID_FIELD_NUMBER;
     hash = (53 * hash) + getStreamId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1379,17 +1236,10 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.stitcher.v1.LiveSession.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1548,7 +1398,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         streamId_ = other.streamId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1563,17 +1413,109 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.stitcher.v1.LiveSession parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                playUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                sourceUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                defaultAdTagId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.video.stitcher.v1.AdTag>
+                    adTagMap__ =
+                        input.readMessage(
+                            AdTagMapDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAdTagMap()
+                    .getMutableMap()
+                    .put(adTagMap__.getKey(), adTagMap__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> adTagMacros__ =
+                    input.readMessage(
+                        AdTagMacrosDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAdTagMacros()
+                    .getMutableMap()
+                    .put(adTagMacros__.getKey(), adTagMacros__.getValue());
+                break;
+              } // case 50
+            case 56:
+              {
+                clientAdTracking_ = input.readBool();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                defaultSlateId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 72:
+              {
+                stitchingPolicy_ = input.readEnum();
+
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(getManifestOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                streamId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.video.stitcher.v1.LiveSession) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3025,7 +2967,18 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LiveSession(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

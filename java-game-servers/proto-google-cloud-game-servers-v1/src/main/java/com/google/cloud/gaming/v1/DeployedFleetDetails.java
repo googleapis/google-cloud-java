@@ -50,82 +50,6 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private DeployedFleetDetails(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.Builder subBuilder =
-                  null;
-              if (deployedFleet_ != null) {
-                subBuilder = deployedFleet_.toBuilder();
-              }
-              deployedFleet_ =
-                  input.readMessage(
-                      com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deployedFleet_);
-                deployedFleet_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler.Builder
-                  subBuilder = null;
-              if (deployedAutoscaler_ != null) {
-                subBuilder = deployedAutoscaler_.toBuilder();
-              }
-              deployedAutoscaler_ =
-                  input.readMessage(
-                      com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deployedAutoscaler_);
-                deployedAutoscaler_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.Common
         .internal_static_google_cloud_gaming_v1_DeployedFleetDetails_descriptor;
@@ -314,95 +238,6 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       return this.unknownFields;
     }
 
-    private DeployedFleet(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                fleet_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                fleetSpec_ = s;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.gaming.v1.SpecSource.Builder subBuilder = null;
-                if (specSource_ != null) {
-                  subBuilder = specSource_.toBuilder();
-                }
-                specSource_ =
-                    input.readMessage(
-                        com.google.cloud.gaming.v1.SpecSource.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(specSource_);
-                  specSource_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 42:
-              {
-                com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus
-                        .Builder
-                    subBuilder = null;
-                if (status_ != null) {
-                  subBuilder = status_.toBuilder();
-                }
-                status_ =
-                    input.readMessage(
-                        com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet
-                            .DeployedFleetStatus.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(status_);
-                  status_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gaming.v1.Common
           .internal_static_google_cloud_gaming_v1_DeployedFleetDetails_DeployedFleet_descriptor;
@@ -509,66 +344,6 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private DeployedFleetStatus(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  readyReplicas_ = input.readInt64();
-                  break;
-                }
-              case 16:
-                {
-                  allocatedReplicas_ = input.readInt64();
-                  break;
-                }
-              case 24:
-                {
-                  reservedReplicas_ = input.readInt64();
-                  break;
-                }
-              case 32:
-                {
-                  replicas_ = input.readInt64();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -688,7 +463,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (replicas_ != 0L) {
           output.writeInt64(4, replicas_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -709,7 +484,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (replicas_ != 0L) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, replicas_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -731,7 +506,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (getAllocatedReplicas() != other.getAllocatedReplicas()) return false;
         if (getReservedReplicas() != other.getReservedReplicas()) return false;
         if (getReplicas() != other.getReplicas()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -750,7 +525,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReservedReplicas());
         hash = (37 * hash) + REPLICAS_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReplicas());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -909,17 +684,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
 
         // Construct using
         // com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1041,7 +809,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           if (other.getReplicas() != 0L) {
             setReplicas(other.getReplicas());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1056,20 +824,55 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    readyReplicas_ = input.readInt64();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    allocatedReplicas_ = input.readInt64();
+
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    reservedReplicas_ = input.readInt64();
+
+                    break;
+                  } // case 24
+                case 32:
+                  {
+                    replicas_ = input.readInt64();
+
+                    break;
+                  } // case 32
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.DeployedFleetStatus)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1325,7 +1128,19 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DeployedFleetStatus(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -1582,7 +1397,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (status_ != null) {
         output.writeMessage(5, getStatus());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1603,7 +1418,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (status_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStatus());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1629,7 +1444,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (hasStatus()) {
         if (!getStatus().equals(other.getStatus())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1652,7 +1467,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getStatus().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1784,17 +1599,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       }
 
       // Construct using com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1924,7 +1732,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (other.hasStatus()) {
           mergeStatus(other.getStatus());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1939,19 +1747,55 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  fleet_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  fleetSpec_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getSpecSourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 42:
+                {
+                  input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleet)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2627,7 +2471,19 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DeployedFleet(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2773,75 +2629,6 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private DeployedFleetAutoscaler(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                autoscaler_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                fleetAutoscalerSpec_ = s;
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.gaming.v1.SpecSource.Builder subBuilder = null;
-                if (specSource_ != null) {
-                  subBuilder = specSource_.toBuilder();
-                }
-                specSource_ =
-                    input.readMessage(
-                        com.google.cloud.gaming.v1.SpecSource.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(specSource_);
-                  specSource_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3032,7 +2819,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (specSource_ != null) {
         output.writeMessage(4, getSpecSource());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3050,7 +2837,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (specSource_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSpecSource());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3073,7 +2860,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         if (!getSpecSource().equals(other.getSpecSource())) return false;
       }
       if (!getFleetAutoscalerSpec().equals(other.getFleetAutoscalerSpec())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3092,7 +2879,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       }
       hash = (37 * hash) + FLEET_AUTOSCALER_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getFleetAutoscalerSpec().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3227,17 +3014,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
 
       // Construct using
       // com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3358,7 +3138,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           fleetAutoscalerSpec_ = other.fleetAutoscalerSpec_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3373,20 +3153,49 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  autoscaler_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 26:
+                {
+                  fleetAutoscalerSpec_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getSpecSourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.gaming.v1.DeployedFleetDetails.DeployedFleetAutoscaler)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3832,7 +3641,19 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DeployedFleetAutoscaler(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3979,7 +3800,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     if (deployedAutoscaler_ != null) {
       output.writeMessage(2, getDeployedAutoscaler());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3994,7 +3815,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     if (deployedAutoscaler_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDeployedAutoscaler());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4018,7 +3839,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     if (hasDeployedAutoscaler()) {
       if (!getDeployedAutoscaler().equals(other.getDeployedAutoscaler())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4037,7 +3858,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + DEPLOYED_AUTOSCALER_FIELD_NUMBER;
       hash = (53 * hash) + getDeployedAutoscaler().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4166,17 +3987,10 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.gaming.v1.DeployedFleetDetails.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -4287,7 +4101,7 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
       if (other.hasDeployedAutoscaler()) {
         mergeDeployedAutoscaler(other.getDeployedAutoscaler());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4302,17 +4116,44 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gaming.v1.DeployedFleetDetails parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getDeployedFleetFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getDeployedAutoscalerFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gaming.v1.DeployedFleetDetails) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4753,7 +4594,18 @@ public final class DeployedFleetDetails extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeployedFleetDetails(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

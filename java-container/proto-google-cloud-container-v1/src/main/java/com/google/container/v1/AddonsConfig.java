@@ -51,191 +51,6 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AddonsConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.container.v1.HttpLoadBalancing.Builder subBuilder = null;
-              if (httpLoadBalancing_ != null) {
-                subBuilder = httpLoadBalancing_.toBuilder();
-              }
-              httpLoadBalancing_ =
-                  input.readMessage(
-                      com.google.container.v1.HttpLoadBalancing.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(httpLoadBalancing_);
-                httpLoadBalancing_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.container.v1.HorizontalPodAutoscaling.Builder subBuilder = null;
-              if (horizontalPodAutoscaling_ != null) {
-                subBuilder = horizontalPodAutoscaling_.toBuilder();
-              }
-              horizontalPodAutoscaling_ =
-                  input.readMessage(
-                      com.google.container.v1.HorizontalPodAutoscaling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(horizontalPodAutoscaling_);
-                horizontalPodAutoscaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.container.v1.KubernetesDashboard.Builder subBuilder = null;
-              if (kubernetesDashboard_ != null) {
-                subBuilder = kubernetesDashboard_.toBuilder();
-              }
-              kubernetesDashboard_ =
-                  input.readMessage(
-                      com.google.container.v1.KubernetesDashboard.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(kubernetesDashboard_);
-                kubernetesDashboard_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.container.v1.NetworkPolicyConfig.Builder subBuilder = null;
-              if (networkPolicyConfig_ != null) {
-                subBuilder = networkPolicyConfig_.toBuilder();
-              }
-              networkPolicyConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.NetworkPolicyConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(networkPolicyConfig_);
-                networkPolicyConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.container.v1.CloudRunConfig.Builder subBuilder = null;
-              if (cloudRunConfig_ != null) {
-                subBuilder = cloudRunConfig_.toBuilder();
-              }
-              cloudRunConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.CloudRunConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(cloudRunConfig_);
-                cloudRunConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.container.v1.DnsCacheConfig.Builder subBuilder = null;
-              if (dnsCacheConfig_ != null) {
-                subBuilder = dnsCacheConfig_.toBuilder();
-              }
-              dnsCacheConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.DnsCacheConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dnsCacheConfig_);
-                dnsCacheConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.container.v1.ConfigConnectorConfig.Builder subBuilder = null;
-              if (configConnectorConfig_ != null) {
-                subBuilder = configConnectorConfig_.toBuilder();
-              }
-              configConnectorConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.ConfigConnectorConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configConnectorConfig_);
-                configConnectorConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              com.google.container.v1.GcePersistentDiskCsiDriverConfig.Builder subBuilder = null;
-              if (gcePersistentDiskCsiDriverConfig_ != null) {
-                subBuilder = gcePersistentDiskCsiDriverConfig_.toBuilder();
-              }
-              gcePersistentDiskCsiDriverConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.GcePersistentDiskCsiDriverConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gcePersistentDiskCsiDriverConfig_);
-                gcePersistentDiskCsiDriverConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.container.v1.GcpFilestoreCsiDriverConfig.Builder subBuilder = null;
-              if (gcpFilestoreCsiDriverConfig_ != null) {
-                subBuilder = gcpFilestoreCsiDriverConfig_.toBuilder();
-              }
-              gcpFilestoreCsiDriverConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.GcpFilestoreCsiDriverConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gcpFilestoreCsiDriverConfig_);
-                gcpFilestoreCsiDriverConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_AddonsConfig_descriptor;
@@ -741,6 +556,54 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return getGcpFilestoreCsiDriverConfig();
   }
 
+  public static final int GKE_BACKUP_AGENT_CONFIG_FIELD_NUMBER = 16;
+  private com.google.container.v1.GkeBackupAgentConfig gkeBackupAgentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return Whether the gkeBackupAgentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeBackupAgentConfig() {
+    return gkeBackupAgentConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return The gkeBackupAgentConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GkeBackupAgentConfig getGkeBackupAgentConfig() {
+    return gkeBackupAgentConfig_ == null
+        ? com.google.container.v1.GkeBackupAgentConfig.getDefaultInstance()
+        : gkeBackupAgentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GkeBackupAgentConfigOrBuilder getGkeBackupAgentConfigOrBuilder() {
+    return getGkeBackupAgentConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -782,7 +645,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (gcpFilestoreCsiDriverConfig_ != null) {
       output.writeMessage(14, getGcpFilestoreCsiDriverConfig());
     }
-    unknownFields.writeTo(output);
+    if (gkeBackupAgentConfig_ != null) {
+      output.writeMessage(16, getGkeBackupAgentConfig());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -825,7 +691,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, getGcpFilestoreCsiDriverConfig());
     }
-    size += unknownFields.getSerializedSize();
+    if (gkeBackupAgentConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGkeBackupAgentConfig());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -879,7 +749,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getGcpFilestoreCsiDriverConfig().equals(other.getGcpFilestoreCsiDriverConfig()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (hasGkeBackupAgentConfig() != other.hasGkeBackupAgentConfig()) return false;
+    if (hasGkeBackupAgentConfig()) {
+      if (!getGkeBackupAgentConfig().equals(other.getGkeBackupAgentConfig())) return false;
+    }
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -926,7 +800,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GCP_FILESTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGcpFilestoreCsiDriverConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    if (hasGkeBackupAgentConfig()) {
+      hash = (37 * hash) + GKE_BACKUP_AGENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGkeBackupAgentConfig().hashCode();
+    }
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1055,17 +933,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.container.v1.AddonsConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1124,6 +995,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         gcpFilestoreCsiDriverConfig_ = null;
         gcpFilestoreCsiDriverConfigBuilder_ = null;
+      }
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = null;
+      } else {
+        gkeBackupAgentConfig_ = null;
+        gkeBackupAgentConfigBuilder_ = null;
       }
       return this;
     }
@@ -1195,6 +1072,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfig_;
       } else {
         result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfigBuilder_.build();
+      }
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        result.gkeBackupAgentConfig_ = gkeBackupAgentConfig_;
+      } else {
+        result.gkeBackupAgentConfig_ = gkeBackupAgentConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1272,7 +1154,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGcpFilestoreCsiDriverConfig()) {
         mergeGcpFilestoreCsiDriverConfig(other.getGcpFilestoreCsiDriverConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (other.hasGkeBackupAgentConfig()) {
+        mergeGkeBackupAgentConfig(other.getGkeBackupAgentConfig());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1287,17 +1172,100 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.AddonsConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getHttpLoadBalancingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getHorizontalPodAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getKubernetesDashboardFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getNetworkPolicyConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 58:
+              {
+                input.readMessage(getCloudRunConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getDnsCacheConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 82:
+              {
+                input.readMessage(
+                    getConfigConnectorConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getGcePersistentDiskCsiDriverConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 90
+            case 114:
+              {
+                input.readMessage(
+                    getGcpFilestoreCsiDriverConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 130:
+              {
+                input.readMessage(
+                    getGkeBackupAgentConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.AddonsConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3140,6 +3108,193 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       return gcpFilestoreCsiDriverConfigBuilder_;
     }
 
+    private com.google.container.v1.GkeBackupAgentConfig gkeBackupAgentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GkeBackupAgentConfig,
+            com.google.container.v1.GkeBackupAgentConfig.Builder,
+            com.google.container.v1.GkeBackupAgentConfigOrBuilder>
+        gkeBackupAgentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     *
+     * @return Whether the gkeBackupAgentConfig field is set.
+     */
+    public boolean hasGkeBackupAgentConfig() {
+      return gkeBackupAgentConfigBuilder_ != null || gkeBackupAgentConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     *
+     * @return The gkeBackupAgentConfig.
+     */
+    public com.google.container.v1.GkeBackupAgentConfig getGkeBackupAgentConfig() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        return gkeBackupAgentConfig_ == null
+            ? com.google.container.v1.GkeBackupAgentConfig.getDefaultInstance()
+            : gkeBackupAgentConfig_;
+      } else {
+        return gkeBackupAgentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder setGkeBackupAgentConfig(com.google.container.v1.GkeBackupAgentConfig value) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gkeBackupAgentConfig_ = value;
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder setGkeBackupAgentConfig(
+        com.google.container.v1.GkeBackupAgentConfig.Builder builderForValue) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder mergeGkeBackupAgentConfig(com.google.container.v1.GkeBackupAgentConfig value) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        if (gkeBackupAgentConfig_ != null) {
+          gkeBackupAgentConfig_ =
+              com.google.container.v1.GkeBackupAgentConfig.newBuilder(gkeBackupAgentConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gkeBackupAgentConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder clearGkeBackupAgentConfig() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = null;
+        onChanged();
+      } else {
+        gkeBackupAgentConfig_ = null;
+        gkeBackupAgentConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public com.google.container.v1.GkeBackupAgentConfig.Builder getGkeBackupAgentConfigBuilder() {
+
+      onChanged();
+      return getGkeBackupAgentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public com.google.container.v1.GkeBackupAgentConfigOrBuilder
+        getGkeBackupAgentConfigOrBuilder() {
+      if (gkeBackupAgentConfigBuilder_ != null) {
+        return gkeBackupAgentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gkeBackupAgentConfig_ == null
+            ? com.google.container.v1.GkeBackupAgentConfig.getDefaultInstance()
+            : gkeBackupAgentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GkeBackupAgentConfig,
+            com.google.container.v1.GkeBackupAgentConfig.Builder,
+            com.google.container.v1.GkeBackupAgentConfigOrBuilder>
+        getGkeBackupAgentConfigFieldBuilder() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GkeBackupAgentConfig,
+                com.google.container.v1.GkeBackupAgentConfig.Builder,
+                com.google.container.v1.GkeBackupAgentConfigOrBuilder>(
+                getGkeBackupAgentConfig(), getParentForChildren(), isClean());
+        gkeBackupAgentConfig_ = null;
+      }
+      return gkeBackupAgentConfigBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -3172,7 +3327,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddonsConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

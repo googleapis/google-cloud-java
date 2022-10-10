@@ -54,270 +54,6 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ClusterConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              configBucket_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tempBucket_ = s;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.dataproc.v1.GceClusterConfig.Builder subBuilder = null;
-              if (gceClusterConfig_ != null) {
-                subBuilder = gceClusterConfig_.toBuilder();
-              }
-              gceClusterConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.GceClusterConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gceClusterConfig_);
-                gceClusterConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder subBuilder = null;
-              if (masterConfig_ != null) {
-                subBuilder = masterConfig_.toBuilder();
-              }
-              masterConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.InstanceGroupConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(masterConfig_);
-                masterConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder subBuilder = null;
-              if (workerConfig_ != null) {
-                subBuilder = workerConfig_.toBuilder();
-              }
-              workerConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.InstanceGroupConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workerConfig_);
-                workerConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                initializationActions_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.dataproc.v1.NodeInitializationAction>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              initializationActions_.add(
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.NodeInitializationAction.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder subBuilder = null;
-              if (secondaryWorkerConfig_ != null) {
-                subBuilder = secondaryWorkerConfig_.toBuilder();
-              }
-              secondaryWorkerConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.InstanceGroupConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(secondaryWorkerConfig_);
-                secondaryWorkerConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.dataproc.v1.SoftwareConfig.Builder subBuilder = null;
-              if (softwareConfig_ != null) {
-                subBuilder = softwareConfig_.toBuilder();
-              }
-              softwareConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.SoftwareConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(softwareConfig_);
-                softwareConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.dataproc.v1.EncryptionConfig.Builder subBuilder = null;
-              if (encryptionConfig_ != null) {
-                subBuilder = encryptionConfig_.toBuilder();
-              }
-              encryptionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.EncryptionConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(encryptionConfig_);
-                encryptionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.cloud.dataproc.v1.SecurityConfig.Builder subBuilder = null;
-              if (securityConfig_ != null) {
-                subBuilder = securityConfig_.toBuilder();
-              }
-              securityConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.SecurityConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(securityConfig_);
-                securityConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 138:
-            {
-              com.google.cloud.dataproc.v1.LifecycleConfig.Builder subBuilder = null;
-              if (lifecycleConfig_ != null) {
-                subBuilder = lifecycleConfig_.toBuilder();
-              }
-              lifecycleConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.LifecycleConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lifecycleConfig_);
-                lifecycleConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 146:
-            {
-              com.google.cloud.dataproc.v1.AutoscalingConfig.Builder subBuilder = null;
-              if (autoscalingConfig_ != null) {
-                subBuilder = autoscalingConfig_.toBuilder();
-              }
-              autoscalingConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.AutoscalingConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(autoscalingConfig_);
-                autoscalingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 154:
-            {
-              com.google.cloud.dataproc.v1.EndpointConfig.Builder subBuilder = null;
-              if (endpointConfig_ != null) {
-                subBuilder = endpointConfig_.toBuilder();
-              }
-              endpointConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.EndpointConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endpointConfig_);
-                endpointConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.dataproc.v1.MetastoreConfig.Builder subBuilder = null;
-              if (metastoreConfig_ != null) {
-                subBuilder = metastoreConfig_.toBuilder();
-              }
-              metastoreConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.MetastoreConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metastoreConfig_);
-                metastoreConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 186:
-            {
-              com.google.cloud.dataproc.v1.DataprocMetricConfig.Builder subBuilder = null;
-              if (dataprocMetricConfig_ != null) {
-                subBuilder = dataprocMetricConfig_.toBuilder();
-              }
-              dataprocMetricConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.DataprocMetricConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dataprocMetricConfig_);
-                dataprocMetricConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_ClusterConfig_descriptor;
@@ -1336,7 +1072,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (dataprocMetricConfig_ != null) {
       output.writeMessage(23, getDataprocMetricConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1394,7 +1130,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getDataprocMetricConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1461,7 +1197,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasDataprocMetricConfig()) {
       if (!getDataprocMetricConfig().equals(other.getDataprocMetricConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1528,7 +1264,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DATAPROC_METRIC_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDataprocMetricConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1657,19 +1393,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataproc.v1.ClusterConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInitializationActionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1711,10 +1438,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (initializationActionsBuilder_ == null) {
         initializationActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        initializationActions_ = null;
         initializationActionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (encryptionConfigBuilder_ == null) {
         encryptionConfig_ = null;
       } else {
@@ -1976,7 +1704,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDataprocMetricConfig()) {
         mergeDataprocMetricConfig(other.getDataprocMetricConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1991,17 +1719,134 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.ClusterConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                configBucket_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                tempBucket_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 66:
+              {
+                input.readMessage(
+                    getGceClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getMasterConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getWorkerConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.cloud.dataproc.v1.NodeInitializationAction m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.NodeInitializationAction.parser(),
+                        extensionRegistry);
+                if (initializationActionsBuilder_ == null) {
+                  ensureInitializationActionsIsMutable();
+                  initializationActions_.add(m);
+                } else {
+                  initializationActionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getSecondaryWorkerConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getSoftwareConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(
+                    getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getSecurityConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getLifecycleConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getAutoscalingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(getEndpointConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(getMetastoreConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 186:
+              {
+                input.readMessage(
+                    getDataprocMetricConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.ClusterConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5462,7 +5307,18 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClusterConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

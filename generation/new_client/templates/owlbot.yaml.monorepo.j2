@@ -14,12 +14,12 @@
 
 {% if artifact_name %}
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/{{ module_name }}/grpc-google-.*/src"
+- "/{{ module_name }}/proto-google-.*/src"
+- "/{{ module_name }}/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/{{ module_name }}/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/{{ proto_path }}/(v.*)/.*-java/proto-google-.*/src"

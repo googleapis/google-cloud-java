@@ -53,62 +53,6 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private ImportConsumerOverridesResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                overrides_ =
-                    new java.util.ArrayList<com.google.api.serviceusage.v1beta1.QuotaOverride>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              overrides_.add(
-                  input.readMessage(
-                      com.google.api.serviceusage.v1beta1.QuotaOverride.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        overrides_ = java.util.Collections.unmodifiableList(overrides_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1beta1_ImportConsumerOverridesResponse_descriptor;
@@ -211,7 +155,7 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
     for (int i = 0; i < overrides_.size(); i++) {
       output.writeMessage(1, overrides_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -223,7 +167,7 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
     for (int i = 0; i < overrides_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, overrides_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -240,7 +184,7 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
         (com.google.api.serviceusage.v1beta1.ImportConsumerOverridesResponse) obj;
 
     if (!getOverridesList().equals(other.getOverridesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -255,7 +199,7 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
       hash = (37 * hash) + OVERRIDES_FIELD_NUMBER;
       hash = (53 * hash) + getOverridesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -387,19 +331,10 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
 
     // Construct using
     // com.google.api.serviceusage.v1beta1.ImportConsumerOverridesResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getOverridesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -407,10 +342,11 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
       super.clear();
       if (overridesBuilder_ == null) {
         overrides_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        overrides_ = null;
         overridesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -530,7 +466,7 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -545,19 +481,45 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.serviceusage.v1beta1.ImportConsumerOverridesResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.api.serviceusage.v1beta1.QuotaOverride m =
+                    input.readMessage(
+                        com.google.api.serviceusage.v1beta1.QuotaOverride.parser(),
+                        extensionRegistry);
+                if (overridesBuilder_ == null) {
+                  ensureOverridesIsMutable();
+                  overrides_.add(m);
+                } else {
+                  overridesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.api.serviceusage.v1beta1.ImportConsumerOverridesResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -954,7 +916,18 @@ public final class ImportConsumerOverridesResponse extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ImportConsumerOverridesResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

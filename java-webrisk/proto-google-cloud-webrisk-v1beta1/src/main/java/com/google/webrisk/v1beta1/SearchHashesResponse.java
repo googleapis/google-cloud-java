@@ -44,78 +44,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private SearchHashesResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                threats_ =
-                    new java.util.ArrayList<
-                        com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              threats_.add(
-                  input.readMessage(
-                      com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (negativeExpireTime_ != null) {
-                subBuilder = negativeExpireTime_.toBuilder();
-              }
-              negativeExpireTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(negativeExpireTime_);
-                negativeExpireTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        threats_ = java.util.Collections.unmodifiableList(threats_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.webrisk.v1beta1.WebRiskProto
         .internal_static_google_cloud_webrisk_v1beta1_SearchHashesResponse_descriptor;
@@ -289,94 +217,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ThreatHash(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                threatTypes_.add(rawValue);
-                break;
-              }
-            case 10:
-              {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while (input.getBytesUntilLimit() > 0) {
-                  int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    threatTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  threatTypes_.add(rawValue);
-                }
-                input.popLimit(oldLimit);
-                break;
-              }
-            case 18:
-              {
-                hash_ = input.readBytes();
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (expireTime_ != null) {
-                  subBuilder = expireTime_.toBuilder();
-                }
-                expireTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(expireTime_);
-                  expireTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          threatTypes_ = java.util.Collections.unmodifiableList(threatTypes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -591,7 +431,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       if (expireTime_ != null) {
         output.writeMessage(3, getExpireTime());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -619,7 +459,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       if (expireTime_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExpireTime());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -641,7 +481,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       if (hasExpireTime()) {
         if (!getExpireTime().equals(other.getExpireTime())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -662,7 +502,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getExpireTime().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -794,17 +634,10 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
 
       // Construct using com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -929,7 +762,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         if (other.hasExpireTime()) {
           mergeExpireTime(other.getExpireTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -944,18 +777,62 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureThreatTypesIsMutable();
+                  threatTypes_.add(tmpRaw);
+                  break;
+                } // case 8
+              case 10:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureThreatTypesIsMutable();
+                    threatTypes_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  hash_ = input.readBytes();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1480,7 +1357,19 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ThreatHash(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1652,7 +1541,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     if (negativeExpireTime_ != null) {
       output.writeMessage(2, getNegativeExpireTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1667,7 +1556,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     if (negativeExpireTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNegativeExpireTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1688,7 +1577,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     if (hasNegativeExpireTime()) {
       if (!getNegativeExpireTime().equals(other.getNegativeExpireTime())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1707,7 +1596,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + NEGATIVE_EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getNegativeExpireTime().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1828,19 +1717,10 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.webrisk.v1beta1.SearchHashesResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getThreatsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1848,10 +1728,11 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       super.clear();
       if (threatsBuilder_ == null) {
         threats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        threats_ = null;
         threatsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (negativeExpireTimeBuilder_ == null) {
         negativeExpireTime_ = null;
       } else {
@@ -1980,7 +1861,7 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       if (other.hasNegativeExpireTime()) {
         mergeNegativeExpireTime(other.getNegativeExpireTime());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1995,17 +1876,52 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.webrisk.v1beta1.SearchHashesResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash m =
+                    input.readMessage(
+                        com.google.webrisk.v1beta1.SearchHashesResponse.ThreatHash.parser(),
+                        extensionRegistry);
+                if (threatsBuilder_ == null) {
+                  ensureThreatsIsMutable();
+                  threats_.add(m);
+                } else {
+                  threatsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getNegativeExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.webrisk.v1beta1.SearchHashesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2638,7 +2554,18 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SearchHashesResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

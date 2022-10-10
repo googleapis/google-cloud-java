@@ -50,109 +50,6 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ExamplePayload(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.automl.v1beta1.Image.Builder subBuilder = null;
-              if (payloadCase_ == 1) {
-                subBuilder = ((com.google.cloud.automl.v1beta1.Image) payload_).toBuilder();
-              }
-              payload_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.Image.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.Image) payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              payloadCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.automl.v1beta1.TextSnippet.Builder subBuilder = null;
-              if (payloadCase_ == 2) {
-                subBuilder = ((com.google.cloud.automl.v1beta1.TextSnippet) payload_).toBuilder();
-              }
-              payload_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.TextSnippet.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TextSnippet) payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              payloadCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.automl.v1beta1.Row.Builder subBuilder = null;
-              if (payloadCase_ == 3) {
-                subBuilder = ((com.google.cloud.automl.v1beta1.Row) payload_).toBuilder();
-              }
-              payload_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.Row.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.Row) payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              payloadCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.automl.v1beta1.Document.Builder subBuilder = null;
-              if (payloadCase_ == 4) {
-                subBuilder = ((com.google.cloud.automl.v1beta1.Document) payload_).toBuilder();
-              }
-              payload_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.Document.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.Document) payload_);
-                payload_ = subBuilder.buildPartial();
-              }
-              payloadCase_ = 4;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.DataItems
         .internal_static_google_cloud_automl_v1beta1_ExamplePayload_descriptor;
@@ -451,7 +348,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     if (payloadCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.automl.v1beta1.Document) payload_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -480,7 +377,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.automl.v1beta1.Document) payload_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -513,7 +410,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -544,7 +441,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -673,22 +570,27 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.automl.v1beta1.ExamplePayload.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (imageBuilder_ != null) {
+        imageBuilder_.clear();
+      }
+      if (textSnippetBuilder_ != null) {
+        textSnippetBuilder_.clear();
+      }
+      if (documentBuilder_ != null) {
+        documentBuilder_.clear();
+      }
+      if (rowBuilder_ != null) {
+        rowBuilder_.clear();
+      }
       payloadCase_ = 0;
       payload_ = null;
       return this;
@@ -822,7 +724,7 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -837,17 +739,55 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.ExamplePayload parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getTextSnippetFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getRowFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 4;
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.ExamplePayload) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1732,7 +1672,18 @@ public final class ExamplePayload extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ExamplePayload(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

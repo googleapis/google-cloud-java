@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataform</artifactId>
-  <version>0.2.2</version>
+  <version>0.2.4</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dataform:0.2.2'
+implementation 'com.google.cloud:google-cloud-dataform:0.2.4'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataform" % "0.2.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataform" % "0.2.4"
 ```
 
 ## Authentication

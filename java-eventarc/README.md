@@ -19,21 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-eventarc</artifactId>
-  <version>1.3.6</version>
+  <version>1.3.8</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-eventarc:1.3.6'
+implementation 'com.google.cloud:google-cloud-eventarc:1.3.8'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-eventarc" % "1.3.6"
+libraryDependencies += "com.google.cloud" % "google-cloud-eventarc" % "1.3.8"
 ```
 
 ## Authentication

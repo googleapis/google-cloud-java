@@ -60,260 +60,6 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private MigratingVm(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceVmId_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.vmmigration.v1.SchedulePolicy.Builder subBuilder = null;
-              if (policy_ != null) {
-                subBuilder = policy_.toBuilder();
-              }
-              policy_ =
-                  input.readMessage(
-                      com.google.cloud.vmmigration.v1.SchedulePolicy.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(policy_);
-                policy_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.vmmigration.v1.ReplicationSync.Builder subBuilder = null;
-              if (lastSync_ != null) {
-                subBuilder = lastSync_.toBuilder();
-              }
-              lastSync_ =
-                  input.readMessage(
-                      com.google.cloud.vmmigration.v1.ReplicationSync.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastSync_);
-                lastSync_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.vmmigration.v1.ReplicationCycle.Builder subBuilder = null;
-              if (currentSyncInfo_ != null) {
-                subBuilder = currentSyncInfo_.toBuilder();
-              }
-              currentSyncInfo_ =
-                  input.readMessage(
-                      com.google.cloud.vmmigration.v1.ReplicationCycle.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(currentSyncInfo_);
-                currentSyncInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              group_ = s;
-              break;
-            }
-          case 130:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 138:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                recentCloneJobs_ =
-                    new java.util.ArrayList<com.google.cloud.vmmigration.v1.CloneJob>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              recentCloneJobs_.add(
-                  input.readMessage(
-                      com.google.cloud.vmmigration.v1.CloneJob.parser(), extensionRegistry));
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 154:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (error_ != null) {
-                subBuilder = error_.toBuilder();
-              }
-              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(error_);
-                error_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 162:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                recentCutoverJobs_ =
-                    new java.util.ArrayList<com.google.cloud.vmmigration.v1.CutoverJob>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              recentCutoverJobs_.add(
-                  input.readMessage(
-                      com.google.cloud.vmmigration.v1.CutoverJob.parser(), extensionRegistry));
-              break;
-            }
-          case 178:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (stateTime_ != null) {
-                subBuilder = stateTime_.toBuilder();
-              }
-              stateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stateTime_);
-                stateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 184:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 210:
-            {
-              com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults.Builder subBuilder = null;
-              if (targetVmDefaultsCase_ == 26) {
-                subBuilder =
-                    ((com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults)
-                            targetVmDefaults_)
-                        .toBuilder();
-              }
-              targetVmDefaults_ =
-                  input.readMessage(
-                      com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults)
-                        targetVmDefaults_);
-                targetVmDefaults_ = subBuilder.buildPartial();
-              }
-              targetVmDefaultsCase_ = 26;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        recentCloneJobs_ = java.util.Collections.unmodifiableList(recentCloneJobs_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        recentCutoverJobs_ = java.util.Collections.unmodifiableList(recentCutoverJobs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
         .internal_static_google_cloud_vmmigration_v1_MigratingVm_descriptor;
@@ -1830,7 +1576,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           26, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1900,7 +1646,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               26, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1962,7 +1708,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2033,7 +1779,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2183,25 +1929,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.vmmigration.v1.MigratingVm.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getRecentCloneJobsFieldBuilder();
-        getRecentCutoverJobsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (computeEngineTargetDefaultsBuilder_ != null) {
+        computeEngineTargetDefaultsBuilder_.clear();
+      }
       name_ = "";
 
       sourceVmId_ = "";
@@ -2253,10 +1992,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       if (recentCloneJobsBuilder_ == null) {
         recentCloneJobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        recentCloneJobs_ = null;
         recentCloneJobsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
@@ -2265,10 +2005,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       if (recentCutoverJobsBuilder_ == null) {
         recentCutoverJobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        recentCutoverJobs_ = null;
         recentCutoverJobsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       targetVmDefaultsCase_ = 0;
       targetVmDefaults_ = null;
       return this;
@@ -2527,7 +2268,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2542,17 +2283,153 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vmmigration.v1.MigratingVm parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                sourceVmId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 66:
+              {
+                input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getLastSyncFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 106:
+              {
+                input.readMessage(getCurrentSyncInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 122:
+              {
+                group_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            case 130:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 130
+            case 138:
+              {
+                com.google.cloud.vmmigration.v1.CloneJob m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.CloneJob.parser(), extensionRegistry);
+                if (recentCloneJobsBuilder_ == null) {
+                  ensureRecentCloneJobsIsMutable();
+                  recentCloneJobs_.add(m);
+                } else {
+                  recentCloneJobsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
+            case 146:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 154
+            case 162:
+              {
+                com.google.cloud.vmmigration.v1.CutoverJob m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.CutoverJob.parser(), extensionRegistry);
+                if (recentCutoverJobsBuilder_ == null) {
+                  ensureRecentCutoverJobsIsMutable();
+                  recentCutoverJobs_.add(m);
+                } else {
+                  recentCutoverJobsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
+            case 178:
+              {
+                input.readMessage(getStateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            case 184:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 184
+            case 210:
+              {
+                input.readMessage(
+                    getComputeEngineTargetDefaultsFieldBuilder().getBuilder(), extensionRegistry);
+                targetVmDefaultsCase_ = 26;
+                break;
+              } // case 210
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vmmigration.v1.MigratingVm) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5994,7 +5871,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MigratingVm(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

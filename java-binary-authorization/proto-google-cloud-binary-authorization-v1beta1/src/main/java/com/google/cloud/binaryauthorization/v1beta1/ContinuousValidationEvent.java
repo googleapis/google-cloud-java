@@ -50,99 +50,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private ContinuousValidationEvent(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .ContinuousValidationPodEvent.Builder
-                  subBuilder = null;
-              if (eventTypeCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                                .ContinuousValidationPodEvent)
-                            eventType_)
-                        .toBuilder();
-              }
-              eventType_ =
-                  input.readMessage(
-                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                          .ContinuousValidationPodEvent.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                            .ContinuousValidationPodEvent)
-                        eventType_);
-                eventType_ = subBuilder.buildPartial();
-              }
-              eventTypeCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .UnsupportedPolicyEvent.Builder
-                  subBuilder = null;
-              if (eventTypeCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                                .UnsupportedPolicyEvent)
-                            eventType_)
-                        .toBuilder();
-              }
-              eventType_ =
-                  input.readMessage(
-                      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                          .UnsupportedPolicyEvent.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                            .UnsupportedPolicyEvent)
-                        eventType_);
-                eventType_ = subBuilder.buildPartial();
-              }
-              eventTypeCase_ = 2;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_descriptor;
@@ -426,116 +333,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private ContinuousValidationPodEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                pod_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (deployTime_ != null) {
-                  subBuilder = deployTime_.toBuilder();
-                }
-                deployTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(deployTime_);
-                  deployTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (endTime_ != null) {
-                  subBuilder = endTime_.toBuilder();
-                }
-                endTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(endTime_);
-                  endTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                verdict_ = rawValue;
-                break;
-              }
-            case 42:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  images_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                              .ContinuousValidationPodEvent.ImageDetails>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                images_.add(
-                    input.readMessage(
-                        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                            .ContinuousValidationPodEvent.ImageDetails.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 58:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                podNamespace_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          images_ = java.util.Collections.unmodifiableList(images_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
           .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_ContinuousValidationPodEvent_descriptor;
@@ -816,67 +613,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private ImageDetails(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  image_ = s;
-                  break;
-                }
-              case 16:
-                {
-                  int rawValue = input.readEnum();
-
-                  result_ = rawValue;
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  description_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1232,7 +968,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1253,7 +989,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1279,7 +1015,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (!getImage().equals(other.getImage())) return false;
         if (result_ != other.result_) return false;
         if (!getDescription().equals(other.getDescription())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1296,7 +1032,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         hash = (53 * hash) + result_;
         hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
         hash = (53 * hash) + getDescription().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1455,17 +1191,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
         // Construct using
         // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.ImageDetails.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1592,7 +1321,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             description_ = other.description_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1607,22 +1336,49 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                  .ContinuousValidationPodEvent.ImageDetails
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    image_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    result_ = input.readEnum();
+
+                    break;
+                  } // case 16
+                case 26:
+                  {
+                    description_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                        .ContinuousValidationPodEvent.ImageDetails)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1989,7 +1745,19 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ImageDetails(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2376,7 +2144,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podNamespace_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, podNamespace_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2407,7 +2175,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podNamespace_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, podNamespace_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2442,7 +2210,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
       if (verdict_ != other.verdict_) return false;
       if (!getImagesList().equals(other.getImagesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2471,7 +2239,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         hash = (37 * hash) + IMAGES_FIELD_NUMBER;
         hash = (53 * hash) + getImagesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2628,19 +2396,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ContinuousValidationPodEvent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getImagesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -2666,10 +2425,11 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
         if (imagesBuilder_ == null) {
           images_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          images_ = null;
           imagesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2838,7 +2598,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2853,22 +2613,78 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .ContinuousValidationPodEvent
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  pod_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getDeployTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  verdict_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                          .ContinuousValidationPodEvent.ImageDetails
+                      m =
+                          input.readMessage(
+                              com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
+                                  .ContinuousValidationPodEvent.ImageDetails.parser(),
+                              extensionRegistry);
+                  if (imagesBuilder_ == null) {
+                    ensureImagesIsMutable();
+                    images_.add(m);
+                  } else {
+                    imagesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              case 58:
+                {
+                  podNamespace_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .ContinuousValidationPodEvent)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4047,7 +3863,19 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ContinuousValidationPodEvent(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4133,52 +3961,6 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private UnsupportedPolicyEvent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                description_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationLoggingProto
           .internal_static_google_cloud_binaryauthorization_v1beta1_ContinuousValidationEvent_UnsupportedPolicyEvent_descriptor;
@@ -4262,7 +4044,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4274,7 +4056,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4297,7 +4079,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                   obj;
 
       if (!getDescription().equals(other.getDescription())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4310,7 +4092,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4467,17 +4249,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4591,7 +4366,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           description_ = other.description_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4606,22 +4381,37 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                .UnsupportedPolicyEvent
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  description_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-                      .UnsupportedPolicyEvent)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4770,7 +4560,19 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new UnsupportedPolicyEvent(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5000,7 +4802,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                   .UnsupportedPolicyEvent)
               eventType_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -5025,7 +4827,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                       .UnsupportedPolicyEvent)
                   eventType_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -5052,7 +4854,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -5075,7 +4877,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -5207,22 +5009,21 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
 
     // Construct using
     // com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (podEventBuilder_ != null) {
+        podEventBuilder_.clear();
+      }
+      if (unsupportedPolicyEventBuilder_ != null) {
+        unsupportedPolicyEventBuilder_.clear();
+      }
       eventTypeCase_ = 0;
       eventType_ = null;
       return this;
@@ -5339,7 +5140,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5354,19 +5155,44 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getPodEventFieldBuilder().getBuilder(), extensionRegistry);
+                eventTypeCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getUnsupportedPolicyEventFieldBuilder().getBuilder(), extensionRegistry);
+                eventTypeCase_ = 2;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5952,7 +5778,18 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContinuousValidationEvent(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

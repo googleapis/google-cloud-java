@@ -54,89 +54,6 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Cve(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                references_ =
-                    new java.util.ArrayList<com.google.cloud.securitycenter.v1.Reference>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              references_.add(
-                  input.readMessage(
-                      com.google.cloud.securitycenter.v1.Reference.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.securitycenter.v1.Cvssv3.Builder subBuilder = null;
-              if (cvssv3_ != null) {
-                subBuilder = cvssv3_.toBuilder();
-              }
-              cvssv3_ =
-                  input.readMessage(
-                      com.google.cloud.securitycenter.v1.Cvssv3.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(cvssv3_);
-                cvssv3_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              upstreamFixAvailable_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        references_ = java.util.Collections.unmodifiableList(references_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.VulnerabilityProto
         .internal_static_google_cloud_securitycenter_v1_Cve_descriptor;
@@ -370,7 +287,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (upstreamFixAvailable_ != false) {
       output.writeBool(4, upstreamFixAvailable_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -391,7 +308,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (upstreamFixAvailable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, upstreamFixAvailable_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -413,7 +330,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (!getCvssv3().equals(other.getCvssv3())) return false;
     }
     if (getUpstreamFixAvailable() != other.getUpstreamFixAvailable()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -436,7 +353,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + UPSTREAM_FIX_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpstreamFixAvailable());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -566,19 +483,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.securitycenter.v1.Cve.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getReferencesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -588,10 +496,11 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
 
       if (referencesBuilder_ == null) {
         references_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        references_ = null;
         referencesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (cvssv3Builder_ == null) {
         cvssv3_ = null;
       } else {
@@ -730,7 +639,7 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (other.getUpstreamFixAvailable() != false) {
         setUpstreamFixAvailable(other.getUpstreamFixAvailable());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -745,17 +654,62 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.Cve parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.securitycenter.v1.Reference m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.Reference.parser(), extensionRegistry);
+                if (referencesBuilder_ == null) {
+                  ensureReferencesIsMutable();
+                  references_.add(m);
+                } else {
+                  referencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCvssv3FieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 32:
+              {
+                upstreamFixAvailable_ = input.readBool();
+
+                break;
+              } // case 32
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1.Cve) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1514,7 +1468,18 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Cve(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

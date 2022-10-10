@@ -59,180 +59,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private SearchJobsRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              searchMode_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.talent.v4.RequestMetadata.Builder subBuilder = null;
-              if (requestMetadata_ != null) {
-                subBuilder = requestMetadata_.toBuilder();
-              }
-              requestMetadata_ =
-                  input.readMessage(
-                      com.google.cloud.talent.v4.RequestMetadata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestMetadata_);
-                requestMetadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.talent.v4.JobQuery.Builder subBuilder = null;
-              if (jobQuery_ != null) {
-                subBuilder = jobQuery_.toBuilder();
-              }
-              jobQuery_ =
-                  input.readMessage(
-                      com.google.cloud.talent.v4.JobQuery.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(jobQuery_);
-                jobQuery_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 40:
-            {
-              enableBroadening_ = input.readBool();
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                histogramQueries_ =
-                    new java.util.ArrayList<com.google.cloud.talent.v4.HistogramQuery>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              histogramQueries_.add(
-                  input.readMessage(
-                      com.google.cloud.talent.v4.HistogramQuery.parser(), extensionRegistry));
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              jobView_ = rawValue;
-              break;
-            }
-          case 72:
-            {
-              offset_ = input.readInt32();
-              break;
-            }
-          case 80:
-            {
-              maxPageSize_ = input.readInt32();
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageToken_ = s;
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              orderBy_ = s;
-              break;
-            }
-          case 104:
-            {
-              int rawValue = input.readEnum();
-
-              diversificationLevel_ = rawValue;
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.Builder subBuilder =
-                  null;
-              if (customRankingInfo_ != null) {
-                subBuilder = customRankingInfo_.toBuilder();
-              }
-              customRankingInfo_ =
-                  input.readMessage(
-                      com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(customRankingInfo_);
-                customRankingInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 128:
-            {
-              disableKeywordMatch_ = input.readBool();
-              break;
-            }
-          case 144:
-            {
-              int rawValue = input.readEnum();
-
-              keywordMatchMode_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        histogramQueries_ = java.util.Collections.unmodifiableList(histogramQueries_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.JobServiceProto
         .internal_static_google_cloud_talent_v4_SearchJobsRequest_descriptor;
@@ -1006,59 +832,6 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       return this.unknownFields;
     }
 
-    private CustomRankingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                importanceLevel_ = rawValue;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                rankingExpression_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.talent.v4.JobServiceProto
           .internal_static_google_cloud_talent_v4_SearchJobsRequest_CustomRankingInfo_descriptor;
@@ -1502,7 +1275,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, rankingExpression_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1520,7 +1293,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, rankingExpression_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1538,7 +1311,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
       if (importanceLevel_ != other.importanceLevel_) return false;
       if (!getRankingExpression().equals(other.getRankingExpression())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1553,7 +1326,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + importanceLevel_;
       hash = (37 * hash) + RANKING_EXPRESSION_FIELD_NUMBER;
       hash = (53 * hash) + getRankingExpression().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1685,17 +1458,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       }
 
       // Construct using com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1796,7 +1562,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           rankingExpression_ = other.rankingExpression_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1811,19 +1577,43 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  importanceLevel_ = input.readEnum();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  rankingExpression_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.talent.v4.SearchJobsRequest.CustomRankingInfo)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2165,7 +1955,19 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CustomRankingInfo(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3436,7 +3238,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(18, keywordMatchMode_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3498,7 +3300,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, keywordMatchMode_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3538,7 +3340,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
     if (getDisableKeywordMatch() != other.getDisableKeywordMatch()) return false;
     if (keywordMatchMode_ != other.keywordMatchMode_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3587,7 +3389,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableKeywordMatch());
     hash = (37 * hash) + KEYWORD_MATCH_MODE_FIELD_NUMBER;
     hash = (53 * hash) + keywordMatchMode_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3716,19 +3518,10 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.talent.v4.SearchJobsRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getHistogramQueriesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3754,10 +3547,11 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
 
       if (histogramQueriesBuilder_ == null) {
         histogramQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        histogramQueries_ = null;
         histogramQueriesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       jobView_ = 0;
 
       offset_ = 0;
@@ -3964,7 +3758,7 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
       if (other.keywordMatchMode_ != 0) {
         setKeywordMatchModeValue(other.getKeywordMatchModeValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3979,17 +3773,129 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.talent.v4.SearchJobsRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                searchMode_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getRequestMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getJobQueryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 40:
+              {
+                enableBroadening_ = input.readBool();
+
+                break;
+              } // case 40
+            case 58:
+              {
+                com.google.cloud.talent.v4.HistogramQuery m =
+                    input.readMessage(
+                        com.google.cloud.talent.v4.HistogramQuery.parser(), extensionRegistry);
+                if (histogramQueriesBuilder_ == null) {
+                  ensureHistogramQueriesIsMutable();
+                  histogramQueries_.add(m);
+                } else {
+                  histogramQueriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            case 64:
+              {
+                jobView_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                offset_ = input.readInt32();
+
+                break;
+              } // case 72
+            case 80:
+              {
+                maxPageSize_ = input.readInt32();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 104:
+              {
+                diversificationLevel_ = input.readEnum();
+
+                break;
+              } // case 104
+            case 114:
+              {
+                input.readMessage(
+                    getCustomRankingInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 128:
+              {
+                disableKeywordMatch_ = input.readBool();
+
+                break;
+              } // case 128
+            case 144:
+              {
+                keywordMatchMode_ = input.readEnum();
+
+                break;
+              } // case 144
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.talent.v4.SearchJobsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7822,7 +7728,18 @@ public final class SearchJobsRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SearchJobsRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

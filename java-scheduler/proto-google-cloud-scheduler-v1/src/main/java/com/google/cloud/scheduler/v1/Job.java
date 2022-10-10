@@ -57,220 +57,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Job(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.scheduler.v1.PubsubTarget.Builder subBuilder = null;
-              if (targetCase_ == 4) {
-                subBuilder = ((com.google.cloud.scheduler.v1.PubsubTarget) target_).toBuilder();
-              }
-              target_ =
-                  input.readMessage(
-                      com.google.cloud.scheduler.v1.PubsubTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.scheduler.v1.PubsubTarget) target_);
-                target_ = subBuilder.buildPartial();
-              }
-              targetCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.scheduler.v1.AppEngineHttpTarget.Builder subBuilder = null;
-              if (targetCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.scheduler.v1.AppEngineHttpTarget) target_).toBuilder();
-              }
-              target_ =
-                  input.readMessage(
-                      com.google.cloud.scheduler.v1.AppEngineHttpTarget.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.scheduler.v1.AppEngineHttpTarget) target_);
-                target_ = subBuilder.buildPartial();
-              }
-              targetCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.scheduler.v1.HttpTarget.Builder subBuilder = null;
-              if (targetCase_ == 6) {
-                subBuilder = ((com.google.cloud.scheduler.v1.HttpTarget) target_).toBuilder();
-              }
-              target_ =
-                  input.readMessage(
-                      com.google.cloud.scheduler.v1.HttpTarget.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.scheduler.v1.HttpTarget) target_);
-                target_ = subBuilder.buildPartial();
-              }
-              targetCase_ = 6;
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (userUpdateTime_ != null) {
-                subBuilder = userUpdateTime_.toBuilder();
-              }
-              userUpdateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(userUpdateTime_);
-                userUpdateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 90:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (status_ != null) {
-                subBuilder = status_.toBuilder();
-              }
-              status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(status_);
-                status_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 138:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (scheduleTime_ != null) {
-                subBuilder = scheduleTime_.toBuilder();
-              }
-              scheduleTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduleTime_);
-                scheduleTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 146:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastAttemptTime_ != null) {
-                subBuilder = lastAttemptTime_.toBuilder();
-              }
-              lastAttemptTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastAttemptTime_);
-                lastAttemptTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 154:
-            {
-              com.google.cloud.scheduler.v1.RetryConfig.Builder subBuilder = null;
-              if (retryConfig_ != null) {
-                subBuilder = retryConfig_.toBuilder();
-              }
-              retryConfig_ =
-                  input.readMessage(
-                      com.google.cloud.scheduler.v1.RetryConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(retryConfig_);
-                retryConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 162:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              schedule_ = s;
-              break;
-            }
-          case 170:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              timeZone_ = s;
-              break;
-            }
-          case 178:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (attemptDeadline_ != null) {
-                subBuilder = attemptDeadline_.toBuilder();
-              }
-              attemptDeadline_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(attemptDeadline_);
-                attemptDeadline_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.scheduler.v1.JobProto
         .internal_static_google_cloud_scheduler_v1_Job_descriptor;
@@ -1387,7 +1173,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (attemptDeadline_ != null) {
       output.writeMessage(22, getAttemptDeadline());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1444,7 +1230,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (attemptDeadline_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getAttemptDeadline());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1502,7 +1288,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1563,7 +1349,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1692,17 +1478,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.scheduler.v1.Job.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1712,6 +1491,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
       description_ = "";
 
+      if (pubsubTargetBuilder_ != null) {
+        pubsubTargetBuilder_.clear();
+      }
+      if (appEngineHttpTargetBuilder_ != null) {
+        appEngineHttpTargetBuilder_.clear();
+      }
+      if (httpTargetBuilder_ != null) {
+        httpTargetBuilder_.clear();
+      }
       schedule_ = "";
 
       timeZone_ = "";
@@ -1946,7 +1734,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1961,17 +1749,116 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.scheduler.v1.Job parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getPubsubTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getAppEngineHttpTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getHttpTargetFieldBuilder().getBuilder(), extensionRegistry);
+                targetCase_ = 6;
+                break;
+              } // case 50
+            case 74:
+              {
+                input.readMessage(getUserUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 80:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 138:
+              {
+                input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getLastAttemptTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(getRetryConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 154
+            case 162:
+              {
+                schedule_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 162
+            case 170:
+              {
+                timeZone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(getAttemptDeadlineFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.scheduler.v1.Job) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4562,7 +4449,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Job(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

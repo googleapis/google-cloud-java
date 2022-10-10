@@ -59,303 +59,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private UpdateNodePoolRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              projectId_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zone_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterId_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodePoolId_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeVersion_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              imageType_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                locations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              locations_.add(s);
-              break;
-            }
-          case 114:
-            {
-              com.google.container.v1beta1.WorkloadMetadataConfig.Builder subBuilder = null;
-              if (workloadMetadataConfig_ != null) {
-                subBuilder = workloadMetadataConfig_.toBuilder();
-              }
-              workloadMetadataConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.WorkloadMetadataConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workloadMetadataConfig_);
-                workloadMetadataConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.container.v1beta1.NodePool.UpgradeSettings.Builder subBuilder = null;
-              if (upgradeSettings_ != null) {
-                subBuilder = upgradeSettings_.toBuilder();
-              }
-              upgradeSettings_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodePool.UpgradeSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(upgradeSettings_);
-                upgradeSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.container.v1beta1.NetworkTags.Builder subBuilder = null;
-              if (tags_ != null) {
-                subBuilder = tags_.toBuilder();
-              }
-              tags_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NetworkTags.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tags_);
-                tags_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 138:
-            {
-              com.google.container.v1beta1.NodeTaints.Builder subBuilder = null;
-              if (taints_ != null) {
-                subBuilder = taints_.toBuilder();
-              }
-              taints_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodeTaints.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(taints_);
-                taints_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 146:
-            {
-              com.google.container.v1beta1.NodeLabels.Builder subBuilder = null;
-              if (labels_ != null) {
-                subBuilder = labels_.toBuilder();
-              }
-              labels_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodeLabels.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(labels_);
-                labels_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 154:
-            {
-              com.google.container.v1beta1.LinuxNodeConfig.Builder subBuilder = null;
-              if (linuxNodeConfig_ != null) {
-                subBuilder = linuxNodeConfig_.toBuilder();
-              }
-              linuxNodeConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.LinuxNodeConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(linuxNodeConfig_);
-                linuxNodeConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 162:
-            {
-              com.google.container.v1beta1.NodeKubeletConfig.Builder subBuilder = null;
-              if (kubeletConfig_ != null) {
-                subBuilder = kubeletConfig_.toBuilder();
-              }
-              kubeletConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodeKubeletConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(kubeletConfig_);
-                kubeletConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 170:
-            {
-              com.google.container.v1beta1.NodeNetworkConfig.Builder subBuilder = null;
-              if (nodeNetworkConfig_ != null) {
-                subBuilder = nodeNetworkConfig_.toBuilder();
-              }
-              nodeNetworkConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodeNetworkConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nodeNetworkConfig_);
-                nodeNetworkConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 178:
-            {
-              com.google.container.v1beta1.GcfsConfig.Builder subBuilder = null;
-              if (gcfsConfig_ != null) {
-                subBuilder = gcfsConfig_.toBuilder();
-              }
-              gcfsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.GcfsConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gcfsConfig_);
-                gcfsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 186:
-            {
-              com.google.container.v1beta1.ConfidentialNodes.Builder subBuilder = null;
-              if (confidentialNodes_ != null) {
-                subBuilder = confidentialNodes_.toBuilder();
-              }
-              confidentialNodes_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ConfidentialNodes.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confidentialNodes_);
-                confidentialNodes_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 234:
-            {
-              com.google.container.v1beta1.VirtualNIC.Builder subBuilder = null;
-              if (gvnic_ != null) {
-                subBuilder = gvnic_.toBuilder();
-              }
-              gvnic_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.VirtualNIC.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gvnic_);
-                gvnic_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 258:
-            {
-              com.google.container.v1beta1.NodePoolLoggingConfig.Builder subBuilder = null;
-              if (loggingConfig_ != null) {
-                subBuilder = loggingConfig_.toBuilder();
-              }
-              loggingConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodePoolLoggingConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(loggingConfig_);
-                loggingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_UpdateNodePoolRequest_descriptor;
@@ -386,7 +89,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2410
+   *     google/container/v1beta1/cluster_service.proto;l=2425
    * @return The projectId.
    */
   @java.lang.Override
@@ -415,7 +118,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2410
+   *     google/container/v1beta1/cluster_service.proto;l=2425
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -447,7 +150,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2419
+   *     google/container/v1beta1/cluster_service.proto;l=2434
    * @return The zone.
    */
   @java.lang.Override
@@ -476,7 +179,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2419
+   *     google/container/v1beta1/cluster_service.proto;l=2434
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -507,7 +210,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2426
+   *     google/container/v1beta1/cluster_service.proto;l=2441
    * @return The clusterId.
    */
   @java.lang.Override
@@ -535,7 +238,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2426
+   *     google/container/v1beta1/cluster_service.proto;l=2441
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -566,7 +269,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2433
+   *     google/container/v1beta1/cluster_service.proto;l=2448
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -594,7 +297,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2433
+   *     google/container/v1beta1/cluster_service.proto;l=2448
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1520,7 +1223,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (loggingConfig_ != null) {
       output.writeMessage(32, getLoggingConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1595,7 +1298,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getLoggingConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1667,7 +1370,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1744,7 +1447,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1873,17 +1576,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.container.v1beta1.UpdateNodePoolRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2201,7 +1897,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2216,18 +1912,155 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.UpdateNodePoolRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                projectId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                zone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                clusterId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                nodePoolId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                nodeVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                imageType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 66:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLocationsIsMutable();
+                locations_.add(s);
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getWorkloadMetadataConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getUpgradeSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getTagsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getTaintsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getLabelsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(getLinuxNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(getKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getNodeNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(getGcfsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getConfidentialNodesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
+            case 234:
+              {
+                input.readMessage(getGvnicFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 234
+            case 258:
+              {
+                input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 258
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.container.v1beta1.UpdateNodePoolRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2247,7 +2080,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2410
+     *     google/container/v1beta1/cluster_service.proto;l=2425
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2275,7 +2108,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2410
+     *     google/container/v1beta1/cluster_service.proto;l=2425
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2303,7 +2136,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2410
+     *     google/container/v1beta1/cluster_service.proto;l=2425
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2330,7 +2163,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2410
+     *     google/container/v1beta1/cluster_service.proto;l=2425
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2353,7 +2186,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2410
+     *     google/container/v1beta1/cluster_service.proto;l=2425
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2383,7 +2216,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2419
+     *     google/container/v1beta1/cluster_service.proto;l=2434
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2411,7 +2244,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2419
+     *     google/container/v1beta1/cluster_service.proto;l=2434
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2439,7 +2272,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2419
+     *     google/container/v1beta1/cluster_service.proto;l=2434
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2466,7 +2299,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2419
+     *     google/container/v1beta1/cluster_service.proto;l=2434
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2489,7 +2322,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2419
+     *     google/container/v1beta1/cluster_service.proto;l=2434
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2518,7 +2351,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2426
+     *     google/container/v1beta1/cluster_service.proto;l=2441
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2545,7 +2378,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2426
+     *     google/container/v1beta1/cluster_service.proto;l=2441
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2572,7 +2405,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2426
+     *     google/container/v1beta1/cluster_service.proto;l=2441
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2598,7 +2431,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2426
+     *     google/container/v1beta1/cluster_service.proto;l=2441
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2620,7 +2453,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2426
+     *     google/container/v1beta1/cluster_service.proto;l=2441
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2649,7 +2482,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2433
+     *     google/container/v1beta1/cluster_service.proto;l=2448
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2676,7 +2509,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2433
+     *     google/container/v1beta1/cluster_service.proto;l=2448
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2703,7 +2536,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2433
+     *     google/container/v1beta1/cluster_service.proto;l=2448
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2729,7 +2562,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2433
+     *     google/container/v1beta1/cluster_service.proto;l=2448
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2751,7 +2584,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2433
+     *     google/container/v1beta1/cluster_service.proto;l=2448
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -5669,7 +5502,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateNodePoolRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

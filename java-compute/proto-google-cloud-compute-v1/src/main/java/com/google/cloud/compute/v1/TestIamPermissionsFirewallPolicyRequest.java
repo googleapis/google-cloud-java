@@ -54,69 +54,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
     return this.unknownFields;
   }
 
-  private TestIamPermissionsFirewallPolicyRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case -781249230:
-            {
-              com.google.cloud.compute.v1.TestPermissionsRequest.Builder subBuilder = null;
-              if (testPermissionsRequestResource_ != null) {
-                subBuilder = testPermissionsRequestResource_.toBuilder();
-              }
-              testPermissionsRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.TestPermissionsRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(testPermissionsRequestResource_);
-                testPermissionsRequestResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_TestIamPermissionsFirewallPolicyRequest_descriptor;
@@ -256,7 +193,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
     if (testPermissionsRequestResource_ != null) {
       output.writeMessage(439214758, getTestPermissionsRequestResource());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -273,7 +210,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               439214758, getTestPermissionsRequestResource());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -296,7 +233,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
       if (!getTestPermissionsRequestResource().equals(other.getTestPermissionsRequestResource()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -313,7 +250,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
       hash = (37 * hash) + TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTestPermissionsRequestResource().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -445,17 +382,10 @@ public final class TestIamPermissionsFirewallPolicyRequest
 
     // Construct using
     // com.google.cloud.compute.v1.TestIamPermissionsFirewallPolicyRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -564,7 +494,7 @@ public final class TestIamPermissionsFirewallPolicyRequest
       if (other.hasTestPermissionsRequestResource()) {
         mergeTestPermissionsRequestResource(other.getTestPermissionsRequestResource());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -579,19 +509,45 @@ public final class TestIamPermissionsFirewallPolicyRequest
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.TestIamPermissionsFirewallPolicyRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 1566449778:
+              {
+                resource_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1566449778
+            case -781249230:
+              {
+                input.readMessage(
+                    getTestPermissionsRequestResourceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case -781249230
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.TestIamPermissionsFirewallPolicyRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -945,7 +901,18 @@ public final class TestIamPermissionsFirewallPolicyRequest
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TestIamPermissionsFirewallPolicyRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

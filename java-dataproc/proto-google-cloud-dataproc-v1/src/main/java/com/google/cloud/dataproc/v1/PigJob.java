@@ -53,135 +53,6 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PigJob(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              queriesCase_ = 1;
-              queries_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.dataproc.v1.QueryList.Builder subBuilder = null;
-              if (queriesCase_ == 2) {
-                subBuilder = ((com.google.cloud.dataproc.v1.QueryList) queries_).toBuilder();
-              }
-              queries_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.QueryList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.QueryList) queries_);
-                queries_ = subBuilder.buildPartial();
-              }
-              queriesCase_ = 2;
-              break;
-            }
-          case 24:
-            {
-              continueOnFailure_ = input.readBool();
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                scriptVariables_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ScriptVariablesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
-                  input.readMessage(
-                      ScriptVariablesDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              scriptVariables_
-                  .getMutableMap()
-                  .put(scriptVariables__.getKey(), scriptVariables__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                properties_ =
-                    com.google.protobuf.MapField.newMapField(
-                        PropertiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
-                  input.readMessage(
-                      PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              properties_.getMutableMap().put(properties__.getKey(), properties__.getValue());
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              jarFileUris_.add(s);
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.dataproc.v1.LoggingConfig.Builder subBuilder = null;
-              if (loggingConfig_ != null) {
-                subBuilder = loggingConfig_.toBuilder();
-              }
-              loggingConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.LoggingConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(loggingConfig_);
-                loggingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        jarFileUris_ = jarFileUris_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.JobsProto
         .internal_static_google_cloud_dataproc_v1_PigJob_descriptor;
@@ -774,7 +645,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
     if (loggingConfig_ != null) {
       output.writeMessage(7, getLoggingConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -825,7 +696,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getLoggingConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -859,7 +730,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -900,7 +771,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1053,22 +924,18 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataproc.v1.PigJob.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (queryListBuilder_ != null) {
+        queryListBuilder_.clear();
+      }
       continueOnFailure_ = false;
 
       internalGetMutableScriptVariables().clear();
@@ -1221,7 +1088,7 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1236,17 +1103,85 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.PigJob parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                queriesCase_ = 1;
+                queries_ = s;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getQueryListFieldBuilder().getBuilder(), extensionRegistry);
+                queriesCase_ = 2;
+                break;
+              } // case 18
+            case 24:
+              {
+                continueOnFailure_ = input.readBool();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
+                    input.readMessage(
+                        ScriptVariablesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableScriptVariables()
+                    .getMutableMap()
+                    .put(scriptVariables__.getKey(), scriptVariables__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+                    input.readMessage(
+                        PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableProperties()
+                    .getMutableMap()
+                    .put(properties__.getKey(), properties__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureJarFileUrisIsMutable();
+                jarFileUris_.add(s);
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.PigJob) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2452,7 +2387,18 @@ public final class PigJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PigJob(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

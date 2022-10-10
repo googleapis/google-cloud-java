@@ -50,78 +50,6 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private ClassificationMetrics(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.datalabeling.v1beta1.PrCurve.Builder subBuilder = null;
-              if (prCurve_ != null) {
-                subBuilder = prCurve_.toBuilder();
-              }
-              prCurve_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.PrCurve.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(prCurve_);
-                prCurve_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.Builder subBuilder = null;
-              if (confusionMatrix_ != null) {
-                subBuilder = confusionMatrix_.toBuilder();
-              }
-              confusionMatrix_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ConfusionMatrix.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confusionMatrix_);
-                confusionMatrix_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_ClassificationMetrics_descriptor;
@@ -257,7 +185,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     if (confusionMatrix_ != null) {
       output.writeMessage(2, getConfusionMatrix());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -272,7 +200,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     if (confusionMatrix_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConfusionMatrix());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -296,7 +224,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     if (hasConfusionMatrix()) {
       if (!getConfusionMatrix().equals(other.getConfusionMatrix())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -315,7 +243,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + CONFUSION_MATRIX_FIELD_NUMBER;
       hash = (53 * hash) + getConfusionMatrix().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -445,17 +373,10 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.ClassificationMetrics.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -566,7 +487,7 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
       if (other.hasConfusionMatrix()) {
         mergeConfusionMatrix(other.getConfusionMatrix());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -581,18 +502,43 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.ClassificationMetrics parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getPrCurveFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getConfusionMatrixFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.ClassificationMetrics) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1012,7 +958,18 @@ public final class ClassificationMetrics extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClassificationMetrics(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

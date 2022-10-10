@@ -59,106 +59,6 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Cvssv3(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 9:
-            {
-              baseScore_ = input.readDouble();
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              attackVector_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              attackComplexity_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              privilegesRequired_ = rawValue;
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              userInteraction_ = rawValue;
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              scope_ = rawValue;
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              confidentialityImpact_ = rawValue;
-              break;
-            }
-          case 88:
-            {
-              int rawValue = input.readEnum();
-
-              integrityImpact_ = rawValue;
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              availabilityImpact_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.VulnerabilityProto
         .internal_static_google_cloud_securitycenter_v1_Cvssv3_descriptor;
@@ -1654,7 +1554,7 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securitycenter.v1.Cvssv3.Impact.IMPACT_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, availabilityImpact_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1702,7 +1602,7 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.securitycenter.v1.Cvssv3.Impact.IMPACT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, availabilityImpact_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1728,7 +1628,7 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
     if (confidentialityImpact_ != other.confidentialityImpact_) return false;
     if (integrityImpact_ != other.integrityImpact_) return false;
     if (availabilityImpact_ != other.availabilityImpact_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1760,7 +1660,7 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + integrityImpact_;
     hash = (37 * hash) + AVAILABILITY_IMPACT_FIELD_NUMBER;
     hash = (53 * hash) + availabilityImpact_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1889,17 +1789,10 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.securitycenter.v1.Cvssv3.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2035,7 +1928,7 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
       if (other.availabilityImpact_ != 0) {
         setAvailabilityImpactValue(other.getAvailabilityImpactValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2050,17 +1943,85 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.Cvssv3 parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9:
+              {
+                baseScore_ = input.readDouble();
+
+                break;
+              } // case 9
+            case 40:
+              {
+                attackVector_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                attackComplexity_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                privilegesRequired_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                userInteraction_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                scope_ = input.readEnum();
+
+                break;
+              } // case 72
+            case 80:
+              {
+                confidentialityImpact_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 88:
+              {
+                integrityImpact_ = input.readEnum();
+
+                break;
+              } // case 88
+            case 96:
+              {
+                availabilityImpact_ = input.readEnum();
+
+                break;
+              } // case 96
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1.Cvssv3) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2964,7 +2925,18 @@ public final class Cvssv3 extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Cvssv3(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

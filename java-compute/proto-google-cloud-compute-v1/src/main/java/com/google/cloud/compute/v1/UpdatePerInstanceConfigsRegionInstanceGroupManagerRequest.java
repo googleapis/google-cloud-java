@@ -58,94 +58,6 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
     return this.unknownFields;
   }
 
-  private UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              requestId_ = s;
-              break;
-            }
-          case 712292666:
-            {
-              com.google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq.Builder
-                  subBuilder = null;
-              if (regionInstanceGroupManagerUpdateInstanceConfigReqResource_ != null) {
-                subBuilder = regionInstanceGroupManagerUpdateInstanceConfigReqResource_.toBuilder();
-              }
-              regionInstanceGroupManagerUpdateInstanceConfigReqResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(regionInstanceGroupManagerUpdateInstanceConfigReqResource_);
-                regionInstanceGroupManagerUpdateInstanceConfigReqResource_ =
-                    subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 1994907162:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceGroupManager_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest_descriptor;
@@ -473,7 +385,7 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceGroupManager_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -501,7 +413,7 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -533,7 +445,7 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
     if (hasRequestId()) {
       if (!getRequestId().equals(other.getRequestId())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -561,7 +473,7 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
       hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRequestId().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -715,17 +627,10 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
 
     // Construct using
     // com.google.cloud.compute.v1.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -873,7 +778,7 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
         requestId_ = other.requestId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -888,20 +793,64 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
-          parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 296879706:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 296879706
+            case 712292666:
+              {
+                input.readMessage(
+                    getRegionInstanceGroupManagerUpdateInstanceConfigReqResourceFieldBuilder()
+                        .getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 712292666
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1111570338
+            case 1820481738:
+              {
+                project_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1820481738
+            case 1994907162:
+              {
+                instanceGroupManager_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1994907162
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1632,8 +1581,19 @@ public final class UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest(
-                  input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 

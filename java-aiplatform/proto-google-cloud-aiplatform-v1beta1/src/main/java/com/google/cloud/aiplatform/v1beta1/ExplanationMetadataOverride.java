@@ -51,64 +51,6 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private ExplanationMetadataOverride(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                inputs_ =
-                    com.google.protobuf.MapField.newMapField(InputsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String,
-                      com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
-                          .InputMetadataOverride>
-                  inputs__ =
-                      input.readMessage(
-                          InputsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              inputs_.getMutableMap().put(inputs__.getKey(), inputs__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_descriptor;
@@ -247,59 +189,6 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       return this.unknownFields;
     }
 
-    private InputMetadataOverride(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  inputBaselines_ = new java.util.ArrayList<com.google.protobuf.Value>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                inputBaselines_.add(
-                    input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          inputBaselines_ = java.util.Collections.unmodifiableList(inputBaselines_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.ExplanationProto
           .internal_static_google_cloud_aiplatform_v1beta1_ExplanationMetadataOverride_InputMetadataOverride_descriptor;
@@ -423,7 +312,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       for (int i = 0; i < inputBaselines_.size(); i++) {
         output.writeMessage(1, inputBaselines_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -435,7 +324,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       for (int i = 0; i < inputBaselines_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, inputBaselines_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -455,7 +344,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
               obj;
 
       if (!getInputBaselinesList().equals(other.getInputBaselinesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -470,7 +359,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         hash = (37 * hash) + INPUT_BASELINES_FIELD_NUMBER;
         hash = (53 * hash) + getInputBaselinesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -627,19 +516,10 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getInputBaselinesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -647,10 +527,11 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         super.clear();
         if (inputBaselinesBuilder_ == null) {
           inputBaselines_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          inputBaselines_ = null;
           inputBaselinesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -782,7 +663,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -797,21 +678,43 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.InputMetadataOverride
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.Value m =
+                      input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
+                  if (inputBaselinesBuilder_ == null) {
+                    ensureInputBaselinesIsMutable();
+                    inputBaselines_.add(m);
+                  } else {
+                    inputBaselinesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
-                      .InputMetadataOverride)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1279,7 +1182,19 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new InputMetadataOverride(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1468,7 +1383,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetInputs(), InputsDefaultEntryHolder.defaultEntry, 1);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1492,7 +1407,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, inputs__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1509,7 +1424,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         (com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride) obj;
 
     if (!internalGetInputs().equals(other.internalGetInputs())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1524,7 +1439,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
       hash = (37 * hash) + INPUTS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetInputs().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1675,17 +1590,10 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1776,7 +1684,7 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
           == com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride.getDefaultInstance())
         return this;
       internalGetMutableInputs().mergeFrom(other.internalGetInputs());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1791,19 +1699,46 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride
+                            .InputMetadataOverride>
+                    inputs__ =
+                        input.readMessage(
+                            InputsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableInputs()
+                    .getMutableMap()
+                    .put(inputs__.getKey(), inputs__.getValue());
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2078,7 +2013,18 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ExplanationMetadataOverride(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

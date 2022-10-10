@@ -54,125 +54,6 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private SpeechTranscriptionConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              languageCode_ = s;
-              break;
-            }
-          case 16:
-            {
-              maxAlternatives_ = input.readInt32();
-              break;
-            }
-          case 24:
-            {
-              filterProfanity_ = input.readBool();
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                speechContexts_ =
-                    new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechContext>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              speechContexts_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1.SpeechContext.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 40:
-            {
-              enableAutomaticPunctuation_ = input.readBool();
-              break;
-            }
-          case 48:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                audioTracks_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              audioTracks_.addInt(input.readInt32());
-              break;
-            }
-          case 50:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                audioTracks_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                audioTracks_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 56:
-            {
-              enableSpeakerDiarization_ = input.readBool();
-              break;
-            }
-          case 64:
-            {
-              diarizationSpeakerCount_ = input.readInt32();
-              break;
-            }
-          case 72:
-            {
-              enableWordConfidence_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        audioTracks_.makeImmutable(); // C
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1_SpeechTranscriptionConfig_descriptor;
@@ -554,7 +435,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     if (enableWordConfidence_ != false) {
       output.writeBool(9, enableWordConfidence_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -600,7 +481,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     if (enableWordConfidence_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, enableWordConfidence_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -625,7 +506,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     if (getEnableSpeakerDiarization() != other.getEnableSpeakerDiarization()) return false;
     if (getDiarizationSpeakerCount() != other.getDiarizationSpeakerCount()) return false;
     if (getEnableWordConfidence() != other.getEnableWordConfidence()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -658,7 +539,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     hash = (53 * hash) + getDiarizationSpeakerCount();
     hash = (37 * hash) + ENABLE_WORD_CONFIDENCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordConfidence());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -788,19 +669,10 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSpeechContextsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -814,10 +686,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        speechContexts_ = null;
         speechContextsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableAutomaticPunctuation_ = false;
 
       audioTracks_ = emptyIntList();
@@ -989,7 +862,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       if (other.getEnableWordConfidence() != false) {
         setEnableWordConfidence(other.getEnableWordConfidence());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1004,19 +877,105 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                maxAlternatives_ = input.readInt32();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                filterProfanity_ = input.readBool();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                com.google.cloud.videointelligence.v1.SpeechContext m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1.SpeechContext.parser(),
+                        extensionRegistry);
+                if (speechContextsBuilder_ == null) {
+                  ensureSpeechContextsIsMutable();
+                  speechContexts_.add(m);
+                } else {
+                  speechContextsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 40:
+              {
+                enableAutomaticPunctuation_ = input.readBool();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                int v = input.readInt32();
+                ensureAudioTracksIsMutable();
+                audioTracks_.addInt(v);
+                break;
+              } // case 48
+            case 50:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAudioTracksIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  audioTracks_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+            case 56:
+              {
+                enableSpeakerDiarization_ = input.readBool();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                diarizationSpeakerCount_ = input.readInt32();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                enableWordConfidence_ = input.readBool();
+
+                break;
+              } // case 72
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2091,7 +2050,18 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SpeechTranscriptionConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

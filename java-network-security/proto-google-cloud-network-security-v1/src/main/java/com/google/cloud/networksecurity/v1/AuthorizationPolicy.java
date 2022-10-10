@@ -58,127 +58,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private AuthorizationPolicy(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              action_ = rawValue;
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                rules_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              rules_.add(
-                  input.readMessage(
-                      com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        rules_ = java.util.Collections.unmodifiableList(rules_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.AuthorizationPolicyProto
         .internal_static_google_cloud_networksecurity_v1_AuthorizationPolicy_descriptor;
@@ -575,83 +454,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       return this.unknownFields;
     }
 
-    private Rule(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  sources_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                sources_.add(
-                    input.readMessage(
-                        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  destinations_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule
-                              .Destination>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                destinations_.add(
-                    input.readMessage(
-                        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sources_ = java.util.Collections.unmodifiableList(sources_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          destinations_ = java.util.Collections.unmodifiableList(destinations_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.networksecurity.v1.AuthorizationPolicyProto
           .internal_static_google_cloud_networksecurity_v1_AuthorizationPolicy_Rule_descriptor;
@@ -843,73 +645,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Source(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    principals_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  principals_.add(s);
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                    ipBlocks_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  ipBlocks_.add(s);
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            principals_ = principals_.getUnmodifiableView();
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            ipBlocks_ = ipBlocks_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1105,7 +840,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         for (int i = 0; i < ipBlocks_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ipBlocks_.getRaw(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1130,7 +865,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           size += dataSize;
           size += 1 * getIpBlocksList().size();
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1148,7 +883,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         if (!getPrincipalsList().equals(other.getPrincipalsList())) return false;
         if (!getIpBlocksList().equals(other.getIpBlocksList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1167,7 +902,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           hash = (37 * hash) + IP_BLOCKS_FIELD_NUMBER;
           hash = (53 * hash) + getIpBlocksList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1303,17 +1038,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         // Construct using
         // com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1440,7 +1168,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1455,19 +1183,45 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensurePrincipalsIsMutable();
+                    principals_.add(s);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureIpBlocksIsMutable();
+                    ipBlocks_.add(s);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1926,7 +1680,19 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Source(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2199,119 +1965,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return this.unknownFields;
       }
 
-      private Destination(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    hosts_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  hosts_.add(s);
-                  break;
-                }
-              case 16:
-                {
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                    ports_ = newIntList();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  ports_.addInt(input.readUInt32());
-                  break;
-                }
-              case 18:
-                {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                    ports_ = newIntList();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    ports_.addInt(input.readUInt32());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-              case 34:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                    methods_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000004;
-                  }
-                  methods_.add(s);
-                  break;
-                }
-              case 42:
-                {
-                  com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
-                          .HttpHeaderMatch.Builder
-                      subBuilder = null;
-                  if (httpHeaderMatch_ != null) {
-                    subBuilder = httpHeaderMatch_.toBuilder();
-                  }
-                  httpHeaderMatch_ =
-                      input.readMessage(
-                          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
-                              .HttpHeaderMatch.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(httpHeaderMatch_);
-                    httpHeaderMatch_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            hosts_ = hosts_.getUnmodifiableView();
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            ports_.makeImmutable(); // C
-          }
-          if (((mutable_bitField0_ & 0x00000004) != 0)) {
-            methods_ = methods_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.networksecurity.v1.AuthorizationPolicyProto
             .internal_static_google_cloud_networksecurity_v1_AuthorizationPolicy_Rule_Destination_descriptor;
@@ -2456,60 +2109,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private HttpHeaderMatch(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    headerName_ = s;
-                    break;
-                  }
-                case 18:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-                    typeCase_ = 2;
-                    type_ = s;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2737,7 +2336,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (typeCase_ == 2) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -2752,7 +2351,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (typeCase_ == 2) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -2783,7 +2382,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             case 0:
             default:
           }
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -2804,7 +2403,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             case 0:
             default:
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -2964,17 +2563,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
           // Construct using
           // com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination.HttpHeaderMatch.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -3105,7 +2697,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                   break;
                 }
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -3120,21 +2712,44 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination.HttpHeaderMatch
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      headerName_ = input.readStringRequireUtf8();
+
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      typeCase_ = 2;
+                      type_ = s;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
-                          .HttpHeaderMatch)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -3482,7 +3097,19 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new HttpHeaderMatch(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -3794,7 +3421,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         if (httpHeaderMatch_ != null) {
           output.writeMessage(5, getHttpHeaderMatch());
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3835,7 +3462,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         if (httpHeaderMatch_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getHttpHeaderMatch());
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3859,7 +3486,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         if (hasHttpHeaderMatch()) {
           if (!getHttpHeaderMatch().equals(other.getHttpHeaderMatch())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3886,7 +3513,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           hash = (37 * hash) + HTTP_HEADER_MATCH_FIELD_NUMBER;
           hash = (53 * hash) + getHttpHeaderMatch().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4028,17 +3655,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         // Construct using
         // com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -4197,7 +3817,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           if (other.hasHttpHeaderMatch()) {
             mergeHttpHeaderMatch(other.getHttpHeaderMatch());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4212,20 +3832,70 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureHostsIsMutable();
+                    hosts_.add(s);
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    int v = input.readUInt32();
+                    ensurePortsIsMutable();
+                    ports_.addInt(v);
+                    break;
+                  } // case 16
+                case 18:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensurePortsIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      ports_.addInt(input.readUInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 18
+                case 34:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureMethodsIsMutable();
+                    methods_.add(s);
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(
+                        getHttpHeaderMatchFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -5031,7 +4701,19 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Destination(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -5275,7 +4957,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       for (int i = 0; i < destinations_.size(); i++) {
         output.writeMessage(2, destinations_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5290,7 +4972,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       for (int i = 0; i < destinations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, destinations_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5308,7 +4990,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
       if (!getSourcesList().equals(other.getSourcesList())) return false;
       if (!getDestinationsList().equals(other.getDestinationsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5327,7 +5009,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         hash = (37 * hash) + DESTINATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getDestinationsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5459,20 +5141,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
 
       // Construct using com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getSourcesFieldBuilder();
-          getDestinationsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -5480,16 +5152,18 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         super.clear();
         if (sourcesBuilder_ == null) {
           sources_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          sources_ = null;
           sourcesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (destinationsBuilder_ == null) {
           destinations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          destinations_ = null;
           destinationsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -5644,7 +5318,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5659,19 +5333,61 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source m =
+                      input.readMessage(
+                          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source
+                              .parser(),
+                          extensionRegistry);
+                  if (sourcesBuilder_ == null) {
+                    ensureSourcesIsMutable();
+                    sources_.add(m);
+                  } else {
+                    sourcesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination m =
+                      input.readMessage(
+                          com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
+                              .parser(),
+                          extensionRegistry);
+                  if (destinationsBuilder_ == null) {
+                    ensureDestinationsIsMutable();
+                    destinations_.add(m);
+                  } else {
+                    destinationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6672,7 +6388,19 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Rule(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7165,7 +6893,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < rules_.size(); i++) {
       output.writeMessage(7, rules_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -7204,7 +6932,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < rules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, rules_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7233,7 +6961,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (action_ != other.action_) return false;
     if (!getRulesList().equals(other.getRulesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7266,7 +6994,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + RULES_FIELD_NUMBER;
       hash = (53 * hash) + getRulesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -7419,19 +7147,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.networksecurity.v1.AuthorizationPolicy.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getRulesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -7458,10 +7177,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        rules_ = null;
         rulesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -7609,7 +7329,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -7624,18 +7344,86 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.networksecurity.v1.AuthorizationPolicy parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 42
+            case 48:
+              {
+                action_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule m =
+                    input.readMessage(
+                        com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.parser(),
+                        extensionRegistry);
+                if (rulesBuilder_ == null) {
+                  ensureRulesIsMutable();
+                  rules_.add(m);
+                } else {
+                  rulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.networksecurity.v1.AuthorizationPolicy) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -9013,7 +8801,18 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AuthorizationPolicy(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

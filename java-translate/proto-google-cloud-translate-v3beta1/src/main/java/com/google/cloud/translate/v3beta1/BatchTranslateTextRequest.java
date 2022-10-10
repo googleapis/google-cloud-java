@@ -55,148 +55,6 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private BatchTranslateTextRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceLanguageCode_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                targetLanguageCodes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              targetLanguageCodes_.add(s);
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                models_ =
-                    com.google.protobuf.MapField.newMapField(ModelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> models__ =
-                  input.readMessage(
-                      ModelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              models_.getMutableMap().put(models__.getKey(), models__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                inputConfigs_ =
-                    new java.util.ArrayList<com.google.cloud.translate.v3beta1.InputConfig>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              inputConfigs_.add(
-                  input.readMessage(
-                      com.google.cloud.translate.v3beta1.InputConfig.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.translate.v3beta1.OutputConfig.Builder subBuilder = null;
-              if (outputConfig_ != null) {
-                subBuilder = outputConfig_.toBuilder();
-              }
-              outputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.translate.v3beta1.OutputConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outputConfig_);
-                outputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                glossaries_ =
-                    com.google.protobuf.MapField.newMapField(
-                        GlossariesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String,
-                      com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
-                  glossaries__ =
-                      input.readMessage(
-                          GlossariesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              glossaries_.getMutableMap().put(glossaries__.getKey(), glossaries__.getValue());
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        targetLanguageCodes_ = targetLanguageCodes_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3beta1.TranslationServiceProto
         .internal_static_google_cloud_translation_v3beta1_BatchTranslateTextRequest_descriptor;
@@ -974,7 +832,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         output, internalGetGlossaries(), GlossariesDefaultEntryHolder.defaultEntry, 7);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1036,7 +894,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1063,7 +921,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     }
     if (!internalGetGlossaries().equals(other.internalGetGlossaries())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1102,7 +960,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1260,19 +1118,10 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.translate.v3beta1.BatchTranslateTextRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInputConfigsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1287,10 +1136,11 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       internalGetMutableModels().clear();
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        inputConfigs_ = null;
         inputConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (outputConfigBuilder_ == null) {
         outputConfig_ = null;
       } else {
@@ -1457,7 +1307,7 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
       }
       internalGetMutableGlossaries().mergeFrom(other.internalGetGlossaries());
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1472,18 +1322,105 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.translate.v3beta1.BatchTranslateTextRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                sourceLanguageCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTargetLanguageCodesIsMutable();
+                targetLanguageCodes_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> models__ =
+                    input.readMessage(
+                        ModelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableModels()
+                    .getMutableMap()
+                    .put(models__.getKey(), models__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.translate.v3beta1.InputConfig m =
+                    input.readMessage(
+                        com.google.cloud.translate.v3beta1.InputConfig.parser(), extensionRegistry);
+                if (inputConfigsBuilder_ == null) {
+                  ensureInputConfigsIsMutable();
+                  inputConfigs_.add(m);
+                } else {
+                  inputConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig>
+                    glossaries__ =
+                        input.readMessage(
+                            GlossariesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableGlossaries()
+                    .getMutableMap()
+                    .put(glossaries__.getKey(), glossaries__.getValue());
+                break;
+              } // case 58
+            case 74:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.translate.v3beta1.BatchTranslateTextRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3231,7 +3168,18 @@ public final class BatchTranslateTextRequest extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchTranslateTextRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

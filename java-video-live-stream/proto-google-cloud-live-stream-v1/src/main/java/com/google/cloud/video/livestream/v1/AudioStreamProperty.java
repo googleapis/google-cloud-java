@@ -50,66 +50,6 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private AudioStreamProperty(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              index_ = input.readInt32();
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.video.livestream.v1.AudioFormat.Builder subBuilder = null;
-              if (audioFormat_ != null) {
-                subBuilder = audioFormat_.toBuilder();
-              }
-              audioFormat_ =
-                  input.readMessage(
-                      com.google.cloud.video.livestream.v1.AudioFormat.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(audioFormat_);
-                audioFormat_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.ResourcesProto
         .internal_static_google_cloud_video_livestream_v1_AudioStreamProperty_descriptor;
@@ -211,7 +151,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     if (audioFormat_ != null) {
       output.writeMessage(2, getAudioFormat());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -226,7 +166,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     if (audioFormat_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAudioFormat());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -247,7 +187,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     if (hasAudioFormat()) {
       if (!getAudioFormat().equals(other.getAudioFormat())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -264,7 +204,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + AUDIO_FORMAT_FIELD_NUMBER;
       hash = (53 * hash) + getAudioFormat().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -394,17 +334,10 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.video.livestream.v1.AudioStreamProperty.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -507,7 +440,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       if (other.hasAudioFormat()) {
         mergeAudioFormat(other.getAudioFormat());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -522,18 +455,43 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.livestream.v1.AudioStreamProperty parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                index_ = input.readInt32();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                input.readMessage(getAudioFormatFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.video.livestream.v1.AudioStreamProperty) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -807,7 +765,18 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AudioStreamProperty(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

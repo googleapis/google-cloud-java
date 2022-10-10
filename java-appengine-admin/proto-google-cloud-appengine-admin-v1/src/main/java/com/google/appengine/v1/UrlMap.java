@@ -58,130 +58,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private UrlMap(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              urlRegex_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.appengine.v1.StaticFilesHandler.Builder subBuilder = null;
-              if (handlerTypeCase_ == 2) {
-                subBuilder =
-                    ((com.google.appengine.v1.StaticFilesHandler) handlerType_).toBuilder();
-              }
-              handlerType_ =
-                  input.readMessage(
-                      com.google.appengine.v1.StaticFilesHandler.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.appengine.v1.StaticFilesHandler) handlerType_);
-                handlerType_ = subBuilder.buildPartial();
-              }
-              handlerTypeCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.appengine.v1.ScriptHandler.Builder subBuilder = null;
-              if (handlerTypeCase_ == 3) {
-                subBuilder = ((com.google.appengine.v1.ScriptHandler) handlerType_).toBuilder();
-              }
-              handlerType_ =
-                  input.readMessage(
-                      com.google.appengine.v1.ScriptHandler.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.appengine.v1.ScriptHandler) handlerType_);
-                handlerType_ = subBuilder.buildPartial();
-              }
-              handlerTypeCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.appengine.v1.ApiEndpointHandler.Builder subBuilder = null;
-              if (handlerTypeCase_ == 4) {
-                subBuilder =
-                    ((com.google.appengine.v1.ApiEndpointHandler) handlerType_).toBuilder();
-              }
-              handlerType_ =
-                  input.readMessage(
-                      com.google.appengine.v1.ApiEndpointHandler.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.appengine.v1.ApiEndpointHandler) handlerType_);
-                handlerType_ = subBuilder.buildPartial();
-              }
-              handlerTypeCase_ = 4;
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              securityLevel_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              login_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              authFailAction_ = rawValue;
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              redirectHttpResponseCode_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.AppYamlProto
         .internal_static_google_appengine_v1_UrlMap_descriptor;
@@ -860,7 +736,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(8, redirectHttpResponseCode_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -903,7 +779,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, redirectHttpResponseCode_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -937,7 +813,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -974,7 +850,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1103,17 +979,10 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.appengine.v1.UrlMap.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1121,6 +990,15 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       urlRegex_ = "";
 
+      if (staticFilesBuilder_ != null) {
+        staticFilesBuilder_.clear();
+      }
+      if (scriptBuilder_ != null) {
+        scriptBuilder_.clear();
+      }
+      if (apiEndpointBuilder_ != null) {
+        apiEndpointBuilder_.clear();
+      }
       securityLevel_ = 0;
 
       login_ = 0;
@@ -1270,7 +1148,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1285,17 +1163,79 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.appengine.v1.UrlMap parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                urlRegex_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getStaticFilesFieldBuilder().getBuilder(), extensionRegistry);
+                handlerTypeCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getScriptFieldBuilder().getBuilder(), extensionRegistry);
+                handlerTypeCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getApiEndpointFieldBuilder().getBuilder(), extensionRegistry);
+                handlerTypeCase_ = 4;
+                break;
+              } // case 34
+            case 40:
+              {
+                securityLevel_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                login_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                authFailAction_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                redirectHttpResponseCode_ = input.readEnum();
+
+                break;
+              } // case 64
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.appengine.v1.UrlMap) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2501,7 +2441,18 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UrlMap(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

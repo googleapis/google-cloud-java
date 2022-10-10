@@ -58,96 +58,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private MasterAuth(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              username_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              password_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.container.v1.ClientCertificateConfig.Builder subBuilder = null;
-              if (clientCertificateConfig_ != null) {
-                subBuilder = clientCertificateConfig_.toBuilder();
-              }
-              clientCertificateConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.ClientCertificateConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(clientCertificateConfig_);
-                clientCertificateConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 802:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterCaCertificate_ = s;
-              break;
-            }
-          case 810:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientCertificate_ = s;
-              break;
-            }
-          case 818:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientKey_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_MasterAuth_descriptor;
@@ -539,7 +449,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 102, clientKey_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -567,7 +477,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, clientKey_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -591,7 +501,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     if (!getClusterCaCertificate().equals(other.getClusterCaCertificate())) return false;
     if (!getClientCertificate().equals(other.getClientCertificate())) return false;
     if (!getClientKey().equals(other.getClientKey())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -616,7 +526,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getClientCertificate().hashCode();
     hash = (37 * hash) + CLIENT_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getClientKey().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -746,17 +656,10 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.container.v1.MasterAuth.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -886,7 +789,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         clientKey_ = other.clientKey_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -901,17 +804,68 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.MasterAuth parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                username_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                password_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getClientCertificateConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 802:
+              {
+                clusterCaCertificate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 802
+            case 810:
+              {
+                clientCertificate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 810
+            case 818:
+              {
+                clientKey_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 818
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.MasterAuth) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1795,7 +1749,18 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MasterAuth(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

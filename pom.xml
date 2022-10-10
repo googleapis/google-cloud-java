@@ -62,6 +62,7 @@
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>
+    <module>java-apikeys</module>
     <module>java-appengine-admin</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
@@ -148,6 +149,7 @@
     <module>java-policy-troubleshooter</module>
     <module>java-private-catalog</module>
     <module>java-profiler</module>
+    <module>java-publicca</module>
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>

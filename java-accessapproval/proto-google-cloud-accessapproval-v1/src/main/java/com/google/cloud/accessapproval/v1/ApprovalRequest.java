@@ -53,177 +53,6 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private ApprovalRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestedResourceName_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.accessapproval.v1.AccessReason.Builder subBuilder = null;
-              if (requestedReason_ != null) {
-                subBuilder = requestedReason_.toBuilder();
-              }
-              requestedReason_ =
-                  input.readMessage(
-                      com.google.cloud.accessapproval.v1.AccessReason.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestedReason_);
-                requestedReason_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.accessapproval.v1.AccessLocations.Builder subBuilder = null;
-              if (requestedLocations_ != null) {
-                subBuilder = requestedLocations_.toBuilder();
-              }
-              requestedLocations_ =
-                  input.readMessage(
-                      com.google.cloud.accessapproval.v1.AccessLocations.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestedLocations_);
-                requestedLocations_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (requestTime_ != null) {
-                subBuilder = requestTime_.toBuilder();
-              }
-              requestTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestTime_);
-                requestTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (requestedExpiration_ != null) {
-                subBuilder = requestedExpiration_.toBuilder();
-              }
-              requestedExpiration_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestedExpiration_);
-                requestedExpiration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.accessapproval.v1.ApproveDecision.Builder subBuilder = null;
-              if (decisionCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.accessapproval.v1.ApproveDecision) decision_).toBuilder();
-              }
-              decision_ =
-                  input.readMessage(
-                      com.google.cloud.accessapproval.v1.ApproveDecision.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.accessapproval.v1.ApproveDecision) decision_);
-                decision_ = subBuilder.buildPartial();
-              }
-              decisionCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.accessapproval.v1.DismissDecision.Builder subBuilder = null;
-              if (decisionCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.accessapproval.v1.DismissDecision) decision_).toBuilder();
-              }
-              decision_ =
-                  input.readMessage(
-                      com.google.cloud.accessapproval.v1.DismissDecision.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.accessapproval.v1.DismissDecision) decision_);
-                decision_ = subBuilder.buildPartial();
-              }
-              decisionCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.accessapproval.v1.ResourceProperties.Builder subBuilder = null;
-              if (requestedResourceProperties_ != null) {
-                subBuilder = requestedResourceProperties_.toBuilder();
-              }
-              requestedResourceProperties_ =
-                  input.readMessage(
-                      com.google.cloud.accessapproval.v1.ResourceProperties.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestedResourceProperties_);
-                requestedResourceProperties_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_ApprovalRequest_descriptor;
@@ -787,7 +616,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     if (requestedResourceProperties_ != null) {
       output.writeMessage(9, getRequestedResourceProperties());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -829,7 +658,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getRequestedResourceProperties());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -879,7 +708,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -926,7 +755,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1055,17 +884,10 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.accessapproval.v1.ApprovalRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1104,6 +926,12 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       } else {
         requestedExpiration_ = null;
         requestedExpirationBuilder_ = null;
+      }
+      if (approveBuilder_ != null) {
+        approveBuilder_.clear();
+      }
+      if (dismissBuilder_ != null) {
+        dismissBuilder_.clear();
       }
       decisionCase_ = 0;
       decision_ = null;
@@ -1265,7 +1093,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1280,18 +1108,88 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.accessapproval.v1.ApprovalRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                requestedResourceName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getRequestedReasonFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getRequestedLocationsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getRequestTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getRequestedExpirationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getApproveFieldBuilder().getBuilder(), extensionRegistry);
+                decisionCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getDismissFieldBuilder().getBuilder(), extensionRegistry);
+                decisionCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getRequestedResourcePropertiesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.accessapproval.v1.ApprovalRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2964,7 +2862,18 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ApprovalRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

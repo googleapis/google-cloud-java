@@ -53,82 +53,6 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     return this.unknownFields;
   }
 
-  private GlobalOrganizationSetPolicyRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 24987818:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              etag_ = s;
-              break;
-            }
-          case 728574354:
-            {
-              com.google.cloud.compute.v1.Policy.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = policy_.toBuilder();
-              }
-              policy_ =
-                  input.readMessage(com.google.cloud.compute.v1.Policy.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(policy_);
-                policy_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-          case -1068952462:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bindings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Binding>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bindings_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Binding.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        bindings_ = java.util.Collections.unmodifiableList(bindings_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_GlobalOrganizationSetPolicyRequest_descriptor;
@@ -347,7 +271,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     for (int i = 0; i < bindings_.size(); i++) {
       output.writeMessage(403251854, bindings_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -365,7 +289,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     for (int i = 0; i < bindings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(403251854, bindings_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -390,7 +314,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
     if (hasPolicy()) {
       if (!getPolicy().equals(other.getPolicy())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -413,7 +337,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPolicy().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -563,10 +487,11 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       super.clear();
       if (bindingsBuilder_ == null) {
         bindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        bindings_ = null;
         bindingsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       etag_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       if (policyBuilder_ == null) {
@@ -713,7 +638,7 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
       if (other.hasPolicy()) {
         mergePolicy(other.getPolicy());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -728,19 +653,56 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 24987818:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24987818
+            case 728574354:
+              {
+                input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 728574354
+            case -1068952462:
+              {
+                com.google.cloud.compute.v1.Binding m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.Binding.parser(), extensionRegistry);
+                if (bindingsBuilder_ == null) {
+                  ensureBindingsIsMutable();
+                  bindings_.add(m);
+                } else {
+                  bindingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -1068952462
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1430,7 +1392,18 @@ public final class GlobalOrganizationSetPolicyRequest extends com.google.protobu
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GlobalOrganizationSetPolicyRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

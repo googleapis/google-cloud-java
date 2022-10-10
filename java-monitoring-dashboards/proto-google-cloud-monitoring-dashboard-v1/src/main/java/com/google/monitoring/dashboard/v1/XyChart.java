@@ -53,156 +53,6 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private XyChart(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dataSets_ =
-                    new java.util.ArrayList<com.google.monitoring.dashboard.v1.XyChart.DataSet>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dataSets_.add(
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.XyChart.DataSet.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (timeshiftDuration_ != null) {
-                subBuilder = timeshiftDuration_.toBuilder();
-              }
-              timeshiftDuration_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timeshiftDuration_);
-                timeshiftDuration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                thresholds_ =
-                    new java.util.ArrayList<com.google.monitoring.dashboard.v1.Threshold>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              thresholds_.add(
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.Threshold.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              com.google.monitoring.dashboard.v1.XyChart.Axis.Builder subBuilder = null;
-              if (xAxis_ != null) {
-                subBuilder = xAxis_.toBuilder();
-              }
-              xAxis_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.XyChart.Axis.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(xAxis_);
-                xAxis_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.monitoring.dashboard.v1.XyChart.Axis.Builder subBuilder = null;
-              if (yAxis_ != null) {
-                subBuilder = yAxis_.toBuilder();
-              }
-              yAxis_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.XyChart.Axis.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(yAxis_);
-                yAxis_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.monitoring.dashboard.v1.ChartOptions.Builder subBuilder = null;
-              if (chartOptions_ != null) {
-                subBuilder = chartOptions_.toBuilder();
-              }
-              chartOptions_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.ChartOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(chartOptions_);
-                chartOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.monitoring.dashboard.v1.XyChart.Axis.Builder subBuilder = null;
-              if (y2Axis_ != null) {
-                subBuilder = y2Axis_.toBuilder();
-              }
-              y2Axis_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.XyChart.Axis.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(y2Axis_);
-                y2Axis_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dataSets_ = java.util.Collections.unmodifiableList(dataSets_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        thresholds_ = java.util.Collections.unmodifiableList(thresholds_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.XyChartProto
         .internal_static_google_monitoring_dashboard_v1_XyChart_descriptor;
@@ -437,98 +287,6 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private DataSet(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder subBuilder = null;
-                if (timeSeriesQuery_ != null) {
-                  subBuilder = timeSeriesQuery_.toBuilder();
-                }
-                timeSeriesQuery_ =
-                    input.readMessage(
-                        com.google.monitoring.dashboard.v1.TimeSeriesQuery.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(timeSeriesQuery_);
-                  timeSeriesQuery_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                plotType_ = rawValue;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                legendTemplate_ = s;
-                break;
-              }
-            case 34:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (minAlignmentPeriod_ != null) {
-                  subBuilder = minAlignmentPeriod_.toBuilder();
-                }
-                minAlignmentPeriod_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(minAlignmentPeriod_);
-                  minAlignmentPeriod_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 40:
-              {
-                int rawValue = input.readEnum();
-
-                targetAxis_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1216,7 +974,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(5, targetAxis_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1245,7 +1003,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, targetAxis_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1272,7 +1030,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         if (!getMinAlignmentPeriod().equals(other.getMinAlignmentPeriod())) return false;
       }
       if (targetAxis_ != other.targetAxis_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1297,7 +1055,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + TARGET_AXIS_FIELD_NUMBER;
       hash = (53 * hash) + targetAxis_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1428,17 +1186,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.monitoring.dashboard.v1.XyChart.DataSet.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1570,7 +1321,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         if (other.targetAxis_ != 0) {
           setTargetAxisValue(other.getTargetAxisValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1585,18 +1336,63 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.dashboard.v1.XyChart.DataSet parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getTimeSeriesQueryFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  plotType_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  legendTemplate_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getMinAlignmentPeriodFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 40:
+                {
+                  targetAxis_ = input.readEnum();
+
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.dashboard.v1.XyChart.DataSet) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2402,7 +2198,19 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DataSet(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2509,59 +2317,6 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Axis(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                label_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                scale_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2846,7 +2601,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           != com.google.monitoring.dashboard.v1.XyChart.Axis.Scale.SCALE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, scale_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2862,7 +2617,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           != com.google.monitoring.dashboard.v1.XyChart.Axis.Scale.SCALE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, scale_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2880,7 +2635,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
 
       if (!getLabel().equals(other.getLabel())) return false;
       if (scale_ != other.scale_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2895,7 +2650,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getLabel().hashCode();
       hash = (37 * hash) + SCALE_FIELD_NUMBER;
       hash = (53 * hash) + scale_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3026,17 +2781,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.monitoring.dashboard.v1.XyChart.Axis.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3134,7 +2882,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         if (other.scale_ != 0) {
           setScaleValue(other.getScaleValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3149,18 +2897,43 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.dashboard.v1.XyChart.Axis parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  label_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  scale_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.dashboard.v1.XyChart.Axis) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3396,7 +3169,19 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Axis(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3851,7 +3636,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     if (y2Axis_ != null) {
       output.writeMessage(9, getY2Axis());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3881,7 +3666,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     if (y2Axis_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getY2Axis());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3919,7 +3704,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     if (hasChartOptions()) {
       if (!getChartOptions().equals(other.getChartOptions())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3958,7 +3743,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CHART_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getChartOptions().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4087,20 +3872,10 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.monitoring.dashboard.v1.XyChart.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDataSetsFieldBuilder();
-        getThresholdsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -4108,10 +3883,11 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (dataSetsBuilder_ == null) {
         dataSets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dataSets_ = null;
         dataSetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (timeshiftDurationBuilder_ == null) {
         timeshiftDuration_ = null;
       } else {
@@ -4120,10 +3896,11 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       }
       if (thresholdsBuilder_ == null) {
         thresholds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        thresholds_ = null;
         thresholdsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (xAxisBuilder_ == null) {
         xAxis_ = null;
       } else {
@@ -4337,7 +4114,7 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
       if (other.hasChartOptions()) {
         mergeChartOptions(other.getChartOptions());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4352,17 +4129,89 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.monitoring.dashboard.v1.XyChart parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.monitoring.dashboard.v1.XyChart.DataSet m =
+                    input.readMessage(
+                        com.google.monitoring.dashboard.v1.XyChart.DataSet.parser(),
+                        extensionRegistry);
+                if (dataSetsBuilder_ == null) {
+                  ensureDataSetsIsMutable();
+                  dataSets_.add(m);
+                } else {
+                  dataSetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 34:
+              {
+                input.readMessage(
+                    getTimeshiftDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.monitoring.dashboard.v1.Threshold m =
+                    input.readMessage(
+                        com.google.monitoring.dashboard.v1.Threshold.parser(), extensionRegistry);
+                if (thresholdsBuilder_ == null) {
+                  ensureThresholdsIsMutable();
+                  thresholds_.add(m);
+                } else {
+                  thresholdsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getXAxisFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getYAxisFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getChartOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getY2AxisFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.dashboard.v1.XyChart) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6109,7 +5958,18 @@ public final class XyChart extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new XyChart(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
