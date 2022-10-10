@@ -38,7 +38,9 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private ProtectConfig() {}
+  private ProtectConfig() {
+    workloadVulnerabilityMode_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -64,6 +66,166 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.container.v1beta1.ProtectConfig.class,
             com.google.container.v1beta1.ProtectConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * WorkloadVulnerabilityMode defines mode to perform vulnerability scanning.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode}
+   */
+  public enum WorkloadVulnerabilityMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value not specified.
+     * </pre>
+     *
+     * <code>WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED = 0;</code>
+     */
+    WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Disables Workload Vulnerability Scanning feature on the cluster.
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    DISABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Applies basic vulnerability scanning settings for cluster workloads.
+     * </pre>
+     *
+     * <code>BASIC = 2;</code>
+     */
+    BASIC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value not specified.
+     * </pre>
+     *
+     * <code>WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Disables Workload Vulnerability Scanning feature on the cluster.
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    public static final int DISABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Applies basic vulnerability scanning settings for cluster workloads.
+     * </pre>
+     *
+     * <code>BASIC = 2;</code>
+     */
+    public static final int BASIC_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkloadVulnerabilityMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkloadVulnerabilityMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED;
+        case 1:
+          return DISABLED;
+        case 2:
+          return BASIC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkloadVulnerabilityMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<WorkloadVulnerabilityMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<WorkloadVulnerabilityMode>() {
+              public WorkloadVulnerabilityMode findValueByNumber(int number) {
+                return WorkloadVulnerabilityMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.ProtectConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final WorkloadVulnerabilityMode[] VALUES = values();
+
+    public static WorkloadVulnerabilityMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkloadVulnerabilityMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode)
   }
 
   private int bitField0_;
@@ -120,6 +282,67 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         : workloadConfig_;
   }
 
+  public static final int WORKLOAD_VULNERABILITY_MODE_FIELD_NUMBER = 2;
+  private int workloadVulnerabilityMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Sets which mode to use for Protect workload vulnerability scanning feature.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+   * </code>
+   *
+   * @return Whether the workloadVulnerabilityMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadVulnerabilityMode() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets which mode to use for Protect workload vulnerability scanning feature.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for workloadVulnerabilityMode.
+   */
+  @java.lang.Override
+  public int getWorkloadVulnerabilityModeValue() {
+    return workloadVulnerabilityMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Sets which mode to use for Protect workload vulnerability scanning feature.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+   * </code>
+   *
+   * @return The workloadVulnerabilityMode.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode
+      getWorkloadVulnerabilityMode() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode result =
+        com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.valueOf(
+            workloadVulnerabilityMode_);
+    return result == null
+        ? com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -137,6 +360,9 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getWorkloadConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(2, workloadVulnerabilityMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +374,9 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWorkloadConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, workloadVulnerabilityMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +398,10 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadConfig()) {
       if (!getWorkloadConfig().equals(other.getWorkloadConfig())) return false;
     }
+    if (hasWorkloadVulnerabilityMode() != other.hasWorkloadVulnerabilityMode()) return false;
+    if (hasWorkloadVulnerabilityMode()) {
+      if (workloadVulnerabilityMode_ != other.workloadVulnerabilityMode_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +416,10 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadConfig()) {
       hash = (37 * hash) + WORKLOAD_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkloadConfig().hashCode();
+    }
+    if (hasWorkloadVulnerabilityMode()) {
+      hash = (37 * hash) + WORKLOAD_VULNERABILITY_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + workloadVulnerabilityMode_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -338,6 +575,8 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         workloadConfigBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      workloadVulnerabilityMode_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -375,6 +614,10 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.workloadVulnerabilityMode_ = workloadVulnerabilityMode_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -428,6 +671,9 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasWorkloadConfig()) {
         mergeWorkloadConfig(other.getWorkloadConfig());
       }
+      if (other.hasWorkloadVulnerabilityMode()) {
+        setWorkloadVulnerabilityMode(other.getWorkloadVulnerabilityMode());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -460,6 +706,12 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                workloadVulnerabilityMode_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -674,6 +926,129 @@ public final class ProtectConfig extends com.google.protobuf.GeneratedMessageV3
         workloadConfig_ = null;
       }
       return workloadConfigBuilder_;
+    }
+
+    private int workloadVulnerabilityMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Sets which mode to use for Protect workload vulnerability scanning feature.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+     * </code>
+     *
+     * @return Whether the workloadVulnerabilityMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkloadVulnerabilityMode() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets which mode to use for Protect workload vulnerability scanning feature.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for workloadVulnerabilityMode.
+     */
+    @java.lang.Override
+    public int getWorkloadVulnerabilityModeValue() {
+      return workloadVulnerabilityMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets which mode to use for Protect workload vulnerability scanning feature.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for workloadVulnerabilityMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkloadVulnerabilityModeValue(int value) {
+      bitField0_ |= 0x00000002;
+      workloadVulnerabilityMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets which mode to use for Protect workload vulnerability scanning feature.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+     * </code>
+     *
+     * @return The workloadVulnerabilityMode.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode
+        getWorkloadVulnerabilityMode() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode result =
+          com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.valueOf(
+              workloadVulnerabilityMode_);
+      return result == null
+          ? com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets which mode to use for Protect workload vulnerability scanning feature.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+     * </code>
+     *
+     * @param value The workloadVulnerabilityMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkloadVulnerabilityMode(
+        com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      workloadVulnerabilityMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets which mode to use for Protect workload vulnerability scanning feature.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkloadVulnerabilityMode() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      workloadVulnerabilityMode_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

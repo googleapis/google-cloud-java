@@ -556,6 +556,54 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     return getGcpFilestoreCsiDriverConfig();
   }
 
+  public static final int GKE_BACKUP_AGENT_CONFIG_FIELD_NUMBER = 16;
+  private com.google.container.v1.GkeBackupAgentConfig gkeBackupAgentConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return Whether the gkeBackupAgentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGkeBackupAgentConfig() {
+    return gkeBackupAgentConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return The gkeBackupAgentConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GkeBackupAgentConfig getGkeBackupAgentConfig() {
+    return gkeBackupAgentConfig_ == null
+        ? com.google.container.v1.GkeBackupAgentConfig.getDefaultInstance()
+        : gkeBackupAgentConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GkeBackupAgentConfigOrBuilder getGkeBackupAgentConfigOrBuilder() {
+    return getGkeBackupAgentConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -596,6 +644,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (gcpFilestoreCsiDriverConfig_ != null) {
       output.writeMessage(14, getGcpFilestoreCsiDriverConfig());
+    }
+    if (gkeBackupAgentConfig_ != null) {
+      output.writeMessage(16, getGkeBackupAgentConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -639,6 +690,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, getGcpFilestoreCsiDriverConfig());
+    }
+    if (gkeBackupAgentConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGkeBackupAgentConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -694,6 +749,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getGcpFilestoreCsiDriverConfig().equals(other.getGcpFilestoreCsiDriverConfig()))
         return false;
     }
+    if (hasGkeBackupAgentConfig() != other.hasGkeBackupAgentConfig()) return false;
+    if (hasGkeBackupAgentConfig()) {
+      if (!getGkeBackupAgentConfig().equals(other.getGkeBackupAgentConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -740,6 +799,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGcpFilestoreCsiDriverConfig()) {
       hash = (37 * hash) + GCP_FILESTORE_CSI_DRIVER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGcpFilestoreCsiDriverConfig().hashCode();
+    }
+    if (hasGkeBackupAgentConfig()) {
+      hash = (37 * hash) + GKE_BACKUP_AGENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGkeBackupAgentConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -933,6 +996,12 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         gcpFilestoreCsiDriverConfig_ = null;
         gcpFilestoreCsiDriverConfigBuilder_ = null;
       }
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = null;
+      } else {
+        gkeBackupAgentConfig_ = null;
+        gkeBackupAgentConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1003,6 +1072,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfig_;
       } else {
         result.gcpFilestoreCsiDriverConfig_ = gcpFilestoreCsiDriverConfigBuilder_.build();
+      }
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        result.gkeBackupAgentConfig_ = gkeBackupAgentConfig_;
+      } else {
+        result.gkeBackupAgentConfig_ = gkeBackupAgentConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1079,6 +1153,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGcpFilestoreCsiDriverConfig()) {
         mergeGcpFilestoreCsiDriverConfig(other.getGcpFilestoreCsiDriverConfig());
+      }
+      if (other.hasGkeBackupAgentConfig()) {
+        mergeGkeBackupAgentConfig(other.getGkeBackupAgentConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1168,6 +1245,13 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 114
+            case 130:
+              {
+                input.readMessage(
+                    getGkeBackupAgentConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3022,6 +3106,193 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
         gcpFilestoreCsiDriverConfig_ = null;
       }
       return gcpFilestoreCsiDriverConfigBuilder_;
+    }
+
+    private com.google.container.v1.GkeBackupAgentConfig gkeBackupAgentConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GkeBackupAgentConfig,
+            com.google.container.v1.GkeBackupAgentConfig.Builder,
+            com.google.container.v1.GkeBackupAgentConfigOrBuilder>
+        gkeBackupAgentConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     *
+     * @return Whether the gkeBackupAgentConfig field is set.
+     */
+    public boolean hasGkeBackupAgentConfig() {
+      return gkeBackupAgentConfigBuilder_ != null || gkeBackupAgentConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     *
+     * @return The gkeBackupAgentConfig.
+     */
+    public com.google.container.v1.GkeBackupAgentConfig getGkeBackupAgentConfig() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        return gkeBackupAgentConfig_ == null
+            ? com.google.container.v1.GkeBackupAgentConfig.getDefaultInstance()
+            : gkeBackupAgentConfig_;
+      } else {
+        return gkeBackupAgentConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder setGkeBackupAgentConfig(com.google.container.v1.GkeBackupAgentConfig value) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gkeBackupAgentConfig_ = value;
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder setGkeBackupAgentConfig(
+        com.google.container.v1.GkeBackupAgentConfig.Builder builderForValue) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder mergeGkeBackupAgentConfig(com.google.container.v1.GkeBackupAgentConfig value) {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        if (gkeBackupAgentConfig_ != null) {
+          gkeBackupAgentConfig_ =
+              com.google.container.v1.GkeBackupAgentConfig.newBuilder(gkeBackupAgentConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gkeBackupAgentConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gkeBackupAgentConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public Builder clearGkeBackupAgentConfig() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfig_ = null;
+        onChanged();
+      } else {
+        gkeBackupAgentConfig_ = null;
+        gkeBackupAgentConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public com.google.container.v1.GkeBackupAgentConfig.Builder getGkeBackupAgentConfigBuilder() {
+
+      onChanged();
+      return getGkeBackupAgentConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    public com.google.container.v1.GkeBackupAgentConfigOrBuilder
+        getGkeBackupAgentConfigOrBuilder() {
+      if (gkeBackupAgentConfigBuilder_ != null) {
+        return gkeBackupAgentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gkeBackupAgentConfig_ == null
+            ? com.google.container.v1.GkeBackupAgentConfig.getDefaultInstance()
+            : gkeBackupAgentConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the Backup for GKE agent addon.
+     * </pre>
+     *
+     * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GkeBackupAgentConfig,
+            com.google.container.v1.GkeBackupAgentConfig.Builder,
+            com.google.container.v1.GkeBackupAgentConfigOrBuilder>
+        getGkeBackupAgentConfigFieldBuilder() {
+      if (gkeBackupAgentConfigBuilder_ == null) {
+        gkeBackupAgentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GkeBackupAgentConfig,
+                com.google.container.v1.GkeBackupAgentConfig.Builder,
+                com.google.container.v1.GkeBackupAgentConfigOrBuilder>(
+                getGkeBackupAgentConfig(), getParentForChildren(), isClean());
+        gkeBackupAgentConfig_ = null;
+      }
+      return gkeBackupAgentConfigBuilder_;
     }
 
     @java.lang.Override

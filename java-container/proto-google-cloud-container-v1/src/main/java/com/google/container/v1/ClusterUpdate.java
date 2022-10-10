@@ -558,6 +558,55 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredShieldedNodes();
   }
 
+  public static final int DESIRED_COST_MANAGEMENT_CONFIG_FIELD_NUMBER = 49;
+  private com.google.container.v1.CostManagementConfig desiredCostManagementConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+   *
+   * @return Whether the desiredCostManagementConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredCostManagementConfig() {
+    return desiredCostManagementConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+   *
+   * @return The desiredCostManagementConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.CostManagementConfig getDesiredCostManagementConfig() {
+    return desiredCostManagementConfig_ == null
+        ? com.google.container.v1.CostManagementConfig.getDefaultInstance()
+        : desiredCostManagementConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.CostManagementConfigOrBuilder
+      getDesiredCostManagementConfigOrBuilder() {
+    return getDesiredCostManagementConfig();
+  }
+
   public static final int DESIRED_DNS_CONFIG_FIELD_NUMBER = 53;
   private com.google.container.v1.DNSConfig desiredDnsConfig_;
   /**
@@ -1976,6 +2025,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredShieldedNodes_ != null) {
       output.writeMessage(48, getDesiredShieldedNodes());
     }
+    if (desiredCostManagementConfig_ != null) {
+      output.writeMessage(49, getDesiredCostManagementConfig());
+    }
     if (desiredDatapathProvider_
         != com.google.container.v1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED.getNumber()) {
       output.writeEnum(50, desiredDatapathProvider_);
@@ -2125,6 +2177,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, getDesiredShieldedNodes());
     }
+    if (desiredCostManagementConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              49, getDesiredCostManagementConfig());
+    }
     if (desiredDatapathProvider_
         != com.google.container.v1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(50, desiredDatapathProvider_);
@@ -2230,6 +2287,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredShieldedNodes() != other.hasDesiredShieldedNodes()) return false;
     if (hasDesiredShieldedNodes()) {
       if (!getDesiredShieldedNodes().equals(other.getDesiredShieldedNodes())) return false;
+    }
+    if (hasDesiredCostManagementConfig() != other.hasDesiredCostManagementConfig()) return false;
+    if (hasDesiredCostManagementConfig()) {
+      if (!getDesiredCostManagementConfig().equals(other.getDesiredCostManagementConfig()))
+        return false;
     }
     if (hasDesiredDnsConfig() != other.hasDesiredDnsConfig()) return false;
     if (hasDesiredDnsConfig()) {
@@ -2380,6 +2442,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredShieldedNodes()) {
       hash = (37 * hash) + DESIRED_SHIELDED_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredShieldedNodes().hashCode();
+    }
+    if (hasDesiredCostManagementConfig()) {
+      hash = (37 * hash) + DESIRED_COST_MANAGEMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredCostManagementConfig().hashCode();
     }
     if (hasDesiredDnsConfig()) {
       hash = (37 * hash) + DESIRED_DNS_CONFIG_FIELD_NUMBER;
@@ -2654,6 +2720,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredShieldedNodes_ = null;
         desiredShieldedNodesBuilder_ = null;
       }
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfig_ = null;
+      } else {
+        desiredCostManagementConfig_ = null;
+        desiredCostManagementConfigBuilder_ = null;
+      }
       if (desiredDnsConfigBuilder_ == null) {
         desiredDnsConfig_ = null;
       } else {
@@ -2846,6 +2918,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredShieldedNodes_ = desiredShieldedNodes_;
       } else {
         result.desiredShieldedNodes_ = desiredShieldedNodesBuilder_.build();
+      }
+      if (desiredCostManagementConfigBuilder_ == null) {
+        result.desiredCostManagementConfig_ = desiredCostManagementConfig_;
+      } else {
+        result.desiredCostManagementConfig_ = desiredCostManagementConfigBuilder_.build();
       }
       if (desiredDnsConfigBuilder_ == null) {
         result.desiredDnsConfig_ = desiredDnsConfig_;
@@ -3042,6 +3119,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredShieldedNodes()) {
         mergeDesiredShieldedNodes(other.getDesiredShieldedNodes());
+      }
+      if (other.hasDesiredCostManagementConfig()) {
+        mergeDesiredCostManagementConfig(other.getDesiredCostManagementConfig());
       }
       if (other.hasDesiredDnsConfig()) {
         mergeDesiredDnsConfig(other.getDesiredDnsConfig());
@@ -3302,6 +3382,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 386
+            case 394:
+              {
+                input.readMessage(
+                    getDesiredCostManagementConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 394
             case 400:
               {
                 desiredDatapathProvider_ = input.readEnum();
@@ -4898,6 +4985,196 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredShieldedNodes_ = null;
       }
       return desiredShieldedNodesBuilder_;
+    }
+
+    private com.google.container.v1.CostManagementConfig desiredCostManagementConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.CostManagementConfig,
+            com.google.container.v1.CostManagementConfig.Builder,
+            com.google.container.v1.CostManagementConfigOrBuilder>
+        desiredCostManagementConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     *
+     * @return Whether the desiredCostManagementConfig field is set.
+     */
+    public boolean hasDesiredCostManagementConfig() {
+      return desiredCostManagementConfigBuilder_ != null || desiredCostManagementConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     *
+     * @return The desiredCostManagementConfig.
+     */
+    public com.google.container.v1.CostManagementConfig getDesiredCostManagementConfig() {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        return desiredCostManagementConfig_ == null
+            ? com.google.container.v1.CostManagementConfig.getDefaultInstance()
+            : desiredCostManagementConfig_;
+      } else {
+        return desiredCostManagementConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    public Builder setDesiredCostManagementConfig(
+        com.google.container.v1.CostManagementConfig value) {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredCostManagementConfig_ = value;
+        onChanged();
+      } else {
+        desiredCostManagementConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    public Builder setDesiredCostManagementConfig(
+        com.google.container.v1.CostManagementConfig.Builder builderForValue) {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredCostManagementConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    public Builder mergeDesiredCostManagementConfig(
+        com.google.container.v1.CostManagementConfig value) {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        if (desiredCostManagementConfig_ != null) {
+          desiredCostManagementConfig_ =
+              com.google.container.v1.CostManagementConfig.newBuilder(desiredCostManagementConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredCostManagementConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredCostManagementConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    public Builder clearDesiredCostManagementConfig() {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfig_ = null;
+        onChanged();
+      } else {
+        desiredCostManagementConfig_ = null;
+        desiredCostManagementConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    public com.google.container.v1.CostManagementConfig.Builder
+        getDesiredCostManagementConfigBuilder() {
+
+      onChanged();
+      return getDesiredCostManagementConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    public com.google.container.v1.CostManagementConfigOrBuilder
+        getDesiredCostManagementConfigOrBuilder() {
+      if (desiredCostManagementConfigBuilder_ != null) {
+        return desiredCostManagementConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredCostManagementConfig_ == null
+            ? com.google.container.v1.CostManagementConfig.getDefaultInstance()
+            : desiredCostManagementConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.CostManagementConfig,
+            com.google.container.v1.CostManagementConfig.Builder,
+            com.google.container.v1.CostManagementConfigOrBuilder>
+        getDesiredCostManagementConfigFieldBuilder() {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.CostManagementConfig,
+                com.google.container.v1.CostManagementConfig.Builder,
+                com.google.container.v1.CostManagementConfigOrBuilder>(
+                getDesiredCostManagementConfig(), getParentForChildren(), isClean());
+        desiredCostManagementConfig_ = null;
+      }
+      return desiredCostManagementConfigBuilder_;
     }
 
     private com.google.container.v1.DNSConfig desiredDnsConfig_;

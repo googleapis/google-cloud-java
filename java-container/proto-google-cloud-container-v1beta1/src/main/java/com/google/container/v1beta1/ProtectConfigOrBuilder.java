@@ -60,4 +60,48 @@ public interface ProtectConfigOrBuilder
    * <code>optional .google.container.v1beta1.WorkloadConfig workload_config = 1;</code>
    */
   com.google.container.v1beta1.WorkloadConfigOrBuilder getWorkloadConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets which mode to use for Protect workload vulnerability scanning feature.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+   * </code>
+   *
+   * @return Whether the workloadVulnerabilityMode field is set.
+   */
+  boolean hasWorkloadVulnerabilityMode();
+  /**
+   *
+   *
+   * <pre>
+   * Sets which mode to use for Protect workload vulnerability scanning feature.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for workloadVulnerabilityMode.
+   */
+  int getWorkloadVulnerabilityModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Sets which mode to use for Protect workload vulnerability scanning feature.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode workload_vulnerability_mode = 2;
+   * </code>
+   *
+   * @return The workloadVulnerabilityMode.
+   */
+  com.google.container.v1beta1.ProtectConfig.WorkloadVulnerabilityMode
+      getWorkloadVulnerabilityMode();
 }

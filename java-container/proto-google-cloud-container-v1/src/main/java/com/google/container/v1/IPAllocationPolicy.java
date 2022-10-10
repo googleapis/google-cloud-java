@@ -48,6 +48,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     nodeIpv4CidrBlock_ = "";
     servicesIpv4CidrBlock_ = "";
     tpuIpv4CidrBlock_ = "";
+    stackType_ = 0;
+    ipv6AccessType_ = 0;
   }
 
   @java.lang.Override
@@ -181,7 +183,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1255
+   *     google/container/v1/cluster_service.proto;l=1264
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -207,7 +209,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1255
+   *     google/container/v1/cluster_service.proto;l=1264
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -236,7 +238,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1258
+   *     google/container/v1/cluster_service.proto;l=1267
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -262,7 +264,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1258
+   *     google/container/v1/cluster_service.proto;l=1267
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -291,7 +293,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1261
+   *     google/container/v1/cluster_service.proto;l=1270
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -317,7 +319,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1261
+   *     google/container/v1/cluster_service.proto;l=1270
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -747,6 +749,78 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     return useRoutes_;
   }
 
+  public static final int STACK_TYPE_FIELD_NUMBER = 16;
+  private int stackType_;
+  /**
+   *
+   *
+   * <pre>
+   * The IP stack type of the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.StackType stack_type = 16;</code>
+   *
+   * @return The enum numeric value on the wire for stackType.
+   */
+  @java.lang.Override
+  public int getStackTypeValue() {
+    return stackType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The IP stack type of the cluster
+   * </pre>
+   *
+   * <code>.google.container.v1.StackType stack_type = 16;</code>
+   *
+   * @return The stackType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.StackType getStackType() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.StackType result =
+        com.google.container.v1.StackType.valueOf(stackType_);
+    return result == null ? com.google.container.v1.StackType.UNRECOGNIZED : result;
+  }
+
+  public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 17;
+  private int ipv6AccessType_;
+  /**
+   *
+   *
+   * <pre>
+   * The ipv6 access type (internal or external) when create_subnetwork is true
+   * </pre>
+   *
+   * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+   *
+   * @return The enum numeric value on the wire for ipv6AccessType.
+   */
+  @java.lang.Override
+  public int getIpv6AccessTypeValue() {
+    return ipv6AccessType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The ipv6 access type (internal or external) when create_subnetwork is true
+   * </pre>
+   *
+   * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.IPv6AccessType getIpv6AccessType() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.IPv6AccessType result =
+        com.google.container.v1.IPv6AccessType.valueOf(ipv6AccessType_);
+    return result == null ? com.google.container.v1.IPv6AccessType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -800,6 +874,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (useRoutes_ != false) {
       output.writeBool(15, useRoutes_);
     }
+    if (stackType_ != com.google.container.v1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(16, stackType_);
+    }
+    if (ipv6AccessType_
+        != com.google.container.v1.IPv6AccessType.IPV6_ACCESS_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(17, ipv6AccessType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -850,6 +931,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (useRoutes_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, useRoutes_);
     }
+    if (stackType_ != com.google.container.v1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, stackType_);
+    }
+    if (ipv6AccessType_
+        != com.google.container.v1.IPv6AccessType.IPV6_ACCESS_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, ipv6AccessType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -880,6 +968,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (!getServicesIpv4CidrBlock().equals(other.getServicesIpv4CidrBlock())) return false;
     if (!getTpuIpv4CidrBlock().equals(other.getTpuIpv4CidrBlock())) return false;
     if (getUseRoutes() != other.getUseRoutes()) return false;
+    if (stackType_ != other.stackType_) return false;
+    if (ipv6AccessType_ != other.ipv6AccessType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -917,6 +1007,10 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getTpuIpv4CidrBlock().hashCode();
     hash = (37 * hash) + USE_ROUTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseRoutes());
+    hash = (37 * hash) + STACK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + stackType_;
+    hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + ipv6AccessType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1081,6 +1175,10 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
 
       useRoutes_ = false;
 
+      stackType_ = 0;
+
+      ipv6AccessType_ = 0;
+
       return this;
     }
 
@@ -1121,6 +1219,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       result.servicesIpv4CidrBlock_ = servicesIpv4CidrBlock_;
       result.tpuIpv4CidrBlock_ = tpuIpv4CidrBlock_;
       result.useRoutes_ = useRoutes_;
+      result.stackType_ = stackType_;
+      result.ipv6AccessType_ = ipv6AccessType_;
       onBuilt();
       return result;
     }
@@ -1218,6 +1318,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (other.getUseRoutes() != false) {
         setUseRoutes(other.getUseRoutes());
+      }
+      if (other.stackType_ != 0) {
+        setStackTypeValue(other.getStackTypeValue());
+      }
+      if (other.ipv6AccessType_ != 0) {
+        setIpv6AccessTypeValue(other.getIpv6AccessTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1323,6 +1429,18 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
 
                 break;
               } // case 120
+            case 128:
+              {
+                stackType_ = input.readEnum();
+
+                break;
+              } // case 128
+            case 136:
+              {
+                ipv6AccessType_ = input.readEnum();
+
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1583,7 +1701,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1255
+     *     google/container/v1/cluster_service.proto;l=1264
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -1608,7 +1726,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1255
+     *     google/container/v1/cluster_service.proto;l=1264
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -1633,7 +1751,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1255
+     *     google/container/v1/cluster_service.proto;l=1264
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -1657,7 +1775,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1255
+     *     google/container/v1/cluster_service.proto;l=1264
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1677,7 +1795,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1255
+     *     google/container/v1/cluster_service.proto;l=1264
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -1704,7 +1822,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1258
+     *     google/container/v1/cluster_service.proto;l=1267
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -1729,7 +1847,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1258
+     *     google/container/v1/cluster_service.proto;l=1267
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -1754,7 +1872,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1258
+     *     google/container/v1/cluster_service.proto;l=1267
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -1778,7 +1896,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1258
+     *     google/container/v1/cluster_service.proto;l=1267
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1798,7 +1916,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1258
+     *     google/container/v1/cluster_service.proto;l=1267
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -1825,7 +1943,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1261
+     *     google/container/v1/cluster_service.proto;l=1270
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -1850,7 +1968,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1261
+     *     google/container/v1/cluster_service.proto;l=1270
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -1875,7 +1993,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1261
+     *     google/container/v1/cluster_service.proto;l=1270
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -1899,7 +2017,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1261
+     *     google/container/v1/cluster_service.proto;l=1270
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1919,7 +2037,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=1261
+     *     google/container/v1/cluster_service.proto;l=1270
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2873,6 +2991,188 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public Builder clearUseRoutes() {
 
       useRoutes_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int stackType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The IP stack type of the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType stack_type = 16;</code>
+     *
+     * @return The enum numeric value on the wire for stackType.
+     */
+    @java.lang.Override
+    public int getStackTypeValue() {
+      return stackType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP stack type of the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType stack_type = 16;</code>
+     *
+     * @param value The enum numeric value on the wire for stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackTypeValue(int value) {
+
+      stackType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP stack type of the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType stack_type = 16;</code>
+     *
+     * @return The stackType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.StackType getStackType() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.StackType result =
+          com.google.container.v1.StackType.valueOf(stackType_);
+      return result == null ? com.google.container.v1.StackType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP stack type of the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType stack_type = 16;</code>
+     *
+     * @param value The stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackType(com.google.container.v1.StackType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      stackType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The IP stack type of the cluster
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType stack_type = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStackType() {
+
+      stackType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int ipv6AccessType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The ipv6 access type (internal or external) when create_subnetwork is true
+     * </pre>
+     *
+     * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+     *
+     * @return The enum numeric value on the wire for ipv6AccessType.
+     */
+    @java.lang.Override
+    public int getIpv6AccessTypeValue() {
+      return ipv6AccessType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ipv6 access type (internal or external) when create_subnetwork is true
+     * </pre>
+     *
+     * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+     *
+     * @param value The enum numeric value on the wire for ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessTypeValue(int value) {
+
+      ipv6AccessType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ipv6 access type (internal or external) when create_subnetwork is true
+     * </pre>
+     *
+     * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+     *
+     * @return The ipv6AccessType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.IPv6AccessType getIpv6AccessType() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.IPv6AccessType result =
+          com.google.container.v1.IPv6AccessType.valueOf(ipv6AccessType_);
+      return result == null ? com.google.container.v1.IPv6AccessType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ipv6 access type (internal or external) when create_subnetwork is true
+     * </pre>
+     *
+     * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+     *
+     * @param value The ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessType(com.google.container.v1.IPv6AccessType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      ipv6AccessType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ipv6 access type (internal or external) when create_subnetwork is true
+     * </pre>
+     *
+     * <code>.google.container.v1.IPv6AccessType ipv6_access_type = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6AccessType() {
+
+      ipv6AccessType_ = 0;
       onChanged();
       return this;
     }
