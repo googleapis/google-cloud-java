@@ -107,6 +107,7 @@ https://devrel.corp.google.com/admin/products/479.
 Find product document URL in the DevRel Services site.
 For example, "https://cloud.google.com/api-keys/" in
 https://devrel.corp.google.com/admin/products/479.
+The value must starts with "https://".
 
 ### API description
 

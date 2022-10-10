@@ -125,6 +125,9 @@ def generate(
     if library_type is None:
         library_type = "GAPIC_AUTO"
 
+    if not product_docs.startswith("https"):
+        sys.exit("product_docs must starts with 'https://'")
+
     client_documentation = (
         f"https://cloud.google.com/{language}/docs/reference/{distribution_name_short}/latest/overview"
     )
