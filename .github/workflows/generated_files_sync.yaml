@@ -95,3 +95,22 @@ jobs:
           bash generation/update_owlbot_postprocessor_config.sh
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code
+
+  gitignore_correctness:
+    name: Generated files should not match gitignore
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: checking any files matching gitignore
+      shell: bash
+      run: |
+        find . -type f -name '*.java' -not -path './.git/*' \
+            |git check-ignore --no-index --verbose --stdin
+        if [ "$?" == 1 ]; then
+          echo "No matching files. Good."
+          exit 0
+        else
+          echo "There are gitignore matching files. Please adjust .gitignore."
+          exit 1
+        fi
+
