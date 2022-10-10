@@ -104,6 +104,10 @@
       "component": "google-cloud-bigquery-data-exchange",
       "skip-github-release": true
     },
+    "java-bigquerydatapolicy": {
+      "component": "google-cloud-bigquerydatapolicy",
+      "skip-github-release": true
+    },
     "java-bigquerydatatransfer": {
       "component": "google-cloud-bigquerydatatransfer",
       "skip-github-release": true
