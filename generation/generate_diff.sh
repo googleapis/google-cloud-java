@@ -69,8 +69,11 @@ modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | 
 for module in $modules; do
   echo "Running for ${module}"
   rm -rf "${module}"
-  retry_with_backoff 3 10 git clone "https://github.com/googleapis/${module}"
-  rm -rf "${module}/.git"
+  url="https://github.com/googleapis/${module}"
+  if curl --output /dev/null --silent --head --fail "${url}"; then
+    retry_with_backoff 3 10 git clone "${url}"
+    rm -rf "${module}/.git"
+  fi
   echo "Done running for ${module}"
 done
 
