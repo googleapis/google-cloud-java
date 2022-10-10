@@ -54,89 +54,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Schema(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              userManaged_ = input.readBool();
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fields_ =
-                    new java.util.ArrayList<com.google.cloud.dataplex.v1.Schema.SchemaField>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              fields_.add(
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.Schema.SchemaField.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                partitionFields_ =
-                    new java.util.ArrayList<com.google.cloud.dataplex.v1.Schema.PartitionField>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              partitionFields_.add(
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.Schema.PartitionField.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              partitionStyle_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        fields_ = java.util.Collections.unmodifiableList(fields_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        partitionFields_ = java.util.Collections.unmodifiableList(partitionFields_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.MetadataProto
         .internal_static_google_cloud_dataplex_v1_Schema_descriptor;
@@ -1134,90 +1051,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private SchemaField(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                name_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                description_ = s;
-                break;
-              }
-            case 24:
-              {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                mode_ = rawValue;
-                break;
-              }
-            case 82:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  fields_ =
-                      new java.util.ArrayList<com.google.cloud.dataplex.v1.Schema.SchemaField>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                fields_.add(
-                    input.readMessage(
-                        com.google.cloud.dataplex.v1.Schema.SchemaField.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          fields_ = java.util.Collections.unmodifiableList(fields_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.MetadataProto
           .internal_static_google_cloud_dataplex_v1_Schema_SchemaField_descriptor;
@@ -1525,7 +1358,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < fields_.size(); i++) {
         output.writeMessage(10, fields_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1549,7 +1382,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < fields_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, fields_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1570,7 +1403,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (type_ != other.type_) return false;
       if (mode_ != other.mode_) return false;
       if (!getFieldsList().equals(other.getFieldsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1593,7 +1426,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FIELDS_FIELD_NUMBER;
         hash = (53 * hash) + getFieldsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1724,19 +1557,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Schema.SchemaField.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getFieldsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -1752,10 +1576,11 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
         if (fieldsBuilder_ == null) {
           fields_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          fields_ = null;
           fieldsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -1890,7 +1715,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1905,18 +1730,69 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Schema.SchemaField parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  description_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 24:
+                {
+                  type_ = input.readEnum();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  mode_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 82:
+                {
+                  com.google.cloud.dataplex.v1.Schema.SchemaField m =
+                      input.readMessage(
+                          com.google.cloud.dataplex.v1.Schema.SchemaField.parser(),
+                          extensionRegistry);
+                  if (fieldsBuilder_ == null) {
+                    ensureFieldsIsMutable();
+                    fields_.add(m);
+                  } else {
+                    fieldsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.Schema.SchemaField) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2773,7 +2649,19 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SchemaField(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2891,59 +2779,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private PartitionField(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                name_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3074,7 +2909,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (type_ != com.google.cloud.dataplex.v1.Schema.Type.TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3089,7 +2924,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (type_ != com.google.cloud.dataplex.v1.Schema.Type.TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3107,7 +2942,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
       if (!getName().equals(other.getName())) return false;
       if (type_ != other.type_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3122,7 +2957,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3256,17 +3091,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Schema.PartitionField.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3364,7 +3192,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3379,18 +3207,43 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Schema.PartitionField parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  type_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.Schema.PartitionField) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3644,7 +3497,19 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PartitionField(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3931,7 +3796,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(4, partitionStyle_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3954,7 +3819,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, partitionStyle_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3973,7 +3838,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (!getFieldsList().equals(other.getFieldsList())) return false;
     if (!getPartitionFieldsList().equals(other.getPartitionFieldsList())) return false;
     if (partitionStyle_ != other.partitionStyle_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3996,7 +3861,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PARTITION_STYLE_FIELD_NUMBER;
     hash = (53 * hash) + partitionStyle_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4124,20 +3989,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataplex.v1.Schema.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFieldsFieldBuilder();
-        getPartitionFieldsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -4147,16 +4002,18 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        fields_ = null;
         fieldsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (partitionFieldsBuilder_ == null) {
         partitionFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        partitionFields_ = null;
         partitionFieldsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       partitionStyle_ = 0;
 
       return this;
@@ -4315,7 +4172,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (other.partitionStyle_ != 0) {
         setPartitionStyleValue(other.getPartitionStyleValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4330,17 +4187,71 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataplex.v1.Schema parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                userManaged_ = input.readBool();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                com.google.cloud.dataplex.v1.Schema.SchemaField m =
+                    input.readMessage(
+                        com.google.cloud.dataplex.v1.Schema.SchemaField.parser(),
+                        extensionRegistry);
+                if (fieldsBuilder_ == null) {
+                  ensureFieldsIsMutable();
+                  fields_.add(m);
+                } else {
+                  fieldsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.dataplex.v1.Schema.PartitionField m =
+                    input.readMessage(
+                        com.google.cloud.dataplex.v1.Schema.PartitionField.parser(),
+                        extensionRegistry);
+                if (partitionFieldsBuilder_ == null) {
+                  ensurePartitionFieldsIsMutable();
+                  partitionFields_.add(m);
+                } else {
+                  partitionFieldsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 32:
+              {
+                partitionStyle_ = input.readEnum();
+
+                break;
+              } // case 32
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataplex.v1.Schema) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5383,7 +5294,18 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Schema(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
