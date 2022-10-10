@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.17.1](https://github.com/googleapis/java-bigquery/compare/v2.17.0...v2.17.1) (2022-10-10)
+
+
+### Dependencies
+
+* Update cloud client dependencies ([#2335](https://github.com/googleapis/java-bigquery/issues/2335)) ([f8053d7](https://github.com/googleapis/java-bigquery/commit/f8053d7773d225b29e669976c6123b5d30ccd6a8))
+* Update cloud client dependencies ([#2337](https://github.com/googleapis/java-bigquery/issues/2337)) ([1194eac](https://github.com/googleapis/java-bigquery/commit/1194eacf23d947a0d923a3b3fd3f9460dfc996b3))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.5.6 ([#2336](https://github.com/googleapis/java-bigquery/issues/2336)) ([a86c759](https://github.com/googleapis/java-bigquery/commit/a86c7594d0c9e8a480297b028e108c86f4a1e12a))
+
 ## [2.17.0](https://github.com/googleapis/java-bigquery/compare/v2.16.1...v2.17.0) (2022-10-03)
 
 
