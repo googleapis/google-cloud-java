@@ -18,7 +18,7 @@ function apply_module_versions_file() {
   for KV in $(cut -f1,3 -d: $versions_file |grep -v "#"); do
     K=${KV%:*}; V=${KV#*:}
     echo Key:$K, Value:$V;
-    pom_files="$(find $MODULE -maxdepth 3 -name pom.xml) pom.xml CoverageAggregator/pom.xml google-cloud-gapic-bom/pom.xml"
+    pom_files="$(find . -maxdepth 3 -name pom.xml)"
     for P in $pom_files; do
       sed -i.bak -e "/x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}" $P && rm ${P}.bak
     done
