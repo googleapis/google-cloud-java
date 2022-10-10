@@ -56,107 +56,6 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private SearchAllResourcesRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              scope_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              query_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                assetTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              assetTypes_.add(s);
-              break;
-            }
-          case 32:
-            {
-              pageSize_ = input.readInt32();
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageToken_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              orderBy_ = s;
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.FieldMask.Builder subBuilder = null;
-              if (readMask_ != null) {
-                subBuilder = readMask_.toBuilder();
-              }
-              readMask_ =
-                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(readMask_);
-                readMask_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_SearchAllResourcesRequest_descriptor;
@@ -178,9 +77,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The
-   * search is limited to the resources within the `scope`. The caller must be
-   * granted the
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the resources within the `scope`. The caller must be granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -210,9 +108,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The
-   * search is limited to the resources within the `scope`. The caller must be
-   * granted the
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the resources within the `scope`. The caller must be granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -264,7 +161,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   and its value is "prod".
    * * `labels.env:*` to find Cloud resources that have a label "env".
    * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-   *   encryption key whose name contains the word "key".
+   *   encryption key whose name contains "key" as a word. This field is
+   *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+   *   information.
+   * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+   *   encryption keys whose name contains the word "key".
    * * `relationships:instance-group-1` to find Cloud resources that have
    *   relationships with "instance-group-1" in the related resource name.
    * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -332,7 +233,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   and its value is "prod".
    * * `labels.env:*` to find Cloud resources that have a label "env".
    * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-   *   encryption key whose name contains the word "key".
+   *   encryption key whose name contains "key" as a word. This field is
+   *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+   *   information.
+   * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+   *   encryption keys whose name contains the word "key".
    * * `relationships:instance-group-1` to find Cloud resources that have
    *   relationships with "instance-group-1" in the related resource name.
    * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -384,8 +289,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -408,8 +313,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -432,8 +337,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -457,8 +362,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -485,11 +390,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -507,10 +411,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -533,10 +437,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -562,9 +466,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
    *   * name
@@ -573,15 +477,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * displayName
    *   * description
    *   * location
-   *   * kmsKey
    *   * createTime
    *   * updateTime
    *   * state
    *   * parentFullResourceName
    *   * parentAssetType
-   * All the other fields such as repeated fields (e.g., `networkTags`), map
-   * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-   * are not supported.
+   * All the other fields such as repeated fields (e.g., `networkTags`,
+   * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+   * `additionalAttributes`) are not supported.
    * </pre>
    *
    * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -604,9 +507,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
    *   * name
@@ -615,15 +518,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * displayName
    *   * description
    *   * location
-   *   * kmsKey
    *   * createTime
    *   * updateTime
    *   * state
    *   * parentFullResourceName
    *   * parentAssetType
-   * All the other fields such as repeated fields (e.g., `networkTags`), map
-   * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-   * are not supported.
+   * All the other fields such as repeated fields (e.g., `networkTags`,
+   * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+   * `additionalAttributes`) are not supported.
    * </pre>
    *
    * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -649,10 +551,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be
-   * returned in ResourceSearchResult. Only '*' or combination of top level
-   * fields can be specified. Field names of both snake_case and camelCase are
-   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -666,7 +568,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * tagValueIds
    *   * labels
    *   * networkTags
-   *   * kmsKey
+   *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+   *     retrieve KMS key information.)
+   *   * kmsKeys
    *   * createTime
    *   * updateTime
    *   * state
@@ -692,10 +596,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be
-   * returned in ResourceSearchResult. Only '*' or combination of top level
-   * fields can be specified. Field names of both snake_case and camelCase are
-   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -709,7 +613,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * tagValueIds
    *   * labels
    *   * networkTags
-   *   * kmsKey
+   *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+   *     retrieve KMS key information.)
+   *   * kmsKeys
    *   * createTime
    *   * updateTime
    *   * state
@@ -735,10 +641,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be
-   * returned in ResourceSearchResult. Only '*' or combination of top level
-   * fields can be specified. Field names of both snake_case and camelCase are
-   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -752,7 +658,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *   * tagValueIds
    *   * labels
    *   * networkTags
-   *   * kmsKey
+   *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+   *     retrieve KMS key information.)
+   *   * kmsKeys
    *   * createTime
    *   * updateTime
    *   * state
@@ -808,7 +716,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (readMask_ != null) {
       output.writeMessage(8, getReadMask());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -843,7 +751,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (readMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getReadMask());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -869,7 +777,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     if (hasReadMask()) {
       if (!getReadMask().equals(other.getReadMask())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -898,7 +806,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       hash = (37 * hash) + READ_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getReadMask().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1027,17 +935,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.asset.v1.SearchAllResourcesRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1186,7 +1087,7 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
       if (other.hasReadMask()) {
         mergeReadMask(other.getReadMask());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1201,18 +1102,74 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.asset.v1.SearchAllResourcesRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                scope_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                query_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAssetTypesIsMutable();
+                assetTypes_.add(s);
+                break;
+              } // case 26
+            case 32:
+              {
+                pageSize_ = input.readInt32();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 66:
+              {
+                input.readMessage(getReadMaskFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.asset.v1.SearchAllResourcesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1223,9 +1180,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the resources within the `scope`. The caller must be
-     * granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1254,9 +1210,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the resources within the `scope`. The caller must be
-     * granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1285,9 +1240,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the resources within the `scope`. The caller must be
-     * granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1315,9 +1269,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the resources within the `scope`. The caller must be
-     * granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1341,9 +1294,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the resources within the `scope`. The caller must be
-     * granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the resources within the `scope`. The caller must be granted the
      * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1393,7 +1345,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
      * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-     *   encryption key whose name contains the word "key".
+     *   encryption key whose name contains "key" as a word. This field is
+     *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+     *   information.
+     * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+     *   encryption keys whose name contains the word "key".
      * * `relationships:instance-group-1` to find Cloud resources that have
      *   relationships with "instance-group-1" in the related resource name.
      * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -1460,7 +1416,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
      * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-     *   encryption key whose name contains the word "key".
+     *   encryption key whose name contains "key" as a word. This field is
+     *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+     *   information.
+     * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+     *   encryption keys whose name contains the word "key".
      * * `relationships:instance-group-1` to find Cloud resources that have
      *   relationships with "instance-group-1" in the related resource name.
      * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -1527,7 +1487,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
      * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-     *   encryption key whose name contains the word "key".
+     *   encryption key whose name contains "key" as a word. This field is
+     *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+     *   information.
+     * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+     *   encryption keys whose name contains the word "key".
      * * `relationships:instance-group-1` to find Cloud resources that have
      *   relationships with "instance-group-1" in the related resource name.
      * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -1593,7 +1557,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
      * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-     *   encryption key whose name contains the word "key".
+     *   encryption key whose name contains "key" as a word. This field is
+     *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+     *   information.
+     * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+     *   encryption keys whose name contains the word "key".
      * * `relationships:instance-group-1` to find Cloud resources that have
      *   relationships with "instance-group-1" in the related resource name.
      * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -1655,7 +1623,11 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   and its value is "prod".
      * * `labels.env:*` to find Cloud resources that have a label "env".
      * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
-     *   encryption key whose name contains the word "key".
+     *   encryption key whose name contains "key" as a word. This field is
+     *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
+     *   information.
+     * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
+     *   encryption keys whose name contains the word "key".
      * * `relationships:instance-group-1` to find Cloud resources that have
      *   relationships with "instance-group-1" in the related resource name.
      * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
@@ -1713,8 +1685,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1737,8 +1709,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1761,8 +1733,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1786,8 +1758,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1811,8 +1783,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1843,8 +1815,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1874,8 +1846,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1902,8 +1874,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1929,8 +1901,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the [searchable asset
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -1963,11 +1935,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1982,11 +1953,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2004,11 +1974,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2027,10 +1996,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2052,10 +2021,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2077,10 +2046,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2101,10 +2070,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2121,10 +2090,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method. `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method. `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2148,9 +2117,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
      *   * name
@@ -2159,15 +2128,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * displayName
      *   * description
      *   * location
-     *   * kmsKey
      *   * createTime
      *   * updateTime
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
-     * All the other fields such as repeated fields (e.g., `networkTags`), map
-     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-     * are not supported.
+     * All the other fields such as repeated fields (e.g., `networkTags`,
+     * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+     * `additionalAttributes`) are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2189,9 +2157,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
      *   * name
@@ -2200,15 +2168,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * displayName
      *   * description
      *   * location
-     *   * kmsKey
      *   * createTime
      *   * updateTime
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
-     * All the other fields such as repeated fields (e.g., `networkTags`), map
-     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-     * are not supported.
+     * All the other fields such as repeated fields (e.g., `networkTags`,
+     * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+     * `additionalAttributes`) are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2230,9 +2197,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
      *   * name
@@ -2241,15 +2208,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * displayName
      *   * description
      *   * location
-     *   * kmsKey
      *   * createTime
      *   * updateTime
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
-     * All the other fields such as repeated fields (e.g., `networkTags`), map
-     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-     * are not supported.
+     * All the other fields such as repeated fields (e.g., `networkTags`,
+     * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+     * `additionalAttributes`) are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2270,9 +2236,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
      *   * name
@@ -2281,15 +2247,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * displayName
      *   * description
      *   * location
-     *   * kmsKey
      *   * createTime
      *   * updateTime
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
-     * All the other fields such as repeated fields (e.g., `networkTags`), map
-     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-     * are not supported.
+     * All the other fields such as repeated fields (e.g., `networkTags`,
+     * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+     * `additionalAttributes`) are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2306,9 +2271,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "location DESC, name".
      * Only singular primitive fields in the response are sortable:
      *   * name
@@ -2317,15 +2282,14 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * displayName
      *   * description
      *   * location
-     *   * kmsKey
      *   * createTime
      *   * updateTime
      *   * state
      *   * parentFullResourceName
      *   * parentAssetType
-     * All the other fields such as repeated fields (e.g., `networkTags`), map
-     * fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
-     * are not supported.
+     * All the other fields such as repeated fields (e.g., `networkTags`,
+     * `kmsKeys`), map fields (e.g., `labels`) and struct fields (e.g.,
+     * `additionalAttributes`) are not supported.
      * </pre>
      *
      * <code>string order_by = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2354,10 +2318,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2371,7 +2335,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2396,10 +2362,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2413,7 +2379,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2442,10 +2410,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2459,7 +2427,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2492,10 +2462,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2509,7 +2479,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2539,10 +2511,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2556,7 +2528,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2591,10 +2565,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2608,7 +2582,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2639,10 +2615,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2656,7 +2632,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2681,10 +2659,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2698,7 +2676,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2725,10 +2705,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying which fields to be
-     * returned in ResourceSearchResult. Only '*' or combination of top level
-     * fields can be specified. Field names of both snake_case and camelCase are
-     * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     * Optional. A comma-separated list of fields specifying which fields to be returned in
+     * ResourceSearchResult. Only '*' or combination of top level fields can be
+     * specified. Field names of both snake_case and camelCase are supported.
+     * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
      * The read_mask paths must be valid field paths listed but not limited to
      * (both snake_case and camelCase are supported):
      *   * name
@@ -2742,7 +2722,9 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *   * tagValueIds
      *   * labels
      *   * networkTags
-     *   * kmsKey
+     *   * kmsKey (This field is deprecated. Please use the `kmsKeys` field to
+     *     retrieve KMS key information.)
+     *   * kmsKeys
      *   * createTime
      *   * updateTime
      *   * state
@@ -2807,7 +2789,18 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SearchAllResourcesRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

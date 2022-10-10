@@ -56,136 +56,6 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private VodSession(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.video.stitcher.v1.Interstitials.Builder subBuilder = null;
-              if (interstitials_ != null) {
-                subBuilder = interstitials_.toBuilder();
-              }
-              interstitials_ =
-                  input.readMessage(
-                      com.google.cloud.video.stitcher.v1.Interstitials.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(interstitials_);
-                interstitials_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              playUri_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceUri_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              adTagUri_ = s;
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                adTagMacroMap_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AdTagMacroMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> adTagMacroMap__ =
-                  input.readMessage(
-                      AdTagMacroMapDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              adTagMacroMap_
-                  .getMutableMap()
-                  .put(adTagMacroMap__.getKey(), adTagMacroMap__.getValue());
-              break;
-            }
-          case 64:
-            {
-              clientAdTracking_ = input.readBool();
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.video.stitcher.v1.ManifestOptions.Builder subBuilder = null;
-              if (manifestOptions_ != null) {
-                subBuilder = manifestOptions_.toBuilder();
-              }
-              manifestOptions_ =
-                  input.readMessage(
-                      com.google.cloud.video.stitcher.v1.ManifestOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(manifestOptions_);
-                manifestOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              assetId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.SessionsProto
         .internal_static_google_cloud_video_stitcher_v1_VodSession_descriptor;
@@ -757,7 +627,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, assetId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -800,7 +670,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, assetId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -831,7 +701,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (!getManifestOptions().equals(other.getManifestOptions())) return false;
     }
     if (!getAssetId().equals(other.getAssetId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -866,7 +736,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAssetId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1015,17 +885,10 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.stitcher.v1.VodSession.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1181,7 +1044,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         assetId_ = other.assetId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1196,17 +1059,90 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.stitcher.v1.VodSession parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getInterstitialsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 34:
+              {
+                playUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                sourceUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                adTagUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> adTagMacroMap__ =
+                    input.readMessage(
+                        AdTagMacroMapDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAdTagMacroMap()
+                    .getMutableMap()
+                    .put(adTagMacroMap__.getKey(), adTagMacroMap__.getValue());
+                break;
+              } // case 58
+            case 64:
+              {
+                clientAdTracking_ = input.readBool();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(getManifestOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                assetId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.video.stitcher.v1.VodSession) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2454,7 +2390,18 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VodSession(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

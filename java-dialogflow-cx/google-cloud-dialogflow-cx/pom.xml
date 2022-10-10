@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-cx</artifactId>
-  <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+  <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   <packaging>jar</packaging>
   <name>Google Dialogflow CX</name>
   <url>https://github.com/googleapis/java-dialogflow-cx</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-cx-parent</artifactId>
-    <version>0.14.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+    <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dialogflow-cx</site.installationModule>

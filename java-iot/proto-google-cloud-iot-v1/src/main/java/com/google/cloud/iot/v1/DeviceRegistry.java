@@ -56,144 +56,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DeviceRegistry(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.iot.v1.MqttConfig.Builder subBuilder = null;
-              if (mqttConfig_ != null) {
-                subBuilder = mqttConfig_.toBuilder();
-              }
-              mqttConfig_ =
-                  input.readMessage(com.google.cloud.iot.v1.MqttConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mqttConfig_);
-                mqttConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.iot.v1.StateNotificationConfig.Builder subBuilder = null;
-              if (stateNotificationConfig_ != null) {
-                subBuilder = stateNotificationConfig_.toBuilder();
-              }
-              stateNotificationConfig_ =
-                  input.readMessage(
-                      com.google.cloud.iot.v1.StateNotificationConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stateNotificationConfig_);
-                stateNotificationConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                credentials_ =
-                    new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              credentials_.add(
-                  input.readMessage(
-                      com.google.cloud.iot.v1.RegistryCredential.parser(), extensionRegistry));
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.iot.v1.HttpConfig.Builder subBuilder = null;
-              if (httpConfig_ != null) {
-                subBuilder = httpConfig_.toBuilder();
-              }
-              httpConfig_ =
-                  input.readMessage(com.google.cloud.iot.v1.HttpConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(httpConfig_);
-                httpConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                eventNotificationConfigs_ =
-                    new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              eventNotificationConfigs_.add(
-                  input.readMessage(
-                      com.google.cloud.iot.v1.EventNotificationConfig.parser(), extensionRegistry));
-              break;
-            }
-          case 88:
-            {
-              int rawValue = input.readEnum();
-
-              logLevel_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        credentials_ = java.util.Collections.unmodifiableList(credentials_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        eventNotificationConfigs_ =
-            java.util.Collections.unmodifiableList(eventNotificationConfigs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto
         .internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
@@ -776,7 +638,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(11, logLevel_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -812,7 +674,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, logLevel_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -845,7 +707,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     }
     if (logLevel_ != other.logLevel_) return false;
     if (!getCredentialsList().equals(other.getCredentialsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -882,7 +744,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREDENTIALS_FIELD_NUMBER;
       hash = (53 * hash) + getCredentialsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1011,20 +873,10 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.iot.v1.DeviceRegistry.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getEventNotificationConfigsFieldBuilder();
-        getCredentialsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1036,10 +888,11 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
       if (eventNotificationConfigsBuilder_ == null) {
         eventNotificationConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        eventNotificationConfigs_ = null;
         eventNotificationConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (stateNotificationConfigBuilder_ == null) {
         stateNotificationConfig_ = null;
       } else {
@@ -1062,10 +915,11 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
 
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        credentials_ = null;
         credentialsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1254,7 +1108,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1269,17 +1123,95 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.iot.v1.DeviceRegistry parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getMqttConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 58:
+              {
+                input.readMessage(
+                    getStateNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.iot.v1.RegistryCredential m =
+                    input.readMessage(
+                        com.google.cloud.iot.v1.RegistryCredential.parser(), extensionRegistry);
+                if (credentialsBuilder_ == null) {
+                  ensureCredentialsIsMutable();
+                  credentials_.add(m);
+                } else {
+                  credentialsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getHttpConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.cloud.iot.v1.EventNotificationConfig m =
+                    input.readMessage(
+                        com.google.cloud.iot.v1.EventNotificationConfig.parser(),
+                        extensionRegistry);
+                if (eventNotificationConfigsBuilder_ == null) {
+                  ensureEventNotificationConfigsIsMutable();
+                  eventNotificationConfigs_.add(m);
+                } else {
+                  eventNotificationConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 88:
+              {
+                logLevel_ = input.readEnum();
+
+                break;
+              } // case 88
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.iot.v1.DeviceRegistry) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3277,7 +3209,18 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeviceRegistry(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

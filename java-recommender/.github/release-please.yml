@@ -1,8 +1,0 @@
-bumpMinorPreMajor: true
-handleGHRelease: true
-releaseType: java-yoshi
-branches:
-  - bumpMinorPreMajor: true
-    handleGHRelease: true
-    releaseType: java-yoshi
-    branch: java7

@@ -52,130 +52,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private RepricingConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.type.Date.Builder subBuilder = null;
-              if (effectiveInvoiceMonth_ != null) {
-                subBuilder = effectiveInvoiceMonth_.toBuilder();
-              }
-              effectiveInvoiceMonth_ =
-                  input.readMessage(com.google.type.Date.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(effectiveInvoiceMonth_);
-                effectiveInvoiceMonth_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.channel.v1.RepricingAdjustment.Builder subBuilder = null;
-              if (adjustment_ != null) {
-                subBuilder = adjustment_.toBuilder();
-              }
-              adjustment_ =
-                  input.readMessage(
-                      com.google.cloud.channel.v1.RepricingAdjustment.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(adjustment_);
-                adjustment_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              rebillingBasis_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.Builder
-                  subBuilder = null;
-              if (granularityCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity)
-                            granularity_)
-                        .toBuilder();
-              }
-              granularity_ =
-                  input.readMessage(
-                      com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity)
-                        granularity_);
-                granularity_ = subBuilder.buildPartial();
-              }
-              granularityCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity.Builder
-                  subBuilder = null;
-              if (granularityCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
-                            granularity_)
-                        .toBuilder();
-              }
-              granularity_ =
-                  input.readMessage(
-                      com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
-                        granularity_);
-                granularity_ = subBuilder.buildPartial();
-              }
-              granularityCase_ = 5;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.RepricingProto
         .internal_static_google_cloud_channel_v1_RepricingConfig_descriptor;
@@ -257,52 +133,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private EntitlementGranularity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                entitlement_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -390,7 +220,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entitlement_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entitlement_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -402,7 +232,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entitlement_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entitlement_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -419,7 +249,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           (com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity) obj;
 
       if (!getEntitlement().equals(other.getEntitlement())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -432,7 +262,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENTITLEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getEntitlement().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -566,17 +396,10 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -673,7 +496,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           entitlement_ = other.entitlement_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -688,19 +511,37 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  entitlement_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -855,7 +696,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EntitlementGranularity(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -913,45 +766,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       return this.unknownFields;
     }
 
-    private ChannelPartnerGranularity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.channel.v1.RepricingProto
           .internal_static_google_cloud_channel_v1_RepricingConfig_ChannelPartnerGranularity_descriptor;
@@ -981,7 +795,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -990,7 +804,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1006,7 +820,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity other =
           (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1017,7 +831,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1154,17 +968,10 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1256,7 +1063,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         if (other
             == com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
                 .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1271,19 +1078,31 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1323,7 +1142,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ChannelPartnerGranularity(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1698,7 +1529,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           5, (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity) granularity_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1729,7 +1560,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
               5,
               (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity) granularity_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1766,7 +1597,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1799,7 +1630,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1928,22 +1759,21 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.channel.v1.RepricingConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (entitlementGranularityBuilder_ != null) {
+        entitlementGranularityBuilder_.clear();
+      }
+      if (channelPartnerGranularityBuilder_ != null) {
+        channelPartnerGranularityBuilder_.clear();
+      }
       if (effectiveInvoiceMonthBuilder_ == null) {
         effectiveInvoiceMonth_ = null;
       } else {
@@ -2087,7 +1917,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2102,17 +1932,64 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.channel.v1.RepricingConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getEffectiveInvoiceMonthFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getAdjustmentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 24:
+              {
+                rebillingBasis_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getEntitlementGranularityFieldBuilder().getBuilder(), extensionRegistry);
+                granularityCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getChannelPartnerGranularityFieldBuilder().getBuilder(), extensionRegistry);
+                granularityCase_ = 5;
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.channel.v1.RepricingConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3183,7 +3060,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RepricingConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

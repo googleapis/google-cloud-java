@@ -55,125 +55,6 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private TimeSeriesFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.monitoring.dashboard.v1.Aggregation.Builder subBuilder = null;
-              if (aggregation_ != null) {
-                subBuilder = aggregation_.toBuilder();
-              }
-              aggregation_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.Aggregation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(aggregation_);
-                aggregation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.monitoring.dashboard.v1.Aggregation.Builder subBuilder = null;
-              if (secondaryAggregation_ != null) {
-                subBuilder = secondaryAggregation_.toBuilder();
-              }
-              secondaryAggregation_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.Aggregation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(secondaryAggregation_);
-                secondaryAggregation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Builder subBuilder = null;
-              if (outputFilterCase_ == 4) {
-                subBuilder =
-                    ((com.google.monitoring.dashboard.v1.PickTimeSeriesFilter) outputFilter_)
-                        .toBuilder();
-              }
-              outputFilter_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.dashboard.v1.PickTimeSeriesFilter) outputFilter_);
-                outputFilter_ = subBuilder.buildPartial();
-              }
-              outputFilterCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Builder subBuilder =
-                  null;
-              if (outputFilterCase_ == 5) {
-                subBuilder =
-                    ((com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter) outputFilter_)
-                        .toBuilder();
-              }
-              outputFilter_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter) outputFilter_);
-                outputFilter_ = subBuilder.buildPartial();
-              }
-              outputFilterCase_ = 5;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.MetricsProto
         .internal_static_google_monitoring_dashboard_v1_TimeSeriesFilter_descriptor;
@@ -543,7 +424,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           5, (com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter) outputFilter_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -572,7 +453,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter) outputFilter_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -609,7 +490,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -642,7 +523,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -774,17 +655,10 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.monitoring.dashboard.v1.TimeSeriesFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -803,6 +677,12 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       } else {
         secondaryAggregation_ = null;
         secondaryAggregationBuilder_ = null;
+      }
+      if (pickTimeSeriesFilterBuilder_ != null) {
+        pickTimeSeriesFilterBuilder_.clear();
+      }
+      if (statisticalTimeSeriesFilterBuilder_ != null) {
+        statisticalTimeSeriesFilterBuilder_.clear();
       }
       outputFilterCase_ = 0;
       outputFilter_ = null;
@@ -935,7 +815,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -950,18 +830,64 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.monitoring.dashboard.v1.TimeSeriesFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                filter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getAggregationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getSecondaryAggregationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getPickTimeSeriesFilterFieldBuilder().getBuilder(), extensionRegistry);
+                outputFilterCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getStatisticalTimeSeriesFilterFieldBuilder().getBuilder(), extensionRegistry);
+                outputFilterCase_ = 5;
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.monitoring.dashboard.v1.TimeSeriesFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1996,7 +1922,18 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TimeSeriesFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

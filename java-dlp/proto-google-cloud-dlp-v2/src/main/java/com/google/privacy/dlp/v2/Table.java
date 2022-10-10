@@ -55,73 +55,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Table(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                headers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              headers_.add(
-                  input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                rows_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Table.Row>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              rows_.add(
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.Table.Row.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        headers_ = java.util.Collections.unmodifiableList(headers_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        rows_ = java.util.Collections.unmodifiableList(rows_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_Table_descriptor;
@@ -226,59 +159,6 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Row(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  values_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Value>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                values_.add(
-                    input.readMessage(com.google.privacy.dlp.v2.Value.parser(), extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.privacy.dlp.v2.DlpProto
           .internal_static_google_privacy_dlp_v2_Table_Row_descriptor;
@@ -380,7 +260,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < values_.size(); i++) {
         output.writeMessage(1, values_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -392,7 +272,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < values_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, values_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -408,7 +288,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       com.google.privacy.dlp.v2.Table.Row other = (com.google.privacy.dlp.v2.Table.Row) obj;
 
       if (!getValuesList().equals(other.getValuesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -423,7 +303,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + VALUES_FIELD_NUMBER;
         hash = (53 * hash) + getValuesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -553,19 +433,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.privacy.dlp.v2.Table.Row.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getValuesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -573,10 +444,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (valuesBuilder_ == null) {
           values_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          values_ = null;
           valuesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -691,7 +563,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -706,17 +578,44 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.privacy.dlp.v2.Table.Row parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.privacy.dlp.v2.Value m =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.Value.parser(), extensionRegistry);
+                  if (valuesBuilder_ == null) {
+                    ensureValuesIsMutable();
+                    values_.add(m);
+                  } else {
+                    valuesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.Table.Row) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1101,7 +1000,19 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Row(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1278,7 +1189,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rows_.size(); i++) {
       output.writeMessage(2, rows_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1293,7 +1204,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < rows_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, rows_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1310,7 +1221,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     if (!getHeadersList().equals(other.getHeadersList())) return false;
     if (!getRowsList().equals(other.getRowsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1329,7 +1240,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ROWS_FIELD_NUMBER;
       hash = (53 * hash) + getRowsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1458,20 +1369,10 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.privacy.dlp.v2.Table.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getHeadersFieldBuilder();
-        getRowsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1479,16 +1380,18 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (headersBuilder_ == null) {
         headers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        headers_ = null;
         headersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (rowsBuilder_ == null) {
         rows_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        rows_ = null;
         rowsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1637,7 +1540,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1652,17 +1555,57 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.Table parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.privacy.dlp.v2.FieldId m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry);
+                if (headersBuilder_ == null) {
+                  ensureHeadersIsMutable();
+                  headers_.add(m);
+                } else {
+                  headersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.privacy.dlp.v2.Table.Row m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.Table.Row.parser(), extensionRegistry);
+                if (rowsBuilder_ == null) {
+                  ensureRowsIsMutable();
+                  rows_.add(m);
+                } else {
+                  rowsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.Table) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2394,7 +2337,18 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Table(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

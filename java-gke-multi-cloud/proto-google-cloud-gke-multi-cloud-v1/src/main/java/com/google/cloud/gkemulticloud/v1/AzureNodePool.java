@@ -58,196 +58,6 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AzureNodePool(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetId_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling.Builder subBuilder = null;
-              if (autoscaling_ != null) {
-                subBuilder = autoscaling_.toBuilder();
-              }
-              autoscaling_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(autoscaling_);
-                autoscaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 72:
-            {
-              reconciling_ = input.readBool();
-              break;
-            }
-          case 82:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 106:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 170:
-            {
-              com.google.cloud.gkemulticloud.v1.MaxPodsConstraint.Builder subBuilder = null;
-              if (maxPodsConstraint_ != null) {
-                subBuilder = maxPodsConstraint_.toBuilder();
-              }
-              maxPodsConstraint_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.MaxPodsConstraint.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(maxPodsConstraint_);
-                maxPodsConstraint_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 178:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureNodeConfig.Builder subBuilder = null;
-              if (config_ != null) {
-                subBuilder = config_.toBuilder();
-              }
-              config_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureNodeConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(config_);
-                config_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 186:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              azureAvailabilityZone_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureNodePool_descriptor;
@@ -1351,7 +1161,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(azureAvailabilityZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, azureAvailabilityZone_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1410,7 +1220,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(azureAvailabilityZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, azureAvailabilityZone_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1455,7 +1265,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
       if (!getMaxPodsConstraint().equals(other.getMaxPodsConstraint())) return false;
     }
     if (!getAzureAvailabilityZone().equals(other.getAzureAvailabilityZone())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1506,7 +1316,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + AZURE_AVAILABILITY_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getAzureAvailabilityZone().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1655,17 +1465,10 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gkemulticloud.v1.AzureNodePool.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1877,7 +1680,7 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
         azureAvailabilityZone_ = other.azureAvailabilityZone_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1892,17 +1695,121 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkemulticloud.v1.AzureNodePool parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                version_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                subnetId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 48:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 66:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 72:
+              {
+                reconciling_ = input.readBool();
+
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 106:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 106
+            case 170:
+              {
+                input.readMessage(
+                    getMaxPodsConstraintFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            case 186:
+              {
+                azureAvailabilityZone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 186
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gkemulticloud.v1.AzureNodePool) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4026,7 +3933,18 @@ public final class AzureNodePool extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AzureNodePool(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

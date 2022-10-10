@@ -50,124 +50,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return this.unknownFields;
   }
 
-  private InstanceGroupManagerActionsSummary(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 27097536:
-            {
-              bitField0_ |= 0x00000010;
-              none_ = input.readInt32();
-              break;
-            }
-          case 232911152:
-            {
-              bitField0_ |= 0x00000800;
-              suspending_ = input.readInt32();
-              break;
-            }
-          case 840287136:
-            {
-              bitField0_ |= 0x00000400;
-              stopping_ = input.readInt32();
-              break;
-            }
-          case 1608805712:
-            {
-              bitField0_ |= 0x00000100;
-              resuming_ = input.readInt32();
-              break;
-            }
-          case 1678472648:
-            {
-              bitField0_ |= 0x00000002;
-              creating_ = input.readInt32();
-              break;
-            }
-          case 1720359224:
-            {
-              bitField0_ |= 0x00000040;
-              refreshing_ = input.readInt32();
-              break;
-            }
-          case 1944519168:
-            {
-              bitField0_ |= 0x00000200;
-              starting_ = input.readInt32();
-              break;
-            }
-          case -2032198336:
-            {
-              bitField0_ |= 0x00000008;
-              deleting_ = input.readInt32();
-              break;
-            }
-          case -1582510240:
-            {
-              bitField0_ |= 0x00000020;
-              recreating_ = input.readInt32();
-              break;
-            }
-          case -1335633336:
-            {
-              bitField0_ |= 0x00000004;
-              creatingWithoutRetries_ = input.readInt32();
-              break;
-            }
-          case -1316463720:
-            {
-              bitField0_ |= 0x00000080;
-              restarting_ = input.readInt32();
-              break;
-            }
-          case -774780312:
-            {
-              bitField0_ |= 0x00000001;
-              abandoning_ = input.readInt32();
-              break;
-            }
-          case -682064312:
-            {
-              bitField0_ |= 0x00001000;
-              verifying_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InstanceGroupManagerActionsSummary_descriptor;
@@ -666,7 +548,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt32(451612873, verifying_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -716,7 +598,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(451612873, verifying_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -784,7 +666,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (hasVerifying()) {
       if (getVerifying() != other.getVerifying()) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -847,7 +729,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       hash = (37 * hash) + VERIFYING_FIELD_NUMBER;
       hash = (53 * hash) + getVerifying();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -976,17 +858,10 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     }
 
     // Construct using com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1191,7 +1066,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
       if (other.hasVerifying()) {
         setVerifying(other.getVerifying());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1206,19 +1081,109 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 27097536:
+              {
+                none_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 27097536
+            case 232911152:
+              {
+                suspending_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 232911152
+            case 840287136:
+              {
+                stopping_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 840287136
+            case 1608805712:
+              {
+                resuming_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 1608805712
+            case 1678472648:
+              {
+                creating_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1678472648
+            case 1720359224:
+              {
+                refreshing_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 1720359224
+            case 1944519168:
+              {
+                starting_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1944519168
+            case -2032198336:
+              {
+                deleting_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -2032198336
+            case -1582510240:
+              {
+                recreating_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -1582510240
+            case -1335633336:
+              {
+                creatingWithoutRetries_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1335633336
+            case -1316463720:
+              {
+                restarting_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case -1316463720
+            case -774780312:
+              {
+                abandoning_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -774780312
+            case -682064312:
+              {
+                verifying_ = input.readInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case -682064312
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2129,7 +2094,18 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InstanceGroupManagerActionsSummary(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

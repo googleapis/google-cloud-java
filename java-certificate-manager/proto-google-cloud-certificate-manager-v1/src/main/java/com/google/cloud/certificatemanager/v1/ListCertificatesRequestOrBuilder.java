@@ -27,8 +27,8 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location from which the certificate should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The project and location from which the certificate should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location from which the certificate should be listed,
-   * specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The project and location from which the certificate should be
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>

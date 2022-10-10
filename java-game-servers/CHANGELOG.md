@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.3](https://github.com/googleapis/java-game-servers/compare/v2.3.2...v2.3.3) (2022-09-15)
+
+
+### Bug Fixes
+
+* Ignore samples tests ([#707](https://github.com/googleapis/java-game-servers/issues/707)) ([154c39b](https://github.com/googleapis/java-game-servers/commit/154c39b93f241d11deeb3f1df31ba2480755f73c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#712](https://github.com/googleapis/java-game-servers/issues/712)) ([9a042a3](https://github.com/googleapis/java-game-servers/commit/9a042a39d44fff3f582f4070e77f98e9881fb1e1))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#714](https://github.com/googleapis/java-game-servers/issues/714)) ([2c6cc77](https://github.com/googleapis/java-game-servers/commit/2c6cc775383940e1871386ddaa99c6065f882af7))
+
 ## [2.3.2](https://github.com/googleapis/java-game-servers/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

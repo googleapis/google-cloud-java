@@ -17,6 +17,8 @@
 package com.google.cloud.deploy.v1;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListRolloutsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedResponse;
@@ -31,9 +33,22 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.deploy.v1.stub.HttpJsonCloudDeployStub;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -201,6 +216,7 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCondition(PipelineCondition.newBuilder().build())
             .setEtag("etag3123477")
+            .setSuspended(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -257,6 +273,7 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCondition(PipelineCondition.newBuilder().build())
             .setEtag("etag3123477")
+            .setSuspended(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -313,6 +330,7 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCondition(PipelineCondition.newBuilder().build())
             .setEtag("etag3123477")
+            .setSuspended(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -377,6 +395,7 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCondition(PipelineCondition.newBuilder().build())
             .setEtag("etag3123477")
+            .setSuspended(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -441,6 +460,7 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCondition(PipelineCondition.newBuilder().build())
             .setEtag("etag3123477")
+            .setSuspended(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -463,6 +483,7 @@ public class CloudDeployClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCondition(PipelineCondition.newBuilder().build())
             .setEtag("etag3123477")
+            .setSuspended(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -506,6 +527,7 @@ public class CloudDeployClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setCondition(PipelineCondition.newBuilder().build())
               .setEtag("etag3123477")
+              .setSuspended(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeliveryPipelineAsync(deliveryPipeline, updateMask).get();
@@ -1234,6 +1256,7 @@ public class CloudDeployClientHttpJsonTest {
             .setDescription("description-1724546052")
             .putAllAnnotations(new HashMap<String, String>())
             .putAllLabels(new HashMap<String, String>())
+            .setAbandoned(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setRenderStartTime(Timestamp.newBuilder().build())
             .setRenderEndTime(Timestamp.newBuilder().build())
@@ -1298,6 +1321,7 @@ public class CloudDeployClientHttpJsonTest {
             .setDescription("description-1724546052")
             .putAllAnnotations(new HashMap<String, String>())
             .putAllLabels(new HashMap<String, String>())
+            .setAbandoned(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setRenderStartTime(Timestamp.newBuilder().build())
             .setRenderEndTime(Timestamp.newBuilder().build())
@@ -1362,6 +1386,7 @@ public class CloudDeployClientHttpJsonTest {
             .setDescription("description-1724546052")
             .putAllAnnotations(new HashMap<String, String>())
             .putAllLabels(new HashMap<String, String>())
+            .setAbandoned(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setRenderStartTime(Timestamp.newBuilder().build())
             .setRenderEndTime(Timestamp.newBuilder().build())
@@ -1435,6 +1460,7 @@ public class CloudDeployClientHttpJsonTest {
             .setDescription("description-1724546052")
             .putAllAnnotations(new HashMap<String, String>())
             .putAllLabels(new HashMap<String, String>())
+            .setAbandoned(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setRenderStartTime(Timestamp.newBuilder().build())
             .setRenderEndTime(Timestamp.newBuilder().build())
@@ -1494,6 +1520,92 @@ public class CloudDeployClientHttpJsonTest {
       client.createReleaseAsync(parent, release, releaseId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void abandonReleaseTest() throws Exception {
+    AbandonReleaseResponse expectedResponse = AbandonReleaseResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ReleaseName name =
+        ReleaseName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]");
+
+    AbandonReleaseResponse actualResponse = client.abandonRelease(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void abandonReleaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReleaseName name =
+          ReleaseName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]");
+      client.abandonRelease(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void abandonReleaseTest2() throws Exception {
+    AbandonReleaseResponse expectedResponse = AbandonReleaseResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-835/locations/location-835/deliveryPipelines/deliveryPipeline-835/releases/release-835";
+
+    AbandonReleaseResponse actualResponse = client.abandonRelease(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void abandonReleaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-835/locations/location-835/deliveryPipelines/deliveryPipeline-835/releases/release-835";
+      client.abandonRelease(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -1709,6 +1821,8 @@ public class CloudDeployClientHttpJsonTest {
             .setFailureReason("failureReason-1990598546")
             .setDeployingBuild("deployingBuild-1935837805")
             .setEtag("etag3123477")
+            .addAllPhases(new ArrayList<Phase>())
+            .setMetadata(Metadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1772,6 +1886,8 @@ public class CloudDeployClientHttpJsonTest {
             .setFailureReason("failureReason-1990598546")
             .setDeployingBuild("deployingBuild-1935837805")
             .setEtag("etag3123477")
+            .addAllPhases(new ArrayList<Phase>())
+            .setMetadata(Metadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1834,6 +1950,8 @@ public class CloudDeployClientHttpJsonTest {
             .setFailureReason("failureReason-1990598546")
             .setDeployingBuild("deployingBuild-1935837805")
             .setEtag("etag3123477")
+            .addAllPhases(new ArrayList<Phase>())
+            .setMetadata(Metadata.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1905,6 +2023,8 @@ public class CloudDeployClientHttpJsonTest {
             .setFailureReason("failureReason-1990598546")
             .setDeployingBuild("deployingBuild-1935837805")
             .setEtag("etag3123477")
+            .addAllPhases(new ArrayList<Phase>())
+            .setMetadata(Metadata.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1952,6 +2072,340 @@ public class CloudDeployClientHttpJsonTest {
       client.createRolloutAsync(parent, rollout, rolloutId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void retryJobTest() throws Exception {
+    RetryJobResponse expectedResponse = RetryJobResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    RolloutName rollout =
+        RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+    String phaseId = "phaseId-608264202";
+    String jobId = "jobId101296568";
+
+    RetryJobResponse actualResponse = client.retryJob(rollout, phaseId, jobId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retryJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RolloutName rollout =
+          RolloutName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+      String phaseId = "phaseId-608264202";
+      String jobId = "jobId101296568";
+      client.retryJob(rollout, phaseId, jobId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retryJobTest2() throws Exception {
+    RetryJobResponse expectedResponse = RetryJobResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String rollout =
+        "projects/project-9649/locations/location-9649/deliveryPipelines/deliveryPipeline-9649/releases/release-9649/rollouts/rollout-9649";
+    String phaseId = "phaseId-608264202";
+    String jobId = "jobId101296568";
+
+    RetryJobResponse actualResponse = client.retryJob(rollout, phaseId, jobId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retryJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String rollout =
+          "projects/project-9649/locations/location-9649/deliveryPipelines/deliveryPipeline-9649/releases/release-9649/rollouts/rollout-9649";
+      String phaseId = "phaseId-608264202";
+      String jobId = "jobId101296568";
+      client.retryJob(rollout, phaseId, jobId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listJobRunsTest() throws Exception {
+    JobRun responsesElement = JobRun.newBuilder().build();
+    ListJobRunsResponse expectedResponse =
+        ListJobRunsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllJobRuns(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RolloutName parent =
+        RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+
+    ListJobRunsPagedResponse pagedListResponse = client.listJobRuns(parent);
+
+    List<JobRun> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getJobRunsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listJobRunsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RolloutName parent =
+          RolloutName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+      client.listJobRuns(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listJobRunsTest2() throws Exception {
+    JobRun responsesElement = JobRun.newBuilder().build();
+    ListJobRunsResponse expectedResponse =
+        ListJobRunsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllJobRuns(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2488/locations/location-2488/deliveryPipelines/deliveryPipeline-2488/releases/release-2488/rollouts/rollout-2488";
+
+    ListJobRunsPagedResponse pagedListResponse = client.listJobRuns(parent);
+
+    List<JobRun> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getJobRunsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listJobRunsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2488/locations/location-2488/deliveryPipelines/deliveryPipeline-2488/releases/release-2488/rollouts/rollout-2488";
+      client.listJobRuns(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getJobRunTest() throws Exception {
+    JobRun expectedResponse =
+        JobRun.newBuilder()
+            .setName(
+                JobRunName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[DELIVERY_PIPELINE]",
+                        "[RELEASE]",
+                        "[ROLLOUT]",
+                        "[JOB_RUN]")
+                    .toString())
+            .setUid("uid115792")
+            .setPhaseId("phaseId-608264202")
+            .setJobId("jobId101296568")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    JobRunName name =
+        JobRunName.of(
+            "[PROJECT]",
+            "[LOCATION]",
+            "[DELIVERY_PIPELINE]",
+            "[RELEASE]",
+            "[ROLLOUT]",
+            "[JOB_RUN]");
+
+    JobRun actualResponse = client.getJobRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getJobRunExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      JobRunName name =
+          JobRunName.of(
+              "[PROJECT]",
+              "[LOCATION]",
+              "[DELIVERY_PIPELINE]",
+              "[RELEASE]",
+              "[ROLLOUT]",
+              "[JOB_RUN]");
+      client.getJobRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getJobRunTest2() throws Exception {
+    JobRun expectedResponse =
+        JobRun.newBuilder()
+            .setName(
+                JobRunName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[DELIVERY_PIPELINE]",
+                        "[RELEASE]",
+                        "[ROLLOUT]",
+                        "[JOB_RUN]")
+                    .toString())
+            .setUid("uid115792")
+            .setPhaseId("phaseId-608264202")
+            .setJobId("jobId101296568")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5930/locations/location-5930/deliveryPipelines/deliveryPipeline-5930/releases/release-5930/rollouts/rollout-5930/jobRuns/jobRun-5930";
+
+    JobRun actualResponse = client.getJobRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getJobRunExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5930/locations/location-5930/deliveryPipelines/deliveryPipeline-5930/releases/release-5930/rollouts/rollout-5930/jobRuns/jobRun-5930";
+      client.getJobRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -2041,6 +2495,296 @@ public class CloudDeployClientHttpJsonTest {
     try {
       String name = "projects/project-505/locations/location-505/config";
       client.getConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(
+                DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                    .toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(
+                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                      .toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(
+                DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                    .toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(
+                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                      .toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(
+                DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                    .toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(
+                  DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
+                      .toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

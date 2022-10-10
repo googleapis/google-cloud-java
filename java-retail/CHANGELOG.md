@@ -1,5 +1,42 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-retail/compare/v2.4.0...v2.5.0) (2022-09-16)
+
+
+### Features
+
+* add local inventories info to the Product resource ([8204fbc](https://github.com/googleapis/java-retail/commit/8204fbc29ced51d83d3624a6b79ea34a60d5ca2a))
+* release AttributesConfig APIs to v2 version ([8204fbc](https://github.com/googleapis/java-retail/commit/8204fbc29ced51d83d3624a6b79ea34a60d5ca2a))
+* release CompletionConfig APIs to v2 version ([8204fbc](https://github.com/googleapis/java-retail/commit/8204fbc29ced51d83d3624a6b79ea34a60d5ca2a))
+* Release Control and ServingConfig serivces to v2 version ([#522](https://github.com/googleapis/java-retail/issues/522)) ([8204fbc](https://github.com/googleapis/java-retail/commit/8204fbc29ced51d83d3624a6b79ea34a60d5ca2a))
+
+
+### Bug Fixes
+
+* **samples:** Removed add time from lro. ([#530](https://github.com/googleapis/java-retail/issues/530)) ([541e280](https://github.com/googleapis/java-retail/commit/541e280c72ff411302cc6917b527c2cdeeddccd6))
+* **samples:** Removed env variables and buckets from creating bq. ([#526](https://github.com/googleapis/java-retail/issues/526)) ([67152a6](https://github.com/googleapis/java-retail/commit/67152a6c35a5ad291cb7190f2a3af4a241ad78da))
+* **samples:** Removed region tags ([#531](https://github.com/googleapis/java-retail/issues/531)) ([2d0dd5c](https://github.com/googleapis/java-retail/commit/2d0dd5c50f9373ea0eac42d857b2409eb84b0028))
+
+
+### Documentation
+
+* Improved documentation for Fullfillment and Inventory API in ProductService ([8204fbc](https://github.com/googleapis/java-retail/commit/8204fbc29ced51d83d3624a6b79ea34a60d5ca2a))
+* minor documentation format and typo fixes ([8204fbc](https://github.com/googleapis/java-retail/commit/8204fbc29ced51d83d3624a6b79ea34a60d5ca2a))
+* **samples:** Refactoring events package ([#481](https://github.com/googleapis/java-retail/issues/481)) ([20d2539](https://github.com/googleapis/java-retail/commit/20d25397433ae050ecefc47c5ccabfcca6f7ad44))
+* **samples:** Refactoring product package ([#480](https://github.com/googleapis/java-retail/issues/480)) ([0c39897](https://github.com/googleapis/java-retail/commit/0c39897a694bc2c5c253276a035147f7e19c7596))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.5 ([#503](https://github.com/googleapis/java-retail/issues/503)) ([435df1b](https://github.com/googleapis/java-retail/commit/435df1b78daa7813be97e6b0810bc5f1dee284ed))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.6 ([#519](https://github.com/googleapis/java-retail/issues/519)) ([9c37ee3](https://github.com/googleapis/java-retail/commit/9c37ee35321855921646520b1a8281b20a205154))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#523](https://github.com/googleapis/java-retail/issues/523)) ([0da80f8](https://github.com/googleapis/java-retail/commit/0da80f870fe0b7ccd3b3d66489fc0af588e65663))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#524](https://github.com/googleapis/java-retail/issues/524)) ([ecb986a](https://github.com/googleapis/java-retail/commit/ecb986ad5be8246740504683f5fc9d8d1fcd89b9))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.16.0 ([#535](https://github.com/googleapis/java-retail/issues/535)) ([e7fa004](https://github.com/googleapis/java-retail/commit/e7fa004c9ff6c106bd5512c6cc11833a33635ce3))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#533](https://github.com/googleapis/java-retail/issues/533)) ([6236b06](https://github.com/googleapis/java-retail/commit/6236b06c17885439f47a2811b388119c1a045147))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#538](https://github.com/googleapis/java-retail/issues/538)) ([ab71781](https://github.com/googleapis/java-retail/commit/ab717817de6798ad9eebb5c6df537b13b9281f45))
+* Update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#511](https://github.com/googleapis/java-retail/issues/511)) ([364b3d4](https://github.com/googleapis/java-retail/commit/364b3d47ae6f8fca85dad8c775cda1354b5fc413))
+
 ## [2.4.0](https://github.com/googleapis/java-retail/compare/v2.3.0...v2.4.0) (2022-08-09)
 
 

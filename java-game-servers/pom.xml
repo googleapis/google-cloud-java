@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-game-servers-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+  <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   <name>Google Cloud Game Services Parent</name>
   <url>https://github.com/googleapis/java-game-servers-v1beta</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -61,33 +61,33 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-game-servers-v1</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-game-servers-v1beta</artifactId>
-        <version>0.28.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
+        <version>0.28.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-game-servers-v1</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-game-servers-v1beta</artifactId>
-        <version>0.28.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
+        <version>0.28.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-game-servers-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-game-servers</artifactId>
-        <version>2.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

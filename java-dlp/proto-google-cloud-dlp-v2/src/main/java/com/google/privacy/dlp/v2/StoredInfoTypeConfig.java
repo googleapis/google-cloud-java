@@ -55,111 +55,6 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private StoredInfoTypeConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.Builder subBuilder = null;
-              if (typeCase_ == 3) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder subBuilder = null;
-              if (typeCase_ == 4) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CustomInfoType.Dictionary.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder subBuilder = null;
-              if (typeCase_ == 5) {
-                subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_).toBuilder();
-              }
-              type_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CustomInfoType.Regex.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
-                type_ = subBuilder.buildPartial();
-              }
-              typeCase_ = 5;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_StoredInfoTypeConfig_descriptor;
@@ -506,7 +401,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     if (typeCase_ == 5) {
       output.writeMessage(5, (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -536,7 +431,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -568,7 +463,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -599,7 +494,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -730,17 +625,10 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.privacy.dlp.v2.StoredInfoTypeConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -750,6 +638,15 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
 
       description_ = "";
 
+      if (largeCustomDictionaryBuilder_ != null) {
+        largeCustomDictionaryBuilder_.clear();
+      }
+      if (dictionaryBuilder_ != null) {
+        dictionaryBuilder_.clear();
+      }
+      if (regexBuilder_ != null) {
+        regexBuilder_.clear();
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -881,7 +778,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -896,17 +793,62 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.StoredInfoTypeConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getLargeCustomDictionaryFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getDictionaryFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getRegexFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 5;
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.StoredInfoTypeConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1803,7 +1745,18 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StoredInfoTypeConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

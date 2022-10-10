@@ -1115,6 +1115,9 @@ public class AssetServiceClient implements BackgroundResource {
    *           "prod".
    *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
    *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
+   *           whose name contains "key" as a word. This field is deprecated. Please use the
+   *           `kmsKeys` field to retrieve KMS key information.
+   *       <li>`kmsKeys:key` to find Cloud resources encrypted with customer-managed encryption keys
    *           whose name contains the word "key".
    *       <li>`relationships:instance-group-1` to find Cloud resources that have relationships with
    *           "instance-group-1" in the related resource name.

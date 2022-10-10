@@ -57,143 +57,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private ServicePerimeterConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                resources_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              resources_.add(s);
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                accessLevels_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              accessLevels_.add(s);
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                restrictedServices_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              restrictedServices_.add(s);
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                ingressPolicies_ =
-                    new java.util.ArrayList<
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .IngressPolicy>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              ingressPolicies_.add(
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                          .IngressPolicy.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                egressPolicies_ =
-                    new java.util.ArrayList<
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .EgressPolicy>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              egressPolicies_.add(
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                          .EgressPolicy.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 82:
-            {
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                      .VpcAccessibleServices.Builder
-                  subBuilder = null;
-              if (vpcAccessibleServices_ != null) {
-                subBuilder = vpcAccessibleServices_.toBuilder();
-              }
-              vpcAccessibleServices_ =
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                          .VpcAccessibleServices.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vpcAccessibleServices_);
-                vpcAccessibleServices_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        resources_ = resources_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        accessLevels_ = accessLevels_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        restrictedServices_ = restrictedServices_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        ingressPolicies_ = java.util.Collections.unmodifiableList(ingressPolicies_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        egressPolicies_ = java.util.Collections.unmodifiableList(egressPolicies_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
         .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor;
@@ -514,64 +377,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private VpcAccessibleServices(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                enableRestriction_ = input.readBool();
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  allowedServices_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                allowedServices_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          allowedServices_ = allowedServices_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_VpcAccessibleServices_descriptor;
@@ -701,7 +506,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       for (int i = 0; i < allowedServices_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, allowedServices_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -721,7 +526,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         size += dataSize;
         size += 1 * getAllowedServicesList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -745,7 +550,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       if (getEnableRestriction() != other.getEnableRestriction()) return false;
       if (!getAllowedServicesList().equals(other.getAllowedServicesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -762,7 +567,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + ALLOWED_SERVICES_FIELD_NUMBER;
         hash = (53 * hash) + getAllowedServicesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -919,17 +724,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1057,7 +855,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1072,21 +870,44 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.VpcAccessibleServices
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enableRestriction_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllowedServicesIsMutable();
+                  allowedServices_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                      .VpcAccessibleServices)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1381,7 +1202,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new VpcAccessibleServices(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1534,59 +1367,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private MethodSelector(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                kindCase_ = 1;
-                kind_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                kindCase_ = 2;
-                kind_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1831,7 +1611,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (kindCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kind_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1846,7 +1626,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (kindCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kind_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1875,7 +1655,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1898,7 +1678,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2042,17 +1822,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2178,7 +1951,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2193,20 +1966,45 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  kindCase_ = 1;
+                  kind_ = s;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  kindCase_ = 2;
+                  kind_ = s;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2565,7 +2363,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MethodSelector(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2752,72 +2562,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ApiOperation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                serviceName_ = s;
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  methodSelectors_ =
-                      new java.util.ArrayList<
-                          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                              .MethodSelector>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                methodSelectors_.add(
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .MethodSelector.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          methodSelectors_ = java.util.Collections.unmodifiableList(methodSelectors_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3028,7 +2772,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       for (int i = 0; i < methodSelectors_.size(); i++) {
         output.writeMessage(2, methodSelectors_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3044,7 +2788,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(2, methodSelectors_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3064,7 +2808,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       if (!getServiceName().equals(other.getServiceName())) return false;
       if (!getMethodSelectorsList().equals(other.getMethodSelectorsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3081,7 +2825,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + METHOD_SELECTORS_FIELD_NUMBER;
         hash = (53 * hash) + getMethodSelectorsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3223,19 +2967,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getMethodSelectorsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -3245,10 +2980,11 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
         if (methodSelectorsBuilder_ == null) {
           methodSelectors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          methodSelectors_ = null;
           methodSelectorsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3382,7 +3118,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3397,20 +3133,53 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.MethodSelector
+                      m =
+                          input.readMessage(
+                              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                                  .MethodSelector.parser(),
+                              extensionRegistry);
+                  if (methodSelectorsBuilder_ == null) {
+                    ensureMethodSelectorsIsMutable();
+                    methodSelectors_.add(m);
+                  } else {
+                    methodSelectorsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4100,7 +3869,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ApiOperation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4305,59 +4086,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private IngressSource(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                sourceCase_ = 1;
-                source_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                sourceCase_ = 2;
-                source_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4653,7 +4381,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (sourceCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4668,7 +4396,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (sourceCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4697,7 +4425,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4720,7 +4448,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4865,17 +4593,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -5001,7 +4722,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5016,20 +4737,45 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  sourceCase_ = 1;
+                  source_ = s;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  sourceCase_ = 2;
+                  source_ = s;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5490,7 +5236,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new IngressSource(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5736,78 +5494,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private EgressTo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  resources_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                resources_.add(s);
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  operations_ =
-                      new java.util.ArrayList<
-                          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                              .ApiOperation>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                operations_.add(
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .ApiOperation.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          resources_ = resources_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          operations_ = java.util.Collections.unmodifiableList(operations_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
@@ -6046,7 +5732,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       for (int i = 0; i < operations_.size(); i++) {
         output.writeMessage(2, operations_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6066,7 +5752,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       for (int i = 0; i < operations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, operations_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6085,7 +5771,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       if (!getResourcesList().equals(other.getResourcesList())) return false;
       if (!getOperationsList().equals(other.getOperationsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6104,7 +5790,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + OPERATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getOperationsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6258,19 +5944,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getOperationsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -6280,10 +5957,11 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         bitField0_ = (bitField0_ & ~0x00000001);
         if (operationsBuilder_ == null) {
           operations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          operations_ = null;
           operationsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -6424,7 +6102,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6439,20 +6117,54 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureResourcesIsMutable();
+                  resources_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                      m =
+                          input.readMessage(
+                              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                                  .ApiOperation.parser(),
+                              extensionRegistry);
+                  if (operationsBuilder_ == null) {
+                    ensureOperationsIsMutable();
+                    operations_.add(m);
+                  } else {
+                    operationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7243,7 +6955,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EgressTo(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7478,85 +7202,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private IngressFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  sources_ =
-                      new java.util.ArrayList<
-                          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                              .IngressSource>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                sources_.add(
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .IngressSource.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  identities_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                identities_.add(s);
-                break;
-              }
-            case 24:
-              {
-                int rawValue = input.readEnum();
-
-                identityType_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sources_ = java.util.Collections.unmodifiableList(sources_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          identities_ = identities_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7817,7 +7462,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getNumber()) {
         output.writeEnum(3, identityType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7843,7 +7488,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, identityType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7864,7 +7509,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (!getSourcesList().equals(other.getSourcesList())) return false;
       if (!getIdentitiesList().equals(other.getIdentitiesList())) return false;
       if (identityType_ != other.identityType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7885,7 +7530,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + identityType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8031,19 +7676,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getSourcesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -8051,10 +7687,11 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         super.clear();
         if (sourcesBuilder_ == null) {
           sources_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          sources_ = null;
           sourcesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         identityType_ = 0;
@@ -8206,7 +7843,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (other.identityType_ != 0) {
           setIdentityTypeValue(other.getIdentityTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8221,20 +7858,60 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressSource
+                      m =
+                          input.readMessage(
+                              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                                  .IngressSource.parser(),
+                              extensionRegistry);
+                  if (sourcesBuilder_ == null) {
+                    ensureSourcesIsMutable();
+                    sources_.add(m);
+                  } else {
+                    sourcesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIdentitiesIsMutable();
+                  identities_.add(s);
+                  break;
+                } // case 18
+              case 24:
+                {
+                  identityType_ = input.readEnum();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9047,7 +8724,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new IngressFrom(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -9289,78 +8978,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private IngressTo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  operations_ =
-                      new java.util.ArrayList<
-                          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                              .ApiOperation>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                operations_.add(
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .ApiOperation.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  resources_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                resources_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          operations_ = java.util.Collections.unmodifiableList(operations_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          resources_ = resources_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9606,7 +9223,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       for (int i = 0; i < resources_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resources_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9626,7 +9243,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         size += dataSize;
         size += 1 * getResourcesList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9646,7 +9263,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       if (!getOperationsList().equals(other.getOperationsList())) return false;
       if (!getResourcesList().equals(other.getResourcesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9665,7 +9282,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getResourcesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9813,19 +9430,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getOperationsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -9833,10 +9441,11 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         super.clear();
         if (operationsBuilder_ == null) {
           operations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          operations_ = null;
           operationsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
@@ -9979,7 +9588,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9994,20 +9603,54 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                      m =
+                          input.readMessage(
+                              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                                  .ApiOperation.parser(),
+                              extensionRegistry);
+                  if (operationsBuilder_ == null) {
+                    ensureOperationsIsMutable();
+                    operations_.add(m);
+                  } else {
+                    operationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureResourcesIsMutable();
+                  resources_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -10817,7 +10460,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new IngressTo(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -10996,84 +10651,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private IngressPolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom
-                        .Builder
-                    subBuilder = null;
-                if (ingressFrom_ != null) {
-                  subBuilder = ingressFrom_.toBuilder();
-                }
-                ingressFrom_ =
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .IngressFrom.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(ingressFrom_);
-                  ingressFrom_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo.Builder
-                    subBuilder = null;
-                if (ingressTo_ != null) {
-                  subBuilder = ingressTo_.toBuilder();
-                }
-                ingressTo_ =
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressTo
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(ingressTo_);
-                  ingressTo_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressPolicy_descriptor;
@@ -11247,7 +10824,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (ingressTo_ != null) {
         output.writeMessage(2, getIngressTo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11262,7 +10839,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (ingressTo_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getIngressTo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11288,7 +10865,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (hasIngressTo()) {
         if (!getIngressTo().equals(other.getIngressTo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11307,7 +10884,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + INGRESS_TO_FIELD_NUMBER;
         hash = (53 * hash) + getIngressTo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11466,17 +11043,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -11601,7 +11171,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (other.hasIngressTo()) {
           mergeIngressTo(other.getIngressTo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -11616,20 +11186,43 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getIngressFromFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getIngressToFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -12167,7 +11760,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new IngressPolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -12349,84 +11954,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private EgressPolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-                        .Builder
-                    subBuilder = null;
-                if (egressFrom_ != null) {
-                  subBuilder = egressFrom_.toBuilder();
-                }
-                egressFrom_ =
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                            .EgressFrom.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(egressFrom_);
-                  egressFrom_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.Builder
-                    subBuilder = null;
-                if (egressTo_ != null) {
-                  subBuilder = egressTo_.toBuilder();
-                }
-                egressTo_ =
-                    input.readMessage(
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(egressTo_);
-                  egressTo_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor;
@@ -12593,7 +12120,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (egressTo_ != null) {
         output.writeMessage(2, getEgressTo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -12608,7 +12135,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (egressTo_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEgressTo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -12634,7 +12161,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       if (hasEgressTo()) {
         if (!getEgressTo().equals(other.getEgressTo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -12653,7 +12180,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + EGRESS_TO_FIELD_NUMBER;
         hash = (53 * hash) + getEgressTo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12820,17 +12347,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -12955,7 +12475,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (other.hasEgressTo()) {
           mergeEgressTo(other.getEgressTo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12970,20 +12490,43 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getEgressFromFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getEgressToFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -13509,7 +13052,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EgressPolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -13672,66 +13227,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private EgressFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  identities_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                identities_.add(s);
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                identityType_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          identities_ = identities_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
           .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
@@ -13889,7 +13384,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getNumber()) {
         output.writeEnum(2, identityType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -13912,7 +13407,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, identityType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -13932,7 +13427,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       if (!getIdentitiesList().equals(other.getIdentitiesList())) return false;
       if (identityType_ != other.identityType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -13949,7 +13444,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + identityType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -14100,17 +13595,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -14229,7 +13717,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         if (other.identityType_ != 0) {
           setIdentityTypeValue(other.getIdentityTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -14244,20 +13732,44 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIdentitiesIsMutable();
+                  identities_.add(s);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  identityType_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -14603,7 +14115,19 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EgressFrom(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -15187,7 +14711,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     if (vpcAccessibleServices_ != null) {
       output.writeMessage(10, getVpcAccessibleServices());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -15230,7 +14754,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, getVpcAccessibleServices());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -15255,7 +14779,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
     if (!getIngressPoliciesList().equals(other.getIngressPoliciesList())) return false;
     if (!getEgressPoliciesList().equals(other.getEgressPoliciesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -15290,7 +14814,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + EGRESS_POLICIES_FIELD_NUMBER;
       hash = (53 * hash) + getEgressPoliciesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -15423,20 +14947,10 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     // Construct using
     // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getIngressPoliciesFieldBuilder();
-        getEgressPoliciesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -15456,16 +14970,18 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
       }
       if (ingressPoliciesBuilder_ == null) {
         ingressPolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        ingressPolicies_ = null;
         ingressPoliciesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (egressPoliciesBuilder_ == null) {
         egressPolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        egressPolicies_ = null;
         egressPoliciesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -15674,7 +15190,7 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -15689,19 +15205,89 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureResourcesIsMutable();
+                resources_.add(s);
+                break;
+              } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAccessLevelsIsMutable();
+                accessLevels_.add(s);
+                break;
+              } // case 18
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRestrictedServicesIsMutable();
+                restrictedServices_.add(s);
+                break;
+              } // case 34
+            case 66:
+              {
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy m =
+                    input.readMessage(
+                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                            .IngressPolicy.parser(),
+                        extensionRegistry);
+                if (ingressPoliciesBuilder_ == null) {
+                  ensureIngressPoliciesIsMutable();
+                  ingressPolicies_.add(m);
+                } else {
+                  ingressPoliciesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy m =
+                    input.readMessage(
+                        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                            .EgressPolicy.parser(),
+                        extensionRegistry);
+                if (egressPoliciesBuilder_ == null) {
+                  ensureEgressPoliciesIsMutable();
+                  egressPolicies_.add(m);
+                } else {
+                  egressPoliciesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getVpcAccessibleServicesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -17680,7 +17266,18 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ServicePerimeterConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-service-control-v2</artifactId>
-  <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v2:current} -->
+  <version>1.3.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v2:current} -->
   <name>grpc-google-cloud-service-control-v2</name>
   <description>GRPC library for google-cloud-service-control</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-control-parent</artifactId>
-    <version>1.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
+    <version>1.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
   </parent>
   <dependencies>
     <dependency>

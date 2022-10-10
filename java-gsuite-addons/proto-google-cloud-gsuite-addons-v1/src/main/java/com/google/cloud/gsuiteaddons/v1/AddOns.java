@@ -50,179 +50,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AddOns(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.apps.script.type.CommonAddOnManifest.Builder subBuilder = null;
-              if (common_ != null) {
-                subBuilder = common_.toBuilder();
-              }
-              common_ =
-                  input.readMessage(
-                      com.google.apps.script.type.CommonAddOnManifest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(common_);
-                common_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.apps.script.type.gmail.GmailAddOnManifest.Builder subBuilder = null;
-              if (gmail_ != null) {
-                subBuilder = gmail_.toBuilder();
-              }
-              gmail_ =
-                  input.readMessage(
-                      com.google.apps.script.type.gmail.GmailAddOnManifest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gmail_);
-                gmail_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.apps.script.type.drive.DriveAddOnManifest.Builder subBuilder = null;
-              if (drive_ != null) {
-                subBuilder = drive_.toBuilder();
-              }
-              drive_ =
-                  input.readMessage(
-                      com.google.apps.script.type.drive.DriveAddOnManifest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(drive_);
-                drive_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.apps.script.type.calendar.CalendarAddOnManifest.Builder subBuilder = null;
-              if (calendar_ != null) {
-                subBuilder = calendar_.toBuilder();
-              }
-              calendar_ =
-                  input.readMessage(
-                      com.google.apps.script.type.calendar.CalendarAddOnManifest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(calendar_);
-                calendar_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.apps.script.type.docs.DocsAddOnManifest.Builder subBuilder = null;
-              if (docs_ != null) {
-                subBuilder = docs_.toBuilder();
-              }
-              docs_ =
-                  input.readMessage(
-                      com.google.apps.script.type.docs.DocsAddOnManifest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(docs_);
-                docs_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.apps.script.type.sheets.SheetsAddOnManifest.Builder subBuilder = null;
-              if (sheets_ != null) {
-                subBuilder = sheets_.toBuilder();
-              }
-              sheets_ =
-                  input.readMessage(
-                      com.google.apps.script.type.sheets.SheetsAddOnManifest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sheets_);
-                sheets_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.apps.script.type.slides.SlidesAddOnManifest.Builder subBuilder = null;
-              if (slides_ != null) {
-                subBuilder = slides_.toBuilder();
-              }
-              slides_ =
-                  input.readMessage(
-                      com.google.apps.script.type.slides.SlidesAddOnManifest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(slides_);
-                slides_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.apps.script.type.HttpOptions.Builder subBuilder = null;
-              if (httpOptions_ != null) {
-                subBuilder = httpOptions_.toBuilder();
-              }
-              httpOptions_ =
-                  input.readMessage(
-                      com.google.apps.script.type.HttpOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(httpOptions_);
-                httpOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsProto
         .internal_static_google_cloud_gsuiteaddons_v1_AddOns_descriptor;
@@ -661,7 +488,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     if (httpOptions_ != null) {
       output.writeMessage(15, getHttpOptions());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -694,7 +521,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     if (httpOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getHttpOptions());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -741,7 +568,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     if (hasHttpOptions()) {
       if (!getHttpOptions().equals(other.getHttpOptions())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -784,7 +611,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HTTP_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getHttpOptions().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -913,17 +740,10 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gsuiteaddons.v1.AddOns.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1117,7 +937,7 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       if (other.hasHttpOptions()) {
         mergeHttpOptions(other.getHttpOptions());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1132,17 +952,79 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gsuiteaddons.v1.AddOns parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getCommonFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getGmailFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 42:
+              {
+                input.readMessage(getDriveFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCalendarFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getDocsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getSheetsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 82:
+              {
+                input.readMessage(getSlidesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 122:
+              {
+                input.readMessage(getHttpOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gsuiteaddons.v1.AddOns) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2666,7 +2548,18 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddOns(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -57,130 +57,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Rollout(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rolloutId_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              createdBy_ = s;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy.Builder
-                  subBuilder = null;
-              if (strategyCase_ == 5) {
-                subBuilder =
-                    ((com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy) strategy_)
-                        .toBuilder();
-              }
-              strategy_ =
-                  input.readMessage(
-                      com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy) strategy_);
-                strategy_ = subBuilder.buildPartial();
-              }
-              strategyCase_ = 5;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceName_ = s;
-              break;
-            }
-          case 1602:
-            {
-              com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy.Builder subBuilder =
-                  null;
-              if (strategyCase_ == 200) {
-                subBuilder =
-                    ((com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy) strategy_)
-                        .toBuilder();
-              }
-              strategy_ =
-                  input.readMessage(
-                      com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy) strategy_);
-                strategy_ = subBuilder.buildPartial();
-              }
-              strategyCase_ = 200;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicemanagement.v1.ResourcesProto
         .internal_static_google_api_servicemanagement_v1_Rollout_descriptor;
@@ -571,61 +447,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private TrafficPercentStrategy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  percentages_ =
-                      com.google.protobuf.MapField.newMapField(
-                          PercentagesDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> percentages__ =
-                    input.readMessage(
-                        PercentagesDefaultEntryHolder.defaultEntry.getParserForType(),
-                        extensionRegistry);
-                percentages_.getMutableMap().put(percentages__.getKey(), percentages__.getValue());
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.api.servicemanagement.v1.ResourcesProto
           .internal_static_google_api_servicemanagement_v1_Rollout_TrafficPercentStrategy_descriptor;
@@ -776,7 +597,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetPercentages(), PercentagesDefaultEntryHolder.defaultEntry, 1);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -795,7 +616,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, percentages__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -812,7 +633,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           (com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy) obj;
 
       if (!internalGetPercentages().equals(other.internalGetPercentages())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -827,7 +648,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + PERCENTAGES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetPercentages().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1006,17 +827,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1111,7 +925,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             == com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy
                 .getDefaultInstance()) return this;
         internalGetMutablePercentages().mergeFrom(other.internalGetPercentages());
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1126,19 +940,42 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.Double> percentages__ =
+                      input.readMessage(
+                          PercentagesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutablePercentages()
+                      .getMutableMap()
+                      .put(percentages__.getKey(), percentages__.getValue());
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1350,7 +1187,19 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TrafficPercentStrategy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1407,45 +1256,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private DeleteServiceStrategy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.api.servicemanagement.v1.ResourcesProto
           .internal_static_google_api_servicemanagement_v1_Rollout_DeleteServiceStrategy_descriptor;
@@ -1475,7 +1285,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1484,7 +1294,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1500,7 +1310,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy other =
           (com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1511,7 +1321,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1646,17 +1456,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1746,7 +1549,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy
                 .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1761,19 +1564,31 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1812,7 +1627,19 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DeleteServiceStrategy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2291,7 +2118,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           200, (com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy) strategy_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2327,7 +2154,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               200, (com.google.api.servicemanagement.v1.Rollout.DeleteServiceStrategy) strategy_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2362,7 +2189,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2397,7 +2224,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2528,17 +2355,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.api.servicemanagement.v1.Rollout.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2556,6 +2376,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
       status_ = 0;
 
+      if (trafficPercentStrategyBuilder_ != null) {
+        trafficPercentStrategyBuilder_.clear();
+      }
+      if (deleteServiceStrategyBuilder_ != null) {
+        deleteServiceStrategyBuilder_.clear();
+      }
       serviceName_ = "";
 
       strategyCase_ = 0;
@@ -2694,7 +2520,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2709,17 +2535,75 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.servicemanagement.v1.Rollout parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                rolloutId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                createdBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 32:
+              {
+                status_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getTrafficPercentStrategyFieldBuilder().getBuilder(), extensionRegistry);
+                strategyCase_ = 5;
+                break;
+              } // case 42
+            case 66:
+              {
+                serviceName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 1602:
+              {
+                input.readMessage(
+                    getDeleteServiceStrategyFieldBuilder().getBuilder(), extensionRegistry);
+                strategyCase_ = 200;
+                break;
+              } // case 1602
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.api.servicemanagement.v1.Rollout) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3908,7 +3792,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Rollout(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

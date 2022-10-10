@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-orgpolicy/compare/v2.3.4...v2.3.5) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency jeepney to v0.8.0 ([#390](https://github.com/googleapis/java-orgpolicy/issues/390)) ([50d5e14](https://github.com/googleapis/java-orgpolicy/commit/50d5e144d14960619884b3c9fd04b1e53a08fdcf))
+* Update dependency markupsafe to v2.1.1 ([#391](https://github.com/googleapis/java-orgpolicy/issues/391)) ([fc697b3](https://github.com/googleapis/java-orgpolicy/commit/fc697b3aa269de78d7cd5782ffe5c7c534a3a19d))
+* Update dependency pyjwt to v2.5.0 ([#392](https://github.com/googleapis/java-orgpolicy/issues/392)) ([a6571c0](https://github.com/googleapis/java-orgpolicy/commit/a6571c0c8adc40a2dd83623e835dcd5aa4cca4b4))
+* Update dependency typing-extensions to v4.3.0 ([#393](https://github.com/googleapis/java-orgpolicy/issues/393)) ([9cc4032](https://github.com/googleapis/java-orgpolicy/commit/9cc40323bd71750568e01c6b604064a2c8af55b0))
+
+## [2.3.4](https://github.com/googleapis/java-orgpolicy/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#385](https://github.com/googleapis/java-orgpolicy/issues/385)) ([a4efc8b](https://github.com/googleapis/java-orgpolicy/commit/a4efc8b2f3fb84cf069bce193681abaa0cead18c))
+
+## [2.3.3](https://github.com/googleapis/java-orgpolicy/compare/v2.3.2...v2.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#381](https://github.com/googleapis/java-orgpolicy/issues/381)) ([3b25023](https://github.com/googleapis/java-orgpolicy/commit/3b2502369b96403774b44779abd226d299268ad1))
+
 ## [2.3.2](https://github.com/googleapis/java-orgpolicy/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

@@ -58,80 +58,6 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private SafeSearchAnnotation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              adult_ = rawValue;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              spoof_ = rawValue;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              medical_ = rawValue;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              violence_ = rawValue;
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              racy_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p2beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p2beta1_SafeSearchAnnotation_descriptor;
@@ -370,7 +296,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (racy_ != com.google.cloud.vision.v1p2beta1.Likelihood.UNKNOWN.getNumber()) {
       output.writeEnum(9, racy_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -394,7 +320,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (racy_ != com.google.cloud.vision.v1p2beta1.Likelihood.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, racy_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -415,7 +341,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     if (medical_ != other.medical_) return false;
     if (violence_ != other.violence_) return false;
     if (racy_ != other.racy_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -436,7 +362,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + violence_;
     hash = (37 * hash) + RACY_FIELD_NUMBER;
     hash = (53 * hash) + racy_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -568,17 +494,10 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.vision.v1p2beta1.SafeSearchAnnotation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -691,7 +610,7 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
       if (other.racy_ != 0) {
         setRacyValue(other.getRacyValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -706,18 +625,61 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vision.v1p2beta1.SafeSearchAnnotation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                adult_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                spoof_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                medical_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                violence_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 72:
+              {
+                racy_ = input.readEnum();
+
+                break;
+              } // case 72
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.vision.v1p2beta1.SafeSearchAnnotation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1243,7 +1205,18 @@ public final class SafeSearchAnnotation extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SafeSearchAnnotation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

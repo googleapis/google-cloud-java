@@ -1,0 +1,16 @@
+{
+  "api_shortname": "publicca",
+  "name_pretty": "Public Certificate Authority",
+  "product_documentation": "https://cloud.google.com/certificate-manager/docs/public-ca/",
+  "api_description": "Certificate Manager's Public Certificate Authority (CA) functionality allows you to provision and deploy widely trusted X.509 certificates after validating that the certificate requester controls the domains.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-publicca/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-publicca",
+  "repo_short": "java-publicca",
+  "distribution_name": "com.google.cloud:google-cloud-publicca",
+  "api_id": "publicca.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

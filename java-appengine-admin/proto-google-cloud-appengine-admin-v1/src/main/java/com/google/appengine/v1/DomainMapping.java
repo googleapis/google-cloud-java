@@ -54,91 +54,6 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DomainMapping(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.appengine.v1.SslSettings.Builder subBuilder = null;
-              if (sslSettings_ != null) {
-                subBuilder = sslSettings_.toBuilder();
-              }
-              sslSettings_ =
-                  input.readMessage(
-                      com.google.appengine.v1.SslSettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sslSettings_);
-                sslSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                resourceRecords_ =
-                    new java.util.ArrayList<com.google.appengine.v1.ResourceRecord>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              resourceRecords_.add(
-                  input.readMessage(
-                      com.google.appengine.v1.ResourceRecord.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        resourceRecords_ = java.util.Collections.unmodifiableList(resourceRecords_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DomainMappingProto
         .internal_static_google_appengine_v1_DomainMapping_descriptor;
@@ -419,7 +334,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < resourceRecords_.size(); i++) {
       output.writeMessage(4, resourceRecords_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -440,7 +355,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < resourceRecords_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, resourceRecords_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -462,7 +377,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       if (!getSslSettings().equals(other.getSslSettings())) return false;
     }
     if (!getResourceRecordsList().equals(other.getResourceRecordsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -485,7 +400,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESOURCE_RECORDS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceRecordsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -613,19 +528,10 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.appengine.v1.DomainMapping.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getResourceRecordsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -643,10 +549,11 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       }
       if (resourceRecordsBuilder_ == null) {
         resourceRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        resourceRecords_ = null;
         resourceRecordsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -778,7 +685,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -793,17 +700,62 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.appengine.v1.DomainMapping parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getSslSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.appengine.v1.ResourceRecord m =
+                    input.readMessage(
+                        com.google.appengine.v1.ResourceRecord.parser(), extensionRegistry);
+                if (resourceRecordsBuilder_ == null) {
+                  ensureResourceRecordsIsMutable();
+                  resourceRecords_.add(m);
+                } else {
+                  resourceRecordsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.appengine.v1.DomainMapping) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1670,7 +1622,18 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DomainMapping(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

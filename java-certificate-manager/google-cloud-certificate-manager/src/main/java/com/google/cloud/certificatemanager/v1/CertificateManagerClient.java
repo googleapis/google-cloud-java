@@ -3252,6 +3252,672 @@ public class CertificateManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists CertificateIssuanceConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (CertificateIssuanceConfig element :
+   *       certificateManagerClient.listCertificateIssuanceConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the certificate should be listed,
+   *     specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCertificateIssuanceConfigsPagedResponse listCertificateIssuanceConfigs(
+      LocationName parent) {
+    ListCertificateIssuanceConfigsRequest request =
+        ListCertificateIssuanceConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCertificateIssuanceConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CertificateIssuanceConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (CertificateIssuanceConfig element :
+   *       certificateManagerClient.listCertificateIssuanceConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the certificate should be listed,
+   *     specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCertificateIssuanceConfigsPagedResponse listCertificateIssuanceConfigs(
+      String parent) {
+    ListCertificateIssuanceConfigsRequest request =
+        ListCertificateIssuanceConfigsRequest.newBuilder().setParent(parent).build();
+    return listCertificateIssuanceConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CertificateIssuanceConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   ListCertificateIssuanceConfigsRequest request =
+   *       ListCertificateIssuanceConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (CertificateIssuanceConfig element :
+   *       certificateManagerClient.listCertificateIssuanceConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCertificateIssuanceConfigsPagedResponse listCertificateIssuanceConfigs(
+      ListCertificateIssuanceConfigsRequest request) {
+    return listCertificateIssuanceConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CertificateIssuanceConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   ListCertificateIssuanceConfigsRequest request =
+   *       ListCertificateIssuanceConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<CertificateIssuanceConfig> future =
+   *       certificateManagerClient
+   *           .listCertificateIssuanceConfigsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (CertificateIssuanceConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsPagedCallable() {
+    return stub.listCertificateIssuanceConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists CertificateIssuanceConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   ListCertificateIssuanceConfigsRequest request =
+   *       ListCertificateIssuanceConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListCertificateIssuanceConfigsResponse response =
+   *         certificateManagerClient.listCertificateIssuanceConfigsCallable().call(request);
+   *     for (CertificateIssuanceConfig element : response.getCertificateIssuanceConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListCertificateIssuanceConfigsRequest, ListCertificateIssuanceConfigsResponse>
+      listCertificateIssuanceConfigsCallable() {
+    return stub.listCertificateIssuanceConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CertificateIssuanceConfigName name =
+   *       CertificateIssuanceConfigName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]");
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient.getCertificateIssuanceConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the certificate issuance config to describe. Must be in the
+   *     format `projects/&#42;/locations/&#42;/certificateIssuanceConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CertificateIssuanceConfig getCertificateIssuanceConfig(
+      CertificateIssuanceConfigName name) {
+    GetCertificateIssuanceConfigRequest request =
+        GetCertificateIssuanceConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getCertificateIssuanceConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String name =
+   *       CertificateIssuanceConfigName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *           .toString();
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient.getCertificateIssuanceConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the certificate issuance config to describe. Must be in the
+   *     format `projects/&#42;/locations/&#42;/certificateIssuanceConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CertificateIssuanceConfig getCertificateIssuanceConfig(String name) {
+    GetCertificateIssuanceConfigRequest request =
+        GetCertificateIssuanceConfigRequest.newBuilder().setName(name).build();
+    return getCertificateIssuanceConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   GetCertificateIssuanceConfigRequest request =
+   *       GetCertificateIssuanceConfigRequest.newBuilder()
+   *           .setName(
+   *               CertificateIssuanceConfigName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient.getCertificateIssuanceConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CertificateIssuanceConfig getCertificateIssuanceConfig(
+      GetCertificateIssuanceConfigRequest request) {
+    return getCertificateIssuanceConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   GetCertificateIssuanceConfigRequest request =
+   *       GetCertificateIssuanceConfigRequest.newBuilder()
+   *           .setName(
+   *               CertificateIssuanceConfigName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CertificateIssuanceConfig> future =
+   *       certificateManagerClient.getCertificateIssuanceConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CertificateIssuanceConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigCallable() {
+    return stub.getCertificateIssuanceConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CertificateIssuanceConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CertificateIssuanceConfig certificateIssuanceConfig =
+   *       CertificateIssuanceConfig.newBuilder().build();
+   *   String certificateIssuanceConfigId = "certificateIssuanceConfigId1910303023";
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient
+   *           .createCertificateIssuanceConfigAsync(
+   *               parent, certificateIssuanceConfig, certificateIssuanceConfigId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the certificate issuance config. Must be in the
+   *     format `projects/&#42;/locations/&#42;`.
+   * @param certificateIssuanceConfig Required. A definition of the certificate issuance config to
+   *     create.
+   * @param certificateIssuanceConfigId Required. A user-provided name of the certificate config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigAsync(
+          LocationName parent,
+          CertificateIssuanceConfig certificateIssuanceConfig,
+          String certificateIssuanceConfigId) {
+    CreateCertificateIssuanceConfigRequest request =
+        CreateCertificateIssuanceConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCertificateIssuanceConfig(certificateIssuanceConfig)
+            .setCertificateIssuanceConfigId(certificateIssuanceConfigId)
+            .build();
+    return createCertificateIssuanceConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CertificateIssuanceConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   CertificateIssuanceConfig certificateIssuanceConfig =
+   *       CertificateIssuanceConfig.newBuilder().build();
+   *   String certificateIssuanceConfigId = "certificateIssuanceConfigId1910303023";
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient
+   *           .createCertificateIssuanceConfigAsync(
+   *               parent, certificateIssuanceConfig, certificateIssuanceConfigId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the certificate issuance config. Must be in the
+   *     format `projects/&#42;/locations/&#42;`.
+   * @param certificateIssuanceConfig Required. A definition of the certificate issuance config to
+   *     create.
+   * @param certificateIssuanceConfigId Required. A user-provided name of the certificate config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigAsync(
+          String parent,
+          CertificateIssuanceConfig certificateIssuanceConfig,
+          String certificateIssuanceConfigId) {
+    CreateCertificateIssuanceConfigRequest request =
+        CreateCertificateIssuanceConfigRequest.newBuilder()
+            .setParent(parent)
+            .setCertificateIssuanceConfig(certificateIssuanceConfig)
+            .setCertificateIssuanceConfigId(certificateIssuanceConfigId)
+            .build();
+    return createCertificateIssuanceConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CertificateIssuanceConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CreateCertificateIssuanceConfigRequest request =
+   *       CreateCertificateIssuanceConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCertificateIssuanceConfigId("certificateIssuanceConfigId1910303023")
+   *           .setCertificateIssuanceConfig(CertificateIssuanceConfig.newBuilder().build())
+   *           .build();
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient.createCertificateIssuanceConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigAsync(CreateCertificateIssuanceConfigRequest request) {
+    return createCertificateIssuanceConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CertificateIssuanceConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CreateCertificateIssuanceConfigRequest request =
+   *       CreateCertificateIssuanceConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCertificateIssuanceConfigId("certificateIssuanceConfigId1910303023")
+   *           .setCertificateIssuanceConfig(CertificateIssuanceConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CertificateIssuanceConfig, OperationMetadata> future =
+   *       certificateManagerClient
+   *           .createCertificateIssuanceConfigOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CertificateIssuanceConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationCallable() {
+    return stub.createCertificateIssuanceConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new CertificateIssuanceConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CreateCertificateIssuanceConfigRequest request =
+   *       CreateCertificateIssuanceConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setCertificateIssuanceConfigId("certificateIssuanceConfigId1910303023")
+   *           .setCertificateIssuanceConfig(CertificateIssuanceConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       certificateManagerClient.createCertificateIssuanceConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigCallable() {
+    return stub.createCertificateIssuanceConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CertificateIssuanceConfigName name =
+   *       CertificateIssuanceConfigName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]");
+   *   certificateManagerClient.deleteCertificateIssuanceConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the certificate issuance config to delete. Must be in the
+   *     format `projects/&#42;/locations/&#42;/certificateIssuanceConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCertificateIssuanceConfigAsync(
+      CertificateIssuanceConfigName name) {
+    DeleteCertificateIssuanceConfigRequest request =
+        DeleteCertificateIssuanceConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteCertificateIssuanceConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String name =
+   *       CertificateIssuanceConfigName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *           .toString();
+   *   certificateManagerClient.deleteCertificateIssuanceConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the certificate issuance config to delete. Must be in the
+   *     format `projects/&#42;/locations/&#42;/certificateIssuanceConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCertificateIssuanceConfigAsync(
+      String name) {
+    DeleteCertificateIssuanceConfigRequest request =
+        DeleteCertificateIssuanceConfigRequest.newBuilder().setName(name).build();
+    return deleteCertificateIssuanceConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   DeleteCertificateIssuanceConfigRequest request =
+   *       DeleteCertificateIssuanceConfigRequest.newBuilder()
+   *           .setName(
+   *               CertificateIssuanceConfigName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   certificateManagerClient.deleteCertificateIssuanceConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteCertificateIssuanceConfigAsync(
+      DeleteCertificateIssuanceConfigRequest request) {
+    return deleteCertificateIssuanceConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   DeleteCertificateIssuanceConfigRequest request =
+   *       DeleteCertificateIssuanceConfigRequest.newBuilder()
+   *           .setName(
+   *               CertificateIssuanceConfigName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       certificateManagerClient
+   *           .deleteCertificateIssuanceConfigOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationCallable() {
+    return stub.deleteCertificateIssuanceConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   DeleteCertificateIssuanceConfigRequest request =
+   *       DeleteCertificateIssuanceConfigRequest.newBuilder()
+   *           .setName(
+   *               CertificateIssuanceConfigName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       certificateManagerClient.deleteCertificateIssuanceConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigCallable() {
+    return stub.deleteCertificateIssuanceConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -3775,6 +4441,103 @@ public class CertificateManagerClient implements BackgroundResource {
     protected ListDnsAuthorizationsFixedSizeCollection createCollection(
         List<ListDnsAuthorizationsPage> pages, int collectionSize) {
       return new ListDnsAuthorizationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListCertificateIssuanceConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          CertificateIssuanceConfig,
+          ListCertificateIssuanceConfigsPage,
+          ListCertificateIssuanceConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListCertificateIssuanceConfigsPagedResponse> createAsync(
+        PageContext<
+                ListCertificateIssuanceConfigsRequest,
+                ListCertificateIssuanceConfigsResponse,
+                CertificateIssuanceConfig>
+            context,
+        ApiFuture<ListCertificateIssuanceConfigsResponse> futureResponse) {
+      ApiFuture<ListCertificateIssuanceConfigsPage> futurePage =
+          ListCertificateIssuanceConfigsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListCertificateIssuanceConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListCertificateIssuanceConfigsPagedResponse(ListCertificateIssuanceConfigsPage page) {
+      super(page, ListCertificateIssuanceConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListCertificateIssuanceConfigsPage
+      extends AbstractPage<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          CertificateIssuanceConfig,
+          ListCertificateIssuanceConfigsPage> {
+
+    private ListCertificateIssuanceConfigsPage(
+        PageContext<
+                ListCertificateIssuanceConfigsRequest,
+                ListCertificateIssuanceConfigsResponse,
+                CertificateIssuanceConfig>
+            context,
+        ListCertificateIssuanceConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListCertificateIssuanceConfigsPage createEmptyPage() {
+      return new ListCertificateIssuanceConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListCertificateIssuanceConfigsPage createPage(
+        PageContext<
+                ListCertificateIssuanceConfigsRequest,
+                ListCertificateIssuanceConfigsResponse,
+                CertificateIssuanceConfig>
+            context,
+        ListCertificateIssuanceConfigsResponse response) {
+      return new ListCertificateIssuanceConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListCertificateIssuanceConfigsPage> createPageAsync(
+        PageContext<
+                ListCertificateIssuanceConfigsRequest,
+                ListCertificateIssuanceConfigsResponse,
+                CertificateIssuanceConfig>
+            context,
+        ApiFuture<ListCertificateIssuanceConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListCertificateIssuanceConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          CertificateIssuanceConfig,
+          ListCertificateIssuanceConfigsPage,
+          ListCertificateIssuanceConfigsFixedSizeCollection> {
+
+    private ListCertificateIssuanceConfigsFixedSizeCollection(
+        List<ListCertificateIssuanceConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListCertificateIssuanceConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListCertificateIssuanceConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListCertificateIssuanceConfigsFixedSizeCollection createCollection(
+        List<ListCertificateIssuanceConfigsPage> pages, int collectionSize) {
+      return new ListCertificateIssuanceConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

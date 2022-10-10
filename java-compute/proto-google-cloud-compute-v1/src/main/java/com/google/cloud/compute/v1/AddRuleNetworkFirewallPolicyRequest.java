@@ -56,95 +56,6 @@ public final class AddRuleNetworkFirewallPolicyRequest
     return this.unknownFields;
   }
 
-  private AddRuleNetworkFirewallPolicyRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 2004188186:
-            {
-              com.google.cloud.compute.v1.FirewallPolicyRule.Builder subBuilder = null;
-              if (firewallPolicyRuleResource_ != null) {
-                subBuilder = firewallPolicyRuleResource_.toBuilder();
-              }
-              firewallPolicyRuleResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FirewallPolicyRule.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(firewallPolicyRuleResource_);
-                firewallPolicyRuleResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 2137524104:
-            {
-              bitField0_ |= 0x00000002;
-              minPriority_ = input.readInt32();
-              break;
-            }
-          case -1657884424:
-            {
-              bitField0_ |= 0x00000001;
-              maxPriority_ = input.readInt32();
-              break;
-            }
-          case -309581174:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              firewallPolicy_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_AddRuleNetworkFirewallPolicyRequest_descriptor;
@@ -480,7 +391,7 @@ public final class AddRuleNetworkFirewallPolicyRequest
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 498173265, firewallPolicy_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -509,7 +420,7 @@ public final class AddRuleNetworkFirewallPolicyRequest
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(firewallPolicy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(498173265, firewallPolicy_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -544,7 +455,7 @@ public final class AddRuleNetworkFirewallPolicyRequest
     if (hasRequestId()) {
       if (!getRequestId().equals(other.getRequestId())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -575,7 +486,7 @@ public final class AddRuleNetworkFirewallPolicyRequest
       hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRequestId().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -705,17 +616,10 @@ public final class AddRuleNetworkFirewallPolicyRequest
     }
 
     // Construct using com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -861,7 +765,7 @@ public final class AddRuleNetworkFirewallPolicyRequest
         requestId_ = other.requestId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -876,19 +780,68 @@ public final class AddRuleNetworkFirewallPolicyRequest
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 296879706:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 296879706
+            case 1820481738:
+              {
+                project_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1820481738
+            case 2004188186:
+              {
+                input.readMessage(
+                    getFirewallPolicyRuleResourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 2004188186
+            case 2137524104:
+              {
+                minPriority_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 2137524104
+            case -1657884424:
+              {
+                maxPriority_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1657884424
+            case -309581174:
+              {
+                firewallPolicy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case -309581174
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1612,7 +1565,18 @@ public final class AddRuleNetworkFirewallPolicyRequest
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddRuleNetworkFirewallPolicyRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

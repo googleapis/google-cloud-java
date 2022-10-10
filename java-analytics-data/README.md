@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data</artifactId>
-  <version>0.14.5</version>
+  <version>0.14.9</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.analytics:google-analytics-data:0.14.5'
+implementation 'com.google.analytics:google-analytics-data:0.14.9'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.14.5"
+libraryDependencies += "com.google.analytics" % "google-analytics-data" % "0.14.9"
 ```
 
 ## Authentication
@@ -71,38 +71,6 @@ use this Analytics Data Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-analytics-data/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Get Common Metadata Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/GetCommonMetadataSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/GetCommonMetadataSample.java) |
-| Get Metadata By Property Id Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/GetMetadataByPropertyIdSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/GetMetadataByPropertyIdSample.java) |
-| Quickstart Json Credentials Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/QuickstartJsonCredentialsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/QuickstartJsonCredentialsSample.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/QuickstartSample.java) |
-| Run Batch Report Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunBatchReportSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunBatchReportSample.java) |
-| Run Pivot Report Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunPivotReportSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunPivotReportSample.java) |
-| Run Realtime Report Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunRealtimeReportSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunRealtimeReportSample.java) |
-| Run Realtime Report With Multiple Dimensions Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunRealtimeReportWithMultipleDimensionsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunRealtimeReportWithMultipleDimensionsSample.java) |
-| Run Realtime Report With Multiple Metrics Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunRealtimeReportWithMultipleMetricsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunRealtimeReportWithMultipleMetricsSample.java) |
-| Run Report Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportSample.java) |
-| Run Report With Aggregations Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithAggregationsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithAggregationsSample.java) |
-| Run Report With Cohorts Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithCohortsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithCohortsSample.java) |
-| Run Report With Date Ranges Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithDateRangesSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithDateRangesSample.java) |
-| Run Report With Dimension And Metric Filters Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionAndMetricFiltersSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionAndMetricFiltersSample.java) |
-| Run Report With Dimension Exclude Filter Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionExcludeFilterSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionExcludeFilterSample.java) |
-| Run Report With Dimension Filter Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionFilterSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionFilterSample.java) |
-| Run Report With Dimension In List Filter Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionInListFilterSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithDimensionInListFilterSample.java) |
-| Run Report With Multiple Dimension Filters Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithMultipleDimensionFiltersSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithMultipleDimensionFiltersSample.java) |
-| Run Report With Multiple Dimensions Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithMultipleDimensionsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithMultipleDimensionsSample.java) |
-| Run Report With Multiple Metrics Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithMultipleMetricsSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithMultipleMetricsSample.java) |
-| Run Report With Named Date Ranges Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithNamedDateRangesSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithNamedDateRangesSample.java) |
-| Run Report With Ordering Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithOrderingSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithOrderingSample.java) |
-| Run Report With Pagination Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithPaginationSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithPaginationSample.java) |
-| Run Report With Property Quota Sample | [source code](https://github.com/googleapis/java-analytics-data/blob/main/samples/snippets/src/main/java/com/example/analytics/RunReportWithPropertyQuotaSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-data&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analytics/RunReportWithPropertyQuotaSample.java) |
 
 
 

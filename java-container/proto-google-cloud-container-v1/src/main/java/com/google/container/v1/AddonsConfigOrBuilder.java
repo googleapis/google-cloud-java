@@ -391,4 +391,39 @@ public interface AddonsConfigOrBuilder
    */
   com.google.container.v1.GcpFilestoreCsiDriverConfigOrBuilder
       getGcpFilestoreCsiDriverConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return Whether the gkeBackupAgentConfig field is set.
+   */
+  boolean hasGkeBackupAgentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   *
+   * @return The gkeBackupAgentConfig.
+   */
+  com.google.container.v1.GkeBackupAgentConfig getGkeBackupAgentConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Backup for GKE agent addon.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
+   */
+  com.google.container.v1.GkeBackupAgentConfigOrBuilder getGkeBackupAgentConfigOrBuilder();
 }

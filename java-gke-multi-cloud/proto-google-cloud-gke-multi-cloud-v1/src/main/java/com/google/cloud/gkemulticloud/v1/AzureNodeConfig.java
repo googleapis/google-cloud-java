@@ -55,167 +55,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private AzureNodeConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vmSize_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.Builder subBuilder = null;
-              if (rootVolume_ != null) {
-                subBuilder = rootVolume_.toBuilder();
-              }
-              rootVolume_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rootVolume_);
-                rootVolume_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tags_ =
-                    com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
-                  input.readMessage(
-                      TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              tags_.getMutableMap().put(tags__.getKey(), tags__.getValue());
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureSshConfig.Builder subBuilder = null;
-              if (sshConfig_ != null) {
-                subBuilder = sshConfig_.toBuilder();
-              }
-              sshConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureSshConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sshConfig_);
-                sshConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              imageType_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureProxyConfig.Builder subBuilder = null;
-              if (proxyConfig_ != null) {
-                subBuilder = proxyConfig_.toBuilder();
-              }
-              proxyConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureProxyConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(proxyConfig_);
-                proxyConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                taints_ = new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.NodeTaint>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              taints_.add(
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.NodeTaint.parser(), extensionRegistry));
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureConfigEncryption.Builder subBuilder = null;
-              if (configEncryption_ != null) {
-                subBuilder = configEncryption_.toBuilder();
-              }
-              configEncryption_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureConfigEncryption.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configEncryption_);
-                configEncryption_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        taints_ = java.util.Collections.unmodifiableList(taints_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureNodeConfig_descriptor;
@@ -915,7 +754,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     if (configEncryption_ != null) {
       output.writeMessage(12, getConfigEncryption());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -965,7 +804,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     if (configEncryption_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getConfigEncryption());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1002,7 +841,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (!getTaintsList().equals(other.getTaintsList())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1045,7 +884,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1199,19 +1038,10 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.gkemulticloud.v1.AzureNodeConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTaintsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1248,10 +1078,11 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (taintsBuilder_ == null) {
         taints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        taints_ = null;
         taintsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().clear();
       return this;
     }
@@ -1415,7 +1246,7 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1430,18 +1261,100 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkemulticloud.v1.AzureNodeConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                vmSize_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRootVolumeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                break;
+              } // case 26
+            case 58:
+              {
+                input.readMessage(getSshConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                imageType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getProxyConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.cloud.gkemulticloud.v1.NodeTaint m =
+                    input.readMessage(
+                        com.google.cloud.gkemulticloud.v1.NodeTaint.parser(), extensionRegistry);
+                if (taintsBuilder_ == null) {
+                  ensureTaintsIsMutable();
+                  taints_.add(m);
+                } else {
+                  taintsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getConfigEncryptionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkemulticloud.v1.AzureNodeConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3301,7 +3214,18 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AzureNodeConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

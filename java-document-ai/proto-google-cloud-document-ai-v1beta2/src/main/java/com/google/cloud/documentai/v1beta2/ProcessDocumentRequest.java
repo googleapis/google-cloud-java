@@ -53,174 +53,6 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private ProcessDocumentRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.documentai.v1beta2.InputConfig.Builder subBuilder = null;
-              if (inputConfig_ != null) {
-                subBuilder = inputConfig_.toBuilder();
-              }
-              inputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.InputConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(inputConfig_);
-                inputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.documentai.v1beta2.OutputConfig.Builder subBuilder = null;
-              if (outputConfig_ != null) {
-                subBuilder = outputConfig_.toBuilder();
-              }
-              outputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.OutputConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outputConfig_);
-                outputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              documentType_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.documentai.v1beta2.TableExtractionParams.Builder subBuilder = null;
-              if (tableExtractionParams_ != null) {
-                subBuilder = tableExtractionParams_.toBuilder();
-              }
-              tableExtractionParams_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.TableExtractionParams.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tableExtractionParams_);
-                tableExtractionParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.documentai.v1beta2.FormExtractionParams.Builder subBuilder = null;
-              if (formExtractionParams_ != null) {
-                subBuilder = formExtractionParams_.toBuilder();
-              }
-              formExtractionParams_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.FormExtractionParams.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(formExtractionParams_);
-                formExtractionParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.documentai.v1beta2.EntityExtractionParams.Builder subBuilder = null;
-              if (entityExtractionParams_ != null) {
-                subBuilder = entityExtractionParams_.toBuilder();
-              }
-              entityExtractionParams_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.EntityExtractionParams.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entityExtractionParams_);
-                entityExtractionParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.documentai.v1beta2.OcrParams.Builder subBuilder = null;
-              if (ocrParams_ != null) {
-                subBuilder = ocrParams_.toBuilder();
-              }
-              ocrParams_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.OcrParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ocrParams_);
-                ocrParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.documentai.v1beta2.AutoMlParams.Builder subBuilder = null;
-              if (automlParams_ != null) {
-                subBuilder = automlParams_.toBuilder();
-              }
-              automlParams_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta2.AutoMlParams.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(automlParams_);
-                automlParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta2_ProcessDocumentRequest_descriptor;
@@ -760,7 +592,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parent_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -799,7 +631,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parent_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -845,7 +677,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     if (hasAutomlParams()) {
       if (!getAutomlParams().equals(other.getAutomlParams())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -888,7 +720,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + AUTOML_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getAutomlParams().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1018,17 +850,10 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.cloud.documentai.v1beta2.ProcessDocumentRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1223,7 +1048,7 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
       if (other.hasAutomlParams()) {
         mergeAutomlParams(other.getAutomlParams());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1238,18 +1063,88 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.documentai.v1beta2.ProcessDocumentRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                documentType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getTableExtractionParamsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getFormExtractionParamsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getEntityExtractionParamsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getOcrParamsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getAutomlParamsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.documentai.v1beta2.ProcessDocumentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2956,7 +2851,18 @@ public final class ProcessDocumentRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProcessDocumentRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

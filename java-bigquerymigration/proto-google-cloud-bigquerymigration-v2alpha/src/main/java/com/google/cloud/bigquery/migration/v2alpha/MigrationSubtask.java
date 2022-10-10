@@ -59,158 +59,6 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private MigrationSubtask(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              taskId_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              type_ = s;
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 50:
-            {
-              com.google.rpc.ErrorInfo.Builder subBuilder = null;
-              if (processingError_ != null) {
-                subBuilder = processingError_.toBuilder();
-              }
-              processingError_ =
-                  input.readMessage(com.google.rpc.ErrorInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(processingError_);
-                processingError_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastUpdateTime_ != null) {
-                subBuilder = lastUpdateTime_.toBuilder();
-              }
-              lastUpdateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastUpdateTime_);
-                lastUpdateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                metrics_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.bigquery.migration.v2alpha.TimeSeries>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              metrics_.add(
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.TimeSeries.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 98:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                resourceErrorDetails_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.bigquery.migration.v2alpha.ResourceErrorDetail>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              resourceErrorDetails_.add(
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.ResourceErrorDetail.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 104:
-            {
-              resourceErrorCount_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        metrics_ = java.util.Collections.unmodifiableList(metrics_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        resourceErrorDetails_ = java.util.Collections.unmodifiableList(resourceErrorDetails_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.MigrationEntitiesProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_MigrationSubtask_descriptor;
@@ -1027,7 +875,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
     if (resourceErrorCount_ != 0) {
       output.writeInt32(13, resourceErrorCount_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1070,7 +918,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
     if (resourceErrorCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, resourceErrorCount_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1105,7 +953,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
       if (!getLastUpdateTime().equals(other.getLastUpdateTime())) return false;
     }
     if (!getMetricsList().equals(other.getMetricsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1146,7 +994,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetricsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1278,20 +1126,10 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getResourceErrorDetailsFieldBuilder();
-        getMetricsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1313,10 +1151,11 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
       }
       if (resourceErrorDetailsBuilder_ == null) {
         resourceErrorDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        resourceErrorDetails_ = null;
         resourceErrorDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       resourceErrorCount_ = 0;
 
       if (createTimeBuilder_ == null) {
@@ -1333,10 +1172,11 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
       }
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        metrics_ = null;
         metricsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1536,7 +1376,7 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1551,18 +1391,107 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                taskId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                type_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 40:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(getProcessingErrorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 90:
+              {
+                com.google.cloud.bigquery.migration.v2alpha.TimeSeries m =
+                    input.readMessage(
+                        com.google.cloud.bigquery.migration.v2alpha.TimeSeries.parser(),
+                        extensionRegistry);
+                if (metricsBuilder_ == null) {
+                  ensureMetricsIsMutable();
+                  metrics_.add(m);
+                } else {
+                  metricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.cloud.bigquery.migration.v2alpha.ResourceErrorDetail m =
+                    input.readMessage(
+                        com.google.cloud.bigquery.migration.v2alpha.ResourceErrorDetail.parser(),
+                        extensionRegistry);
+                if (resourceErrorDetailsBuilder_ == null) {
+                  ensureResourceErrorDetailsIsMutable();
+                  resourceErrorDetails_.add(m);
+                } else {
+                  resourceErrorDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+            case 104:
+              {
+                resourceErrorCount_ = input.readInt32();
+
+                break;
+              } // case 104
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.migration.v2alpha.MigrationSubtask) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3474,7 +3403,18 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MigrationSubtask(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

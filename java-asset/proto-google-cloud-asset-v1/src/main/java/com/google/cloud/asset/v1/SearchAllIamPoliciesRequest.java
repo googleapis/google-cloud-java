@@ -56,92 +56,6 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private SearchAllIamPoliciesRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              scope_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              query_ = s;
-              break;
-            }
-          case 24:
-            {
-              pageSize_ = input.readInt32();
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageToken_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                assetTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              assetTypes_.add(s);
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              orderBy_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_SearchAllIamPoliciesRequest_descriptor;
@@ -163,9 +77,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The
-   * search is limited to the IAM policies within the `scope`. The caller must
-   * be granted the
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the IAM policies within the `scope`. The caller must be granted
+   * the
    * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -195,9 +109,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The
-   * search is limited to the IAM policies within the `scope`. The caller must
-   * be granted the
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the IAM policies within the `scope`. The caller must be granted
+   * the
    * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -357,11 +271,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -379,10 +292,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If present, retrieve the next batch of results from the preceding
-   * call to this method. `page_token` must be the value of `next_page_token`
-   * from the previous response. The values of all other method parameters must
-   * be identical to those in the previous call.
+   * Optional. If present, retrieve the next batch of results from the preceding call to
+   * this method. `page_token` must be the value of `next_page_token` from the
+   * previous response. The values of all other method parameters must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -405,10 +318,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If present, retrieve the next batch of results from the preceding
-   * call to this method. `page_token` must be the value of `next_page_token`
-   * from the previous response. The values of all other method parameters must
-   * be identical to those in the previous call.
+   * Optional. If present, retrieve the next batch of results from the preceding call to
+   * this method. `page_token` must be the value of `next_page_token` from the
+   * previous response. The values of all other method parameters must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -434,9 +347,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A list of asset types that the IAM policies are attached to. If
-   * empty, it will search the IAM policies that are attached to all the
-   * [searchable asset
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -461,9 +373,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A list of asset types that the IAM policies are attached to. If
-   * empty, it will search the IAM policies that are attached to all the
-   * [searchable asset
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -488,9 +399,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A list of asset types that the IAM policies are attached to. If
-   * empty, it will search the IAM policies that are attached to all the
-   * [searchable asset
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -516,9 +426,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A list of asset types that the IAM policies are attached to. If
-   * empty, it will search the IAM policies that are attached to all the
-   * [searchable asset
+   * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+   * will search the IAM policies that are attached to all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -547,9 +456,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
    * Example: "assetType DESC, resource".
    * Only singular primitive fields in the response are sortable:
    *   * resource
@@ -579,9 +488,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
    * Example: "assetType DESC, resource".
    * Only singular primitive fields in the response are sortable:
    *   * resource
@@ -640,7 +549,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, orderBy_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -672,7 +581,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, orderBy_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -694,7 +603,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getAssetTypesList().equals(other.getAssetTypesList())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -719,7 +628,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     }
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -849,17 +758,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.cloud.asset.v1.SearchAllIamPoliciesRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -994,7 +896,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
         orderBy_ = other.orderBy_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1009,18 +911,68 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.asset.v1.SearchAllIamPoliciesRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                scope_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                query_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                pageSize_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAssetTypesIsMutable();
+                assetTypes_.add(s);
+                break;
+              } // case 42
+            case 58:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.asset.v1.SearchAllIamPoliciesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1031,9 +983,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the IAM policies within the `scope`. The caller must
-     * be granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the IAM policies within the `scope`. The caller must be granted
+     * the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1062,9 +1014,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the IAM policies within the `scope`. The caller must
-     * be granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the IAM policies within the `scope`. The caller must be granted
+     * the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1093,9 +1045,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the IAM policies within the `scope`. The caller must
-     * be granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the IAM policies within the `scope`. The caller must be granted
+     * the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1123,9 +1075,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the IAM policies within the `scope`. The caller must
-     * be granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the IAM policies within the `scope`. The caller must be granted
+     * the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1149,9 +1101,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. A scope can be a project, a folder, or an organization. The
-     * search is limited to the IAM policies within the `scope`. The caller must
-     * be granted the
+     * Required. A scope can be a project, a folder, or an organization. The search is
+     * limited to the IAM policies within the `scope`. The caller must be granted
+     * the
      * [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
      * permission on the desired scope.
      * The allowed values are:
@@ -1483,11 +1435,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1502,11 +1453,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1524,11 +1474,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1547,10 +1496,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1572,10 +1521,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1597,10 +1546,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1621,10 +1570,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1641,10 +1590,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1676,9 +1625,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1703,9 +1651,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1730,9 +1677,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1758,9 +1704,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1786,9 +1731,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1821,9 +1765,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1855,9 +1798,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1886,9 +1828,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1916,9 +1857,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A list of asset types that the IAM policies are attached to. If
-     * empty, it will search the IAM policies that are attached to all the
-     * [searchable asset
+     * Optional. A list of asset types that the IAM policies are attached to. If empty, it
+     * will search the IAM policies that are attached to all the [searchable asset
      * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
      * Regular expressions are also supported. For example:
      * * "compute.googleapis.com.*" snapshots IAM policies attached to asset type
@@ -1953,9 +1893,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "assetType DESC, resource".
      * Only singular primitive fields in the response are sortable:
      *   * resource
@@ -1984,9 +1924,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "assetType DESC, resource".
      * Only singular primitive fields in the response are sortable:
      *   * resource
@@ -2015,9 +1955,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "assetType DESC, resource".
      * Only singular primitive fields in the response are sortable:
      *   * resource
@@ -2045,9 +1985,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "assetType DESC, resource".
      * Only singular primitive fields in the response are sortable:
      *   * resource
@@ -2071,9 +2011,9 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A comma-separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " DESC" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
+     * Optional. A comma-separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " DESC" after the field name
+     * to indicate descending order. Redundant space characters are ignored.
      * Example: "assetType DESC, resource".
      * Only singular primitive fields in the response are sortable:
      *   * resource
@@ -2131,7 +2071,18 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SearchAllIamPoliciesRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

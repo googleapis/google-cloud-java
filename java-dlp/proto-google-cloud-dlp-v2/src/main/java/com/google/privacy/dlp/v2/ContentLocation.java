@@ -54,138 +54,6 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private ContentLocation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              containerName_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.privacy.dlp.v2.RecordLocation.Builder subBuilder = null;
-              if (locationCase_ == 2) {
-                subBuilder = ((com.google.privacy.dlp.v2.RecordLocation) location_).toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.RecordLocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.RecordLocation) location_);
-                location_ = subBuilder.buildPartial();
-              }
-              locationCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.privacy.dlp.v2.ImageLocation.Builder subBuilder = null;
-              if (locationCase_ == 3) {
-                subBuilder = ((com.google.privacy.dlp.v2.ImageLocation) location_).toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.ImageLocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.ImageLocation) location_);
-                location_ = subBuilder.buildPartial();
-              }
-              locationCase_ = 3;
-              break;
-            }
-          case 42:
-            {
-              com.google.privacy.dlp.v2.DocumentLocation.Builder subBuilder = null;
-              if (locationCase_ == 5) {
-                subBuilder = ((com.google.privacy.dlp.v2.DocumentLocation) location_).toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.DocumentLocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.DocumentLocation) location_);
-                location_ = subBuilder.buildPartial();
-              }
-              locationCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (containerTimestamp_ != null) {
-                subBuilder = containerTimestamp_.toBuilder();
-              }
-              containerTimestamp_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(containerTimestamp_);
-                containerTimestamp_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              containerVersion_ = s;
-              break;
-            }
-          case 66:
-            {
-              com.google.privacy.dlp.v2.MetadataLocation.Builder subBuilder = null;
-              if (locationCase_ == 8) {
-                subBuilder = ((com.google.privacy.dlp.v2.MetadataLocation) location_).toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.MetadataLocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.MetadataLocation) location_);
-                location_ = subBuilder.buildPartial();
-              }
-              locationCase_ = 8;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
@@ -664,7 +532,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     if (locationCase_ == 8) {
       output.writeMessage(8, (com.google.privacy.dlp.v2.MetadataLocation) location_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -702,7 +570,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.privacy.dlp.v2.MetadataLocation) location_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -741,7 +609,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -780,7 +648,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -910,17 +778,10 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.privacy.dlp.v2.ContentLocation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -928,6 +789,18 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
       super.clear();
       containerName_ = "";
 
+      if (recordLocationBuilder_ != null) {
+        recordLocationBuilder_.clear();
+      }
+      if (imageLocationBuilder_ != null) {
+        imageLocationBuilder_.clear();
+      }
+      if (documentLocationBuilder_ != null) {
+        documentLocationBuilder_.clear();
+      }
+      if (metadataLocationBuilder_ != null) {
+        metadataLocationBuilder_.clear();
+      }
       if (containerTimestampBuilder_ == null) {
         containerTimestamp_ = null;
       } else {
@@ -1087,7 +960,7 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1102,17 +975,76 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.ContentLocation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                containerName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRecordLocationFieldBuilder().getBuilder(), extensionRegistry);
+                locationCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getImageLocationFieldBuilder().getBuilder(), extensionRegistry);
+                locationCase_ = 3;
+                break;
+              } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    getDocumentLocationFieldBuilder().getBuilder(), extensionRegistry);
+                locationCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getContainerTimestampFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                containerVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getMetadataLocationFieldBuilder().getBuilder(), extensionRegistry);
+                locationCase_ = 8;
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.ContentLocation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2466,7 +2398,18 @@ public final class ContentLocation extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContentLocation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

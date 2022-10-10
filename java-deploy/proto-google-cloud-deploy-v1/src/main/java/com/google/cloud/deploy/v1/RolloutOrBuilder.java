@@ -565,7 +565,7 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. Reason the build failed. Empty if the build succeeded.
+   * Output only. Additional information about the rollout failure, if available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -577,7 +577,7 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. Reason the build failed. Empty if the build succeeded.
+   * Output only. Additional information about the rollout failure, if available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -652,8 +652,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason this deploy failed. This will always be unspecified while the
-   * deploy in progress.
+   * Output only. The reason this rollout failed. This will always be unspecified while the
+   * rollout is in progress.
    * </pre>
    *
    * <code>
@@ -667,8 +667,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason this deploy failed. This will always be unspecified while the
-   * deploy in progress.
+   * Output only. The reason this rollout failed. This will always be unspecified while the
+   * rollout is in progress.
    * </pre>
    *
    * <code>
@@ -678,4 +678,106 @@ public interface RolloutOrBuilder
    * @return The deployFailureCause.
    */
   com.google.cloud.deploy.v1.Rollout.FailureCause getDeployFailureCause();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.deploy.v1.Phase> getPhasesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.Phase getPhases(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPhasesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.deploy.v1.PhaseOrBuilder> getPhasesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The phases that represent the workflows of this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.deploy.v1.Phase phases = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PhaseOrBuilder getPhasesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata contains information about the rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata contains information about the rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  com.google.cloud.deploy.v1.Metadata getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata contains information about the rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Metadata metadata = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.MetadataOrBuilder getMetadataOrBuilder();
 }

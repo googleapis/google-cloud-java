@@ -52,63 +52,6 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private TimeSeriesTable(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dataSets_ =
-                    new java.util.ArrayList<
-                        com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dataSets_.add(
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dataSets_ = java.util.Collections.unmodifiableList(dataSets_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.TableProto
         .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_descriptor;
@@ -331,101 +274,6 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TableDataSet(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder subBuilder = null;
-                if (timeSeriesQuery_ != null) {
-                  subBuilder = timeSeriesQuery_.toBuilder();
-                }
-                timeSeriesQuery_ =
-                    input.readMessage(
-                        com.google.monitoring.dashboard.v1.TimeSeriesQuery.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(timeSeriesQuery_);
-                  timeSeriesQuery_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                tableTemplate_ = s;
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (minAlignmentPeriod_ != null) {
-                  subBuilder = minAlignmentPeriod_.toBuilder();
-                }
-                minAlignmentPeriod_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(minAlignmentPeriod_);
-                  minAlignmentPeriod_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                com.google.monitoring.dashboard.v1.TableDisplayOptions.Builder subBuilder = null;
-                if (tableDisplayOptions_ != null) {
-                  subBuilder = tableDisplayOptions_.toBuilder();
-                }
-                tableDisplayOptions_ =
-                    input.readMessage(
-                        com.google.monitoring.dashboard.v1.TableDisplayOptions.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(tableDisplayOptions_);
-                  tableDisplayOptions_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -703,7 +551,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       if (tableDisplayOptions_ != null) {
         output.writeMessage(4, getTableDisplayOptions());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -726,7 +574,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTableDisplayOptions());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -755,7 +603,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       if (hasTableDisplayOptions()) {
         if (!getTableDisplayOptions().equals(other.getTableDisplayOptions())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -780,7 +628,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + TABLE_DISPLAY_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getTableDisplayOptions().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -914,17 +762,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
 
       // Construct using
       // com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1061,7 +902,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         if (other.hasTableDisplayOptions()) {
           mergeTableDisplayOptions(other.getTableDisplayOptions());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1076,19 +917,58 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getTimeSeriesQueryFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  tableTemplate_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getMinAlignmentPeriodFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getTableDisplayOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1912,7 +1792,19 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TableDataSet(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2031,7 +1923,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < dataSets_.size(); i++) {
       output.writeMessage(1, dataSets_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2043,7 +1935,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < dataSets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, dataSets_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2060,7 +1952,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         (com.google.monitoring.dashboard.v1.TimeSeriesTable) obj;
 
     if (!getDataSetsList().equals(other.getDataSetsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2075,7 +1967,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + DATA_SETS_FIELD_NUMBER;
       hash = (53 * hash) + getDataSetsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2204,19 +2096,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.monitoring.dashboard.v1.TimeSeriesTable.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDataSetsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2224,10 +2107,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       super.clear();
       if (dataSetsBuilder_ == null) {
         dataSets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dataSets_ = null;
         dataSetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -2342,7 +2226,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2357,18 +2241,45 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.monitoring.dashboard.v1.TimeSeriesTable parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet m =
+                    input.readMessage(
+                        com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet.parser(),
+                        extensionRegistry);
+                if (dataSetsBuilder_ == null) {
+                  ensureDataSetsIsMutable();
+                  dataSets_.add(m);
+                } else {
+                  dataSetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.monitoring.dashboard.v1.TimeSeriesTable) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2810,7 +2721,18 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TimeSeriesTable(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

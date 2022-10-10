@@ -61,283 +61,6 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AzureCluster(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              azureRegion_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureClusterNetworking.Builder subBuilder = null;
-              if (networking_ != null) {
-                subBuilder = networking_.toBuilder();
-              }
-              networking_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureClusterNetworking.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(networking_);
-                networking_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureControlPlane.Builder subBuilder = null;
-              if (controlPlane_ != null) {
-                subBuilder = controlPlane_.toBuilder();
-              }
-              controlPlane_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureControlPlane.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(controlPlane_);
-                controlPlane_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureAuthorization.Builder subBuilder = null;
-              if (authorization_ != null) {
-                subBuilder = authorization_.toBuilder();
-              }
-              authorization_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureAuthorization.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authorization_);
-                authorization_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              endpoint_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 80:
-            {
-              reconciling_ = input.readBool();
-              break;
-            }
-          case 90:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 114:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              azureClient_ = s;
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceGroupId_ = s;
-              break;
-            }
-          case 146:
-            {
-              com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.Builder subBuilder = null;
-              if (workloadIdentityConfig_ != null) {
-                subBuilder = workloadIdentityConfig_.toBuilder();
-              }
-              workloadIdentityConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workloadIdentityConfig_);
-                workloadIdentityConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterCaCertificate_ = s;
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.gkemulticloud.v1.Fleet.Builder subBuilder = null;
-              if (fleet_ != null) {
-                subBuilder = fleet_.toBuilder();
-              }
-              fleet_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.Fleet.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fleet_);
-                fleet_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 170:
-            {
-              com.google.cloud.gkemulticloud.v1.AzureClusterResources.Builder subBuilder = null;
-              if (managedResources_ != null) {
-                subBuilder = managedResources_.toBuilder();
-              }
-              managedResources_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureClusterResources.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(managedResources_);
-                managedResources_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 186:
-            {
-              com.google.cloud.gkemulticloud.v1.LoggingConfig.Builder subBuilder = null;
-              if (loggingConfig_ != null) {
-                subBuilder = loggingConfig_.toBuilder();
-              }
-              loggingConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.LoggingConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(loggingConfig_);
-                loggingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureCluster_descriptor;
@@ -1846,7 +1569,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     if (loggingConfig_ != null) {
       output.writeMessage(23, getLoggingConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1927,7 +1650,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getLoggingConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1991,7 +1714,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2064,7 +1787,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2213,17 +1936,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gkemulticloud.v1.AzureCluster.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2511,7 +2227,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2526,17 +2242,164 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkemulticloud.v1.AzureCluster parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                azureRegion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getNetworkingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getControlPlaneFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 56:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                endpoint_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 80:
+              {
+                reconciling_ = input.readBool();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 106
+            case 114:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 114
+            case 130:
+              {
+                azureClient_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                resourceGroupId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getWorkloadIdentityConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            case 154:
+              {
+                clusterCaCertificate_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(getFleetFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getManagedResourcesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 170
+            case 186:
+              {
+                input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gkemulticloud.v1.AzureCluster) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5845,7 +5708,18 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AzureCluster(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

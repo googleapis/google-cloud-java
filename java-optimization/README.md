@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-optimization</artifactId>
-  <version>1.1.9</version>
+  <version>1.1.13</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-optimization:1.1.9'
+implementation 'com.google.cloud:google-cloud-optimization:1.1.13'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-optimization" % "1.1.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-optimization" % "1.1.13"
 ```
 
 ## Authentication
@@ -68,18 +68,6 @@ use this Cloud Fleet Routing Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-optimization/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Async Api | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/AsyncApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/AsyncApi.java) |
-| Get Operation | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/GetOperation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/GetOperation.java) |
-| Sync Api | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/SyncApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/SyncApi.java) |
-| Sync Api With Long Timeout | [source code](https://github.com/googleapis/java-optimization/blob/main/samples/snippets/src/main/java/com/example/optimizationai/SyncApiWithLongTimeout.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-optimization&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/optimizationai/SyncApiWithLongTimeout.java) |
 
 
 

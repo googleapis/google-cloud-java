@@ -54,77 +54,6 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private LogConfigCounterOptions(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 779421650:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              field_ = s;
-              break;
-            }
-          case 1997208122:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                customFields_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              customFields_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -30429822:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              metric_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        customFields_ = java.util.Collections.unmodifiableList(customFields_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_LogConfigCounterOptions_descriptor;
@@ -375,7 +304,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 533067184, metric_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -394,7 +323,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(533067184, metric_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -419,7 +348,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     if (hasMetric()) {
       if (!getMetric().equals(other.getMetric())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -442,7 +371,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       hash = (37 * hash) + METRIC_FIELD_NUMBER;
       hash = (53 * hash) + getMetric().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -571,19 +500,10 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.compute.v1.LogConfigCounterOptions.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCustomFieldsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -591,10 +511,11 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       super.clear();
       if (customFieldsBuilder_ == null) {
         customFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        customFields_ = null;
         customFieldsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       field_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       metric_ = "";
@@ -733,7 +654,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
         metric_ = other.metric_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -748,18 +669,57 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.LogConfigCounterOptions parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 779421650:
+              {
+                field_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 779421650
+            case 1997208122:
+              {
+                com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.LogConfigCounterOptionsCustomField.parser(),
+                        extensionRegistry);
+                if (customFieldsBuilder_ == null) {
+                  ensureCustomFieldsIsMutable();
+                  customFields_.add(m);
+                } else {
+                  customFieldsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1997208122
+            case -30429822:
+              {
+                metric_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -30429822
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.LogConfigCounterOptions) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1441,7 +1401,18 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LogConfigCounterOptions(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

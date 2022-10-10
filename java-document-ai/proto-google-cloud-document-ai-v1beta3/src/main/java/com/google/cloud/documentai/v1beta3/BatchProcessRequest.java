@@ -53,130 +53,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private BatchProcessRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                inputConfigs_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              inputConfigs_.add(
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig.Builder
-                  subBuilder = null;
-              if (outputConfig_ != null) {
-                subBuilder = outputConfig_.toBuilder();
-              }
-              outputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outputConfig_);
-                outputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              skipHumanReview_ = input.readBool();
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder subBuilder =
-                  null;
-              if (inputDocuments_ != null) {
-                subBuilder = inputDocuments_.toBuilder();
-              }
-              inputDocuments_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(inputDocuments_);
-                inputDocuments_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder subBuilder = null;
-              if (documentOutputConfig_ != null) {
-                subBuilder = documentOutputConfig_.toBuilder();
-              }
-              documentOutputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta3.DocumentOutputConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(documentOutputConfig_);
-                documentOutputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
         .internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_descriptor;
@@ -286,59 +162,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private BatchInputConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                gcsSource_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                mimeType_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -479,7 +302,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -494,7 +317,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -513,7 +336,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
       if (!getGcsSource().equals(other.getGcsSource())) return false;
       if (!getMimeType().equals(other.getMimeType())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -528,7 +351,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + getGcsSource().hashCode();
       hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getMimeType().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -668,17 +491,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
       // Construct using
       // com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -785,7 +601,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           mimeType_ = other.mimeType_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -800,20 +616,43 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  gcsSource_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  mimeType_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1075,7 +914,19 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new BatchInputConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1161,52 +1012,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       return this.unknownFields;
     }
 
-    private BatchOutputConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                gcsDestination_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
           .internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_BatchOutputConfig_descriptor;
@@ -1289,7 +1094,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsDestination_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsDestination_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1301,7 +1106,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsDestination_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsDestination_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1319,7 +1124,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           (com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig) obj;
 
       if (!getGcsDestination().equals(other.getGcsDestination())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1332,7 +1137,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GCS_DESTINATION_FIELD_NUMBER;
       hash = (53 * hash) + getGcsDestination().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1472,17 +1277,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
       // Construct using
       // com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1582,7 +1380,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           gcsDestination_ = other.gcsDestination_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1597,20 +1395,37 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  gcsDestination_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1756,7 +1571,19 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new BatchOutputConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2140,7 +1967,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (documentOutputConfig_ != null) {
       output.writeMessage(6, getDocumentOutputConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2168,7 +1995,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDocumentOutputConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2199,7 +2026,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!getDocumentOutputConfig().equals(other.getDocumentOutputConfig())) return false;
     }
     if (getSkipHumanReview() != other.getSkipHumanReview()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2230,7 +2057,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + SKIP_HUMAN_REVIEW_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHumanReview());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2360,19 +2187,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.documentai.v1beta3.BatchProcessRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInputConfigsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2382,10 +2200,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        inputConfigs_ = null;
         inputConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (outputConfigBuilder_ == null) {
         outputConfig_ = null;
       } else {
@@ -2553,7 +2372,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (other.getSkipHumanReview() != false) {
         setSkipHumanReview(other.getSkipHumanReview());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2568,18 +2387,77 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.documentai.v1beta3.BatchProcessRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig
+                            .parser(),
+                        extensionRegistry);
+                if (inputConfigsBuilder_ == null) {
+                  ensureInputConfigsIsMutable();
+                  inputConfigs_.add(m);
+                } else {
+                  inputConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 32:
+              {
+                skipHumanReview_ = input.readBool();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getInputDocumentsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getDocumentOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.documentai.v1beta3.BatchProcessRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3855,7 +3733,18 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchProcessRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

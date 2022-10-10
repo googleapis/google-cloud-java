@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-deploy</artifactId>
-  <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
+  <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
   <packaging>jar</packaging>
   <name>Google Google CLoud Deploy</name>
   <url>https://github.com/googleapis/java-deploy</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-deploy-parent</artifactId>
-    <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
+    <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-deploy</site.installationModule>
@@ -32,6 +32,10 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
@@ -80,6 +84,17 @@
       <artifactId>grpc-google-cloud-deploy-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

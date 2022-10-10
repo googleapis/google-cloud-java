@@ -50,120 +50,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private HumanAgentAssistantConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.cloud.dialogflow.v2beta1.NotificationConfig.Builder subBuilder = null;
-              if (notificationConfig_ != null) {
-                subBuilder = notificationConfig_.toBuilder();
-              }
-              notificationConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.NotificationConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(notificationConfig_);
-                notificationConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.Builder
-                  subBuilder = null;
-              if (humanAgentSuggestionConfig_ != null) {
-                subBuilder = humanAgentSuggestionConfig_.toBuilder();
-              }
-              humanAgentSuggestionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(humanAgentSuggestionConfig_);
-                humanAgentSuggestionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.Builder
-                  subBuilder = null;
-              if (endUserSuggestionConfig_ != null) {
-                subBuilder = endUserSuggestionConfig_.toBuilder();
-              }
-              endUserSuggestionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endUserSuggestionConfig_);
-                endUserSuggestionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.MessageAnalysisConfig
-                      .Builder
-                  subBuilder = null;
-              if (messageAnalysisConfig_ != null) {
-                subBuilder = messageAnalysisConfig_.toBuilder();
-              }
-              messageAnalysisConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                          .MessageAnalysisConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(messageAnalysisConfig_);
-                messageAnalysisConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
         .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_descriptor;
@@ -244,55 +130,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private SuggestionTriggerSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                noSmallTalk_ = input.readBool();
-                break;
-              }
-            case 16:
-              {
-                onlyEndUser_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionTriggerSettings_descriptor;
@@ -367,7 +204,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (onlyEndUser_ != false) {
         output.writeBool(2, onlyEndUser_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -382,7 +219,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (onlyEndUser_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, onlyEndUser_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -406,7 +243,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       if (getNoSmallTalk() != other.getNoSmallTalk()) return false;
       if (getOnlyEndUser() != other.getOnlyEndUser()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -421,7 +258,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoSmallTalk());
       hash = (37 * hash) + ONLY_END_USER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOnlyEndUser());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -577,17 +414,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -700,7 +530,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getOnlyEndUser() != false) {
           setOnlyEndUser(other.getOnlyEndUser());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -715,21 +545,43 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  noSmallTalk_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  onlyEndUser_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                      .SuggestionTriggerSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -879,7 +731,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SuggestionTriggerSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1163,147 +1027,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SuggestionFeatureConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24:
-              {
-                enableEventBasedSuggestion_ = input.readBool();
-                break;
-              }
-            case 42:
-              {
-                com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Builder subBuilder = null;
-                if (suggestionFeature_ != null) {
-                  subBuilder = suggestionFeature_.toBuilder();
-                }
-                suggestionFeature_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.SuggestionFeature.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(suggestionFeature_);
-                  suggestionFeature_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 50:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .Builder
-                    subBuilder = null;
-                if (queryConfig_ != null) {
-                  subBuilder = queryConfig_.toBuilder();
-                }
-                queryConfig_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionQueryConfig.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(queryConfig_);
-                  queryConfig_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 58:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                        .ConversationModelConfig.Builder
-                    subBuilder = null;
-                if (conversationModelConfig_ != null) {
-                  subBuilder = conversationModelConfig_.toBuilder();
-                }
-                conversationModelConfig_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .ConversationModelConfig.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(conversationModelConfig_);
-                  conversationModelConfig_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 66:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                        .ConversationProcessConfig.Builder
-                    subBuilder = null;
-                if (conversationProcessConfig_ != null) {
-                  subBuilder = conversationProcessConfig_.toBuilder();
-                }
-                conversationProcessConfig_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .ConversationProcessConfig.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(conversationProcessConfig_);
-                  conversationProcessConfig_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 82:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                        .SuggestionTriggerSettings.Builder
-                    subBuilder = null;
-                if (suggestionTriggerSettings_ != null) {
-                  subBuilder = suggestionTriggerSettings_.toBuilder();
-                }
-                suggestionTriggerSettings_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionTriggerSettings.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(suggestionTriggerSettings_);
-                  suggestionTriggerSettings_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1666,7 +1389,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (suggestionTriggerSettings_ != null) {
         output.writeMessage(10, getSuggestionTriggerSettings());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1700,7 +1423,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 10, getSuggestionTriggerSettings());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1742,7 +1465,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (!getConversationProcessConfig().equals(other.getConversationProcessConfig()))
           return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1776,7 +1499,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         hash = (37 * hash) + CONVERSATION_PROCESS_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getConversationProcessConfig().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1932,17 +1655,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2118,7 +1834,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.hasConversationProcessConfig()) {
           mergeConversationProcessConfig(other.getConversationProcessConfig());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2133,21 +1849,71 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24:
+                {
+                  enableEventBasedSuggestion_ = input.readBool();
+
+                  break;
+                } // case 24
+              case 42:
+                {
+                  input.readMessage(
+                      getSuggestionFeatureFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(getQueryConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getConversationModelConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getConversationProcessConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 66
+              case 82:
+                {
+                  input.readMessage(
+                      getSuggestionTriggerSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 82
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                      .SuggestionFeatureConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3366,7 +3132,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SuggestionFeatureConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3519,70 +3297,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SuggestionConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  featureConfigs_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                              .SuggestionFeatureConfig>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                featureConfigs_.add(
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionFeatureConfig.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 24:
-              {
-                groupSuggestionResponses_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          featureConfigs_ = java.util.Collections.unmodifiableList(featureConfigs_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3741,7 +3455,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (groupSuggestionResponses_ != false) {
         output.writeBool(3, groupSuggestionResponses_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3756,7 +3470,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (groupSuggestionResponses_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, groupSuggestionResponses_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3776,7 +3490,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       if (!getFeatureConfigsList().equals(other.getFeatureConfigsList())) return false;
       if (getGroupSuggestionResponses() != other.getGroupSuggestionResponses()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3793,7 +3507,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       hash = (37 * hash) + GROUP_SUGGESTION_RESPONSES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGroupSuggestionResponses());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3935,19 +3649,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getFeatureConfigsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -3955,10 +3660,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         super.clear();
         if (featureConfigsBuilder_ == null) {
           featureConfigs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          featureConfigs_ = null;
           featureConfigsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         groupSuggestionResponses_ = false;
 
         return this;
@@ -4093,7 +3799,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getGroupSuggestionResponses() != false) {
           setGroupSuggestionResponses(other.getGroupSuggestionResponses());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4108,20 +3814,54 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                          .SuggestionFeatureConfig
+                      m =
+                          input.readMessage(
+                              com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
+                                  .SuggestionFeatureConfig.parser(),
+                              extensionRegistry);
+                  if (featureConfigsBuilder_ == null) {
+                    ensureFeatureConfigsIsMutable();
+                    featureConfigs_.add(m);
+                  } else {
+                    featureConfigsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 24:
+                {
+                  groupSuggestionResponses_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4699,7 +4439,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SuggestionConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4990,156 +4742,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private SuggestionQueryConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .KnowledgeBaseQuerySource.Builder
-                    subBuilder = null;
-                if (querySourceCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                                  .SuggestionQueryConfig.KnowledgeBaseQuerySource)
-                              querySource_)
-                          .toBuilder();
-                }
-                querySource_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionQueryConfig.KnowledgeBaseQuerySource.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                              .SuggestionQueryConfig.KnowledgeBaseQuerySource)
-                          querySource_);
-                  querySource_ = subBuilder.buildPartial();
-                }
-                querySourceCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .DocumentQuerySource.Builder
-                    subBuilder = null;
-                if (querySourceCase_ == 2) {
-                  subBuilder =
-                      ((com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                                  .SuggestionQueryConfig.DocumentQuerySource)
-                              querySource_)
-                          .toBuilder();
-                }
-                querySource_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionQueryConfig.DocumentQuerySource.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                              .SuggestionQueryConfig.DocumentQuerySource)
-                          querySource_);
-                  querySource_ = subBuilder.buildPartial();
-                }
-                querySourceCase_ = 2;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .DialogflowQuerySource.Builder
-                    subBuilder = null;
-                if (querySourceCase_ == 3) {
-                  subBuilder =
-                      ((com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                                  .SuggestionQueryConfig.DialogflowQuerySource)
-                              querySource_)
-                          .toBuilder();
-                }
-                querySource_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionQueryConfig.DialogflowQuerySource.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                              .SuggestionQueryConfig.DialogflowQuerySource)
-                          querySource_);
-                  querySource_ = subBuilder.buildPartial();
-                }
-                querySourceCase_ = 3;
-                break;
-              }
-            case 32:
-              {
-                maxResults_ = input.readInt32();
-                break;
-              }
-            case 45:
-              {
-                confidenceThreshold_ = input.readFloat();
-                break;
-              }
-            case 58:
-              {
-                com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .ContextFilterSettings.Builder
-                    subBuilder = null;
-                if (contextFilterSettings_ != null) {
-                  subBuilder = contextFilterSettings_.toBuilder();
-                }
-                contextFilterSettings_ =
-                    input.readMessage(
-                        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                            .SuggestionQueryConfig.ContextFilterSettings.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(contextFilterSettings_);
-                  contextFilterSettings_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_descriptor;
@@ -5270,60 +4872,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return this.unknownFields;
       }
 
-      private KnowledgeBaseQuerySource(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    knowledgeBases_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  knowledgeBases_.add(s);
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            knowledgeBases_ = knowledgeBases_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
             .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_KnowledgeBaseQuerySource_descriptor;
@@ -5439,7 +4987,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         for (int i = 0; i < knowledgeBases_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, knowledgeBases_.getRaw(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5456,7 +5004,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           size += dataSize;
           size += 1 * getKnowledgeBasesList().size();
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5480,7 +5028,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                     obj;
 
         if (!getKnowledgeBasesList().equals(other.getKnowledgeBasesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5495,7 +5043,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           hash = (37 * hash) + KNOWLEDGE_BASES_FIELD_NUMBER;
           hash = (53 * hash) + getKnowledgeBasesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5655,17 +5203,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         // Construct using
         // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.KnowledgeBaseQuerySource.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -5790,7 +5331,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5805,22 +5346,38 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                  .KnowledgeBaseQuerySource
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureKnowledgeBasesIsMutable();
+                    knowledgeBases_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .KnowledgeBaseQuerySource)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -6078,7 +5635,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new KnowledgeBaseQuerySource(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -6211,60 +5780,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return this.unknownFields;
       }
 
-      private DocumentQuerySource(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    documents_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  documents_.add(s);
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            documents_ = documents_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
             .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_DocumentQuerySource_descriptor;
@@ -6380,7 +5895,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         for (int i = 0; i < documents_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, documents_.getRaw(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -6397,7 +5912,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           size += dataSize;
           size += 1 * getDocumentsList().size();
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -6421,7 +5936,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                     obj;
 
         if (!getDocumentsList().equals(other.getDocumentsList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -6436,7 +5951,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           hash = (37 * hash) + DOCUMENTS_FIELD_NUMBER;
           hash = (53 * hash) + getDocumentsList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -6596,17 +6111,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         // Construct using
         // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.DocumentQuerySource.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -6731,7 +6239,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -6746,22 +6254,38 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                  .DocumentQuerySource
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureDocumentsIsMutable();
+                    documents_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .DocumentQuerySource)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -7019,7 +6543,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DocumentQuerySource(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -7116,53 +6652,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return this.unknownFields;
       }
 
-      private DialogflowQuerySource(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  agent_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
             .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_DialogflowQuerySource_descriptor;
@@ -7256,7 +6745,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, agent_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -7268,7 +6757,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agent_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, agent_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -7292,7 +6781,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                     obj;
 
         if (!getAgent().equals(other.getAgent())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -7305,7 +6794,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + AGENT_FIELD_NUMBER;
         hash = (53 * hash) + getAgent().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -7465,17 +6954,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         // Construct using
         // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.DialogflowQuerySource.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -7589,7 +7071,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             agent_ = other.agent_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -7604,22 +7086,37 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                  .DialogflowQuerySource
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    agent_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .DialogflowQuerySource)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -7793,7 +7290,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DialogflowQuerySource(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -7893,61 +7402,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return this.unknownFields;
       }
 
-      private ContextFilterSettings(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  dropHandoffMessages_ = input.readBool();
-                  break;
-                }
-              case 16:
-                {
-                  dropVirtualAgentMessages_ = input.readBool();
-                  break;
-                }
-              case 24:
-                {
-                  dropIvrMessages_ = input.readBool();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
             .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_SuggestionQueryConfig_ContextFilterSettings_descriptor;
@@ -8043,7 +7497,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (dropIvrMessages_ != false) {
           output.writeBool(3, dropIvrMessages_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -8062,7 +7516,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (dropIvrMessages_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, dropIvrMessages_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -8088,7 +7542,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (getDropHandoffMessages() != other.getDropHandoffMessages()) return false;
         if (getDropVirtualAgentMessages() != other.getDropVirtualAgentMessages()) return false;
         if (getDropIvrMessages() != other.getDropIvrMessages()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -8106,7 +7560,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDropVirtualAgentMessages());
         hash = (37 * hash) + DROP_IVR_MESSAGES_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDropIvrMessages());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -8266,17 +7720,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         // Construct using
         // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.ContextFilterSettings.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -8401,7 +7848,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           if (other.getDropIvrMessages() != false) {
             setDropIvrMessages(other.getDropIvrMessages());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -8416,22 +7863,49 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                  .ContextFilterSettings
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    dropHandoffMessages_ = input.readBool();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    dropVirtualAgentMessages_ = input.readBool();
+
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    dropIvrMessages_ = input.readBool();
+
+                    break;
+                  } // case 24
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-                        .ContextFilterSettings)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -8633,7 +8107,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ContextFilterSettings(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -9069,7 +8555,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (contextFilterSettings_ != null) {
         output.writeMessage(7, getContextFilterSettings());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9112,7 +8598,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(7, getContextFilterSettings());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9152,7 +8638,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9187,7 +8673,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9343,22 +8829,24 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (knowledgeBaseQuerySourceBuilder_ != null) {
+          knowledgeBaseQuerySourceBuilder_.clear();
+        }
+        if (documentQuerySourceBuilder_ != null) {
+          documentQuerySourceBuilder_.clear();
+        }
+        if (dialogflowQuerySourceBuilder_ != null) {
+          dialogflowQuerySourceBuilder_.clear();
+        }
         maxResults_ = 0;
 
         confidenceThreshold_ = 0F;
@@ -9522,7 +9010,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9537,20 +9025,71 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getKnowledgeBaseQuerySourceFieldBuilder().getBuilder(), extensionRegistry);
+                  querySourceCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getDocumentQuerySourceFieldBuilder().getBuilder(), extensionRegistry);
+                  querySourceCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getDialogflowQuerySourceFieldBuilder().getBuilder(), extensionRegistry);
+                  querySourceCase_ = 3;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  maxResults_ = input.readInt32();
+
+                  break;
+                } // case 32
+              case 45:
+                {
+                  confidenceThreshold_ = input.readFloat();
+
+                  break;
+                } // case 45
+              case 58:
+                {
+                  input.readMessage(
+                      getContextFilterSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -10812,7 +10351,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SuggestionQueryConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -10901,52 +10452,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private ConversationModelConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                model_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_ConversationModelConfig_descriptor;
@@ -11032,7 +10537,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, model_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11044,7 +10549,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, model_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11064,7 +10569,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               obj;
 
       if (!getModel().equals(other.getModel())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11077,7 +10582,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11235,17 +10740,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -11352,7 +10850,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           model_ = other.model_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -11367,21 +10865,37 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  model_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                      .ConversationModelConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -11535,7 +11049,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConversationModelConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -11607,50 +11133,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private ConversationProcessConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16:
-              {
-                recentSentencesCount_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_ConversationProcessConfig_descriptor;
@@ -11704,7 +11186,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (recentSentencesCount_ != 0) {
         output.writeInt32(2, recentSentencesCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11716,7 +11198,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (recentSentencesCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, recentSentencesCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11739,7 +11221,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   obj;
 
       if (getRecentSentencesCount() != other.getRecentSentencesCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11752,7 +11234,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RECENT_SENTENCES_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getRecentSentencesCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11908,17 +11390,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -12025,7 +11500,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getRecentSentencesCount() != 0) {
           setRecentSentencesCount(other.getRecentSentencesCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12040,21 +11515,37 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  recentSentencesCount_ = input.readInt32();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
-                      .ConversationProcessConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -12152,7 +11643,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConversationProcessConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -12253,55 +11756,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return this.unknownFields;
     }
 
-    private MessageAnalysisConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16:
-              {
-                enableEntityExtraction_ = input.readBool();
-                break;
-              }
-            case 24:
-              {
-                enableSentimentAnalysis_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.ConversationProfileProto
           .internal_static_google_cloud_dialogflow_v2beta1_HumanAgentAssistantConfig_MessageAnalysisConfig_descriptor;
@@ -12392,7 +11846,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (enableSentimentAnalysis_ != false) {
         output.writeBool(3, enableSentimentAnalysis_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -12407,7 +11861,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (enableSentimentAnalysis_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableSentimentAnalysis_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -12427,7 +11881,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       if (getEnableEntityExtraction() != other.getEnableEntityExtraction()) return false;
       if (getEnableSentimentAnalysis() != other.getEnableSentimentAnalysis()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -12442,7 +11896,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableEntityExtraction());
       hash = (37 * hash) + ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSentimentAnalysis());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12598,17 +12052,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.MessageAnalysisConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -12718,7 +12165,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getEnableSentimentAnalysis() != false) {
           setEnableSentimentAnalysis(other.getEnableSentimentAnalysis());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12733,20 +12180,43 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.MessageAnalysisConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  enableEntityExtraction_ = input.readBool();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  enableSentimentAnalysis_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.MessageAnalysisConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -12943,7 +12413,19 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MessageAnalysisConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -13219,7 +12701,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     if (messageAnalysisConfig_ != null) {
       output.writeMessage(5, getMessageAnalysisConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -13244,7 +12726,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMessageAnalysisConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -13277,7 +12759,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     if (hasMessageAnalysisConfig()) {
       if (!getMessageAnalysisConfig().equals(other.getMessageAnalysisConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -13304,7 +12786,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (37 * hash) + MESSAGE_ANALYSIS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMessageAnalysisConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -13434,17 +12916,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -13585,7 +13060,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (other.hasMessageAnalysisConfig()) {
         mergeMessageAnalysisConfig(other.getMessageAnalysisConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -13600,19 +13075,59 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(
+                    getNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getHumanAgentSuggestionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getEndUserSuggestionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getMessageAnalysisConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -14511,7 +14026,18 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HumanAgentAssistantConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

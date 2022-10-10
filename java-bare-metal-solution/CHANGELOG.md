@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.5](https://github.com/googleapis/java-bare-metal-solution/compare/v0.3.4...v0.3.5) (2022-09-28)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#75](https://github.com/googleapis/java-bare-metal-solution/issues/75)) ([9c46598](https://github.com/googleapis/java-bare-metal-solution/commit/9c46598f8b4ec42996f14eea38717ad78b56da55))
+* Update dependency google-cloud-core to v2.3.2 ([#76](https://github.com/googleapis/java-bare-metal-solution/issues/76)) ([b79f9d3](https://github.com/googleapis/java-bare-metal-solution/commit/b79f9d333b99b1a5e9b684f7cc17a19787a5a71f))
+* Update dependency googleapis-common-protos to v1.56.4 ([#77](https://github.com/googleapis/java-bare-metal-solution/issues/77)) ([6849fd5](https://github.com/googleapis/java-bare-metal-solution/commit/6849fd5c9487f02ed456cc733aef4b36637eb8a0))
+
+## [0.3.4](https://github.com/googleapis/java-bare-metal-solution/compare/v0.3.3...v0.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#69](https://github.com/googleapis/java-bare-metal-solution/issues/69)) ([d929b21](https://github.com/googleapis/java-bare-metal-solution/commit/d929b21afbc1f5d49508bbda96c0ca33041b5456))
+
+## [0.3.3](https://github.com/googleapis/java-bare-metal-solution/compare/v0.3.2...v0.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#64](https://github.com/googleapis/java-bare-metal-solution/issues/64)) ([892b3ef](https://github.com/googleapis/java-bare-metal-solution/commit/892b3ef1f7ed340677b306298f0846bbd91da70d))
+
 ## [0.3.2](https://github.com/googleapis/java-bare-metal-solution/compare/v0.3.1...v0.3.2) (2022-08-09)
 
 

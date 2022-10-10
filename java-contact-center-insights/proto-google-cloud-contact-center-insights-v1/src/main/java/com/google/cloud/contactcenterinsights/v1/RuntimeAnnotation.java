@@ -52,221 +52,6 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private RuntimeAnnotation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              annotationId_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder subBuilder =
-                  null;
-              if (startBoundary_ != null) {
-                subBuilder = startBoundary_.toBuilder();
-              }
-              startBoundary_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startBoundary_);
-                startBoundary_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.Builder subBuilder =
-                  null;
-              if (endBoundary_ != null) {
-                subBuilder = endBoundary_.toBuilder();
-              }
-              endBoundary_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.AnnotationBoundary.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endBoundary_);
-                endBoundary_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.contactcenterinsights.v1.AnswerFeedback.Builder subBuilder = null;
-              if (answerFeedback_ != null) {
-                subBuilder = answerFeedback_.toBuilder();
-              }
-              answerFeedback_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.AnswerFeedback.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(answerFeedback_);
-                answerFeedback_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData.Builder subBuilder =
-                  null;
-              if (dataCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData) data_)
-                        .toBuilder();
-              }
-              data_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.contactcenterinsights.v1.ArticleSuggestionData) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.contactcenterinsights.v1.FaqAnswerData.Builder subBuilder = null;
-              if (dataCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.contactcenterinsights.v1.FaqAnswerData) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.FaqAnswerData.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.contactcenterinsights.v1.FaqAnswerData) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.contactcenterinsights.v1.SmartReplyData.Builder subBuilder = null;
-              if (dataCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.contactcenterinsights.v1.SmartReplyData) data_).toBuilder();
-              }
-              data_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.SmartReplyData.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.contactcenterinsights.v1.SmartReplyData) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData.Builder
-                  subBuilder = null;
-              if (dataCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData) data_)
-                        .toBuilder();
-              }
-              data_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData.Builder
-                  subBuilder = null;
-              if (dataCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData) data_)
-                        .toBuilder();
-              }
-              data_ =
-                  input.readMessage(
-                      com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData) data_);
-                data_ = subBuilder.buildPartial();
-              }
-              dataCase_ = 10;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ResourcesProto
         .internal_static_google_cloud_contactcenterinsights_v1_RuntimeAnnotation_descriptor;
@@ -909,7 +694,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           10, (com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData) data_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -958,7 +743,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.contactcenterinsights.v1.DialogflowInteractionData) data_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1011,7 +796,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1064,7 +849,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1194,22 +979,30 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (articleSuggestionBuilder_ != null) {
+        articleSuggestionBuilder_.clear();
+      }
+      if (faqAnswerBuilder_ != null) {
+        faqAnswerBuilder_.clear();
+      }
+      if (smartReplyBuilder_ != null) {
+        smartReplyBuilder_.clear();
+      }
+      if (smartComposeSuggestionBuilder_ != null) {
+        smartComposeSuggestionBuilder_.clear();
+      }
+      if (dialogflowInteractionBuilder_ != null) {
+        dialogflowInteractionBuilder_.clear();
+      }
       annotationId_ = "";
 
       if (createTimeBuilder_ == null) {
@@ -1419,7 +1212,7 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1434,18 +1227,94 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                annotationId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getStartBoundaryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getEndBoundaryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getAnswerFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getArticleSuggestionFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getFaqAnswerFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getSmartReplyFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getSmartComposeSuggestionFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getDialogflowInteractionFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 10;
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3497,7 +3366,18 @@ public final class RuntimeAnnotation extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RuntimeAnnotation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

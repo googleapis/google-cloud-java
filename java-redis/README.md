@@ -11,58 +11,28 @@ Java idiomatic client for [Cloud Redis][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-redis</artifactId>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis</artifactId>
-  <version>2.6.2</version>
+  <version>2.6.5</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-redis'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-redis:2.6.2'
+implementation 'com.google.cloud:google-cloud-redis:2.6.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "2.6.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-redis" % "2.6.5"
 ```
 
 ## Authentication

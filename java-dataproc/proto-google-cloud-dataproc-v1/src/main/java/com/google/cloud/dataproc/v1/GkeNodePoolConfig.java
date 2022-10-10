@@ -53,96 +53,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private GkeNodePoolConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.Builder subBuilder =
-                  null;
-              if (config_ != null) {
-                subBuilder = config_.toBuilder();
-              }
-              config_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(config_);
-                config_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig.Builder
-                  subBuilder = null;
-              if (autoscaling_ != null) {
-                subBuilder = autoscaling_.toBuilder();
-              }
-              autoscaling_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(autoscaling_);
-                autoscaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                locations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              locations_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.SharedProto
         .internal_static_google_cloud_dataproc_v1_GkeNodePoolConfig_descriptor;
@@ -364,89 +274,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private GkeNodeConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                machineType_ = s;
-                break;
-              }
-            case 56:
-              {
-                localSsdCount_ = input.readInt32();
-                break;
-              }
-            case 80:
-              {
-                preemptible_ = input.readBool();
-                break;
-              }
-            case 90:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  accelerators_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.dataproc.v1.GkeNodePoolConfig
-                              .GkeNodePoolAcceleratorConfig>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                accelerators_.add(
-                    input.readMessage(
-                        com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 106:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                minCpuPlatform_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -738,7 +565,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, minCpuPlatform_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -762,7 +589,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(minCpuPlatform_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, minCpuPlatform_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -783,7 +610,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (getLocalSsdCount() != other.getLocalSsdCount()) return false;
       if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
       if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -806,7 +633,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
       hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
       hash = (53 * hash) + getMinCpuPlatform().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -938,19 +765,10 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       }
 
       // Construct using com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getAcceleratorsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -964,10 +782,11 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          accelerators_ = null;
           acceleratorsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         minCpuPlatform_ = "";
 
         return this;
@@ -1106,7 +925,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           minCpuPlatform_ = other.minCpuPlatform_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1121,19 +940,70 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  machineType_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 56:
+                {
+                  localSsdCount_ = input.readInt32();
+
+                  break;
+                } // case 56
+              case 80:
+                {
+                  preemptible_ = input.readBool();
+
+                  break;
+                } // case 80
+              case 90:
+                {
+                  com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig m =
+                      input.readMessage(
+                          com.google.cloud.dataproc.v1.GkeNodePoolConfig
+                              .GkeNodePoolAcceleratorConfig.parser(),
+                          extensionRegistry);
+                  if (acceleratorsBuilder_ == null) {
+                    ensureAcceleratorsIsMutable();
+                    accelerators_.add(m);
+                  } else {
+                    acceleratorsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 90
+              case 106:
+                {
+                  minCpuPlatform_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 106
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodeConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1984,7 +1854,19 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GkeNodeConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2082,57 +1964,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private GkeNodePoolAcceleratorConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                acceleratorCount_ = input.readInt64();
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                acceleratorType_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2238,7 +2069,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, acceleratorType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2253,7 +2084,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(acceleratorType_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, acceleratorType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2272,7 +2103,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
       if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
       if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2287,7 +2118,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAcceleratorCount());
       hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorType().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2428,17 +2259,10 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
       // Construct using
       // com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2545,7 +2369,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           acceleratorType_ = other.acceleratorType_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2560,20 +2384,43 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  acceleratorCount_ = input.readInt64();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  acceleratorType_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAcceleratorConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2771,7 +2618,19 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GkeNodePoolAcceleratorConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2859,55 +2718,6 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       return this.unknownFields;
     }
 
-    private GkeNodePoolAutoscalingConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16:
-              {
-                minNodeCount_ = input.readInt32();
-                break;
-              }
-            case 24:
-              {
-                maxNodeCount_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataproc.v1.SharedProto
           .internal_static_google_cloud_dataproc_v1_GkeNodePoolConfig_GkeNodePoolAutoscalingConfig_descriptor;
@@ -2982,7 +2792,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (maxNodeCount_ != 0) {
         output.writeInt32(3, maxNodeCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2997,7 +2807,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (maxNodeCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxNodeCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3016,7 +2826,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
       if (getMinNodeCount() != other.getMinNodeCount()) return false;
       if (getMaxNodeCount() != other.getMaxNodeCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3031,7 +2841,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getMinNodeCount();
       hash = (37 * hash) + MAX_NODE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getMaxNodeCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3172,17 +2982,10 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
 
       // Construct using
       // com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3288,7 +3091,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         if (other.getMaxNodeCount() != 0) {
           setMaxNodeCount(other.getMaxNodeCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3303,20 +3106,43 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  minNodeCount_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  maxNodeCount_ = input.readInt32();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataproc.v1.GkeNodePoolConfig.GkeNodePoolAutoscalingConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3466,7 +3292,19 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GkeNodePoolAutoscalingConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3705,7 +3543,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < locations_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, locations_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3728,7 +3566,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getLocationsList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3753,7 +3591,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     if (hasAutoscaling()) {
       if (!getAutoscaling().equals(other.getAutoscaling())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3776,7 +3614,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + AUTOSCALING_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscaling().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3906,17 +3744,10 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.dataproc.v1.GkeNodePoolConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -4044,7 +3875,7 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasAutoscaling()) {
         mergeAutoscaling(other.getAutoscaling());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4059,17 +3890,50 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.GkeNodePoolConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLocationsIsMutable();
+                locations_.add(s);
+                break;
+              } // case 106
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.GkeNodePoolConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4749,7 +4613,18 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GkeNodePoolConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

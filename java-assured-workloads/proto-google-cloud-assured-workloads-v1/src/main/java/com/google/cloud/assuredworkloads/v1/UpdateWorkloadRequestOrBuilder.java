@@ -28,7 +28,7 @@ public interface UpdateWorkloadRequestOrBuilder
    *
    * <pre>
    * Required. The workload to update.
-   * The workload’s `name` field is used to identify the workload to be updated.
+   * The workload's `name` field is used to identify the workload to be updated.
    * Format:
    * organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * </pre>
@@ -45,7 +45,7 @@ public interface UpdateWorkloadRequestOrBuilder
    *
    * <pre>
    * Required. The workload to update.
-   * The workload’s `name` field is used to identify the workload to be updated.
+   * The workload's `name` field is used to identify the workload to be updated.
    * Format:
    * organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * </pre>
@@ -62,7 +62,7 @@ public interface UpdateWorkloadRequestOrBuilder
    *
    * <pre>
    * Required. The workload to update.
-   * The workload’s `name` field is used to identify the workload to be updated.
+   * The workload's `name` field is used to identify the workload to be updated.
    * Format:
    * organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * </pre>

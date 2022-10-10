@@ -50,60 +50,6 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private LocationMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 16:
-            {
-              standardEnvironmentAvailable_ = input.readBool();
-              break;
-            }
-          case 32:
-            {
-              flexibleEnvironmentAvailable_ = input.readBool();
-              break;
-            }
-          case 48:
-            {
-              searchApiAvailable_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.LocationProto
         .internal_static_google_appengine_v1_LocationMetadata_descriptor;
@@ -199,7 +145,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (searchApiAvailable_ != false) {
       output.writeBool(6, searchApiAvailable_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -219,7 +165,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (searchApiAvailable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, searchApiAvailable_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -237,7 +183,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (getStandardEnvironmentAvailable() != other.getStandardEnvironmentAvailable()) return false;
     if (getFlexibleEnvironmentAvailable() != other.getFlexibleEnvironmentAvailable()) return false;
     if (getSearchApiAvailable() != other.getSearchApiAvailable()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -256,7 +202,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFlexibleEnvironmentAvailable());
     hash = (37 * hash) + SEARCH_API_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSearchApiAvailable());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -385,17 +331,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.appengine.v1.LocationMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -495,7 +434,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (other.getSearchApiAvailable() != false) {
         setSearchApiAvailable(other.getSearchApiAvailable());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -510,17 +449,49 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.appengine.v1.LocationMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16:
+              {
+                standardEnvironmentAvailable_ = input.readBool();
+
+                break;
+              } // case 16
+            case 32:
+              {
+                flexibleEnvironmentAvailable_ = input.readBool();
+
+                break;
+              } // case 32
+            case 48:
+              {
+                searchApiAvailable_ = input.readBool();
+
+                break;
+              } // case 48
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.appengine.v1.LocationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -721,7 +692,18 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LocationMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

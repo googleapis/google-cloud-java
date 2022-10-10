@@ -51,148 +51,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private AutoMlTablesInputs(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              predictionType_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetColumn_ = s;
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                transformations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              transformations_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                          .AutoMlTablesInputs.Transformation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              optimizationObjective_ = s;
-              break;
-            }
-          case 45:
-            {
-              additionalOptimizationObjectiveConfig_ = input.readFloat();
-              additionalOptimizationObjectiveConfigCase_ = 5;
-              break;
-            }
-          case 53:
-            {
-              additionalOptimizationObjectiveConfig_ = input.readFloat();
-              additionalOptimizationObjectiveConfigCase_ = 6;
-              break;
-            }
-          case 56:
-            {
-              trainBudgetMilliNodeHours_ = input.readInt64();
-              break;
-            }
-          case 64:
-            {
-              disableEarlyStopping_ = input.readBool();
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              weightColumnName_ = s;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                      .ExportEvaluatedDataItemsConfig.Builder
-                  subBuilder = null;
-              if (exportEvaluatedDataItemsConfig_ != null) {
-                subBuilder = exportEvaluatedDataItemsConfig_.toBuilder();
-              }
-              exportEvaluatedDataItemsConfig_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                          .ExportEvaluatedDataItemsConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(exportEvaluatedDataItemsConfig_);
-                exportEvaluatedDataItemsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                additionalExperiments_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              additionalExperiments_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        transformations_ = java.util.Collections.unmodifiableList(transformations_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
         .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_descriptor;
@@ -461,262 +319,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private Transformation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.AutoTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.AutoTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.AutoTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.AutoTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.NumericTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 2) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.NumericTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.NumericTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.NumericTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 2;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.CategoricalTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 3) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.CategoricalTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.CategoricalTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.CategoricalTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 3;
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.TimestampTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 4) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.TimestampTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.TimestampTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.TimestampTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 4;
-                break;
-              }
-            case 42:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.TextTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 5) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.TextTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.TextTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.TextTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 5;
-                break;
-              }
-            case 50:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.NumericArrayTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 6) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.NumericArrayTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.NumericArrayTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.NumericArrayTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 6;
-                break;
-              }
-            case 58:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.CategoricalArrayTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 7) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.CategoricalArrayTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.CategoricalArrayTransformation
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.CategoricalArrayTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 7;
-                break;
-              }
-            case 66:
-              {
-                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.TextArrayTransformation.Builder
-                    subBuilder = null;
-                if (transformationDetailCase_ == 8) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                                  .AutoMlTablesInputs.Transformation.TextArrayTransformation)
-                              transformationDetail_)
-                          .toBuilder();
-                }
-                transformationDetail_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                            .AutoMlTablesInputs.Transformation.TextArrayTransformation.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1.schema.trainingjob.definition
-                              .AutoMlTablesInputs.Transformation.TextArrayTransformation)
-                          transformationDetail_);
-                  transformationDetail_ = subBuilder.buildPartial();
-                }
-                transformationDetailCase_ = 8;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
           .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_descriptor;
@@ -786,53 +388,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private AutoTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -906,7 +461,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -918,7 +473,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -942,7 +497,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                     obj;
 
         if (!getColumnName().equals(other.getColumnName())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -955,7 +510,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + COLUMN_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getColumnName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1115,17 +670,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.AutoTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1239,7 +787,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             columnName_ = other.columnName_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1254,22 +802,37 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.AutoTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.AutoTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1388,7 +951,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new AutoTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -1487,58 +1062,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return this.unknownFields;
       }
 
-      private NumericTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              case 16:
-                {
-                  invalidValuesAllowed_ = input.readBool();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_NumericTransformation_descriptor;
@@ -1634,7 +1157,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (invalidValuesAllowed_ != false) {
           output.writeBool(2, invalidValuesAllowed_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1649,7 +1172,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (invalidValuesAllowed_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, invalidValuesAllowed_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1674,7 +1197,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         if (!getColumnName().equals(other.getColumnName())) return false;
         if (getInvalidValuesAllowed() != other.getInvalidValuesAllowed()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1689,7 +1212,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (53 * hash) + getColumnName().hashCode();
         hash = (37 * hash) + INVALID_VALUES_ALLOWED_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvalidValuesAllowed());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1857,17 +1380,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.NumericTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1987,7 +1503,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (other.getInvalidValuesAllowed() != false) {
             setInvalidValuesAllowed(other.getInvalidValuesAllowed());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2002,22 +1518,43 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.NumericTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    invalidValuesAllowed_ = input.readBool();
+
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.NumericTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -2197,7 +1734,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new NumericTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2280,53 +1829,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return this.unknownFields;
       }
 
-      private CategoricalTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_CategoricalTransformation_descriptor;
@@ -2398,7 +1900,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2410,7 +1912,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2434,7 +1936,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                     obj;
 
         if (!getColumnName().equals(other.getColumnName())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2447,7 +1949,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + COLUMN_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getColumnName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2614,17 +2116,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.CategoricalTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -2738,7 +2233,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             columnName_ = other.columnName_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2753,22 +2248,37 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.CategoricalTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.CategoricalTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -2887,7 +2397,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new CategoricalTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3027,65 +2549,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private TimestampTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  timeFormat_ = s;
-                  break;
-                }
-              case 24:
-                {
-                  invalidValuesAllowed_ = input.readBool();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3255,7 +2718,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (invalidValuesAllowed_ != false) {
           output.writeBool(3, invalidValuesAllowed_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3273,7 +2736,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (invalidValuesAllowed_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, invalidValuesAllowed_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3299,7 +2762,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!getColumnName().equals(other.getColumnName())) return false;
         if (!getTimeFormat().equals(other.getTimeFormat())) return false;
         if (getInvalidValuesAllowed() != other.getInvalidValuesAllowed()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3316,7 +2779,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (53 * hash) + getTimeFormat().hashCode();
         hash = (37 * hash) + INVALID_VALUES_ALLOWED_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvalidValuesAllowed());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3481,17 +2944,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.TimestampTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -3618,7 +3074,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (other.getInvalidValuesAllowed() != false) {
             setInvalidValuesAllowed(other.getInvalidValuesAllowed());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3633,22 +3089,49 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.TimestampTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    timeFormat_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                case 24:
+                  {
+                    invalidValuesAllowed_ = input.readBool();
+
+                    break;
+                  } // case 24
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.TimestampTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3984,7 +3467,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new TimestampTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4068,53 +3563,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return this.unknownFields;
       }
 
-      private TextTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_TextTransformation_descriptor;
@@ -4186,7 +3634,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4198,7 +3646,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4222,7 +3670,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                     obj;
 
         if (!getColumnName().equals(other.getColumnName())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4235,7 +3683,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + COLUMN_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getColumnName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4404,17 +3852,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.TextTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -4528,7 +3969,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             columnName_ = other.columnName_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4543,22 +3984,37 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.TextTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.TextTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4677,7 +4133,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new TextTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4771,58 +4239,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private NumericArrayTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              case 16:
-                {
-                  invalidValuesAllowed_ = input.readBool();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4920,7 +4336,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (invalidValuesAllowed_ != false) {
           output.writeBool(2, invalidValuesAllowed_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4935,7 +4351,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (invalidValuesAllowed_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, invalidValuesAllowed_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4960,7 +4376,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         if (!getColumnName().equals(other.getColumnName())) return false;
         if (getInvalidValuesAllowed() != other.getInvalidValuesAllowed()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4975,7 +4391,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (53 * hash) + getColumnName().hashCode();
         hash = (37 * hash) + INVALID_VALUES_ALLOWED_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInvalidValuesAllowed());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5138,17 +4554,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.NumericArrayTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -5268,7 +4677,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           if (other.getInvalidValuesAllowed() != false) {
             setInvalidValuesAllowed(other.getInvalidValuesAllowed());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5283,22 +4692,43 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.NumericArrayTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    invalidValuesAllowed_ = input.readBool();
+
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.NumericArrayTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -5478,7 +4908,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new NumericArrayTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -5561,53 +5003,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return this.unknownFields;
       }
 
-      private CategoricalArrayTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_CategoricalArrayTransformation_descriptor;
@@ -5679,7 +5074,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5691,7 +5086,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5715,7 +5110,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                     obj;
 
         if (!getColumnName().equals(other.getColumnName())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5728,7 +5123,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + COLUMN_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getColumnName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5894,17 +5289,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.CategoricalArrayTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -6018,7 +5406,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             columnName_ = other.columnName_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -6033,22 +5421,37 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.CategoricalArrayTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.CategoricalArrayTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -6167,7 +5570,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new CategoricalArrayTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -6247,53 +5662,6 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         return this.unknownFields;
       }
 
-      private TextArrayTransformation(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  columnName_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMLTablesProto
             .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlTablesInputs_Transformation_TextArrayTransformation_descriptor;
@@ -6365,7 +5733,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -6377,7 +5745,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -6401,7 +5769,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                     obj;
 
         if (!getColumnName().equals(other.getColumnName())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -6414,7 +5782,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + COLUMN_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getColumnName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -6579,17 +5947,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.TextArrayTransformation.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -6703,7 +6064,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             columnName_ = other.columnName_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -6718,22 +6079,37 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                  .Transformation.TextArrayTransformation
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    columnName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                        .Transformation.TextArrayTransformation)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -6852,7 +6228,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new TextArrayTransformation(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -7400,7 +6788,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                     .Transformation.TextArrayTransformation)
                 transformationDetail_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7473,7 +6861,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
                         .Transformation.TextArrayTransformation)
                     transformationDetail_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7524,7 +6912,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7571,7 +6959,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7722,22 +7110,39 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (autoBuilder_ != null) {
+          autoBuilder_.clear();
+        }
+        if (numericBuilder_ != null) {
+          numericBuilder_.clear();
+        }
+        if (categoricalBuilder_ != null) {
+          categoricalBuilder_.clear();
+        }
+        if (timestampBuilder_ != null) {
+          timestampBuilder_.clear();
+        }
+        if (textBuilder_ != null) {
+          textBuilder_.clear();
+        }
+        if (repeatedNumericBuilder_ != null) {
+          repeatedNumericBuilder_.clear();
+        }
+        if (repeatedCategoricalBuilder_ != null) {
+          repeatedCategoricalBuilder_.clear();
+        }
+        if (repeatedTextBuilder_ != null) {
+          repeatedTextBuilder_.clear();
+        }
         transformationDetailCase_ = 0;
         transformationDetail_ = null;
         return this;
@@ -7944,7 +7349,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7959,22 +7364,81 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                .Transformation
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getAutoFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getNumericFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getCategoricalFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 3;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getTimestampFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 4;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getTextFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 5;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getRepeatedNumericFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 6;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getRepeatedCategoricalFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 7;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(getRepeatedTextFieldBuilder().getBuilder(), extensionRegistry);
+                  transformationDetailCase_ = 8;
+                  break;
+                } // case 66
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-                      .Transformation)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9735,7 +9199,19 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Transformation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -10461,7 +9937,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 11, additionalExperiments_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -10514,7 +9990,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getAdditionalExperimentsList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -10562,7 +10038,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -10610,7 +10086,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -10743,19 +10219,10 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
     // Construct using
     // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTransformationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -10767,10 +10234,11 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
 
       if (transformationsBuilder_ == null) {
         transformations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        transformations_ = null;
         transformationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       optimizationObjective_ = "";
 
       trainBudgetMilliNodeHours_ = 0L;
@@ -10988,7 +10456,7 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -11003,20 +10471,111 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
-          parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                predictionType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                targetColumn_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs
+                        .Transformation
+                    m =
+                        input.readMessage(
+                            com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                                .AutoMlTablesInputs.Transformation.parser(),
+                            extensionRegistry);
+                if (transformationsBuilder_ == null) {
+                  ensureTransformationsIsMutable();
+                  transformations_.add(m);
+                } else {
+                  transformationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                optimizationObjective_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 45:
+              {
+                additionalOptimizationObjectiveConfig_ = input.readFloat();
+                additionalOptimizationObjectiveConfigCase_ = 5;
+                break;
+              } // case 45
+            case 53:
+              {
+                additionalOptimizationObjectiveConfig_ = input.readFloat();
+                additionalOptimizationObjectiveConfigCase_ = 6;
+                break;
+              } // case 53
+            case 56:
+              {
+                trainBudgetMilliNodeHours_ = input.readInt64();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                disableEarlyStopping_ = input.readBool();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                weightColumnName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getExportEvaluatedDataItemsConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdditionalExperimentsIsMutable();
+                additionalExperiments_.add(s);
+                break;
+              } // case 90
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlTablesInputs)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -12846,7 +12405,18 @@ public final class AutoMlTablesInputs extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AutoMlTablesInputs(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -14,16 +14,15 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^io.grpc:grpc-"],
-      "groupName": "gRPC packages"
+      "matchPackagePrefixes": ["com.google"],
+      "enabled": false
     },
     {
-      "matchPackagePatterns": ["^com.google.protobuf:protobuf-"],
-      "groupName": "Protobuf packages"
-    },
-    {
-      "matchPackagePatterns": ["^io.opencensus:opencensus-"],
-      "groupName": "OpenCensus packages"
+      "matchPackageNames": [
+        "com.google.cloud:google-cloud-shared-config",
+        "com.google.cloud:google-cloud-shared-dependencies"
+      ],
+      "enabled": true
     }
   ]
 }

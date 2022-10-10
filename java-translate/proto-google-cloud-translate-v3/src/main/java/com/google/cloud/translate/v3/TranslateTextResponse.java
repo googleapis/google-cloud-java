@@ -45,76 +45,6 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private TranslateTextResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                translations_ =
-                    new java.util.ArrayList<com.google.cloud.translate.v3.Translation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              translations_.add(
-                  input.readMessage(
-                      com.google.cloud.translate.v3.Translation.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                glossaryTranslations_ =
-                    new java.util.ArrayList<com.google.cloud.translate.v3.Translation>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              glossaryTranslations_.add(
-                  input.readMessage(
-                      com.google.cloud.translate.v3.Translation.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        translations_ = java.util.Collections.unmodifiableList(translations_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        glossaryTranslations_ = java.util.Collections.unmodifiableList(glossaryTranslations_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_TranslateTextResponse_descriptor;
@@ -319,7 +249,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < glossaryTranslations_.size(); i++) {
       output.writeMessage(3, glossaryTranslations_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -335,7 +265,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, glossaryTranslations_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -353,7 +283,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
 
     if (!getTranslationsList().equals(other.getTranslationsList())) return false;
     if (!getGlossaryTranslationsList().equals(other.getGlossaryTranslationsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -372,7 +302,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + GLOSSARY_TRANSLATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getGlossaryTranslationsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -493,20 +423,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.translate.v3.TranslateTextResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTranslationsFieldBuilder();
-        getGlossaryTranslationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -514,16 +434,18 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       super.clear();
       if (translationsBuilder_ == null) {
         translations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        translations_ = null;
         translationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (glossaryTranslationsBuilder_ == null) {
         glossaryTranslations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        glossaryTranslations_ = null;
         glossaryTranslationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -674,7 +596,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -689,18 +611,57 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.translate.v3.TranslateTextResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.translate.v3.Translation m =
+                    input.readMessage(
+                        com.google.cloud.translate.v3.Translation.parser(), extensionRegistry);
+                if (translationsBuilder_ == null) {
+                  ensureTranslationsIsMutable();
+                  translations_.add(m);
+                } else {
+                  translationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 26:
+              {
+                com.google.cloud.translate.v3.Translation m =
+                    input.readMessage(
+                        com.google.cloud.translate.v3.Translation.parser(), extensionRegistry);
+                if (glossaryTranslationsBuilder_ == null) {
+                  ensureGlossaryTranslationsIsMutable();
+                  glossaryTranslations_.add(m);
+                } else {
+                  glossaryTranslationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.translate.v3.TranslateTextResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1557,7 +1518,18 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TranslateTextResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

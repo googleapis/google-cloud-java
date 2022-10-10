@@ -59,206 +59,6 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private RouterNat(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              name_ = s;
-              break;
-            }
-          case 29180496:
-            {
-              bitField0_ |= 0x00000004;
-              icmpIdleTimeoutSec_ = input.readInt32();
-              break;
-            }
-          case 519359024:
-            {
-              bitField0_ |= 0x00001000;
-              udpIdleTimeoutSec_ = input.readInt32();
-              break;
-            }
-          case 870991802:
-            {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
-                rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatRule>();
-                mutable_bitField0_ |= 0x00000800;
-              }
-              rules_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterNatRule.parser(), extensionRegistry));
-              break;
-            }
-          case 941080690:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
-                natIps_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              natIps_.add(s);
-              break;
-            }
-          case 1489548696:
-            {
-              bitField0_ |= 0x00000020;
-              minPortsPerVm_ = input.readInt32();
-              break;
-            }
-          case 1640230192:
-            {
-              bitField0_ |= 0x00000800;
-              tcpTransitoryIdleTimeoutSec_ = input.readInt32();
-              break;
-            }
-          case 1784786792:
-            {
-              bitField0_ |= 0x00000200;
-              tcpEstablishedIdleTimeoutSec_ = input.readInt32();
-              break;
-            }
-          case 2000496392:
-            {
-              bitField0_ |= 0x00000010;
-              maxPortsPerVm_ = input.readInt32();
-              break;
-            }
-          case 2017705690:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              sourceSubnetworkIpRangesToNat_ = s;
-              break;
-            }
-          case 2075534552:
-            {
-              bitField0_ |= 0x00000002;
-              enableEndpointIndependentMapping_ = input.readBool();
-              break;
-            }
-          case -1484569366:
-            {
-              com.google.cloud.compute.v1.RouterNatLogConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = logConfig_.toBuilder();
-              }
-              logConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterNatLogConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logConfig_);
-                logConfig_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-          case -968142294:
-            {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
-                subnetworks_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              subnetworks_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterNatSubnetworkToNat.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -857152534:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              natIpAllocateOption_ = s;
-              break;
-            }
-          case -273896838:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                endpointTypes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              endpointTypes_.add(s);
-              break;
-            }
-          case -262339014:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                drainNatIps_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              drainNatIps_.add(s);
-              break;
-            }
-          case -186191896:
-            {
-              bitField0_ |= 0x00000400;
-              tcpTimeWaitTimeoutSec_ = input.readInt32();
-              break;
-            }
-          case -38116080:
-            {
-              bitField0_ |= 0x00000001;
-              enableDynamicPortAllocation_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
-        rules_ = java.util.Collections.unmodifiableList(rules_);
-      }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
-        natIps_ = natIps_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
-        subnetworks_ = java.util.Collections.unmodifiableList(subnetworks_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        endpointTypes_ = endpointTypes_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        drainNatIps_ = drainNatIps_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_RouterNat_descriptor;
@@ -1707,7 +1507,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(532106402, enableDynamicPortAllocation_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1798,7 +1598,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               532106402, enableDynamicPortAllocation_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1875,7 +1675,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (hasUdpIdleTimeoutSec()) {
       if (getUdpIdleTimeoutSec() != other.getUdpIdleTimeoutSec()) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1961,7 +1761,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UDP_IDLE_TIMEOUT_SEC_FIELD_NUMBER;
       hash = (53 * hash) + getUdpIdleTimeoutSec();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2137,18 +1937,20 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000400);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
+        rules_ = null;
         rulesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000800);
       sourceSubnetworkIpRangesToNat_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       if (subnetworksBuilder_ == null) {
         subnetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
+        subnetworks_ = null;
         subnetworksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00002000);
       tcpEstablishedIdleTimeoutSec_ = 0;
       bitField0_ = (bitField0_ & ~0x00004000);
       tcpTimeWaitTimeoutSec_ = 0;
@@ -2454,7 +2256,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUdpIdleTimeoutSec()) {
         setUdpIdleTimeoutSec(other.getUdpIdleTimeoutSec());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2469,17 +2271,157 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.RouterNat parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 26989658
+            case 29180496:
+              {
+                icmpIdleTimeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 29180496
+            case 519359024:
+              {
+                udpIdleTimeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 519359024
+            case 870991802:
+              {
+                com.google.cloud.compute.v1.RouterNatRule m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterNatRule.parser(), extensionRegistry);
+                if (rulesBuilder_ == null) {
+                  ensureRulesIsMutable();
+                  rules_.add(m);
+                } else {
+                  rulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 870991802
+            case 941080690:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNatIpsIsMutable();
+                natIps_.add(s);
+                break;
+              } // case 941080690
+            case 1489548696:
+              {
+                minPortsPerVm_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1489548696
+            case 1640230192:
+              {
+                tcpTransitoryIdleTimeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 1640230192
+            case 1784786792:
+              {
+                tcpEstablishedIdleTimeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 1784786792
+            case 2000496392:
+              {
+                maxPortsPerVm_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 2000496392
+            case 2017705690:
+              {
+                sourceSubnetworkIpRangesToNat_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 2017705690
+            case 2075534552:
+              {
+                enableEndpointIndependentMapping_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 2075534552
+            case -1484569366:
+              {
+                input.readMessage(getLogConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -1484569366
+            case -968142294:
+              {
+                com.google.cloud.compute.v1.RouterNatSubnetworkToNat m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterNatSubnetworkToNat.parser(),
+                        extensionRegistry);
+                if (subnetworksBuilder_ == null) {
+                  ensureSubnetworksIsMutable();
+                  subnetworks_.add(m);
+                } else {
+                  subnetworksBuilder_.addMessage(m);
+                }
+                break;
+              } // case -968142294
+            case -857152534:
+              {
+                natIpAllocateOption_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -857152534
+            case -273896838:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureEndpointTypesIsMutable();
+                endpointTypes_.add(s);
+                break;
+              } // case -273896838
+            case -262339014:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDrainNatIpsIsMutable();
+                drainNatIps_.add(s);
+                break;
+              } // case -262339014
+            case -186191896:
+              {
+                tcpTimeWaitTimeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case -186191896
+            case -38116080:
+              {
+                enableDynamicPortAllocation_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -38116080
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.RouterNat) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4893,7 +4835,18 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RouterNat(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

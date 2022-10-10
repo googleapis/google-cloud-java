@@ -284,6 +284,19 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
+   * Output only. Indicates whether this is an abandoned release.
+   * </pre>
+   *
+   * <code>bool abandoned = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The abandoned.
+   */
+  boolean getAbandoned();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time at which the `Release` was created.
    * </pre>
    *

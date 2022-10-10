@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-orchestration-airflow-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+  <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
   <name>Google Cloud Composer Parent</name>
   <url>https://github.com/googleapis/java-orchestration-airflow</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -69,33 +69,33 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-orchestration-airflow</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+        <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-orchestration-airflow-v1</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-orchestration-airflow-v1:current} -->
+        <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-orchestration-airflow-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-orchestration-airflow-v1beta1</artifactId>
-        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-orchestration-airflow-v1beta1:current} -->
+        <version>0.6.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-orchestration-airflow-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orchestration-airflow-v1</artifactId>
-        <version>1.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orchestration-airflow-v1:current} -->
+        <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orchestration-airflow-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orchestration-airflow-v1beta1</artifactId>
-        <version>0.6.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orchestration-airflow-v1beta1:current} -->
+        <version>0.6.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orchestration-airflow-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

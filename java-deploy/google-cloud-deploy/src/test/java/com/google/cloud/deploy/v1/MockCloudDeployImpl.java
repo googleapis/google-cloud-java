@@ -332,6 +332,27 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
   }
 
   @Override
+  public void abandonRelease(
+      AbandonReleaseRequest request, StreamObserver<AbandonReleaseResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AbandonReleaseResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AbandonReleaseResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AbandonRelease, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AbandonReleaseResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void approveRollout(
       ApproveRolloutRequest request, StreamObserver<ApproveRolloutResponse> responseObserver) {
     Object response = responses.poll();
@@ -410,6 +431,67 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
                   "Unrecognized response type %s for method CreateRollout, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retryJob(RetryJobRequest request, StreamObserver<RetryJobResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RetryJobResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RetryJobResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetryJob, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RetryJobResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listJobRuns(
+      ListJobRunsRequest request, StreamObserver<ListJobRunsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListJobRunsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListJobRunsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListJobRuns, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListJobRunsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getJobRun(GetJobRunRequest request, StreamObserver<JobRun> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof JobRun) {
+      requests.add(request);
+      responseObserver.onNext(((JobRun) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetJobRun, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  JobRun.class.getName(),
                   Exception.class.getName())));
     }
   }

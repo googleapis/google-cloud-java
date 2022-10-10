@@ -58,153 +58,6 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CatalogItem(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                categoryHierarchies_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.recommendationengine.v1beta1.CatalogItem
-                            .CategoryHierarchy>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              categoryHierarchies_.add(
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              title_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.recommendationengine.v1beta1.FeatureMap.Builder subBuilder = null;
-              if (itemAttributes_ != null) {
-                subBuilder = itemAttributes_.toBuilder();
-              }
-              itemAttributes_ =
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.FeatureMap.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(itemAttributes_);
-                itemAttributes_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              languageCode_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              tags_.add(s);
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              itemGroupId_ = s;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.Builder subBuilder =
-                  null;
-              if (recommendationTypeCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem)
-                            recommendationType_)
-                        .toBuilder();
-              }
-              recommendationType_ =
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem)
-                        recommendationType_);
-                recommendationType_ = subBuilder.buildPartial();
-              }
-              recommendationTypeCase_ = 10;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        categoryHierarchies_ = java.util.Collections.unmodifiableList(categoryHierarchies_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.Catalog
         .internal_static_google_cloud_recommendationengine_v1beta1_CatalogItem_descriptor;
@@ -322,59 +175,6 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private CategoryHierarchy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  categories_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                categories_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          categories_ = categories_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.recommendationengine.v1beta1.Catalog
           .internal_static_google_cloud_recommendationengine_v1beta1_CatalogItem_CategoryHierarchy_descriptor;
@@ -481,7 +281,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < categories_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, categories_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -498,7 +298,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getCategoriesList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -516,7 +316,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy) obj;
 
       if (!getCategoriesList().equals(other.getCategoriesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -531,7 +331,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getCategoriesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -671,17 +471,10 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -793,7 +586,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -808,20 +601,38 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureCategoriesIsMutable();
+                  categories_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1058,7 +869,19 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CategoryHierarchy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1765,7 +1588,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           10,
           (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem) recommendationType_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1811,7 +1634,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.recommendationengine.v1beta1.ProductCatalogItem)
                   recommendationType_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1846,7 +1669,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1887,7 +1710,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2017,19 +1840,10 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.recommendationengine.v1beta1.CatalogItem.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCategoryHierarchiesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2039,10 +1853,11 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
       if (categoryHierarchiesBuilder_ == null) {
         categoryHierarchies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        categoryHierarchies_ = null;
         categoryHierarchiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       title_ = "";
 
       description_ = "";
@@ -2059,6 +1874,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       itemGroupId_ = "";
 
+      if (productMetadataBuilder_ != null) {
+        productMetadataBuilder_.clear();
+      }
       recommendationTypeCase_ = 0;
       recommendationType_ = null;
       return this;
@@ -2242,7 +2060,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2257,18 +2075,95 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.recommendationengine.v1beta1.CatalogItem parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy m =
+                    input.readMessage(
+                        com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy
+                            .parser(),
+                        extensionRegistry);
+                if (categoryHierarchiesBuilder_ == null) {
+                  ensureCategoryHierarchiesIsMutable();
+                  categoryHierarchies_.add(m);
+                } else {
+                  categoryHierarchiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                title_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getItemAttributesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 66
+            case 74:
+              {
+                itemGroupId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getProductMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                recommendationTypeCase_ = 10;
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.recommendationengine.v1beta1.CatalogItem) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4181,7 +4076,18 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CatalogItem(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

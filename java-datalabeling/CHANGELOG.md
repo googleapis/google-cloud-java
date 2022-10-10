@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.123.6](https://github.com/googleapis/java-datalabeling/compare/v0.123.5...v0.123.6) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#792](https://github.com/googleapis/java-datalabeling/issues/792)) ([60b0784](https://github.com/googleapis/java-datalabeling/commit/60b0784f8e379f4ef82e381519296644aa00f3ca))
+* Update dependency click to v8.1.3 ([#796](https://github.com/googleapis/java-datalabeling/issues/796)) ([c00fe08](https://github.com/googleapis/java-datalabeling/commit/c00fe085dcd3e96fbf54cb705676d65bd949c391))
+* Update dependency gcp-releasetool to v1.8.8 ([#793](https://github.com/googleapis/java-datalabeling/issues/793)) ([0340eff](https://github.com/googleapis/java-datalabeling/commit/0340effc3c79ac47200ce438b56650c4e2f2e4d3))
+* Update dependency google-auth to v2.11.1 ([#794](https://github.com/googleapis/java-datalabeling/issues/794)) ([a3c51fe](https://github.com/googleapis/java-datalabeling/commit/a3c51fe58bba3cff9cc27890d9718218e6f8ad29))
+* Update dependency google-cloud-storage to v2.5.0 ([#797](https://github.com/googleapis/java-datalabeling/issues/797)) ([34b5ef3](https://github.com/googleapis/java-datalabeling/commit/34b5ef33db050eefe58c1c9a18eaffe7d0dac96a))
+* Update dependency googleapis-common-protos to v1.56.4 ([#795](https://github.com/googleapis/java-datalabeling/issues/795)) ([e80ef93](https://github.com/googleapis/java-datalabeling/commit/e80ef93d7d9038b2491170dcce6627ab0883cf93))
+
+## [0.123.5](https://github.com/googleapis/java-datalabeling/compare/v0.123.4...v0.123.5) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#785](https://github.com/googleapis/java-datalabeling/issues/785)) ([4a7865a](https://github.com/googleapis/java-datalabeling/commit/4a7865a14b7a1edeeaf3b787aff8a08ca3e310be))
+
+## [0.123.4](https://github.com/googleapis/java-datalabeling/compare/v0.123.3...v0.123.4) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#780](https://github.com/googleapis/java-datalabeling/issues/780)) ([dfc9670](https://github.com/googleapis/java-datalabeling/commit/dfc967066513d2b481a82a8176701ec993ee5789))
+
 ## [0.123.3](https://github.com/googleapis/java-datalabeling/compare/v0.123.2...v0.123.3) (2022-08-09)
 
 

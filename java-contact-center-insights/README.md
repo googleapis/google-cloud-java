@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contact-center-insights</artifactId>
-  <version>2.3.6</version>
+  <version>2.3.9</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-contact-center-insights:2.3.6'
+implementation 'com.google.cloud:google-cloud-contact-center-insights:2.3.9'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-contact-center-insights" % "2.3.6"
+libraryDependencies += "com.google.cloud" % "google-cloud-contact-center-insights" % "2.3.9"
 ```
 
 ## Authentication
@@ -68,24 +68,6 @@ use this CCAI Insights Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-contact-center-insights/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Analysis | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/CreateAnalysis.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/CreateAnalysis.java) |
-| Create Conversation | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/CreateConversation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/CreateConversation.java) |
-| Create Conversation With Ttl | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/CreateConversationWithTtl.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/CreateConversationWithTtl.java) |
-| Create Issue Model | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/CreateIssueModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/CreateIssueModel.java) |
-| Create Phrase Matcher All Of | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/CreatePhraseMatcherAllOf.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/CreatePhraseMatcherAllOf.java) |
-| Create Phrase Matcher Any Of | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/CreatePhraseMatcherAnyOf.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/CreatePhraseMatcherAnyOf.java) |
-| Enable Pub Sub Notifications | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/EnablePubSubNotifications.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/EnablePubSubNotifications.java) |
-| Export To Bigquery | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/ExportToBigquery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/ExportToBigquery.java) |
-| Get Operation | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/GetOperation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/GetOperation.java) |
-| Set Project Ttl | [source code](https://github.com/googleapis/java-contact-center-insights/blob/main/samples/snippets/src/main/java/com/example/contactcenterinsights/SetProjectTtl.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-contact-center-insights&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/contactcenterinsights/SetProjectTtl.java) |
 
 
 

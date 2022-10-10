@@ -16,18 +16,27 @@
 
 package com.google.cloud.assuredworkloads.v1.stub;
 
+import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListViolationsPagedResponse;
 import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest;
+import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.GetViolationRequest;
 import com.google.cloud.assuredworkloads.v1.GetWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsRequest;
+import com.google.cloud.assuredworkloads.v1.ListViolationsResponse;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest;
+import com.google.cloud.assuredworkloads.v1.Violation;
 import com.google.cloud.assuredworkloads.v1.Workload;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -64,6 +73,11 @@ public abstract class AssuredWorkloadsServiceStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: updateWorkloadCallable()");
   }
 
+  public UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: restrictAllowedResourcesCallable()");
+  }
+
   public UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteWorkloadCallable()");
   }
@@ -79,6 +93,24 @@ public abstract class AssuredWorkloadsServiceStub implements BackgroundResource 
 
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
     throw new UnsupportedOperationException("Not implemented: listWorkloadsCallable()");
+  }
+
+  public UnaryCallable<ListViolationsRequest, ListViolationsPagedResponse>
+      listViolationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listViolationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listViolationsCallable()");
+  }
+
+  public UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getViolationCallable()");
+  }
+
+  public UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
+      acknowledgeViolationCallable() {
+    throw new UnsupportedOperationException("Not implemented: acknowledgeViolationCallable()");
   }
 
   @Override

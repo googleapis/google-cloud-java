@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-parent</artifactId>
   <packaging>pom</packaging>
-  <version>4.0.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+  <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <name>Google Cloud Dataproc Parent</name>
   <url>https://github.com/googleapis/java-dataproc</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -61,23 +61,23 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>4.0.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>4.0.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
+        <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>4.0.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

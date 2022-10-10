@@ -71,378 +71,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Image(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000080;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              name_ = s;
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 363861312:
-            {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
-                licenseCodes_ = newLongList();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              licenseCodes_.addLong(input.readInt64());
-              break;
-            }
-          case 363861314:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00002000) != 0) && input.getBytesUntilLimit() > 0) {
-                licenseCodes_ = newLongList();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                licenseCodes_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 403546554:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
-              sourceImage_ = s;
-              break;
-            }
-          case 442626330:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00200000;
-              sourceImageId_ = s;
-              break;
-            }
-          case 634356362:
-            {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                guestOsFeatures_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.GuestOsFeature>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              guestOsFeatures_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.GuestOsFeature.parser(), extensionRegistry));
-              break;
-            }
-          case 791698066:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x01000000;
-              sourceSnapshotId_ = s;
-              break;
-            }
-          case 1008495426:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
-              sourceSnapshot_ = s;
-              break;
-            }
-          case 1424998602:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
-              labelFingerprint_ = s;
-              break;
-            }
-          case 1450082194:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x04000000;
-              status_ = s;
-              break;
-            }
-          case 1538854938:
-            {
-              com.google.cloud.compute.v1.InitialStateConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00008000) != 0)) {
-                subBuilder = shieldedInstanceInitialState_.toBuilder();
-              }
-              shieldedInstanceInitialState_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InitialStateConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shieldedInstanceInitialState_);
-                shieldedInstanceInitialState_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00008000;
-              break;
-            }
-          case -1872541030:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              architecture_ = s;
-              break;
-            }
-          case -1865532718:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x00800000) != 0)) {
-                subBuilder = sourceSnapshotEncryptionKey_.toBuilder();
-              }
-              sourceSnapshotEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceSnapshotEncryptionKey_);
-                sourceSnapshotEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00800000;
-              break;
-            }
-          case -1764857416:
-            {
-              bitField0_ |= 0x00000020;
-              diskSizeGb_ = input.readInt64();
-              break;
-            }
-          case -1670925102:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x80000000) != 0)) {
-                storageLocations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x80000000;
-              }
-              storageLocations_.add(s);
-              break;
-            }
-          case -1664951518:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              family_ = s;
-              break;
-            }
-          case -1593826670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
-                licenses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00004000;
-              }
-              licenses_.add(s);
-              break;
-            }
-          case -1258866630:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) != 0)) {
-                subBuilder = imageEncryptionKey_.toBuilder();
-              }
-              imageEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(imageEncryptionKey_);
-                imageEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000100;
-              break;
-            }
-          case -1246219696:
-            {
-              bitField0_ |= 0x00000002;
-              archiveSizeBytes_ = input.readInt64();
-              break;
-            }
-          case -1242938022:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x00100000) != 0)) {
-                subBuilder = sourceImageEncryptionKey_.toBuilder();
-              }
-              sourceImageEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceImageEncryptionKey_);
-                sourceImageEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00100000;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              description_ = s;
-              break;
-            }
-          case -680936950:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
-              sourceDisk_ = s;
-              break;
-            }
-          case -677001486:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x02000000;
-              sourceType_ = s;
-              break;
-            }
-          case -661440822:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00040000;
-              sourceDiskId_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              selfLink_ = s;
-              break;
-            }
-          case -447253160:
-            {
-              bitField0_ |= 0x00002000;
-              satisfiesPzs_ = input.readBool();
-              break;
-            }
-          case -293404678:
-            {
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00001000;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case -270058846:
-            {
-              com.google.cloud.compute.v1.RawDisk.Builder subBuilder = null;
-              if (((bitField0_ & 0x00001000) != 0)) {
-                subBuilder = rawDisk_.toBuilder();
-              }
-              rawDisk_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RawDisk.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rawDisk_);
-                rawDisk_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00001000;
-              break;
-            }
-          case -173855334:
-            {
-              com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = deprecated_.toBuilder();
-              }
-              deprecated_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.DeprecationStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deprecated_);
-                deprecated_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-          case -42958070:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x00020000) != 0)) {
-                subBuilder = sourceDiskEncryptionKey_.toBuilder();
-              }
-              sourceDiskEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceDiskEncryptionKey_);
-                sourceDiskEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00020000;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
-        licenseCodes_.makeImmutable(); // C
-      }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
-      }
-      if (((mutable_bitField0_ & 0x80000000) != 0)) {
-        storageLocations_ = storageLocations_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00004000) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_Image_descriptor;
@@ -2966,7 +2594,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(531501153, getSourceDiskEncryptionKey());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3112,7 +2740,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               531501153, getSourceDiskEncryptionKey());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3242,7 +2870,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!getStorageLocationsList().equals(other.getStorageLocationsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3381,7 +3009,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STORAGE_LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getStorageLocationsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3574,10 +3202,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       if (guestOsFeaturesBuilder_ == null) {
         guestOsFeatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
+        guestOsFeatures_ = null;
         guestOsFeaturesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
       if (imageEncryptionKeyBuilder_ == null) {
@@ -4060,7 +3689,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4075,17 +3704,254 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.Image parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 26989658
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 244202930
+            case 363861312:
+              {
+                long v = input.readInt64();
+                ensureLicenseCodesIsMutable();
+                licenseCodes_.addLong(v);
+                break;
+              } // case 363861312
+            case 363861314:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLicenseCodesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  licenseCodes_.addLong(input.readInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 363861314
+            case 403546554:
+              {
+                sourceImage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 403546554
+            case 442626330:
+              {
+                sourceImageId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 442626330
+            case 634356362:
+              {
+                com.google.cloud.compute.v1.GuestOsFeature m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.GuestOsFeature.parser(), extensionRegistry);
+                if (guestOsFeaturesBuilder_ == null) {
+                  ensureGuestOsFeaturesIsMutable();
+                  guestOsFeatures_.add(m);
+                } else {
+                  guestOsFeaturesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 634356362
+            case 791698066:
+              {
+                sourceSnapshotId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 791698066
+            case 1008495426:
+              {
+                sourceSnapshot_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 1008495426
+            case 1424998602:
+              {
+                labelFingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 1424998602
+            case 1450082194:
+              {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 1450082194
+            case 1538854938:
+              {
+                input.readMessage(
+                    getShieldedInstanceInitialStateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 1538854938
+            case -1872541030:
+              {
+                architecture_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1872541030
+            case -1865532718:
+              {
+                input.readMessage(
+                    getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case -1865532718
+            case -1764857416:
+              {
+                diskSizeGb_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -1764857416
+            case -1670925102:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStorageLocationsIsMutable();
+                storageLocations_.add(s);
+                break;
+              } // case -1670925102
+            case -1664951518:
+              {
+                family_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -1664951518
+            case -1593826670:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLicensesIsMutable();
+                licenses_.add(s);
+                break;
+              } // case -1593826670
+            case -1258866630:
+              {
+                input.readMessage(
+                    getImageEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -1258866630
+            case -1246219696:
+              {
+                archiveSizeBytes_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1246219696
+            case -1242938022:
+              {
+                input.readMessage(
+                    getSourceImageEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case -1242938022
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -911466526
+            case -680936950:
+              {
+                sourceDisk_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case -680936950
+            case -677001486:
+              {
+                sourceType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case -677001486
+            case -661440822:
+              {
+                sourceDiskId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case -661440822
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -645248918
+            case -447253160:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case -447253160
+            case -293404678:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case -293404678
+            case -270058846:
+              {
+                input.readMessage(getRawDiskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case -270058846
+            case -173855334:
+              {
+                input.readMessage(getDeprecatedFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -173855334
+            case -42958070:
+              {
+                input.readMessage(
+                    getSourceDiskEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case -42958070
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.Image) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8729,7 +8595,18 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Image(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

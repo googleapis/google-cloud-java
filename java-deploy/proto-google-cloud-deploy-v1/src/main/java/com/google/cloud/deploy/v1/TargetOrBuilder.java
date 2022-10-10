@@ -471,6 +471,41 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
+   * Information specifying a Cloud Run deployment target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   *
+   * @return Whether the run field is set.
+   */
+  boolean hasRun();
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a Cloud Run deployment target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   *
+   * @return The run.
+   */
+  com.google.cloud.deploy.v1.CloudRunLocation getRun();
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a Cloud Run deployment target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   */
+  com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. This checksum is computed by the server based on the value of other
    * fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.

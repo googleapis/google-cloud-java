@@ -99,6 +99,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -161,6 +162,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -223,6 +225,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -240,6 +243,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -283,9 +287,60 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
               .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
               .setEnableSovereignControls(true)
               .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+              .addAllCompliantButDisallowedServices(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkload(workload, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restrictAllowedResourcesTest() throws Exception {
+    RestrictAllowedResourcesResponse expectedResponse =
+        RestrictAllowedResourcesResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    RestrictAllowedResourcesRequest request =
+        RestrictAllowedResourcesRequest.newBuilder()
+            .setName(
+                "organizations/organization-4962/locations/location-4962/workloads/workload-4962")
+            .build();
+
+    RestrictAllowedResourcesResponse actualResponse = client.restrictAllowedResources(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restrictAllowedResourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RestrictAllowedResourcesRequest request =
+          RestrictAllowedResourcesRequest.newBuilder()
+              .setName(
+                  "organizations/organization-4962/locations/location-4962/workloads/workload-4962")
+              .build();
+      client.restrictAllowedResources(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -389,6 +444,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -444,6 +500,7 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
             .addAllResourceSettings(new ArrayList<Workload.ResourceSettings>())
             .setEnableSovereignControls(true)
             .setSaaEnrollmentResponse(Workload.SaaEnrollmentResponse.newBuilder().build())
+            .addAllCompliantButDisallowedServices(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -582,5 +639,23 @@ public class AssuredWorkloadsServiceClientHttpJsonTest {
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void listViolationsUnsupportedMethodTest() throws Exception {
+    // The listViolations() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void getViolationUnsupportedMethodTest() throws Exception {
+    // The getViolation() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void acknowledgeViolationUnsupportedMethodTest() throws Exception {
+    // The acknowledgeViolation() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
   }
 }

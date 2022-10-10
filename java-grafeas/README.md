@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>io.grafeas</groupId>
   <artifactId>grafeas</artifactId>
-  <version>2.0.1</version>
+  <version>2.4.7</version>
 </dependency>
 ```
 
-If you are using Gradle without BOM, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'io.grafeas:grafeas:2.0.1'
+implementation 'io.grafeas:grafeas:2.4.7'
 ```
 
-If you are using SBT, add this to your dependencies
+If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "io.grafeas" % "grafeas" % "2.0.1"
+libraryDependencies += "io.grafeas" % "grafeas" % "2.4.7"
 ```
 
 ## Authentication
@@ -61,7 +61,7 @@ to add `grafeas` as a dependency in your code.
 ## About Grafeas
 
 
-[Grafeas][product-docs] 
+[Grafeas][product-docs] n/a
 
 See the [Grafeas client library docs][javadocs] to learn how to
 use this Grafeas Client Library.
@@ -77,7 +77,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Supported Java Versions
 
-Java 7 or above is required for using this client.
+Java 8 or above is required for using this client.
 
 Google's Java client libraries,
 [Google Cloud Client Libraries][cloudlibs]
@@ -146,7 +146,6 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 Java Version | Status
 ------------ | ------
-Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
 Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
@@ -166,7 +165,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-grafeas/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-grafeas/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-grafeas/java11.html
-[stability-image]: https://img.shields.io/badge/stability-ga-green
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/io.grafeas/grafeas.svg
 [maven-version-link]: https://search.maven.org/search?q=g:io.grafeas%20AND%20a:grafeas&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication

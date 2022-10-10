@@ -59,129 +59,6 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Access(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              principalEmail_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              callerIp_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.securitycenter.v1.Geolocation.Builder subBuilder = null;
-              if (callerIpGeo_ != null) {
-                subBuilder = callerIpGeo_.toBuilder();
-              }
-              callerIpGeo_ =
-                  input.readMessage(
-                      com.google.cloud.securitycenter.v1.Geolocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(callerIpGeo_);
-                callerIpGeo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userAgentFamily_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceName_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              methodName_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              principalSubject_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccountKeyName_ = s;
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                serviceAccountDelegationInfo_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              serviceAccountDelegationInfo_.add(
-                  input.readMessage(
-                      com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        serviceAccountDelegationInfo_ =
-            java.util.Collections.unmodifiableList(serviceAccountDelegationInfo_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.AccessProto
         .internal_static_google_cloud_securitycenter_v1_Access_descriptor;
@@ -767,7 +644,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < serviceAccountDelegationInfo_.size(); i++) {
       output.writeMessage(9, serviceAccountDelegationInfo_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -805,7 +682,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, serviceAccountDelegationInfo_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -834,7 +711,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAccountKeyName().equals(other.getServiceAccountKeyName())) return false;
     if (!getServiceAccountDelegationInfoList().equals(other.getServiceAccountDelegationInfoList()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -867,7 +744,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SERVICE_ACCOUNT_DELEGATION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getServiceAccountDelegationInfoList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -996,19 +873,10 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.securitycenter.v1.Access.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getServiceAccountDelegationInfoFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1036,10 +904,11 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
 
       if (serviceAccountDelegationInfoBuilder_ == null) {
         serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        serviceAccountDelegationInfo_ = null;
         serviceAccountDelegationInfoBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -1198,7 +1067,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1213,17 +1082,93 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.v1.Access parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                principalEmail_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                callerIp_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCallerIpGeoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                userAgentFamily_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                serviceName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                methodName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                principalSubject_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                serviceAccountKeyName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfo.parser(),
+                        extensionRegistry);
+                if (serviceAccountDelegationInfoBuilder_ == null) {
+                  ensureServiceAccountDelegationInfoIsMutable();
+                  serviceAccountDelegationInfo_.add(m);
+                } else {
+                  serviceAccountDelegationInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1.Access) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2756,7 +2701,18 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Access(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

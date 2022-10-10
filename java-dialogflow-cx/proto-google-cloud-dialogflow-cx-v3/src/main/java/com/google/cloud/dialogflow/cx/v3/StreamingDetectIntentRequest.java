@@ -73,107 +73,6 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private StreamingDetectIntentRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              session_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.dialogflow.cx.v3.QueryParameters.Builder subBuilder = null;
-              if (queryParams_ != null) {
-                subBuilder = queryParams_.toBuilder();
-              }
-              queryParams_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.QueryParameters.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(queryParams_);
-                queryParams_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dialogflow.cx.v3.QueryInput.Builder subBuilder = null;
-              if (queryInput_ != null) {
-                subBuilder = queryInput_.toBuilder();
-              }
-              queryInput_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.QueryInput.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(queryInput_);
-                queryInput_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.Builder subBuilder = null;
-              if (outputAudioConfig_ != null) {
-                subBuilder = outputAudioConfig_.toBuilder();
-              }
-              outputAudioConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dialogflow.cx.v3.OutputAudioConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outputAudioConfig_);
-                outputAudioConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 40:
-            {
-              enablePartialResponse_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.SessionProto
         .internal_static_google_cloud_dialogflow_cx_v3_StreamingDetectIntentRequest_descriptor;
@@ -467,7 +366,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (enablePartialResponse_ != false) {
       output.writeBool(5, enablePartialResponse_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -491,7 +390,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (enablePartialResponse_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enablePartialResponse_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -521,7 +420,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       if (!getOutputAudioConfig().equals(other.getOutputAudioConfig())) return false;
     }
     if (getEnablePartialResponse() != other.getEnablePartialResponse()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -548,7 +447,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     hash = (37 * hash) + ENABLE_PARTIAL_RESPONSE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePartialResponse());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -699,17 +598,10 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -849,7 +741,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       if (other.getEnablePartialResponse() != false) {
         setEnablePartialResponse(other.getEnablePartialResponse());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -864,19 +756,62 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                session_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getQueryInputFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getOutputAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 40:
+              {
+                enablePartialResponse_ = input.readBool();
+
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1730,7 +1665,18 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingDetectIntentRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

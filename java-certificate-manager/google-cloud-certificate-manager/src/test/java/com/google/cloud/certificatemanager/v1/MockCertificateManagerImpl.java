@@ -481,4 +481,90 @@ public class MockCertificateManagerImpl extends CertificateManagerImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listCertificateIssuanceConfigs(
+      ListCertificateIssuanceConfigsRequest request,
+      StreamObserver<ListCertificateIssuanceConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListCertificateIssuanceConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListCertificateIssuanceConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCertificateIssuanceConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListCertificateIssuanceConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCertificateIssuanceConfig(
+      GetCertificateIssuanceConfigRequest request,
+      StreamObserver<CertificateIssuanceConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CertificateIssuanceConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CertificateIssuanceConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCertificateIssuanceConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CertificateIssuanceConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCertificateIssuanceConfig(
+      CreateCertificateIssuanceConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCertificateIssuanceConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteCertificateIssuanceConfig(
+      DeleteCertificateIssuanceConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCertificateIssuanceConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

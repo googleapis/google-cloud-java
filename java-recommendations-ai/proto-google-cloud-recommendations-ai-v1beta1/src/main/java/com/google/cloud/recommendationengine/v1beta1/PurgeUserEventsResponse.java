@@ -54,68 +54,6 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private PurgeUserEventsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              purgedEventsCount_ = input.readInt64();
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                userEventsSample_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.recommendationengine.v1beta1.UserEvent>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              userEventsSample_.add(
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.UserEvent.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        userEventsSample_ = java.util.Collections.unmodifiableList(userEventsSample_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.UserEventServiceOuterClass
         .internal_static_google_cloud_recommendationengine_v1beta1_PurgeUserEventsResponse_descriptor;
@@ -250,7 +188,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     for (int i = 0; i < userEventsSample_.size(); i++) {
       output.writeMessage(2, userEventsSample_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -265,7 +203,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
     for (int i = 0; i < userEventsSample_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, userEventsSample_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -283,7 +221,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
 
     if (getPurgedEventsCount() != other.getPurgedEventsCount()) return false;
     if (!getUserEventsSampleList().equals(other.getUserEventsSampleList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -300,7 +238,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
       hash = (37 * hash) + USER_EVENTS_SAMPLE_FIELD_NUMBER;
       hash = (53 * hash) + getUserEventsSampleList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -434,19 +372,10 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
 
     // Construct using
     // com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getUserEventsSampleFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -456,10 +385,11 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
 
       if (userEventsSampleBuilder_ == null) {
         userEventsSample_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        userEventsSample_ = null;
         userEventsSampleBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -583,7 +513,7 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -598,19 +528,51 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                purgedEventsCount_ = input.readInt64();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                com.google.cloud.recommendationengine.v1beta1.UserEvent m =
+                    input.readMessage(
+                        com.google.cloud.recommendationengine.v1beta1.UserEvent.parser(),
+                        extensionRegistry);
+                if (userEventsSampleBuilder_ == null) {
+                  ensureUserEventsSampleIsMutable();
+                  userEventsSample_.add(m);
+                } else {
+                  userEventsSampleBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1106,7 +1068,18 @@ public final class PurgeUserEventsResponse extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PurgeUserEventsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

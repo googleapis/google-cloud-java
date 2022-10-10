@@ -53,85 +53,6 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private BigQueryDestination(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dataset_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              table_ = s;
-              break;
-            }
-          case 24:
-            {
-              force_ = input.readBool();
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.asset.v1.PartitionSpec.Builder subBuilder = null;
-              if (partitionSpec_ != null) {
-                subBuilder = partitionSpec_.toBuilder();
-              }
-              partitionSpec_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1.PartitionSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(partitionSpec_);
-                partitionSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 40:
-            {
-              separateTablesPerAssetType_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_BigQueryDestination_descriptor;
@@ -444,7 +365,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     if (separateTablesPerAssetType_ != false) {
       output.writeBool(5, separateTablesPerAssetType_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -468,7 +389,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     if (separateTablesPerAssetType_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, separateTablesPerAssetType_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -492,7 +413,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       if (!getPartitionSpec().equals(other.getPartitionSpec())) return false;
     }
     if (getSeparateTablesPerAssetType() != other.getSeparateTablesPerAssetType()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -515,7 +436,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + SEPARATE_TABLES_PER_ASSET_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSeparateTablesPerAssetType());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -644,17 +565,10 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.asset.v1.BigQueryDestination.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -776,7 +690,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       if (other.getSeparateTablesPerAssetType() != false) {
         setSeparateTablesPerAssetType(other.getSeparateTablesPerAssetType());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -791,17 +705,61 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.asset.v1.BigQueryDestination parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                dataset_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                table_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                force_ = input.readBool();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(getPartitionSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 40:
+              {
+                separateTablesPerAssetType_ = input.readBool();
+
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.asset.v1.BigQueryDestination) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1588,7 +1546,18 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BigQueryDestination(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

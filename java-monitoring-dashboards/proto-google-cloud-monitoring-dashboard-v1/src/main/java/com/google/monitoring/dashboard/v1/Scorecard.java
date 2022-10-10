@@ -53,118 +53,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Scorecard(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder subBuilder = null;
-              if (timeSeriesQuery_ != null) {
-                subBuilder = timeSeriesQuery_.toBuilder();
-              }
-              timeSeriesQuery_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.TimeSeriesQuery.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timeSeriesQuery_);
-                timeSeriesQuery_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.monitoring.dashboard.v1.Scorecard.GaugeView.Builder subBuilder = null;
-              if (dataViewCase_ == 4) {
-                subBuilder =
-                    ((com.google.monitoring.dashboard.v1.Scorecard.GaugeView) dataView_)
-                        .toBuilder();
-              }
-              dataView_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.Scorecard.GaugeView.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.dashboard.v1.Scorecard.GaugeView) dataView_);
-                dataView_ = subBuilder.buildPartial();
-              }
-              dataViewCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.Builder subBuilder = null;
-              if (dataViewCase_ == 5) {
-                subBuilder =
-                    ((com.google.monitoring.dashboard.v1.Scorecard.SparkChartView) dataView_)
-                        .toBuilder();
-              }
-              dataView_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.dashboard.v1.Scorecard.SparkChartView) dataView_);
-                dataView_ = subBuilder.buildPartial();
-              }
-              dataViewCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                thresholds_ =
-                    new java.util.ArrayList<com.google.monitoring.dashboard.v1.Threshold>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              thresholds_.add(
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.Threshold.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        thresholds_ = java.util.Collections.unmodifiableList(thresholds_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.ScorecardProto
         .internal_static_google_monitoring_dashboard_v1_Scorecard_descriptor;
@@ -247,55 +135,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private GaugeView(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                lowerBound_ = input.readDouble();
-                break;
-              }
-            case 17:
-              {
-                upperBound_ = input.readDouble();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.monitoring.dashboard.v1.ScorecardProto
           .internal_static_google_monitoring_dashboard_v1_Scorecard_GaugeView_descriptor;
@@ -369,7 +208,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(upperBound_) != 0) {
         output.writeDouble(2, upperBound_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -384,7 +223,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(upperBound_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, upperBound_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -404,7 +243,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           != java.lang.Double.doubleToLongBits(other.getLowerBound())) return false;
       if (java.lang.Double.doubleToLongBits(getUpperBound())
           != java.lang.Double.doubleToLongBits(other.getUpperBound())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -425,7 +264,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getUpperBound()));
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -559,17 +398,10 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.monitoring.dashboard.v1.Scorecard.GaugeView.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -666,7 +498,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         if (other.getUpperBound() != 0D) {
           setUpperBound(other.getUpperBound());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -681,18 +513,43 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.dashboard.v1.Scorecard.GaugeView parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  lowerBound_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 17:
+                {
+                  upperBound_ = input.readDouble();
+
+                  break;
+                } // case 17
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.dashboard.v1.Scorecard.GaugeView) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -839,7 +696,19 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GaugeView(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -974,67 +843,6 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SparkChartView(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                sparkChartType_ = rawValue;
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (minAlignmentPeriod_ != null) {
-                  subBuilder = minAlignmentPeriod_.toBuilder();
-                }
-                minAlignmentPeriod_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(minAlignmentPeriod_);
-                  minAlignmentPeriod_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1176,7 +984,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       if (minAlignmentPeriod_ != null) {
         output.writeMessage(2, getMinAlignmentPeriod());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1194,7 +1002,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMinAlignmentPeriod());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1215,7 +1023,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       if (hasMinAlignmentPeriod()) {
         if (!getMinAlignmentPeriod().equals(other.getMinAlignmentPeriod())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1232,7 +1040,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + MIN_ALIGNMENT_PERIOD_FIELD_NUMBER;
         hash = (53 * hash) + getMinAlignmentPeriod().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1367,17 +1175,10 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.monitoring.dashboard.v1.Scorecard.SparkChartView.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1484,7 +1285,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         if (other.hasMinAlignmentPeriod()) {
           mergeMinAlignmentPeriod(other.getMinAlignmentPeriod());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1499,19 +1300,44 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.dashboard.v1.Scorecard.SparkChartView parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  sparkChartType_ = input.readEnum();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      getMinAlignmentPeriodFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.dashboard.v1.Scorecard.SparkChartView)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1873,7 +1699,19 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SparkChartView(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2355,7 +2193,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < thresholds_.size(); i++) {
       output.writeMessage(6, thresholds_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2380,7 +2218,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < thresholds_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, thresholds_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2412,7 +2250,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2443,7 +2281,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2573,19 +2411,10 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.monitoring.dashboard.v1.Scorecard.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getThresholdsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2597,12 +2426,19 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         timeSeriesQuery_ = null;
         timeSeriesQueryBuilder_ = null;
       }
+      if (gaugeViewBuilder_ != null) {
+        gaugeViewBuilder_.clear();
+      }
+      if (sparkChartViewBuilder_ != null) {
+        sparkChartViewBuilder_.clear();
+      }
       if (thresholdsBuilder_ == null) {
         thresholds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        thresholds_ = null;
         thresholdsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       dataViewCase_ = 0;
       dataView_ = null;
       return this;
@@ -2757,7 +2593,7 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2772,17 +2608,62 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.monitoring.dashboard.v1.Scorecard parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getTimeSeriesQueryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 34:
+              {
+                input.readMessage(getGaugeViewFieldBuilder().getBuilder(), extensionRegistry);
+                dataViewCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getSparkChartViewFieldBuilder().getBuilder(), extensionRegistry);
+                dataViewCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.monitoring.dashboard.v1.Threshold m =
+                    input.readMessage(
+                        com.google.monitoring.dashboard.v1.Threshold.parser(), extensionRegistry);
+                if (thresholdsBuilder_ == null) {
+                  ensureThresholdsIsMutable();
+                  thresholds_.add(m);
+                } else {
+                  thresholdsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.dashboard.v1.Scorecard) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4403,7 +4284,18 @@ public final class Scorecard extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Scorecard(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

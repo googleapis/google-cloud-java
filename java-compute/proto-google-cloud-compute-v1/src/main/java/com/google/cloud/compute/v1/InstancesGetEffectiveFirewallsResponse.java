@@ -54,79 +54,6 @@ public final class InstancesGetEffectiveFirewallsResponse
     return this.unknownFields;
   }
 
-  private InstancesGetEffectiveFirewallsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case -2117002342:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                firewalls_ = new java.util.ArrayList<com.google.cloud.compute.v1.Firewall>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              firewalls_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Firewall.parser(), extensionRegistry));
-              break;
-            }
-          case -1007080942:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                firewallPolicys_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1
-                            .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              firewallPolicys_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1
-                          .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        firewalls_ = java.util.Collections.unmodifiableList(firewalls_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        firewallPolicys_ = java.util.Collections.unmodifiableList(firewallPolicys_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InstancesGetEffectiveFirewallsResponse_descriptor;
@@ -320,7 +247,7 @@ public final class InstancesGetEffectiveFirewallsResponse
     for (int i = 0; i < firewallPolicys_.size(); i++) {
       output.writeMessage(410985794, firewallPolicys_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -338,7 +265,7 @@ public final class InstancesGetEffectiveFirewallsResponse
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               410985794, firewallPolicys_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -356,7 +283,7 @@ public final class InstancesGetEffectiveFirewallsResponse
 
     if (!getFirewallPolicysList().equals(other.getFirewallPolicysList())) return false;
     if (!getFirewallsList().equals(other.getFirewallsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -375,7 +302,7 @@ public final class InstancesGetEffectiveFirewallsResponse
       hash = (37 * hash) + FIREWALLS_FIELD_NUMBER;
       hash = (53 * hash) + getFirewallsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -506,20 +433,10 @@ public final class InstancesGetEffectiveFirewallsResponse
 
     // Construct using
     // com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFirewallPolicysFieldBuilder();
-        getFirewallsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -527,16 +444,18 @@ public final class InstancesGetEffectiveFirewallsResponse
       super.clear();
       if (firewallPolicysBuilder_ == null) {
         firewallPolicys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        firewallPolicys_ = null;
         firewallPolicysBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (firewallsBuilder_ == null) {
         firewalls_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        firewalls_ = null;
         firewallsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -692,7 +611,7 @@ public final class InstancesGetEffectiveFirewallsResponse
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -707,19 +626,62 @@ public final class InstancesGetEffectiveFirewallsResponse
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case -2117002342:
+              {
+                com.google.cloud.compute.v1.Firewall m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.Firewall.parser(), extensionRegistry);
+                if (firewallsBuilder_ == null) {
+                  ensureFirewallsIsMutable();
+                  firewalls_.add(m);
+                } else {
+                  firewallsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -2117002342
+            case -1007080942:
+              {
+                com.google.cloud.compute.v1
+                        .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
+                    m =
+                        input.readMessage(
+                            com.google.cloud.compute.v1
+                                .InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy
+                                .parser(),
+                            extensionRegistry);
+                if (firewallPolicysBuilder_ == null) {
+                  ensureFirewallPolicysIsMutable();
+                  firewallPolicys_.add(m);
+                } else {
+                  firewallPolicysBuilder_.addMessage(m);
+                }
+                break;
+              } // case -1007080942
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1555,7 +1517,18 @@ public final class InstancesGetEffectiveFirewallsResponse
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InstancesGetEffectiveFirewallsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

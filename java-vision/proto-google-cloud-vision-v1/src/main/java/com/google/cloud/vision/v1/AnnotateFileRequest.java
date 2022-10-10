@@ -53,118 +53,6 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private AnnotateFileRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.vision.v1.InputConfig.Builder subBuilder = null;
-              if (inputConfig_ != null) {
-                subBuilder = inputConfig_.toBuilder();
-              }
-              inputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.vision.v1.InputConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(inputConfig_);
-                inputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                features_ = new java.util.ArrayList<com.google.cloud.vision.v1.Feature>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              features_.add(
-                  input.readMessage(
-                      com.google.cloud.vision.v1.Feature.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.vision.v1.ImageContext.Builder subBuilder = null;
-              if (imageContext_ != null) {
-                subBuilder = imageContext_.toBuilder();
-              }
-              imageContext_ =
-                  input.readMessage(
-                      com.google.cloud.vision.v1.ImageContext.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(imageContext_);
-                imageContext_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pages_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              pages_.addInt(input.readInt32());
-              break;
-            }
-          case 34:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                pages_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                pages_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        features_ = java.util.Collections.unmodifiableList(features_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        pages_.makeImmutable(); // C
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_AnnotateFileRequest_descriptor;
@@ -452,7 +340,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < pages_.size(); i++) {
       output.writeInt32NoTag(pages_.getInt(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -482,7 +370,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       pagesMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -508,7 +396,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       if (!getImageContext().equals(other.getImageContext())) return false;
     }
     if (!getPagesList().equals(other.getPagesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -535,7 +423,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + PAGES_FIELD_NUMBER;
       hash = (53 * hash) + getPagesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -664,19 +552,10 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.vision.v1.AnnotateFileRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFeaturesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -690,10 +569,11 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
       }
       if (featuresBuilder_ == null) {
         features_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        features_ = null;
         featuresBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (imageContextBuilder_ == null) {
         imageContext_ = null;
       } else {
@@ -846,7 +726,7 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -861,17 +741,74 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vision.v1.AnnotateFileRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.vision.v1.Feature m =
+                    input.readMessage(
+                        com.google.cloud.vision.v1.Feature.parser(), extensionRegistry);
+                if (featuresBuilder_ == null) {
+                  ensureFeaturesIsMutable();
+                  features_.add(m);
+                } else {
+                  featuresBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getImageContextFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 32:
+              {
+                int v = input.readInt32();
+                ensurePagesIsMutable();
+                pages_.addInt(v);
+                break;
+              } // case 32
+            case 34:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensurePagesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  pages_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1.AnnotateFileRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1817,7 +1754,18 @@ public final class AnnotateFileRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AnnotateFileRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

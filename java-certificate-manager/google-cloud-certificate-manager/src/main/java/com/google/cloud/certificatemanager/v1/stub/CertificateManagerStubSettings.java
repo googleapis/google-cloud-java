@@ -16,6 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.stub;
 
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateIssuanceConfigsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapEntriesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
@@ -52,21 +53,27 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.certificatemanager.v1.Certificate;
+import com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig;
 import com.google.cloud.certificatemanager.v1.CertificateMap;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntry;
+import com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
+import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest;
@@ -214,6 +221,23 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       deleteDnsAuthorizationSettings;
   private final OperationCallSettings<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
       deleteDnsAuthorizationOperationSettings;
+  private final PagedCallSettings<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsSettings;
+  private final UnaryCallSettings<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigSettings;
+  private final UnaryCallSettings<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigSettings;
+  private final OperationCallSettings<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationSettings;
+  private final UnaryCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigSettings;
+  private final OperationCallSettings<
+          DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -387,6 +411,55 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             }
           };
 
+  private static final PagedListDescriptor<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          CertificateIssuanceConfig>
+      LIST_CERTIFICATE_ISSUANCE_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCertificateIssuanceConfigsRequest,
+              ListCertificateIssuanceConfigsResponse,
+              CertificateIssuanceConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCertificateIssuanceConfigsRequest injectToken(
+                ListCertificateIssuanceConfigsRequest payload, String token) {
+              return ListCertificateIssuanceConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListCertificateIssuanceConfigsRequest injectPageSize(
+                ListCertificateIssuanceConfigsRequest payload, int pageSize) {
+              return ListCertificateIssuanceConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCertificateIssuanceConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCertificateIssuanceConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CertificateIssuanceConfig> extractResources(
+                ListCertificateIssuanceConfigsResponse payload) {
+              return payload.getCertificateIssuanceConfigsList() == null
+                  ? ImmutableList.<CertificateIssuanceConfig>of()
+                  : payload.getCertificateIssuanceConfigsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -512,6 +585,39 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                       PageContext.create(
                           callable, LIST_DNS_AUTHORIZATIONS_PAGE_STR_DESC, request, context);
               return ListDnsAuthorizationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          ListCertificateIssuanceConfigsPagedResponse>
+      LIST_CERTIFICATE_ISSUANCE_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCertificateIssuanceConfigsRequest,
+              ListCertificateIssuanceConfigsResponse,
+              ListCertificateIssuanceConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCertificateIssuanceConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListCertificateIssuanceConfigsRequest,
+                        ListCertificateIssuanceConfigsResponse>
+                    callable,
+                ListCertificateIssuanceConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCertificateIssuanceConfigsResponse> futureResponse) {
+              PageContext<
+                      ListCertificateIssuanceConfigsRequest,
+                      ListCertificateIssuanceConfigsResponse,
+                      CertificateIssuanceConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_CERTIFICATE_ISSUANCE_CONFIGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListCertificateIssuanceConfigsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -726,6 +832,46 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return deleteDnsAuthorizationOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listCertificateIssuanceConfigs. */
+  public PagedCallSettings<
+          ListCertificateIssuanceConfigsRequest,
+          ListCertificateIssuanceConfigsResponse,
+          ListCertificateIssuanceConfigsPagedResponse>
+      listCertificateIssuanceConfigsSettings() {
+    return listCertificateIssuanceConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCertificateIssuanceConfig. */
+  public UnaryCallSettings<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+      getCertificateIssuanceConfigSettings() {
+    return getCertificateIssuanceConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCertificateIssuanceConfig. */
+  public UnaryCallSettings<CreateCertificateIssuanceConfigRequest, Operation>
+      createCertificateIssuanceConfigSettings() {
+    return createCertificateIssuanceConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCertificateIssuanceConfig. */
+  public OperationCallSettings<
+          CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      createCertificateIssuanceConfigOperationSettings() {
+    return createCertificateIssuanceConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCertificateIssuanceConfig. */
+  public UnaryCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
+      deleteCertificateIssuanceConfigSettings() {
+    return deleteCertificateIssuanceConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCertificateIssuanceConfig. */
+  public OperationCallSettings<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+      deleteCertificateIssuanceConfigOperationSettings() {
+    return deleteCertificateIssuanceConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -887,6 +1033,18 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     deleteDnsAuthorizationSettings = settingsBuilder.deleteDnsAuthorizationSettings().build();
     deleteDnsAuthorizationOperationSettings =
         settingsBuilder.deleteDnsAuthorizationOperationSettings().build();
+    listCertificateIssuanceConfigsSettings =
+        settingsBuilder.listCertificateIssuanceConfigsSettings().build();
+    getCertificateIssuanceConfigSettings =
+        settingsBuilder.getCertificateIssuanceConfigSettings().build();
+    createCertificateIssuanceConfigSettings =
+        settingsBuilder.createCertificateIssuanceConfigSettings().build();
+    createCertificateIssuanceConfigOperationSettings =
+        settingsBuilder.createCertificateIssuanceConfigOperationSettings().build();
+    deleteCertificateIssuanceConfigSettings =
+        settingsBuilder.deleteCertificateIssuanceConfigSettings().build();
+    deleteCertificateIssuanceConfigOperationSettings =
+        settingsBuilder.deleteCertificateIssuanceConfigOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -981,6 +1139,24 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings;
     private final PagedCallSettings.Builder<
+            ListCertificateIssuanceConfigsRequest,
+            ListCertificateIssuanceConfigsResponse,
+            ListCertificateIssuanceConfigsPagedResponse>
+        listCertificateIssuanceConfigsSettings;
+    private final UnaryCallSettings.Builder<
+            GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+        getCertificateIssuanceConfigSettings;
+    private final UnaryCallSettings.Builder<CreateCertificateIssuanceConfigRequest, Operation>
+        createCertificateIssuanceConfigSettings;
+    private final OperationCallSettings.Builder<
+            CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+        createCertificateIssuanceConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteCertificateIssuanceConfigRequest, Operation>
+        deleteCertificateIssuanceConfigSettings;
+    private final OperationCallSettings.Builder<
+            DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+        deleteCertificateIssuanceConfigOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -1060,6 +1236,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       updateDnsAuthorizationOperationSettings = OperationCallSettings.newBuilder();
       deleteDnsAuthorizationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDnsAuthorizationOperationSettings = OperationCallSettings.newBuilder();
+      listCertificateIssuanceConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_CERTIFICATE_ISSUANCE_CONFIGS_PAGE_STR_FACT);
+      getCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1085,6 +1268,10 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               createDnsAuthorizationSettings,
               updateDnsAuthorizationSettings,
               deleteDnsAuthorizationSettings,
+              listCertificateIssuanceConfigsSettings,
+              getCertificateIssuanceConfigSettings,
+              createCertificateIssuanceConfigSettings,
+              deleteCertificateIssuanceConfigSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1134,6 +1321,18 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       deleteDnsAuthorizationSettings = settings.deleteDnsAuthorizationSettings.toBuilder();
       deleteDnsAuthorizationOperationSettings =
           settings.deleteDnsAuthorizationOperationSettings.toBuilder();
+      listCertificateIssuanceConfigsSettings =
+          settings.listCertificateIssuanceConfigsSettings.toBuilder();
+      getCertificateIssuanceConfigSettings =
+          settings.getCertificateIssuanceConfigSettings.toBuilder();
+      createCertificateIssuanceConfigSettings =
+          settings.createCertificateIssuanceConfigSettings.toBuilder();
+      createCertificateIssuanceConfigOperationSettings =
+          settings.createCertificateIssuanceConfigOperationSettings.toBuilder();
+      deleteCertificateIssuanceConfigSettings =
+          settings.deleteCertificateIssuanceConfigSettings.toBuilder();
+      deleteCertificateIssuanceConfigOperationSettings =
+          settings.deleteCertificateIssuanceConfigOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1159,6 +1358,10 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               createDnsAuthorizationSettings,
               updateDnsAuthorizationSettings,
               deleteDnsAuthorizationSettings,
+              listCertificateIssuanceConfigsSettings,
+              getCertificateIssuanceConfigSettings,
+              createCertificateIssuanceConfigSettings,
+              deleteCertificateIssuanceConfigSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1287,6 +1490,26 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
       builder
           .deleteDnsAuthorizationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCertificateIssuanceConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCertificateIssuanceConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCertificateIssuanceConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCertificateIssuanceConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1591,6 +1814,57 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createCertificateIssuanceConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateCertificateIssuanceConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CertificateIssuanceConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteCertificateIssuanceConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteCertificateIssuanceConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1838,6 +2112,51 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     public OperationCallSettings.Builder<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings() {
       return deleteDnsAuthorizationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCertificateIssuanceConfigs. */
+    public PagedCallSettings.Builder<
+            ListCertificateIssuanceConfigsRequest,
+            ListCertificateIssuanceConfigsResponse,
+            ListCertificateIssuanceConfigsPagedResponse>
+        listCertificateIssuanceConfigsSettings() {
+      return listCertificateIssuanceConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<GetCertificateIssuanceConfigRequest, CertificateIssuanceConfig>
+        getCertificateIssuanceConfigSettings() {
+      return getCertificateIssuanceConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<CreateCertificateIssuanceConfigRequest, Operation>
+        createCertificateIssuanceConfigSettings() {
+      return createCertificateIssuanceConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCertificateIssuanceConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+        createCertificateIssuanceConfigOperationSettings() {
+      return createCertificateIssuanceConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<DeleteCertificateIssuanceConfigRequest, Operation>
+        deleteCertificateIssuanceConfigSettings() {
+      return deleteCertificateIssuanceConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
+        deleteCertificateIssuanceConfigOperationSettings() {
+      return deleteCertificateIssuanceConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

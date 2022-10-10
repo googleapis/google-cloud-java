@@ -55,250 +55,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private EnvironmentConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gkeCluster_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dagGcsPrefix_ = s;
-              break;
-            }
-          case 24:
-            {
-              nodeCount_ = input.readInt32();
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.Builder
-                  subBuilder = null;
-              if (softwareConfig_ != null) {
-                subBuilder = softwareConfig_.toBuilder();
-              }
-              softwareConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(softwareConfig_);
-                softwareConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.Builder subBuilder =
-                  null;
-              if (nodeConfig_ != null) {
-                subBuilder = nodeConfig_.toBuilder();
-              }
-              nodeConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nodeConfig_);
-                nodeConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              airflowUri_ = s;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig
-                      .Builder
-                  subBuilder = null;
-              if (privateEnvironmentConfig_ != null) {
-                subBuilder = privateEnvironmentConfig_.toBuilder();
-              }
-              privateEnvironmentConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1
-                          .PrivateEnvironmentConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(privateEnvironmentConfig_);
-                privateEnvironmentConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.WebServerNetworkAccessControl
-                      .Builder
-                  subBuilder = null;
-              if (webServerNetworkAccessControl_ != null) {
-                subBuilder = webServerNetworkAccessControl_.toBuilder();
-              }
-              webServerNetworkAccessControl_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1
-                          .WebServerNetworkAccessControl.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(webServerNetworkAccessControl_);
-                webServerNetworkAccessControl_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig.Builder
-                  subBuilder = null;
-              if (databaseConfig_ != null) {
-                subBuilder = databaseConfig_.toBuilder();
-              }
-              databaseConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(databaseConfig_);
-                databaseConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig.Builder
-                  subBuilder = null;
-              if (webServerConfig_ != null) {
-                subBuilder = webServerConfig_.toBuilder();
-              }
-              webServerConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(webServerConfig_);
-                webServerConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig.Builder
-                  subBuilder = null;
-              if (encryptionConfig_ != null) {
-                subBuilder = encryptionConfig_.toBuilder();
-              }
-              encryptionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(encryptionConfig_);
-                encryptionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow.Builder
-                  subBuilder = null;
-              if (maintenanceWindow_ != null) {
-                subBuilder = maintenanceWindow_.toBuilder();
-              }
-              maintenanceWindow_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(maintenanceWindow_);
-                maintenanceWindow_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.Builder
-                  subBuilder = null;
-              if (workloadsConfig_ != null) {
-                subBuilder = workloadsConfig_.toBuilder();
-              }
-              workloadsConfig_ =
-                  input.readMessage(
-                      com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(workloadsConfig_);
-                workloadsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 128:
-            {
-              int rawValue = input.readEnum();
-
-              environmentSize_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsOuterClass
         .internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_descriptor;
@@ -1337,7 +1093,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(16, environmentSize_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1395,7 +1151,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, environmentSize_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1455,7 +1211,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (!getWorkloadsConfig().equals(other.getWorkloadsConfig())) return false;
     }
     if (environmentSize_ != other.environmentSize_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1512,7 +1268,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + ENVIRONMENT_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + environmentSize_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1645,17 +1401,10 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
     // Construct using
     // com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1904,7 +1653,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (other.environmentSize_ != 0) {
         setEnvironmentSizeValue(other.getEnvironmentSizeValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1919,19 +1668,119 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                gkeCluster_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                dagGcsPrefix_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                nodeCount_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(getSoftwareConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                airflowUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getPrivateEnvironmentConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 74:
+              {
+                input.readMessage(
+                    getWebServerNetworkAccessControlFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getDatabaseConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getWebServerConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getMaintenanceWindowFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(getWorkloadsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 128:
+              {
+                environmentSize_ = input.readEnum();
+
+                break;
+              } // case 128
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4546,7 +4395,18 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EnvironmentConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
