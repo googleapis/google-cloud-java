@@ -1,0 +1,42 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.api.apikeys.v2",
+  "libraryPackage": "com.google.api.apikeys.v2",
+  "services": {
+    "ApiKeys": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiKeysClient",
+          "rpcs": {
+            "CreateKey": {
+              "methods": ["createKeyAsync", "createKeyAsync", "createKeyAsync", "createKeyOperationCallable", "createKeyCallable"]
+            },
+            "DeleteKey": {
+              "methods": ["deleteKeyAsync", "deleteKeyAsync", "deleteKeyAsync", "deleteKeyOperationCallable", "deleteKeyCallable"]
+            },
+            "GetKey": {
+              "methods": ["getKey", "getKey", "getKey", "getKeyCallable"]
+            },
+            "GetKeyString": {
+              "methods": ["getKeyString", "getKeyString", "getKeyString", "getKeyStringCallable"]
+            },
+            "ListKeys": {
+              "methods": ["listKeys", "listKeys", "listKeys", "listKeysPagedCallable", "listKeysCallable"]
+            },
+            "LookupKey": {
+              "methods": ["lookupKey", "lookupKeyCallable"]
+            },
+            "UndeleteKey": {
+              "methods": ["undeleteKeyAsync", "undeleteKeyOperationCallable", "undeleteKeyCallable"]
+            },
+            "UpdateKey": {
+              "methods": ["updateKeyAsync", "updateKeyAsync", "updateKeyOperationCallable", "updateKeyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

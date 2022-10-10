@@ -29,6 +29,7 @@
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>
+    <module>java-apikeys</module>
     <module>java-appengine-admin</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
