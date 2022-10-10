@@ -4,8 +4,8 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apikeys-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apikeys:current} -->
-  <name>Google API Keys API Parent</name>
+  <version>0.1.2</version><!-- {x-version-update:google-cloud-apikeys:current} -->
+  <name>Google API Keys Parent</name>
   <url>https://github.com/googleapis/java-apikeys</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,8 +13,8 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -69,17 +69,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-apikeys</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apikeys:current} -->
+        <version>0.1.2</version><!-- {x-version-update:google-cloud-apikeys:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-apikeys-v2</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-apikeys-v2:current} -->
+        <version>0.1.2</version><!-- {x-version-update:grpc-google-cloud-apikeys-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-apikeys-v2</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-apikeys-v2:current} -->
+        <version>0.1.2</version><!-- {x-version-update:proto-google-cloud-apikeys-v2:current} -->
       </dependency>
 
       <dependency>
@@ -121,7 +121,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.3.0</version>
+        <version>3.4.1</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -148,7 +148,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.1</version>
         <reportSets>
           <reportSet>
             <id>html</id>

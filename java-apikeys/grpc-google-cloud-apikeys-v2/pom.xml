@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-apikeys-v2</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-apikeys-v2:current} -->
+  <version>0.1.2</version><!-- {x-version-update:grpc-google-cloud-apikeys-v2:current} -->
   <name>grpc-google-cloud-apikeys-v2</name>
   <description>GRPC library for google-cloud-apikeys</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apikeys-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apikeys:current} -->
+    <version>0.1.2</version><!-- {x-version-update:google-cloud-apikeys:current} -->
   </parent>
   <dependencies>
     <dependency>

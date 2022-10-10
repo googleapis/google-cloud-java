@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter-settings-bom</artifactId>
-  <version>0.6.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+  <version>0.6.6</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -54,17 +54,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-securitycenter-settings</artifactId>
-        <version>0.6.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+        <version>0.6.6</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-settings-v1beta1</artifactId>
-        <version>0.6.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-settings-v1beta1:current} -->
+        <version>0.6.6</version><!-- {x-version-update:grpc-google-cloud-securitycenter-settings-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-settings-v1beta1</artifactId>
-        <version>0.6.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-settings-v1beta1:current} -->
+        <version>0.6.6</version><!-- {x-version-update:proto-google-cloud-securitycenter-settings-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

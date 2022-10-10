@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
   <packaging>jar</packaging>
-  <version>2.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+  <version>2.1.8</version><!-- {x-version-update:google-cloud-dns:current} -->
   <name>Google Cloud DNS Parent</name>
   <url>https://github.com/googleapis/java-dns</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -72,7 +72,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-dns</artifactId>
-      <version>v1-rev20220804-2.0.0</version>
+      <version>v1-rev20220915-2.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-client</groupId>

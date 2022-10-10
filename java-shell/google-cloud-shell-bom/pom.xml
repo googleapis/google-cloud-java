@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-shell-bom</artifactId>
-  <version>2.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-shell:current} -->
+  <version>2.2.8</version><!-- {x-version-update:google-cloud-shell:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -57,17 +57,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shell</artifactId>
-        <version>2.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-shell:current} -->
+        <version>2.2.8</version><!-- {x-version-update:google-cloud-shell:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-shell-v1</artifactId>
-        <version>2.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-shell-v1:current} -->
+        <version>2.2.8</version><!-- {x-version-update:grpc-google-cloud-shell-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-shell-v1</artifactId>
-        <version>2.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-shell-v1:current} -->
+        <version>2.2.8</version><!-- {x-version-update:proto-google-cloud-shell-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

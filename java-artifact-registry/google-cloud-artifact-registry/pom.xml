@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-artifact-registry</artifactId>
-  <version>1.2.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+  <version>1.2.9</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   <packaging>jar</packaging>
   <name>Google Artifact Registry</name>
   <url>https://github.com/googleapis/java-artifact-registry</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-artifact-registry-parent</artifactId>
-    <version>1.2.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+    <version>1.2.9</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-artifact-registry</site.installationModule>

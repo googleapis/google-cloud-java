@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-dialogflow-cx-v3</artifactId>
-  <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3:current} -->
+  <version>0.14.7</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3:current} -->
   <name>proto-google-cloud-dialogflow-cx-v3</name>
   <description>PROTO library for proto-google-cloud-dialogflow-cx-v3</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-cx-parent</artifactId>
-    <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+    <version>0.14.7</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   </parent>
   <dependencies>
     <dependency>

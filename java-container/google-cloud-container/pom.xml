@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-container</artifactId>
-  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-container:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Container</name>
   <url>https://github.com/googleapis/java-container</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-container-parent</artifactId>
-    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+    <version>2.6.0</version><!-- {x-version-update:google-cloud-container:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-container</site.installationModule>

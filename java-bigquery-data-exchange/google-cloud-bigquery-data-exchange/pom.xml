@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-data-exchange</artifactId>
-  <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+  <version>0.4.0</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Hub</name>
   <url>https://github.com/googleapis/java-bigquery-data-exchange</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-data-exchange-parent</artifactId>
-    <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+    <version>0.4.0</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery-data-exchange</site.installationModule>
@@ -43,13 +43,12 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
+      <artifactId>proto-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-iam-v1</artifactId>
+      <artifactId>grpc-google-common-protos</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquery-data-exchange-v1beta1</artifactId>

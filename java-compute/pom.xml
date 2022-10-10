@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.12.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.13.0</version><!-- {x-version-update:google-cloud-compute:current} -->
   <name>Google Compute Engine Parent</name>
   <url>https://github.com/googleapis/java-compute</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -61,12 +61,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>1.12.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>1.13.0</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-compute-v1</artifactId>
-        <version>1.12.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
+        <version>1.13.0</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
       </dependency>
 
       <dependency>
@@ -109,6 +109,70 @@
     <module>proto-google-cloud-compute-v1</module>
     <module>google-cloud-compute-bom</module>
   </modules>
+
+  <profiles>
+    <profile>
+      <id>native-0.9.14</id>
+
+      <dependencies>
+
+        <dependency>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+          <version>5.9.1</version>
+          <scope>test</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>org.graalvm.buildtools</groupId>
+          <artifactId>junit-platform-native</artifactId>
+          <version>0.9.14</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <!-- Must use older version of surefire plugin for native-image testing. -->
+            <version>2.22.2</version>
+            <configuration>
+              <!-- Include all tests during native image testing. -->
+              <excludes combine.self="override"/>
+              <includes>
+                <include>**/IT*.java</include>
+                <!-- Enable unit tests in generated libraries for native image testing. -->
+                <include>**/*ClientTest.java</include>
+              </includes>
+            </configuration>
+          </plugin>
+
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>0.9.14</version>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>test-native</id>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <buildArgs>
+                <buildArg>--no-fallback</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <reporting>
     <plugins>

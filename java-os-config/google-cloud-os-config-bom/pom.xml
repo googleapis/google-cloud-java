@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-config-bom</artifactId>
-  <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+  <version>2.5.6</version><!-- {x-version-update:google-cloud-os-config:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -53,37 +53,37 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-config</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+        <version>2.5.6</version><!-- {x-version-update:google-cloud-os-config:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-os-config-v1</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
+        <version>2.5.6</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-os-config-v1beta</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-config-v1beta:current} -->
+        <version>2.5.6</version><!-- {x-version-update:grpc-google-cloud-os-config-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-os-config-v1alpha</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-config-v1alpha:current} -->
+        <version>2.5.6</version><!-- {x-version-update:grpc-google-cloud-os-config-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-config-v1</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
+        <version>2.5.6</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-config-v1alpha</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-config-v1alpha:current} -->
+        <version>2.5.6</version><!-- {x-version-update:proto-google-cloud-os-config-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-config-v1beta</artifactId>
-        <version>2.5.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-config-v1beta:current} -->
+        <version>2.5.6</version><!-- {x-version-update:proto-google-cloud-os-config-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

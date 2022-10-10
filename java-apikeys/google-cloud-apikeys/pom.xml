@@ -1,17 +1,17 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apikeys</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apikeys:current} -->
+  <version>0.1.2</version><!-- {x-version-update:google-cloud-apikeys:current} -->
   <packaging>jar</packaging>
-  <name>Google API Keys API</name>
+  <name>Google API Keys</name>
   <url>https://github.com/googleapis/java-apikeys</url>
-  <description>API Keys API API Keys lets you create and manage your API keys for your projects.</description>
+  <description>API Keys manages the API keys associated with projects.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apikeys-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apikeys:current} -->
+    <version>0.1.2</version><!-- {x-version-update:google-cloud-apikeys:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apikeys</site.installationModule>
@@ -61,18 +61,6 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-iam-v1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
