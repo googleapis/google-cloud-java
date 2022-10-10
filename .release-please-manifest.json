@@ -24,6 +24,7 @@
   "java-beyondcorp-clientgateways": "0.0.0",
   "java-bigqueryconnection": "2.5.5",
   "java-bigquery-data-exchange": "0.3.2",
+  "java-bigquerydatapolicy": "0.0.0",
   "java-bigquerydatatransfer": "2.3.15",
   "java-bigquerymigration": "0.6.2",
   "java-bigqueryreservation": "2.4.5",
