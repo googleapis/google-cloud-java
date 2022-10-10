@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gapic-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-bom:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-gapic-bom:current} -->
   <name>Google Cloud Java BOM</name>
   <url>https://github.com/googleapis/java-cloud-bom</url>
   <description>
@@ -708,12 +708,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dns</artifactId>
-        <version>2.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <version>2.2.0</version><!-- {x-version-update:google-cloud-dns:current} -->
       </dependency>
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>2.4.7-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
+        <version>2.5.0</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
       <dependency>
           <groupId>com.google.cloud</groupId>

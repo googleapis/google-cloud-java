@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-connect-gateway-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+  <version>0.5.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
   <name>Google Connect Gateway API Parent</name>
   <url>https://github.com/googleapis/java-gke-connect-gateway</url>
   <description>
@@ -60,17 +60,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-connect-gateway</artifactId>
-        <version>0.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+        <version>0.5.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gke-connect-gateway-v1beta1</artifactId>
-        <version>0.4.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-connect-gateway-v1beta1:current} -->
+        <version>0.5.0</version><!-- {x-version-update:grpc-google-cloud-gke-connect-gateway-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gke-connect-gateway-v1beta1</artifactId>
-        <version>0.4.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-connect-gateway-v1beta1:current} -->
+        <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-gke-connect-gateway-v1beta1:current} -->
       </dependency>
 
       <dependency>
