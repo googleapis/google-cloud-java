@@ -274,6 +274,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-distributedcloudedge</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dlp</artifactId>
       <version>3.7.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
     </dependency>
