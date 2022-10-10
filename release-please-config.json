@@ -108,6 +108,10 @@
       "component": "google-cloud-bigquery-data-exchange",
       "skip-github-release": true
     },
+    "java-bigquerydatapolicy": {
+      "component": "google-cloud-bigquerydatapolicy",
+      "skip-github-release": true
+    },
     "java-bigquerydatatransfer": {
       "component": "google-cloud-bigquerydatatransfer",
       "skip-github-release": true
@@ -214,6 +218,10 @@
     },
     "java-dialogflow": {
       "component": "google-cloud-dialogflow",
+      "skip-github-release": true
+    },
+    "java-distributedcloudedge": {
+      "component": "google-cloud-distributedcloudedge",
       "skip-github-release": true
     },
     "java-dlp": {

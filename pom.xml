@@ -78,6 +78,7 @@
     <module>java-beyondcorp-clientgateways</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquery-data-exchange</module>
+    <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
@@ -105,6 +106,7 @@
     <module>java-deploy</module>
     <module>java-dialogflow-cx</module>
     <module>java-dialogflow</module>
+    <module>java-distributedcloudedge</module>
     <module>java-dlp</module>
     <module>java-dms</module>
     <module>java-dns</module>
