@@ -14,8 +14,30 @@ Java idiomatic client for [Data Labeling][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.3</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-datalabeling</artifactId>
+  </dependency>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
@@ -24,8 +46,16 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-datalabeling</artifactId>
   <version>0.123.7</version>
 </dependency>
+
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.3')
+
+implementation 'com.google.cloud:google-cloud-datalabeling'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
@@ -71,6 +101,22 @@ use this Data Labeling Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-datalabeling/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Create Annotation Spec Set | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/CreateAnnotationSpecSet.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/CreateAnnotationSpecSet.java) |
+| Create Dataset | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/CreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/CreateDataset.java) |
+| Create Instruction | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/CreateInstruction.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/CreateInstruction.java) |
+| Export Data | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/ExportData.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/ExportData.java) |
+| Import Data | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/ImportData.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/ImportData.java) |
+| Label Image | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/LabelImage.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/LabelImage.java) |
+| Label Text | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/LabelText.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/LabelText.java) |
+| Label Video | [source code](https://github.com/googleapis/java-datalabeling/blob/main/samples/snippets/src/main/java/com/example/datalabeling/LabelVideo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datalabeling&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datalabeling/LabelVideo.java) |
 
 
 

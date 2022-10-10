@@ -21,6 +21,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-ids</artifactId>
   <version>1.2.7</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
