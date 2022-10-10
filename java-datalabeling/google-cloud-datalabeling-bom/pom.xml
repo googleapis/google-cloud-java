@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalabeling-bom</artifactId>
-  <version>0.123.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+  <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -53,17 +53,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datalabeling</artifactId>
-        <version>0.123.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+        <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.88.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datalabeling-v1beta1:current} -->
+        <version>0.89.0</version><!-- {x-version-update:grpc-google-cloud-datalabeling-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.88.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
+        <version>0.89.0</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
