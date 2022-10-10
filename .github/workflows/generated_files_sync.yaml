@@ -102,10 +102,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: checking any files matching gitignore
+      # By default, GitHub Actions's bash has '-e' option to fail immediately
+      # upon non-zero exit code. Not using it here to catch the exit code 1.
       shell: /usr/bin/bash --noprofile --norc -o pipefail {0}
       run: |
         find . -type f -name '*.java' -not -path './.git/*' \
             |git check-ignore --no-index --verbose --stdin
+        # https://git-scm.com/docs/git-check-ignore returns 1 when there's no
+        # matching files with the gitignore file.
+        # "--no-index" is needed to check against tracked files.
         if [ "$?" == 1 ]; then
           echo "No matching files. Good."
           exit 0
