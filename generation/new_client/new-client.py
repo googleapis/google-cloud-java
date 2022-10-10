@@ -71,31 +71,27 @@ def add_module_to_root_pom(pom_path: Path, new_module: str):
 )
 @click.option(
     "--release-level",
-    required=True,
     type=click.Choice(["stable", "preview"]),
-    prompt=True,
     default="preview",
 )
 @click.option(
     "--transport",
-    required=True,
     type=click.Choice(["grpc", "http", "both"]),
-    prompt=True,
     default="grpc",
 )
-@click.option("--language", required=True, type=str, default="java")
+@click.option("--language", type=str, default="java")
 @click.option("--distribution-name", type=str)
 @click.option("--api-id", type=str)
 @click.option("--requires-billing", type=bool, default=True)
 @click.option("--destination-name", type=str, default=None)
-@click.option("--proto-path", type=str, default=None)
+@click.option("--proto-path", required=True, type=str, default=None)
 @click.option("--cloud-api", type=bool, default=True)
 @click.option("--group-id", type=str, default="com.google.cloud")
 @click.option(
     "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
 )
 @click.option("--library-type", type=str)
-@click.option("--monorepo-url", type=str, default=None)
+@click.option("--monorepo-url", type=str, default="https://github.com/googleapis/google-cloud-java")
 def generate(
     api_shortname,
     name_pretty,
