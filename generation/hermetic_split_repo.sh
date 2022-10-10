@@ -189,8 +189,13 @@ fi
 
 # Exclude irrelevant changes
 pushd workspace/repo
-git checkout "origin/${BRANCH}" -- samples README.md .github .kokoro java.header renovate.json \
+git checkout "origin/${BRANCH}" -- README.md .github .kokoro java.header renovate.json \
     versions.txt ./**/*.xml
+# java-commons-protos doesn't have samples
+if [ -d samples ]; then
+  git checkout "origin/${BRANCH}" -- samples
+fi
+
 git add ./**/*.java
 
 # It's possible that there's no code change.
