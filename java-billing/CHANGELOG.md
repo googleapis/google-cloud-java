@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-billing/compare/v2.3.4...v2.3.5) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([c25bdc9](https://github.com/googleapis/java-billing/commit/c25bdc92785ba2474174df0a4e21064efc9d4d71))
+
+## [2.3.4](https://github.com/googleapis/java-billing/compare/v2.3.3...v2.3.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#716](https://github.com/googleapis/java-billing/issues/716)) ([0c9314c](https://github.com/googleapis/java-billing/commit/0c9314c9da9a49855d6cd98bde0d1c5a4e2006d0))
+* Update dependency certifi to v2022.9.24 ([#710](https://github.com/googleapis/java-billing/issues/710)) ([88fd602](https://github.com/googleapis/java-billing/commit/88fd602088698e86a482b9015b7da3e0da7cff5e))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#722](https://github.com/googleapis/java-billing/issues/722)) ([7def076](https://github.com/googleapis/java-billing/commit/7def0761d44ed94c7cf52dc0f9b35f6671a6db0f))
+* Update dependency gcp-releasetool to v1.8.8 ([#711](https://github.com/googleapis/java-billing/issues/711)) ([d60facf](https://github.com/googleapis/java-billing/commit/d60facf87f57ce1015e74eb44498d3961be52ce9))
+* Update dependency protobuf to v4 ([#717](https://github.com/googleapis/java-billing/issues/717)) ([638a314](https://github.com/googleapis/java-billing/commit/638a3145f6b510c34e5c4eb20c0aa50d92b73949))
+* Update dependency pyjwt to v2.5.0 ([#712](https://github.com/googleapis/java-billing/issues/712)) ([97eb488](https://github.com/googleapis/java-billing/commit/97eb4883310f1866aa61f8120cc826f4e02a36b5))
+* Update dependency requests to v2.28.1 ([#713](https://github.com/googleapis/java-billing/issues/713)) ([dc191a2](https://github.com/googleapis/java-billing/commit/dc191a24254fd85b476f51cb31b6aa8a60ac0606))
+* Update dependency typing-extensions to v4.3.0 ([#714](https://github.com/googleapis/java-billing/issues/714)) ([d86f7f4](https://github.com/googleapis/java-billing/commit/d86f7f4033ffb67613bac752d2d2426e06a618e2))
+* Update dependency zipp to v3.8.1 ([#715](https://github.com/googleapis/java-billing/issues/715)) ([ff92dde](https://github.com/googleapis/java-billing/commit/ff92ddebfe4cf3deea661575c43ebed3f359d4dc))
+
 ## [2.3.3](https://github.com/googleapis/java-billing/compare/v2.3.2...v2.3.3) (2022-09-15)
 
 

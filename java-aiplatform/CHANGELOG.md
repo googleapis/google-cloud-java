@@ -1,5 +1,69 @@
 # Changelog
 
+## [3.4.2](https://github.com/googleapis/java-aiplatform/compare/v3.4.1...v3.4.2) (2022-10-10)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.20.1 ([#1091](https://github.com/googleapis/java-aiplatform/issues/1091)) ([de61e5b](https://github.com/googleapis/java-aiplatform/commit/de61e5bd7ff16e326f39d4a9b51182aaf667d76e))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.1 ([#1092](https://github.com/googleapis/java-aiplatform/issues/1092)) ([ff34c82](https://github.com/googleapis/java-aiplatform/commit/ff34c82582905a03a385d522173e897f3ea19e36))
+
+## [3.4.1](https://github.com/googleapis/java-aiplatform/compare/v3.4.0...v3.4.1) (2022-10-10)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.20.0 ([#1086](https://github.com/googleapis/java-aiplatform/issues/1086)) ([dc84f01](https://github.com/googleapis/java-aiplatform/commit/dc84f0124663049769216b1f1f5bbd984a31bb57))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.0 ([#1082](https://github.com/googleapis/java-aiplatform/issues/1082)) ([eb38e92](https://github.com/googleapis/java-aiplatform/commit/eb38e929ffe00675f2ffedf68063b8c13edda3c7))
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#1087](https://github.com/googleapis/java-aiplatform/issues/1087)) ([a786ef8](https://github.com/googleapis/java-aiplatform/commit/a786ef8bb8347251725d2a1e9e85c732b56ad542))
+
+## [3.4.0](https://github.com/googleapis/java-aiplatform/compare/v3.3.0...v3.4.0) (2022-10-03)
+
+
+### Features
+
+* Add deleteFeatureValues in aiplatform v1beta1 featurestore_service.proto ([#1048](https://github.com/googleapis/java-aiplatform/issues/1048)) ([bf46023](https://github.com/googleapis/java-aiplatform/commit/bf4602300aa3599ff171641e102547a504a1735c))
+* add InputArtifact to RuntimeConfig in aiplatform v1beta1 pipeline_job.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* Add model_source_info to Model in aiplatform v1 model.proto ([#1054](https://github.com/googleapis/java-aiplatform/issues/1054)) ([16ca835](https://github.com/googleapis/java-aiplatform/commit/16ca835ef9f494e8eb6d3c5a87335d5095db0a92))
+* Add model_source_info to Model in aiplatform v1beta1 model.proto ([#1055](https://github.com/googleapis/java-aiplatform/issues/1055)) ([b8cbe32](https://github.com/googleapis/java-aiplatform/commit/b8cbe32917d55d6f27d6b5c6b5533af9e1d47a7e))
+* add order_by to ListArtifactsRequest, ListContextsRequest, and ListExecutionsRequest in aiplatform v1 metadata_service.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* add order_by to ListArtifactsRequest, ListContextsRequest, and ListExecutionsRequest in aiplatform v1beta1 metadata_service.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* add read_mask to ListPipelineJobsRequest in aiplatform v1beta1 pipeline_service.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* add RemoveContextChildren rpc to aiplatform v1 metadata_service.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* add RemoveContextChildren rpc to aiplatform v1beta1 metadata_service.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* Add timestamp_outside_retention_rows_count to ImportFeatureValuesResponse and ImportFeatureValuesOperationMetadata in aiplatform v1 featurestore_service.proto ([#1053](https://github.com/googleapis/java-aiplatform/issues/1053)) ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* add timestamp_outside_retention_rows_count to ImportFeatureValuesResponse and ImportFeatureValuesOperationMetadata in aiplatform v1beta1 featurestore_service.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* add TransferLearningConfig in aiplatform v1beta1 study.proto ([57258ee](https://github.com/googleapis/java-aiplatform/commit/57258ee35e76c29aba2d4cf8cfce9d2edad0823c))
+* **sample:** Featurestore node updates ([#1028](https://github.com/googleapis/java-aiplatform/issues/1028)) ([000f6a5](https://github.com/googleapis/java-aiplatform/commit/000f6a56b71392de61ebfb713d1c515488a725fd))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#1077](https://github.com/googleapis/java-aiplatform/issues/1077)) ([eb5b9f1](https://github.com/googleapis/java-aiplatform/commit/eb5b9f1b8b83a766d004bef0f60face9d580ec48))
+* Update dependency certifi to v2022.9.24 ([#1059](https://github.com/googleapis/java-aiplatform/issues/1059)) ([be80906](https://github.com/googleapis/java-aiplatform/commit/be8090676d4e0bcd27b3c60e4727a596e9158930))
+* Update dependency charset-normalizer to v2.1.1 ([#1064](https://github.com/googleapis/java-aiplatform/issues/1064)) ([9777478](https://github.com/googleapis/java-aiplatform/commit/977747818b779eeceb1796e706303a8f0a4a386c))
+* Update dependency click to v8.1.3 ([#1067](https://github.com/googleapis/java-aiplatform/issues/1067)) ([f5e9f6a](https://github.com/googleapis/java-aiplatform/commit/f5e9f6ad0a496d7ee1c7fa221fba71b6a681192c))
+* Update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.19.0 ([#1051](https://github.com/googleapis/java-aiplatform/issues/1051)) ([4dff0fe](https://github.com/googleapis/java-aiplatform/commit/4dff0fee5f601804903fa74016b887ec901d86a2))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.16.1 ([#1046](https://github.com/googleapis/java-aiplatform/issues/1046)) ([cd7ac86](https://github.com/googleapis/java-aiplatform/commit/cd7ac868b3c0b0d400d7499ad0fa76e5455ff1e0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1081](https://github.com/googleapis/java-aiplatform/issues/1081)) ([b1c16ae](https://github.com/googleapis/java-aiplatform/commit/b1c16ae7ec08ac7424280c8121edde14376ad515))
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#1047](https://github.com/googleapis/java-aiplatform/issues/1047)) ([2a7caf9](https://github.com/googleapis/java-aiplatform/commit/2a7caf984d41e7ead0cb0939c3ab1b953c4ddfd0))
+* Update dependency gcp-releasetool to v1.8.8 ([#1060](https://github.com/googleapis/java-aiplatform/issues/1060)) ([0a91ea1](https://github.com/googleapis/java-aiplatform/commit/0a91ea14ea2c6c2d362786dab8107b621eee4862))
+* Update dependency google-api-core to v2.10.1 ([#1068](https://github.com/googleapis/java-aiplatform/issues/1068)) ([283880c](https://github.com/googleapis/java-aiplatform/commit/283880c0b17ab117989952b3d317282faef4608d))
+* Update dependency google-auth to v2.11.1 ([#1061](https://github.com/googleapis/java-aiplatform/issues/1061)) ([1b4291d](https://github.com/googleapis/java-aiplatform/commit/1b4291db89106a8cccf03095bbde2eab84df0e3f))
+* Update dependency google-cloud-core to v2.3.2 ([#1062](https://github.com/googleapis/java-aiplatform/issues/1062)) ([687d1d0](https://github.com/googleapis/java-aiplatform/commit/687d1d052227d2b1d0b57e933f94ff9ee91926e9))
+* Update dependency google-cloud-storage to v2.5.0 ([#1069](https://github.com/googleapis/java-aiplatform/issues/1069)) ([6a59ca8](https://github.com/googleapis/java-aiplatform/commit/6a59ca85067c82096f391de2d52284df8f816900))
+* Update dependency google-crc32c to v1.5.0 ([#1070](https://github.com/googleapis/java-aiplatform/issues/1070)) ([ce56dc7](https://github.com/googleapis/java-aiplatform/commit/ce56dc71610f9d2089f81ec502a3f3a664afae3f))
+* Update dependency googleapis-common-protos to v1.56.4 ([#1063](https://github.com/googleapis/java-aiplatform/issues/1063)) ([c2f3b3e](https://github.com/googleapis/java-aiplatform/commit/c2f3b3ea31b1e312d28f9a9e66408f72619a5e06))
+* Update dependency jinja2 to v3.1.2 ([#1065](https://github.com/googleapis/java-aiplatform/issues/1065)) ([74d12bc](https://github.com/googleapis/java-aiplatform/commit/74d12bcbf8cf9930803007d1d85f1d2274045048))
+* Update dependency keyring to v23.9.3 ([#1066](https://github.com/googleapis/java-aiplatform/issues/1066)) ([b28f00e](https://github.com/googleapis/java-aiplatform/commit/b28f00e80a0e65df2c40ddc151614cc8ffde0a03))
+* Update dependency markupsafe to v2.1.1 ([#1073](https://github.com/googleapis/java-aiplatform/issues/1073)) ([5d0e322](https://github.com/googleapis/java-aiplatform/commit/5d0e32293ef76d13a4d88971c3f9074d4c675faf))
+* Update dependency protobuf to v3.20.2 ([#1074](https://github.com/googleapis/java-aiplatform/issues/1074)) ([287bba9](https://github.com/googleapis/java-aiplatform/commit/287bba902ac28569f1d939e568c03aac74eb3e37))
+* Update dependency protobuf to v4 ([#1078](https://github.com/googleapis/java-aiplatform/issues/1078)) ([99e4505](https://github.com/googleapis/java-aiplatform/commit/99e4505e6c178f3b01400e00e8b504d74da012f2))
+* Update dependency pyjwt to v2.5.0 ([#1071](https://github.com/googleapis/java-aiplatform/issues/1071)) ([eaceb75](https://github.com/googleapis/java-aiplatform/commit/eaceb755f111bf8e8c75c520d8982cf89f657ea0))
+* Update dependency requests to v2.28.1 ([#1072](https://github.com/googleapis/java-aiplatform/issues/1072)) ([bb437cd](https://github.com/googleapis/java-aiplatform/commit/bb437cdadc04c87d8dacf56c6b4911abefb2cb96))
+* Update dependency typing-extensions to v4.3.0 ([#1075](https://github.com/googleapis/java-aiplatform/issues/1075)) ([3b71889](https://github.com/googleapis/java-aiplatform/commit/3b718898232787c3fb8044eed2eccfa9bb3c8c6f))
+* Update dependency zipp to v3.8.1 ([#1076](https://github.com/googleapis/java-aiplatform/issues/1076)) ([c77b0d3](https://github.com/googleapis/java-aiplatform/commit/c77b0d3fe5f892549729024df3fdcb1dcc05ebb9))
+
 ## [3.3.0](https://github.com/googleapis/java-aiplatform/compare/v3.2.0...v3.3.0) (2022-09-15)
 
 

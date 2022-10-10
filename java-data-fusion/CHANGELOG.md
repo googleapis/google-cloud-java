@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.3.5](https://github.com/googleapis/java-data-fusion/compare/v1.3.4...v1.3.5) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([0b31d62](https://github.com/googleapis/java-data-fusion/commit/0b31d625b30f954793f4fef1bbaa0d663191739a))
+
+## [1.3.4](https://github.com/googleapis/java-data-fusion/compare/v1.3.3...v1.3.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#214](https://github.com/googleapis/java-data-fusion/issues/214)) ([0094e8d](https://github.com/googleapis/java-data-fusion/commit/0094e8d2e80640fd08fff219568206a3eb5c6522))
+* Update dependency charset-normalizer to v2.1.1 ([#218](https://github.com/googleapis/java-data-fusion/issues/218)) ([02b3afb](https://github.com/googleapis/java-data-fusion/commit/02b3afb7f6cb2f97aa52e4aad3454e078e1b187d))
+* Update dependency click to v8.1.3 ([#219](https://github.com/googleapis/java-data-fusion/issues/219)) ([90709e8](https://github.com/googleapis/java-data-fusion/commit/90709e8b3280532d0a71b2ce278666dd86a8445a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#239](https://github.com/googleapis/java-data-fusion/issues/239)) ([fec246a](https://github.com/googleapis/java-data-fusion/commit/fec246ad1ef4b5d125573e8d3f4784ef0995dc9b))
+* Update dependency gcp-releasetool to v1.8.8 ([#215](https://github.com/googleapis/java-data-fusion/issues/215)) ([6163b19](https://github.com/googleapis/java-data-fusion/commit/6163b1934ee02e3bcceab50babf3c0dfdc03117d))
+* Update dependency google-api-core to v2.10.1 ([#220](https://github.com/googleapis/java-data-fusion/issues/220)) ([165c7a5](https://github.com/googleapis/java-data-fusion/commit/165c7a56af69a0369737187b105566db682337bc))
+* Update dependency google-auth to v2.12.0 ([#221](https://github.com/googleapis/java-data-fusion/issues/221)) ([5f1212c](https://github.com/googleapis/java-data-fusion/commit/5f1212ceb70203012e8d64404594a7679d828aa6))
+* Update dependency google-cloud-core to v2.3.2 ([#216](https://github.com/googleapis/java-data-fusion/issues/216)) ([75560de](https://github.com/googleapis/java-data-fusion/commit/75560de365cb1f441ce759328f4ac5f76efe36fe))
+* Update dependency google-cloud-storage to v2.5.0 ([#222](https://github.com/googleapis/java-data-fusion/issues/222)) ([c4b72ab](https://github.com/googleapis/java-data-fusion/commit/c4b72abef3b8dcd83e2a13032c67ad5f0f65b5ee))
+* Update dependency google-crc32c to v1.5.0 ([#223](https://github.com/googleapis/java-data-fusion/issues/223)) ([d87dabc](https://github.com/googleapis/java-data-fusion/commit/d87dabc015c93543c16ac6c8bdac54d75b778d60))
+* Update dependency googleapis-common-protos to v1.56.4 ([#217](https://github.com/googleapis/java-data-fusion/issues/217)) ([3d46387](https://github.com/googleapis/java-data-fusion/commit/3d463876af371d076beff4038de88380827bd2ad))
+* Update dependency importlib-metadata to v4.12.0 ([#232](https://github.com/googleapis/java-data-fusion/issues/232)) ([81f6a59](https://github.com/googleapis/java-data-fusion/commit/81f6a5988842ae42b7b88b77a068bb29c5ecb955))
+* Update dependency jeepney to v0.8.0 ([#233](https://github.com/googleapis/java-data-fusion/issues/233)) ([3d1dea4](https://github.com/googleapis/java-data-fusion/commit/3d1dea4fd0b7d3c6d2f46845364712f9fb48ccca))
+* Update dependency jinja2 to v3.1.2 ([#234](https://github.com/googleapis/java-data-fusion/issues/234)) ([82e909e](https://github.com/googleapis/java-data-fusion/commit/82e909e85125361cc58fa3237b3ed995bb08d484))
+* Update dependency keyring to v23.9.3 ([#235](https://github.com/googleapis/java-data-fusion/issues/235)) ([de7ee8c](https://github.com/googleapis/java-data-fusion/commit/de7ee8c0e3b95c456b2e8a1bb754c396be5d6903))
+* Update dependency markupsafe to v2.1.1 ([#224](https://github.com/googleapis/java-data-fusion/issues/224)) ([10bad39](https://github.com/googleapis/java-data-fusion/commit/10bad3916d3828ec521a2537f37730335315d1eb))
+* Update dependency protobuf to v3.20.2 ([#225](https://github.com/googleapis/java-data-fusion/issues/225)) ([e7e3ecb](https://github.com/googleapis/java-data-fusion/commit/e7e3ecb5d42109e1b33823823f8af14a7eb49121))
+* Update dependency requests to v2.28.1 ([#227](https://github.com/googleapis/java-data-fusion/issues/227)) ([a3a4d57](https://github.com/googleapis/java-data-fusion/commit/a3a4d57c4aceec58f33697edfdeabeb0da3e9b66))
+* Update dependency typing-extensions to v4.3.0 ([#228](https://github.com/googleapis/java-data-fusion/issues/228)) ([2b8df11](https://github.com/googleapis/java-data-fusion/commit/2b8df118a7be16d29fe8b8a4eb36f52b76160944))
+
 ## [1.3.3](https://github.com/googleapis/java-data-fusion/compare/v1.3.2...v1.3.3) (2022-09-15)
 
 

@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.11.1](https://github.com/googleapis/java-securitycenter/compare/v2.11.0...v2.11.1) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.0 ([#939](https://github.com/googleapis/java-securitycenter/issues/939)) ([d9ed77f](https://github.com/googleapis/java-securitycenter/commit/d9ed77f284a404b7670ae178e8641cedf09fc3a4))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.20 ([#938](https://github.com/googleapis/java-securitycenter/issues/938)) ([e22b955](https://github.com/googleapis/java-securitycenter/commit/e22b955b49a8dc1baf7a0bab862b71f30369f3ca))
+
+## [2.11.0](https://github.com/googleapis/java-securitycenter/compare/v2.10.0...v2.11.0) (2022-10-03)
+
+
+### Features
+
+* Added parent display name i.e. source display name for a finding as one of the finding attributes ([#915](https://github.com/googleapis/java-securitycenter/issues/915)) ([50b411e](https://github.com/googleapis/java-securitycenter/commit/50b411e6ba7afcbe0a6cd2202449f6a9c8f80889))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#933](https://github.com/googleapis/java-securitycenter/issues/933)) ([5e43ea3](https://github.com/googleapis/java-securitycenter/commit/5e43ea37b8e622b2e0962aa8dca0b0895ed9b75d))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.16.1 ([#917](https://github.com/googleapis/java-securitycenter/issues/917)) ([1f8e702](https://github.com/googleapis/java-securitycenter/commit/1f8e70211c3723d9b41df68ca95a48f94c65a4a0))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.16 ([#913](https://github.com/googleapis/java-securitycenter/issues/913)) ([b6b77fc](https://github.com/googleapis/java-securitycenter/commit/b6b77fcd8703f0b2a3bc7c50536ab79e05f32b15))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.17 ([#923](https://github.com/googleapis/java-securitycenter/issues/923)) ([81106f7](https://github.com/googleapis/java-securitycenter/commit/81106f74526330a4b0af5c45ec379d724ac3b8af))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.18 ([#924](https://github.com/googleapis/java-securitycenter/issues/924)) ([2de2f59](https://github.com/googleapis/java-securitycenter/commit/2de2f59ce1457df9e3e22dc180fda7390fd8f893))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#937](https://github.com/googleapis/java-securitycenter/issues/937)) ([ca4e200](https://github.com/googleapis/java-securitycenter/commit/ca4e20005f5d5284d60258816ca19f9258dc1e38))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.6 ([#914](https://github.com/googleapis/java-securitycenter/issues/914)) ([f9c3b20](https://github.com/googleapis/java-securitycenter/commit/f9c3b205a169e169ac668fd5648d7c04fab53b68))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#935](https://github.com/googleapis/java-securitycenter/issues/935)) ([effbd43](https://github.com/googleapis/java-securitycenter/commit/effbd4385c8a69b9dccf36ec8e06d6be88aea17d))
+* Update dependency markupsafe to v2.1.1 ([#927](https://github.com/googleapis/java-securitycenter/issues/927)) ([3eca7a6](https://github.com/googleapis/java-securitycenter/commit/3eca7a619de9e8cb8cede0f7818a6013900d6838))
+* Update dependency protobuf to v3.20.2 ([#928](https://github.com/googleapis/java-securitycenter/issues/928)) ([0111b90](https://github.com/googleapis/java-securitycenter/commit/0111b905f0119a5adb4eda7bfc050109c52329dd))
+* Update dependency protobuf to v4 ([#934](https://github.com/googleapis/java-securitycenter/issues/934)) ([2f57006](https://github.com/googleapis/java-securitycenter/commit/2f57006e1ab507a1bde03a9a9f4711faa9f5a0cd))
+* Update dependency pyjwt to v2.5.0 ([#929](https://github.com/googleapis/java-securitycenter/issues/929)) ([ac15426](https://github.com/googleapis/java-securitycenter/commit/ac154261331169742d95dc49205f6a0d72acae80))
+* Update dependency requests to v2.28.1 ([#930](https://github.com/googleapis/java-securitycenter/issues/930)) ([ed9f9f9](https://github.com/googleapis/java-securitycenter/commit/ed9f9f988283e1fd153f78d61efc274c622ca028))
+* Update dependency typing-extensions to v4.3.0 ([#931](https://github.com/googleapis/java-securitycenter/issues/931)) ([6956e33](https://github.com/googleapis/java-securitycenter/commit/6956e334de73548d39d08139ea4c4482a15a9654))
+* Update dependency zipp to v3.8.1 ([#932](https://github.com/googleapis/java-securitycenter/issues/932)) ([f221d98](https://github.com/googleapis/java-securitycenter/commit/f221d988a777662b3f1523e0c1215ec6554e0a82))
+
 ## [2.10.0](https://github.com/googleapis/java-securitycenter/compare/v2.9.0...v2.10.0) (2022-09-16)
 
 

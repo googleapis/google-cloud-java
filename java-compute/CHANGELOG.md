@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.13.0](https://github.com/googleapis/java-compute/compare/v1.12.1...v1.13.0) (2022-10-04)
+
+
+### Features
+
+* Update Compute Engine API to revision 20220831 ([#729](https://github.com/googleapis/java-compute/issues/729)) ([#726](https://github.com/googleapis/java-compute/issues/726)) ([23bfd36](https://github.com/googleapis/java-compute/commit/23bfd364778aa5d783630ed86be2e9ffcabe5a2e))
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([4f4268d](https://github.com/googleapis/java-compute/commit/4f4268d87b5d93d9f8e6e045b7c05019f92b8ab4))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#752](https://github.com/googleapis/java-compute/issues/752)) ([0bfc194](https://github.com/googleapis/java-compute/commit/0bfc194310ce8eefd6025446be1535691802e510))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#755](https://github.com/googleapis/java-compute/issues/755)) ([b34a4ca](https://github.com/googleapis/java-compute/commit/b34a4caa97570ead8eb644fb08fa26640cd1f625))
+* Update dependency google-auth to v2.12.0 ([#749](https://github.com/googleapis/java-compute/issues/749)) ([722dc77](https://github.com/googleapis/java-compute/commit/722dc77762fe58175ed850e9245e01c23727370e))
+* Update dependency google-crc32c to v1.5.0 ([#732](https://github.com/googleapis/java-compute/issues/732)) ([a1f0220](https://github.com/googleapis/java-compute/commit/a1f0220bccb080fd4d94d25e8d5ee755d99cf853))
+* Update dependency importlib-metadata to v4.12.0 ([#751](https://github.com/googleapis/java-compute/issues/751)) ([cb4f0c5](https://github.com/googleapis/java-compute/commit/cb4f0c5e0d347b688e95ace151b1be2fcd21fae5))
+* Update dependency jeepney to v0.8.0 ([#733](https://github.com/googleapis/java-compute/issues/733)) ([6e959b1](https://github.com/googleapis/java-compute/commit/6e959b19ca2be7cc67d4e5414458a77796667fe7))
+* Update dependency keyring to v23.9.3 ([#734](https://github.com/googleapis/java-compute/issues/734)) ([ddead2b](https://github.com/googleapis/java-compute/commit/ddead2b3040ec920c64e760937fa76d5c53f12bd))
+* Update dependency protobuf to v3.20.2 ([#735](https://github.com/googleapis/java-compute/issues/735)) ([1d26cfc](https://github.com/googleapis/java-compute/commit/1d26cfca665b395e0a23bf959545a9d1e5b7888b))
+
 ## [1.12.1](https://github.com/googleapis/java-compute/compare/v1.12.0...v1.12.1) (2022-09-15)
 
 

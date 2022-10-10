@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.3.13](https://github.com/googleapis/java-scheduler/compare/v2.3.12...v2.3.13) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([9ed31a6](https://github.com/googleapis/java-scheduler/commit/9ed31a6a5f0aa71bb9df7b7c2c97ffa0839f62ad))
+
+## [2.3.12](https://github.com/googleapis/java-scheduler/compare/v2.3.11...v2.3.12) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#845](https://github.com/googleapis/java-scheduler/issues/845)) ([1293595](https://github.com/googleapis/java-scheduler/commit/12935955eec57cb442546a7b5dbba7c86ccadf9c))
+* Update dependency charset-normalizer to v2.1.1 ([#849](https://github.com/googleapis/java-scheduler/issues/849)) ([857251a](https://github.com/googleapis/java-scheduler/commit/857251a52daf06ea9e3c606cfc845b395ce589bc))
+* Update dependency click to v8.1.3 ([#850](https://github.com/googleapis/java-scheduler/issues/850)) ([7a87fe9](https://github.com/googleapis/java-scheduler/commit/7a87fe9ca81fcd93ed0156ff48f807dbf20658ad))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#860](https://github.com/googleapis/java-scheduler/issues/860)) ([3263e11](https://github.com/googleapis/java-scheduler/commit/3263e119522163c9204e8738e7e8060b57718eb6))
+* Update dependency gcp-releasetool to v1.8.8 ([#846](https://github.com/googleapis/java-scheduler/issues/846)) ([e231bf0](https://github.com/googleapis/java-scheduler/commit/e231bf07294424b66b229aa42412a5c5c3d4f0cd))
+* Update dependency google-api-core to v2.10.1 ([#851](https://github.com/googleapis/java-scheduler/issues/851)) ([164853b](https://github.com/googleapis/java-scheduler/commit/164853b3501c34c3b7c3955e99c0d7d98f0096a8))
+* Update dependency google-auth to v2.12.0 ([#852](https://github.com/googleapis/java-scheduler/issues/852)) ([4539429](https://github.com/googleapis/java-scheduler/commit/453942941715f842204a3b87f11456fe73463654))
+* Update dependency google-cloud-core to v2.3.2 ([#847](https://github.com/googleapis/java-scheduler/issues/847)) ([66c2b3f](https://github.com/googleapis/java-scheduler/commit/66c2b3fb325a61ef6dd5357f0785a8942946cfc5))
+* Update dependency google-cloud-storage to v2.5.0 ([#853](https://github.com/googleapis/java-scheduler/issues/853)) ([20b485a](https://github.com/googleapis/java-scheduler/commit/20b485a9a38c5b3821875297e4c8e776c629a76e))
+* Update dependency google-crc32c to v1.5.0 ([#854](https://github.com/googleapis/java-scheduler/issues/854)) ([8b2094e](https://github.com/googleapis/java-scheduler/commit/8b2094e05a7ebe22fb976e943cd99d509777ea7c))
+* Update dependency googleapis-common-protos to v1.56.4 ([#848](https://github.com/googleapis/java-scheduler/issues/848)) ([c790fa3](https://github.com/googleapis/java-scheduler/commit/c790fa330f0414a441f4704c70529ad28d4623a5))
+* Update dependency markupsafe to v2.1.1 ([#855](https://github.com/googleapis/java-scheduler/issues/855)) ([324aea0](https://github.com/googleapis/java-scheduler/commit/324aea04eea3a0c0805a3c74e0224c15c047fc4f))
+* Update dependency pyjwt to v2.5.0 ([#856](https://github.com/googleapis/java-scheduler/issues/856)) ([4db7af9](https://github.com/googleapis/java-scheduler/commit/4db7af951cadcd1001bd071f32c0c1bfa4eb538c))
+* Update dependency requests to v2.28.1 ([#857](https://github.com/googleapis/java-scheduler/issues/857)) ([039cf2f](https://github.com/googleapis/java-scheduler/commit/039cf2fca553ea3cb89e9e648d7eaf7110444f54))
+* Update dependency typing-extensions to v4.3.0 ([#843](https://github.com/googleapis/java-scheduler/issues/843)) ([3fa0f2a](https://github.com/googleapis/java-scheduler/commit/3fa0f2a75656833264139c4267a78a44d7f9d18e))
+* Update dependency zipp to v3.8.1 ([#858](https://github.com/googleapis/java-scheduler/issues/858)) ([7b80810](https://github.com/googleapis/java-scheduler/commit/7b80810c531a1123996f9ee8fe751f8329a25e24))
+
 ## [2.3.11](https://github.com/googleapis/java-scheduler/compare/v2.3.10...v2.3.11) (2022-09-22)
 
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.5](https://github.com/googleapis/java-service-control/compare/v1.3.4...v1.3.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([ac16ca7](https://github.com/googleapis/java-service-control/commit/ac16ca78cb260950084ce549abff7c184e89acb5))
+
+## [1.3.4](https://github.com/googleapis/java-service-control/compare/v1.3.3...v1.3.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#224](https://github.com/googleapis/java-service-control/issues/224)) ([9b88661](https://github.com/googleapis/java-service-control/commit/9b88661ab0c853c2885fdf7ede172831dbd3a560))
+* Update dependency gcp-releasetool to v1.8.8 ([#218](https://github.com/googleapis/java-service-control/issues/218)) ([dce7663](https://github.com/googleapis/java-service-control/commit/dce7663a13803a57245d8ba1fdc787f374033adf))
+* Update dependency markupsafe to v2.1.1 ([#219](https://github.com/googleapis/java-service-control/issues/219)) ([20657dc](https://github.com/googleapis/java-service-control/commit/20657dc55f0bcb47c421ac86d52480cb4229a92f))
+* Update dependency protobuf to v3.20.2 ([#220](https://github.com/googleapis/java-service-control/issues/220)) ([7ee32b0](https://github.com/googleapis/java-service-control/commit/7ee32b08155b0e17c9feb68abc3620b5277b174f))
+
 ## [1.3.3](https://github.com/googleapis/java-service-control/compare/v1.3.2...v1.3.3) (2022-09-15)
 
 

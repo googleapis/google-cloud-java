@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-translate/compare/v2.3.4...v2.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.12 ([#1076](https://github.com/googleapis/java-translate/issues/1076)) ([eece51c](https://github.com/googleapis/java-translate/commit/eece51c99bbc5f02c47fa8296c34971a4e3806c4))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.13 ([#1083](https://github.com/googleapis/java-translate/issues/1083)) ([89755e1](https://github.com/googleapis/java-translate/commit/89755e10343393511d42e5ff2ef0247690f999c5))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.14 ([#1084](https://github.com/googleapis/java-translate/issues/1084)) ([6a084bd](https://github.com/googleapis/java-translate/commit/6a084bd9629e3c01e4aaf20ad78de9d4f57333cb))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.15 ([#1085](https://github.com/googleapis/java-translate/issues/1085)) ([db0f4c2](https://github.com/googleapis/java-translate/commit/db0f4c26c52027e09fd53bb12ca226b07edf2aba))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.18 ([#1087](https://github.com/googleapis/java-translate/issues/1087)) ([b2cb2ca](https://github.com/googleapis/java-translate/commit/b2cb2cad84b02c0f91bf5c2d089567d257e70166))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.19 ([#1090](https://github.com/googleapis/java-translate/issues/1090)) ([4b91346](https://github.com/googleapis/java-translate/commit/4b91346ee328525ab17c5326c058e000d89bdff8))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1092](https://github.com/googleapis/java-translate/issues/1092)) ([fbab623](https://github.com/googleapis/java-translate/commit/fbab623693a253eb0aa35842aaaf3bd10b5c5fc4))
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#1078](https://github.com/googleapis/java-translate/issues/1078)) ([07e3330](https://github.com/googleapis/java-translate/commit/07e33305e01fc3e994c7349ecadea6092a8a0fe0))
+
 ## [2.3.4](https://github.com/googleapis/java-translate/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 

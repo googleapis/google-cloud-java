@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.10.4](https://github.com/googleapis/java-recommendations-ai/compare/v0.10.3...v0.10.4) (2022-10-03)
+
+
+### Bug Fixes
+
+* Fix recommendationengine resource name configuration ([#572](https://github.com/googleapis/java-recommendations-ai/issues/572)) ([9c109b0](https://github.com/googleapis/java-recommendations-ai/commit/9c109b0f906d2c0a3207c6b6080098d961096627))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#574](https://github.com/googleapis/java-recommendations-ai/issues/574)) ([d00b6a0](https://github.com/googleapis/java-recommendations-ai/commit/d00b6a0e067e690b83417b0ffb7805f2c8c73443))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#601](https://github.com/googleapis/java-recommendations-ai/issues/601)) ([e395688](https://github.com/googleapis/java-recommendations-ai/commit/e39568800e05f4cc6950512cead3ccd3fa8289b6))
+* Update dependency importlib-metadata to v4.12.0 ([#596](https://github.com/googleapis/java-recommendations-ai/issues/596)) ([98737d9](https://github.com/googleapis/java-recommendations-ai/commit/98737d9fc8514fabbd833620d6b9c8a7fb046a9a))
+* Update dependency jeepney to v0.8.0 ([#597](https://github.com/googleapis/java-recommendations-ai/issues/597)) ([7e714a4](https://github.com/googleapis/java-recommendations-ai/commit/7e714a434760bef45f04ce876adc63680bdb4e71))
+* Update dependency jinja2 to v3.1.2 ([#598](https://github.com/googleapis/java-recommendations-ai/issues/598)) ([b27cc2f](https://github.com/googleapis/java-recommendations-ai/commit/b27cc2f4b4f8069900ea5603d6be1d193375cdba))
+* Update dependency keyring to v23.9.3 ([#599](https://github.com/googleapis/java-recommendations-ai/issues/599)) ([55f9ab5](https://github.com/googleapis/java-recommendations-ai/commit/55f9ab532706b83668cd8281691c42f49d2ba033))
+
 ## [0.10.3](https://github.com/googleapis/java-recommendations-ai/compare/v0.10.2...v0.10.3) (2022-09-09)
 
 

@@ -1,5 +1,40 @@
 # Changelog
 
+## [2.5.6](https://github.com/googleapis/java-os-config/compare/v2.5.5...v2.5.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([e8e2da5](https://github.com/googleapis/java-os-config/commit/e8e2da55a237b6f702dcf8fe3c1970a5707bf1f5))
+
+## [2.5.5](https://github.com/googleapis/java-os-config/compare/v2.5.4...v2.5.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#548](https://github.com/googleapis/java-os-config/issues/548)) ([ae3dda9](https://github.com/googleapis/java-os-config/commit/ae3dda902b3732e45bf3441846ae311a788388af))
+* Update dependency certifi to v2022.9.24 ([#528](https://github.com/googleapis/java-os-config/issues/528)) ([5cce530](https://github.com/googleapis/java-os-config/commit/5cce530ad42556db6d76fe7f02567d89880afd0c))
+* Update dependency charset-normalizer to v2.1.1 ([#532](https://github.com/googleapis/java-os-config/issues/532)) ([50637c6](https://github.com/googleapis/java-os-config/commit/50637c617e81153264fe2e070c121acb8fab81f7))
+* Update dependency click to v8.1.3 ([#533](https://github.com/googleapis/java-os-config/issues/533)) ([cd27550](https://github.com/googleapis/java-os-config/commit/cd27550382cbae6197e35d531f7302f100c522bb))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#552](https://github.com/googleapis/java-os-config/issues/552)) ([dbb71d1](https://github.com/googleapis/java-os-config/commit/dbb71d1d6438541e0ffdc35101a3c7db768469ce))
+* Update dependency gcp-releasetool to v1.8.8 ([#529](https://github.com/googleapis/java-os-config/issues/529)) ([4a7909c](https://github.com/googleapis/java-os-config/commit/4a7909cdadf75d5fd29305269d0528a907bec705))
+* Update dependency google-api-core to v2.10.1 ([#534](https://github.com/googleapis/java-os-config/issues/534)) ([b64dae6](https://github.com/googleapis/java-os-config/commit/b64dae64e393b555cf52b9bb7b7695df1a220ae4))
+* Update dependency google-cloud-core to v2.3.2 ([#530](https://github.com/googleapis/java-os-config/issues/530)) ([3b94044](https://github.com/googleapis/java-os-config/commit/3b94044c86553fbc87c08bceaf89346ddb2eac3f))
+* Update dependency google-cloud-storage to v2.5.0 ([#536](https://github.com/googleapis/java-os-config/issues/536)) ([b42be87](https://github.com/googleapis/java-os-config/commit/b42be877756df942e6ee31b50df899ad027d4b4b))
+* Update dependency google-crc32c to v1.5.0 ([#537](https://github.com/googleapis/java-os-config/issues/537)) ([da7009b](https://github.com/googleapis/java-os-config/commit/da7009b4320abb09ea2592e96dafeb087aa361dc))
+* Update dependency googleapis-common-protos to v1.56.4 ([#531](https://github.com/googleapis/java-os-config/issues/531)) ([c1e46fc](https://github.com/googleapis/java-os-config/commit/c1e46fcbfd27a871962e69f6c72077ad1ecd6c87))
+* Update dependency importlib-metadata to v4.12.0 ([#538](https://github.com/googleapis/java-os-config/issues/538)) ([0da7944](https://github.com/googleapis/java-os-config/commit/0da794415f8fb8f4ecb90a23b843f1f14ffb3683))
+* Update dependency jeepney to v0.8.0 ([#539](https://github.com/googleapis/java-os-config/issues/539)) ([adfdb69](https://github.com/googleapis/java-os-config/commit/adfdb69531050e39cb6f8660ed19090c11bc43db))
+* Update dependency jinja2 to v3.1.2 ([#540](https://github.com/googleapis/java-os-config/issues/540)) ([66aaad5](https://github.com/googleapis/java-os-config/commit/66aaad59cafc8178ed3993b92fc48fe72b578c67))
+* Update dependency keyring to v23.9.3 ([#541](https://github.com/googleapis/java-os-config/issues/541)) ([d635ba7](https://github.com/googleapis/java-os-config/commit/d635ba7a6dd27f8998694abc7c374a7917540e01))
+* Update dependency markupsafe to v2.1.1 ([#542](https://github.com/googleapis/java-os-config/issues/542)) ([90b649a](https://github.com/googleapis/java-os-config/commit/90b649a4f76307435518cebcf2096dee058320a0))
+* Update dependency protobuf to v3.20.2 ([#543](https://github.com/googleapis/java-os-config/issues/543)) ([215ea5d](https://github.com/googleapis/java-os-config/commit/215ea5def7974bf2993860caba61f545a353f904))
+* Update dependency protobuf to v4 ([#549](https://github.com/googleapis/java-os-config/issues/549)) ([2a5f025](https://github.com/googleapis/java-os-config/commit/2a5f025e624c0a0e44f1e8662e67cd8ce433ec75))
+* Update dependency pyjwt to v2.5.0 ([#544](https://github.com/googleapis/java-os-config/issues/544)) ([910801c](https://github.com/googleapis/java-os-config/commit/910801cc7d7cde811c484a58e39364ca306c0bc7))
+* Update dependency requests to v2.28.1 ([#545](https://github.com/googleapis/java-os-config/issues/545)) ([d91efa6](https://github.com/googleapis/java-os-config/commit/d91efa67065bd2c390f525a4fcbf813459a9ebe5))
+* Update dependency typing-extensions to v4.3.0 ([#546](https://github.com/googleapis/java-os-config/issues/546)) ([0a2f39e](https://github.com/googleapis/java-os-config/commit/0a2f39e2c0e39bb9fe9a55fca12684fbd1fba18b))
+* Update dependency zipp to v3.8.1 ([#547](https://github.com/googleapis/java-os-config/issues/547)) ([be50cad](https://github.com/googleapis/java-os-config/commit/be50cada9abbf6d07767ff2a80650eb068c590ce))
+
 ## [2.5.4](https://github.com/googleapis/java-os-config/compare/v2.5.3...v2.5.4) (2022-09-15)
 
 

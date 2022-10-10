@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.4.4](https://github.com/googleapis/java-dataproc-metastore/compare/v2.4.3...v2.4.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#306](https://github.com/googleapis/java-dataproc-metastore/issues/306)) ([2a0cbf8](https://github.com/googleapis/java-dataproc-metastore/commit/2a0cbf8a8dbedc88331e1cb7f41f064810b50932))
+* Update dependency certifi to v2022.9.24 ([#288](https://github.com/googleapis/java-dataproc-metastore/issues/288)) ([5e9ed06](https://github.com/googleapis/java-dataproc-metastore/commit/5e9ed06086dd27b47cdff08ef2eb2cb5e33f471f))
+* Update dependency charset-normalizer to v2.1.1 ([#292](https://github.com/googleapis/java-dataproc-metastore/issues/292)) ([1e559dd](https://github.com/googleapis/java-dataproc-metastore/commit/1e559ddd078c506c62867466fc9a3235a7e6d5fb))
+* Update dependency click to v8.1.3 ([#293](https://github.com/googleapis/java-dataproc-metastore/issues/293)) ([ced7033](https://github.com/googleapis/java-dataproc-metastore/commit/ced7033d9e68948d5b5bf5d1534cc3dcd563bffa))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#312](https://github.com/googleapis/java-dataproc-metastore/issues/312)) ([b2fa282](https://github.com/googleapis/java-dataproc-metastore/commit/b2fa282d05d58fa5f9a6749a24616994d4c6cea2))
+* Update dependency gcp-releasetool to v1.8.8 ([#289](https://github.com/googleapis/java-dataproc-metastore/issues/289)) ([74b53e3](https://github.com/googleapis/java-dataproc-metastore/commit/74b53e3533e5b63d072432846943c817f350c15b))
+* Update dependency google-api-core to v2.10.1 ([#294](https://github.com/googleapis/java-dataproc-metastore/issues/294)) ([0dd6a6c](https://github.com/googleapis/java-dataproc-metastore/commit/0dd6a6cedf45bc78ad912b8ec832a826e2d91242))
+* Update dependency google-auth to v2.12.0 ([#295](https://github.com/googleapis/java-dataproc-metastore/issues/295)) ([af46bec](https://github.com/googleapis/java-dataproc-metastore/commit/af46becb67e5f7bf5a9eee90f290e7371f7a7f5f))
+* Update dependency google-cloud-core to v2.3.2 ([#290](https://github.com/googleapis/java-dataproc-metastore/issues/290)) ([8fbc46f](https://github.com/googleapis/java-dataproc-metastore/commit/8fbc46f3203745538fdc7cc6c46f1bfab780ea72))
+* Update dependency google-cloud-storage to v2.5.0 ([#296](https://github.com/googleapis/java-dataproc-metastore/issues/296)) ([3b41ba7](https://github.com/googleapis/java-dataproc-metastore/commit/3b41ba7f14374e9820051bd29b29edaf2374bedd))
+* Update dependency google-crc32c to v1.5.0 ([#297](https://github.com/googleapis/java-dataproc-metastore/issues/297)) ([0c2642d](https://github.com/googleapis/java-dataproc-metastore/commit/0c2642de7fbff8cd4237be446d3ea36b7795eaa2))
+* Update dependency googleapis-common-protos to v1.56.4 ([#291](https://github.com/googleapis/java-dataproc-metastore/issues/291)) ([fd2f210](https://github.com/googleapis/java-dataproc-metastore/commit/fd2f2102ea3d4d71f93cb6d1f3817098413355c3))
+* Update dependency importlib-metadata to v4.12.0 ([#308](https://github.com/googleapis/java-dataproc-metastore/issues/308)) ([c4e8442](https://github.com/googleapis/java-dataproc-metastore/commit/c4e84427bef8bd79667321ce45f6bba674fb6028))
+* Update dependency jeepney to v0.8.0 ([#309](https://github.com/googleapis/java-dataproc-metastore/issues/309)) ([122fab9](https://github.com/googleapis/java-dataproc-metastore/commit/122fab97720d9693f33923ecc4e47144e74ade1a))
+* Update dependency jinja2 to v3.1.2 ([#298](https://github.com/googleapis/java-dataproc-metastore/issues/298)) ([68eac36](https://github.com/googleapis/java-dataproc-metastore/commit/68eac36427347c737ad36b86dd194dfe21af87f4))
+* Update dependency keyring to v23.9.3 ([#299](https://github.com/googleapis/java-dataproc-metastore/issues/299)) ([33ee14a](https://github.com/googleapis/java-dataproc-metastore/commit/33ee14a078f81712c55f2a9551d19c92353fc24b))
+* Update dependency protobuf to v3.20.2 ([#301](https://github.com/googleapis/java-dataproc-metastore/issues/301)) ([cca7119](https://github.com/googleapis/java-dataproc-metastore/commit/cca7119351f096794cf2d2a26e7a735951de9f09))
+* Update dependency pyjwt to v2.5.0 ([#302](https://github.com/googleapis/java-dataproc-metastore/issues/302)) ([5290a54](https://github.com/googleapis/java-dataproc-metastore/commit/5290a5416e46e8fe51b5d2e41534400f5553d87b))
+* Update dependency requests to v2.28.1 ([#303](https://github.com/googleapis/java-dataproc-metastore/issues/303)) ([82264ff](https://github.com/googleapis/java-dataproc-metastore/commit/82264ffa38728fe0482765dc5d3e13f10b2b440f))
+* Update dependency typing-extensions to v4.3.0 ([#304](https://github.com/googleapis/java-dataproc-metastore/issues/304)) ([e9d5e54](https://github.com/googleapis/java-dataproc-metastore/commit/e9d5e545ec53ff44110586f5c1437f3ed5a39944))
+* Update dependency zipp to v3.8.1 ([#305](https://github.com/googleapis/java-dataproc-metastore/issues/305)) ([6b9346c](https://github.com/googleapis/java-dataproc-metastore/commit/6b9346c232fdef76d6a540ce4ab621d0961e8ca9))
+
 ## [2.4.3](https://github.com/googleapis/java-dataproc-metastore/compare/v2.4.2...v2.4.3) (2022-09-15)
 
 
