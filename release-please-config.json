@@ -212,6 +212,10 @@
       "component": "google-cloud-dialogflow",
       "skip-github-release": true
     },
+    "java-distributedcloudedge": {
+      "component": "google-cloud-distributedcloudedge",
+      "skip-github-release": true
+    },
     "java-dlp": {
       "component": "google-cloud-dlp",
       "skip-github-release": true

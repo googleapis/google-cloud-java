@@ -72,6 +72,7 @@
     <module>java-deploy</module>
     <module>java-dialogflow-cx</module>
     <module>java-dialogflow</module>
+    <module>java-distributedcloudedge</module>
     <module>java-dlp</module>
     <module>java-dms</module>
     <module>java-dns</module>
