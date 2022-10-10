@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin-bom</artifactId>
-  <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+  <version>0.14.0</version><!-- {x-version-update:google-analytics-admin:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -57,27 +57,27 @@
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-admin</artifactId>
-        <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+        <version>0.14.0</version><!-- {x-version-update:google-analytics-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-admin-v1alpha</artifactId>
-        <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
+        <version>0.14.0</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-admin-v1beta</artifactId>
-        <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
+        <version>0.14.0</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-admin-v1alpha</artifactId>
-        <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1alpha:current} -->
+        <version>0.14.0</version><!-- {x-version-update:proto-google-analytics-admin-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-admin-v1beta</artifactId>
-        <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
+        <version>0.14.0</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
