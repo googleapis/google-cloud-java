@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommendations-ai-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.10.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+  <version>0.11.0</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
   <name>Google Recommendations AI Parent</name>
   <url>https://github.com/googleapis/java-recommendations-ai</url>
   <description>
@@ -61,17 +61,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recommendations-ai</artifactId>
-        <version>0.10.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+        <version>0.11.0</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommendations-ai-v1beta1</artifactId>
-        <version>0.10.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
+        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recommendations-ai-v1beta1</artifactId>
-        <version>0.10.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommendations-ai-v1beta1:current} -->
+        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-recommendations-ai-v1beta1:current} -->
       </dependency>
 
       <dependency>
