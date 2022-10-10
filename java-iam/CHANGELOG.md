@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.4](https://github.com/googleapis/java-iam/compare/v1.6.3...v1.6.4) (2022-10-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-iam-policy to v1.6.3 ([#472](https://github.com/googleapis/java-iam/issues/472)) ([8f911be](https://github.com/googleapis/java-iam/commit/8f911bef57b66ab9dd092ed7912702c038e8565e))
+
 ## [1.6.3](https://github.com/googleapis/java-iam/compare/v1.6.2...v1.6.3) (2022-10-07)
 
 
