@@ -13,9 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$helperDir/.." >/dev/null || exit
+pushd "$helperDir/.." >/dev/null
 
 # Execute 'predestroy.sh' scripts for any active modules
 source ./helpers/common.sh
@@ -34,5 +35,5 @@ for module in $allModules; do
   fi
 done
 
-terraform destroy -auto-approve || exit
-popd >/dev/null || exit
+terraform destroy -auto-approve
+popd >/dev/null

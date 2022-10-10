@@ -13,13 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 # Ensure current directory is same as script.
 helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$helperDir/.." >/dev/null || exit
+pushd "$helperDir/.." >/dev/null
 
+export TF_IN_AUTOMATION=true
 source ./helpers/generate-config.sh "$1"
 terraform fmt >/dev/null
 terraform init
 
-popd >/dev/null || exit
+popd >/dev/null

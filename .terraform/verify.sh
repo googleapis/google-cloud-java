@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 function mvnVerify() {
   mvn "$@" \
@@ -26,22 +27,22 @@ function mvnVerify() {
     -Denforcer.skip=true \
     -Dcheckstyle.skip=true \
     -fae \
-    verify || exit
+    verify
 }
 function testSingle() {
-  pushd "../$1" >/dev/null || exit
+  pushd "../$1" >/dev/null
   mvnVerify
-  popd >/dev/null || exit
+  popd >/dev/null
 }
 function testAll() {
-  pushd "../" >/dev/null || exit
+  pushd "../" >/dev/null
   mvnVerify -pl -:google-cloud-os-login,-:google-cloud-recommender,-:google-cloud-talent
-  popd >/dev/null || exit
+  popd >/dev/null
 }
 
 # Ensure current directory is script directory.
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null || exit
+pushd "$scriptDir" >/dev/null
 
 source ./helpers/gcloud-sync-env.sh
 source ./helpers/populate-env.sh
@@ -58,4 +59,4 @@ else
   testAll
 fi
 
-popd >/dev/null || exit
+popd >/dev/null

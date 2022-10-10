@@ -14,10 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 # Ensure current directory is same as script.
 helperDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$helperDir/.." >/dev/null || exit
+pushd "$helperDir/.." >/dev/null
 
 # If Terraform was previously configured to work with a different project,
 # then remove the previous Terraform state.
@@ -38,7 +39,7 @@ project_id = \"$GOOGLE_CLOUD_PROJECT\"
 terraform fmt -list=false generated.auto.tfvars
 
 # See https://www.terraform.io/cli/commands/plan
-terraform plan -out generated.tfplan || exit
+terraform plan -out generated.tfplan
 terraform show -json generated.tfplan >generated.tfplan.json
 
-popd >/dev/null || exit
+popd >/dev/null

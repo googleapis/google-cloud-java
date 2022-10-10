@@ -13,7 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
+
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null || exit
+pushd "$scriptDir" >/dev/null
 time (source ./setup.sh "$1" && source ./verify.sh "$1")
-popd >/dev/null || exit
+popd >/dev/null

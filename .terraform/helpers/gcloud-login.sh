@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+set -eo pipefail
 
 # Perform gcloud auth login if no current credentials are available.
 if gcloud auth print-access-token &>/dev/null; then
