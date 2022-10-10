@@ -40,6 +40,10 @@
       "component": "google-cloud-apigee-registry",
       "skip-github-release": true
     },
+    "java-apikeys": {
+      "component": "google-cloud-apikeys",
+      "skip-github-release": true
+    },
     "java-appengine-admin": {
       "component": "google-cloud-appengine-admin",
       "skip-github-release": true
