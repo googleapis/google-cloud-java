@@ -54,245 +54,6 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private ConnectionProfile(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 802:
-            {
-              com.google.cloud.datastream.v1.OracleProfile.Builder subBuilder = null;
-              if (profileCase_ == 100) {
-                subBuilder = ((com.google.cloud.datastream.v1.OracleProfile) profile_).toBuilder();
-              }
-              profile_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.OracleProfile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datastream.v1.OracleProfile) profile_);
-                profile_ = subBuilder.buildPartial();
-              }
-              profileCase_ = 100;
-              break;
-            }
-          case 810:
-            {
-              com.google.cloud.datastream.v1.GcsProfile.Builder subBuilder = null;
-              if (profileCase_ == 101) {
-                subBuilder = ((com.google.cloud.datastream.v1.GcsProfile) profile_).toBuilder();
-              }
-              profile_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.GcsProfile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datastream.v1.GcsProfile) profile_);
-                profile_ = subBuilder.buildPartial();
-              }
-              profileCase_ = 101;
-              break;
-            }
-          case 818:
-            {
-              com.google.cloud.datastream.v1.MysqlProfile.Builder subBuilder = null;
-              if (profileCase_ == 102) {
-                subBuilder = ((com.google.cloud.datastream.v1.MysqlProfile) profile_).toBuilder();
-              }
-              profile_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.MysqlProfile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datastream.v1.MysqlProfile) profile_);
-                profile_ = subBuilder.buildPartial();
-              }
-              profileCase_ = 102;
-              break;
-            }
-          case 826:
-            {
-              com.google.cloud.datastream.v1.BigQueryProfile.Builder subBuilder = null;
-              if (profileCase_ == 103) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.BigQueryProfile) profile_).toBuilder();
-              }
-              profile_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.BigQueryProfile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datastream.v1.BigQueryProfile) profile_);
-                profile_ = subBuilder.buildPartial();
-              }
-              profileCase_ = 103;
-              break;
-            }
-          case 834:
-            {
-              com.google.cloud.datastream.v1.PostgresqlProfile.Builder subBuilder = null;
-              if (profileCase_ == 104) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.PostgresqlProfile) profile_).toBuilder();
-              }
-              profile_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.PostgresqlProfile.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datastream.v1.PostgresqlProfile) profile_);
-                profile_ = subBuilder.buildPartial();
-              }
-              profileCase_ = 104;
-              break;
-            }
-          case 1602:
-            {
-              com.google.cloud.datastream.v1.StaticServiceIpConnectivity.Builder subBuilder = null;
-              if (connectivityCase_ == 200) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.StaticServiceIpConnectivity) connectivity_)
-                        .toBuilder();
-              }
-              connectivity_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.StaticServiceIpConnectivity.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datastream.v1.StaticServiceIpConnectivity) connectivity_);
-                connectivity_ = subBuilder.buildPartial();
-              }
-              connectivityCase_ = 200;
-              break;
-            }
-          case 1610:
-            {
-              com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity.Builder subBuilder = null;
-              if (connectivityCase_ == 201) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity) connectivity_)
-                        .toBuilder();
-              }
-              connectivity_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity) connectivity_);
-                connectivity_ = subBuilder.buildPartial();
-              }
-              connectivityCase_ = 201;
-              break;
-            }
-          case 1618:
-            {
-              com.google.cloud.datastream.v1.PrivateConnectivity.Builder subBuilder = null;
-              if (connectivityCase_ == 202) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.PrivateConnectivity) connectivity_)
-                        .toBuilder();
-              }
-              connectivity_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.PrivateConnectivity.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datastream.v1.PrivateConnectivity) connectivity_);
-                connectivity_ = subBuilder.buildPartial();
-              }
-              connectivityCase_ = 202;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_ConnectionProfile_descriptor;
@@ -1194,7 +955,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     if (connectivityCase_ == 202) {
       output.writeMessage(202, (com.google.cloud.datastream.v1.PrivateConnectivity) connectivity_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1265,7 +1026,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               202, (com.google.cloud.datastream.v1.PrivateConnectivity) connectivity_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1327,7 +1088,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1394,7 +1155,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1544,17 +1305,10 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.datastream.v1.ConnectionProfile.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1577,6 +1331,30 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().clear();
       displayName_ = "";
 
+      if (oracleProfileBuilder_ != null) {
+        oracleProfileBuilder_.clear();
+      }
+      if (gcsProfileBuilder_ != null) {
+        gcsProfileBuilder_.clear();
+      }
+      if (mysqlProfileBuilder_ != null) {
+        mysqlProfileBuilder_.clear();
+      }
+      if (bigqueryProfileBuilder_ != null) {
+        bigqueryProfileBuilder_.clear();
+      }
+      if (postgresqlProfileBuilder_ != null) {
+        postgresqlProfileBuilder_.clear();
+      }
+      if (staticServiceIpConnectivityBuilder_ != null) {
+        staticServiceIpConnectivityBuilder_.clear();
+      }
+      if (forwardSshConnectivityBuilder_ != null) {
+        forwardSshConnectivityBuilder_.clear();
+      }
+      if (privateConnectivityBuilder_ != null) {
+        privateConnectivityBuilder_.clear();
+      }
       profileCase_ = 0;
       profile_ = null;
       connectivityCase_ = 0;
@@ -1798,7 +1576,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1813,17 +1591,118 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datastream.v1.ConnectionProfile parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 802:
+              {
+                input.readMessage(getOracleProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 100;
+                break;
+              } // case 802
+            case 810:
+              {
+                input.readMessage(getGcsProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 101;
+                break;
+              } // case 810
+            case 818:
+              {
+                input.readMessage(getMysqlProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 102;
+                break;
+              } // case 818
+            case 826:
+              {
+                input.readMessage(getBigqueryProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 103;
+                break;
+              } // case 826
+            case 834:
+              {
+                input.readMessage(
+                    getPostgresqlProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 104;
+                break;
+              } // case 834
+            case 1602:
+              {
+                input.readMessage(
+                    getStaticServiceIpConnectivityFieldBuilder().getBuilder(), extensionRegistry);
+                connectivityCase_ = 200;
+                break;
+              } // case 1602
+            case 1610:
+              {
+                input.readMessage(
+                    getForwardSshConnectivityFieldBuilder().getBuilder(), extensionRegistry);
+                connectivityCase_ = 201;
+                break;
+              } // case 1610
+            case 1618:
+              {
+                input.readMessage(
+                    getPrivateConnectivityFieldBuilder().getBuilder(), extensionRegistry);
+                connectivityCase_ = 202;
+                break;
+              } // case 1618
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.datastream.v1.ConnectionProfile) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4398,7 +4277,18 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConnectionProfile(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -14,14 +14,14 @@
 
 
 deep-remove-regex:
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-bigqueryconnection/grpc-google-.*/src"
+- "/java-bigqueryconnection/proto-google-.*/src"
+- "/java-bigqueryconnection/google-.*/src"
 
 deep-preserve-regex:
-- "/google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
-- "/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/ConnectionProto.java"
-- "/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/ConnectionProto.java"
+- "/java-bigqueryconnection/google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
+- "/java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/ConnectionProto.java"
+- "/java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/ConnectionProto.java"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/proto-google-.*/src"

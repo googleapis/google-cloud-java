@@ -57,72 +57,6 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private BatchOptimizeToursRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                modelConfigs_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.optimization.v1.BatchOptimizeToursRequest
-                            .AsyncModelConfig>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              modelConfigs_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        modelConfigs_ = java.util.Collections.unmodifiableList(modelConfigs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.FleetRoutingProto
         .internal_static_google_cloud_optimization_v1_BatchOptimizeToursRequest_descriptor;
@@ -304,89 +238,6 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AsyncModelConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                displayName_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.optimization.v1.InputConfig.Builder subBuilder = null;
-                if (inputConfig_ != null) {
-                  subBuilder = inputConfig_.toBuilder();
-                }
-                inputConfig_ =
-                    input.readMessage(
-                        com.google.cloud.optimization.v1.InputConfig.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(inputConfig_);
-                  inputConfig_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.optimization.v1.OutputConfig.Builder subBuilder = null;
-                if (outputConfig_ != null) {
-                  subBuilder = outputConfig_.toBuilder();
-                }
-                outputConfig_ =
-                    input.readMessage(
-                        com.google.cloud.optimization.v1.OutputConfig.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(outputConfig_);
-                  outputConfig_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 32:
-              {
-                enableCheckpoints_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -615,7 +466,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       if (enableCheckpoints_ != false) {
         output.writeBool(4, enableCheckpoints_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -636,7 +487,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       if (enableCheckpoints_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableCheckpoints_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -663,7 +514,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         if (!getOutputConfig().equals(other.getOutputConfig())) return false;
       }
       if (getEnableCheckpoints() != other.getEnableCheckpoints()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -686,7 +537,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       }
       hash = (37 * hash) + ENABLE_CHECKPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableCheckpoints());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -826,17 +677,10 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -971,7 +815,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         if (other.getEnableCheckpoints() != false) {
           setEnableCheckpoints(other.getEnableCheckpoints());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -986,20 +830,55 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  displayName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  enableCheckpoints_ = input.readBool();
+
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1631,7 +1510,19 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AsyncModelConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1815,7 +1706,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     for (int i = 0; i < modelConfigs_.size(); i++) {
       output.writeMessage(2, modelConfigs_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1830,7 +1721,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     for (int i = 0; i < modelConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, modelConfigs_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1848,7 +1739,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
     if (!getParent().equals(other.getParent())) return false;
     if (!getModelConfigsList().equals(other.getModelConfigsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1865,7 +1756,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
       hash = (37 * hash) + MODEL_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getModelConfigsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1999,19 +1890,10 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.optimization.v1.BatchOptimizeToursRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getModelConfigsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2021,10 +1903,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
 
       if (modelConfigsBuilder_ == null) {
         modelConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        modelConfigs_ = null;
         modelConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -2144,7 +2027,7 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2159,18 +2042,52 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.optimization.v1.BatchOptimizeToursRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.BatchOptimizeToursRequest.AsyncModelConfig
+                            .parser(),
+                        extensionRegistry);
+                if (modelConfigsBuilder_ == null) {
+                  ensureModelConfigsIsMutable();
+                  modelConfigs_.add(m);
+                } else {
+                  modelConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.optimization.v1.BatchOptimizeToursRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2762,7 +2679,18 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchOptimizeToursRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

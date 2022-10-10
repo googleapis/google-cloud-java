@@ -17,6 +17,8 @@
 package com.google.cloud.deploy.v1.stub;
 
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListRolloutsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedResponse;
@@ -50,6 +52,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.deploy.v1.AbandonReleaseRequest;
+import com.google.cloud.deploy.v1.AbandonReleaseResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
@@ -62,11 +66,15 @@ import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListJobRunsRequest;
+import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
 import com.google.cloud.deploy.v1.ListReleasesResponse;
 import com.google.cloud.deploy.v1.ListRolloutsRequest;
@@ -75,14 +83,25 @@ import com.google.cloud.deploy.v1.ListTargetsRequest;
 import com.google.cloud.deploy.v1.ListTargetsResponse;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
+import com.google.cloud.deploy.v1.RetryJobRequest;
+import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -170,6 +189,8 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   private final UnaryCallSettings<CreateReleaseRequest, Operation> createReleaseSettings;
   private final OperationCallSettings<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationSettings;
+  private final UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse>
+      abandonReleaseSettings;
   private final UnaryCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
       approveRolloutSettings;
   private final PagedCallSettings<
@@ -179,7 +200,19 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   private final UnaryCallSettings<CreateRolloutRequest, Operation> createRolloutSettings;
   private final OperationCallSettings<CreateRolloutRequest, Rollout, OperationMetadata>
       createRolloutOperationSettings;
+  private final UnaryCallSettings<RetryJobRequest, RetryJobResponse> retryJobSettings;
+  private final PagedCallSettings<ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
+      listJobRunsSettings;
+  private final UnaryCallSettings<GetJobRunRequest, JobRun> getJobRunSettings;
   private final UnaryCallSettings<GetConfigRequest, Config> getConfigSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListDeliveryPipelinesRequest, ListDeliveryPipelinesResponse, DeliveryPipeline>
@@ -330,6 +363,78 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
             }
           };
 
+  private static final PagedListDescriptor<ListJobRunsRequest, ListJobRunsResponse, JobRun>
+      LIST_JOB_RUNS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListJobRunsRequest, ListJobRunsResponse, JobRun>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListJobRunsRequest injectToken(ListJobRunsRequest payload, String token) {
+              return ListJobRunsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListJobRunsRequest injectPageSize(ListJobRunsRequest payload, int pageSize) {
+              return ListJobRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListJobRunsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListJobRunsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<JobRun> extractResources(ListJobRunsResponse payload) {
+              return payload.getJobRunsList() == null
+                  ? ImmutableList.<JobRun>of()
+                  : payload.getJobRunsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDeliveryPipelinesRequest,
           ListDeliveryPipelinesResponse,
@@ -402,6 +507,40 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> pageContext =
                   PageContext.create(callable, LIST_ROLLOUTS_PAGE_STR_DESC, request, context);
               return ListRolloutsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
+      LIST_JOB_RUNS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>() {
+            @Override
+            public ApiFuture<ListJobRunsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> callable,
+                ListJobRunsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListJobRunsResponse> futureResponse) {
+              PageContext<ListJobRunsRequest, ListJobRunsResponse, JobRun> pageContext =
+                  PageContext.create(callable, LIST_JOB_RUNS_PAGE_STR_DESC, request, context);
+              return ListJobRunsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -522,6 +661,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return createReleaseOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to abandonRelease. */
+  public UnaryCallSettings<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseSettings() {
+    return abandonReleaseSettings;
+  }
+
   /** Returns the object with the settings used for calls to approveRollout. */
   public UnaryCallSettings<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutSettings() {
     return approveRolloutSettings;
@@ -549,9 +693,52 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return createRolloutOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to retryJob. */
+  public UnaryCallSettings<RetryJobRequest, RetryJobResponse> retryJobSettings() {
+    return retryJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listJobRuns. */
+  public PagedCallSettings<ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
+      listJobRunsSettings() {
+    return listJobRunsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getJobRun. */
+  public UnaryCallSettings<GetJobRunRequest, JobRun> getJobRunSettings() {
+    return getJobRunSettings;
+  }
+
   /** Returns the object with the settings used for calls to getConfig. */
   public UnaryCallSettings<GetConfigRequest, Config> getConfigSettings() {
     return getConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public CloudDeployStub createStub() throws IOException {
@@ -683,12 +870,21 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     getReleaseSettings = settingsBuilder.getReleaseSettings().build();
     createReleaseSettings = settingsBuilder.createReleaseSettings().build();
     createReleaseOperationSettings = settingsBuilder.createReleaseOperationSettings().build();
+    abandonReleaseSettings = settingsBuilder.abandonReleaseSettings().build();
     approveRolloutSettings = settingsBuilder.approveRolloutSettings().build();
     listRolloutsSettings = settingsBuilder.listRolloutsSettings().build();
     getRolloutSettings = settingsBuilder.getRolloutSettings().build();
     createRolloutSettings = settingsBuilder.createRolloutSettings().build();
     createRolloutOperationSettings = settingsBuilder.createRolloutOperationSettings().build();
+    retryJobSettings = settingsBuilder.retryJobSettings().build();
+    listJobRunsSettings = settingsBuilder.listJobRunsSettings().build();
+    getJobRunSettings = settingsBuilder.getJobRunSettings().build();
     getConfigSettings = settingsBuilder.getConfigSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for CloudDeployStubSettings. */
@@ -736,6 +932,8 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     private final UnaryCallSettings.Builder<CreateReleaseRequest, Operation> createReleaseSettings;
     private final OperationCallSettings.Builder<CreateReleaseRequest, Release, OperationMetadata>
         createReleaseOperationSettings;
+    private final UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
+        abandonReleaseSettings;
     private final UnaryCallSettings.Builder<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutSettings;
     private final PagedCallSettings.Builder<
@@ -745,7 +943,20 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     private final UnaryCallSettings.Builder<CreateRolloutRequest, Operation> createRolloutSettings;
     private final OperationCallSettings.Builder<CreateRolloutRequest, Rollout, OperationMetadata>
         createRolloutOperationSettings;
+    private final UnaryCallSettings.Builder<RetryJobRequest, RetryJobResponse> retryJobSettings;
+    private final PagedCallSettings.Builder<
+            ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
+        listJobRunsSettings;
+    private final UnaryCallSettings.Builder<GetJobRunRequest, JobRun> getJobRunSettings;
     private final UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -757,6 +968,7 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -784,6 +996,8 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -815,12 +1029,21 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       getReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createReleaseOperationSettings = OperationCallSettings.newBuilder();
+      abandonReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       approveRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRolloutsSettings = PagedCallSettings.newBuilder(LIST_ROLLOUTS_PAGE_STR_FACT);
       getRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRolloutOperationSettings = OperationCallSettings.newBuilder();
+      retryJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listJobRunsSettings = PagedCallSettings.newBuilder(LIST_JOB_RUNS_PAGE_STR_FACT);
+      getJobRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -837,11 +1060,20 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               listReleasesSettings,
               getReleaseSettings,
               createReleaseSettings,
+              abandonReleaseSettings,
               approveRolloutSettings,
               listRolloutsSettings,
               getRolloutSettings,
               createRolloutSettings,
-              getConfigSettings);
+              retryJobSettings,
+              listJobRunsSettings,
+              getJobRunSettings,
+              getConfigSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -871,12 +1103,21 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       getReleaseSettings = settings.getReleaseSettings.toBuilder();
       createReleaseSettings = settings.createReleaseSettings.toBuilder();
       createReleaseOperationSettings = settings.createReleaseOperationSettings.toBuilder();
+      abandonReleaseSettings = settings.abandonReleaseSettings.toBuilder();
       approveRolloutSettings = settings.approveRolloutSettings.toBuilder();
       listRolloutsSettings = settings.listRolloutsSettings.toBuilder();
       getRolloutSettings = settings.getRolloutSettings.toBuilder();
       createRolloutSettings = settings.createRolloutSettings.toBuilder();
       createRolloutOperationSettings = settings.createRolloutOperationSettings.toBuilder();
+      retryJobSettings = settings.retryJobSettings.toBuilder();
+      listJobRunsSettings = settings.listJobRunsSettings.toBuilder();
+      getJobRunSettings = settings.getJobRunSettings.toBuilder();
       getConfigSettings = settings.getConfigSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -893,11 +1134,20 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               listReleasesSettings,
               getReleaseSettings,
               createReleaseSettings,
+              abandonReleaseSettings,
               approveRolloutSettings,
               listRolloutsSettings,
               getRolloutSettings,
               createRolloutSettings,
-              getConfigSettings);
+              retryJobSettings,
+              listJobRunsSettings,
+              getJobRunSettings,
+              getConfigSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -993,6 +1243,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .abandonReleaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .approveRolloutSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1013,9 +1268,49 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .retryJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listJobRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getJobRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createDeliveryPipelineOperationSettings()
@@ -1362,6 +1657,12 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       return createReleaseOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to abandonRelease. */
+    public UnaryCallSettings.Builder<AbandonReleaseRequest, AbandonReleaseResponse>
+        abandonReleaseSettings() {
+      return abandonReleaseSettings;
+    }
+
     /** Returns the builder for the settings used for calls to approveRollout. */
     public UnaryCallSettings.Builder<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutSettings() {
@@ -1393,9 +1694,54 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       return createRolloutOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to retryJob. */
+    public UnaryCallSettings.Builder<RetryJobRequest, RetryJobResponse> retryJobSettings() {
+      return retryJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listJobRuns. */
+    public PagedCallSettings.Builder<
+            ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
+        listJobRunsSettings() {
+      return listJobRunsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getJobRun. */
+    public UnaryCallSettings.Builder<GetJobRunRequest, JobRun> getJobRunSettings() {
+      return getJobRunSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getConfig. */
     public UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings() {
       return getConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

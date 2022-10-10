@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-assured-workloads</artifactId>
-  <version>2.1.0</version>
+  <version>2.3.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-assured-workloads:2.1.0'
+implementation 'com.google.cloud:google-cloud-assured-workloads:2.3.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-assured-workloads" % "2.1.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-assured-workloads" % "2.3.0"
 ```
 
 ## Authentication

@@ -55,134 +55,6 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private SavedQuery(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              creator_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastUpdateTime_ != null) {
-                subBuilder = lastUpdateTime_.toBuilder();
-              }
-              lastUpdateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastUpdateTime_);
-                lastUpdateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastUpdater_ = s;
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.asset.v1.SavedQuery.QueryContent.Builder subBuilder = null;
-              if (content_ != null) {
-                subBuilder = content_.toBuilder();
-              }
-              content_ =
-                  input.readMessage(
-                      com.google.cloud.asset.v1.SavedQuery.QueryContent.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(content_);
-                content_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_SavedQuery_descriptor;
@@ -219,11 +91,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An IAM Policy Analysis query, which could be used in
-     * the
-     * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-     * rpc or the
-     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-     * rpc.
+     * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+     * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -236,11 +105,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An IAM Policy Analysis query, which could be used in
-     * the
-     * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-     * rpc or the
-     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-     * rpc.
+     * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+     * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -253,11 +119,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An IAM Policy Analysis query, which could be used in
-     * the
-     * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-     * rpc or the
-     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-     * rpc.
+     * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+     * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -296,65 +159,6 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private QueryContent(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder subBuilder = null;
-                if (queryContentCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.asset.v1.IamPolicyAnalysisQuery) queryContent_)
-                          .toBuilder();
-                }
-                queryContent_ =
-                    input.readMessage(
-                        com.google.cloud.asset.v1.IamPolicyAnalysisQuery.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.asset.v1.IamPolicyAnalysisQuery) queryContent_);
-                  queryContent_ = subBuilder.buildPartial();
-                }
-                queryContentCase_ = 1;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -422,11 +226,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An IAM Policy Analysis query, which could be used in
-     * the
-     * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-     * rpc or the
-     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-     * rpc.
+     * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+     * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -442,11 +243,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An IAM Policy Analysis query, which could be used in
-     * the
-     * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-     * rpc or the
-     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-     * rpc.
+     * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+     * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -465,11 +263,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An IAM Policy Analysis query, which could be used in
-     * the
-     * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-     * rpc or the
-     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-     * rpc.
+     * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+     * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -500,7 +295,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (queryContentCase_ == 1) {
         output.writeMessage(1, (com.google.cloud.asset.v1.IamPolicyAnalysisQuery) queryContent_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -514,7 +309,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, (com.google.cloud.asset.v1.IamPolicyAnalysisQuery) queryContent_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -538,7 +333,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -557,7 +352,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -688,22 +483,18 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.asset.v1.SavedQuery.QueryContent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (iamPolicyAnalysisQueryBuilder_ != null) {
+          iamPolicyAnalysisQueryBuilder_.clear();
+        }
         queryContentCase_ = 0;
         queryContent_ = null;
         return this;
@@ -804,7 +595,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -819,18 +610,38 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.asset.v1.SavedQuery.QueryContent parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getIamPolicyAnalysisQueryFieldBuilder().getBuilder(), extensionRegistry);
+                  queryContentCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.asset.v1.SavedQuery.QueryContent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -858,11 +669,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -878,11 +686,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -908,11 +713,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -936,11 +738,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -961,11 +760,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -1000,11 +796,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -1030,11 +823,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -1048,11 +838,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -1074,11 +861,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * An IAM Policy Analysis query, which could be used in
-       * the
-       * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy]
-       * rpc or the
-       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
-       * rpc.
+       * the [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy] rpc or
+       * the [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery iam_policy_analysis_query = 1;</code>
@@ -1141,7 +925,19 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new QueryContent(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1424,8 +1220,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The account's email address who has updated this saved query
-   * most recently.
+   * Output only. The account's email address who has updated this saved query most recently.
    * </pre>
    *
    * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1448,8 +1243,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The account's email address who has updated this saved query
-   * most recently.
+   * Output only. The account's email address who has updated this saved query most recently.
    * </pre>
    *
    * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1660,7 +1454,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     if (content_ != null) {
       output.writeMessage(8, getContent());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1700,7 +1494,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     if (content_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getContent());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1732,7 +1526,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     if (hasContent()) {
       if (!getContent().equals(other.getContent())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1767,7 +1561,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1915,17 +1709,10 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.asset.v1.SavedQuery.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2081,7 +1868,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       if (other.hasContent()) {
         mergeContent(other.getContent());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2096,17 +1883,84 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.asset.v1.SavedQuery parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                creator_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                lastUpdater_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getContentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.asset.v1.SavedQuery) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2859,8 +2713,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The account's email address who has updated this saved query
-     * most recently.
+     * Output only. The account's email address who has updated this saved query most recently.
      * </pre>
      *
      * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2882,8 +2735,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The account's email address who has updated this saved query
-     * most recently.
+     * Output only. The account's email address who has updated this saved query most recently.
      * </pre>
      *
      * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2905,8 +2757,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The account's email address who has updated this saved query
-     * most recently.
+     * Output only. The account's email address who has updated this saved query most recently.
      * </pre>
      *
      * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2927,8 +2778,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The account's email address who has updated this saved query
-     * most recently.
+     * Output only. The account's email address who has updated this saved query most recently.
      * </pre>
      *
      * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2945,8 +2795,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The account's email address who has updated this saved query
-     * most recently.
+     * Output only. The account's email address who has updated this saved query most recently.
      * </pre>
      *
      * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3355,7 +3204,18 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SavedQuery(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

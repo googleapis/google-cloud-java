@@ -52,134 +52,6 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private WorkerPoolSpec(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder subBuilder = null;
-              if (machineSpec_ != null) {
-                subBuilder = machineSpec_.toBuilder();
-              }
-              machineSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.MachineSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(machineSpec_);
-                machineSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 16:
-            {
-              replicaCount_ = input.readInt64();
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nfsMounts_ =
-                    new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.NfsMount>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              nfsMounts_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.NfsMount.parser(), extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.aiplatform.v1beta1.DiskSpec.Builder subBuilder = null;
-              if (diskSpec_ != null) {
-                subBuilder = diskSpec_.toBuilder();
-              }
-              diskSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DiskSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(diskSpec_);
-                diskSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.aiplatform.v1beta1.ContainerSpec.Builder subBuilder = null;
-              if (taskCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.ContainerSpec) task_).toBuilder();
-              }
-              task_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.ContainerSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.ContainerSpec) task_);
-                task_ = subBuilder.buildPartial();
-              }
-              taskCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.aiplatform.v1beta1.PythonPackageSpec.Builder subBuilder = null;
-              if (taskCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.PythonPackageSpec) task_).toBuilder();
-              }
-              task_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.PythonPackageSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.PythonPackageSpec) task_);
-                task_ = subBuilder.buildPartial();
-              }
-              taskCase_ = 7;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        nfsMounts_ = java.util.Collections.unmodifiableList(nfsMounts_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.CustomJobProto
         .internal_static_google_cloud_aiplatform_v1beta1_WorkerPoolSpec_descriptor;
@@ -576,7 +448,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     if (taskCase_ == 7) {
       output.writeMessage(7, (com.google.cloud.aiplatform.v1beta1.PythonPackageSpec) task_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -607,7 +479,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.aiplatform.v1beta1.PythonPackageSpec) task_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -644,7 +516,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -681,7 +553,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -810,24 +682,21 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getNfsMountsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (containerSpecBuilder_ != null) {
+        containerSpecBuilder_.clear();
+      }
+      if (pythonPackageSpecBuilder_ != null) {
+        pythonPackageSpecBuilder_.clear();
+      }
       if (machineSpecBuilder_ == null) {
         machineSpec_ = null;
       } else {
@@ -838,10 +707,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
 
       if (nfsMountsBuilder_ == null) {
         nfsMounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        nfsMounts_ = null;
         nfsMountsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (diskSpecBuilder_ == null) {
         diskSpec_ = null;
       } else {
@@ -1015,7 +885,7 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1030,18 +900,75 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getMachineSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 16:
+              {
+                replicaCount_ = input.readInt64();
+
+                break;
+              } // case 16
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1beta1.NfsMount m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.NfsMount.parser(), extensionRegistry);
+                if (nfsMountsBuilder_ == null) {
+                  ensureNfsMountsIsMutable();
+                  nfsMounts_.add(m);
+                } else {
+                  nfsMountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getDiskSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getContainerSpecFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getPythonPackageSpecFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 7;
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2347,7 +2274,18 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WorkerPoolSpec(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

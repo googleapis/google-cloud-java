@@ -56,186 +56,6 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DeployedModel(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              model_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder subBuilder = null;
-              if (predictionResourcesCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.DedicatedResources) predictionResources_)
-                        .toBuilder();
-              }
-              predictionResources_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DedicatedResources.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.DedicatedResources) predictionResources_);
-                predictionResources_ = subBuilder.buildPartial();
-              }
-              predictionResourcesCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder subBuilder = null;
-              if (predictionResourcesCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.AutomaticResources) predictionResources_)
-                        .toBuilder();
-              }
-              predictionResources_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.AutomaticResources.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.AutomaticResources) predictionResources_);
-                predictionResources_ = subBuilder.buildPartial();
-              }
-              predictionResourcesCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.aiplatform.v1beta1.ExplanationSpec.Builder subBuilder = null;
-              if (explanationSpec_ != null) {
-                subBuilder = explanationSpec_.toBuilder();
-              }
-              explanationSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.ExplanationSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(explanationSpec_);
-                explanationSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccount_ = s;
-              break;
-            }
-          case 96:
-            {
-              enableContainerLogging_ = input.readBool();
-              break;
-            }
-          case 104:
-            {
-              enableAccessLogging_ = input.readBool();
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.Builder subBuilder = null;
-              if (privateEndpoints_ != null) {
-                subBuilder = privateEndpoints_.toBuilder();
-              }
-              privateEndpoints_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.PrivateEndpoints.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(privateEndpoints_);
-                privateEndpoints_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              predictionResourcesCase_ = 17;
-              predictionResources_ = s;
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              modelVersionId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.EndpointProto
         .internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_descriptor;
@@ -1035,7 +855,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, modelVersionId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1087,7 +907,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, modelVersionId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1136,7 +956,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1189,7 +1009,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1318,22 +1138,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.DeployedModel.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (dedicatedResourcesBuilder_ != null) {
+        dedicatedResourcesBuilder_.clear();
+      }
+      if (automaticResourcesBuilder_ != null) {
+        automaticResourcesBuilder_.clear();
+      }
       id_ = "";
 
       model_ = "";
@@ -1543,7 +1362,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1558,18 +1377,113 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.DeployedModel parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                model_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 50:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getDedicatedResourcesFieldBuilder().getBuilder(), extensionRegistry);
+                predictionResourcesCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getAutomaticResourcesFieldBuilder().getBuilder(), extensionRegistry);
+                predictionResourcesCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getExplanationSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 90:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 96:
+              {
+                enableContainerLogging_ = input.readBool();
+
+                break;
+              } // case 96
+            case 104:
+              {
+                enableAccessLogging_ = input.readBool();
+
+                break;
+              } // case 104
+            case 114:
+              {
+                input.readMessage(
+                    getPrivateEndpointsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 138:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                predictionResourcesCase_ = 17;
+                predictionResources_ = s;
+                break;
+              } // case 138
+            case 146:
+              {
+                modelVersionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.DeployedModel) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3608,7 +3522,18 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeployedModel(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

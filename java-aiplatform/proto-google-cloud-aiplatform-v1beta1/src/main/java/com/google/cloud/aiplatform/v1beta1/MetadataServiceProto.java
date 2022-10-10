@@ -144,6 +144,14 @@ public final class MetadataServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AddContextChildrenResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_QueryContextLineageSubgraphRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_QueryContextLineageSubgraphRequest_fieldAccessorTable;
@@ -269,322 +277,335 @@ public final class MetadataServiceProto {
           + "ct\030\002 \001(\0132).google.cloud.aiplatform.v1bet"
           + "a1.ArtifactB\003\340A\002\022\023\n\013artifact_id\030\003 \001(\t\"N\n"
           + "\022GetArtifactRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A"
-          + "$\n\"aiplatform.googleapis.com/Artifact\"\211\001"
+          + "$\n\"aiplatform.googleapis.com/Artifact\"\233\001"
           + "\n\024ListArtifactsRequest\022:\n\006parent\030\001 \001(\tB*"
           + "\340A\002\372A$\022\"aiplatform.googleapis.com/Artifa"
           + "ct\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\022\016\n\006filter\030\004 \001(\t\"n\n\025ListArtifactsRespon"
-          + "se\022<\n\tartifacts\030\001 \003(\0132).google.cloud.aip"
-          + "latform.v1beta1.Artifact\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\"\246\001\n\025UpdateArtifactRequest\022@\n\010a"
-          + "rtifact\030\001 \001(\0132).google.cloud.aiplatform."
-          + "v1beta1.ArtifactB\003\340A\002\0224\n\013update_mask\030\002 \001"
-          + "(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\025\n\ra"
-          + "llow_missing\030\003 \001(\010\"d\n\025DeleteArtifactRequ"
-          + "est\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.go"
-          + "ogleapis.com/Artifact\022\021\n\004etag\030\002 \001(\tB\003\340A\001"
-          + "\"|\n\025PurgeArtifactsRequest\022:\n\006parent\030\001 \001("
-          + "\tB*\340A\002\372A$\022\"aiplatform.googleapis.com/Art"
-          + "ifact\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\022\n\005force\030\003 \001("
-          + "\010B\003\340A\001\"l\n\026PurgeArtifactsResponse\022\023\n\013purg"
-          + "e_count\030\001 \001(\003\022=\n\014purge_sample\030\002 \003(\tB\'\372A$"
-          + "\n\"aiplatform.googleapis.com/Artifact\"m\n\026"
-          + "PurgeArtifactsMetadata\022S\n\020generic_metada"
-          + "ta\030\001 \001(\01329.google.cloud.aiplatform.v1bet"
-          + "a1.GenericOperationMetadata\"\253\001\n\024CreateCo"
-          + "ntextRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'ai"
-          + "platform.googleapis.com/MetadataStore\022>\n"
-          + "\007context\030\002 \001(\0132(.google.cloud.aiplatform"
-          + ".v1beta1.ContextB\003\340A\002\022\022\n\ncontext_id\030\003 \001("
-          + "\t\"L\n\021GetContextRequest\0227\n\004name\030\001 \001(\tB)\340A"
-          + "\002\372A#\n!aiplatform.googleapis.com/Context\""
-          + "\207\001\n\023ListContextsRequest\0229\n\006parent\030\001 \001(\tB"
-          + ")\340A\002\372A#\022!aiplatform.googleapis.com/Conte"
-          + "xt\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\022\016\n\006filter\030\004 \001(\t\"k\n\024ListContextsRespons"
-          + "e\022:\n\010contexts\030\001 \003(\0132(.google.cloud.aipla"
-          + "tform.v1beta1.Context\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"\243\001\n\024UpdateContextRequest\022>\n\007conte"
-          + "xt\030\001 \001(\0132(.google.cloud.aiplatform.v1bet"
-          + "a1.ContextB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMaskB\003\340A\001\022\025\n\rallow_m"
-          + "issing\030\003 \001(\010\"q\n\024DeleteContextRequest\0227\n\004"
-          + "name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapi"
-          + "s.com/Context\022\r\n\005force\030\002 \001(\010\022\021\n\004etag\030\003 \001"
-          + "(\tB\003\340A\001\"z\n\024PurgeContextsRequest\0229\n\006paren"
-          + "t\030\001 \001(\tB)\340A\002\372A#\022!aiplatform.googleapis.c"
-          + "om/Context\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\022\n\005force"
-          + "\030\003 \001(\010B\003\340A\001\"j\n\025PurgeContextsResponse\022\023\n\013"
-          + "purge_count\030\001 \001(\003\022<\n\014purge_sample\030\002 \003(\tB"
-          + "&\372A#\n!aiplatform.googleapis.com/Context\""
-          + "l\n\025PurgeContextsMetadata\022S\n\020generic_meta"
-          + "data\030\001 \001(\01329.google.cloud.aiplatform.v1b"
-          + "eta1.GenericOperationMetadata\"\337\001\n\'AddCon"
-          + "textArtifactsAndExecutionsRequest\022:\n\007con"
-          + "text\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapi"
-          + "s.com/Context\022:\n\tartifacts\030\002 \003(\tB\'\372A$\n\"a"
-          + "iplatform.googleapis.com/Artifact\022<\n\nexe"
-          + "cutions\030\003 \003(\tB(\372A%\n#aiplatform.googleapi"
-          + "s.com/Execution\"*\n(AddContextArtifactsAn"
-          + "dExecutionsResponse\"\227\001\n\031AddContextChildr"
-          + "enRequest\022:\n\007context\030\001 \001(\tB)\340A\002\372A#\n!aipl"
-          + "atform.googleapis.com/Context\022>\n\016child_c"
-          + "ontexts\030\002 \003(\tB&\372A#\n!aiplatform.googleapi"
-          + "s.com/Context\"\034\n\032AddContextChildrenRespo"
-          + "nse\"`\n\"QueryContextLineageSubgraphReques"
-          + "t\022:\n\007context\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.g"
-          + "oogleapis.com/Context\"\263\001\n\026CreateExecutio"
-          + "nRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'aiplat"
-          + "form.googleapis.com/MetadataStore\022B\n\texe"
-          + "cution\030\002 \001(\0132*.google.cloud.aiplatform.v"
-          + "1beta1.ExecutionB\003\340A\002\022\024\n\014execution_id\030\003 "
-          + "\001(\t\"P\n\023GetExecutionRequest\0229\n\004name\030\001 \001(\t"
-          + "B+\340A\002\372A%\n#aiplatform.googleapis.com/Exec"
-          + "ution\"\213\001\n\025ListExecutionsRequest\022;\n\006paren"
-          + "t\030\001 \001(\tB+\340A\002\372A%\022#aiplatform.googleapis.c"
-          + "om/Execution\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
-          + "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"q\n\026ListExecu"
-          + "tionsResponse\022>\n\nexecutions\030\001 \003(\0132*.goog"
-          + "le.cloud.aiplatform.v1beta1.Execution\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\251\001\n\026UpdateExecuti"
-          + "onRequest\022B\n\texecution\030\001 \001(\0132*.google.cl"
-          + "oud.aiplatform.v1beta1.ExecutionB\003\340A\002\0224\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
-          + "ldMaskB\003\340A\001\022\025\n\rallow_missing\030\003 \001(\010\"f\n\026De"
-          + "leteExecutionRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372"
-          + "A%\n#aiplatform.googleapis.com/Execution\022"
-          + "\021\n\004etag\030\002 \001(\tB\003\340A\001\"~\n\026PurgeExecutionsReq"
-          + "uest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#aiplatform"
-          + ".googleapis.com/Execution\022\023\n\006filter\030\002 \001("
-          + "\tB\003\340A\002\022\022\n\005force\030\003 \001(\010B\003\340A\001\"n\n\027PurgeExecu"
-          + "tionsResponse\022\023\n\013purge_count\030\001 \001(\003\022>\n\014pu"
-          + "rge_sample\030\002 \003(\tB(\372A%\n#aiplatform.google"
-          + "apis.com/Execution\"n\n\027PurgeExecutionsMet"
-          + "adata\022S\n\020generic_metadata\030\001 \001(\01329.google"
-          + ".cloud.aiplatform.v1beta1.GenericOperati"
-          + "onMetadata\"\223\001\n\031AddExecutionEventsRequest"
-          + "\022>\n\texecution\030\001 \001(\tB+\340A\002\372A%\n#aiplatform."
-          + "googleapis.com/Execution\0226\n\006events\030\002 \003(\013"
-          + "2&.google.cloud.aiplatform.v1beta1.Event"
-          + "\"\034\n\032AddExecutionEventsResponse\"g\n%QueryE"
-          + "xecutionInputsAndOutputsRequest\022>\n\texecu"
-          + "tion\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.googleapi"
-          + "s.com/Execution\"\311\001\n\033CreateMetadataSchema"
-          + "Request\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'aiplatf"
-          + "orm.googleapis.com/MetadataStore\022M\n\017meta"
-          + "data_schema\030\002 \001(\0132/.google.cloud.aiplatf"
-          + "orm.v1beta1.MetadataSchemaB\003\340A\002\022\032\n\022metad"
-          + "ata_schema_id\030\003 \001(\t\"Z\n\030GetMetadataSchema"
-          + "Request\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aiplatfor"
-          + "m.googleapis.com/MetadataSchema\"\225\001\n\032List"
-          + "MetadataSchemasRequest\022@\n\006parent\030\001 \001(\tB0"
-          + "\340A\002\372A*\022(aiplatform.googleapis.com/Metada"
-          + "taSchema\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
-          + "n\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\201\001\n\033ListMetadata"
-          + "SchemasResponse\022I\n\020metadata_schemas\030\001 \003("
-          + "\0132/.google.cloud.aiplatform.v1beta1.Meta"
-          + "dataSchema\022\027\n\017next_page_token\030\002 \001(\t\"\205\001\n#"
-          + "QueryArtifactLineageSubgraphRequest\022<\n\010a"
-          + "rtifact\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.google"
-          + "apis.com/Artifact\022\020\n\010max_hops\030\002 \001(\005\022\016\n\006f"
-          + "ilter\030\003 \001(\t2\320;\n\017MetadataService\022\245\002\n\023Crea"
-          + "teMetadataStore\022;.google.cloud.aiplatfor"
-          + "m.v1beta1.CreateMetadataStoreRequest\032\035.g"
-          + "oogle.longrunning.Operation\"\261\001\202\323\344\223\002I\"7/v"
-          + "1beta1/{parent=projects/*/locations/*}/m"
-          + "etadataStores:\016metadata_store\332A\'parent,m"
-          + "etadata_store,metadata_store_id\312A5\n\rMeta"
-          + "dataStore\022$CreateMetadataStoreOperationM"
-          + "etadata\022\304\001\n\020GetMetadataStore\0228.google.cl"
-          + "oud.aiplatform.v1beta1.GetMetadataStoreR"
-          + "equest\032..google.cloud.aiplatform.v1beta1"
-          + ".MetadataStore\"F\202\323\344\223\0029\0227/v1beta1/{name=p"
-          + "rojects/*/locations/*/metadataStores/*}\332"
-          + "A\004name\022\327\001\n\022ListMetadataStores\022:.google.c"
-          + "loud.aiplatform.v1beta1.ListMetadataStor"
-          + "esRequest\032;.google.cloud.aiplatform.v1be"
-          + "ta1.ListMetadataStoresResponse\"H\202\323\344\223\0029\0227"
-          + "/v1beta1/{parent=projects/*/locations/*}"
-          + "/metadataStores\332A\006parent\022\372\001\n\023DeleteMetad"
-          + "ataStore\022;.google.cloud.aiplatform.v1bet"
-          + "a1.DeleteMetadataStoreRequest\032\035.google.l"
-          + "ongrunning.Operation\"\206\001\202\323\344\223\0029*7/v1beta1/"
-          + "{name=projects/*/locations/*/metadataSto"
-          + "res/*}\332A\004name\312A=\n\025google.protobuf.Empty\022"
-          + "$DeleteMetadataStoreOperationMetadata\022\350\001"
-          + "\n\016CreateArtifact\0226.google.cloud.aiplatfo"
-          + "rm.v1beta1.CreateArtifactRequest\032).googl"
-          + "e.cloud.aiplatform.v1beta1.Artifact\"s\202\323\344"
-          + "\223\002O\"C/v1beta1/{parent=projects/*/locatio"
-          + "ns/*/metadataStores/*}/artifacts:\010artifa"
-          + "ct\332A\033parent,artifact,artifact_id\022\301\001\n\013Get"
-          + "Artifact\0223.google.cloud.aiplatform.v1bet"
-          + "a1.GetArtifactRequest\032).google.cloud.aip"
-          + "latform.v1beta1.Artifact\"R\202\323\344\223\002E\022C/v1bet"
-          + "a1/{name=projects/*/locations/*/metadata"
-          + "Stores/*/artifacts/*}\332A\004name\022\324\001\n\rListArt"
-          + "ifacts\0225.google.cloud.aiplatform.v1beta1"
-          + ".ListArtifactsRequest\0326.google.cloud.aip"
-          + "latform.v1beta1.ListArtifactsResponse\"T\202"
-          + "\323\344\223\002E\022C/v1beta1/{parent=projects/*/locat"
-          + "ions/*/metadataStores/*}/artifacts\332A\006par"
-          + "ent\022\352\001\n\016UpdateArtifact\0226.google.cloud.ai"
-          + "platform.v1beta1.UpdateArtifactRequest\032)"
-          + ".google.cloud.aiplatform.v1beta1.Artifac"
-          + "t\"u\202\323\344\223\002X2L/v1beta1/{artifact.name=proje"
-          + "cts/*/locations/*/metadataStores/*/artif"
-          + "acts/*}:\010artifact\332A\024artifact,update_mask"
-          + "\022\357\001\n\016DeleteArtifact\0226.google.cloud.aipla"
-          + "tform.v1beta1.DeleteArtifactRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\205\001\202\323\344\223\002E*C/v1"
-          + "beta1/{name=projects/*/locations/*/metad"
-          + "ataStores/*/artifacts/*}\332A\004name\312A0\n\025goog"
-          + "le.protobuf.Empty\022\027DeleteOperationMetada"
-          + "ta\022\372\001\n\016PurgeArtifacts\0226.google.cloud.aip"
-          + "latform.v1beta1.PurgeArtifactsRequest\032\035."
-          + "google.longrunning.Operation\"\220\001\202\323\344\223\002N\"I/"
-          + "v1beta1/{parent=projects/*/locations/*/m"
-          + "etadataStores/*}/artifacts:purge:\001*\332A\006pa"
-          + "rent\312A0\n\026PurgeArtifactsResponse\022\026PurgeAr"
-          + "tifactsMetadata\022\341\001\n\rCreateContext\0225.goog"
-          + "le.cloud.aiplatform.v1beta1.CreateContex"
-          + "tRequest\032(.google.cloud.aiplatform.v1bet"
-          + "a1.Context\"o\202\323\344\223\002M\"B/v1beta1/{parent=pro"
-          + "jects/*/locations/*/metadataStores/*}/co"
-          + "ntexts:\007context\332A\031parent,context,context"
-          + "_id\022\275\001\n\nGetContext\0222.google.cloud.aiplat"
-          + "form.v1beta1.GetContextRequest\032(.google."
-          + "cloud.aiplatform.v1beta1.Context\"Q\202\323\344\223\002D"
-          + "\022B/v1beta1/{name=projects/*/locations/*/"
-          + "metadataStores/*/contexts/*}\332A\004name\022\320\001\n\014"
-          + "ListContexts\0224.google.cloud.aiplatform.v"
-          + "1beta1.ListContextsRequest\0325.google.clou"
-          + "d.aiplatform.v1beta1.ListContextsRespons"
-          + "e\"S\202\323\344\223\002D\022B/v1beta1/{parent=projects/*/l"
-          + "ocations/*/metadataStores/*}/contexts\332A\006"
-          + "parent\022\343\001\n\rUpdateContext\0225.google.cloud."
-          + "aiplatform.v1beta1.UpdateContextRequest\032"
-          + "(.google.cloud.aiplatform.v1beta1.Contex"
-          + "t\"q\202\323\344\223\002U2J/v1beta1/{context.name=projec"
-          + "ts/*/locations/*/metadataStores/*/contex"
-          + "ts/*}:\007context\332A\023context,update_mask\022\354\001\n"
-          + "\rDeleteContext\0225.google.cloud.aiplatform"
-          + ".v1beta1.DeleteContextRequest\032\035.google.l"
-          + "ongrunning.Operation\"\204\001\202\323\344\223\002D*B/v1beta1/"
-          + "{name=projects/*/locations/*/metadataSto"
-          + "res/*/contexts/*}\332A\004name\312A0\n\025google.prot"
-          + "obuf.Empty\022\027DeleteOperationMetadata\022\365\001\n\r"
-          + "PurgeContexts\0225.google.cloud.aiplatform."
-          + "v1beta1.PurgeContextsRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\215\001\202\323\344\223\002M\"H/v1beta1/{"
-          + "parent=projects/*/locations/*/metadataSt"
-          + "ores/*}/contexts:purge:\001*\332A\006parent\312A.\n\025P"
-          + "urgeContextsResponse\022\025PurgeContextsMetad"
-          + "ata\022\312\002\n AddContextArtifactsAndExecutions"
-          + "\022H.google.cloud.aiplatform.v1beta1.AddCo"
-          + "ntextArtifactsAndExecutionsRequest\032I.goo"
-          + "gle.cloud.aiplatform.v1beta1.AddContextA"
-          + "rtifactsAndExecutionsResponse\"\220\001\202\323\344\223\002k\"f"
-          + "/v1beta1/{context=projects/*/locations/*"
-          + "/metadataStores/*/contexts/*}:addContext"
-          + "ArtifactsAndExecutions:\001*\332A\034context,arti"
-          + "facts,executions\022\213\002\n\022AddContextChildren\022"
-          + ":.google.cloud.aiplatform.v1beta1.AddCon"
-          + "textChildrenRequest\032;.google.cloud.aipla"
-          + "tform.v1beta1.AddContextChildrenResponse"
-          + "\"|\202\323\344\223\002]\"X/v1beta1/{context=projects/*/l"
-          + "ocations/*/metadataStores/*/contexts/*}:"
-          + "addContextChildren:\001*\332A\026context,child_co"
-          + "ntexts\022\211\002\n\033QueryContextLineageSubgraph\022C"
-          + ".google.cloud.aiplatform.v1beta1.QueryCo"
-          + "ntextLineageSubgraphRequest\0320.google.clo"
-          + "ud.aiplatform.v1beta1.LineageSubgraph\"s\202"
-          + "\323\344\223\002c\022a/v1beta1/{context=projects/*/loca"
-          + "tions/*/metadataStores/*/contexts/*}:que"
-          + "ryContextLineageSubgraph\332A\007context\022\357\001\n\017C"
-          + "reateExecution\0227.google.cloud.aiplatform"
-          + ".v1beta1.CreateExecutionRequest\032*.google"
-          + ".cloud.aiplatform.v1beta1.Execution\"w\202\323\344"
-          + "\223\002Q\"D/v1beta1/{parent=projects/*/locatio"
-          + "ns/*/metadataStores/*}/executions:\texecu"
-          + "tion\332A\035parent,execution,execution_id\022\305\001\n"
-          + "\014GetExecution\0224.google.cloud.aiplatform."
-          + "v1beta1.GetExecutionRequest\032*.google.clo"
-          + "ud.aiplatform.v1beta1.Execution\"S\202\323\344\223\002F\022"
-          + "D/v1beta1/{name=projects/*/locations/*/m"
-          + "etadataStores/*/executions/*}\332A\004name\022\330\001\n"
-          + "\016ListExecutions\0226.google.cloud.aiplatfor"
-          + "m.v1beta1.ListExecutionsRequest\0327.google"
-          + ".cloud.aiplatform.v1beta1.ListExecutions"
-          + "Response\"U\202\323\344\223\002F\022D/v1beta1/{parent=proje"
-          + "cts/*/locations/*/metadataStores/*}/exec"
-          + "utions\332A\006parent\022\361\001\n\017UpdateExecution\0227.go"
-          + "ogle.cloud.aiplatform.v1beta1.UpdateExec"
-          + "utionRequest\032*.google.cloud.aiplatform.v"
-          + "1beta1.Execution\"y\202\323\344\223\002[2N/v1beta1/{exec"
-          + "ution.name=projects/*/locations/*/metada"
-          + "taStores/*/executions/*}:\texecution\332A\025ex"
-          + "ecution,update_mask\022\362\001\n\017DeleteExecution\022"
-          + "7.google.cloud.aiplatform.v1beta1.Delete"
-          + "ExecutionRequest\032\035.google.longrunning.Op"
-          + "eration\"\206\001\202\323\344\223\002F*D/v1beta1/{name=project"
-          + "s/*/locations/*/metadataStores/*/executi"
-          + "ons/*}\332A\004name\312A0\n\025google.protobuf.Empty\022"
-          + "\027DeleteOperationMetadata\022\377\001\n\017PurgeExecut"
-          + "ions\0227.google.cloud.aiplatform.v1beta1.P"
-          + "urgeExecutionsRequest\032\035.google.longrunni"
-          + "ng.Operation\"\223\001\202\323\344\223\002O\"J/v1beta1/{parent="
-          + "projects/*/locations/*/metadataStores/*}"
-          + "/executions:purge:\001*\332A\006parent\312A2\n\027PurgeE"
-          + "xecutionsResponse\022\027PurgeExecutionsMetada"
-          + "ta\022\211\002\n\022AddExecutionEvents\022:.google.cloud"
-          + ".aiplatform.v1beta1.AddExecutionEventsRe"
-          + "quest\032;.google.cloud.aiplatform.v1beta1."
-          + "AddExecutionEventsResponse\"z\202\323\344\223\002a\"\\/v1b"
-          + "eta1/{execution=projects/*/locations/*/m"
-          + "etadataStores/*/executions/*}:addExecuti"
-          + "onEvents:\001*\332A\020execution,events\022\230\002\n\036Query"
-          + "ExecutionInputsAndOutputs\022F.google.cloud"
-          + ".aiplatform.v1beta1.QueryExecutionInputs"
-          + "AndOutputsRequest\0320.google.cloud.aiplatf"
-          + "orm.v1beta1.LineageSubgraph\"|\202\323\344\223\002j\022h/v1"
-          + "beta1/{execution=projects/*/locations/*/"
-          + "metadataStores/*/executions/*}:queryExec"
-          + "utionInputsAndOutputs\332A\texecution\022\226\002\n\024Cr"
-          + "eateMetadataSchema\022<.google.cloud.aiplat"
-          + "form.v1beta1.CreateMetadataSchemaRequest"
-          + "\032/.google.cloud.aiplatform.v1beta1.Metad"
-          + "ataSchema\"\216\001\202\323\344\223\002\\\"I/v1beta1/{parent=pro"
-          + "jects/*/locations/*/metadataStores/*}/me"
-          + "tadataSchemas:\017metadata_schema\332A)parent,"
-          + "metadata_schema,metadata_schema_id\022\331\001\n\021G"
-          + "etMetadataSchema\0229.google.cloud.aiplatfo"
-          + "rm.v1beta1.GetMetadataSchemaRequest\032/.go"
-          + "ogle.cloud.aiplatform.v1beta1.MetadataSc"
-          + "hema\"X\202\323\344\223\002K\022I/v1beta1/{name=projects/*/"
-          + "locations/*/metadataStores/*/metadataSch"
-          + "emas/*}\332A\004name\022\354\001\n\023ListMetadataSchemas\022;"
-          + ".google.cloud.aiplatform.v1beta1.ListMet"
-          + "adataSchemasRequest\032<.google.cloud.aipla"
-          + "tform.v1beta1.ListMetadataSchemasRespons"
-          + "e\"Z\202\323\344\223\002K\022I/v1beta1/{parent=projects/*/l"
-          + "ocations/*/metadataStores/*}/metadataSch"
-          + "emas\332A\006parent\022\217\002\n\034QueryArtifactLineageSu"
-          + "bgraph\022D.google.cloud.aiplatform.v1beta1"
-          + ".QueryArtifactLineageSubgraphRequest\0320.g"
-          + "oogle.cloud.aiplatform.v1beta1.LineageSu"
-          + "bgraph\"w\202\323\344\223\002f\022d/v1beta1/{artifact=proje"
-          + "cts/*/locations/*/metadataStores/*/artif"
-          + "acts/*}:queryArtifactLineageSubgraph\332A\010a"
-          + "rtifact\032M\312A\031aiplatform.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\361\001\n#com.google.cloud.aiplatform.v"
-          + "1beta1B\024MetadataServiceProtoP\001ZIgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/aipl"
-          + "atform/v1beta1;aiplatform\252\002\037Google.Cloud"
-          + ".AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPla"
-          + "tform\\V1beta1\352\002\"Google::Cloud::AIPlatfor"
-          + "m::V1beta1b\006proto3"
+          + "\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"n\n\025L"
+          + "istArtifactsResponse\022<\n\tartifacts\030\001 \003(\0132"
+          + ").google.cloud.aiplatform.v1beta1.Artifa"
+          + "ct\022\027\n\017next_page_token\030\002 \001(\t\"\246\001\n\025UpdateAr"
+          + "tifactRequest\022@\n\010artifact\030\001 \001(\0132).google"
+          + ".cloud.aiplatform.v1beta1.ArtifactB\003\340A\002\022"
+          + "4\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
+          + "ieldMaskB\003\340A\001\022\025\n\rallow_missing\030\003 \001(\010\"d\n\025"
+          + "DeleteArtifactRequest\0228\n\004name\030\001 \001(\tB*\340A\002"
+          + "\372A$\n\"aiplatform.googleapis.com/Artifact\022"
+          + "\021\n\004etag\030\002 \001(\tB\003\340A\001\"|\n\025PurgeArtifactsRequ"
+          + "est\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"aiplatform."
+          + "googleapis.com/Artifact\022\023\n\006filter\030\002 \001(\tB"
+          + "\003\340A\002\022\022\n\005force\030\003 \001(\010B\003\340A\001\"l\n\026PurgeArtifac"
+          + "tsResponse\022\023\n\013purge_count\030\001 \001(\003\022=\n\014purge"
+          + "_sample\030\002 \003(\tB\'\372A$\n\"aiplatform.googleapi"
+          + "s.com/Artifact\"m\n\026PurgeArtifactsMetadata"
+          + "\022S\n\020generic_metadata\030\001 \001(\01329.google.clou"
+          + "d.aiplatform.v1beta1.GenericOperationMet"
+          + "adata\"\253\001\n\024CreateContextRequest\022?\n\006parent"
+          + "\030\001 \001(\tB/\340A\002\372A)\n\'aiplatform.googleapis.co"
+          + "m/MetadataStore\022>\n\007context\030\002 \001(\0132(.googl"
+          + "e.cloud.aiplatform.v1beta1.ContextB\003\340A\002\022"
+          + "\022\n\ncontext_id\030\003 \001(\t\"L\n\021GetContextRequest"
+          + "\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googl"
+          + "eapis.com/Context\"\231\001\n\023ListContextsReques"
+          + "t\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\022!aiplatform.go"
+          + "ogleapis.com/Context\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010o"
+          + "rder_by\030\005 \001(\t\"k\n\024ListContextsResponse\022:\n"
+          + "\010contexts\030\001 \003(\0132(.google.cloud.aiplatfor"
+          + "m.v1beta1.Context\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\"\243\001\n\024UpdateContextRequest\022>\n\007context\030\001"
+          + " \001(\0132(.google.cloud.aiplatform.v1beta1.C"
+          + "ontextB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.googl"
+          + "e.protobuf.FieldMaskB\003\340A\001\022\025\n\rallow_missi"
+          + "ng\030\003 \001(\010\"q\n\024DeleteContextRequest\0227\n\004name"
+          + "\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapis.co"
+          + "m/Context\022\r\n\005force\030\002 \001(\010\022\021\n\004etag\030\003 \001(\tB\003"
+          + "\340A\001\"z\n\024PurgeContextsRequest\0229\n\006parent\030\001 "
+          + "\001(\tB)\340A\002\372A#\022!aiplatform.googleapis.com/C"
+          + "ontext\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\022\n\005force\030\003 \001"
+          + "(\010B\003\340A\001\"j\n\025PurgeContextsResponse\022\023\n\013purg"
+          + "e_count\030\001 \001(\003\022<\n\014purge_sample\030\002 \003(\tB&\372A#"
+          + "\n!aiplatform.googleapis.com/Context\"l\n\025P"
+          + "urgeContextsMetadata\022S\n\020generic_metadata"
+          + "\030\001 \001(\01329.google.cloud.aiplatform.v1beta1"
+          + ".GenericOperationMetadata\"\337\001\n\'AddContext"
+          + "ArtifactsAndExecutionsRequest\022:\n\007context"
+          + "\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapis.co"
+          + "m/Context\022:\n\tartifacts\030\002 \003(\tB\'\372A$\n\"aipla"
+          + "tform.googleapis.com/Artifact\022<\n\nexecuti"
+          + "ons\030\003 \003(\tB(\372A%\n#aiplatform.googleapis.co"
+          + "m/Execution\"*\n(AddContextArtifactsAndExe"
+          + "cutionsResponse\"\227\001\n\031AddContextChildrenRe"
+          + "quest\022:\n\007context\030\001 \001(\tB)\340A\002\372A#\n!aiplatfo"
+          + "rm.googleapis.com/Context\022>\n\016child_conte"
+          + "xts\030\002 \003(\tB&\372A#\n!aiplatform.googleapis.co"
+          + "m/Context\"\034\n\032AddContextChildrenResponse\""
+          + "\232\001\n\034RemoveContextChildrenRequest\022:\n\007cont"
+          + "ext\030\001 \001(\tB)\340A\002\372A#\n!aiplatform.googleapis"
+          + ".com/Context\022>\n\016child_contexts\030\002 \003(\tB&\372A"
+          + "#\n!aiplatform.googleapis.com/Context\"\037\n\035"
+          + "RemoveContextChildrenResponse\"`\n\"QueryCo"
+          + "ntextLineageSubgraphRequest\022:\n\007context\030\001"
+          + " \001(\tB)\340A\002\372A#\n!aiplatform.googleapis.com/"
+          + "Context\"\263\001\n\026CreateExecutionRequest\022?\n\006pa"
+          + "rent\030\001 \001(\tB/\340A\002\372A)\n\'aiplatform.googleapi"
+          + "s.com/MetadataStore\022B\n\texecution\030\002 \001(\0132*"
+          + ".google.cloud.aiplatform.v1beta1.Executi"
+          + "onB\003\340A\002\022\024\n\014execution_id\030\003 \001(\t\"P\n\023GetExec"
+          + "utionRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#aipl"
+          + "atform.googleapis.com/Execution\"\235\001\n\025List"
+          + "ExecutionsRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A"
+          + "%\022#aiplatform.googleapis.com/Execution\022\021"
+          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n"
+          + "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"q\n\026ListE"
+          + "xecutionsResponse\022>\n\nexecutions\030\001 \003(\0132*."
+          + "google.cloud.aiplatform.v1beta1.Executio"
+          + "n\022\027\n\017next_page_token\030\002 \001(\t\"\251\001\n\026UpdateExe"
+          + "cutionRequest\022B\n\texecution\030\001 \001(\0132*.googl"
+          + "e.cloud.aiplatform.v1beta1.ExecutionB\003\340A"
+          + "\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
+          + ".FieldMaskB\003\340A\001\022\025\n\rallow_missing\030\003 \001(\010\"f"
+          + "\n\026DeleteExecutionRequest\0229\n\004name\030\001 \001(\tB+"
+          + "\340A\002\372A%\n#aiplatform.googleapis.com/Execut"
+          + "ion\022\021\n\004etag\030\002 \001(\tB\003\340A\001\"~\n\026PurgeExecution"
+          + "sRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#aiplat"
+          + "form.googleapis.com/Execution\022\023\n\006filter\030"
+          + "\002 \001(\tB\003\340A\002\022\022\n\005force\030\003 \001(\010B\003\340A\001\"n\n\027PurgeE"
+          + "xecutionsResponse\022\023\n\013purge_count\030\001 \001(\003\022>"
+          + "\n\014purge_sample\030\002 \003(\tB(\372A%\n#aiplatform.go"
+          + "ogleapis.com/Execution\"n\n\027PurgeExecution"
+          + "sMetadata\022S\n\020generic_metadata\030\001 \001(\01329.go"
+          + "ogle.cloud.aiplatform.v1beta1.GenericOpe"
+          + "rationMetadata\"\223\001\n\031AddExecutionEventsReq"
+          + "uest\022>\n\texecution\030\001 \001(\tB+\340A\002\372A%\n#aiplatf"
+          + "orm.googleapis.com/Execution\0226\n\006events\030\002"
+          + " \003(\0132&.google.cloud.aiplatform.v1beta1.E"
+          + "vent\"\034\n\032AddExecutionEventsResponse\"g\n%Qu"
+          + "eryExecutionInputsAndOutputsRequest\022>\n\te"
+          + "xecution\030\001 \001(\tB+\340A\002\372A%\n#aiplatform.googl"
+          + "eapis.com/Execution\"\311\001\n\033CreateMetadataSc"
+          + "hemaRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\n\'aip"
+          + "latform.googleapis.com/MetadataStore\022M\n\017"
+          + "metadata_schema\030\002 \001(\0132/.google.cloud.aip"
+          + "latform.v1beta1.MetadataSchemaB\003\340A\002\022\032\n\022m"
+          + "etadata_schema_id\030\003 \001(\t\"Z\n\030GetMetadataSc"
+          + "hemaRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(aipla"
+          + "tform.googleapis.com/MetadataSchema\"\225\001\n\032"
+          + "ListMetadataSchemasRequest\022@\n\006parent\030\001 \001"
+          + "(\tB0\340A\002\372A*\022(aiplatform.googleapis.com/Me"
+          + "tadataSchema\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
+          + "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\201\001\n\033ListMeta"
+          + "dataSchemasResponse\022I\n\020metadata_schemas\030"
+          + "\001 \003(\0132/.google.cloud.aiplatform.v1beta1."
+          + "MetadataSchema\022\027\n\017next_page_token\030\002 \001(\t\""
+          + "\205\001\n#QueryArtifactLineageSubgraphRequest\022"
+          + "<\n\010artifact\030\001 \001(\tB*\340A\002\372A$\n\"aiplatform.go"
+          + "ogleapis.com/Artifact\022\020\n\010max_hops\030\002 \001(\005\022"
+          + "\016\n\006filter\030\003 \001(\t2\352=\n\017MetadataService\022\245\002\n\023"
+          + "CreateMetadataStore\022;.google.cloud.aipla"
+          + "tform.v1beta1.CreateMetadataStoreRequest"
+          + "\032\035.google.longrunning.Operation\"\261\001\202\323\344\223\002I"
+          + "\"7/v1beta1/{parent=projects/*/locations/"
+          + "*}/metadataStores:\016metadata_store\332A\'pare"
+          + "nt,metadata_store,metadata_store_id\312A5\n\r"
+          + "MetadataStore\022$CreateMetadataStoreOperat"
+          + "ionMetadata\022\304\001\n\020GetMetadataStore\0228.googl"
+          + "e.cloud.aiplatform.v1beta1.GetMetadataSt"
+          + "oreRequest\032..google.cloud.aiplatform.v1b"
+          + "eta1.MetadataStore\"F\202\323\344\223\0029\0227/v1beta1/{na"
+          + "me=projects/*/locations/*/metadataStores"
+          + "/*}\332A\004name\022\327\001\n\022ListMetadataStores\022:.goog"
+          + "le.cloud.aiplatform.v1beta1.ListMetadata"
+          + "StoresRequest\032;.google.cloud.aiplatform."
+          + "v1beta1.ListMetadataStoresResponse\"H\202\323\344\223"
+          + "\0029\0227/v1beta1/{parent=projects/*/location"
+          + "s/*}/metadataStores\332A\006parent\022\372\001\n\023DeleteM"
+          + "etadataStore\022;.google.cloud.aiplatform.v"
+          + "1beta1.DeleteMetadataStoreRequest\032\035.goog"
+          + "le.longrunning.Operation\"\206\001\202\323\344\223\0029*7/v1be"
+          + "ta1/{name=projects/*/locations/*/metadat"
+          + "aStores/*}\332A\004name\312A=\n\025google.protobuf.Em"
+          + "pty\022$DeleteMetadataStoreOperationMetadat"
+          + "a\022\350\001\n\016CreateArtifact\0226.google.cloud.aipl"
+          + "atform.v1beta1.CreateArtifactRequest\032).g"
+          + "oogle.cloud.aiplatform.v1beta1.Artifact\""
+          + "s\202\323\344\223\002O\"C/v1beta1/{parent=projects/*/loc"
+          + "ations/*/metadataStores/*}/artifacts:\010ar"
+          + "tifact\332A\033parent,artifact,artifact_id\022\301\001\n"
+          + "\013GetArtifact\0223.google.cloud.aiplatform.v"
+          + "1beta1.GetArtifactRequest\032).google.cloud"
+          + ".aiplatform.v1beta1.Artifact\"R\202\323\344\223\002E\022C/v"
+          + "1beta1/{name=projects/*/locations/*/meta"
+          + "dataStores/*/artifacts/*}\332A\004name\022\324\001\n\rLis"
+          + "tArtifacts\0225.google.cloud.aiplatform.v1b"
+          + "eta1.ListArtifactsRequest\0326.google.cloud"
+          + ".aiplatform.v1beta1.ListArtifactsRespons"
+          + "e\"T\202\323\344\223\002E\022C/v1beta1/{parent=projects/*/l"
+          + "ocations/*/metadataStores/*}/artifacts\332A"
+          + "\006parent\022\352\001\n\016UpdateArtifact\0226.google.clou"
+          + "d.aiplatform.v1beta1.UpdateArtifactReque"
+          + "st\032).google.cloud.aiplatform.v1beta1.Art"
+          + "ifact\"u\202\323\344\223\002X2L/v1beta1/{artifact.name=p"
+          + "rojects/*/locations/*/metadataStores/*/a"
+          + "rtifacts/*}:\010artifact\332A\024artifact,update_"
+          + "mask\022\357\001\n\016DeleteArtifact\0226.google.cloud.a"
+          + "iplatform.v1beta1.DeleteArtifactRequest\032"
+          + "\035.google.longrunning.Operation\"\205\001\202\323\344\223\002E*"
+          + "C/v1beta1/{name=projects/*/locations/*/m"
+          + "etadataStores/*/artifacts/*}\332A\004name\312A0\n\025"
+          + "google.protobuf.Empty\022\027DeleteOperationMe"
+          + "tadata\022\372\001\n\016PurgeArtifacts\0226.google.cloud"
+          + ".aiplatform.v1beta1.PurgeArtifactsReques"
+          + "t\032\035.google.longrunning.Operation\"\220\001\202\323\344\223\002"
+          + "N\"I/v1beta1/{parent=projects/*/locations"
+          + "/*/metadataStores/*}/artifacts:purge:\001*\332"
+          + "A\006parent\312A0\n\026PurgeArtifactsResponse\022\026Pur"
+          + "geArtifactsMetadata\022\341\001\n\rCreateContext\0225."
+          + "google.cloud.aiplatform.v1beta1.CreateCo"
+          + "ntextRequest\032(.google.cloud.aiplatform.v"
+          + "1beta1.Context\"o\202\323\344\223\002M\"B/v1beta1/{parent"
+          + "=projects/*/locations/*/metadataStores/*"
+          + "}/contexts:\007context\332A\031parent,context,con"
+          + "text_id\022\275\001\n\nGetContext\0222.google.cloud.ai"
+          + "platform.v1beta1.GetContextRequest\032(.goo"
+          + "gle.cloud.aiplatform.v1beta1.Context\"Q\202\323"
+          + "\344\223\002D\022B/v1beta1/{name=projects/*/location"
+          + "s/*/metadataStores/*/contexts/*}\332A\004name\022"
+          + "\320\001\n\014ListContexts\0224.google.cloud.aiplatfo"
+          + "rm.v1beta1.ListContextsRequest\0325.google."
+          + "cloud.aiplatform.v1beta1.ListContextsRes"
+          + "ponse\"S\202\323\344\223\002D\022B/v1beta1/{parent=projects"
+          + "/*/locations/*/metadataStores/*}/context"
+          + "s\332A\006parent\022\343\001\n\rUpdateContext\0225.google.cl"
+          + "oud.aiplatform.v1beta1.UpdateContextRequ"
+          + "est\032(.google.cloud.aiplatform.v1beta1.Co"
+          + "ntext\"q\202\323\344\223\002U2J/v1beta1/{context.name=pr"
+          + "ojects/*/locations/*/metadataStores/*/co"
+          + "ntexts/*}:\007context\332A\023context,update_mask"
+          + "\022\354\001\n\rDeleteContext\0225.google.cloud.aiplat"
+          + "form.v1beta1.DeleteContextRequest\032\035.goog"
+          + "le.longrunning.Operation\"\204\001\202\323\344\223\002D*B/v1be"
+          + "ta1/{name=projects/*/locations/*/metadat"
+          + "aStores/*/contexts/*}\332A\004name\312A0\n\025google."
+          + "protobuf.Empty\022\027DeleteOperationMetadata\022"
+          + "\365\001\n\rPurgeContexts\0225.google.cloud.aiplatf"
+          + "orm.v1beta1.PurgeContextsRequest\032\035.googl"
+          + "e.longrunning.Operation\"\215\001\202\323\344\223\002M\"H/v1bet"
+          + "a1/{parent=projects/*/locations/*/metada"
+          + "taStores/*}/contexts:purge:\001*\332A\006parent\312A"
+          + ".\n\025PurgeContextsResponse\022\025PurgeContextsM"
+          + "etadata\022\312\002\n AddContextArtifactsAndExecut"
+          + "ions\022H.google.cloud.aiplatform.v1beta1.A"
+          + "ddContextArtifactsAndExecutionsRequest\032I"
+          + ".google.cloud.aiplatform.v1beta1.AddCont"
+          + "extArtifactsAndExecutionsResponse\"\220\001\202\323\344\223"
+          + "\002k\"f/v1beta1/{context=projects/*/locatio"
+          + "ns/*/metadataStores/*/contexts/*}:addCon"
+          + "textArtifactsAndExecutions:\001*\332A\034context,"
+          + "artifacts,executions\022\213\002\n\022AddContextChild"
+          + "ren\022:.google.cloud.aiplatform.v1beta1.Ad"
+          + "dContextChildrenRequest\032;.google.cloud.a"
+          + "iplatform.v1beta1.AddContextChildrenResp"
+          + "onse\"|\202\323\344\223\002]\"X/v1beta1/{context=projects"
+          + "/*/locations/*/metadataStores/*/contexts"
+          + "/*}:addContextChildren:\001*\332A\026context,chil"
+          + "d_contexts\022\227\002\n\025RemoveContextChildren\022=.g"
+          + "oogle.cloud.aiplatform.v1beta1.RemoveCon"
+          + "textChildrenRequest\032>.google.cloud.aipla"
+          + "tform.v1beta1.RemoveContextChildrenRespo"
+          + "nse\"\177\202\323\344\223\002`\"[/v1beta1/{context=projects/"
+          + "*/locations/*/metadataStores/*/contexts/"
+          + "*}:removeContextChildren:\001*\332A\026context,ch"
+          + "ild_contexts\022\211\002\n\033QueryContextLineageSubg"
+          + "raph\022C.google.cloud.aiplatform.v1beta1.Q"
+          + "ueryContextLineageSubgraphRequest\0320.goog"
+          + "le.cloud.aiplatform.v1beta1.LineageSubgr"
+          + "aph\"s\202\323\344\223\002c\022a/v1beta1/{context=projects/"
+          + "*/locations/*/metadataStores/*/contexts/"
+          + "*}:queryContextLineageSubgraph\332A\007context"
+          + "\022\357\001\n\017CreateExecution\0227.google.cloud.aipl"
+          + "atform.v1beta1.CreateExecutionRequest\032*."
+          + "google.cloud.aiplatform.v1beta1.Executio"
+          + "n\"w\202\323\344\223\002Q\"D/v1beta1/{parent=projects/*/l"
+          + "ocations/*/metadataStores/*}/executions:"
+          + "\texecution\332A\035parent,execution,execution_"
+          + "id\022\305\001\n\014GetExecution\0224.google.cloud.aipla"
+          + "tform.v1beta1.GetExecutionRequest\032*.goog"
+          + "le.cloud.aiplatform.v1beta1.Execution\"S\202"
+          + "\323\344\223\002F\022D/v1beta1/{name=projects/*/locatio"
+          + "ns/*/metadataStores/*/executions/*}\332A\004na"
+          + "me\022\330\001\n\016ListExecutions\0226.google.cloud.aip"
+          + "latform.v1beta1.ListExecutionsRequest\0327."
+          + "google.cloud.aiplatform.v1beta1.ListExec"
+          + "utionsResponse\"U\202\323\344\223\002F\022D/v1beta1/{parent"
+          + "=projects/*/locations/*/metadataStores/*"
+          + "}/executions\332A\006parent\022\361\001\n\017UpdateExecutio"
+          + "n\0227.google.cloud.aiplatform.v1beta1.Upda"
+          + "teExecutionRequest\032*.google.cloud.aiplat"
+          + "form.v1beta1.Execution\"y\202\323\344\223\002[2N/v1beta1"
+          + "/{execution.name=projects/*/locations/*/"
+          + "metadataStores/*/executions/*}:\texecutio"
+          + "n\332A\025execution,update_mask\022\362\001\n\017DeleteExec"
+          + "ution\0227.google.cloud.aiplatform.v1beta1."
+          + "DeleteExecutionRequest\032\035.google.longrunn"
+          + "ing.Operation\"\206\001\202\323\344\223\002F*D/v1beta1/{name=p"
+          + "rojects/*/locations/*/metadataStores/*/e"
+          + "xecutions/*}\332A\004name\312A0\n\025google.protobuf."
+          + "Empty\022\027DeleteOperationMetadata\022\377\001\n\017Purge"
+          + "Executions\0227.google.cloud.aiplatform.v1b"
+          + "eta1.PurgeExecutionsRequest\032\035.google.lon"
+          + "grunning.Operation\"\223\001\202\323\344\223\002O\"J/v1beta1/{p"
+          + "arent=projects/*/locations/*/metadataSto"
+          + "res/*}/executions:purge:\001*\332A\006parent\312A2\n\027"
+          + "PurgeExecutionsResponse\022\027PurgeExecutions"
+          + "Metadata\022\211\002\n\022AddExecutionEvents\022:.google"
+          + ".cloud.aiplatform.v1beta1.AddExecutionEv"
+          + "entsRequest\032;.google.cloud.aiplatform.v1"
+          + "beta1.AddExecutionEventsResponse\"z\202\323\344\223\002a"
+          + "\"\\/v1beta1/{execution=projects/*/locatio"
+          + "ns/*/metadataStores/*/executions/*}:addE"
+          + "xecutionEvents:\001*\332A\020execution,events\022\230\002\n"
+          + "\036QueryExecutionInputsAndOutputs\022F.google"
+          + ".cloud.aiplatform.v1beta1.QueryExecution"
+          + "InputsAndOutputsRequest\0320.google.cloud.a"
+          + "iplatform.v1beta1.LineageSubgraph\"|\202\323\344\223\002"
+          + "j\022h/v1beta1/{execution=projects/*/locati"
+          + "ons/*/metadataStores/*/executions/*}:que"
+          + "ryExecutionInputsAndOutputs\332A\texecution\022"
+          + "\226\002\n\024CreateMetadataSchema\022<.google.cloud."
+          + "aiplatform.v1beta1.CreateMetadataSchemaR"
+          + "equest\032/.google.cloud.aiplatform.v1beta1"
+          + ".MetadataSchema\"\216\001\202\323\344\223\002\\\"I/v1beta1/{pare"
+          + "nt=projects/*/locations/*/metadataStores"
+          + "/*}/metadataSchemas:\017metadata_schema\332A)p"
+          + "arent,metadata_schema,metadata_schema_id"
+          + "\022\331\001\n\021GetMetadataSchema\0229.google.cloud.ai"
+          + "platform.v1beta1.GetMetadataSchemaReques"
+          + "t\032/.google.cloud.aiplatform.v1beta1.Meta"
+          + "dataSchema\"X\202\323\344\223\002K\022I/v1beta1/{name=proje"
+          + "cts/*/locations/*/metadataStores/*/metad"
+          + "ataSchemas/*}\332A\004name\022\354\001\n\023ListMetadataSch"
+          + "emas\022;.google.cloud.aiplatform.v1beta1.L"
+          + "istMetadataSchemasRequest\032<.google.cloud"
+          + ".aiplatform.v1beta1.ListMetadataSchemasR"
+          + "esponse\"Z\202\323\344\223\002K\022I/v1beta1/{parent=projec"
+          + "ts/*/locations/*/metadataStores/*}/metad"
+          + "ataSchemas\332A\006parent\022\217\002\n\034QueryArtifactLin"
+          + "eageSubgraph\022D.google.cloud.aiplatform.v"
+          + "1beta1.QueryArtifactLineageSubgraphReque"
+          + "st\0320.google.cloud.aiplatform.v1beta1.Lin"
+          + "eageSubgraph\"w\202\323\344\223\002f\022d/v1beta1/{artifact"
+          + "=projects/*/locations/*/metadataStores/*"
+          + "/artifacts/*}:queryArtifactLineageSubgra"
+          + "ph\332A\010artifact\032M\312A\031aiplatform.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformB\361\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\024MetadataServiceProtoP\001ZIgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1beta1;aiplatform\252\002\037Google"
+          + ".Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cloud"
+          + "\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIP"
+          + "latform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -683,7 +704,7 @@ public final class MetadataServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListArtifactsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListArtifactsResponse_descriptor =
         getDescriptor().getMessageTypes().get(10);
@@ -755,7 +776,7 @@ public final class MetadataServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListContextsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListContextsResponse_descriptor =
         getDescriptor().getMessageTypes().get(19);
@@ -833,8 +854,22 @@ public final class MetadataServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AddContextChildrenResponse_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_aiplatform_v1beta1_QueryContextLineageSubgraphRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenRequest_descriptor =
         getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenRequest_descriptor,
+            new java.lang.String[] {
+              "Context", "ChildContexts",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenResponse_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_RemoveContextChildrenResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_aiplatform_v1beta1_QueryContextLineageSubgraphRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_aiplatform_v1beta1_QueryContextLineageSubgraphRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_QueryContextLineageSubgraphRequest_descriptor,
@@ -842,7 +877,7 @@ public final class MetadataServiceProto {
               "Context",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_aiplatform_v1beta1_CreateExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateExecutionRequest_descriptor,
@@ -850,7 +885,7 @@ public final class MetadataServiceProto {
               "Parent", "Execution", "ExecutionId",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GetExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_aiplatform_v1beta1_GetExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetExecutionRequest_descriptor,
@@ -858,15 +893,15 @@ public final class MetadataServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListExecutionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_aiplatform_v1beta1_ListExecutionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListExecutionsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListExecutionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_aiplatform_v1beta1_ListExecutionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListExecutionsResponse_descriptor,
@@ -874,7 +909,7 @@ public final class MetadataServiceProto {
               "Executions", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_UpdateExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_aiplatform_v1beta1_UpdateExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_UpdateExecutionRequest_descriptor,
@@ -882,7 +917,7 @@ public final class MetadataServiceProto {
               "Execution", "UpdateMask", "AllowMissing",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeleteExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_aiplatform_v1beta1_DeleteExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_DeleteExecutionRequest_descriptor,
@@ -890,7 +925,7 @@ public final class MetadataServiceProto {
               "Name", "Etag",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsRequest_descriptor,
@@ -898,7 +933,7 @@ public final class MetadataServiceProto {
               "Parent", "Filter", "Force",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsResponse_descriptor,
@@ -906,7 +941,7 @@ public final class MetadataServiceProto {
               "PurgeCount", "PurgeSample",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PurgeExecutionsMetadata_descriptor,
@@ -914,7 +949,7 @@ public final class MetadataServiceProto {
               "GenericMetadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AddExecutionEventsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_aiplatform_v1beta1_AddExecutionEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AddExecutionEventsRequest_descriptor,
@@ -922,13 +957,13 @@ public final class MetadataServiceProto {
               "Execution", "Events",
             });
     internal_static_google_cloud_aiplatform_v1beta1_AddExecutionEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_aiplatform_v1beta1_AddExecutionEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AddExecutionEventsResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_QueryExecutionInputsAndOutputsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_aiplatform_v1beta1_QueryExecutionInputsAndOutputsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_QueryExecutionInputsAndOutputsRequest_descriptor,
@@ -936,7 +971,7 @@ public final class MetadataServiceProto {
               "Execution",
             });
     internal_static_google_cloud_aiplatform_v1beta1_CreateMetadataSchemaRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_aiplatform_v1beta1_CreateMetadataSchemaRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CreateMetadataSchemaRequest_descriptor,
@@ -944,7 +979,7 @@ public final class MetadataServiceProto {
               "Parent", "MetadataSchema", "MetadataSchemaId",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GetMetadataSchemaRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_aiplatform_v1beta1_GetMetadataSchemaRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetMetadataSchemaRequest_descriptor,
@@ -952,7 +987,7 @@ public final class MetadataServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListMetadataSchemasRequest_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_aiplatform_v1beta1_ListMetadataSchemasRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListMetadataSchemasRequest_descriptor,
@@ -960,7 +995,7 @@ public final class MetadataServiceProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListMetadataSchemasResponse_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_aiplatform_v1beta1_ListMetadataSchemasResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListMetadataSchemasResponse_descriptor,
@@ -968,7 +1003,7 @@ public final class MetadataServiceProto {
               "MetadataSchemas", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_QueryArtifactLineageSubgraphRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_aiplatform_v1beta1_QueryArtifactLineageSubgraphRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_QueryArtifactLineageSubgraphRequest_descriptor,

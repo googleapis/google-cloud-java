@@ -520,6 +520,9 @@
             "QueryExecutionInputsAndOutputs": {
               "methods": ["queryExecutionInputsAndOutputs", "queryExecutionInputsAndOutputs", "queryExecutionInputsAndOutputs", "queryExecutionInputsAndOutputsCallable"]
             },
+            "RemoveContextChildren": {
+              "methods": ["removeContextChildren", "removeContextChildren", "removeContextChildren", "removeContextChildrenCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

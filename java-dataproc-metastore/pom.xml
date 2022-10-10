@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-metastore-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+  <version>2.4.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
   <name>Google Dataproc Metastore Parent</name>
   <url>https://github.com/googleapis/java-dataproc-metastore</url>
   <description>
@@ -12,9 +12,9 @@
   </description>
 
   <parent>
-    <groupId>com.google.api</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -61,42 +61,42 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc-metastore</artifactId>
-        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+        <version>2.4.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-metastore-v1beta</artifactId>
-        <version>0.8.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1beta:current} -->
+        <version>0.8.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-metastore-v1alpha</artifactId>
-        <version>0.8.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1alpha:current} -->
+        <version>0.8.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-metastore-v1</artifactId>
-        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1:current} -->
+        <version>2.4.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1beta</artifactId>
-        <version>0.8.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1beta:current} -->
+        <version>0.8.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1alpha</artifactId>
-        <version>0.8.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
+        <version>0.8.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1</artifactId>
-        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1:current} -->
+        <version>2.4.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

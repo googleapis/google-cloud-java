@@ -284,8 +284,8 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
+   * The filter clause of metrics. Applied after aggregating the report's rows,
+   * similar to SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -297,8 +297,8 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
+   * The filter clause of metrics. Applied after aggregating the report's rows,
+   * similar to SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -310,8 +310,8 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
+   * The filter clause of metrics. Applied after aggregating the report's rows,
+   * similar to SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>

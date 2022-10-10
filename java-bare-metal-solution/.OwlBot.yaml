@@ -14,13 +14,13 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-bare-metal-solution/samples/snippets/generated"
+- "/java-bare-metal-solution/grpc-google-.*/src"
+- "/java-bare-metal-solution/proto-google-.*/src"
+- "/java-bare-metal-solution/google-.*/src"
 
 deep-preserve-regex:
-- "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bare-metal-solution/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/baremetalsolution/(v.*)/.*-java/proto-google-.*/src"

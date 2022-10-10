@@ -52,60 +52,6 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     return this.unknownFields;
   }
 
-  private BatchUpdateIntentsResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              intents_.add(
-                  input.readMessage(
-                      com.google.cloud.dialogflow.v2beta1.Intent.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        intents_ = java.util.Collections.unmodifiableList(intents_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.IntentProto
         .internal_static_google_cloud_dialogflow_v2beta1_BatchUpdateIntentsResponse_descriptor;
@@ -207,7 +153,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     for (int i = 0; i < intents_.size(); i++) {
       output.writeMessage(1, intents_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -219,7 +165,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     for (int i = 0; i < intents_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, intents_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -236,7 +182,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         (com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse) obj;
 
     if (!getIntentsList().equals(other.getIntentsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -251,7 +197,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       hash = (37 * hash) + INTENTS_FIELD_NUMBER;
       hash = (53 * hash) + getIntentsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -381,19 +327,10 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getIntentsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -401,10 +338,11 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
       super.clear();
       if (intentsBuilder_ == null) {
         intents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        intents_ = null;
         intentsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -521,7 +459,7 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -536,19 +474,44 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.dialogflow.v2beta1.Intent m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.Intent.parser(), extensionRegistry);
+                if (intentsBuilder_ == null) {
+                  ensureIntentsIsMutable();
+                  intents_.add(m);
+                } else {
+                  intentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -937,7 +900,18 @@ public final class BatchUpdateIntentsResponse extends com.google.protobuf.Genera
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchUpdateIntentsResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

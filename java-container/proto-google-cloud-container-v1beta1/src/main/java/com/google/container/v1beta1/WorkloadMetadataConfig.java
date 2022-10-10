@@ -54,59 +54,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private WorkloadMetadataConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              nodeMetadata_ = rawValue;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              mode_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_WorkloadMetadataConfig_descriptor;
@@ -507,7 +454,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4200
+   *     google/container/v1beta1/cluster_service.proto;l=4215
    * @return The enum numeric value on the wire for nodeMetadata.
    */
   @java.lang.Override
@@ -528,7 +475,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4200
+   *     google/container/v1beta1/cluster_service.proto;l=4215
    * @return The nodeMetadata.
    */
   @java.lang.Override
@@ -605,7 +552,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
         != com.google.container.v1beta1.WorkloadMetadataConfig.Mode.MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, mode_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -623,7 +570,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
         != com.google.container.v1beta1.WorkloadMetadataConfig.Mode.MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, mode_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -641,7 +588,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
 
     if (nodeMetadata_ != other.nodeMetadata_) return false;
     if (mode_ != other.mode_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -656,7 +603,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + nodeMetadata_;
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + mode_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -786,17 +733,10 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.container.v1beta1.WorkloadMetadataConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -891,7 +831,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
       if (other.mode_ != 0) {
         setModeValue(other.getModeValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -906,18 +846,43 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.WorkloadMetadataConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                nodeMetadata_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                mode_ = input.readEnum();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.container.v1beta1.WorkloadMetadataConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -935,7 +900,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4200
+     *     google/container/v1beta1/cluster_service.proto;l=4215
      * @return The enum numeric value on the wire for nodeMetadata.
      */
     @java.lang.Override
@@ -956,7 +921,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4200
+     *     google/container/v1beta1/cluster_service.proto;l=4215
      * @param value The enum numeric value on the wire for nodeMetadata to set.
      * @return This builder for chaining.
      */
@@ -980,7 +945,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4200
+     *     google/container/v1beta1/cluster_service.proto;l=4215
      * @return The nodeMetadata.
      */
     @java.lang.Override
@@ -1006,7 +971,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4200
+     *     google/container/v1beta1/cluster_service.proto;l=4215
      * @param value The nodeMetadata to set.
      * @return This builder for chaining.
      */
@@ -1034,7 +999,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4200
+     *     google/container/v1beta1/cluster_service.proto;l=4215
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1175,7 +1140,18 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WorkloadMetadataConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

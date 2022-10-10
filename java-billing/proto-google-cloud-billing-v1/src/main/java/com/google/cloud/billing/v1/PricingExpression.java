@@ -63,101 +63,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private PricingExpression(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              usageUnit_ = s;
-              break;
-            }
-          case 17:
-            {
-              displayQuantity_ = input.readDouble();
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tieredRates_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.billing.v1.PricingExpression.TierRate>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              tieredRates_.add(
-                  input.readMessage(
-                      com.google.cloud.billing.v1.PricingExpression.TierRate.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              usageUnitDescription_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseUnit_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseUnitDescription_ = s;
-              break;
-            }
-          case 57:
-            {
-              baseUnitConversionFactor_ = input.readDouble();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        tieredRates_ = java.util.Collections.unmodifiableList(tieredRates_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.v1.CloudCatalogProto
         .internal_static_google_cloud_billing_v1_PricingExpression_descriptor;
@@ -261,64 +166,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TierRate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                startUsageAmount_ = input.readDouble();
-                break;
-              }
-            case 18:
-              {
-                com.google.type.Money.Builder subBuilder = null;
-                if (unitPrice_ != null) {
-                  subBuilder = unitPrice_.toBuilder();
-                }
-                unitPrice_ = input.readMessage(com.google.type.Money.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(unitPrice_);
-                  unitPrice_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -425,7 +272,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       if (unitPrice_ != null) {
         output.writeMessage(2, getUnitPrice());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -440,7 +287,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       if (unitPrice_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUnitPrice());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -462,7 +309,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       if (hasUnitPrice()) {
         if (!getUnitPrice().equals(other.getUnitPrice())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -482,7 +329,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         hash = (37 * hash) + UNIT_PRICE_FIELD_NUMBER;
         hash = (53 * hash) + getUnitPrice().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -614,17 +461,10 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       }
 
       // Construct using com.google.cloud.billing.v1.PricingExpression.TierRate.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -729,7 +569,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         if (other.hasUnitPrice()) {
           mergeUnitPrice(other.getUnitPrice());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -744,18 +584,43 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.billing.v1.PricingExpression.TierRate parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  startUsageAmount_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 18:
+                {
+                  input.readMessage(getUnitPriceFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.billing.v1.PricingExpression.TierRate) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1034,7 +899,19 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TierRate(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1420,7 +1297,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (java.lang.Double.doubleToRawLongBits(baseUnitConversionFactor_) != 0) {
       output.writeDouble(7, baseUnitConversionFactor_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1450,7 +1327,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (java.lang.Double.doubleToRawLongBits(baseUnitConversionFactor_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(7, baseUnitConversionFactor_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1475,7 +1352,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     if (java.lang.Double.doubleToLongBits(getDisplayQuantity())
         != java.lang.Double.doubleToLongBits(other.getDisplayQuantity())) return false;
     if (!getTieredRatesList().equals(other.getTieredRatesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1508,7 +1385,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + TIERED_RATES_FIELD_NUMBER;
       hash = (53 * hash) + getTieredRatesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1644,19 +1521,10 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.billing.v1.PricingExpression.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTieredRatesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1676,10 +1544,11 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
       if (tieredRatesBuilder_ == null) {
         tieredRates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        tieredRates_ = null;
         tieredRatesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -1821,7 +1690,7 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1836,17 +1705,81 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.billing.v1.PricingExpression parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                usageUnit_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 17:
+              {
+                displayQuantity_ = input.readDouble();
+
+                break;
+              } // case 17
+            case 26:
+              {
+                com.google.cloud.billing.v1.PricingExpression.TierRate m =
+                    input.readMessage(
+                        com.google.cloud.billing.v1.PricingExpression.TierRate.parser(),
+                        extensionRegistry);
+                if (tieredRatesBuilder_ == null) {
+                  ensureTieredRatesIsMutable();
+                  tieredRates_.add(m);
+                } else {
+                  tieredRatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                usageUnitDescription_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                baseUnit_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                baseUnitDescription_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 57:
+              {
+                baseUnitConversionFactor_ = input.readDouble();
+
+                break;
+              } // case 57
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.billing.v1.PricingExpression) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2861,7 +2794,18 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PricingExpression(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

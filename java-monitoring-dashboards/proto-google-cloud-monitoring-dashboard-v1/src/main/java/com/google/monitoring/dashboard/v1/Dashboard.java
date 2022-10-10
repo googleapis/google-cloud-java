@@ -56,162 +56,6 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Dashboard(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.monitoring.dashboard.v1.GridLayout.Builder subBuilder = null;
-              if (layoutCase_ == 5) {
-                subBuilder = ((com.google.monitoring.dashboard.v1.GridLayout) layout_).toBuilder();
-              }
-              layout_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.GridLayout.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.GridLayout) layout_);
-                layout_ = subBuilder.buildPartial();
-              }
-              layoutCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.monitoring.dashboard.v1.MosaicLayout.Builder subBuilder = null;
-              if (layoutCase_ == 6) {
-                subBuilder =
-                    ((com.google.monitoring.dashboard.v1.MosaicLayout) layout_).toBuilder();
-              }
-              layout_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.MosaicLayout.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.MosaicLayout) layout_);
-                layout_ = subBuilder.buildPartial();
-              }
-              layoutCase_ = 6;
-              break;
-            }
-          case 66:
-            {
-              com.google.monitoring.dashboard.v1.RowLayout.Builder subBuilder = null;
-              if (layoutCase_ == 8) {
-                subBuilder = ((com.google.monitoring.dashboard.v1.RowLayout) layout_).toBuilder();
-              }
-              layout_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.RowLayout.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.RowLayout) layout_);
-                layout_ = subBuilder.buildPartial();
-              }
-              layoutCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.monitoring.dashboard.v1.ColumnLayout.Builder subBuilder = null;
-              if (layoutCase_ == 9) {
-                subBuilder =
-                    ((com.google.monitoring.dashboard.v1.ColumnLayout) layout_).toBuilder();
-              }
-              layout_ =
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.ColumnLayout.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.monitoring.dashboard.v1.ColumnLayout) layout_);
-                layout_ = subBuilder.buildPartial();
-              }
-              layoutCase_ = 9;
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dashboardFilters_ =
-                    new java.util.ArrayList<com.google.monitoring.dashboard.v1.DashboardFilter>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dashboardFilters_.add(
-                  input.readMessage(
-                      com.google.monitoring.dashboard.v1.DashboardFilter.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 98:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dashboardFilters_ = java.util.Collections.unmodifiableList(dashboardFilters_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.dashboard.v1.DashboardsProto
         .internal_static_google_monitoring_dashboard_v1_Dashboard_descriptor;
@@ -875,7 +719,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 12);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -927,7 +771,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, labels__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -965,7 +809,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1010,7 +854,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1160,19 +1004,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.monitoring.dashboard.v1.Dashboard.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDashboardFiltersFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1184,12 +1019,25 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
 
       etag_ = "";
 
+      if (gridLayoutBuilder_ != null) {
+        gridLayoutBuilder_.clear();
+      }
+      if (mosaicLayoutBuilder_ != null) {
+        mosaicLayoutBuilder_.clear();
+      }
+      if (rowLayoutBuilder_ != null) {
+        rowLayoutBuilder_.clear();
+      }
+      if (columnLayoutBuilder_ != null) {
+        columnLayoutBuilder_.clear();
+      }
       if (dashboardFiltersBuilder_ == null) {
         dashboardFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dashboardFilters_ = null;
         dashboardFiltersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().clear();
       layoutCase_ = 0;
       layout_ = null;
@@ -1379,7 +1227,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1394,17 +1242,98 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.monitoring.dashboard.v1.Dashboard parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 34:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getGridLayoutFieldBuilder().getBuilder(), extensionRegistry);
+                layoutCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getMosaicLayoutFieldBuilder().getBuilder(), extensionRegistry);
+                layoutCase_ = 6;
+                break;
+              } // case 50
+            case 66:
+              {
+                input.readMessage(getRowLayoutFieldBuilder().getBuilder(), extensionRegistry);
+                layoutCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getColumnLayoutFieldBuilder().getBuilder(), extensionRegistry);
+                layoutCase_ = 9;
+                break;
+              } // case 74
+            case 90:
+              {
+                com.google.monitoring.dashboard.v1.DashboardFilter m =
+                    input.readMessage(
+                        com.google.monitoring.dashboard.v1.DashboardFilter.parser(),
+                        extensionRegistry);
+                if (dashboardFiltersBuilder_ == null) {
+                  ensureDashboardFiltersIsMutable();
+                  dashboardFilters_.add(m);
+                } else {
+                  dashboardFiltersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 98
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.dashboard.v1.Dashboard) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3200,7 +3129,18 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Dashboard(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

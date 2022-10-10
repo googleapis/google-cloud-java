@@ -32,8 +32,8 @@ public interface MinuteRangeOrBuilder
    * event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`.
    * If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics
    * properties can request up to the last 30 minutes of event data
-   * (`startMinutesAgo &lt;= 29`), and Google Analytics 360 properties can request
-   * up to the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
+   * (`startMinutesAgo &lt;= 29`), and 360 Analytics properties can request up to
+   * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
    * <code>optional int32 start_minutes_ago = 1;</code>
@@ -50,8 +50,8 @@ public interface MinuteRangeOrBuilder
    * event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`.
    * If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics
    * properties can request up to the last 30 minutes of event data
-   * (`startMinutesAgo &lt;= 29`), and Google Analytics 360 properties can request
-   * up to the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
+   * (`startMinutesAgo &lt;= 29`), and 360 Analytics properties can request up to
+   * the last 60 minutes of event data (`startMinutesAgo &lt;= 59`).
    * </pre>
    *
    * <code>optional int32 start_minutes_ago = 1;</code>
@@ -70,8 +70,8 @@ public interface MinuteRangeOrBuilder
    * ago.
    * If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics
    * properties can request any minute in the last 30 minutes of event data
-   * (`endMinutesAgo &lt;= 29`), and Google Analytics 360 properties can request
-   * any minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
+   * (`endMinutesAgo &lt;= 29`), and 360 Analytics properties can request any
+   * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
    * <code>optional int32 end_minutes_ago = 2;</code>
@@ -89,8 +89,8 @@ public interface MinuteRangeOrBuilder
    * ago.
    * If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics
    * properties can request any minute in the last 30 minutes of event data
-   * (`endMinutesAgo &lt;= 29`), and Google Analytics 360 properties can request
-   * any minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
+   * (`endMinutesAgo &lt;= 29`), and 360 Analytics properties can request any
+   * minute in the last 60 minutes of event data (`endMinutesAgo &lt;= 59`).
    * </pre>
    *
    * <code>optional int32 end_minutes_ago = 2;</code>

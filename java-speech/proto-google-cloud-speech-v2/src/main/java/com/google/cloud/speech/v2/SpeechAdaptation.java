@@ -55,77 +55,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private SpeechAdaptation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                phraseSets_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              phraseSets_.add(
-                  input.readMessage(
-                      com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                customClasses_ = new java.util.ArrayList<com.google.cloud.speech.v2.CustomClass>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              customClasses_.add(
-                  input.readMessage(
-                      com.google.cloud.speech.v2.CustomClass.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        phraseSets_ = java.util.Collections.unmodifiableList(phraseSets_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        customClasses_ = java.util.Collections.unmodifiableList(customClasses_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_SpeechAdaptation_descriptor;
@@ -254,68 +183,6 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AdaptationPhraseSet(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                valueCase_ = 1;
-                value_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.speech.v2.PhraseSet.Builder subBuilder = null;
-                if (valueCase_ == 2) {
-                  subBuilder = ((com.google.cloud.speech.v2.PhraseSet) value_).toBuilder();
-                }
-                value_ =
-                    input.readMessage(
-                        com.google.cloud.speech.v2.PhraseSet.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.cloud.speech.v2.PhraseSet) value_);
-                  value_ = subBuilder.buildPartial();
-                }
-                valueCase_ = 2;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -524,7 +391,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       if (valueCase_ == 2) {
         output.writeMessage(2, (com.google.cloud.speech.v2.PhraseSet) value_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -541,7 +408,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, (com.google.cloud.speech.v2.PhraseSet) value_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -568,7 +435,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -591,7 +458,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -726,22 +593,18 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (inlinePhraseSetBuilder_ != null) {
+          inlinePhraseSetBuilder_.clear();
+        }
         valueCase_ = 0;
         value_ = null;
         return this;
@@ -855,7 +718,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -870,19 +733,45 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  valueCase_ = 1;
+                  value_ = s;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getInlinePhraseSetFieldBuilder().getBuilder(), extensionRegistry);
+                  valueCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1283,7 +1172,19 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AdaptationPhraseSet(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1475,7 +1376,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < customClasses_.size(); i++) {
       output.writeMessage(2, customClasses_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1490,7 +1391,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < customClasses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, customClasses_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1508,7 +1409,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
 
     if (!getPhraseSetsList().equals(other.getPhraseSetsList())) return false;
     if (!getCustomClassesList().equals(other.getCustomClassesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1527,7 +1428,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CUSTOM_CLASSES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomClassesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1658,20 +1559,10 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.speech.v2.SpeechAdaptation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPhraseSetsFieldBuilder();
-        getCustomClassesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1679,16 +1570,18 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
       super.clear();
       if (phraseSetsBuilder_ == null) {
         phraseSets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        phraseSets_ = null;
         phraseSetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (customClassesBuilder_ == null) {
         customClasses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        customClasses_ = null;
         customClassesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1838,7 +1731,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1853,17 +1746,58 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.speech.v2.SpeechAdaptation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet m =
+                    input.readMessage(
+                        com.google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet.parser(),
+                        extensionRegistry);
+                if (phraseSetsBuilder_ == null) {
+                  ensurePhraseSetsIsMutable();
+                  phraseSets_.add(m);
+                } else {
+                  phraseSetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.speech.v2.CustomClass m =
+                    input.readMessage(
+                        com.google.cloud.speech.v2.CustomClass.parser(), extensionRegistry);
+                if (customClassesBuilder_ == null) {
+                  ensureCustomClassesIsMutable();
+                  customClasses_.add(m);
+                } else {
+                  customClassesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.speech.v2.SpeechAdaptation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2660,7 +2594,18 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SpeechAdaptation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -56,196 +56,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private StudySpec(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                metrics_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              metrics_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                parameters_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              parameters_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              algorithm_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec.Builder
-                  subBuilder = null;
-              if (automatedStoppingSpecCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec)
-                            automatedStoppingSpec_)
-                        .toBuilder();
-              }
-              automatedStoppingSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec)
-                        automatedStoppingSpec_);
-                automatedStoppingSpec_ = subBuilder.buildPartial();
-              }
-              automatedStoppingSpecCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec.Builder
-                  subBuilder = null;
-              if (automatedStoppingSpecCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec)
-                            automatedStoppingSpec_)
-                        .toBuilder();
-              }
-              automatedStoppingSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec)
-                        automatedStoppingSpec_);
-                automatedStoppingSpec_ = subBuilder.buildPartial();
-              }
-              automatedStoppingSpecCase_ = 5;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              observationNoise_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              measurementSelectionType_ = rawValue;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.Builder subBuilder =
-                  null;
-              if (automatedStoppingSpecCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig)
-                            automatedStoppingSpec_)
-                        .toBuilder();
-              }
-              automatedStoppingSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig)
-                        automatedStoppingSpec_);
-                automatedStoppingSpec_ = subBuilder.buildPartial();
-              }
-              automatedStoppingSpecCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec.Builder
-                  subBuilder = null;
-              if (automatedStoppingSpecCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
-                            automatedStoppingSpec_)
-                        .toBuilder();
-              }
-              automatedStoppingSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
-                        automatedStoppingSpec_);
-                automatedStoppingSpec_ = subBuilder.buildPartial();
-              }
-              automatedStoppingSpecCase_ = 9;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        metrics_ = java.util.Collections.unmodifiableList(metrics_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        parameters_ = java.util.Collections.unmodifiableList(parameters_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.StudyProto
         .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_descriptor;
@@ -859,59 +669,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private MetricSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                metricId_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                goal_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.StudyProto
           .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MetricSpec_descriptor;
@@ -1201,7 +958,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(2, goal_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1218,7 +975,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, goal_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1236,7 +993,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       if (!getMetricId().equals(other.getMetricId())) return false;
       if (goal_ != other.goal_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1251,7 +1008,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getMetricId().hashCode();
       hash = (37 * hash) + GOAL_FIELD_NUMBER;
       hash = (53 * hash) + goal_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1383,17 +1140,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1491,7 +1241,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.goal_ != 0) {
           setGoalValue(other.getGoalValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1506,18 +1256,43 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  metricId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  goal_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1769,7 +1544,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MetricSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2144,183 +1931,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private ParameterSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                parameterId_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec.Builder
-                    subBuilder = null;
-                if (parameterValueSpecCase_ == 2) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec)
-                              parameterValueSpec_)
-                          .toBuilder();
-                }
-                parameterValueSpec_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec)
-                          parameterValueSpec_);
-                  parameterValueSpec_ = subBuilder.buildPartial();
-                }
-                parameterValueSpecCase_ = 2;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec.Builder
-                    subBuilder = null;
-                if (parameterValueSpecCase_ == 3) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                  .IntegerValueSpec)
-                              parameterValueSpec_)
-                          .toBuilder();
-                }
-                parameterValueSpec_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec)
-                          parameterValueSpec_);
-                  parameterValueSpec_ = subBuilder.buildPartial();
-                }
-                parameterValueSpecCase_ = 3;
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec
-                        .Builder
-                    subBuilder = null;
-                if (parameterValueSpecCase_ == 4) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                  .CategoricalValueSpec)
-                              parameterValueSpec_)
-                          .toBuilder();
-                }
-                parameterValueSpec_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                            .CategoricalValueSpec.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                              .CategoricalValueSpec)
-                          parameterValueSpec_);
-                  parameterValueSpec_ = subBuilder.buildPartial();
-                }
-                parameterValueSpecCase_ = 4;
-                break;
-              }
-            case 42:
-              {
-                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec
-                        .Builder
-                    subBuilder = null;
-                if (parameterValueSpecCase_ == 5) {
-                  subBuilder =
-                      ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                  .DiscreteValueSpec)
-                              parameterValueSpec_)
-                          .toBuilder();
-                }
-                parameterValueSpec_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                            .DiscreteValueSpec.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                              .DiscreteValueSpec)
-                          parameterValueSpec_);
-                  parameterValueSpec_ = subBuilder.buildPartial();
-                }
-                parameterValueSpecCase_ = 5;
-                break;
-              }
-            case 48:
-              {
-                int rawValue = input.readEnum();
-
-                scaleType_ = rawValue;
-                break;
-              }
-            case 82:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  conditionalParameterSpecs_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                              .ConditionalParameterSpec>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                conditionalParameterSpecs_.add(
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                            .ConditionalParameterSpec.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          conditionalParameterSpecs_ =
-              java.util.Collections.unmodifiableList(conditionalParameterSpecs_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.StudyProto
           .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_descriptor;
@@ -2621,63 +2231,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private DoubleValueSpec(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9:
-                {
-                  minValue_ = input.readDouble();
-                  break;
-                }
-              case 17:
-                {
-                  maxValue_ = input.readDouble();
-                  break;
-                }
-              case 33:
-                {
-                  bitField0_ |= 0x00000001;
-                  defaultValue_ = input.readDouble();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1beta1.StudyProto
             .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_DoubleValueSpec_descriptor;
@@ -2795,7 +2348,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeDouble(4, defaultValue_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2813,7 +2366,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, defaultValue_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2840,7 +2393,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (java.lang.Double.doubleToLongBits(getDefaultValue())
               != java.lang.Double.doubleToLongBits(other.getDefaultValue())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2868,7 +2421,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   + com.google.protobuf.Internal.hashLong(
                       java.lang.Double.doubleToLongBits(getDefaultValue()));
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3011,17 +2564,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -3140,7 +2686,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (other.hasDefaultValue()) {
             setDefaultValue(other.getDefaultValue());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3155,20 +2701,49 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 9:
+                  {
+                    minValue_ = input.readDouble();
+
+                    break;
+                  } // case 9
+                case 17:
+                  {
+                    maxValue_ = input.readDouble();
+
+                    break;
+                  } // case 17
+                case 33:
+                  {
+                    defaultValue_ = input.readDouble();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 33
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3398,7 +2973,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DoubleValueSpec(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3513,63 +3100,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private IntegerValueSpec(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  minValue_ = input.readInt64();
-                  break;
-                }
-              case 16:
-                {
-                  maxValue_ = input.readInt64();
-                  break;
-                }
-              case 32:
-                {
-                  bitField0_ |= 0x00000001;
-                  defaultValue_ = input.readInt64();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3689,7 +3219,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeInt64(4, defaultValue_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3707,7 +3237,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, defaultValue_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3731,7 +3261,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (hasDefaultValue()) {
           if (getDefaultValue() != other.getDefaultValue()) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3750,7 +3280,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDefaultValue());
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3894,17 +3424,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -4025,7 +3548,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (other.hasDefaultValue()) {
             setDefaultValue(other.getDefaultValue());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4040,20 +3563,49 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    minValue_ = input.readInt64();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    maxValue_ = input.readInt64();
+
+                    break;
+                  } // case 16
+                case 32:
+                  {
+                    defaultValue_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 32
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4283,7 +3835,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new IntegerValueSpec(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4442,67 +4006,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private CategoricalValueSpec(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    values_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  values_.add(s);
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
-                  defaultValue_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            values_ = values_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4680,7 +4183,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, defaultValue_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4700,7 +4203,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, defaultValue_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4723,7 +4226,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (hasDefaultValue()) {
           if (!getDefaultValue().equals(other.getDefaultValue())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4742,7 +4245,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + DEFAULT_VALUE_FIELD_NUMBER;
           hash = (53 * hash) + getDefaultValue().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4888,17 +4391,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -5027,7 +4523,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             defaultValue_ = other.defaultValue_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5042,20 +4538,44 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureValuesIsMutable();
+                    values_.add(s);
+                    break;
+                  } // case 10
+                case 26:
+                  {
+                    defaultValue_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -5410,7 +4930,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new CategoricalValueSpec(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -5550,79 +5082,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private DiscreteValueSpec(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    values_ = newDoubleList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  values_.addDouble(input.readDouble());
-                  break;
-                }
-              case 10:
-                {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                    values_ = newDoubleList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    values_.addDouble(input.readDouble());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-              case 25:
-                {
-                  bitField0_ |= 0x00000001;
-                  defaultValue_ = input.readDouble();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            values_.makeImmutable(); // C
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5768,7 +5227,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeDouble(3, defaultValue_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -5790,7 +5249,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, defaultValue_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -5814,7 +5273,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (java.lang.Double.doubleToLongBits(getDefaultValue())
               != java.lang.Double.doubleToLongBits(other.getDefaultValue())) return false;
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -5836,7 +5295,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   + com.google.protobuf.Internal.hashLong(
                       java.lang.Double.doubleToLongBits(getDefaultValue()));
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5980,17 +5439,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -6116,7 +5568,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           if (other.hasDefaultValue()) {
             setDefaultValue(other.getDefaultValue());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -6131,20 +5583,55 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 9:
+                  {
+                    double v = input.readDouble();
+                    ensureValuesIsMutable();
+                    values_.addDouble(v);
+                    break;
+                  } // case 9
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureValuesIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      values_.addDouble(input.readDouble());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 10
+                case 25:
+                  {
+                    defaultValue_ = input.readDouble();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 25
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -6421,7 +5908,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DiscreteValueSpec(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -6670,145 +6169,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private ConditionalParameterSpec(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.Builder subBuilder =
-                      null;
-                  if (parameterSpec_ != null) {
-                    subBuilder = parameterSpec_.toBuilder();
-                  }
-                  parameterSpec_ =
-                      input.readMessage(
-                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(parameterSpec_);
-                    parameterSpec_ = subBuilder.buildPartial();
-                  }
-
-                  break;
-                }
-              case 18:
-                {
-                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                          .ConditionalParameterSpec.DiscreteValueCondition.Builder
-                      subBuilder = null;
-                  if (parentValueConditionCase_ == 2) {
-                    subBuilder =
-                        ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                    .ConditionalParameterSpec.DiscreteValueCondition)
-                                parentValueCondition_)
-                            .toBuilder();
-                  }
-                  parentValueCondition_ =
-                      input.readMessage(
-                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                              .ConditionalParameterSpec.DiscreteValueCondition.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                .ConditionalParameterSpec.DiscreteValueCondition)
-                            parentValueCondition_);
-                    parentValueCondition_ = subBuilder.buildPartial();
-                  }
-                  parentValueConditionCase_ = 2;
-                  break;
-                }
-              case 26:
-                {
-                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                          .ConditionalParameterSpec.IntValueCondition.Builder
-                      subBuilder = null;
-                  if (parentValueConditionCase_ == 3) {
-                    subBuilder =
-                        ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                    .ConditionalParameterSpec.IntValueCondition)
-                                parentValueCondition_)
-                            .toBuilder();
-                  }
-                  parentValueCondition_ =
-                      input.readMessage(
-                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                              .ConditionalParameterSpec.IntValueCondition.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                .ConditionalParameterSpec.IntValueCondition)
-                            parentValueCondition_);
-                    parentValueCondition_ = subBuilder.buildPartial();
-                  }
-                  parentValueConditionCase_ = 3;
-                  break;
-                }
-              case 34:
-                {
-                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                          .ConditionalParameterSpec.CategoricalValueCondition.Builder
-                      subBuilder = null;
-                  if (parentValueConditionCase_ == 4) {
-                    subBuilder =
-                        ((com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                    .ConditionalParameterSpec.CategoricalValueCondition)
-                                parentValueCondition_)
-                            .toBuilder();
-                  }
-                  parentValueCondition_ =
-                      input.readMessage(
-                          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                              .ConditionalParameterSpec.CategoricalValueCondition.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                                .ConditionalParameterSpec.CategoricalValueCondition)
-                            parentValueCondition_);
-                    parentValueCondition_ = subBuilder.buildPartial();
-                  }
-                  parentValueConditionCase_ = 4;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.aiplatform.v1beta1.StudyProto
             .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_descriptor;
@@ -6911,74 +6271,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this.unknownFields;
         }
 
-        private DiscreteValueCondition(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 9:
-                  {
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                      values_ = newDoubleList();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    values_.addDouble(input.readDouble());
-                    break;
-                  }
-                case 10:
-                  {
-                    int length = input.readRawVarint32();
-                    int limit = input.pushLimit(length);
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)
-                        && input.getBytesUntilLimit() > 0) {
-                      values_ = newDoubleList();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    while (input.getBytesUntilLimit() > 0) {
-                      values_.addDouble(input.readDouble());
-                    }
-                    input.popLimit(limit);
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            if (((mutable_bitField0_ & 0x00000001) != 0)) {
-              values_.makeImmutable(); // C
-            }
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1beta1.StudyProto
               .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_DiscreteValueCondition_descriptor;
@@ -7074,7 +6366,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < values_.size(); i++) {
             output.writeDoubleNoTag(values_.getDouble(i));
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -7093,7 +6385,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
             valuesMemoizedSerializedSize = dataSize;
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -7117,7 +6409,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                       obj;
 
           if (!getValuesList().equals(other.getValuesList())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -7132,7 +6424,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + VALUES_FIELD_NUMBER;
             hash = (53 * hash) + getValuesList().hashCode();
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -7293,17 +6585,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.DiscreteValueCondition.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -7429,7 +6714,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               }
               onChanged();
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -7444,22 +6729,49 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
-                    .DiscreteValueCondition
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 9:
+                    {
+                      double v = input.readDouble();
+                      ensureValuesIsMutable();
+                      values_.addDouble(v);
+                      break;
+                    } // case 9
+                  case 10:
+                    {
+                      int length = input.readRawVarint32();
+                      int limit = input.pushLimit(length);
+                      ensureValuesIsMutable();
+                      while (input.getBytesUntilLimit() > 0) {
+                        values_.addDouble(input.readDouble());
+                      }
+                      input.popLimit(limit);
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                          .ConditionalParameterSpec.DiscreteValueCondition)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -7644,7 +6956,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new DiscreteValueCondition(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -7746,74 +7070,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this.unknownFields;
         }
 
-        private IntValueCondition(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8:
-                  {
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                      values_ = newLongList();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    values_.addLong(input.readInt64());
-                    break;
-                  }
-                case 10:
-                  {
-                    int length = input.readRawVarint32();
-                    int limit = input.pushLimit(length);
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)
-                        && input.getBytesUntilLimit() > 0) {
-                      values_ = newLongList();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    while (input.getBytesUntilLimit() > 0) {
-                      values_.addLong(input.readInt64());
-                    }
-                    input.popLimit(limit);
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            if (((mutable_bitField0_ & 0x00000001) != 0)) {
-              values_.makeImmutable(); // C
-            }
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1beta1.StudyProto
               .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_IntValueCondition_descriptor;
@@ -7906,7 +7162,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < values_.size(); i++) {
             output.writeInt64NoTag(values_.getLong(i));
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -7928,7 +7184,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             }
             valuesMemoizedSerializedSize = dataSize;
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -7952,7 +7208,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                       obj;
 
           if (!getValuesList().equals(other.getValuesList())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -7967,7 +7223,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + VALUES_FIELD_NUMBER;
             hash = (53 * hash) + getValuesList().hashCode();
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -8128,17 +7384,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.IntValueCondition.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -8263,7 +7512,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               }
               onChanged();
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -8278,22 +7527,49 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
-                    .IntValueCondition
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      long v = input.readInt64();
+                      ensureValuesIsMutable();
+                      values_.addLong(v);
+                      break;
+                    } // case 8
+                  case 10:
+                    {
+                      int length = input.readRawVarint32();
+                      int limit = input.pushLimit(length);
+                      ensureValuesIsMutable();
+                      while (input.getBytesUntilLimit() > 0) {
+                        values_.addLong(input.readInt64());
+                      }
+                      input.popLimit(limit);
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                          .ConditionalParameterSpec.IntValueCondition)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -8471,7 +7747,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new IntValueCondition(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -8593,60 +7881,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           return this.unknownFields;
         }
 
-        private CategoricalValueCondition(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                      values_ = new com.google.protobuf.LazyStringArrayList();
-                      mutable_bitField0_ |= 0x00000001;
-                    }
-                    values_.add(s);
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            if (((mutable_bitField0_ & 0x00000001) != 0)) {
-              values_ = values_.getUnmodifiableView();
-            }
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.aiplatform.v1beta1.StudyProto
               .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_ParameterSpec_ConditionalParameterSpec_CategoricalValueCondition_descriptor;
@@ -8751,7 +7985,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           for (int i = 0; i < values_.size(); i++) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_.getRaw(i));
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -8768,7 +8002,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             size += dataSize;
             size += 1 * getValuesList().size();
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -8792,7 +8026,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                       obj;
 
           if (!getValuesList().equals(other.getValuesList())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -8807,7 +8041,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             hash = (37 * hash) + VALUES_FIELD_NUMBER;
             hash = (53 * hash) + getValuesList().hashCode();
           }
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -8968,17 +8202,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.CategoricalValueCondition.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -9104,7 +8331,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               }
               onChanged();
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -9119,22 +8346,38 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
-                    .CategoricalValueCondition
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      ensureValuesIsMutable();
+                      values_.add(s);
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                          .ConditionalParameterSpec.CategoricalValueCondition)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -9365,7 +8608,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new CategoricalValueCondition(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -9739,7 +8994,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                       .CategoricalValueCondition)
                   parentValueCondition_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -9775,7 +9030,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                           .ConditionalParameterSpec.CategoricalValueCondition)
                       parentValueCondition_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -9814,7 +9069,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -9845,7 +9100,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -10003,22 +9258,24 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          if (parentDiscreteValuesBuilder_ != null) {
+            parentDiscreteValuesBuilder_.clear();
+          }
+          if (parentIntValuesBuilder_ != null) {
+            parentIntValuesBuilder_.clear();
+          }
+          if (parentCategoricalValuesBuilder_ != null) {
+            parentCategoricalValuesBuilder_.clear();
+          }
           if (parameterSpecBuilder_ == null) {
             parameterSpec_ = null;
           } else {
@@ -10173,7 +9430,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 break;
               }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -10188,21 +9445,59 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        getParameterSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getParentDiscreteValuesFieldBuilder().getBuilder(), extensionRegistry);
+                    parentValueConditionCase_ = 2;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(
+                        getParentIntValuesFieldBuilder().getBuilder(), extensionRegistry);
+                    parentValueConditionCase_ = 3;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(
+                        getParentCategoricalValuesFieldBuilder().getBuilder(), extensionRegistry);
+                    parentValueConditionCase_ = 4;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
-                        .ConditionalParameterSpec)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -11296,7 +10591,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ConditionalParameterSpec(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -11868,7 +11175,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < conditionalParameterSpecs_.size(); i++) {
         output.writeMessage(10, conditionalParameterSpecs_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11919,7 +11226,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 10, conditionalParameterSpecs_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11956,7 +11263,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11995,7 +11302,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -12127,34 +11434,38 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getConditionalParameterSpecsFieldBuilder();
-        }
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (doubleValueSpecBuilder_ != null) {
+          doubleValueSpecBuilder_.clear();
+        }
+        if (integerValueSpecBuilder_ != null) {
+          integerValueSpecBuilder_.clear();
+        }
+        if (categoricalValueSpecBuilder_ != null) {
+          categoricalValueSpecBuilder_.clear();
+        }
+        if (discreteValueSpecBuilder_ != null) {
+          discreteValueSpecBuilder_.clear();
+        }
         parameterId_ = "";
 
         scaleType_ = 0;
 
         if (conditionalParameterSpecsBuilder_ == null) {
           conditionalParameterSpecs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          conditionalParameterSpecs_ = null;
           conditionalParameterSpecsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         parameterValueSpecCase_ = 0;
         parameterValueSpec_ = null;
         return this;
@@ -12340,7 +11651,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -12355,19 +11666,88 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  parameterId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getDoubleValueSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  parameterValueSpecCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getIntegerValueSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  parameterValueSpecCase_ = 3;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getCategoricalValueSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  parameterValueSpecCase_ = 4;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getDiscreteValueSpecFieldBuilder().getBuilder(), extensionRegistry);
+                  parameterValueSpecCase_ = 5;
+                  break;
+                } // case 42
+              case 48:
+                {
+                  scaleType_ = input.readEnum();
+
+                  break;
+                } // case 48
+              case 82:
+                {
+                  com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                          .ConditionalParameterSpec
+                      m =
+                          input.readMessage(
+                              com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec
+                                  .ConditionalParameterSpec.parser(),
+                              extensionRegistry);
+                  if (conditionalParameterSpecsBuilder_ == null) {
+                    ensureConditionalParameterSpecsIsMutable();
+                    conditionalParameterSpecs_.add(m);
+                  } else {
+                    conditionalParameterSpecsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -14139,7 +13519,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ParameterSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -14216,50 +13608,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private DecayCurveAutomatedStoppingSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                useElapsedDuration_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.StudyProto
           .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_DecayCurveAutomatedStoppingSpec_descriptor;
@@ -14313,7 +13661,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         output.writeBool(1, useElapsedDuration_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -14325,7 +13673,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useElapsedDuration_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -14344,7 +13692,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec) obj;
 
       if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -14357,7 +13705,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -14502,17 +13850,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -14613,7 +13954,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.getUseElapsedDuration() != false) {
           setUseElapsedDuration(other.getUseElapsedDuration());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -14628,20 +13969,37 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  useElapsedDuration_ = input.readBool();
+
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.StudySpec.DecayCurveAutomatedStoppingSpec)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -14740,7 +14098,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DecayCurveAutomatedStoppingSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -14818,50 +14188,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private MedianAutomatedStoppingSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                useElapsedDuration_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.StudyProto
           .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_MedianAutomatedStoppingSpec_descriptor;
@@ -14916,7 +14242,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         output.writeBool(1, useElapsedDuration_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -14928,7 +14254,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useElapsedDuration_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -14946,7 +14272,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec) obj;
 
       if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -14959,7 +14285,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -15103,17 +14429,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -15212,7 +14531,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.getUseElapsedDuration() != false) {
           setUseElapsedDuration(other.getUseElapsedDuration());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -15227,20 +14546,37 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  useElapsedDuration_ = input.readBool();
+
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.StudySpec.MedianAutomatedStoppingSpec)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -15341,7 +14677,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MedianAutomatedStoppingSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -15509,72 +14857,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ConvexAutomatedStoppingSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                maxStepCount_ = input.readInt64();
-                break;
-              }
-            case 16:
-              {
-                minStepCount_ = input.readInt64();
-                break;
-              }
-            case 24:
-              {
-                minMeasurementCount_ = input.readInt64();
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                learningRateParameterName_ = s;
-                break;
-              }
-            case 40:
-              {
-                useElapsedDuration_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -15767,7 +15049,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         output.writeBool(5, useElapsedDuration_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -15792,7 +15074,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, useElapsedDuration_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -15815,7 +15097,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (!getLearningRateParameterName().equals(other.getLearningRateParameterName()))
         return false;
       if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -15836,7 +15118,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getLearningRateParameterName().hashCode();
       hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -15985,17 +15267,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -16119,7 +15394,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.getUseElapsedDuration() != false) {
           setUseElapsedDuration(other.getUseElapsedDuration());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -16134,20 +15409,61 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  maxStepCount_ = input.readInt64();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  minStepCount_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  minMeasurementCount_ = input.readInt64();
+
+                  break;
+                } // case 24
+              case 34:
+                {
+                  learningRateParameterName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              case 40:
+                {
+                  useElapsedDuration_ = input.readBool();
+
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -16570,7 +15886,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConvexAutomatedStoppingSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -16728,72 +16056,6 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ConvexStopConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                maxNumSteps_ = input.readInt64();
-                break;
-              }
-            case 16:
-              {
-                minNumSteps_ = input.readInt64();
-                break;
-              }
-            case 24:
-              {
-                autoregressiveOrder_ = input.readInt64();
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                learningRateParameterName_ = s;
-                break;
-              }
-            case 40:
-              {
-                useSeconds_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16983,7 +16245,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useSeconds_ != false) {
         output.writeBool(5, useSeconds_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -17008,7 +16270,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useSeconds_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, useSeconds_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -17030,7 +16292,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (!getLearningRateParameterName().equals(other.getLearningRateParameterName()))
         return false;
       if (getUseSeconds() != other.getUseSeconds()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -17051,7 +16313,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getLearningRateParameterName().hashCode();
       hash = (37 * hash) + USE_SECONDS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseSeconds());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -17183,17 +16445,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -17312,7 +16567,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.getUseSeconds() != false) {
           setUseSeconds(other.getUseSeconds());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -17327,19 +16582,61 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  maxNumSteps_ = input.readInt64();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  minNumSteps_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  autoregressiveOrder_ = input.readInt64();
+
+                  break;
+                } // case 24
+              case 34:
+                {
+                  learningRateParameterName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              case 40:
+                {
+                  useSeconds_ = input.readBool();
+
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -17755,7 +17052,19 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConvexStopConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -17770,6 +17079,906 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexStopConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TransferLearningConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Flag to to manually prevent vizier from using transfer learning on a
+     * new study. Otherwise, vizier will automatically determine whether or not
+     * to use transfer learning.
+     * </pre>
+     *
+     * <code>bool disable_transfer_learning = 1;</code>
+     *
+     * @return The disableTransferLearning.
+     */
+    boolean getDisableTransferLearning();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the priorStudyNames.
+     */
+    java.util.List<java.lang.String> getPriorStudyNamesList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of priorStudyNames.
+     */
+    int getPriorStudyNamesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The priorStudyNames at the given index.
+     */
+    java.lang.String getPriorStudyNames(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the priorStudyNames at the given index.
+     */
+    com.google.protobuf.ByteString getPriorStudyNamesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This contains flag for manually disabling transfer learning for a study.
+   * The names of prior studies being used for transfer learning (if any)
+   * are also listed here.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig}
+   */
+  public static final class TransferLearningConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+      TransferLearningConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use TransferLearningConfig.newBuilder() to construct.
+    private TransferLearningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TransferLearningConfig() {
+      priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TransferLearningConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.StudyProto
+          .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.class,
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder.class);
+    }
+
+    public static final int DISABLE_TRANSFER_LEARNING_FIELD_NUMBER = 1;
+    private boolean disableTransferLearning_;
+    /**
+     *
+     *
+     * <pre>
+     * Flag to to manually prevent vizier from using transfer learning on a
+     * new study. Otherwise, vizier will automatically determine whether or not
+     * to use transfer learning.
+     * </pre>
+     *
+     * <code>bool disable_transfer_learning = 1;</code>
+     *
+     * @return The disableTransferLearning.
+     */
+    @java.lang.Override
+    public boolean getDisableTransferLearning() {
+      return disableTransferLearning_;
+    }
+
+    public static final int PRIOR_STUDY_NAMES_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList priorStudyNames_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the priorStudyNames.
+     */
+    public com.google.protobuf.ProtocolStringList getPriorStudyNamesList() {
+      return priorStudyNames_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of priorStudyNames.
+     */
+    public int getPriorStudyNamesCount() {
+      return priorStudyNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The priorStudyNames at the given index.
+     */
+    public java.lang.String getPriorStudyNames(int index) {
+      return priorStudyNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of previously completed studies
+     * </pre>
+     *
+     * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the priorStudyNames at the given index.
+     */
+    public com.google.protobuf.ByteString getPriorStudyNamesBytes(int index) {
+      return priorStudyNames_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (disableTransferLearning_ != false) {
+        output.writeBool(1, disableTransferLearning_);
+      }
+      for (int i = 0; i < priorStudyNames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, priorStudyNames_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (disableTransferLearning_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disableTransferLearning_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < priorStudyNames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(priorStudyNames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPriorStudyNamesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig other =
+          (com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig) obj;
+
+      if (getDisableTransferLearning() != other.getDisableTransferLearning()) return false;
+      if (!getPriorStudyNamesList().equals(other.getPriorStudyNamesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DISABLE_TRANSFER_LEARNING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableTransferLearning());
+      if (getPriorStudyNamesCount() > 0) {
+        hash = (37 * hash) + PRIOR_STUDY_NAMES_FIELD_NUMBER;
+        hash = (53 * hash) + getPriorStudyNamesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This contains flag for manually disabling transfer learning for a study.
+     * The names of prior studies being used for transfer learning (if any)
+     * are also listed here.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.class,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        disableTransferLearning_ = false;
+
+        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.StudyProto
+            .internal_static_google_cloud_aiplatform_v1beta1_StudySpec_TransferLearningConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig build() {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig result =
+            new com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig(this);
+        int from_bitField0_ = bitField0_;
+        result.disableTransferLearning_ = disableTransferLearning_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          priorStudyNames_ = priorStudyNames_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.priorStudyNames_ = priorStudyNames_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                .getDefaultInstance()) return this;
+        if (other.getDisableTransferLearning() != false) {
+          setDisableTransferLearning(other.getDisableTransferLearning());
+        }
+        if (!other.priorStudyNames_.isEmpty()) {
+          if (priorStudyNames_.isEmpty()) {
+            priorStudyNames_ = other.priorStudyNames_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePriorStudyNamesIsMutable();
+            priorStudyNames_.addAll(other.priorStudyNames_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  disableTransferLearning_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePriorStudyNamesIsMutable();
+                  priorStudyNames_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean disableTransferLearning_;
+      /**
+       *
+       *
+       * <pre>
+       * Flag to to manually prevent vizier from using transfer learning on a
+       * new study. Otherwise, vizier will automatically determine whether or not
+       * to use transfer learning.
+       * </pre>
+       *
+       * <code>bool disable_transfer_learning = 1;</code>
+       *
+       * @return The disableTransferLearning.
+       */
+      @java.lang.Override
+      public boolean getDisableTransferLearning() {
+        return disableTransferLearning_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Flag to to manually prevent vizier from using transfer learning on a
+       * new study. Otherwise, vizier will automatically determine whether or not
+       * to use transfer learning.
+       * </pre>
+       *
+       * <code>bool disable_transfer_learning = 1;</code>
+       *
+       * @param value The disableTransferLearning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableTransferLearning(boolean value) {
+
+        disableTransferLearning_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Flag to to manually prevent vizier from using transfer learning on a
+       * new study. Otherwise, vizier will automatically determine whether or not
+       * to use transfer learning.
+       * </pre>
+       *
+       * <code>bool disable_transfer_learning = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableTransferLearning() {
+
+        disableTransferLearning_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList priorStudyNames_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePriorStudyNamesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          priorStudyNames_ = new com.google.protobuf.LazyStringArrayList(priorStudyNames_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return A list containing the priorStudyNames.
+       */
+      public com.google.protobuf.ProtocolStringList getPriorStudyNamesList() {
+        return priorStudyNames_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The count of priorStudyNames.
+       */
+      public int getPriorStudyNamesCount() {
+        return priorStudyNames_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The priorStudyNames at the given index.
+       */
+      public java.lang.String getPriorStudyNames(int index) {
+        return priorStudyNames_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the priorStudyNames at the given index.
+       */
+      public com.google.protobuf.ByteString getPriorStudyNamesBytes(int index) {
+        return priorStudyNames_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The priorStudyNames to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriorStudyNames(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePriorStudyNamesIsMutable();
+        priorStudyNames_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The priorStudyNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPriorStudyNames(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePriorStudyNamesIsMutable();
+        priorStudyNames_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param values The priorStudyNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPriorStudyNames(java.lang.Iterable<java.lang.String> values) {
+        ensurePriorStudyNamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, priorStudyNames_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPriorStudyNames() {
+        priorStudyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Names of previously completed studies
+       * </pre>
+       *
+       * <code>repeated string prior_study_names = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes of the priorStudyNames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPriorStudyNamesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePriorStudyNamesIsMutable();
+        priorStudyNames_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TransferLearningConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TransferLearningConfig>() {
+          @java.lang.Override
+          public TransferLearningConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TransferLearningConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TransferLearningConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -17969,7 +18178,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -17990,7 +18199,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -18374,6 +18583,66 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int TRANSFER_LEARNING_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+      transferLearningConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration info/options for transfer learning. Currently supported
+   * for Vertex AI Vizier service, not HyperParameterTuningJob
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+   * </code>
+   *
+   * @return Whether the transferLearningConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransferLearningConfig() {
+    return transferLearningConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration info/options for transfer learning. Currently supported
+   * for Vertex AI Vizier service, not HyperParameterTuningJob
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+   * </code>
+   *
+   * @return The transferLearningConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+      getTransferLearningConfig() {
+    return transferLearningConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.getDefaultInstance()
+        : transferLearningConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration info/options for transfer learning. Currently supported
+   * for Vertex AI Vizier service, not HyperParameterTuningJob
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
+      getTransferLearningConfigOrBuilder() {
+    return getTransferLearningConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -18434,7 +18703,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
               automatedStoppingSpec_);
     }
-    unknownFields.writeTo(output);
+    if (transferLearningConfig_ != null) {
+      output.writeMessage(10, getTransferLearningConfig());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -18494,7 +18766,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec)
                   automatedStoppingSpec_);
     }
-    size += unknownFields.getSerializedSize();
+    if (transferLearningConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getTransferLearningConfig());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -18515,6 +18791,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     if (algorithm_ != other.algorithm_) return false;
     if (observationNoise_ != other.observationNoise_) return false;
     if (measurementSelectionType_ != other.measurementSelectionType_) return false;
+    if (hasTransferLearningConfig() != other.hasTransferLearningConfig()) return false;
+    if (hasTransferLearningConfig()) {
+      if (!getTransferLearningConfig().equals(other.getTransferLearningConfig())) return false;
+    }
     if (!getAutomatedStoppingSpecCase().equals(other.getAutomatedStoppingSpecCase())) return false;
     switch (automatedStoppingSpecCase_) {
       case 4:
@@ -18534,7 +18814,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -18559,6 +18839,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + observationNoise_;
     hash = (37 * hash) + MEASUREMENT_SELECTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + measurementSelectionType_;
+    if (hasTransferLearningConfig()) {
+      hash = (37 * hash) + TRANSFER_LEARNING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTransferLearningConfig().hashCode();
+    }
     switch (automatedStoppingSpecCase_) {
       case 4:
         hash = (37 * hash) + DECAY_CURVE_STOPPING_SPEC_FIELD_NUMBER;
@@ -18579,7 +18863,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -18708,43 +18992,53 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.StudySpec.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getMetricsFieldBuilder();
-        getParametersFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (decayCurveStoppingSpecBuilder_ != null) {
+        decayCurveStoppingSpecBuilder_.clear();
+      }
+      if (medianAutomatedStoppingSpecBuilder_ != null) {
+        medianAutomatedStoppingSpecBuilder_.clear();
+      }
+      if (convexStopConfigBuilder_ != null) {
+        convexStopConfigBuilder_.clear();
+      }
+      if (convexAutomatedStoppingSpecBuilder_ != null) {
+        convexAutomatedStoppingSpecBuilder_.clear();
+      }
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        metrics_ = null;
         metricsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (parametersBuilder_ == null) {
         parameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        parameters_ = null;
         parametersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       algorithm_ = 0;
 
       observationNoise_ = 0;
 
       measurementSelectionType_ = 0;
 
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfig_ = null;
+      } else {
+        transferLearningConfig_ = null;
+        transferLearningConfigBuilder_ = null;
+      }
       automatedStoppingSpecCase_ = 0;
       automatedStoppingSpec_ = null;
       return this;
@@ -18824,6 +19118,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       result.algorithm_ = algorithm_;
       result.observationNoise_ = observationNoise_;
       result.measurementSelectionType_ = measurementSelectionType_;
+      if (transferLearningConfigBuilder_ == null) {
+        result.transferLearningConfig_ = transferLearningConfig_;
+      } else {
+        result.transferLearningConfig_ = transferLearningConfigBuilder_.build();
+      }
       result.automatedStoppingSpecCase_ = automatedStoppingSpecCase_;
       onBuilt();
       return result;
@@ -18937,6 +19236,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (other.measurementSelectionType_ != 0) {
         setMeasurementSelectionTypeValue(other.getMeasurementSelectionTypeValue());
       }
+      if (other.hasTransferLearningConfig()) {
+        mergeTransferLearningConfig(other.getTransferLearningConfig());
+      }
       switch (other.getAutomatedStoppingSpecCase()) {
         case DECAY_CURVE_STOPPING_SPEC:
           {
@@ -18963,7 +19265,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -18978,17 +19280,112 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.StudySpec parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.StudySpec.MetricSpec.parser(),
+                        extensionRegistry);
+                if (metricsBuilder_ == null) {
+                  ensureMetricsIsMutable();
+                  metrics_.add(m);
+                } else {
+                  metricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.parser(),
+                        extensionRegistry);
+                if (parametersBuilder_ == null) {
+                  ensureParametersIsMutable();
+                  parameters_.add(m);
+                } else {
+                  parametersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 24:
+              {
+                algorithm_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getDecayCurveStoppingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                automatedStoppingSpecCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getMedianAutomatedStoppingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                automatedStoppingSpecCase_ = 5;
+                break;
+              } // case 42
+            case 48:
+              {
+                observationNoise_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                measurementSelectionType_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(
+                    getConvexStopConfigFieldBuilder().getBuilder(), extensionRegistry);
+                automatedStoppingSpecCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getConvexAutomatedStoppingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                automatedStoppingSpecCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getTransferLearningConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.aiplatform.v1beta1.StudySpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -19520,7 +19917,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=566
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -19541,7 +19938,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=553
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=566
      * @return The convexStopConfig.
      */
     @java.lang.Override
@@ -21118,6 +21515,229 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        transferLearningConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder>
+        transferLearningConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     *
+     * @return Whether the transferLearningConfig field is set.
+     */
+    public boolean hasTransferLearningConfig() {
+      return transferLearningConfigBuilder_ != null || transferLearningConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     *
+     * @return The transferLearningConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+        getTransferLearningConfig() {
+      if (transferLearningConfigBuilder_ == null) {
+        return transferLearningConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                .getDefaultInstance()
+            : transferLearningConfig_;
+      } else {
+        return transferLearningConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder setTransferLearningConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig value) {
+      if (transferLearningConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transferLearningConfig_ = value;
+        onChanged();
+      } else {
+        transferLearningConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder setTransferLearningConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder
+            builderForValue) {
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        transferLearningConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder mergeTransferLearningConfig(
+        com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig value) {
+      if (transferLearningConfigBuilder_ == null) {
+        if (transferLearningConfig_ != null) {
+          transferLearningConfig_ =
+              com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.newBuilder(
+                      transferLearningConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transferLearningConfig_ = value;
+        }
+        onChanged();
+      } else {
+        transferLearningConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public Builder clearTransferLearningConfig() {
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfig_ = null;
+        onChanged();
+      } else {
+        transferLearningConfig_ = null;
+        transferLearningConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder
+        getTransferLearningConfigBuilder() {
+
+      onChanged();
+      return getTransferLearningConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder
+        getTransferLearningConfigOrBuilder() {
+      if (transferLearningConfigBuilder_ != null) {
+        return transferLearningConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return transferLearningConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig
+                .getDefaultInstance()
+            : transferLearningConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration info/options for transfer learning. Currently supported
+     * for Vertex AI Vizier service, not HyperParameterTuningJob
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig transfer_learning_config = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder>
+        getTransferLearningConfigFieldBuilder() {
+      if (transferLearningConfigBuilder_ == null) {
+        transferLearningConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.StudySpec.TransferLearningConfigOrBuilder>(
+                getTransferLearningConfig(), getParentForChildren(), isClean());
+        transferLearningConfig_ = null;
+      }
+      return transferLearningConfigBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -21150,7 +21770,18 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StudySpec(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-batch-bom</artifactId>
-  <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
+  <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
   <packaging>pom</packaging>
   <parent>
-    <groupId>com.google.api</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -66,27 +66,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-batch</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-batch-v1</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1:current} -->
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-batch-v1alpha</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1alpha:current} -->
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-batch-v1</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1:current} -->
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-batch-v1alpha</artifactId>
-        <version>0.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1alpha:current} -->
+        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

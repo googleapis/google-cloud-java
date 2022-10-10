@@ -232,5 +232,14 @@ for library in s.get_staging_dirs():
 
 s.remove_staging_dirs()
 java.common_templates(excludes=[
-    '.kokoro/nightly/integration.cfg'
+    ".github/*",
+    ".kokoro/*",
+    "samples/*",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "java.header",
+    "license-checks.xml",
+    "renovate.json"
 ])

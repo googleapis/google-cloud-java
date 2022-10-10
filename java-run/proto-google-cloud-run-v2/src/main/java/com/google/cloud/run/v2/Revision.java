@@ -65,302 +65,6 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Revision(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 24:
-            {
-              generation_ = input.readInt64();
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (deleteTime_ != null) {
-                subBuilder = deleteTime_.toBuilder();
-              }
-              deleteTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deleteTime_);
-                deleteTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expireTime_ != null) {
-                subBuilder = expireTime_.toBuilder();
-              }
-              expireTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expireTime_);
-                expireTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              launchStage_ = rawValue;
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              service_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.run.v2.RevisionScaling.Builder subBuilder = null;
-              if (scaling_ != null) {
-                subBuilder = scaling_.toBuilder();
-              }
-              scaling_ =
-                  input.readMessage(
-                      com.google.cloud.run.v2.RevisionScaling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scaling_);
-                scaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.run.v2.VpcAccess.Builder subBuilder = null;
-              if (vpcAccess_ != null) {
-                subBuilder = vpcAccess_.toBuilder();
-              }
-              vpcAccess_ =
-                  input.readMessage(com.google.cloud.run.v2.VpcAccess.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vpcAccess_);
-                vpcAccess_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (timeout_ != null) {
-                subBuilder = timeout_.toBuilder();
-              }
-              timeout_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timeout_);
-                timeout_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccount_ = s;
-              break;
-            }
-          case 138:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                containers_ = new java.util.ArrayList<com.google.cloud.run.v2.Container>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              containers_.add(
-                  input.readMessage(com.google.cloud.run.v2.Container.parser(), extensionRegistry));
-              break;
-            }
-          case 146:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                volumes_ = new java.util.ArrayList<com.google.cloud.run.v2.Volume>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              volumes_.add(
-                  input.readMessage(com.google.cloud.run.v2.Volume.parser(), extensionRegistry));
-              break;
-            }
-          case 160:
-            {
-              int rawValue = input.readEnum();
-
-              executionEnvironment_ = rawValue;
-              break;
-            }
-          case 170:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              encryptionKey_ = s;
-              break;
-            }
-          case 240:
-            {
-              reconciling_ = input.readBool();
-              break;
-            }
-          case 250:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              conditions_.add(
-                  input.readMessage(com.google.cloud.run.v2.Condition.parser(), extensionRegistry));
-              break;
-            }
-          case 256:
-            {
-              observedGeneration_ = input.readInt64();
-              break;
-            }
-          case 266:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              logUri_ = s;
-              break;
-            }
-          case 272:
-            {
-              maxInstanceRequestConcurrency_ = input.readInt32();
-              break;
-            }
-          case 794:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        containers_ = java.util.Collections.unmodifiableList(containers_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        volumes_ = java.util.Collections.unmodifiableList(volumes_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        conditions_ = java.util.Collections.unmodifiableList(conditions_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.RevisionProto
         .internal_static_google_cloud_run_v2_Revision_descriptor;
@@ -1795,7 +1499,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1897,7 +1601,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1959,7 +1663,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (getObservedGeneration() != other.getObservedGeneration()) return false;
     if (!getLogUri().equals(other.getLogUri())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2044,7 +1748,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getLogUri().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2198,21 +1902,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.run.v2.Revision.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getContainersFieldBuilder();
-        getVolumesFieldBuilder();
-        getConditionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2278,16 +1971,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
 
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        containers_ = null;
         containersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (volumesBuilder_ == null) {
         volumes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        volumes_ = null;
         volumesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       executionEnvironment_ = 0;
 
       encryptionKey_ = "";
@@ -2296,10 +1991,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
 
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        conditions_ = null;
         conditionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       observedGeneration_ = 0L;
 
       logUri_ = "";
@@ -2611,7 +2307,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2626,17 +2322,211 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.run.v2.Revision parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                generation_ = input.readInt64();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 80:
+              {
+                launchStage_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                service_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getScalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getVpcAccessFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                com.google.cloud.run.v2.Container m =
+                    input.readMessage(
+                        com.google.cloud.run.v2.Container.parser(), extensionRegistry);
+                if (containersBuilder_ == null) {
+                  ensureContainersIsMutable();
+                  containers_.add(m);
+                } else {
+                  containersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
+            case 146:
+              {
+                com.google.cloud.run.v2.Volume m =
+                    input.readMessage(com.google.cloud.run.v2.Volume.parser(), extensionRegistry);
+                if (volumesBuilder_ == null) {
+                  ensureVolumesIsMutable();
+                  volumes_.add(m);
+                } else {
+                  volumesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 146
+            case 160:
+              {
+                executionEnvironment_ = input.readEnum();
+
+                break;
+              } // case 160
+            case 170:
+              {
+                encryptionKey_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 170
+            case 240:
+              {
+                reconciling_ = input.readBool();
+
+                break;
+              } // case 240
+            case 250:
+              {
+                com.google.cloud.run.v2.Condition m =
+                    input.readMessage(
+                        com.google.cloud.run.v2.Condition.parser(), extensionRegistry);
+                if (conditionsBuilder_ == null) {
+                  ensureConditionsIsMutable();
+                  conditions_.add(m);
+                } else {
+                  conditionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 250
+            case 256:
+              {
+                observedGeneration_ = input.readInt64();
+
+                break;
+              } // case 256
+            case 266:
+              {
+                logUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 266
+            case 272:
+              {
+                maxInstanceRequestConcurrency_ = input.readInt32();
+
+                break;
+              } // case 272
+            case 794:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 794
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.run.v2.Revision) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6753,7 +6643,18 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Revision(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

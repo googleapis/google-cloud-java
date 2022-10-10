@@ -53,67 +53,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private TaskStatus(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                statusEvents_ = new java.util.ArrayList<com.google.cloud.batch.v1.StatusEvent>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              statusEvents_.add(
-                  input.readMessage(
-                      com.google.cloud.batch.v1.StatusEvent.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        statusEvents_ = java.util.Collections.unmodifiableList(statusEvents_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1.TaskProto
         .internal_static_google_cloud_batch_v1_TaskStatus_descriptor;
@@ -477,7 +416,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < statusEvents_.size(); i++) {
       output.writeMessage(2, statusEvents_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -492,7 +431,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < statusEvents_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, statusEvents_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -509,7 +448,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
     if (state_ != other.state_) return false;
     if (!getStatusEventsList().equals(other.getStatusEventsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -526,7 +465,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STATUS_EVENTS_FIELD_NUMBER;
       hash = (53 * hash) + getStatusEventsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -654,19 +593,10 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.batch.v1.TaskStatus.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getStatusEventsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -676,10 +606,11 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
       if (statusEventsBuilder_ == null) {
         statusEvents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        statusEvents_ = null;
         statusEventsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -796,7 +727,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -811,17 +742,50 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.batch.v1.TaskStatus parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                com.google.cloud.batch.v1.StatusEvent m =
+                    input.readMessage(
+                        com.google.cloud.batch.v1.StatusEvent.parser(), extensionRegistry);
+                if (statusEventsBuilder_ == null) {
+                  ensureStatusEventsIsMutable();
+                  statusEvents_.add(m);
+                } else {
+                  statusEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.batch.v1.TaskStatus) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1300,7 +1264,18 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TaskStatus(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

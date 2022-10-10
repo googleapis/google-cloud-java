@@ -52,104 +52,6 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private RecognitionFeatures(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              profanityFilter_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
-              enableWordTimeOffsets_ = input.readBool();
-              break;
-            }
-          case 24:
-            {
-              enableWordConfidence_ = input.readBool();
-              break;
-            }
-          case 32:
-            {
-              enableAutomaticPunctuation_ = input.readBool();
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.speech.v2.SpeakerDiarizationConfig.Builder subBuilder = null;
-              if (diarizationConfig_ != null) {
-                subBuilder = diarizationConfig_.toBuilder();
-              }
-              diarizationConfig_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.SpeakerDiarizationConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(diarizationConfig_);
-                diarizationConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 112:
-            {
-              enableSpokenPunctuation_ = input.readBool();
-              break;
-            }
-          case 120:
-            {
-              enableSpokenEmojis_ = input.readBool();
-              break;
-            }
-          case 128:
-            {
-              maxAlternatives_ = input.readInt32();
-              break;
-            }
-          case 136:
-            {
-              int rawValue = input.readEnum();
-
-              multiChannelMode_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_RecognitionFeatures_descriptor;
@@ -609,7 +511,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(17, multiChannelMode_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -648,7 +550,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, multiChannelMode_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -676,7 +578,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       if (!getDiarizationConfig().equals(other.getDiarizationConfig())) return false;
     }
     if (getMaxAlternatives() != other.getMaxAlternatives()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -707,7 +609,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + MAX_ALTERNATIVES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxAlternatives();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -836,17 +738,10 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.speech.v2.RecognitionFeatures.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -990,7 +885,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       if (other.getMaxAlternatives() != 0) {
         setMaxAlternatives(other.getMaxAlternatives());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1005,17 +900,86 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.speech.v2.RecognitionFeatures parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                profanityFilter_ = input.readBool();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                enableWordTimeOffsets_ = input.readBool();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                enableWordConfidence_ = input.readBool();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                enableAutomaticPunctuation_ = input.readBool();
+
+                break;
+              } // case 32
+            case 74:
+              {
+                input.readMessage(
+                    getDiarizationConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 112:
+              {
+                enableSpokenPunctuation_ = input.readBool();
+
+                break;
+              } // case 112
+            case 120:
+              {
+                enableSpokenEmojis_ = input.readBool();
+
+                break;
+              } // case 120
+            case 128:
+              {
+                maxAlternatives_ = input.readInt32();
+
+                break;
+              } // case 128
+            case 136:
+              {
+                multiChannelMode_ = input.readEnum();
+
+                break;
+              } // case 136
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.speech.v2.RecognitionFeatures) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1824,7 +1788,18 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RecognitionFeatures(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

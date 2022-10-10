@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog-bom</artifactId>
-  <version>1.9.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+  <version>1.9.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   <packaging>pom</packaging>
   <parent>
-    <groupId>com.google.api</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -53,27 +53,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog</artifactId>
-        <version>1.9.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+        <version>1.9.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datacatalog-v1</artifactId>
-        <version>1.9.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1:current} -->
+        <version>1.9.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.46.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
+        <version>0.46.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-        <version>1.9.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
+        <version>1.9.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.46.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
+        <version>0.46.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

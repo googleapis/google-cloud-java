@@ -22,8 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
+ * Request message for [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest}
@@ -53,76 +52,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     return this.unknownFields;
   }
 
-  private DeleteFeatureValuesRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              entityType_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity.Builder
-                  subBuilder = null;
-              if (deleteOptionCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
-                            deleteOption_)
-                        .toBuilder();
-              }
-              deleteOption_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
-                        deleteOption_);
-                deleteOption_ = subBuilder.buildPartial();
-              }
-              deleteOptionCase_ = 2;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor;
@@ -147,8 +76,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be
-     * deleted from the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be deleted from
+     * the EntityType.
      * </pre>
      *
      * <code>
@@ -162,8 +91,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be
-     * deleted from the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be deleted from
+     * the EntityType.
      * </pre>
      *
      * <code>
@@ -177,8 +106,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be
-     * deleted from the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be deleted from
+     * the EntityType.
      * </pre>
      *
      * <code>
@@ -221,62 +150,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       return this.unknownFields;
     }
 
-    private SelectEntity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.aiplatform.v1beta1.EntityIdSelector.Builder subBuilder = null;
-                if (entityIdSelector_ != null) {
-                  subBuilder = entityIdSelector_.toBuilder();
-                }
-                entityIdSelector_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.EntityIdSelector.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(entityIdSelector_);
-                  entityIdSelector_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
           .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_descriptor;
@@ -299,8 +172,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be
-     * deleted from the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be deleted from
+     * the EntityType.
      * </pre>
      *
      * <code>
@@ -317,8 +190,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be
-     * deleted from the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be deleted from
+     * the EntityType.
      * </pre>
      *
      * <code>
@@ -337,8 +210,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be
-     * deleted from the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be deleted from
+     * the EntityType.
      * </pre>
      *
      * <code>
@@ -368,7 +241,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (entityIdSelector_ != null) {
         output.writeMessage(1, getEntityIdSelector());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -380,7 +253,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (entityIdSelector_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEntityIdSelector());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -401,7 +274,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (hasEntityIdSelector()) {
         if (!getEntityIdSelector().equals(other.getEntityIdSelector())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -416,7 +289,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         hash = (37 * hash) + ENTITY_ID_SELECTOR_FIELD_NUMBER;
         hash = (53 * hash) + getEntityIdSelector().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -558,17 +431,10 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -676,7 +542,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         if (other.hasEntityIdSelector()) {
           mergeEntityIdSelector(other.getEntityIdSelector());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -691,20 +557,38 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getEntityIdSelectorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -718,8 +602,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -735,8 +619,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -758,8 +642,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -784,8 +668,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -807,8 +691,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -837,8 +721,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -860,8 +744,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -878,8 +762,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -900,8 +784,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be
-       * deleted from the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be deleted from
+       * the EntityType.
        * </pre>
        *
        * <code>
@@ -961,7 +845,19 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SelectEntity(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -981,6 +877,1283 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     }
   }
 
+  public interface SelectTimeRangeAndFeatureOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Select feature generated within a half-inclusive time range.
+     * The time range is lower inclusive and upper exclusive.
+     * </pre>
+     *
+     * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the timeRange field is set.
+     */
+    boolean hasTimeRange();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Select feature generated within a half-inclusive time range.
+     * The time range is lower inclusive and upper exclusive.
+     * </pre>
+     *
+     * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The timeRange.
+     */
+    com.google.type.Interval getTimeRange();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Select feature generated within a half-inclusive time range.
+     * The time range is lower inclusive and upper exclusive.
+     * </pre>
+     *
+     * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    com.google.type.IntervalOrBuilder getTimeRangeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selectors choosing which feature values to be deleted from the
+     * EntityType.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the featureSelector field is set.
+     */
+    boolean hasFeatureSelector();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selectors choosing which feature values to be deleted from the
+     * EntityType.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The featureSelector.
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureSelector getFeatureSelector();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selectors choosing which feature values to be deleted from the
+     * EntityType.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder getFeatureSelectorOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, data will not be deleted from online storage.
+     * When time range is older than the data in online storage, setting this to
+     * be true will make the deletion have no impact on online serving.
+     * </pre>
+     *
+     * <code>bool skip_online_storage_delete = 3;</code>
+     *
+     * @return The skipOnlineStorageDelete.
+     */
+    boolean getSkipOnlineStorageDelete();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Message to select time range and feature.
+   * Values of the selected feature generated within an inclusive time range
+   * will be deleted.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature}
+   */
+  public static final class SelectTimeRangeAndFeature extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
+      SelectTimeRangeAndFeatureOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SelectTimeRangeAndFeature.newBuilder() to construct.
+    private SelectTimeRangeAndFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SelectTimeRangeAndFeature() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SelectTimeRangeAndFeature();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectTimeRangeAndFeature_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectTimeRangeAndFeature_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                  .SelectTimeRangeAndFeature.class,
+              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                  .SelectTimeRangeAndFeature.Builder.class);
+    }
+
+    public static final int TIME_RANGE_FIELD_NUMBER = 1;
+    private com.google.type.Interval timeRange_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Select feature generated within a half-inclusive time range.
+     * The time range is lower inclusive and upper exclusive.
+     * </pre>
+     *
+     * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the timeRange field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimeRange() {
+      return timeRange_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Select feature generated within a half-inclusive time range.
+     * The time range is lower inclusive and upper exclusive.
+     * </pre>
+     *
+     * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The timeRange.
+     */
+    @java.lang.Override
+    public com.google.type.Interval getTimeRange() {
+      return timeRange_ == null ? com.google.type.Interval.getDefaultInstance() : timeRange_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Select feature generated within a half-inclusive time range.
+     * The time range is lower inclusive and upper exclusive.
+     * </pre>
+     *
+     * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public com.google.type.IntervalOrBuilder getTimeRangeOrBuilder() {
+      return getTimeRange();
+    }
+
+    public static final int FEATURE_SELECTOR_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.FeatureSelector featureSelector_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selectors choosing which feature values to be deleted from the
+     * EntityType.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the featureSelector field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeatureSelector() {
+      return featureSelector_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selectors choosing which feature values to be deleted from the
+     * EntityType.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The featureSelector.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureSelector getFeatureSelector() {
+      return featureSelector_ == null
+          ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
+          : featureSelector_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Selectors choosing which feature values to be deleted from the
+     * EntityType.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder
+        getFeatureSelectorOrBuilder() {
+      return getFeatureSelector();
+    }
+
+    public static final int SKIP_ONLINE_STORAGE_DELETE_FIELD_NUMBER = 3;
+    private boolean skipOnlineStorageDelete_;
+    /**
+     *
+     *
+     * <pre>
+     * If set, data will not be deleted from online storage.
+     * When time range is older than the data in online storage, setting this to
+     * be true will make the deletion have no impact on online serving.
+     * </pre>
+     *
+     * <code>bool skip_online_storage_delete = 3;</code>
+     *
+     * @return The skipOnlineStorageDelete.
+     */
+    @java.lang.Override
+    public boolean getSkipOnlineStorageDelete() {
+      return skipOnlineStorageDelete_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (timeRange_ != null) {
+        output.writeMessage(1, getTimeRange());
+      }
+      if (featureSelector_ != null) {
+        output.writeMessage(2, getFeatureSelector());
+      }
+      if (skipOnlineStorageDelete_ != false) {
+        output.writeBool(3, skipOnlineStorageDelete_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (timeRange_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTimeRange());
+      }
+      if (featureSelector_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFeatureSelector());
+      }
+      if (skipOnlineStorageDelete_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, skipOnlineStorageDelete_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+          other =
+              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                      .SelectTimeRangeAndFeature)
+                  obj;
+
+      if (hasTimeRange() != other.hasTimeRange()) return false;
+      if (hasTimeRange()) {
+        if (!getTimeRange().equals(other.getTimeRange())) return false;
+      }
+      if (hasFeatureSelector() != other.hasFeatureSelector()) return false;
+      if (hasFeatureSelector()) {
+        if (!getFeatureSelector().equals(other.getFeatureSelector())) return false;
+      }
+      if (getSkipOnlineStorageDelete() != other.getSkipOnlineStorageDelete()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTimeRange()) {
+        hash = (37 * hash) + TIME_RANGE_FIELD_NUMBER;
+        hash = (53 * hash) + getTimeRange().hashCode();
+      }
+      if (hasFeatureSelector()) {
+        hash = (37 * hash) + FEATURE_SELECTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getFeatureSelector().hashCode();
+      }
+      hash = (37 * hash) + SKIP_ONLINE_STORAGE_DELETE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipOnlineStorageDelete());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Message to select time range and feature.
+     * Values of the selected feature generated within an inclusive time range
+     * will be deleted.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeatureOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectTimeRangeAndFeature_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectTimeRangeAndFeature_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeature.class,
+                com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeature.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (timeRangeBuilder_ == null) {
+          timeRange_ = null;
+        } else {
+          timeRange_ = null;
+          timeRangeBuilder_ = null;
+        }
+        if (featureSelectorBuilder_ == null) {
+          featureSelector_ = null;
+        } else {
+          featureSelector_ = null;
+          featureSelectorBuilder_ = null;
+        }
+        skipOnlineStorageDelete_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectTimeRangeAndFeature_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature
+          build() {
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+            result =
+                new com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeature(this);
+        if (timeRangeBuilder_ == null) {
+          result.timeRange_ = timeRange_;
+        } else {
+          result.timeRange_ = timeRangeBuilder_.build();
+        }
+        if (featureSelectorBuilder_ == null) {
+          result.featureSelector_ = featureSelector_;
+        } else {
+          result.featureSelector_ = featureSelectorBuilder_.build();
+        }
+        result.skipOnlineStorageDelete_ = skipOnlineStorageDelete_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                .SelectTimeRangeAndFeature) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                      .SelectTimeRangeAndFeature)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+              other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                .SelectTimeRangeAndFeature.getDefaultInstance()) return this;
+        if (other.hasTimeRange()) {
+          mergeTimeRange(other.getTimeRange());
+        }
+        if (other.hasFeatureSelector()) {
+          mergeFeatureSelector(other.getFeatureSelector());
+        }
+        if (other.getSkipOnlineStorageDelete() != false) {
+          setSkipOnlineStorageDelete(other.getSkipOnlineStorageDelete());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getTimeRangeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getFeatureSelectorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 24:
+                {
+                  skipOnlineStorageDelete_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private com.google.type.Interval timeRange_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Interval,
+              com.google.type.Interval.Builder,
+              com.google.type.IntervalOrBuilder>
+          timeRangeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the timeRange field is set.
+       */
+      public boolean hasTimeRange() {
+        return timeRangeBuilder_ != null || timeRange_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The timeRange.
+       */
+      public com.google.type.Interval getTimeRange() {
+        if (timeRangeBuilder_ == null) {
+          return timeRange_ == null ? com.google.type.Interval.getDefaultInstance() : timeRange_;
+        } else {
+          return timeRangeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setTimeRange(com.google.type.Interval value) {
+        if (timeRangeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timeRange_ = value;
+          onChanged();
+        } else {
+          timeRangeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setTimeRange(com.google.type.Interval.Builder builderForValue) {
+        if (timeRangeBuilder_ == null) {
+          timeRange_ = builderForValue.build();
+          onChanged();
+        } else {
+          timeRangeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeTimeRange(com.google.type.Interval value) {
+        if (timeRangeBuilder_ == null) {
+          if (timeRange_ != null) {
+            timeRange_ =
+                com.google.type.Interval.newBuilder(timeRange_).mergeFrom(value).buildPartial();
+          } else {
+            timeRange_ = value;
+          }
+          onChanged();
+        } else {
+          timeRangeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearTimeRange() {
+        if (timeRangeBuilder_ == null) {
+          timeRange_ = null;
+          onChanged();
+        } else {
+          timeRange_ = null;
+          timeRangeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.type.Interval.Builder getTimeRangeBuilder() {
+
+        onChanged();
+        return getTimeRangeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.type.IntervalOrBuilder getTimeRangeOrBuilder() {
+        if (timeRangeBuilder_ != null) {
+          return timeRangeBuilder_.getMessageOrBuilder();
+        } else {
+          return timeRange_ == null ? com.google.type.Interval.getDefaultInstance() : timeRange_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Select feature generated within a half-inclusive time range.
+       * The time range is lower inclusive and upper exclusive.
+       * </pre>
+       *
+       * <code>.google.type.Interval time_range = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.Interval,
+              com.google.type.Interval.Builder,
+              com.google.type.IntervalOrBuilder>
+          getTimeRangeFieldBuilder() {
+        if (timeRangeBuilder_ == null) {
+          timeRangeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Interval,
+                  com.google.type.Interval.Builder,
+                  com.google.type.IntervalOrBuilder>(
+                  getTimeRange(), getParentForChildren(), isClean());
+          timeRange_ = null;
+        }
+        return timeRangeBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.FeatureSelector featureSelector_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureSelector,
+              com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder>
+          featureSelectorBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the featureSelector field is set.
+       */
+      public boolean hasFeatureSelector() {
+        return featureSelectorBuilder_ != null || featureSelector_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The featureSelector.
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureSelector getFeatureSelector() {
+        if (featureSelectorBuilder_ == null) {
+          return featureSelector_ == null
+              ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
+              : featureSelector_;
+        } else {
+          return featureSelectorBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setFeatureSelector(com.google.cloud.aiplatform.v1beta1.FeatureSelector value) {
+        if (featureSelectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          featureSelector_ = value;
+          onChanged();
+        } else {
+          featureSelectorBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setFeatureSelector(
+          com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder builderForValue) {
+        if (featureSelectorBuilder_ == null) {
+          featureSelector_ = builderForValue.build();
+          onChanged();
+        } else {
+          featureSelectorBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeFeatureSelector(
+          com.google.cloud.aiplatform.v1beta1.FeatureSelector value) {
+        if (featureSelectorBuilder_ == null) {
+          if (featureSelector_ != null) {
+            featureSelector_ =
+                com.google.cloud.aiplatform.v1beta1.FeatureSelector.newBuilder(featureSelector_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            featureSelector_ = value;
+          }
+          onChanged();
+        } else {
+          featureSelectorBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearFeatureSelector() {
+        if (featureSelectorBuilder_ == null) {
+          featureSelector_ = null;
+          onChanged();
+        } else {
+          featureSelector_ = null;
+          featureSelectorBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder
+          getFeatureSelectorBuilder() {
+
+        onChanged();
+        return getFeatureSelectorFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder
+          getFeatureSelectorOrBuilder() {
+        if (featureSelectorBuilder_ != null) {
+          return featureSelectorBuilder_.getMessageOrBuilder();
+        } else {
+          return featureSelector_ == null
+              ? com.google.cloud.aiplatform.v1beta1.FeatureSelector.getDefaultInstance()
+              : featureSelector_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Selectors choosing which feature values to be deleted from the
+       * EntityType.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.FeatureSelector,
+              com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder,
+              com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder>
+          getFeatureSelectorFieldBuilder() {
+        if (featureSelectorBuilder_ == null) {
+          featureSelectorBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.FeatureSelector,
+                  com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder,
+                  com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder>(
+                  getFeatureSelector(), getParentForChildren(), isClean());
+          featureSelector_ = null;
+        }
+        return featureSelectorBuilder_;
+      }
+
+      private boolean skipOnlineStorageDelete_;
+      /**
+       *
+       *
+       * <pre>
+       * If set, data will not be deleted from online storage.
+       * When time range is older than the data in online storage, setting this to
+       * be true will make the deletion have no impact on online serving.
+       * </pre>
+       *
+       * <code>bool skip_online_storage_delete = 3;</code>
+       *
+       * @return The skipOnlineStorageDelete.
+       */
+      @java.lang.Override
+      public boolean getSkipOnlineStorageDelete() {
+        return skipOnlineStorageDelete_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, data will not be deleted from online storage.
+       * When time range is older than the data in online storage, setting this to
+       * be true will make the deletion have no impact on online serving.
+       * </pre>
+       *
+       * <code>bool skip_online_storage_delete = 3;</code>
+       *
+       * @param value The skipOnlineStorageDelete to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkipOnlineStorageDelete(boolean value) {
+
+        skipOnlineStorageDelete_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, data will not be deleted from online storage.
+       * When time range is older than the data in online storage, setting this to
+       * be true will make the deletion have no impact on online serving.
+       * </pre>
+       *
+       * <code>bool skip_online_storage_delete = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSkipOnlineStorageDelete() {
+
+        skipOnlineStorageDelete_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
+    private static final com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SelectTimeRangeAndFeature> PARSER =
+        new com.google.protobuf.AbstractParser<SelectTimeRangeAndFeature>() {
+          @java.lang.Override
+          public SelectTimeRangeAndFeature parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SelectTimeRangeAndFeature> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SelectTimeRangeAndFeature> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int deleteOptionCase_ = 0;
   private java.lang.Object deleteOption_;
 
@@ -989,6 +2162,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SELECT_ENTITY(2),
+    SELECT_TIME_RANGE_AND_FEATURE(3),
     DELETEOPTION_NOT_SET(0);
     private final int value;
 
@@ -1009,6 +2183,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       switch (value) {
         case 2:
           return SELECT_ENTITY;
+        case 3:
+          return SELECT_TIME_RANGE_AND_FEATURE;
         case 0:
           return DELETEOPTION_NOT_SET;
         default:
@@ -1088,14 +2264,83 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         .getDefaultInstance();
   }
 
+  public static final int SELECT_TIME_RANGE_AND_FEATURE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Select feature values to be deleted by specifying time range and
+   * features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+   * </code>
+   *
+   * @return Whether the selectTimeRangeAndFeature field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelectTimeRangeAndFeature() {
+    return deleteOptionCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Select feature values to be deleted by specifying time range and
+   * features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+   * </code>
+   *
+   * @return The selectTimeRangeAndFeature.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+      getSelectTimeRangeAndFeature() {
+    if (deleteOptionCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature)
+          deleteOption_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Select feature values to be deleted by specifying time range and
+   * features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+          .SelectTimeRangeAndFeatureOrBuilder
+      getSelectTimeRangeAndFeatureOrBuilder() {
+    if (deleteOptionCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+              .SelectTimeRangeAndFeature)
+          deleteOption_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+        .getDefaultInstance();
+  }
+
   public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object entityType_;
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for
-   * which values are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for which values
+   * are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -1121,8 +2366,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for
-   * which values are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for which values
+   * are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -1168,7 +2413,13 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
               deleteOption_);
     }
-    unknownFields.writeTo(output);
+    if (deleteOptionCase_ == 3) {
+      output.writeMessage(
+          3,
+          (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
+              deleteOption_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1187,7 +2438,15 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
               (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
                   deleteOption_);
     }
-    size += unknownFields.getSerializedSize();
+    if (deleteOptionCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3,
+              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                      .SelectTimeRangeAndFeature)
+                  deleteOption_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1209,10 +2468,14 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       case 2:
         if (!getSelectEntity().equals(other.getSelectEntity())) return false;
         break;
+      case 3:
+        if (!getSelectTimeRangeAndFeature().equals(other.getSelectTimeRangeAndFeature()))
+          return false;
+        break;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1230,10 +2493,14 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         hash = (37 * hash) + SELECT_ENTITY_FIELD_NUMBER;
         hash = (53 * hash) + getSelectEntity().hashCode();
         break;
+      case 3:
+        hash = (37 * hash) + SELECT_TIME_RANGE_AND_FEATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectTimeRangeAndFeature().hashCode();
+        break;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1338,8 +2605,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for
-   * [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
+   * Request message for [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest}
@@ -1364,22 +2630,21 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (selectEntityBuilder_ != null) {
+        selectEntityBuilder_.clear();
+      }
+      if (selectTimeRangeAndFeatureBuilder_ != null) {
+        selectTimeRangeAndFeatureBuilder_.clear();
+      }
       entityType_ = "";
 
       deleteOptionCase_ = 0;
@@ -1417,6 +2682,13 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           result.deleteOption_ = deleteOption_;
         } else {
           result.deleteOption_ = selectEntityBuilder_.build();
+        }
+      }
+      if (deleteOptionCase_ == 3) {
+        if (selectTimeRangeAndFeatureBuilder_ == null) {
+          result.deleteOption_ = deleteOption_;
+        } else {
+          result.deleteOption_ = selectTimeRangeAndFeatureBuilder_.build();
         }
       }
       result.entityType_ = entityType_;
@@ -1482,12 +2754,17 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             mergeSelectEntity(other.getSelectEntity());
             break;
           }
+        case SELECT_TIME_RANGE_AND_FEATURE:
+          {
+            mergeSelectTimeRangeAndFeature(other.getSelectTimeRangeAndFeature());
+            break;
+          }
         case DELETEOPTION_NOT_SET:
           {
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1502,19 +2779,50 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                entityType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getSelectEntityFieldBuilder().getBuilder(), extensionRegistry);
+                deleteOptionCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getSelectTimeRangeAndFeatureFieldBuilder().getBuilder(), extensionRegistry);
+                deleteOptionCase_ = 3;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1779,13 +3087,286 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       return selectEntityBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                .SelectTimeRangeAndFeature,
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                .SelectTimeRangeAndFeatureOrBuilder>
+        selectTimeRangeAndFeatureBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     *
+     * @return Whether the selectTimeRangeAndFeature field is set.
+     */
+    @java.lang.Override
+    public boolean hasSelectTimeRangeAndFeature() {
+      return deleteOptionCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     *
+     * @return The selectTimeRangeAndFeature.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+        getSelectTimeRangeAndFeature() {
+      if (selectTimeRangeAndFeatureBuilder_ == null) {
+        if (deleteOptionCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                  .SelectTimeRangeAndFeature)
+              deleteOption_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature.getDefaultInstance();
+      } else {
+        if (deleteOptionCase_ == 3) {
+          return selectTimeRangeAndFeatureBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    public Builder setSelectTimeRangeAndFeature(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+            value) {
+      if (selectTimeRangeAndFeatureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deleteOption_ = value;
+        onChanged();
+      } else {
+        selectTimeRangeAndFeatureBuilder_.setMessage(value);
+      }
+      deleteOptionCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    public Builder setSelectTimeRangeAndFeature(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+                .Builder
+            builderForValue) {
+      if (selectTimeRangeAndFeatureBuilder_ == null) {
+        deleteOption_ = builderForValue.build();
+        onChanged();
+      } else {
+        selectTimeRangeAndFeatureBuilder_.setMessage(builderForValue.build());
+      }
+      deleteOptionCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    public Builder mergeSelectTimeRangeAndFeature(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+            value) {
+      if (selectTimeRangeAndFeatureBuilder_ == null) {
+        if (deleteOptionCase_ == 3
+            && deleteOption_
+                != com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeature.getDefaultInstance()) {
+          deleteOption_ =
+              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                  .SelectTimeRangeAndFeature.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                              .SelectTimeRangeAndFeature)
+                          deleteOption_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deleteOption_ = value;
+        }
+        onChanged();
+      } else {
+        if (deleteOptionCase_ == 3) {
+          selectTimeRangeAndFeatureBuilder_.mergeFrom(value);
+        } else {
+          selectTimeRangeAndFeatureBuilder_.setMessage(value);
+        }
+      }
+      deleteOptionCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    public Builder clearSelectTimeRangeAndFeature() {
+      if (selectTimeRangeAndFeatureBuilder_ == null) {
+        if (deleteOptionCase_ == 3) {
+          deleteOptionCase_ = 0;
+          deleteOption_ = null;
+          onChanged();
+        }
+      } else {
+        if (deleteOptionCase_ == 3) {
+          deleteOptionCase_ = 0;
+          deleteOption_ = null;
+        }
+        selectTimeRangeAndFeatureBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+            .Builder
+        getSelectTimeRangeAndFeatureBuilder() {
+      return getSelectTimeRangeAndFeatureFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeatureOrBuilder
+        getSelectTimeRangeAndFeatureOrBuilder() {
+      if ((deleteOptionCase_ == 3) && (selectTimeRangeAndFeatureBuilder_ != null)) {
+        return selectTimeRangeAndFeatureBuilder_.getMessageOrBuilder();
+      } else {
+        if (deleteOptionCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                  .SelectTimeRangeAndFeature)
+              deleteOption_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+            .SelectTimeRangeAndFeature.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Select feature values to be deleted by specifying time range and
+     * features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature select_time_range_and_feature = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                .SelectTimeRangeAndFeature,
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
+                .Builder,
+            com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                .SelectTimeRangeAndFeatureOrBuilder>
+        getSelectTimeRangeAndFeatureFieldBuilder() {
+      if (selectTimeRangeAndFeatureBuilder_ == null) {
+        if (!(deleteOptionCase_ == 3)) {
+          deleteOption_ =
+              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                  .SelectTimeRangeAndFeature.getDefaultInstance();
+        }
+        selectTimeRangeAndFeatureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeature,
+                com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeature.Builder,
+                com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                    .SelectTimeRangeAndFeatureOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
+                        .SelectTimeRangeAndFeature)
+                    deleteOption_,
+                getParentForChildren(),
+                isClean());
+        deleteOption_ = null;
+      }
+      deleteOptionCase_ = 3;
+      onChanged();
+      ;
+      return selectTimeRangeAndFeatureBuilder_;
+    }
+
     private java.lang.Object entityType_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for
-     * which values are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for which values
+     * are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -1810,8 +3391,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for
-     * which values are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for which values
+     * are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -1836,8 +3417,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for
-     * which values are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for which values
+     * are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -1861,8 +3442,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for
-     * which values are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for which values
+     * are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -1882,8 +3463,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for
-     * which values are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for which values
+     * are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -1939,7 +3520,18 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteFeatureValuesRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -9,16 +9,29 @@ mkdir -p CoverageAggregator
 cp "${GENERATION_DIR}/coverage.pom.xml" CoverageAggregator/pom.xml
 
 # create aggregator project for jacoco
-mvn compile -Dexec.executable='echo' \
--Dexec.args='<dependency><groupId>${project.groupId}</groupId><artifactId>${project.artifactId}</artifactId><version>${project.version}</version></dependency>' \
-exec:exec -q -B | grep -v 'CoverageAggregator\|bom\|parent\|proto\-\|grpc-\|google\-cloud\-java' > /tmp/coverage-modules.txt
+module_lines=""
+# For modules that produce coverage
+for pom_file in $(find . -mindepth 2 -maxdepth 3 -name pom.xml | sort --dictionary-order); do
 
-if grep -q ERROR /tmp/coverage-modules.txt; then
-  echo "There was an error in generating coverage-modules.txt"
-  exit 1
-fi
+  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
+  artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+
+  if echo $artifactId_line | grep -q 'CoverageAggregator\|bom\|parent\|proto\-\|grpc-\|google\-cloud\-java\|samples' ; then
+    echo skipping: $pom_file
+    continue
+  fi
+
+  echo including: $pom_file
+
+  version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+
+  module_lines+="    <dependency>\n\
+    ${groupId_line}\n\
+    ${artifactId_line}\n\
+    ${version_line}\n\
+    </dependency>\n"
+done
 
 # insert processed modules into coverage aggregator pom.xml
-awk -v MODULES="`awk -v ORS='\\\\n' '1' /tmp/coverage-modules.txt`" '1;/<dependencies>/{print MODULES}' "${GENERATION_DIR}/coverage.pom.xml" > CoverageAggregator/pom.xml
-
-sh "${GENERATION_DIR}/print_root_pom.sh" > pom.xml
+awk -v "modules=$module_lines" '{gsub(/MODULES/,modules)}1' \
+    "${GENERATION_DIR}/coverage.pom.xml" > CoverageAggregator/pom.xml

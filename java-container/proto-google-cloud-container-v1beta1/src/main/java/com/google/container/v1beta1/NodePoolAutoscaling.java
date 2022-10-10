@@ -53,82 +53,6 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private NodePoolAutoscaling(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              enabled_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
-              minNodeCount_ = input.readInt32();
-              break;
-            }
-          case 24:
-            {
-              maxNodeCount_ = input.readInt32();
-              break;
-            }
-          case 32:
-            {
-              autoprovisioned_ = input.readBool();
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              locationPolicy_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              totalMinNodeCount_ = input.readInt32();
-              break;
-            }
-          case 56:
-            {
-              totalMaxNodeCount_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_NodePoolAutoscaling_descriptor;
@@ -496,7 +420,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     if (totalMaxNodeCount_ != 0) {
       output.writeInt32(7, totalMaxNodeCount_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -529,7 +453,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     if (totalMaxNodeCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, totalMaxNodeCount_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -552,7 +476,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     if (locationPolicy_ != other.locationPolicy_) return false;
     if (getTotalMinNodeCount() != other.getTotalMinNodeCount()) return false;
     if (getTotalMaxNodeCount() != other.getTotalMaxNodeCount()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -577,7 +501,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getTotalMinNodeCount();
     hash = (37 * hash) + TOTAL_MAX_NODE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTotalMaxNodeCount();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -707,17 +631,10 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.container.v1beta1.NodePoolAutoscaling.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -842,7 +759,7 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
       if (other.getTotalMaxNodeCount() != 0) {
         setTotalMaxNodeCount(other.getTotalMaxNodeCount());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -857,17 +774,73 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.NodePoolAutoscaling parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                enabled_ = input.readBool();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                minNodeCount_ = input.readInt32();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                maxNodeCount_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                autoprovisioned_ = input.readBool();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                locationPolicy_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                totalMinNodeCount_ = input.readInt32();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                totalMaxNodeCount_ = input.readInt32();
+
+                break;
+              } // case 56
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1beta1.NodePoolAutoscaling) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1338,7 +1311,18 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NodePoolAutoscaling(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

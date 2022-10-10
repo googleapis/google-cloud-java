@@ -61,126 +61,6 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private UsableSubnetwork(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 28050354:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              role_ = s;
-              break;
-            }
-          case 784938578:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              ipCidrRange_ = s;
-              break;
-            }
-          case 1093271322:
-            {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                secondaryIpRanges_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange>();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              secondaryIpRanges_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 1114393522:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              externalIpv6Prefix_ = s;
-              break;
-            }
-          case 1862979954:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              network_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              subnetwork_ = s;
-              break;
-            }
-          case -1763710734:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              purpose_ = s;
-              break;
-            }
-          case -887696246:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              stackType_ = s;
-              break;
-            }
-          case -257698070:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              ipv6AccessType_ = s;
-              break;
-            }
-          case -244806846:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              internalIpv6Prefix_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_UsableSubnetwork_descriptor;
@@ -1607,7 +1487,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 506270056, internalIpv6Prefix_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1650,7 +1530,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(506270056, internalIpv6Prefix_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1703,7 +1583,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     if (hasSubnetwork()) {
       if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1754,7 +1634,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getSubnetwork().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1883,19 +1763,10 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.compute.v1.UsableSubnetwork.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSecondaryIpRangesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1917,10 +1788,11 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000040);
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
+        secondaryIpRanges_ = null;
         secondaryIpRangesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000080);
       stackType_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       subnetwork_ = "";
@@ -2121,7 +1993,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2136,17 +2008,99 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.UsableSubnetwork parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 28050354:
+              {
+                role_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 28050354
+            case 784938578:
+              {
+                ipCidrRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 784938578
+            case 1093271322:
+              {
+                com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.UsableSubnetworkSecondaryRange.parser(),
+                        extensionRegistry);
+                if (secondaryIpRangesBuilder_ == null) {
+                  ensureSecondaryIpRangesIsMutable();
+                  secondaryIpRanges_.add(m);
+                } else {
+                  secondaryIpRangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1093271322
+            case 1114393522:
+              {
+                externalIpv6Prefix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 1114393522
+            case 1862979954:
+              {
+                network_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1862979954
+            case -1832345742:
+              {
+                subnetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -1832345742
+            case -1763710734:
+              {
+                purpose_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -1763710734
+            case -887696246:
+              {
+                stackType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case -887696246
+            case -257698070:
+              {
+                ipv6AccessType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -257698070
+            case -244806846:
+              {
+                internalIpv6Prefix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -244806846
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.UsableSubnetwork) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3695,7 +3649,18 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UsableSubnetwork(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

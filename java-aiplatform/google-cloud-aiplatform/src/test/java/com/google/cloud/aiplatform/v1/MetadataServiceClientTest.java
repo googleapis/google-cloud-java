@@ -1726,6 +1726,90 @@ public class MetadataServiceClientTest {
   }
 
   @Test
+  public void removeContextChildrenTest() throws Exception {
+    RemoveContextChildrenResponse expectedResponse =
+        RemoveContextChildrenResponse.newBuilder().build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    ContextName context =
+        ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
+    List<String> childContexts = new ArrayList<>();
+
+    RemoveContextChildrenResponse actualResponse =
+        client.removeContextChildren(context, childContexts);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveContextChildrenRequest actualRequest =
+        ((RemoveContextChildrenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(context.toString(), actualRequest.getContext());
+    Assert.assertEquals(childContexts, actualRequest.getChildContextsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeContextChildrenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      ContextName context =
+          ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
+      List<String> childContexts = new ArrayList<>();
+      client.removeContextChildren(context, childContexts);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeContextChildrenTest2() throws Exception {
+    RemoveContextChildrenResponse expectedResponse =
+        RemoveContextChildrenResponse.newBuilder().build();
+    mockMetadataService.addResponse(expectedResponse);
+
+    String context = "context951530927";
+    List<String> childContexts = new ArrayList<>();
+
+    RemoveContextChildrenResponse actualResponse =
+        client.removeContextChildren(context, childContexts);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMetadataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveContextChildrenRequest actualRequest =
+        ((RemoveContextChildrenRequest) actualRequests.get(0));
+
+    Assert.assertEquals(context, actualRequest.getContext());
+    Assert.assertEquals(childContexts, actualRequest.getChildContextsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeContextChildrenExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMetadataService.addException(exception);
+
+    try {
+      String context = "context951530927";
+      List<String> childContexts = new ArrayList<>();
+      client.removeContextChildren(context, childContexts);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void queryContextLineageSubgraphTest() throws Exception {
     LineageSubgraph expectedResponse =
         LineageSubgraph.newBuilder()

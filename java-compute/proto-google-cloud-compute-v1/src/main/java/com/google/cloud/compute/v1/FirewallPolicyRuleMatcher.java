@@ -55,106 +55,6 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private FirewallPolicyRuleMatcher(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case -1596105590:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                destIpRanges_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              destIpRanges_.add(s);
-              break;
-            }
-          case -1306693206:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                layer4Configs_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              layer4Configs_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -837942630:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                srcIpRanges_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              srcIpRanges_.add(s);
-              break;
-            }
-          case -224636878:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                srcSecureTags_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              srcSecureTags_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        destIpRanges_ = destIpRanges_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        layer4Configs_ = java.util.Collections.unmodifiableList(layer4Configs_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        srcIpRanges_ = srcIpRanges_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        srcSecureTags_ = java.util.Collections.unmodifiableList(srcSecureTags_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_FirewallPolicyRuleMatcher_descriptor;
@@ -484,7 +384,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     for (int i = 0; i < srcSecureTags_.size(); i++) {
       output.writeMessage(508791302, srcSecureTags_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -519,7 +419,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               508791302, srcSecureTags_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -539,7 +439,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     if (!getLayer4ConfigsList().equals(other.getLayer4ConfigsList())) return false;
     if (!getSrcIpRangesList().equals(other.getSrcIpRangesList())) return false;
     if (!getSrcSecureTagsList().equals(other.getSrcSecureTagsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -566,7 +466,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       hash = (37 * hash) + SRC_SECURE_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getSrcSecureTagsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -696,20 +596,10 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.compute.v1.FirewallPolicyRuleMatcher.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getLayer4ConfigsFieldBuilder();
-        getSrcSecureTagsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -719,18 +609,20 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
       bitField0_ = (bitField0_ & ~0x00000001);
       if (layer4ConfigsBuilder_ == null) {
         layer4Configs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        layer4Configs_ = null;
         layer4ConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
       if (srcSecureTagsBuilder_ == null) {
         srcSecureTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        srcSecureTags_ = null;
         srcSecureTagsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -911,7 +803,7 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -926,18 +818,73 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.FirewallPolicyRuleMatcher parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case -1596105590:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestIpRangesIsMutable();
+                destIpRanges_.add(s);
+                break;
+              } // case -1596105590
+            case -1306693206:
+              {
+                com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config.parser(),
+                        extensionRegistry);
+                if (layer4ConfigsBuilder_ == null) {
+                  ensureLayer4ConfigsIsMutable();
+                  layer4Configs_.add(m);
+                } else {
+                  layer4ConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -1306693206
+            case -837942630:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSrcIpRangesIsMutable();
+                srcIpRanges_.add(s);
+                break;
+              } // case -837942630
+            case -224636878:
+              {
+                com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.parser(),
+                        extensionRegistry);
+                if (srcSecureTagsBuilder_ == null) {
+                  ensureSrcSecureTagsIsMutable();
+                  srcSecureTags_.add(m);
+                } else {
+                  srcSecureTagsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -224636878
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.FirewallPolicyRuleMatcher) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2124,7 +2071,18 @@ public final class FirewallPolicyRuleMatcher extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FirewallPolicyRuleMatcher(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

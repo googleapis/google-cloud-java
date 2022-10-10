@@ -52,82 +52,6 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private ResourceErrorDetail(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.rpc.ResourceInfo.Builder subBuilder = null;
-              if (resourceInfo_ != null) {
-                subBuilder = resourceInfo_.toBuilder();
-              }
-              resourceInfo_ =
-                  input.readMessage(com.google.rpc.ResourceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resourceInfo_);
-                resourceInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                errorDetails_ =
-                    new java.util.ArrayList<com.google.cloud.bigquery.migration.v2.ErrorDetail>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              errorDetails_.add(
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2.ErrorDetail.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 24:
-            {
-              errorCount_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        errorDetails_ = java.util.Collections.unmodifiableList(errorDetails_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2.MigrationErrorDetailsProto
         .internal_static_google_cloud_bigquery_migration_v2_ResourceErrorDetail_descriptor;
@@ -315,7 +239,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     if (errorCount_ != 0) {
       output.writeInt32(3, errorCount_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -333,7 +257,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     if (errorCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, errorCount_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -355,7 +279,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     }
     if (!getErrorDetailsList().equals(other.getErrorDetailsList())) return false;
     if (getErrorCount() != other.getErrorCount()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -376,7 +300,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + ERROR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getErrorCount();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -506,19 +430,10 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.bigquery.migration.v2.ResourceErrorDetail.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getErrorDetailsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -532,10 +447,11 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       }
       if (errorDetailsBuilder_ == null) {
         errorDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        errorDetails_ = null;
         errorDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       errorCount_ = 0;
 
       return this;
@@ -664,7 +580,7 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
       if (other.getErrorCount() != 0) {
         setErrorCount(other.getErrorCount());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -679,18 +595,57 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.migration.v2.ResourceErrorDetail parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getResourceInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.bigquery.migration.v2.ErrorDetail m =
+                    input.readMessage(
+                        com.google.cloud.bigquery.migration.v2.ErrorDetail.parser(),
+                        extensionRegistry);
+                if (errorDetailsBuilder_ == null) {
+                  ensureErrorDetailsIsMutable();
+                  errorDetails_.add(m);
+                } else {
+                  errorDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 24:
+              {
+                errorCount_ = input.readInt32();
+
+                break;
+              } // case 24
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.migration.v2.ResourceErrorDetail) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1373,7 +1328,18 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResourceErrorDetail(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -53,75 +53,6 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Secrets(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                secretManager_ =
-                    new java.util.ArrayList<com.google.cloudbuild.v1.SecretManagerSecret>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              secretManager_.add(
-                  input.readMessage(
-                      com.google.cloudbuild.v1.SecretManagerSecret.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                inline_ = new java.util.ArrayList<com.google.cloudbuild.v1.InlineSecret>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              inline_.add(
-                  input.readMessage(
-                      com.google.cloudbuild.v1.InlineSecret.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        secretManager_ = java.util.Collections.unmodifiableList(secretManager_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        inline_ = java.util.Collections.unmodifiableList(inline_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_Secrets_descriptor;
@@ -300,7 +231,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < inline_.size(); i++) {
       output.writeMessage(2, inline_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -315,7 +246,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < inline_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, inline_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -332,7 +263,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
 
     if (!getSecretManagerList().equals(other.getSecretManagerList())) return false;
     if (!getInlineList().equals(other.getInlineList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -351,7 +282,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INLINE_FIELD_NUMBER;
       hash = (53 * hash) + getInlineList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -479,20 +410,10 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloudbuild.v1.Secrets.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSecretManagerFieldBuilder();
-        getInlineFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -500,16 +421,18 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (secretManagerBuilder_ == null) {
         secretManager_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        secretManager_ = null;
         secretManagerBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (inlineBuilder_ == null) {
         inline_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        inline_ = null;
         inlineBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -658,7 +581,7 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -673,17 +596,57 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloudbuild.v1.Secrets parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloudbuild.v1.SecretManagerSecret m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.SecretManagerSecret.parser(), extensionRegistry);
+                if (secretManagerBuilder_ == null) {
+                  ensureSecretManagerIsMutable();
+                  secretManager_.add(m);
+                } else {
+                  secretManagerBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloudbuild.v1.InlineSecret m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.InlineSecret.parser(), extensionRegistry);
+                if (inlineBuilder_ == null) {
+                  ensureInlineIsMutable();
+                  inline_.add(m);
+                } else {
+                  inlineBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloudbuild.v1.Secrets) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1442,7 +1405,18 @@ public final class Secrets extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Secrets(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

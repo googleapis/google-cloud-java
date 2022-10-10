@@ -52,79 +52,6 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Interstitials(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                adBreaks_ =
-                    new java.util.ArrayList<com.google.cloud.video.stitcher.v1.VodSessionAdBreak>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              adBreaks_.add(
-                  input.readMessage(
-                      com.google.cloud.video.stitcher.v1.VodSessionAdBreak.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.video.stitcher.v1.VodSessionContent.Builder subBuilder = null;
-              if (sessionContent_ != null) {
-                subBuilder = sessionContent_.toBuilder();
-              }
-              sessionContent_ =
-                  input.readMessage(
-                      com.google.cloud.video.stitcher.v1.VodSessionContent.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sessionContent_);
-                sessionContent_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        adBreaks_ = java.util.Collections.unmodifiableList(adBreaks_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.stitcher.v1.SessionsProto
         .internal_static_google_cloud_video_stitcher_v1_Interstitials_descriptor;
@@ -279,7 +206,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     if (sessionContent_ != null) {
       output.writeMessage(2, getSessionContent());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -294,7 +221,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     if (sessionContent_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSessionContent());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -315,7 +242,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     if (hasSessionContent()) {
       if (!getSessionContent().equals(other.getSessionContent())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -334,7 +261,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SESSION_CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getSessionContent().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -463,19 +390,10 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.stitcher.v1.Interstitials.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAdBreaksFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -483,10 +401,11 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (adBreaksBuilder_ == null) {
         adBreaks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        adBreaks_ = null;
         adBreaksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (sessionContentBuilder_ == null) {
         sessionContent_ = null;
       } else {
@@ -615,7 +534,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSessionContent()) {
         mergeSessionContent(other.getSessionContent());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -630,17 +549,51 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.stitcher.v1.Interstitials parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.video.stitcher.v1.VodSessionAdBreak m =
+                    input.readMessage(
+                        com.google.cloud.video.stitcher.v1.VodSessionAdBreak.parser(),
+                        extensionRegistry);
+                if (adBreaksBuilder_ == null) {
+                  ensureAdBreaksIsMutable();
+                  adBreaks_.add(m);
+                } else {
+                  adBreaksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getSessionContentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.video.stitcher.v1.Interstitials) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1223,7 +1176,18 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Interstitials(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

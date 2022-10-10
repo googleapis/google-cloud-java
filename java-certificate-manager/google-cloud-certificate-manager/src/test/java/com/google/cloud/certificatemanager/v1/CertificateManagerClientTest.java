@@ -16,6 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1;
 
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateIssuanceConfigsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapEntriesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificateMapsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
@@ -38,6 +39,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -1904,6 +1906,442 @@ public class CertificateManagerClientTest {
     try {
       String name = "name3373707";
       client.deleteDnsAuthorizationAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listCertificateIssuanceConfigsTest() throws Exception {
+    CertificateIssuanceConfig responsesElement = CertificateIssuanceConfig.newBuilder().build();
+    ListCertificateIssuanceConfigsResponse expectedResponse =
+        ListCertificateIssuanceConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCertificateIssuanceConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockCertificateManager.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListCertificateIssuanceConfigsPagedResponse pagedListResponse =
+        client.listCertificateIssuanceConfigs(parent);
+
+    List<CertificateIssuanceConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getCertificateIssuanceConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCertificateIssuanceConfigsRequest actualRequest =
+        ((ListCertificateIssuanceConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCertificateIssuanceConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listCertificateIssuanceConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCertificateIssuanceConfigsTest2() throws Exception {
+    CertificateIssuanceConfig responsesElement = CertificateIssuanceConfig.newBuilder().build();
+    ListCertificateIssuanceConfigsResponse expectedResponse =
+        ListCertificateIssuanceConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCertificateIssuanceConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockCertificateManager.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListCertificateIssuanceConfigsPagedResponse pagedListResponse =
+        client.listCertificateIssuanceConfigs(parent);
+
+    List<CertificateIssuanceConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getCertificateIssuanceConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCertificateIssuanceConfigsRequest actualRequest =
+        ((ListCertificateIssuanceConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCertificateIssuanceConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listCertificateIssuanceConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCertificateIssuanceConfigTest() throws Exception {
+    CertificateIssuanceConfig expectedResponse =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .build();
+    mockCertificateManager.addResponse(expectedResponse);
+
+    CertificateIssuanceConfigName name =
+        CertificateIssuanceConfigName.of(
+            "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]");
+
+    CertificateIssuanceConfig actualResponse = client.getCertificateIssuanceConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCertificateIssuanceConfigRequest actualRequest =
+        ((GetCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCertificateIssuanceConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      CertificateIssuanceConfigName name =
+          CertificateIssuanceConfigName.of(
+              "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]");
+      client.getCertificateIssuanceConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCertificateIssuanceConfigTest2() throws Exception {
+    CertificateIssuanceConfig expectedResponse =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .build();
+    mockCertificateManager.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CertificateIssuanceConfig actualResponse = client.getCertificateIssuanceConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCertificateIssuanceConfigRequest actualRequest =
+        ((GetCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCertificateIssuanceConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCertificateIssuanceConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCertificateIssuanceConfigTest() throws Exception {
+    CertificateIssuanceConfig expectedResponse =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCertificateIssuanceConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCertificateManager.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    CertificateIssuanceConfig certificateIssuanceConfig =
+        CertificateIssuanceConfig.newBuilder().build();
+    String certificateIssuanceConfigId = "certificateIssuanceConfigId1910303023";
+
+    CertificateIssuanceConfig actualResponse =
+        client
+            .createCertificateIssuanceConfigAsync(
+                parent, certificateIssuanceConfig, certificateIssuanceConfigId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCertificateIssuanceConfigRequest actualRequest =
+        ((CreateCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(certificateIssuanceConfig, actualRequest.getCertificateIssuanceConfig());
+    Assert.assertEquals(
+        certificateIssuanceConfigId, actualRequest.getCertificateIssuanceConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCertificateIssuanceConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      CertificateIssuanceConfig certificateIssuanceConfig =
+          CertificateIssuanceConfig.newBuilder().build();
+      String certificateIssuanceConfigId = "certificateIssuanceConfigId1910303023";
+      client
+          .createCertificateIssuanceConfigAsync(
+              parent, certificateIssuanceConfig, certificateIssuanceConfigId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createCertificateIssuanceConfigTest2() throws Exception {
+    CertificateIssuanceConfig expectedResponse =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCertificateIssuanceConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCertificateManager.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    CertificateIssuanceConfig certificateIssuanceConfig =
+        CertificateIssuanceConfig.newBuilder().build();
+    String certificateIssuanceConfigId = "certificateIssuanceConfigId1910303023";
+
+    CertificateIssuanceConfig actualResponse =
+        client
+            .createCertificateIssuanceConfigAsync(
+                parent, certificateIssuanceConfig, certificateIssuanceConfigId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCertificateIssuanceConfigRequest actualRequest =
+        ((CreateCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(certificateIssuanceConfig, actualRequest.getCertificateIssuanceConfig());
+    Assert.assertEquals(
+        certificateIssuanceConfigId, actualRequest.getCertificateIssuanceConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCertificateIssuanceConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CertificateIssuanceConfig certificateIssuanceConfig =
+          CertificateIssuanceConfig.newBuilder().build();
+      String certificateIssuanceConfigId = "certificateIssuanceConfigId1910303023";
+      client
+          .createCertificateIssuanceConfigAsync(
+              parent, certificateIssuanceConfig, certificateIssuanceConfigId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteCertificateIssuanceConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCertificateIssuanceConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCertificateManager.addResponse(resultOperation);
+
+    CertificateIssuanceConfigName name =
+        CertificateIssuanceConfigName.of(
+            "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]");
+
+    client.deleteCertificateIssuanceConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCertificateIssuanceConfigRequest actualRequest =
+        ((DeleteCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCertificateIssuanceConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      CertificateIssuanceConfigName name =
+          CertificateIssuanceConfigName.of(
+              "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]");
+      client.deleteCertificateIssuanceConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteCertificateIssuanceConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteCertificateIssuanceConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCertificateManager.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteCertificateIssuanceConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteCertificateIssuanceConfigRequest actualRequest =
+        ((DeleteCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteCertificateIssuanceConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteCertificateIssuanceConfigAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

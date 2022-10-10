@@ -55,91 +55,6 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private GenerateConfigReportResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceName_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                changeReports_ =
-                    new java.util.ArrayList<com.google.api.servicemanagement.v1.ChangeReport>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              changeReports_.add(
-                  input.readMessage(
-                      com.google.api.servicemanagement.v1.ChangeReport.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                diagnostics_ =
-                    new java.util.ArrayList<com.google.api.servicemanagement.v1.Diagnostic>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              diagnostics_.add(
-                  input.readMessage(
-                      com.google.api.servicemanagement.v1.Diagnostic.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        changeReports_ = java.util.Collections.unmodifiableList(changeReports_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        diagnostics_ = java.util.Collections.unmodifiableList(diagnostics_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.servicemanagement.v1.ServiceManagerProto
         .internal_static_google_api_servicemanagement_v1_GenerateConfigReportResponse_descriptor;
@@ -434,7 +349,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     for (int i = 0; i < diagnostics_.size(); i++) {
       output.writeMessage(4, diagnostics_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -455,7 +370,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     for (int i = 0; i < diagnostics_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, diagnostics_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -475,7 +390,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     if (!getId().equals(other.getId())) return false;
     if (!getChangeReportsList().equals(other.getChangeReportsList())) return false;
     if (!getDiagnosticsList().equals(other.getDiagnosticsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -498,7 +413,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
       hash = (37 * hash) + DIAGNOSTICS_FIELD_NUMBER;
       hash = (53 * hash) + getDiagnosticsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -628,20 +543,10 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.api.servicemanagement.v1.GenerateConfigReportResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getChangeReportsFieldBuilder();
-        getDiagnosticsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -653,16 +558,18 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
 
       if (changeReportsBuilder_ == null) {
         changeReports_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        changeReports_ = null;
         changeReportsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (diagnosticsBuilder_ == null) {
         diagnostics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        diagnostics_ = null;
         diagnosticsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -826,7 +733,7 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -841,19 +748,70 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.servicemanagement.v1.GenerateConfigReportResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                serviceName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.api.servicemanagement.v1.ChangeReport m =
+                    input.readMessage(
+                        com.google.api.servicemanagement.v1.ChangeReport.parser(),
+                        extensionRegistry);
+                if (changeReportsBuilder_ == null) {
+                  ensureChangeReportsIsMutable();
+                  changeReports_.add(m);
+                } else {
+                  changeReportsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.api.servicemanagement.v1.Diagnostic m =
+                    input.readMessage(
+                        com.google.api.servicemanagement.v1.Diagnostic.parser(), extensionRegistry);
+                if (diagnosticsBuilder_ == null) {
+                  ensureDiagnosticsIsMutable();
+                  diagnostics_.add(m);
+                } else {
+                  diagnosticsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.api.servicemanagement.v1.GenerateConfigReportResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1871,7 +1829,18 @@ public final class GenerateConfigReportResponse extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenerateConfigReportResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

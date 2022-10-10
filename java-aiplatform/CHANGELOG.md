@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.3.0](https://github.com/googleapis/java-aiplatform/compare/v3.2.0...v3.3.0) (2022-09-15)
+
+
+### Features
+
+* add input_artifacts to PipelineJob.runtime_config in aiplatform v1 pipeline_job ([def077e](https://github.com/googleapis/java-aiplatform/commit/def077e48fca7fedb788a9703dbc7e02f03c0f32))
+* Add model_monitoring_stats_anomalies,model_monitoring_status to BatchPredictionJob in aiplatform v1beta1 batch_prediction_job.proto ([#1041](https://github.com/googleapis/java-aiplatform/issues/1041)) ([1b72b9d](https://github.com/googleapis/java-aiplatform/commit/1b72b9d0a4cdff5372cf8bc588c1b38a3fbb3c30))
+* Add read_mask to ListPipelineJobsRequest in aiplatform v1 pipeline_service ([#1032](https://github.com/googleapis/java-aiplatform/issues/1032)) ([def077e](https://github.com/googleapis/java-aiplatform/commit/def077e48fca7fedb788a9703dbc7e02f03c0f32))
+* Add UpsertDatapoints and RemoveDatapoints rpcs to IndexService in aiplatform v1 index_service.proto ([#1030](https://github.com/googleapis/java-aiplatform/issues/1030)) ([fddedd5](https://github.com/googleapis/java-aiplatform/commit/fddedd58455ec6aebe347400344e9b9e42fed922))
+* add UpsertDatapoints and RemoveDatapoints rpcs to IndexService in aiplatform v1beta1 index_service.proto ([fddedd5](https://github.com/googleapis/java-aiplatform/commit/fddedd58455ec6aebe347400344e9b9e42fed922))
+* Add WriteFeatureValues in aiplatform v1beta1 featurestore_online_service.proto ([#1022](https://github.com/googleapis/java-aiplatform/issues/1022)) ([cf79830](https://github.com/googleapis/java-aiplatform/commit/cf79830711e635b4d9cf21c273d15d7e44a02105))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-aiplatform-v1beta1 to v0.18.0 ([#1021](https://github.com/googleapis/java-aiplatform/issues/1021)) ([ff85984](https://github.com/googleapis/java-aiplatform/commit/ff85984cb4313de3b39da74e5666b171f3ce483b))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.5 ([#1016](https://github.com/googleapis/java-aiplatform/issues/1016)) ([d54f337](https://github.com/googleapis/java-aiplatform/commit/d54f3372e5d8d28730a324a419327f9fb331614a))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.6 ([#1026](https://github.com/googleapis/java-aiplatform/issues/1026)) ([a8efb8e](https://github.com/googleapis/java-aiplatform/commit/a8efb8e439492d19b49f9743f00927ff986b0391))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.14.7 ([#1031](https://github.com/googleapis/java-aiplatform/issues/1031)) ([bbf4f3f](https://github.com/googleapis/java-aiplatform/commit/bbf4f3f7be282fd53ba9e45cb2e23140647991f1))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#1040](https://github.com/googleapis/java-aiplatform/issues/1040)) ([ec530d9](https://github.com/googleapis/java-aiplatform/commit/ec530d904887ac365bd4e6d1b0c775a639706c80))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.16.0 ([#1044](https://github.com/googleapis/java-aiplatform/issues/1044)) ([09594bb](https://github.com/googleapis/java-aiplatform/commit/09594bbba9e0e7722249a9d81fd99140e1529316))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#1043](https://github.com/googleapis/java-aiplatform/issues/1043)) ([af4797b](https://github.com/googleapis/java-aiplatform/commit/af4797bb44d7016d2d5ae4170c072f11a232c07a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#1045](https://github.com/googleapis/java-aiplatform/issues/1045)) ([bf6138f](https://github.com/googleapis/java-aiplatform/commit/bf6138fbeef298f73f2fa70cd12ae45f91562a5e))
+* Update dependency com.google.cloud:google-cloud-storage to v2.11.3 ([#1015](https://github.com/googleapis/java-aiplatform/issues/1015)) ([112a827](https://github.com/googleapis/java-aiplatform/commit/112a827210a8c184a6075b9f7ad037b31ccf2b1d))
+
 ## [3.2.0](https://github.com/googleapis/java-aiplatform/compare/v3.1.0...v3.2.0) (2022-08-09)
 
 

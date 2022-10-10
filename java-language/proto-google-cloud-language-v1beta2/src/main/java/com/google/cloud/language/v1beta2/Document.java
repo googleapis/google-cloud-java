@@ -40,6 +40,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   private Document() {
     type_ = 0;
     language_ = "";
+    referenceWebUri_ = "";
+    boilerplateHandling_ = 0;
   }
 
   @java.lang.Override
@@ -51,73 +53,6 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
-  }
-
-  private Document(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              sourceCase_ = 2;
-              source_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              sourceCase_ = 3;
-              source_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              language_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -290,6 +225,168 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.language.v1beta2.Document.Type)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Ways of handling boilerplate detected in the document
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.language.v1beta2.Document.BoilerplateHandling}
+   */
+  public enum BoilerplateHandling implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The boilerplate handling is not specified.
+     * </pre>
+     *
+     * <code>BOILERPLATE_HANDLING_UNSPECIFIED = 0;</code>
+     */
+    BOILERPLATE_HANDLING_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Do not analyze detected boilerplate. Reference web URI is required for
+     * detecting boilerplate.
+     * </pre>
+     *
+     * <code>SKIP_BOILERPLATE = 1;</code>
+     */
+    SKIP_BOILERPLATE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Treat boilerplate the same as content.
+     * </pre>
+     *
+     * <code>KEEP_BOILERPLATE = 2;</code>
+     */
+    KEEP_BOILERPLATE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The boilerplate handling is not specified.
+     * </pre>
+     *
+     * <code>BOILERPLATE_HANDLING_UNSPECIFIED = 0;</code>
+     */
+    public static final int BOILERPLATE_HANDLING_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Do not analyze detected boilerplate. Reference web URI is required for
+     * detecting boilerplate.
+     * </pre>
+     *
+     * <code>SKIP_BOILERPLATE = 1;</code>
+     */
+    public static final int SKIP_BOILERPLATE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Treat boilerplate the same as content.
+     * </pre>
+     *
+     * <code>KEEP_BOILERPLATE = 2;</code>
+     */
+    public static final int KEEP_BOILERPLATE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BoilerplateHandling valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BoilerplateHandling forNumber(int value) {
+      switch (value) {
+        case 0:
+          return BOILERPLATE_HANDLING_UNSPECIFIED;
+        case 1:
+          return SKIP_BOILERPLATE;
+        case 2:
+          return KEEP_BOILERPLATE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BoilerplateHandling>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BoilerplateHandling>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BoilerplateHandling>() {
+              public BoilerplateHandling findValueByNumber(int number) {
+                return BoilerplateHandling.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.language.v1beta2.Document.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BoilerplateHandling[] VALUES = values();
+
+    public static BoilerplateHandling valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BoilerplateHandling(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.language.v1beta2.Document.BoilerplateHandling)
   }
 
   private int sourceCase_ = 0;
@@ -592,6 +689,102 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int REFERENCE_WEB_URI_FIELD_NUMBER = 5;
+  private volatile java.lang.Object referenceWebUri_;
+  /**
+   *
+   *
+   * <pre>
+   * The web URI where the document comes from. This URI is not used for
+   * fetching the content, but as a hint for analyzing the document.
+   * </pre>
+   *
+   * <code>string reference_web_uri = 5;</code>
+   *
+   * @return The referenceWebUri.
+   */
+  @java.lang.Override
+  public java.lang.String getReferenceWebUri() {
+    java.lang.Object ref = referenceWebUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      referenceWebUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The web URI where the document comes from. This URI is not used for
+   * fetching the content, but as a hint for analyzing the document.
+   * </pre>
+   *
+   * <code>string reference_web_uri = 5;</code>
+   *
+   * @return The bytes for referenceWebUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReferenceWebUriBytes() {
+    java.lang.Object ref = referenceWebUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      referenceWebUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BOILERPLATE_HANDLING_FIELD_NUMBER = 6;
+  private int boilerplateHandling_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how detected boilerplate(e.g. advertisements, copyright
+   * declarations, banners) should be handled for this document. If not
+   * specified, boilerplate will be treated the same as content.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for boilerplateHandling.
+   */
+  @java.lang.Override
+  public int getBoilerplateHandlingValue() {
+    return boilerplateHandling_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how detected boilerplate(e.g. advertisements, copyright
+   * declarations, banners) should be handled for this document. If not
+   * specified, boilerplate will be treated the same as content.
+   * </pre>
+   *
+   * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+   * </code>
+   *
+   * @return The boilerplateHandling.
+   */
+  @java.lang.Override
+  public com.google.cloud.language.v1beta2.Document.BoilerplateHandling getBoilerplateHandling() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.language.v1beta2.Document.BoilerplateHandling result =
+        com.google.cloud.language.v1beta2.Document.BoilerplateHandling.valueOf(
+            boilerplateHandling_);
+    return result == null
+        ? com.google.cloud.language.v1beta2.Document.BoilerplateHandling.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -618,7 +811,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
     }
-    unknownFields.writeTo(output);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referenceWebUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, referenceWebUri_);
+    }
+    if (boilerplateHandling_
+        != com.google.cloud.language.v1beta2.Document.BoilerplateHandling
+            .BOILERPLATE_HANDLING_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, boilerplateHandling_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -639,7 +841,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(language_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
     }
-    size += unknownFields.getSerializedSize();
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(referenceWebUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, referenceWebUri_);
+    }
+    if (boilerplateHandling_
+        != com.google.cloud.language.v1beta2.Document.BoilerplateHandling
+            .BOILERPLATE_HANDLING_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, boilerplateHandling_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -657,6 +868,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     if (type_ != other.type_) return false;
     if (!getLanguage().equals(other.getLanguage())) return false;
+    if (!getReferenceWebUri().equals(other.getReferenceWebUri())) return false;
+    if (boilerplateHandling_ != other.boilerplateHandling_) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -668,7 +881,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -683,6 +896,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + type_;
     hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguage().hashCode();
+    hash = (37 * hash) + REFERENCE_WEB_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getReferenceWebUri().hashCode();
+    hash = (37 * hash) + BOILERPLATE_HANDLING_FIELD_NUMBER;
+    hash = (53 * hash) + boilerplateHandling_;
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + CONTENT_FIELD_NUMBER;
@@ -695,7 +912,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -824,17 +1041,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.language.v1beta2.Document.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -843,6 +1053,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       type_ = 0;
 
       language_ = "";
+
+      referenceWebUri_ = "";
+
+      boilerplateHandling_ = 0;
 
       sourceCase_ = 0;
       source_ = null;
@@ -881,6 +1095,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         result.source_ = source_;
       }
       result.language_ = language_;
+      result.referenceWebUri_ = referenceWebUri_;
+      result.boilerplateHandling_ = boilerplateHandling_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -938,6 +1154,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         language_ = other.language_;
         onChanged();
       }
+      if (!other.getReferenceWebUri().isEmpty()) {
+        referenceWebUri_ = other.referenceWebUri_;
+        onChanged();
+      }
+      if (other.boilerplateHandling_ != 0) {
+        setBoilerplateHandlingValue(other.getBoilerplateHandlingValue());
+      }
       switch (other.getSourceCase()) {
         case CONTENT:
           {
@@ -958,7 +1181,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -973,17 +1196,69 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.language.v1beta2.Document parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                type_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 2;
+                source_ = s;
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 3;
+                source_ = s;
+                break;
+              } // case 26
+            case 34:
+              {
+                language_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                referenceWebUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 48:
+              {
+                boilerplateHandling_ = input.readEnum();
+
+                break;
+              } // case 48
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.language.v1beta2.Document) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1530,6 +1805,227 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object referenceWebUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The web URI where the document comes from. This URI is not used for
+     * fetching the content, but as a hint for analyzing the document.
+     * </pre>
+     *
+     * <code>string reference_web_uri = 5;</code>
+     *
+     * @return The referenceWebUri.
+     */
+    public java.lang.String getReferenceWebUri() {
+      java.lang.Object ref = referenceWebUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        referenceWebUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The web URI where the document comes from. This URI is not used for
+     * fetching the content, but as a hint for analyzing the document.
+     * </pre>
+     *
+     * <code>string reference_web_uri = 5;</code>
+     *
+     * @return The bytes for referenceWebUri.
+     */
+    public com.google.protobuf.ByteString getReferenceWebUriBytes() {
+      java.lang.Object ref = referenceWebUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        referenceWebUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The web URI where the document comes from. This URI is not used for
+     * fetching the content, but as a hint for analyzing the document.
+     * </pre>
+     *
+     * <code>string reference_web_uri = 5;</code>
+     *
+     * @param value The referenceWebUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReferenceWebUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      referenceWebUri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The web URI where the document comes from. This URI is not used for
+     * fetching the content, but as a hint for analyzing the document.
+     * </pre>
+     *
+     * <code>string reference_web_uri = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReferenceWebUri() {
+
+      referenceWebUri_ = getDefaultInstance().getReferenceWebUri();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The web URI where the document comes from. This URI is not used for
+     * fetching the content, but as a hint for analyzing the document.
+     * </pre>
+     *
+     * <code>string reference_web_uri = 5;</code>
+     *
+     * @param value The bytes for referenceWebUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReferenceWebUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      referenceWebUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int boilerplateHandling_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how detected boilerplate(e.g. advertisements, copyright
+     * declarations, banners) should be handled for this document. If not
+     * specified, boilerplate will be treated the same as content.
+     * </pre>
+     *
+     * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for boilerplateHandling.
+     */
+    @java.lang.Override
+    public int getBoilerplateHandlingValue() {
+      return boilerplateHandling_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how detected boilerplate(e.g. advertisements, copyright
+     * declarations, banners) should be handled for this document. If not
+     * specified, boilerplate will be treated the same as content.
+     * </pre>
+     *
+     * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for boilerplateHandling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoilerplateHandlingValue(int value) {
+
+      boilerplateHandling_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how detected boilerplate(e.g. advertisements, copyright
+     * declarations, banners) should be handled for this document. If not
+     * specified, boilerplate will be treated the same as content.
+     * </pre>
+     *
+     * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+     * </code>
+     *
+     * @return The boilerplateHandling.
+     */
+    @java.lang.Override
+    public com.google.cloud.language.v1beta2.Document.BoilerplateHandling getBoilerplateHandling() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.language.v1beta2.Document.BoilerplateHandling result =
+          com.google.cloud.language.v1beta2.Document.BoilerplateHandling.valueOf(
+              boilerplateHandling_);
+      return result == null
+          ? com.google.cloud.language.v1beta2.Document.BoilerplateHandling.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how detected boilerplate(e.g. advertisements, copyright
+     * declarations, banners) should be handled for this document. If not
+     * specified, boilerplate will be treated the same as content.
+     * </pre>
+     *
+     * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+     * </code>
+     *
+     * @param value The boilerplateHandling to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoilerplateHandling(
+        com.google.cloud.language.v1beta2.Document.BoilerplateHandling value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      boilerplateHandling_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how detected boilerplate(e.g. advertisements, copyright
+     * declarations, banners) should be handled for this document. If not
+     * specified, boilerplate will be treated the same as content.
+     * </pre>
+     *
+     * <code>.google.cloud.language.v1beta2.Document.BoilerplateHandling boilerplate_handling = 6;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBoilerplateHandling() {
+
+      boilerplateHandling_ = 0;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -1562,7 +2058,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Document(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

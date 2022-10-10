@@ -21,12 +21,15 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates(
-    excludes=[
-        ".kokoro/build.sh",
-        ".kokoro/nightly/samples.cfg",
-        ".kokoro/presubmit/samples.cfg",
-        ".kokoro/presubmit/integration.cfg",
-        ".kokoro/nightly/integration.cfg",
-    ]
-)
+java.common_templates(excludes=[
+    ".github/*",
+    ".kokoro/*",
+    "samples/*",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "SECURITY.md",
+    "java.header",
+    "license-checks.xml",
+    "renovate.json"
+])

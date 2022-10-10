@@ -51,110 +51,6 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private SourceProvenance(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26:
-            {
-              com.google.cloudbuild.v1.StorageSource.Builder subBuilder = null;
-              if (resolvedStorageSource_ != null) {
-                subBuilder = resolvedStorageSource_.toBuilder();
-              }
-              resolvedStorageSource_ =
-                  input.readMessage(
-                      com.google.cloudbuild.v1.StorageSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resolvedStorageSource_);
-                resolvedStorageSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fileHashes_ =
-                    com.google.protobuf.MapField.newMapField(
-                        FileHashesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, com.google.cloudbuild.v1.FileHashes>
-                  fileHashes__ =
-                      input.readMessage(
-                          FileHashesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              fileHashes_.getMutableMap().put(fileHashes__.getKey(), fileHashes__.getValue());
-              break;
-            }
-          case 50:
-            {
-              com.google.cloudbuild.v1.RepoSource.Builder subBuilder = null;
-              if (resolvedRepoSource_ != null) {
-                subBuilder = resolvedRepoSource_.toBuilder();
-              }
-              resolvedRepoSource_ =
-                  input.readMessage(
-                      com.google.cloudbuild.v1.RepoSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resolvedRepoSource_);
-                resolvedRepoSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.cloudbuild.v1.StorageSourceManifest.Builder subBuilder = null;
-              if (resolvedStorageSourceManifest_ != null) {
-                subBuilder = resolvedStorageSourceManifest_.toBuilder();
-              }
-              resolvedStorageSourceManifest_ =
-                  input.readMessage(
-                      com.google.cloudbuild.v1.StorageSourceManifest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resolvedStorageSourceManifest_);
-                resolvedStorageSourceManifest_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_SourceProvenance_descriptor;
@@ -510,7 +406,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     if (resolvedStorageSourceManifest_ != null) {
       output.writeMessage(9, getResolvedStorageSourceManifest());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -542,7 +438,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getResolvedStorageSourceManifest());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -573,7 +469,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         return false;
     }
     if (!internalGetFileHashes().equals(other.internalGetFileHashes())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -600,7 +496,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + FILE_HASHES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetFileHashes().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -750,17 +646,10 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloudbuild.v1.SourceProvenance.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -889,7 +778,7 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         mergeResolvedStorageSourceManifest(other.getResolvedStorageSourceManifest());
       }
       internalGetMutableFileHashes().mergeFrom(other.internalGetFileHashes());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -904,17 +793,64 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloudbuild.v1.SourceProvenance parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26:
+              {
+                input.readMessage(
+                    getResolvedStorageSourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, com.google.cloudbuild.v1.FileHashes>
+                    fileHashes__ =
+                        input.readMessage(
+                            FileHashesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableFileHashes()
+                    .getMutableMap()
+                    .put(fileHashes__.getKey(), fileHashes__.getValue());
+                break;
+              } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getResolvedRepoSourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 74:
+              {
+                input.readMessage(
+                    getResolvedStorageSourceManifestFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloudbuild.v1.SourceProvenance) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1799,7 +1735,18 @@ public final class SourceProvenance extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SourceProvenance(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

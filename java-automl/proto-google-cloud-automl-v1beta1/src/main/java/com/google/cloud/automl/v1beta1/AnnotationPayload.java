@@ -53,232 +53,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private AnnotationPayload(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              annotationSpecId_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder subBuilder = null;
-              if (detailCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.TranslationAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
-                  subBuilder = null;
-              if (detailCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
-                            detail_)
-                        .toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
-                        detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.Builder subBuilder =
-                  null;
-              if (detailCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_)
-                        .toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.automl.v1beta1.TextExtractionAnnotation.Builder subBuilder = null;
-              if (detailCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_)
-                        .toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.TextExtractionAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.TextExtractionAnnotation) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation.Builder
-                  subBuilder = null;
-              if (detailCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
-                            detail_)
-                        .toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation)
-                        detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.Builder subBuilder =
-                  null;
-              if (detailCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_)
-                        .toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
-                      .Builder
-                  subBuilder = null;
-              if (detailCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ClassificationProto
-                                .VideoClassificationAnnotation)
-                            detail_)
-                        .toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ClassificationProto
-                          .VideoClassificationAnnotation.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ClassificationProto
-                            .VideoClassificationAnnotation)
-                        detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.automl.v1beta1.TablesAnnotation.Builder subBuilder = null;
-              if (detailCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.TablesAnnotation) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.TablesAnnotation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TablesAnnotation) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 10;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
         .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
@@ -960,7 +734,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     if (detailCase_ == 10) {
       output.writeMessage(10, (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1020,7 +794,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.automl.v1beta1.TablesAnnotation) detail_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1067,7 +841,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1118,7 +892,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1247,22 +1021,39 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.automl.v1beta1.AnnotationPayload.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (translationBuilder_ != null) {
+        translationBuilder_.clear();
+      }
+      if (classificationBuilder_ != null) {
+        classificationBuilder_.clear();
+      }
+      if (imageObjectDetectionBuilder_ != null) {
+        imageObjectDetectionBuilder_.clear();
+      }
+      if (videoClassificationBuilder_ != null) {
+        videoClassificationBuilder_.clear();
+      }
+      if (videoObjectTrackingBuilder_ != null) {
+        videoObjectTrackingBuilder_.clear();
+      }
+      if (textExtractionBuilder_ != null) {
+        textExtractionBuilder_.clear();
+      }
+      if (textSentimentBuilder_ != null) {
+        textSentimentBuilder_.clear();
+      }
+      if (tablesBuilder_ != null) {
+        tablesBuilder_.clear();
+      }
       annotationSpecId_ = "";
 
       displayName_ = "";
@@ -1459,7 +1250,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1474,18 +1265,94 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.AnnotationPayload parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                annotationSpecId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getTranslationFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getClassificationFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getImageObjectDetectionFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getTextExtractionFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getTextSentimentFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getVideoObjectTrackingFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getVideoClassificationFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getTablesFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 10;
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.automl.v1beta1.AnnotationPayload) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3584,7 +3451,18 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AnnotationPayload(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

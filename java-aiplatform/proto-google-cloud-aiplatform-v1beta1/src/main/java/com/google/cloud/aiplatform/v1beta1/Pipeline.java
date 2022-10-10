@@ -36,6 +36,10 @@ public final class Pipeline {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParametersEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParametersEntry_fieldAccessorTable;
@@ -43,6 +47,10 @@ public final class Pipeline {
       internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParameterValuesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParameterValuesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifactsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifactsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -110,7 +118,7 @@ public final class Pipeline {
           + "/pipeline_state.proto\032+google/cloud/aipl"
           + "atform/v1beta1/value.proto\032\034google/proto"
           + "buf/struct.proto\032\037google/protobuf/timest"
-          + "amp.proto\032\027google/rpc/status.proto\"\272\014\n\013P"
+          + "amp.proto\032\027google/rpc/status.proto\"\324\016\n\013P"
           + "ipelineJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display"
           + "_name\030\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.googl"
           + "e.protobuf.TimestampB\003\340A\003\0223\n\nstart_time\030"
@@ -134,7 +142,7 @@ public final class Pipeline {
           + "Network\022\024\n\014template_uri\030\023 \001(\t\022Y\n\021templat"
           + "e_metadata\030\024 \001(\01329.google.cloud.aiplatfo"
           + "rm.v1beta1.PipelineTemplateMetadataB\003\340A\003"
-          + "\032\374\003\n\rRuntimeConfig\022b\n\nparameters\030\001 \003(\0132J"
+          + "\032\226\006\n\rRuntimeConfig\022b\n\nparameters\030\001 \003(\0132J"
           + ".google.cloud.aiplatform.v1beta1.Pipelin"
           + "eJob.RuntimeConfig.ParametersEntryB\002\030\001\022!"
           + "\n\024gcs_output_directory\030\002 \001(\tB\003\340A\002\022i\n\020par"
@@ -142,81 +150,88 @@ public final class Pipeline {
           + "tform.v1beta1.PipelineJob.RuntimeConfig."
           + "ParameterValuesEntry\022N\n\016failure_policy\030\004"
           + " \001(\01626.google.cloud.aiplatform.v1beta1.P"
-          + "ipelineFailurePolicy\032Y\n\017ParametersEntry\022"
-          + "\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.google.clo"
-          + "ud.aiplatform.v1beta1.Value:\0028\001\032N\n\024Param"
-          + "eterValuesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 "
-          + "\001(\0132\026.google.protobuf.Value:\0028\001\032-\n\013Label"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:o"
-          + "\352Al\n%aiplatform.googleapis.com/PipelineJ"
-          + "ob\022Cprojects/{project}/locations/{locati"
-          + "on}/pipelineJobs/{pipeline_job}\"+\n\030Pipel"
-          + "ineTemplateMetadata\022\017\n\007version\030\003 \001(\t\"\371\001\n"
-          + "\021PipelineJobDetail\022G\n\020pipeline_context\030\001"
-          + " \001(\0132(.google.cloud.aiplatform.v1beta1.C"
-          + "ontextB\003\340A\003\022K\n\024pipeline_run_context\030\002 \001("
-          + "\0132(.google.cloud.aiplatform.v1beta1.Cont"
-          + "extB\003\340A\003\022N\n\014task_details\030\003 \003(\01323.google."
-          + "cloud.aiplatform.v1beta1.PipelineTaskDet"
-          + "ailB\003\340A\003\"\317\013\n\022PipelineTaskDetail\022\024\n\007task_"
-          + "id\030\001 \001(\003B\003\340A\003\022\033\n\016parent_task_id\030\014 \001(\003B\003\340"
-          + "A\003\022\026\n\ttask_name\030\002 \001(\tB\003\340A\003\0224\n\013create_tim"
-          + "e\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\0223\n\nstart_time\030\004 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\0221\n\010end_time\030\005 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022Y\n\017executor_det"
-          + "ail\030\006 \001(\0132;.google.cloud.aiplatform.v1be"
-          + "ta1.PipelineTaskExecutorDetailB\003\340A\003\022M\n\005s"
-          + "tate\030\007 \001(\01629.google.cloud.aiplatform.v1b"
-          + "eta1.PipelineTaskDetail.StateB\003\340A\003\022B\n\tex"
-          + "ecution\030\010 \001(\0132*.google.cloud.aiplatform."
-          + "v1beta1.ExecutionB\003\340A\003\022&\n\005error\030\t \001(\0132\022."
-          + "google.rpc.StatusB\003\340A\003\022i\n\024pipeline_task_"
-          + "status\030\r \003(\0132F.google.cloud.aiplatform.v"
-          + "1beta1.PipelineTaskDetail.PipelineTaskSt"
-          + "atusB\003\340A\003\022T\n\006inputs\030\n \003(\0132?.google.cloud"
-          + ".aiplatform.v1beta1.PipelineTaskDetail.I"
-          + "nputsEntryB\003\340A\003\022V\n\007outputs\030\013 \003(\0132@.googl"
+          + "ipelineFailurePolicy\022g\n\017input_artifacts\030"
+          + "\005 \003(\0132N.google.cloud.aiplatform.v1beta1."
+          + "PipelineJob.RuntimeConfig.InputArtifacts"
+          + "Entry\032.\n\rInputArtifact\022\025\n\013artifact_id\030\001 "
+          + "\001(\tH\000B\006\n\004kind\032Y\n\017ParametersEntry\022\013\n\003key\030"
+          + "\001 \001(\t\0225\n\005value\030\002 \001(\0132&.google.cloud.aipl"
+          + "atform.v1beta1.Value:\0028\001\032N\n\024ParameterVal"
+          + "uesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.g"
+          + "oogle.protobuf.Value:\0028\001\032\177\n\023InputArtifac"
+          + "tsEntry\022\013\n\003key\030\001 \001(\t\022W\n\005value\030\002 \001(\0132H.go"
+          + "ogle.cloud.aiplatform.v1beta1.PipelineJo"
+          + "b.RuntimeConfig.InputArtifact:\0028\001\032-\n\013Lab"
+          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + ":o\352Al\n%aiplatform.googleapis.com/Pipelin"
+          + "eJob\022Cprojects/{project}/locations/{loca"
+          + "tion}/pipelineJobs/{pipeline_job}\"+\n\030Pip"
+          + "elineTemplateMetadata\022\017\n\007version\030\003 \001(\t\"\371"
+          + "\001\n\021PipelineJobDetail\022G\n\020pipeline_context"
+          + "\030\001 \001(\0132(.google.cloud.aiplatform.v1beta1"
+          + ".ContextB\003\340A\003\022K\n\024pipeline_run_context\030\002 "
+          + "\001(\0132(.google.cloud.aiplatform.v1beta1.Co"
+          + "ntextB\003\340A\003\022N\n\014task_details\030\003 \003(\01323.googl"
           + "e.cloud.aiplatform.v1beta1.PipelineTaskD"
-          + "etail.OutputsEntryB\003\340A\003\032\301\001\n\022PipelineTask"
-          + "Status\0224\n\013update_time\030\001 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\022M\n\005state\030\002 \001(\01629.go"
-          + "ogle.cloud.aiplatform.v1beta1.PipelineTa"
-          + "skDetail.StateB\003\340A\003\022&\n\005error\030\003 \001(\0132\022.goo"
-          + "gle.rpc.StatusB\003\340A\003\032Q\n\014ArtifactList\022A\n\ta"
-          + "rtifacts\030\001 \003(\0132).google.cloud.aiplatform"
-          + ".v1beta1.ArtifactB\003\340A\003\032o\n\013InputsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022O\n\005value\030\002 \001(\0132@.google.cloud"
-          + ".aiplatform.v1beta1.PipelineTaskDetail.A"
-          + "rtifactList:\0028\001\032p\n\014OutputsEntry\022\013\n\003key\030\001"
-          + " \001(\t\022O\n\005value\030\002 \001(\0132@.google.cloud.aipla"
-          + "tform.v1beta1.PipelineTaskDetail.Artifac"
-          + "tList:\0028\001\"\246\001\n\005State\022\025\n\021STATE_UNSPECIFIED"
-          + "\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDE"
-          + "D\020\003\022\022\n\016CANCEL_PENDING\020\004\022\016\n\nCANCELLING\020\005\022"
-          + "\r\n\tCANCELLED\020\006\022\n\n\006FAILED\020\007\022\013\n\007SKIPPED\020\010\022"
-          + "\021\n\rNOT_TRIGGERED\020\t\"\366\003\n\032PipelineTaskExecu"
-          + "torDetail\022l\n\020container_detail\030\001 \001(\0132K.go"
-          + "ogle.cloud.aiplatform.v1beta1.PipelineTa"
-          + "skExecutorDetail.ContainerDetailB\003\340A\003H\000\022"
-          + "o\n\021custom_job_detail\030\002 \001(\0132K.google.clou"
-          + "d.aiplatform.v1beta1.PipelineTaskExecuto"
-          + "rDetail.CustomJobDetailB\005\030\001\340A\003H\000\032\234\001\n\017Con"
-          + "tainerDetail\022=\n\010main_job\030\001 \001(\tB+\340A\003\372A%\n#"
-          + "aiplatform.googleapis.com/CustomJob\022J\n\025p"
-          + "re_caching_check_job\030\002 \001(\tB+\340A\003\372A%\n#aipl"
-          + "atform.googleapis.com/CustomJob\032O\n\017Custo"
-          + "mJobDetail\0228\n\003job\030\001 \001(\tB+\340A\003\372A%\n#aiplatf"
-          + "orm.googleapis.com/CustomJob:\002\030\001B\t\n\007deta"
-          + "ilsB\266\002\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\010PipelineP\001ZIgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/aiplatform/v1beta1;"
-          + "aiplatform\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1\352AN\n\036"
-          + "compute.googleapis.com/Network\022,projects"
-          + "/{project}/global/networks/{network}b\006pr"
-          + "oto3"
+          + "etailB\003\340A\003\"\317\013\n\022PipelineTaskDetail\022\024\n\007tas"
+          + "k_id\030\001 \001(\003B\003\340A\003\022\033\n\016parent_task_id\030\014 \001(\003B"
+          + "\003\340A\003\022\026\n\ttask_name\030\002 \001(\tB\003\340A\003\0224\n\013create_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\0223\n\nstart_time\030\004 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\0221\n\010end_time\030\005 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022Y\n\017executor_d"
+          + "etail\030\006 \001(\0132;.google.cloud.aiplatform.v1"
+          + "beta1.PipelineTaskExecutorDetailB\003\340A\003\022M\n"
+          + "\005state\030\007 \001(\01629.google.cloud.aiplatform.v"
+          + "1beta1.PipelineTaskDetail.StateB\003\340A\003\022B\n\t"
+          + "execution\030\010 \001(\0132*.google.cloud.aiplatfor"
+          + "m.v1beta1.ExecutionB\003\340A\003\022&\n\005error\030\t \001(\0132"
+          + "\022.google.rpc.StatusB\003\340A\003\022i\n\024pipeline_tas"
+          + "k_status\030\r \003(\0132F.google.cloud.aiplatform"
+          + ".v1beta1.PipelineTaskDetail.PipelineTask"
+          + "StatusB\003\340A\003\022T\n\006inputs\030\n \003(\0132?.google.clo"
+          + "ud.aiplatform.v1beta1.PipelineTaskDetail"
+          + ".InputsEntryB\003\340A\003\022V\n\007outputs\030\013 \003(\0132@.goo"
+          + "gle.cloud.aiplatform.v1beta1.PipelineTas"
+          + "kDetail.OutputsEntryB\003\340A\003\032\301\001\n\022PipelineTa"
+          + "skStatus\0224\n\013update_time\030\001 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\022M\n\005state\030\002 \001(\01629."
+          + "google.cloud.aiplatform.v1beta1.Pipeline"
+          + "TaskDetail.StateB\003\340A\003\022&\n\005error\030\003 \001(\0132\022.g"
+          + "oogle.rpc.StatusB\003\340A\003\032Q\n\014ArtifactList\022A\n"
+          + "\tartifacts\030\001 \003(\0132).google.cloud.aiplatfo"
+          + "rm.v1beta1.ArtifactB\003\340A\003\032o\n\013InputsEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022O\n\005value\030\002 \001(\0132@.google.clo"
+          + "ud.aiplatform.v1beta1.PipelineTaskDetail"
+          + ".ArtifactList:\0028\001\032p\n\014OutputsEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022O\n\005value\030\002 \001(\0132@.google.cloud.aip"
+          + "latform.v1beta1.PipelineTaskDetail.Artif"
+          + "actList:\0028\001\"\246\001\n\005State\022\025\n\021STATE_UNSPECIFI"
+          + "ED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEE"
+          + "DED\020\003\022\022\n\016CANCEL_PENDING\020\004\022\016\n\nCANCELLING\020"
+          + "\005\022\r\n\tCANCELLED\020\006\022\n\n\006FAILED\020\007\022\013\n\007SKIPPED\020"
+          + "\010\022\021\n\rNOT_TRIGGERED\020\t\"\366\003\n\032PipelineTaskExe"
+          + "cutorDetail\022l\n\020container_detail\030\001 \001(\0132K."
+          + "google.cloud.aiplatform.v1beta1.Pipeline"
+          + "TaskExecutorDetail.ContainerDetailB\003\340A\003H"
+          + "\000\022o\n\021custom_job_detail\030\002 \001(\0132K.google.cl"
+          + "oud.aiplatform.v1beta1.PipelineTaskExecu"
+          + "torDetail.CustomJobDetailB\005\030\001\340A\003H\000\032\234\001\n\017C"
+          + "ontainerDetail\022=\n\010main_job\030\001 \001(\tB+\340A\003\372A%"
+          + "\n#aiplatform.googleapis.com/CustomJob\022J\n"
+          + "\025pre_caching_check_job\030\002 \001(\tB+\340A\003\372A%\n#ai"
+          + "platform.googleapis.com/CustomJob\032O\n\017Cus"
+          + "tomJobDetail\0228\n\003job\030\001 \001(\tB+\340A\003\372A%\n#aipla"
+          + "tform.googleapis.com/CustomJob:\002\030\001B\t\n\007de"
+          + "tailsB\266\002\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\010PipelineP\001ZIgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/aiplatform/v1beta"
+          + "1;aiplatform\252\002\037Google.Cloud.AIPlatform.V"
+          + "1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\352\002\"Google::Cloud::AIPlatform::V1beta1\352AN"
+          + "\n\036compute.googleapis.com/Network\022,projec"
+          + "ts/{project}/global/networks/{network}b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -267,12 +282,26 @@ public final class Pipeline {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor,
             new java.lang.String[] {
-              "Parameters", "GcsOutputDirectory", "ParameterValues", "FailurePolicy",
+              "Parameters",
+              "GcsOutputDirectory",
+              "ParameterValues",
+              "FailurePolicy",
+              "InputArtifacts",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor,
+            new java.lang.String[] {
+              "ArtifactId", "Kind",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParametersEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor
             .getNestedTypes()
-            .get(0);
+            .get(1);
     internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParametersEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParametersEntry_descriptor,
@@ -282,10 +311,20 @@ public final class Pipeline {
     internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParameterValuesEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParameterValuesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_ParameterValuesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifactsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifactsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifactsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

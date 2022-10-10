@@ -36,7 +36,7 @@ public interface GetServerConfigRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2982
+   *     google/container/v1beta1/cluster_service.proto;l=2997
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface GetServerConfigRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2982
+   *     google/container/v1beta1/cluster_service.proto;l=2997
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface GetServerConfigRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2991
+   *     google/container/v1beta1/cluster_service.proto;l=3006
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface GetServerConfigRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2991
+   *     google/container/v1beta1/cluster_service.proto;l=3006
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

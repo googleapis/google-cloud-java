@@ -11,58 +11,28 @@ Java idiomatic client for [Stackdriver Trace][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-trace</artifactId>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-trace</artifactId>
-  <version>2.3.1</version>
+  <version>2.3.7</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-trace'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-trace:2.3.2'
+implementation 'com.google.cloud:google-cloud-trace:2.3.7'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-trace" % "2.3.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-trace" % "2.3.7"
 ```
 
 ## Authentication
@@ -98,15 +68,6 @@ use this Stackdriver Trace Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-trace/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Trace Sample Application | [source code](https://github.com/googleapis/java-trace/blob/main/samples/native-image-sample/src/main/java/trace/TraceSampleApplication.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-trace&page=editor&open_in_editor=samples/native-image-sample/src/main/java/trace/TraceSampleApplication.java) |
 
 
 

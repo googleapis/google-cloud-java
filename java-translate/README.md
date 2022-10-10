@@ -11,59 +11,28 @@ Java idiomatic client for [Cloud Translation][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-translate</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>2.3.3</version>
+  <version>2.3.5</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-translate'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-translate:2.3.3'
+implementation 'com.google.cloud:google-cloud-translate:2.3.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "2.3.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "2.3.5"
 ```
 
 ## Authentication
@@ -176,32 +145,6 @@ In
 we put together all the code shown above into one program. The program assumes that either Application
 Default Credentials or a valid API key are available.
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-translate/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Batch Translate Text | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/BatchTranslateText.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/BatchTranslateText.java) |
-| Batch Translate Text With Glossary | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/BatchTranslateTextWithGlossary.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/BatchTranslateTextWithGlossary.java) |
-| Batch Translate Text With Glossary And Model | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/BatchTranslateTextWithGlossaryAndModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/BatchTranslateTextWithGlossaryAndModel.java) |
-| Batch Translate Text With Model | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/BatchTranslateTextWithModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/BatchTranslateTextWithModel.java) |
-| Create Glossary | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/CreateGlossary.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/CreateGlossary.java) |
-| Delete Glossary | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/DeleteGlossary.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/DeleteGlossary.java) |
-| Detect Language | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/DetectLanguage.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/DetectLanguage.java) |
-| Get Glossary | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/GetGlossary.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/GetGlossary.java) |
-| Get Supported Languages | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/GetSupportedLanguages.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/GetSupportedLanguages.java) |
-| Get Supported Languages For Target | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/GetSupportedLanguagesForTarget.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/GetSupportedLanguagesForTarget.java) |
-| List Glossaries | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/ListGlossaries.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/ListGlossaries.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/QuickstartSample.java) |
-| Translate Text | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/TranslateText.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/TranslateText.java) |
-| Translate Text With Glossary | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/TranslateTextWithGlossary.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/TranslateTextWithGlossary.java) |
-| Translate Text With Glossary And Model | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/TranslateTextWithGlossaryAndModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/TranslateTextWithGlossaryAndModel.java) |
-| Translate Text With Model | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translate/TranslateTextWithModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translate/TranslateTextWithModel.java) |
-| Batch Translate Document | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translatev3beta1/BatchTranslateDocument.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translatev3beta1/BatchTranslateDocument.java) |
-| Translate Document | [source code](https://github.com/googleapis/java-translate/blob/main/samples/snippets/src/main/java/com/example/translatev3beta1/TranslateDocument.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-translate&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/translatev3beta1/TranslateDocument.java) |
 
 
 

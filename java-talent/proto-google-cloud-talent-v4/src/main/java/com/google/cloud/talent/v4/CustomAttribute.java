@@ -53,95 +53,6 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private CustomAttribute(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                stringValues_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              stringValues_.add(s);
-              break;
-            }
-          case 16:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                longValues_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              longValues_.addLong(input.readInt64());
-              break;
-            }
-          case 18:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                longValues_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                longValues_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 24:
-            {
-              filterable_ = input.readBool();
-              break;
-            }
-          case 32:
-            {
-              keywordSearchable_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        stringValues_ = stringValues_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        longValues_.makeImmutable(); // C
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.CommonProto
         .internal_static_google_cloud_talent_v4_CustomAttribute_descriptor;
@@ -377,7 +288,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     if (keywordSearchable_ != false) {
       output.writeBool(4, keywordSearchable_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -413,7 +324,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     if (keywordSearchable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, keywordSearchable_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -433,7 +344,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     if (!getLongValuesList().equals(other.getLongValuesList())) return false;
     if (getFilterable() != other.getFilterable()) return false;
     if (getKeywordSearchable() != other.getKeywordSearchable()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -456,7 +367,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFilterable());
     hash = (37 * hash) + KEYWORD_SEARCHABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeywordSearchable());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -585,17 +496,10 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.talent.v4.CustomAttribute.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -724,7 +628,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       if (other.getKeywordSearchable() != false) {
         setKeywordSearchable(other.getKeywordSearchable());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -739,17 +643,68 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.talent.v4.CustomAttribute parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStringValuesIsMutable();
+                stringValues_.add(s);
+                break;
+              } // case 10
+            case 16:
+              {
+                long v = input.readInt64();
+                ensureLongValuesIsMutable();
+                longValues_.addLong(v);
+                break;
+              } // case 16
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLongValuesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  longValues_.addLong(input.readInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+            case 24:
+              {
+                filterable_ = input.readBool();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                keywordSearchable_ = input.readBool();
+
+                break;
+              } // case 32
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.talent.v4.CustomAttribute) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1287,7 +1242,18 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CustomAttribute(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

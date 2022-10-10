@@ -55,112 +55,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private RouterStatus(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 504784514:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                natStatus_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.RouterStatusNatStatus>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              natStatus_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterStatusNatStatus.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 955117514:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                bestRoutesForRouter_ = new java.util.ArrayList<com.google.cloud.compute.v1.Route>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              bestRoutesForRouter_.add(
-                  input.readMessage(com.google.cloud.compute.v1.Route.parser(), extensionRegistry));
-              break;
-            }
-          case 1747673050:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                bgpPeerStatus_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.RouterStatusBgpPeerStatus>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              bgpPeerStatus_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 1862979954:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              network_ = s;
-              break;
-            }
-          case -1128353750:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bestRoutes_ = new java.util.ArrayList<com.google.cloud.compute.v1.Route>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bestRoutes_.add(
-                  input.readMessage(com.google.cloud.compute.v1.Route.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        natStatus_ = java.util.Collections.unmodifiableList(natStatus_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        bestRoutesForRouter_ = java.util.Collections.unmodifiableList(bestRoutesForRouter_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        bgpPeerStatus_ = java.util.Collections.unmodifiableList(bgpPeerStatus_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        bestRoutes_ = java.util.Collections.unmodifiableList(bestRoutes_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_RouterStatus_descriptor;
@@ -484,7 +378,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bestRoutes_.size(); i++) {
       output.writeMessage(395826693, bestRoutes_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -513,7 +407,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(395826693, bestRoutes_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -536,7 +430,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -567,7 +461,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNetwork().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -695,22 +589,10 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.RouterStatus.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getBestRoutesFieldBuilder();
-        getBestRoutesForRouterFieldBuilder();
-        getBgpPeerStatusFieldBuilder();
-        getNatStatusFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -718,28 +600,32 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (bestRoutesBuilder_ == null) {
         bestRoutes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        bestRoutes_ = null;
         bestRoutesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (bestRoutesForRouterBuilder_ == null) {
         bestRoutesForRouter_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        bestRoutesForRouter_ = null;
         bestRoutesForRouterBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (bgpPeerStatusBuilder_ == null) {
         bgpPeerStatus_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        bgpPeerStatus_ = null;
         bgpPeerStatusBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (natStatusBuilder_ == null) {
         natStatus_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        natStatus_ = null;
         natStatusBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       network_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
@@ -974,7 +860,7 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         network_ = other.network_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -989,17 +875,91 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.RouterStatus parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 504784514:
+              {
+                com.google.cloud.compute.v1.RouterStatusNatStatus m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterStatusNatStatus.parser(),
+                        extensionRegistry);
+                if (natStatusBuilder_ == null) {
+                  ensureNatStatusIsMutable();
+                  natStatus_.add(m);
+                } else {
+                  natStatusBuilder_.addMessage(m);
+                }
+                break;
+              } // case 504784514
+            case 955117514:
+              {
+                com.google.cloud.compute.v1.Route m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.Route.parser(), extensionRegistry);
+                if (bestRoutesForRouterBuilder_ == null) {
+                  ensureBestRoutesForRouterIsMutable();
+                  bestRoutesForRouter_.add(m);
+                } else {
+                  bestRoutesForRouterBuilder_.addMessage(m);
+                }
+                break;
+              } // case 955117514
+            case 1747673050:
+              {
+                com.google.cloud.compute.v1.RouterStatusBgpPeerStatus m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.parser(),
+                        extensionRegistry);
+                if (bgpPeerStatusBuilder_ == null) {
+                  ensureBgpPeerStatusIsMutable();
+                  bgpPeerStatus_.add(m);
+                } else {
+                  bgpPeerStatusBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1747673050
+            case 1862979954:
+              {
+                network_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1862979954
+            case -1128353750:
+              {
+                com.google.cloud.compute.v1.Route m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.Route.parser(), extensionRegistry);
+                if (bestRoutesBuilder_ == null) {
+                  ensureBestRoutesIsMutable();
+                  bestRoutes_.add(m);
+                } else {
+                  bestRoutesBuilder_.addMessage(m);
+                }
+                break;
+              } // case -1128353750
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.RouterStatus) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2399,7 +2359,18 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RouterStatus(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

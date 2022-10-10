@@ -50,74 +50,6 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private StreamingRecognitionFeatures(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              enableVoiceActivityEvents_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
-              interimResults_ = input.readBool();
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout.Builder
-                  subBuilder = null;
-              if (voiceActivityTimeout_ != null) {
-                subBuilder = voiceActivityTimeout_.toBuilder();
-              }
-              voiceActivityTimeout_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(voiceActivityTimeout_);
-                voiceActivityTimeout_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_StreamingRecognitionFeatures_descriptor;
@@ -250,75 +182,6 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private VoiceActivityTimeout(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (speechStartTimeout_ != null) {
-                  subBuilder = speechStartTimeout_.toBuilder();
-                }
-                speechStartTimeout_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(speechStartTimeout_);
-                  speechStartTimeout_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (speechEndTimeout_ != null) {
-                  subBuilder = speechEndTimeout_.toBuilder();
-                }
-                speechEndTimeout_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(speechEndTimeout_);
-                  speechEndTimeout_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -465,7 +328,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       if (speechEndTimeout_ != null) {
         output.writeMessage(2, getSpeechEndTimeout());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -481,7 +344,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       if (speechEndTimeout_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSpeechEndTimeout());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -507,7 +370,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       if (hasSpeechEndTimeout()) {
         if (!getSpeechEndTimeout().equals(other.getSpeechEndTimeout())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -526,7 +389,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         hash = (37 * hash) + SPEECH_END_TIMEOUT_FIELD_NUMBER;
         hash = (53 * hash) + getSpeechEndTimeout().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -667,17 +530,10 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
 
       // Construct using
       // com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -799,7 +655,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         if (other.hasSpeechEndTimeout()) {
           mergeSpeechEndTimeout(other.getSpeechEndTimeout());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -814,20 +670,45 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getSpeechStartTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getSpeechEndTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.speech.v2.StreamingRecognitionFeatures.VoiceActivityTimeout)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1274,7 +1155,19 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new VoiceActivityTimeout(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1420,7 +1313,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     if (voiceActivityTimeout_ != null) {
       output.writeMessage(3, getVoiceActivityTimeout());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1439,7 +1332,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getVoiceActivityTimeout());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1461,7 +1354,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     if (hasVoiceActivityTimeout()) {
       if (!getVoiceActivityTimeout().equals(other.getVoiceActivityTimeout())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1480,7 +1373,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       hash = (37 * hash) + VOICE_ACTIVITY_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getVoiceActivityTimeout().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1610,17 +1503,10 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.cloud.speech.v2.StreamingRecognitionFeatures.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1729,7 +1615,7 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
       if (other.hasVoiceActivityTimeout()) {
         mergeVoiceActivityTimeout(other.getVoiceActivityTimeout());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1744,18 +1630,50 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.speech.v2.StreamingRecognitionFeatures parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                enableVoiceActivityEvents_ = input.readBool();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                interimResults_ = input.readBool();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getVoiceActivityTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.speech.v2.StreamingRecognitionFeatures) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2138,7 +2056,18 @@ public final class StreamingRecognitionFeatures extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingRecognitionFeatures(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

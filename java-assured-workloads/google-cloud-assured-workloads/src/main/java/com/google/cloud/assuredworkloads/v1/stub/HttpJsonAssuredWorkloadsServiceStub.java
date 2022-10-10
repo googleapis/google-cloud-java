@@ -39,6 +39,8 @@ import com.google.cloud.assuredworkloads.v1.DeleteWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.GetWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1.Workload;
 import com.google.longrunning.Operation;
@@ -143,6 +145,45 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
               .setResponseParser(
                   ProtoMessageResponseParser.<Workload>newBuilder()
                       .setDefaultInstance(Workload.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesMethodDescriptor =
+          ApiMethodDescriptor
+              .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.assuredworkloads.v1.AssuredWorkloadsService/RestrictAllowedResources")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestrictAllowedResourcesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/locations/*/workloads/*}:restrictAllowedResources",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestrictAllowedResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestrictAllowedResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestrictAllowedResourcesResponse>newBuilder()
+                      .setDefaultInstance(RestrictAllowedResourcesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -257,6 +298,8 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   private final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable;
   private final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable;
+  private final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable;
   private final UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable;
   private final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable;
   private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
@@ -321,6 +364,13 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
             .setMethodDescriptor(updateWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesTransportSettings =
+            HttpJsonCallSettings
+                .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
+                .setMethodDescriptor(restrictAllowedResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadTransportSettings =
         HttpJsonCallSettings.<DeleteWorkloadRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkloadMethodDescriptor)
@@ -350,6 +400,11 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
     this.updateWorkloadCallable =
         callableFactory.createUnaryCallable(
             updateWorkloadTransportSettings, settings.updateWorkloadSettings(), clientContext);
+    this.restrictAllowedResourcesCallable =
+        callableFactory.createUnaryCallable(
+            restrictAllowedResourcesTransportSettings,
+            settings.restrictAllowedResourcesSettings(),
+            clientContext);
     this.deleteWorkloadCallable =
         callableFactory.createUnaryCallable(
             deleteWorkloadTransportSettings, settings.deleteWorkloadSettings(), clientContext);
@@ -372,6 +427,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createWorkloadMethodDescriptor);
     methodDescriptors.add(updateWorkloadMethodDescriptor);
+    methodDescriptors.add(restrictAllowedResourcesMethodDescriptor);
     methodDescriptors.add(deleteWorkloadMethodDescriptor);
     methodDescriptors.add(getWorkloadMethodDescriptor);
     methodDescriptors.add(listWorkloadsMethodDescriptor);
@@ -396,6 +452,12 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     return updateWorkloadCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    return restrictAllowedResourcesCallable;
   }
 
   @Override

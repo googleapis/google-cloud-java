@@ -59,147 +59,6 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     return this.unknownFields;
   }
 
-  private AutoprovisioningNodePoolDefaults(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oauthScopes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              oauthScopes_.add(s);
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccount_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.container.v1.NodePool.UpgradeSettings.Builder subBuilder = null;
-              if (upgradeSettings_ != null) {
-                subBuilder = upgradeSettings_.toBuilder();
-              }
-              upgradeSettings_ =
-                  input.readMessage(
-                      com.google.container.v1.NodePool.UpgradeSettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(upgradeSettings_);
-                upgradeSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.container.v1.NodeManagement.Builder subBuilder = null;
-              if (management_ != null) {
-                subBuilder = management_.toBuilder();
-              }
-              management_ =
-                  input.readMessage(
-                      com.google.container.v1.NodeManagement.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(management_);
-                management_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minCpuPlatform_ = s;
-              break;
-            }
-          case 48:
-            {
-              diskSizeGb_ = input.readInt32();
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              diskType_ = s;
-              break;
-            }
-          case 66:
-            {
-              com.google.container.v1.ShieldedInstanceConfig.Builder subBuilder = null;
-              if (shieldedInstanceConfig_ != null) {
-                subBuilder = shieldedInstanceConfig_.toBuilder();
-              }
-              shieldedInstanceConfig_ =
-                  input.readMessage(
-                      com.google.container.v1.ShieldedInstanceConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shieldedInstanceConfig_);
-                shieldedInstanceConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bootDiskKmsKey_ = s;
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              imageType_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_AutoprovisioningNodePoolDefaults_descriptor;
@@ -444,7 +303,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3347
    * @return The minCpuPlatform.
    */
   @java.lang.Override
@@ -481,7 +340,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3347
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
@@ -772,7 +631,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, imageType_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -817,7 +676,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, imageType_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -852,7 +711,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
     if (!getBootDiskKmsKey().equals(other.getBootDiskKmsKey())) return false;
     if (!getImageType().equals(other.getImageType())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -891,7 +750,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     hash = (53 * hash) + getBootDiskKmsKey().hashCode();
     hash = (37 * hash) + IMAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getImageType().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1022,17 +881,10 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
     }
 
     // Construct using com.google.container.v1.AutoprovisioningNodePoolDefaults.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1216,7 +1068,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         imageType_ = other.imageType_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1231,18 +1083,93 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.AutoprovisioningNodePoolDefaults parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureOauthScopesIsMutable();
+                oauthScopes_.add(s);
+                break;
+              } // case 10
+            case 18:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getUpgradeSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getManagementFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                minCpuPlatform_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 48:
+              {
+                diskSizeGb_ = input.readInt32();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                diskType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                bootDiskKmsKey_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                imageType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.container.v1.AutoprovisioningNodePoolDefaults) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1915,7 +1842,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3347
      * @return The minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -1951,7 +1878,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3347
      * @return The bytes for minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -1987,7 +1914,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3347
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2022,7 +1949,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3347
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2053,7 +1980,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3326
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3347
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2701,7 +2628,18 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AutoprovisioningNodePoolDefaults(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

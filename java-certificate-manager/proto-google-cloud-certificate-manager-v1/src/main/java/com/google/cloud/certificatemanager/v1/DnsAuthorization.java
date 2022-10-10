@@ -55,129 +55,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private DnsAuthorization(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              domain_ = s;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord.Builder
-                  subBuilder = null;
-              if (dnsResourceRecord_ != null) {
-                subBuilder = dnsResourceRecord_.toBuilder();
-              }
-              dnsResourceRecord_ =
-                  input.readMessage(
-                      com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dnsResourceRecord_);
-                dnsResourceRecord_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.certificatemanager.v1.CertificateManagerProto
         .internal_static_google_cloud_certificatemanager_v1_DnsAuthorization_descriptor;
@@ -324,66 +201,6 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private DnsResourceRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                name_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                type_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                data_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -576,7 +393,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, data_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -594,7 +411,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, data_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -614,7 +431,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (!getName().equals(other.getName())) return false;
       if (!getType().equals(other.getType())) return false;
       if (!getData().equals(other.getData())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -631,7 +448,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -773,17 +590,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -897,7 +707,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           data_ = other.data_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -912,20 +722,49 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  type_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  data_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecord)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1293,7 +1132,19 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DnsResourceRecord(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1617,9 +1468,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-   * single domain and its wildcard, e.g. authorization for `example.com` can
-   * be used to issue certificates for `example.com` and `*.example.com`.
+   * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+   * resource covers a single domain and its wildcard, e.g. authorization for
+   * `example.com` can be used to issue certificates for `example.com` and
+   * `*.example.com`.
    * </pre>
    *
    * <code>
@@ -1644,9 +1496,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-   * single domain and its wildcard, e.g. authorization for `example.com` can
-   * be used to issue certificates for `example.com` and `*.example.com`.
+   * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+   * resource covers a single domain and its wildcard, e.g. authorization for
+   * `example.com` can be used to issue certificates for `example.com` and
+   * `*.example.com`.
    * </pre>
    *
    * <code>
@@ -1675,7 +1528,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DNS Resource Record that needs to be added to DNS configuration.
+   * Output only. DNS Resource Record that needs to be added to DNS
+   * configuration.
    * </pre>
    *
    * <code>
@@ -1692,7 +1546,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DNS Resource Record that needs to be added to DNS configuration.
+   * Output only. DNS Resource Record that needs to be added to DNS
+   * configuration.
    * </pre>
    *
    * <code>
@@ -1713,7 +1568,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. DNS Resource Record that needs to be added to DNS configuration.
+   * Output only. DNS Resource Record that needs to be added to DNS
+   * configuration.
    * </pre>
    *
    * <code>
@@ -1760,7 +1616,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     if (dnsResourceRecord_ != null) {
       output.writeMessage(10, getDnsResourceRecord());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1797,7 +1653,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     if (dnsResourceRecord_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDnsResourceRecord());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1829,7 +1685,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     if (hasDnsResourceRecord()) {
       if (!getDnsResourceRecord().equals(other.getDnsResourceRecord())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1862,7 +1718,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DNS_RESOURCE_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + getDnsResourceRecord().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2013,17 +1869,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.certificatemanager.v1.DnsAuthorization.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2174,7 +2023,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (other.hasDnsResourceRecord()) {
         mergeDnsResourceRecord(other.getDnsResourceRecord());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2189,18 +2038,79 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.certificatemanager.v1.DnsAuthorization parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                domain_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 82:
+              {
+                input.readMessage(
+                    getDnsResourceRecordFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.certificatemanager.v1.DnsAuthorization) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2993,9 +2903,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-     * single domain and its wildcard, e.g. authorization for `example.com` can
-     * be used to issue certificates for `example.com` and `*.example.com`.
+     * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+     * resource covers a single domain and its wildcard, e.g. authorization for
+     * `example.com` can be used to issue certificates for `example.com` and
+     * `*.example.com`.
      * </pre>
      *
      * <code>
@@ -3019,9 +2930,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-     * single domain and its wildcard, e.g. authorization for `example.com` can
-     * be used to issue certificates for `example.com` and `*.example.com`.
+     * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+     * resource covers a single domain and its wildcard, e.g. authorization for
+     * `example.com` can be used to issue certificates for `example.com` and
+     * `*.example.com`.
      * </pre>
      *
      * <code>
@@ -3045,9 +2957,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-     * single domain and its wildcard, e.g. authorization for `example.com` can
-     * be used to issue certificates for `example.com` and `*.example.com`.
+     * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+     * resource covers a single domain and its wildcard, e.g. authorization for
+     * `example.com` can be used to issue certificates for `example.com` and
+     * `*.example.com`.
      * </pre>
      *
      * <code>
@@ -3070,9 +2983,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-     * single domain and its wildcard, e.g. authorization for `example.com` can
-     * be used to issue certificates for `example.com` and `*.example.com`.
+     * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+     * resource covers a single domain and its wildcard, e.g. authorization for
+     * `example.com` can be used to issue certificates for `example.com` and
+     * `*.example.com`.
      * </pre>
      *
      * <code>
@@ -3091,9 +3005,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. A domain which is being authorized. A DnsAuthorization resource covers a
-     * single domain and its wildcard, e.g. authorization for `example.com` can
-     * be used to issue certificates for `example.com` and `*.example.com`.
+     * Required. Immutable. A domain which is being authorized. A DnsAuthorization
+     * resource covers a single domain and its wildcard, e.g. authorization for
+     * `example.com` can be used to issue certificates for `example.com` and
+     * `*.example.com`.
      * </pre>
      *
      * <code>
@@ -3125,7 +3040,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3141,7 +3057,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3165,7 +3082,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3190,7 +3108,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3213,7 +3132,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3243,7 +3163,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3265,7 +3186,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3282,7 +3204,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3304,7 +3227,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. DNS Resource Record that needs to be added to DNS configuration.
+     * Output only. DNS Resource Record that needs to be added to DNS
+     * configuration.
      * </pre>
      *
      * <code>
@@ -3360,7 +3284,18 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DnsAuthorization(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

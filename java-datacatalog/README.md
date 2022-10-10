@@ -11,58 +11,28 @@ Java idiomatic client for [Data Catalog][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-datacatalog</artifactId>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog</artifactId>
-  <version>1.9.3</version>
+  <version>1.9.5</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-datacatalog'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datacatalog:1.9.3'
+implementation 'com.google.cloud:google-cloud-datacatalog:1.9.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.9.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.9.5"
 ```
 
 ## Authentication
@@ -98,36 +68,6 @@ use this Data Catalog Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-datacatalog/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Custom Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/CreateCustomEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateCustomEntry.java) |
-| Create Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/CreateEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateEntry.java) |
-| Create Entry Group | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/CreateEntryGroup.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateEntryGroup.java) |
-| Create Fileset Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/CreateFilesetEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateFilesetEntry.java) |
-| Create Tag Template | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/CreateTagTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/CreateTagTemplate.java) |
-| Delete Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/DeleteEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/DeleteEntry.java) |
-| Delete Entry Group | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/DeleteEntryGroup.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/DeleteEntryGroup.java) |
-| Delete Tag Template | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/DeleteTagTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/DeleteTagTemplate.java) |
-| Get Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/GetEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/GetEntry.java) |
-| Get Entry Group | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/GetEntryGroup.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/GetEntryGroup.java) |
-| Get Tag Template | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/GetTagTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/GetTagTemplate.java) |
-| Grant Tag Template User Role | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/GrantTagTemplateUserRole.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/GrantTagTemplateUserRole.java) |
-| List Entries | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/ListEntries.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/ListEntries.java) |
-| List Entry Groups | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/ListEntryGroups.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/ListEntryGroups.java) |
-| Lookup Entry Big Query Dataset | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/LookupEntryBigQueryDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/LookupEntryBigQueryDataset.java) |
-| Lookup Entry Big Query Table | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/LookupEntryBigQueryTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/LookupEntryBigQueryTable.java) |
-| Lookup Entry Pub Sub Topic | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/LookupEntryPubSubTopic.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/LookupEntryPubSubTopic.java) |
-| Quickstart | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/Quickstart.java) |
-| Search Assets | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/SearchAssets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/SearchAssets.java) |
-| Update Entry | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/UpdateEntry.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/UpdateEntry.java) |
-| Update Entry Group | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/UpdateEntryGroup.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/UpdateEntryGroup.java) |
-| Update Tag Template | [source code](https://github.com/googleapis/java-datacatalog/blob/main/samples/snippets/src/main/java/com/example/datacatalog/UpdateTagTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-datacatalog&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datacatalog/UpdateTagTemplate.java) |
 
 
 

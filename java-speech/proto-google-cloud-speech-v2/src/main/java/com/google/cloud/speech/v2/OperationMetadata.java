@@ -55,382 +55,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private OperationMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              method_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kmsKeyName_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kmsKeyVersionName_ = s;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.speech.v2.BatchRecognizeRequest.Builder subBuilder = null;
-              if (requestCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.BatchRecognizeRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.BatchRecognizeRequest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.BatchRecognizeRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.speech.v2.CreateRecognizerRequest.Builder subBuilder = null;
-              if (requestCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.CreateRecognizerRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.CreateRecognizerRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.CreateRecognizerRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 9;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.speech.v2.UpdateRecognizerRequest.Builder subBuilder = null;
-              if (requestCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UpdateRecognizerRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UpdateRecognizerRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.UpdateRecognizerRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 10;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.speech.v2.DeleteRecognizerRequest.Builder subBuilder = null;
-              if (requestCase_ == 11) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.DeleteRecognizerRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.DeleteRecognizerRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.DeleteRecognizerRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.speech.v2.UndeleteRecognizerRequest.Builder subBuilder = null;
-              if (requestCase_ == 12) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UndeleteRecognizerRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UndeleteRecognizerRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.speech.v2.UndeleteRecognizerRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.speech.v2.CreateCustomClassRequest.Builder subBuilder = null;
-              if (requestCase_ == 13) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.CreateCustomClassRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.CreateCustomClassRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.speech.v2.CreateCustomClassRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 13;
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.speech.v2.UpdateCustomClassRequest.Builder subBuilder = null;
-              if (requestCase_ == 14) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UpdateCustomClassRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UpdateCustomClassRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.speech.v2.UpdateCustomClassRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 14;
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.speech.v2.DeleteCustomClassRequest.Builder subBuilder = null;
-              if (requestCase_ == 15) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.DeleteCustomClassRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.DeleteCustomClassRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.speech.v2.DeleteCustomClassRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              com.google.cloud.speech.v2.UndeleteCustomClassRequest.Builder subBuilder = null;
-              if (requestCase_ == 16) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UndeleteCustomClassRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UndeleteCustomClassRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.speech.v2.UndeleteCustomClassRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 16;
-              break;
-            }
-          case 138:
-            {
-              com.google.cloud.speech.v2.CreatePhraseSetRequest.Builder subBuilder = null;
-              if (requestCase_ == 17) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.CreatePhraseSetRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.CreatePhraseSetRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.CreatePhraseSetRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 17;
-              break;
-            }
-          case 146:
-            {
-              com.google.cloud.speech.v2.UpdatePhraseSetRequest.Builder subBuilder = null;
-              if (requestCase_ == 18) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UpdatePhraseSetRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UpdatePhraseSetRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.UpdatePhraseSetRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 18;
-              break;
-            }
-          case 154:
-            {
-              com.google.cloud.speech.v2.DeletePhraseSetRequest.Builder subBuilder = null;
-              if (requestCase_ == 19) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.DeletePhraseSetRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.DeletePhraseSetRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.DeletePhraseSetRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 19;
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.speech.v2.UndeletePhraseSetRequest.Builder subBuilder = null;
-              if (requestCase_ == 20) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UndeletePhraseSetRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UndeletePhraseSetRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.speech.v2.UndeletePhraseSetRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 20;
-              break;
-            }
-          case 170:
-            {
-              com.google.cloud.speech.v2.UpdateConfigRequest.Builder subBuilder = null;
-              if (requestCase_ == 21) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.UpdateConfigRequest) request_).toBuilder();
-              }
-              request_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.UpdateConfigRequest.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.UpdateConfigRequest) request_);
-                request_ = subBuilder.buildPartial();
-              }
-              requestCase_ = 21;
-              break;
-            }
-          case 176:
-            {
-              progressPercent_ = input.readInt32();
-              break;
-            }
-          case 186:
-            {
-              com.google.cloud.speech.v2.BatchRecognizeMetadata.Builder subBuilder = null;
-              if (metadataCase_ == 23) {
-                subBuilder =
-                    ((com.google.cloud.speech.v2.BatchRecognizeMetadata) metadata_).toBuilder();
-              }
-              metadata_ =
-                  input.readMessage(
-                      com.google.cloud.speech.v2.BatchRecognizeMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.speech.v2.BatchRecognizeMetadata) metadata_);
-                metadata_ = subBuilder.buildPartial();
-              }
-              metadataCase_ = 23;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_OperationMetadata_descriptor;
@@ -1757,7 +1381,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (metadataCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.speech.v2.BatchRecognizeMetadata) metadata_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1862,7 +1486,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               23, (com.google.cloud.speech.v2.BatchRecognizeMetadata) metadata_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1952,7 +1576,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2049,7 +1673,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2178,17 +1802,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.speech.v2.OperationMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2214,8 +1831,53 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       kmsKeyVersionName_ = "";
 
+      if (batchRecognizeRequestBuilder_ != null) {
+        batchRecognizeRequestBuilder_.clear();
+      }
+      if (createRecognizerRequestBuilder_ != null) {
+        createRecognizerRequestBuilder_.clear();
+      }
+      if (updateRecognizerRequestBuilder_ != null) {
+        updateRecognizerRequestBuilder_.clear();
+      }
+      if (deleteRecognizerRequestBuilder_ != null) {
+        deleteRecognizerRequestBuilder_.clear();
+      }
+      if (undeleteRecognizerRequestBuilder_ != null) {
+        undeleteRecognizerRequestBuilder_.clear();
+      }
+      if (createCustomClassRequestBuilder_ != null) {
+        createCustomClassRequestBuilder_.clear();
+      }
+      if (updateCustomClassRequestBuilder_ != null) {
+        updateCustomClassRequestBuilder_.clear();
+      }
+      if (deleteCustomClassRequestBuilder_ != null) {
+        deleteCustomClassRequestBuilder_.clear();
+      }
+      if (undeleteCustomClassRequestBuilder_ != null) {
+        undeleteCustomClassRequestBuilder_.clear();
+      }
+      if (createPhraseSetRequestBuilder_ != null) {
+        createPhraseSetRequestBuilder_.clear();
+      }
+      if (updatePhraseSetRequestBuilder_ != null) {
+        updatePhraseSetRequestBuilder_.clear();
+      }
+      if (deletePhraseSetRequestBuilder_ != null) {
+        deletePhraseSetRequestBuilder_.clear();
+      }
+      if (undeletePhraseSetRequestBuilder_ != null) {
+        undeletePhraseSetRequestBuilder_.clear();
+      }
+      if (updateConfigRequestBuilder_ != null) {
+        updateConfigRequestBuilder_.clear();
+      }
       progressPercent_ = 0;
 
+      if (batchRecognizeMetadataBuilder_ != null) {
+        batchRecognizeMetadataBuilder_.clear();
+      }
       requestCase_ = 0;
       request_ = null;
       metadataCase_ = 0;
@@ -2530,7 +2192,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2545,17 +2207,178 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.speech.v2.OperationMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                resource_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                method_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 50:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                kmsKeyVersionName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getBatchRecognizeRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getCreateRecognizerRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getUpdateRecognizerRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getDeleteRecognizerRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getUndeleteRecognizerRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getCreateCustomClassRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getUpdateCustomClassRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getDeleteCustomClassRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getUndeleteCustomClassRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 16;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    getCreatePhraseSetRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 17;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getUpdatePhraseSetRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 18;
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getDeletePhraseSetRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 19;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getUndeletePhraseSetRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 20;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getUpdateConfigRequestFieldBuilder().getBuilder(), extensionRegistry);
+                requestCase_ = 21;
+                break;
+              } // case 170
+            case 176:
+              {
+                progressPercent_ = input.readInt32();
+
+                break;
+              } // case 176
+            case 186:
+              {
+                input.readMessage(
+                    getBatchRecognizeMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                metadataCase_ = 23;
+                break;
+              } // case 186
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.speech.v2.OperationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6765,7 +6588,18 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new OperationMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

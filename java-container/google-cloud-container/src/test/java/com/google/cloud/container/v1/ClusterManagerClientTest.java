@@ -37,6 +37,7 @@ import com.google.container.v1.ClusterUpdate;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.ConfidentialNodes;
+import com.google.container.v1.CostManagementConfig;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DatabaseEncryption;
@@ -289,6 +290,7 @@ public class ClusterManagerClientTest {
             .setReleaseChannel(ReleaseChannel.newBuilder().build())
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setMeshCertificates(MeshCertificates.newBuilder().build())
+            .setCostManagementConfig(CostManagementConfig.newBuilder().build())
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setIdentityServiceConfig(IdentityServiceConfig.newBuilder().build())
@@ -386,6 +388,7 @@ public class ClusterManagerClientTest {
             .setReleaseChannel(ReleaseChannel.newBuilder().build())
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setMeshCertificates(MeshCertificates.newBuilder().build())
+            .setCostManagementConfig(CostManagementConfig.newBuilder().build())
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setIdentityServiceConfig(IdentityServiceConfig.newBuilder().build())

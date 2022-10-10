@@ -11,59 +11,28 @@ Java idiomatic client for [Cloud Key Management Service][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-kms</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>2.6.4</version>
+  <version>2.6.8</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-kms'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-kms:2.6.4'
+implementation 'com.google.cloud:google-cloud-kms:2.6.8'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "2.6.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "2.6.8"
 ```
 
 ## Authentication
@@ -99,49 +68,6 @@ use this Cloud Key Management Service Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-kms/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Key Asymmetric Decrypt | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyAsymmetricDecrypt.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyAsymmetricDecrypt.java) |
-| Create Key Asymmetric Sign | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyAsymmetricSign.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyAsymmetricSign.java) |
-| Create Key Hsm | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyHsm.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyHsm.java) |
-| Create Key Labels | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyLabels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyLabels.java) |
-| Create Key Mac | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyMac.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyMac.java) |
-| Create Key Ring | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyRing.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyRing.java) |
-| Create Key Rotation Schedule | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyRotationSchedule.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyRotationSchedule.java) |
-| Create Key Symmetric Encrypt Decrypt | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeySymmetricEncryptDecrypt.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeySymmetricEncryptDecrypt.java) |
-| Create Key Version | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/CreateKeyVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/CreateKeyVersion.java) |
-| Decrypt Asymmetric | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/DecryptAsymmetric.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/DecryptAsymmetric.java) |
-| Decrypt Symmetric | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/DecryptSymmetric.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/DecryptSymmetric.java) |
-| Destroy Key Version | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/DestroyKeyVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/DestroyKeyVersion.java) |
-| Disable Key Version | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/DisableKeyVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/DisableKeyVersion.java) |
-| Enable Key Version | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/EnableKeyVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/EnableKeyVersion.java) |
-| Encrypt Asymmetric | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/EncryptAsymmetric.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/EncryptAsymmetric.java) |
-| Encrypt Symmetric | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/EncryptSymmetric.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/EncryptSymmetric.java) |
-| Generate Random Bytes | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/GenerateRandomBytes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/GenerateRandomBytes.java) |
-| Get Key Labels | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/GetKeyLabels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/GetKeyLabels.java) |
-| Get Key Version Attestation | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/GetKeyVersionAttestation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/GetKeyVersionAttestation.java) |
-| Get Public Key | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/GetPublicKey.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/GetPublicKey.java) |
-| Iam Add Member | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/IamAddMember.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/IamAddMember.java) |
-| Iam Get Policy | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/IamGetPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/IamGetPolicy.java) |
-| Iam Remove Member | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/IamRemoveMember.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/IamRemoveMember.java) |
-| Quickstart | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/Quickstart.java) |
-| Restore Key Version | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/RestoreKeyVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/RestoreKeyVersion.java) |
-| Sign Asymmetric | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/SignAsymmetric.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/SignAsymmetric.java) |
-| Sign Mac | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/SignMac.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/SignMac.java) |
-| Update Key Add Rotation | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/UpdateKeyAddRotation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/UpdateKeyAddRotation.java) |
-| Update Key Remove Labels | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/UpdateKeyRemoveLabels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/UpdateKeyRemoveLabels.java) |
-| Update Key Remove Rotation | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/UpdateKeyRemoveRotation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/UpdateKeyRemoveRotation.java) |
-| Update Key Set Primary | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/UpdateKeySetPrimary.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/UpdateKeySetPrimary.java) |
-| Update Key Update Labels | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/UpdateKeyUpdateLabels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/UpdateKeyUpdateLabels.java) |
-| Verify Asymmetric Ec | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/VerifyAsymmetricEc.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/VerifyAsymmetricEc.java) |
-| Verify Asymmetric Rsa | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/VerifyAsymmetricRsa.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/VerifyAsymmetricRsa.java) |
-| Verify Mac | [source code](https://github.com/googleapis/java-kms/blob/main/samples/snippets/src/main/java/kms/VerifyMac.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-kms&page=editor&open_in_editor=samples/snippets/src/main/java/kms/VerifyMac.java) |
 
 
 

@@ -59,61 +59,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private AppEngineHttpQueue(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder subBuilder = null;
-              if (appEngineRoutingOverride_ != null) {
-                subBuilder = appEngineRoutingOverride_.toBuilder();
-              }
-              appEngineRoutingOverride_ =
-                  input.readMessage(
-                      com.google.cloud.tasks.v2beta3.AppEngineRouting.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(appEngineRoutingOverride_);
-                appEngineRoutingOverride_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta3.TargetProto
         .internal_static_google_cloud_tasks_v2beta3_AppEngineHttpQueue_descriptor;
@@ -207,7 +152,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     if (appEngineRoutingOverride_ != null) {
       output.writeMessage(1, getAppEngineRoutingOverride());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -221,7 +166,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, getAppEngineRoutingOverride());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -241,7 +186,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     if (hasAppEngineRoutingOverride()) {
       if (!getAppEngineRoutingOverride().equals(other.getAppEngineRoutingOverride())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -256,7 +201,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + APP_ENGINE_ROUTING_OVERRIDE_FIELD_NUMBER;
       hash = (53 * hash) + getAppEngineRoutingOverride().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -394,17 +339,10 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -501,7 +439,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       if (other.hasAppEngineRoutingOverride()) {
         mergeAppEngineRoutingOverride(other.getAppEngineRoutingOverride());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -516,18 +454,38 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.tasks.v2beta3.AppEngineHttpQueue parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getAppEngineRoutingOverrideFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.tasks.v2beta3.AppEngineHttpQueue) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -789,7 +747,18 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AppEngineHttpQueue(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

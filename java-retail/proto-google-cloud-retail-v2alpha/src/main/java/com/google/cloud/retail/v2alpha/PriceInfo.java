@@ -52,114 +52,6 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PriceInfo(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currencyCode_ = s;
-              break;
-            }
-          case 21:
-            {
-              price_ = input.readFloat();
-              break;
-            }
-          case 29:
-            {
-              originalPrice_ = input.readFloat();
-              break;
-            }
-          case 37:
-            {
-              cost_ = input.readFloat();
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (priceEffectiveTime_ != null) {
-                subBuilder = priceEffectiveTime_.toBuilder();
-              }
-              priceEffectiveTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(priceEffectiveTime_);
-                priceEffectiveTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (priceExpireTime_ != null) {
-                subBuilder = priceExpireTime_.toBuilder();
-              }
-              priceExpireTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(priceExpireTime_);
-                priceExpireTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.Builder subBuilder = null;
-              if (priceRange_ != null) {
-                subBuilder = priceRange_.toBuilder();
-              }
-              priceRange_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(priceRange_);
-                priceRange_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.CommonProto
         .internal_static_google_cloud_retail_v2alpha_PriceInfo_descriptor;
@@ -313,77 +205,6 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private PriceRange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.retail.v2alpha.Interval.Builder subBuilder = null;
-                if (price_ != null) {
-                  subBuilder = price_.toBuilder();
-                }
-                price_ =
-                    input.readMessage(
-                        com.google.cloud.retail.v2alpha.Interval.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(price_);
-                  price_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.retail.v2alpha.Interval.Builder subBuilder = null;
-                if (originalPrice_ != null) {
-                  subBuilder = originalPrice_.toBuilder();
-                }
-                originalPrice_ =
-                    input.readMessage(
-                        com.google.cloud.retail.v2alpha.Interval.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(originalPrice_);
-                  originalPrice_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -547,7 +368,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       if (originalPrice_ != null) {
         output.writeMessage(2, getOriginalPrice());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -562,7 +383,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       if (originalPrice_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getOriginalPrice());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -586,7 +407,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       if (hasOriginalPrice()) {
         if (!getOriginalPrice().equals(other.getOriginalPrice())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -605,7 +426,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ORIGINAL_PRICE_FIELD_NUMBER;
         hash = (53 * hash) + getOriginalPrice().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -740,17 +561,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.retail.v2alpha.PriceInfo.PriceRange.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -863,7 +677,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         if (other.hasOriginalPrice()) {
           mergeOriginalPrice(other.getOriginalPrice());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -878,18 +692,43 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.retail.v2alpha.PriceInfo.PriceRange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getPriceFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getOriginalPriceFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.retail.v2alpha.PriceInfo.PriceRange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1387,7 +1226,19 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PriceRange(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1826,7 +1677,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     if (priceRange_ != null) {
       output.writeMessage(7, getPriceRange());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1856,7 +1707,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     if (priceRange_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPriceRange());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1891,7 +1742,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     if (hasPriceRange()) {
       if (!getPriceRange().equals(other.getPriceRange())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1922,7 +1773,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRICE_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getPriceRange().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2051,17 +1902,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.retail.v2alpha.PriceInfo.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2210,7 +2054,7 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPriceRange()) {
         mergePriceRange(other.getPriceRange());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2225,17 +2069,74 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.retail.v2alpha.PriceInfo parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                currencyCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 21:
+              {
+                price_ = input.readFloat();
+
+                break;
+              } // case 21
+            case 29:
+              {
+                originalPrice_ = input.readFloat();
+
+                break;
+              } // case 29
+            case 37:
+              {
+                cost_ = input.readFloat();
+
+                break;
+              } // case 37
+            case 42:
+              {
+                input.readMessage(
+                    getPriceEffectiveTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getPriceExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.retail.v2alpha.PriceInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3493,7 +3394,18 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PriceInfo(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -701,4 +701,45 @@ public interface ClusterConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.MetastoreConfigOrBuilder getMetastoreConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for Dataproc metrics.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataprocMetricConfig field is set.
+   */
+  boolean hasDataprocMetricConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for Dataproc metrics.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataprocMetricConfig.
+   */
+  com.google.cloud.dataproc.v1.DataprocMetricConfig getDataprocMetricConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The config for Dataproc metrics.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DataprocMetricConfig dataproc_metric_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.DataprocMetricConfigOrBuilder getDataprocMetricConfigOrBuilder();
 }

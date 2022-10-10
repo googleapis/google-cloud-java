@@ -1,5 +1,44 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-iamcredentials/compare/v2.3.4...v2.3.5) (2022-09-27)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#739](https://github.com/googleapis/java-iamcredentials/issues/739)) ([d7e6a37](https://github.com/googleapis/java-iamcredentials/commit/d7e6a3730e6b0740d3428ef14a6acb29a8237315))
+* Update dependency certifi to v2022.9.24 ([#731](https://github.com/googleapis/java-iamcredentials/issues/731)) ([7595af7](https://github.com/googleapis/java-iamcredentials/commit/7595af729b96e6598b816e930b3396495e920fc2))
+* Update dependency charset-normalizer to v2.1.1 ([#741](https://github.com/googleapis/java-iamcredentials/issues/741)) ([14a1554](https://github.com/googleapis/java-iamcredentials/commit/14a15547cba0e66ab22fed3e5b7a952ca69da8fd))
+* Update dependency click to v8.1.3 ([#742](https://github.com/googleapis/java-iamcredentials/issues/742)) ([6eb7ca2](https://github.com/googleapis/java-iamcredentials/commit/6eb7ca29886952cc271e1bbf845473a03d761690))
+* Update dependency gcp-releasetool to v1.8.8 ([#732](https://github.com/googleapis/java-iamcredentials/issues/732)) ([2b5e350](https://github.com/googleapis/java-iamcredentials/commit/2b5e3501d0023f9300828b7ed9e007aa353e9786))
+* Update dependency google-api-core to v2.10.1 ([#743](https://github.com/googleapis/java-iamcredentials/issues/743)) ([e711c03](https://github.com/googleapis/java-iamcredentials/commit/e711c035452ee6bf22d54118ff845220a9f96408))
+* Update dependency google-auth to v2.11.1 ([#733](https://github.com/googleapis/java-iamcredentials/issues/733)) ([d1a1d0d](https://github.com/googleapis/java-iamcredentials/commit/d1a1d0d89325bbc42cbbfe7cf5127c055c32445b))
+* Update dependency google-cloud-core to v2.3.2 ([#734](https://github.com/googleapis/java-iamcredentials/issues/734)) ([1e82baa](https://github.com/googleapis/java-iamcredentials/commit/1e82baaf7b722e545b852fd820f4b836818f0de0))
+* Update dependency google-cloud-storage to v2.5.0 ([#744](https://github.com/googleapis/java-iamcredentials/issues/744)) ([820d8d3](https://github.com/googleapis/java-iamcredentials/commit/820d8d34cbf5cd43a98794a0416f00e9e5da5c68))
+* Update dependency googleapis-common-protos to v1.56.4 ([#735](https://github.com/googleapis/java-iamcredentials/issues/735)) ([b826d3f](https://github.com/googleapis/java-iamcredentials/commit/b826d3f8fb36a1928311ebf5bdf6cf2001f4ef96))
+* Update dependency jinja2 to v3.1.2 ([#745](https://github.com/googleapis/java-iamcredentials/issues/745)) ([85092ac](https://github.com/googleapis/java-iamcredentials/commit/85092ac9cc11a38e73ffd6e7a527641dbfad7654))
+* Update dependency keyring to v23.9.3 ([#746](https://github.com/googleapis/java-iamcredentials/issues/746)) ([ffb14c4](https://github.com/googleapis/java-iamcredentials/commit/ffb14c4bbe1210a11a2a188479710ee63b5d0f5e))
+* Update dependency markupsafe to v2.1.1 ([#747](https://github.com/googleapis/java-iamcredentials/issues/747)) ([0dc411f](https://github.com/googleapis/java-iamcredentials/commit/0dc411ff593f93d56e47117763ca956768bb1d31))
+* Update dependency protobuf to v3.20.2 ([#748](https://github.com/googleapis/java-iamcredentials/issues/748)) ([4d289d3](https://github.com/googleapis/java-iamcredentials/commit/4d289d350e645db03c43371580d303a359ecfbc8))
+* Update dependency protobuf to v4 ([#740](https://github.com/googleapis/java-iamcredentials/issues/740)) ([ce5884b](https://github.com/googleapis/java-iamcredentials/commit/ce5884b73df87b427c0ba45b7b3836d8ae1ae4a4))
+* Update dependency pyjwt to v2.5.0 ([#749](https://github.com/googleapis/java-iamcredentials/issues/749)) ([b21617e](https://github.com/googleapis/java-iamcredentials/commit/b21617e7e666a6b68d5b3ea003b1ef62b57018ff))
+* Update dependency requests to v2.28.1 ([#736](https://github.com/googleapis/java-iamcredentials/issues/736)) ([9e8bcbf](https://github.com/googleapis/java-iamcredentials/commit/9e8bcbfd46ed23549caa20d9c6fc1ac3e3656469))
+* Update dependency typing-extensions to v4.3.0 ([#737](https://github.com/googleapis/java-iamcredentials/issues/737)) ([4dd2bb8](https://github.com/googleapis/java-iamcredentials/commit/4dd2bb897fa57579a46c67c24cce43758de62d6a))
+* Update dependency zipp to v3.8.1 ([#738](https://github.com/googleapis/java-iamcredentials/issues/738)) ([514b71e](https://github.com/googleapis/java-iamcredentials/commit/514b71efd1e2671386a4ee6831ec94d21ddb234d))
+
+## [2.3.4](https://github.com/googleapis/java-iamcredentials/compare/v2.3.3...v2.3.4) (2022-09-15)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#724](https://github.com/googleapis/java-iamcredentials/issues/724)) ([e80258a](https://github.com/googleapis/java-iamcredentials/commit/e80258a08921bc6f3e6d8ebf625281235a2932cf))
+
+## [2.3.3](https://github.com/googleapis/java-iamcredentials/compare/v2.3.2...v2.3.3) (2022-09-09)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#720](https://github.com/googleapis/java-iamcredentials/issues/720)) ([e0c63c2](https://github.com/googleapis/java-iamcredentials/commit/e0c63c27277010a6a1e2ba1eff51fcc1f7ee0484))
+
 ## [2.3.2](https://github.com/googleapis/java-iamcredentials/compare/v2.3.1...v2.3.2) (2022-08-09)
 
 

@@ -55,78 +55,6 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private ListPipelineJobsRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
-              break;
-            }
-          case 24:
-            {
-              pageSize_ = input.readInt32();
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageToken_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              orderBy_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.PipelineServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_ListPipelineJobsRequest_descriptor;
@@ -446,6 +374,52 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int READ_MASK_FIELD_NUMBER = 7;
+  private com.google.protobuf.FieldMask readMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Mask specifying which fields to read.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasReadMask() {
+    return readMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mask specifying which fields to read.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+   *
+   * @return The readMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getReadMask() {
+    return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mask specifying which fields to read.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+    return getReadMask();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -475,7 +449,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
     }
-    unknownFields.writeTo(output);
+    if (readMask_ != null) {
+      output.writeMessage(7, getReadMask());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -499,7 +476,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
-    size += unknownFields.getSerializedSize();
+    if (readMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getReadMask());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -520,7 +500,11 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (hasReadMask() != other.hasReadMask()) return false;
+    if (hasReadMask()) {
+      if (!getReadMask().equals(other.getReadMask())) return false;
+    }
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -541,7 +525,11 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    if (hasReadMask()) {
+      hash = (37 * hash) + READ_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getReadMask().hashCode();
+    }
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -671,17 +659,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -697,6 +678,12 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
 
       orderBy_ = "";
 
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -729,6 +716,11 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.orderBy_ = orderBy_;
+      if (readMaskBuilder_ == null) {
+        result.readMask_ = readMask_;
+      } else {
+        result.readMask_ = readMaskBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -798,7 +790,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
         orderBy_ = other.orderBy_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (other.hasReadMask()) {
+        mergeReadMask(other.getReadMask());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -813,18 +808,67 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                filter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                pageSize_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 50:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getReadMaskFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1529,6 +1573,185 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
       return this;
     }
 
+    private com.google.protobuf.FieldMask readMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        readMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     *
+     * @return Whether the readMask field is set.
+     */
+    public boolean hasReadMask() {
+      return readMaskBuilder_ != null || readMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     *
+     * @return The readMask.
+     */
+    public com.google.protobuf.FieldMask getReadMask() {
+      if (readMaskBuilder_ == null) {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      } else {
+        return readMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readMask_ = value;
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (readMaskBuilder_ == null) {
+        readMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (readMask_ != null) {
+          readMask_ =
+              com.google.protobuf.FieldMask.newBuilder(readMask_).mergeFrom(value).buildPartial();
+        } else {
+          readMask_ = value;
+        }
+        onChanged();
+      } else {
+        readMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    public Builder clearReadMask() {
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+        onChanged();
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
+
+      onChanged();
+      return getReadMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+      if (readMaskBuilder_ != null) {
+        return readMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mask specifying which fields to read.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getReadMaskFieldBuilder() {
+      if (readMaskBuilder_ == null) {
+        readMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getReadMask(), getParentForChildren(), isClean());
+        readMask_ = null;
+      }
+      return readMaskBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -1561,7 +1784,18 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListPipelineJobsRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

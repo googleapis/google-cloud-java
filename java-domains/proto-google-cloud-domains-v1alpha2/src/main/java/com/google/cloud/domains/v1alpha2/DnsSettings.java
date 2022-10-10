@@ -53,104 +53,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DnsSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.Builder subBuilder = null;
-              if (dnsProviderCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns) dnsProvider_)
-                        .toBuilder();
-              }
-              dnsProvider_ =
-                  input.readMessage(
-                      com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns) dnsProvider_);
-                dnsProvider_ = subBuilder.buildPartial();
-              }
-              dnsProviderCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.Builder subBuilder =
-                  null;
-              if (dnsProviderCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns) dnsProvider_)
-                        .toBuilder();
-              }
-              dnsProvider_ =
-                  input.readMessage(
-                      com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns) dnsProvider_);
-                dnsProvider_ = subBuilder.buildPartial();
-              }
-              dnsProviderCase_ = 2;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                glueRecords_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              glueRecords_.add(
-                  input.readMessage(
-                      com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        glueRecords_ = java.util.Collections.unmodifiableList(glueRecords_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1alpha2.DomainsProto
         .internal_static_google_cloud_domains_v1alpha2_DnsSettings_descriptor;
@@ -493,76 +395,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private CustomDns(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  nameServers_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                nameServers_.add(s);
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  dsRecords_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                dsRecords_.add(
-                    input.readMessage(
-                        com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          nameServers_ = nameServers_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          dsRecords_ = java.util.Collections.unmodifiableList(dsRecords_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.domains.v1alpha2.DomainsProto
           .internal_static_google_cloud_domains_v1alpha2_DnsSettings_CustomDns_descriptor;
@@ -748,7 +580,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < dsRecords_.size(); i++) {
         output.writeMessage(2, dsRecords_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -768,7 +600,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < dsRecords_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, dsRecords_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -786,7 +618,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       if (!getNameServersList().equals(other.getNameServersList())) return false;
       if (!getDsRecordsList().equals(other.getDsRecordsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -805,7 +637,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DS_RECORDS_FIELD_NUMBER;
         hash = (53 * hash) + getDsRecordsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -937,19 +769,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getDsRecordsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -959,10 +782,11 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
         if (dsRecordsBuilder_ == null) {
           dsRecords_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          dsRecords_ = null;
           dsRecordsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1094,7 +918,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1109,18 +933,52 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureNameServersIsMutable();
+                  nameServers_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord m =
+                      input.readMessage(
+                          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.parser(),
+                          extensionRegistry);
+                  if (dsRecordsBuilder_ == null) {
+                    ensureDsRecordsIsMutable();
+                    dsRecords_.add(m);
+                  } else {
+                    dsRecordsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.domains.v1alpha2.DnsSettings.CustomDns) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1745,7 +1603,19 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CustomDns(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1973,83 +1843,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private GoogleDomainsDns(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  nameServers_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                nameServers_.add(s);
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                dsState_ = rawValue;
-                break;
-              }
-            case 26:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  dsRecords_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                dsRecords_.add(
-                    input.readMessage(
-                        com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          nameServers_ = nameServers_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          dsRecords_ = java.util.Collections.unmodifiableList(dsRecords_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2300,7 +2093,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < dsRecords_.size(); i++) {
         output.writeMessage(3, dsRecords_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2325,7 +2118,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < dsRecords_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, dsRecords_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2344,7 +2137,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       if (!getNameServersList().equals(other.getNameServersList())) return false;
       if (dsState_ != other.dsState_) return false;
       if (!getDsRecordsList().equals(other.getDsRecordsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2365,7 +2158,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DS_RECORDS_FIELD_NUMBER;
         hash = (53 * hash) + getDsRecordsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2500,19 +2293,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getDsRecordsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -2524,10 +2308,11 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
         if (dsRecordsBuilder_ == null) {
           dsRecords_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          dsRecords_ = null;
           dsRecordsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2666,7 +2451,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2681,19 +2466,58 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureNameServersIsMutable();
+                  nameServers_.add(s);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  dsState_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord m =
+                      input.readMessage(
+                          com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.parser(),
+                          extensionRegistry);
+                  if (dsRecordsBuilder_ == null) {
+                    ensureDsRecordsIsMutable();
+                    dsRecords_.add(m);
+                  } else {
+                    dsRecordsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.domains.v1alpha2.DnsSettings.GoogleDomainsDns)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3473,7 +3297,19 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GoogleDomainsDns(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3622,71 +3458,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private DsRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                keyTag_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                algorithm_ = rawValue;
-                break;
-              }
-            case 24:
-              {
-                int rawValue = input.readEnum();
-
-                digestType_ = rawValue;
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                digest_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4572,7 +4343,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(digest_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, digest_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4598,7 +4369,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(digest_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, digest_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4618,7 +4389,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       if (algorithm_ != other.algorithm_) return false;
       if (digestType_ != other.digestType_) return false;
       if (!getDigest().equals(other.getDigest())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4637,7 +4408,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + digestType_;
       hash = (37 * hash) + DIGEST_FIELD_NUMBER;
       hash = (53 * hash) + getDigest().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4771,17 +4542,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4891,7 +4655,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           digest_ = other.digest_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4906,18 +4670,55 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  keyTag_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  algorithm_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  digestType_ = input.readEnum();
+
+                  break;
+                } // case 24
+              case 34:
+                {
+                  digest_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.domains.v1alpha2.DnsSettings.DsRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5305,7 +5106,19 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DsRecord(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5511,79 +5324,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private GlueRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                hostName_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  ipv4Addresses_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                ipv4Addresses_.add(s);
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  ipv6Addresses_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                ipv6Addresses_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          ipv4Addresses_ = ipv4Addresses_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          ipv6Addresses_ = ipv6Addresses_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5811,7 +5551,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < ipv6Addresses_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipv6Addresses_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5839,7 +5579,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getIpv6AddressesList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5858,7 +5598,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       if (!getHostName().equals(other.getHostName())) return false;
       if (!getIpv4AddressesList().equals(other.getIpv4AddressesList())) return false;
       if (!getIpv6AddressesList().equals(other.getIpv6AddressesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5879,7 +5619,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + IPV6_ADDRESSES_FIELD_NUMBER;
         hash = (53 * hash) + getIpv6AddressesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6016,17 +5756,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -6153,7 +5886,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6168,18 +5901,51 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  hostName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIpv4AddressesIsMutable();
+                  ipv4Addresses_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIpv6AddressesIsMutable();
+                  ipv6Addresses_.add(s);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6696,7 +6462,19 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GlueRecord(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6967,7 +6745,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < glueRecords_.size(); i++) {
       output.writeMessage(4, glueRecords_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6989,7 +6767,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < glueRecords_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, glueRecords_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7017,7 +6795,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7044,7 +6822,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -7174,30 +6952,28 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.domains.v1alpha2.DnsSettings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getGlueRecordsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (customDnsBuilder_ != null) {
+        customDnsBuilder_.clear();
+      }
+      if (googleDomainsDnsBuilder_ != null) {
+        googleDomainsDnsBuilder_.clear();
+      }
       if (glueRecordsBuilder_ == null) {
         glueRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        glueRecords_ = null;
         glueRecordsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       dnsProviderCase_ = 0;
       dnsProvider_ = null;
       return this;
@@ -7344,7 +7120,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -7359,17 +7135,58 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.domains.v1alpha2.DnsSettings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getCustomDnsFieldBuilder().getBuilder(), extensionRegistry);
+                dnsProviderCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getGoogleDomainsDnsFieldBuilder().getBuilder(), extensionRegistry);
+                dnsProviderCase_ = 2;
+                break;
+              } // case 18
+            case 34:
+              {
+                com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord m =
+                    input.readMessage(
+                        com.google.cloud.domains.v1alpha2.DnsSettings.GlueRecord.parser(),
+                        extensionRegistry);
+                if (glueRecordsBuilder_ == null) {
+                  ensureGlueRecordsIsMutable();
+                  glueRecords_.add(m);
+                } else {
+                  glueRecordsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.domains.v1alpha2.DnsSettings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8234,7 +8051,18 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DnsSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

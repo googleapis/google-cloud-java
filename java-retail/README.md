@@ -19,21 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-retail</artifactId>
-  <version>2.4.0</version>
+  <version>2.5.2</version>
 </dependency>
-
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-retail:2.4.0'
+implementation 'com.google.cloud:google-cloud-retail:2.5.2'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-retail" % "2.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-retail" % "2.5.2"
 ```
 
 ## Authentication
@@ -69,46 +68,6 @@ use this Cloud Retail Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-retail/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Import User Events Big Query | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/ImportUserEventsBigQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/ImportUserEventsBigQuery.java) |
-| Import User Events Gcs | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/ImportUserEventsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/ImportUserEventsGcs.java) |
-| Import User Events Inline | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/ImportUserEventsInline.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/ImportUserEventsInline.java) |
-| Purge User Event | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/PurgeUserEvent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/PurgeUserEvent.java) |
-| Rejoin User Event | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/RejoinUserEvent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/RejoinUserEvent.java) |
-| Write User Event | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/WriteUserEvent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/WriteUserEvent.java) |
-| Events Create Big Query Table | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/setup/EventsCreateBigQueryTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/setup/EventsCreateBigQueryTable.java) |
-| Events Create Gcs Bucket | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/setup/EventsCreateGcsBucket.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/setup/EventsCreateGcsBucket.java) |
-| Update User Events Json | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/events/setup/UpdateUserEventsJson.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/events/setup/UpdateUserEventsJson.java) |
-| Create Test Resources | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/init/CreateTestResources.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/init/CreateTestResources.java) |
-| Remove Test Resources | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/init/RemoveTestResources.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/init/RemoveTestResources.java) |
-| Add Fulfillment Places | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/AddFulfillmentPlaces.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/AddFulfillmentPlaces.java) |
-| Create Product | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/CreateProduct.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/CreateProduct.java) |
-| Crud Product | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/CrudProduct.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/CrudProduct.java) |
-| Delete Product | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/DeleteProduct.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/DeleteProduct.java) |
-| Get Product | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/GetProduct.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/GetProduct.java) |
-| Import Products Big Query Table | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/ImportProductsBigQueryTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/ImportProductsBigQueryTable.java) |
-| Import Products Gcs | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/ImportProductsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/ImportProductsGcs.java) |
-| Import Products Inline Source | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/ImportProductsInlineSource.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/ImportProductsInlineSource.java) |
-| Remove Fulfillment Places | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/RemoveFulfillmentPlaces.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/RemoveFulfillmentPlaces.java) |
-| Set Inventory | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/SetInventory.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/SetInventory.java) |
-| Update Product | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/UpdateProduct.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/UpdateProduct.java) |
-| Products Create Bigquery Table | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/setup/ProductsCreateBigqueryTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/setup/ProductsCreateBigqueryTable.java) |
-| Products Create Gcs Bucket | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/product/setup/ProductsCreateGcsBucket.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/product/setup/ProductsCreateGcsBucket.java) |
-| Search Simple Query | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchSimpleQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchSimpleQuery.java) |
-| Search With Boost Spec | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithBoostSpec.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithBoostSpec.java) |
-| Search With Facet Spec | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithFacetSpec.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithFacetSpec.java) |
-| Search With Filtering | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithFiltering.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithFiltering.java) |
-| Search With Ordering | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithOrdering.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithOrdering.java) |
-| Search With Pagination | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithPagination.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithPagination.java) |
-| Search With Query Expansion Spec | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/search/SearchWithQueryExpansionSpec.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/search/SearchWithQueryExpansionSpec.java) |
-| Setup Cleanup | [source code](https://github.com/googleapis/java-retail/blob/main/samples/interactive-tutorials/src/main/java/setup/SetupCleanup.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-retail&page=editor&open_in_editor=samples/interactive-tutorials/src/main/java/setup/SetupCleanup.java) |
 
 
 

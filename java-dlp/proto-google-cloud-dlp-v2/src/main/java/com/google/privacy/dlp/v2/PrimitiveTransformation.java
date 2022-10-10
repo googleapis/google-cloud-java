@@ -50,265 +50,6 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private PrimitiveTransformation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.privacy.dlp.v2.ReplaceValueConfig.Builder subBuilder = null;
-              if (transformationCase_ == 1) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.ReplaceValueConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.ReplaceValueConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.ReplaceValueConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.privacy.dlp.v2.RedactConfig.Builder subBuilder = null;
-              if (transformationCase_ == 2) {
-                subBuilder = ((com.google.privacy.dlp.v2.RedactConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.RedactConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.RedactConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.privacy.dlp.v2.CharacterMaskConfig.Builder subBuilder = null;
-              if (transformationCase_ == 3) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.CharacterMaskConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CharacterMaskConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.CharacterMaskConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.Builder subBuilder = null;
-              if (transformationCase_ == 4) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) transformation_)
-                        .toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.privacy.dlp.v2.FixedSizeBucketingConfig.Builder subBuilder = null;
-              if (transformationCase_ == 5) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.FixedSizeBucketingConfig) transformation_)
-                        .toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.FixedSizeBucketingConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.FixedSizeBucketingConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.privacy.dlp.v2.BucketingConfig.Builder subBuilder = null;
-              if (transformationCase_ == 6) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.BucketingConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.BucketingConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.BucketingConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.Builder subBuilder = null;
-              if (transformationCase_ == 7) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig) transformation_)
-                        .toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.privacy.dlp.v2.TimePartConfig.Builder subBuilder = null;
-              if (transformationCase_ == 8) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.TimePartConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.TimePartConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.TimePartConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.privacy.dlp.v2.CryptoHashConfig.Builder subBuilder = null;
-              if (transformationCase_ == 9) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.CryptoHashConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CryptoHashConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CryptoHashConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 9;
-              break;
-            }
-          case 90:
-            {
-              com.google.privacy.dlp.v2.DateShiftConfig.Builder subBuilder = null;
-              if (transformationCase_ == 11) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.DateShiftConfig) transformation_).toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.DateShiftConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.DateShiftConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              com.google.privacy.dlp.v2.CryptoDeterministicConfig.Builder subBuilder = null;
-              if (transformationCase_ == 12) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_)
-                        .toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.CryptoDeterministicConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.CryptoDeterministicConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              com.google.privacy.dlp.v2.ReplaceDictionaryConfig.Builder subBuilder = null;
-              if (transformationCase_ == 13) {
-                subBuilder =
-                    ((com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_)
-                        .toBuilder();
-              }
-              transformation_ =
-                  input.readMessage(
-                      com.google.privacy.dlp.v2.ReplaceDictionaryConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_);
-                transformation_ = subBuilder.buildPartial();
-              }
-              transformationCase_ = 13;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_PrimitiveTransformation_descriptor;
@@ -1075,7 +816,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     if (transformationCase_ == 13) {
       output.writeMessage(13, (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1144,7 +885,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.privacy.dlp.v2.ReplaceDictionaryConfig) transformation_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1205,7 +946,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1268,7 +1009,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1397,22 +1138,51 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.privacy.dlp.v2.PrimitiveTransformation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (replaceConfigBuilder_ != null) {
+        replaceConfigBuilder_.clear();
+      }
+      if (redactConfigBuilder_ != null) {
+        redactConfigBuilder_.clear();
+      }
+      if (characterMaskConfigBuilder_ != null) {
+        characterMaskConfigBuilder_.clear();
+      }
+      if (cryptoReplaceFfxFpeConfigBuilder_ != null) {
+        cryptoReplaceFfxFpeConfigBuilder_.clear();
+      }
+      if (fixedSizeBucketingConfigBuilder_ != null) {
+        fixedSizeBucketingConfigBuilder_.clear();
+      }
+      if (bucketingConfigBuilder_ != null) {
+        bucketingConfigBuilder_.clear();
+      }
+      if (replaceWithInfoTypeConfigBuilder_ != null) {
+        replaceWithInfoTypeConfigBuilder_.clear();
+      }
+      if (timePartConfigBuilder_ != null) {
+        timePartConfigBuilder_.clear();
+      }
+      if (cryptoHashConfigBuilder_ != null) {
+        cryptoHashConfigBuilder_.clear();
+      }
+      if (dateShiftConfigBuilder_ != null) {
+        dateShiftConfigBuilder_.clear();
+      }
+      if (cryptoDeterministicConfigBuilder_ != null) {
+        cryptoDeterministicConfigBuilder_.clear();
+      }
+      if (replaceDictionaryConfigBuilder_ != null) {
+        replaceDictionaryConfigBuilder_.clear();
+      }
       transformationCase_ = 0;
       transformation_ = null;
       return this;
@@ -1643,7 +1413,7 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1658,18 +1428,110 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.privacy.dlp.v2.PrimitiveTransformation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getReplaceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRedactConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getCharacterMaskConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getCryptoReplaceFfxFpeConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getFixedSizeBucketingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getBucketingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getReplaceWithInfoTypeConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getTimePartConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getCryptoHashConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 9;
+                break;
+              } // case 74
+            case 90:
+              {
+                input.readMessage(getDateShiftConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getCryptoDeterministicConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getReplaceDictionaryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                transformationCase_ = 13;
+                break;
+              } // case 106
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.privacy.dlp.v2.PrimitiveTransformation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4296,7 +4158,18 @@ public final class PrimitiveTransformation extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PrimitiveTransformation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

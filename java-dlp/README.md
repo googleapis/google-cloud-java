@@ -11,59 +11,28 @@ Java idiomatic client for [Cloud Data Loss Prevention][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-dlp</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dlp</artifactId>
-  <version>3.6.7</version>
+  <version>3.7.5</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-dlp'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dlp:3.6.7'
+implementation 'com.google.cloud:google-cloud-dlp:3.7.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dlp" % "3.6.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-dlp" % "3.7.5"
 ```
 
 ## Authentication
@@ -99,77 +68,6 @@ use this Cloud Data Loss Prevention Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-dlp/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| De Identify Table Bucketing | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableBucketing.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableBucketing.java) |
-| De Identify Table Condition Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableConditionInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableConditionInfoTypes.java) |
-| De Identify Table Condition Masking | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableConditionMasking.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableConditionMasking.java) |
-| De Identify Table Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableInfoTypes.java) |
-| De Identify Table Row Suppress | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableRowSuppress.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableRowSuppress.java) |
-| De Identify Table With Fpe | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableWithFpe.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTableWithFpe.java) |
-| De Identify Text With Fpe | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyTextWithFpe.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyTextWithFpe.java) |
-| De Identify With Date Shift | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithDateShift.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithDateShift.java) |
-| De Identify With Exception List | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithExceptionList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithExceptionList.java) |
-| De Identify With Fpe | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithFpe.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithFpe.java) |
-| De Identify With Info Type | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithInfoType.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithInfoType.java) |
-| De Identify With Masking | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithMasking.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithMasking.java) |
-| De Identify With Redaction | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithRedaction.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithRedaction.java) |
-| De Identify With Replacement | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithReplacement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithReplacement.java) |
-| De Identify With Simple Word List | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithSimpleWordList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/DeIdentifyWithSimpleWordList.java) |
-| Info Types List | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InfoTypesList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InfoTypesList.java) |
-| Inspect Big Query Table | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectBigQueryTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectBigQueryTable.java) |
-| Inspect Big Query Table With Sampling | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectBigQueryTableWithSampling.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectBigQueryTableWithSampling.java) |
-| Inspect Datastore Entity | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectDatastoreEntity.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectDatastoreEntity.java) |
-| Inspect Gcs File | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectGcsFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectGcsFile.java) |
-| Inspect Gcs File With Sampling | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectGcsFileWithSampling.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectGcsFileWithSampling.java) |
-| Inspect Image File | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectImageFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectImageFile.java) |
-| Inspect Image File All Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectImageFileAllInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectImageFileAllInfoTypes.java) |
-| Inspect Image File Listed Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectImageFileListedInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectImageFileListedInfoTypes.java) |
-| Inspect Phone Number | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectPhoneNumber.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectPhoneNumber.java) |
-| Inspect String | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectString.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectString.java) |
-| Inspect String Custom Excluding Substring | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringCustomExcludingSubstring.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringCustomExcludingSubstring.java) |
-| Inspect String Custom Hotword | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringCustomHotword.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringCustomHotword.java) |
-| Inspect String Custom Omit Overlap | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringCustomOmitOverlap.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringCustomOmitOverlap.java) |
-| Inspect String Multiple Rules | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringMultipleRules.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringMultipleRules.java) |
-| Inspect String Omit Overlap | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringOmitOverlap.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringOmitOverlap.java) |
-| Inspect String With Exclusion Dict | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringWithExclusionDict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringWithExclusionDict.java) |
-| Inspect String With Exclusion Dict Substring | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringWithExclusionDictSubstring.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringWithExclusionDictSubstring.java) |
-| Inspect String With Exclusion Regex | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringWithExclusionRegex.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringWithExclusionRegex.java) |
-| Inspect String Without Overlap | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectStringWithoutOverlap.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectStringWithoutOverlap.java) |
-| Inspect Table | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectTable.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectTable.java) |
-| Inspect Text File | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectTextFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectTextFile.java) |
-| Inspect With Custom Regex | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectWithCustomRegex.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectWithCustomRegex.java) |
-| Inspect With Hotword Rules | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/InspectWithHotwordRules.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/InspectWithHotwordRules.java) |
-| Jobs Create | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/JobsCreate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/JobsCreate.java) |
-| Jobs Delete | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/JobsDelete.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/JobsDelete.java) |
-| Jobs Get | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/JobsGet.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/JobsGet.java) |
-| Jobs List | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/JobsList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/JobsList.java) |
-| Quick Start | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/QuickStart.java) |
-| Re Identify Table With Fpe | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/ReIdentifyTableWithFpe.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/ReIdentifyTableWithFpe.java) |
-| Re Identify Text With Fpe | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/ReIdentifyTextWithFpe.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/ReIdentifyTextWithFpe.java) |
-| Re Identify With Fpe | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/ReIdentifyWithFpe.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/ReIdentifyWithFpe.java) |
-| Redact Image File | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RedactImageFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RedactImageFile.java) |
-| Redact Image File All Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RedactImageFileAllInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RedactImageFileAllInfoTypes.java) |
-| Redact Image File All Text | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RedactImageFileAllText.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RedactImageFileAllText.java) |
-| Redact Image File Colored Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RedactImageFileColoredInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RedactImageFileColoredInfoTypes.java) |
-| Redact Image File Listed Info Types | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RedactImageFileListedInfoTypes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RedactImageFileListedInfoTypes.java) |
-| Risk Analysis Categorical Stats | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RiskAnalysisCategoricalStats.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RiskAnalysisCategoricalStats.java) |
-| Risk Analysis K Anonymity | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RiskAnalysisKAnonymity.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RiskAnalysisKAnonymity.java) |
-| Risk Analysis K Map | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RiskAnalysisKMap.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RiskAnalysisKMap.java) |
-| Risk Analysis L Diversity | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RiskAnalysisLDiversity.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RiskAnalysisLDiversity.java) |
-| Risk Analysis Numerical Stats | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/RiskAnalysisNumericalStats.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/RiskAnalysisNumericalStats.java) |
-| Templates Create | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/TemplatesCreate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/TemplatesCreate.java) |
-| Templates Delete | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/TemplatesDelete.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/TemplatesDelete.java) |
-| Templates List | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/TemplatesList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/TemplatesList.java) |
-| Triggers Create | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/TriggersCreate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/TriggersCreate.java) |
-| Triggers Delete | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/TriggersDelete.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/TriggersDelete.java) |
-| Triggers List | [source code](https://github.com/googleapis/java-dlp/blob/main/samples/snippets/src/main/java/dlp/snippets/TriggersList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dlp&page=editor&open_in_editor=samples/snippets/src/main/java/dlp/snippets/TriggersList.java) |
 
 
 

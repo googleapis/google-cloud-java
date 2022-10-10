@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigqueryreservation</artifactId>
-  <version>2.4.3</version>
+  <version>2.4.6</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigqueryreservation:2.4.3'
+implementation 'com.google.cloud:google-cloud-bigqueryreservation:2.4.6'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservation" % "2.4.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryreservation" % "2.4.6"
 ```
 
 ## Authentication
@@ -68,15 +68,6 @@ use this Cloud BigQuery Reservation Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-bigqueryreservation/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-bigqueryreservation/blob/main/samples/snippets/src/main/java/com/example/bigqueryreservation/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigqueryreservation&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigqueryreservation/QuickstartSample.java) |
 
 
 

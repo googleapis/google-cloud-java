@@ -75,461 +75,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Product(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              primaryProductId_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                collectionMemberIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              collectionMemberIds_.add(s);
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gtin_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                categories_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              categories_.add(s);
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              title_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                brands_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              brands_.add(s);
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              languageCode_ = s;
-              break;
-            }
-          case 98:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                attributes_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
-                  attributes__ =
-                      input.readMessage(
-                          AttributesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              attributes_.getMutableMap().put(attributes__.getKey(), attributes__.getValue());
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              tags_.add(s);
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.retail.v2.PriceInfo.Builder subBuilder = null;
-              if (priceInfo_ != null) {
-                subBuilder = priceInfo_.toBuilder();
-              }
-              priceInfo_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2.PriceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(priceInfo_);
-                priceInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.retail.v2.Rating.Builder subBuilder = null;
-              if (rating_ != null) {
-                subBuilder = rating_.toBuilder();
-              }
-              rating_ =
-                  input.readMessage(com.google.cloud.retail.v2.Rating.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rating_);
-                rating_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expirationCase_ == 16) {
-                subBuilder = ((com.google.protobuf.Timestamp) expiration_).toBuilder();
-              }
-              expiration_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.protobuf.Timestamp) expiration_);
-                expiration_ = subBuilder.buildPartial();
-              }
-              expirationCase_ = 16;
-              break;
-            }
-          case 138:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (expirationCase_ == 17) {
-                subBuilder = ((com.google.protobuf.Duration) expiration_).toBuilder();
-              }
-              expiration_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.protobuf.Duration) expiration_);
-                expiration_ = subBuilder.buildPartial();
-              }
-              expirationCase_ = 17;
-              break;
-            }
-          case 146:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (availableTime_ != null) {
-                subBuilder = availableTime_.toBuilder();
-              }
-              availableTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(availableTime_);
-                availableTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 152:
-            {
-              int rawValue = input.readEnum();
-
-              availability_ = rawValue;
-              break;
-            }
-          case 162:
-            {
-              com.google.protobuf.Int32Value.Builder subBuilder = null;
-              if (availableQuantity_ != null) {
-                subBuilder = availableQuantity_.toBuilder();
-              }
-              availableQuantity_ =
-                  input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(availableQuantity_);
-                availableQuantity_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 170:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                fulfillmentInfo_ =
-                    new java.util.ArrayList<com.google.cloud.retail.v2.FulfillmentInfo>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              fulfillmentInfo_.add(
-                  input.readMessage(
-                      com.google.cloud.retail.v2.FulfillmentInfo.parser(), extensionRegistry));
-              break;
-            }
-          case 178:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uri_ = s;
-              break;
-            }
-          case 186:
-            {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                images_ = new java.util.ArrayList<com.google.cloud.retail.v2.Image>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              images_.add(
-                  input.readMessage(com.google.cloud.retail.v2.Image.parser(), extensionRegistry));
-              break;
-            }
-          case 194:
-            {
-              com.google.cloud.retail.v2.Audience.Builder subBuilder = null;
-              if (audience_ != null) {
-                subBuilder = audience_.toBuilder();
-              }
-              audience_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2.Audience.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(audience_);
-                audience_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 202:
-            {
-              com.google.cloud.retail.v2.ColorInfo.Builder subBuilder = null;
-              if (colorInfo_ != null) {
-                subBuilder = colorInfo_.toBuilder();
-              }
-              colorInfo_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2.ColorInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(colorInfo_);
-                colorInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 210:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                sizes_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              sizes_.add(s);
-              break;
-            }
-          case 218:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
-                materials_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              materials_.add(s);
-              break;
-            }
-          case 226:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                patterns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
-              }
-              patterns_.add(s);
-              break;
-            }
-          case 234:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
-                conditions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              conditions_.add(s);
-              break;
-            }
-          case 242:
-            {
-              com.google.protobuf.FieldMask.Builder subBuilder = null;
-              if (retrievableFields_ != null) {
-                subBuilder = retrievableFields_.toBuilder();
-              }
-              retrievableFields_ =
-                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(retrievableFields_);
-                retrievableFields_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 250:
-            {
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
-                variants_ = new java.util.ArrayList<com.google.cloud.retail.v2.Product>();
-                mutable_bitField0_ |= 0x00001000;
-              }
-              variants_.add(
-                  input.readMessage(
-                      com.google.cloud.retail.v2.Product.parser(), extensionRegistry));
-              break;
-            }
-          case 266:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (publishTime_ != null) {
-                subBuilder = publishTime_.toBuilder();
-              }
-              publishTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(publishTime_);
-                publishTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 274:
-            {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
-                promotions_ = new java.util.ArrayList<com.google.cloud.retail.v2.Promotion>();
-                mutable_bitField0_ |= 0x00000800;
-              }
-              promotions_.add(
-                  input.readMessage(
-                      com.google.cloud.retail.v2.Promotion.parser(), extensionRegistry));
-              break;
-            }
-          case 282:
-            {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
-                localInventories_ =
-                    new java.util.ArrayList<com.google.cloud.retail.v2.LocalInventory>();
-                mutable_bitField0_ |= 0x00002000;
-              }
-              localInventories_.add(
-                  input.readMessage(
-                      com.google.cloud.retail.v2.LocalInventory.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        collectionMemberIds_ = collectionMemberIds_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        categories_ = categories_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        brands_ = brands_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        fulfillmentInfo_ = java.util.Collections.unmodifiableList(fulfillmentInfo_);
-      }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
-        images_ = java.util.Collections.unmodifiableList(images_);
-      }
-      if (((mutable_bitField0_ & 0x00000080) != 0)) {
-        sizes_ = sizes_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000100) != 0)) {
-        materials_ = materials_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
-        patterns_ = patterns_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
-        conditions_ = conditions_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
-        variants_ = java.util.Collections.unmodifiableList(variants_);
-      }
-      if (((mutable_bitField0_ & 0x00000800) != 0)) {
-        promotions_ = java.util.Collections.unmodifiableList(promotions_);
-      }
-      if (((mutable_bitField0_ & 0x00002000) != 0)) {
-        localInventories_ = java.util.Collections.unmodifiableList(localInventories_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.ProductProto
         .internal_static_google_cloud_retail_v2_Product_descriptor;
@@ -3983,7 +3528,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < localInventories_.size(); i++) {
       output.writeMessage(35, localInventories_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4148,7 +3693,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(35, localInventories_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4230,7 +3775,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4361,7 +3906,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4510,28 +4055,21 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.retail.v2.Product.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFulfillmentInfoFieldBuilder();
-        getImagesFieldBuilder();
-        getPromotionsFieldBuilder();
-        getVariantsFieldBuilder();
-        getLocalInventoriesFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.clear();
+      }
+      if (ttlBuilder_ != null) {
+        ttlBuilder_.clear();
+      }
       name_ = "";
 
       id_ = "";
@@ -4585,18 +4123,20 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       }
       if (fulfillmentInfoBuilder_ == null) {
         fulfillmentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        fulfillmentInfo_ = null;
         fulfillmentInfoBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       uri_ = "";
 
       if (imagesBuilder_ == null) {
         images_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
+        images_ = null;
         imagesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (audienceBuilder_ == null) {
         audience_ = null;
       } else {
@@ -4619,10 +4159,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000400);
       if (promotionsBuilder_ == null) {
         promotions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
+        promotions_ = null;
         promotionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (publishTimeBuilder_ == null) {
         publishTime_ = null;
       } else {
@@ -4637,16 +4178,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
       }
       if (variantsBuilder_ == null) {
         variants_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
       } else {
+        variants_ = null;
         variantsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (localInventoriesBuilder_ == null) {
         localInventories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
+        localInventories_ = null;
         localInventoriesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00002000);
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -5171,7 +4714,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5186,17 +4729,286 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.retail.v2.Product parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                type_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                primaryProductId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCollectionMemberIdsIsMutable();
+                collectionMemberIds_.add(s);
+                break;
+              } // case 42
+            case 50:
+              {
+                gtin_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCategoriesIsMutable();
+                categories_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                title_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureBrandsIsMutable();
+                brands_.add(s);
+                break;
+              } // case 74
+            case 82:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            case 90:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.retail.v2.CustomAttribute>
+                    attributes__ =
+                        input.readMessage(
+                            AttributesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAttributes()
+                    .getMutableMap()
+                    .put(attributes__.getKey(), attributes__.getValue());
+                break;
+              } // case 98
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getPriceInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getRatingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                expirationCase_ = 16;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getTtlFieldBuilder().getBuilder(), extensionRegistry);
+                expirationCase_ = 17;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getAvailableTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            case 152:
+              {
+                availability_ = input.readEnum();
+
+                break;
+              } // case 152
+            case 162:
+              {
+                input.readMessage(
+                    getAvailableQuantityFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 170:
+              {
+                com.google.cloud.retail.v2.FulfillmentInfo m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2.FulfillmentInfo.parser(), extensionRegistry);
+                if (fulfillmentInfoBuilder_ == null) {
+                  ensureFulfillmentInfoIsMutable();
+                  fulfillmentInfo_.add(m);
+                } else {
+                  fulfillmentInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 170
+            case 178:
+              {
+                uri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 178
+            case 186:
+              {
+                com.google.cloud.retail.v2.Image m =
+                    input.readMessage(com.google.cloud.retail.v2.Image.parser(), extensionRegistry);
+                if (imagesBuilder_ == null) {
+                  ensureImagesIsMutable();
+                  images_.add(m);
+                } else {
+                  imagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 186
+            case 194:
+              {
+                input.readMessage(getAudienceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(getColorInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 202
+            case 210:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSizesIsMutable();
+                sizes_.add(s);
+                break;
+              } // case 210
+            case 218:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMaterialsIsMutable();
+                materials_.add(s);
+                break;
+              } // case 218
+            case 226:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePatternsIsMutable();
+                patterns_.add(s);
+                break;
+              } // case 226
+            case 234:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureConditionsIsMutable();
+                conditions_.add(s);
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    getRetrievableFieldsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 242
+            case 250:
+              {
+                com.google.cloud.retail.v2.Product m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2.Product.parser(), extensionRegistry);
+                if (variantsBuilder_ == null) {
+                  ensureVariantsIsMutable();
+                  variants_.add(m);
+                } else {
+                  variantsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 250
+            case 266:
+              {
+                input.readMessage(getPublishTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 266
+            case 274:
+              {
+                com.google.cloud.retail.v2.Promotion m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2.Promotion.parser(), extensionRegistry);
+                if (promotionsBuilder_ == null) {
+                  ensurePromotionsIsMutable();
+                  promotions_.add(m);
+                } else {
+                  promotionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 274
+            case 282:
+              {
+                com.google.cloud.retail.v2.LocalInventory m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2.LocalInventory.parser(), extensionRegistry);
+                if (localInventoriesBuilder_ == null) {
+                  ensureLocalInventoriesIsMutable();
+                  localInventories_.add(m);
+                } else {
+                  localInventoriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 282
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.retail.v2.Product) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -13941,7 +13753,18 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Product(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

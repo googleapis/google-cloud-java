@@ -65,200 +65,6 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private CryptoKeyVersion(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (destroyTime_ != null) {
-                subBuilder = destroyTime_.toBuilder();
-              }
-              destroyTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(destroyTime_);
-                destroyTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (destroyEventTime_ != null) {
-                subBuilder = destroyEventTime_.toBuilder();
-              }
-              destroyEventTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(destroyEventTime_);
-                destroyEventTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              protectionLevel_ = rawValue;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.kms.v1.KeyOperationAttestation.Builder subBuilder = null;
-              if (attestation_ != null) {
-                subBuilder = attestation_.toBuilder();
-              }
-              attestation_ =
-                  input.readMessage(
-                      com.google.cloud.kms.v1.KeyOperationAttestation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(attestation_);
-                attestation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              algorithm_ = rawValue;
-              break;
-            }
-          case 90:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (generateTime_ != null) {
-                subBuilder = generateTime_.toBuilder();
-              }
-              generateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(generateTime_);
-                generateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              importJob_ = s;
-              break;
-            }
-          case 122:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (importTime_ != null) {
-                subBuilder = importTime_.toBuilder();
-              }
-              importTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(importTime_);
-                importTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              importFailureReason_ = s;
-              break;
-            }
-          case 138:
-            {
-              com.google.cloud.kms.v1.ExternalProtectionLevelOptions.Builder subBuilder = null;
-              if (externalProtectionLevelOptions_ != null) {
-                subBuilder = externalProtectionLevelOptions_.toBuilder();
-              }
-              externalProtectionLevelOptions_ =
-                  input.readMessage(
-                      com.google.cloud.kms.v1.ExternalProtectionLevelOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(externalProtectionLevelOptions_);
-                externalProtectionLevelOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 144:
-            {
-              reimportEligible_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
@@ -2231,7 +2037,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (reimportEligible_ != false) {
       output.writeBool(18, reimportEligible_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2291,7 +2097,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     if (reimportEligible_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, reimportEligible_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2343,7 +2149,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return false;
     }
     if (getReimportEligible() != other.getReimportEligible()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2396,7 +2202,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + REIMPORT_ELIGIBLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReimportEligible());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2533,17 +2339,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.kms.v1.CryptoKeyVersion.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2768,7 +2567,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (other.getReimportEligible() != false) {
         setReimportEligible(other.getReimportEligible());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2783,17 +2582,118 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.kms.v1.CryptoKeyVersion parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 24:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getDestroyTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getDestroyEventTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 56:
+              {
+                protectionLevel_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(getAttestationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 80:
+              {
+                algorithm_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getGenerateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 114:
+              {
+                importJob_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getImportTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                importFailureReason_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    getExternalProtectionLevelOptionsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 138
+            case 144:
+              {
+                reimportEligible_ = input.readBool();
+
+                break;
+              } // case 144
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.kms.v1.CryptoKeyVersion) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5183,7 +5083,18 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CryptoKeyVersion(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

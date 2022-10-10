@@ -60,109 +60,6 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private RuntimeSoftwareConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              notebookUpgradeSchedule_ = s;
-              break;
-            }
-          case 16:
-            {
-              bitField0_ |= 0x00000001;
-              enableHealthMonitoring_ = input.readBool();
-              break;
-            }
-          case 24:
-            {
-              bitField0_ |= 0x00000002;
-              idleShutdown_ = input.readBool();
-              break;
-            }
-          case 32:
-            {
-              idleShutdownTimeout_ = input.readInt32();
-              break;
-            }
-          case 40:
-            {
-              installGpuDriver_ = input.readBool();
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              customGpuDriverPath_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              postStartupScript_ = s;
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                kernels_ = new java.util.ArrayList<com.google.cloud.notebooks.v1.ContainerImage>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              kernels_.add(
-                  input.readMessage(
-                      com.google.cloud.notebooks.v1.ContainerImage.parser(), extensionRegistry));
-              break;
-            }
-          case 72:
-            {
-              bitField0_ |= 0x00000004;
-              upgradeable_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        kernels_ = java.util.Collections.unmodifiableList(kernels_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.RuntimeProto
         .internal_static_google_cloud_notebooks_v1_RuntimeSoftwareConfig_descriptor;
@@ -594,7 +491,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(9, upgradeable_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -630,7 +527,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, upgradeable_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -664,7 +561,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (hasUpgradeable()) {
       if (getUpgradeable() != other.getUpgradeable()) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -701,7 +598,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + UPGRADEABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpgradeable());
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -835,19 +732,10 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getKernelsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -869,10 +757,11 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
 
       if (kernelsBuilder_ == null) {
         kernels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        kernels_ = null;
         kernelsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       upgradeable_ = false;
       bitField0_ = (bitField0_ & ~0x00000008);
       return this;
@@ -1035,7 +924,7 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (other.hasUpgradeable()) {
         setUpgradeable(other.getUpgradeable());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1050,18 +939,92 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.notebooks.v1.RuntimeSoftwareConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                notebookUpgradeSchedule_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                enableHealthMonitoring_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+            case 24:
+              {
+                idleShutdown_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+            case 32:
+              {
+                idleShutdownTimeout_ = input.readInt32();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                installGpuDriver_ = input.readBool();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                customGpuDriverPath_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                postStartupScript_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.notebooks.v1.ContainerImage m =
+                    input.readMessage(
+                        com.google.cloud.notebooks.v1.ContainerImage.parser(), extensionRegistry);
+                if (kernelsBuilder_ == null) {
+                  ensureKernelsIsMutable();
+                  kernels_.add(m);
+                } else {
+                  kernelsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 72:
+              {
+                upgradeable_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.notebooks.v1.RuntimeSoftwareConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2139,7 +2102,18 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RuntimeSoftwareConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

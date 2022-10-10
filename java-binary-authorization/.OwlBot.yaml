@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-binary-authorization/samples/snippets/generated"
+- "/java-binary-authorization/grpc-google-.*/src"
+- "/java-binary-authorization/proto-google-.*/src"
+- "/java-binary-authorization/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src"

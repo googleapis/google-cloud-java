@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-identity-accesscontextmanager-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+  <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   <name>Google Identity Access Context Manager Parent</name>
   <url>https://github.com/googleapis/java-accesscontextmanager</url>
   <description>
@@ -12,9 +12,9 @@
   </description>
 
   <parent>
-    <groupId>com.google.api</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -62,7 +62,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -70,22 +70,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-identity-accesscontextmanager-type</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-type:current} -->
+        <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-type:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+        <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-identity-accesscontextmanager-v1</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-identity-accesscontextmanager-v1:current} -->
+        <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-identity-accesscontextmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-identity-accesscontextmanager</artifactId>
-        <version>1.4.2-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+        <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
       </dependency>
       <dependency>
         <groupId>junit</groupId>

@@ -53,98 +53,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private SqlIpConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (enableIpv4_ != null) {
-                subBuilder = enableIpv4_.toBuilder();
-              }
-              enableIpv4_ =
-                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(enableIpv4_);
-                enableIpv4_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              privateNetwork_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (requireSsl_ != null) {
-                subBuilder = requireSsl_.toBuilder();
-              }
-              requireSsl_ =
-                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requireSsl_);
-                requireSsl_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                authorizedNetworks_ =
-                    new java.util.ArrayList<com.google.cloud.clouddms.v1.SqlAclEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              authorizedNetworks_.add(
-                  input.readMessage(
-                      com.google.cloud.clouddms.v1.SqlAclEntry.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        authorizedNetworks_ = java.util.Collections.unmodifiableList(authorizedNetworks_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_SqlIpConfig_descriptor;
@@ -418,7 +326,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < authorizedNetworks_.size(); i++) {
       output.writeMessage(4, authorizedNetworks_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -440,7 +348,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, authorizedNetworks_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -465,7 +373,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getRequireSsl().equals(other.getRequireSsl())) return false;
     }
     if (!getAuthorizedNetworksList().equals(other.getAuthorizedNetworksList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -490,7 +398,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + AUTHORIZED_NETWORKS_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorizedNetworksList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -619,19 +527,10 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.clouddms.v1.SqlIpConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAuthorizedNetworksFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -653,10 +552,11 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (authorizedNetworksBuilder_ == null) {
         authorizedNetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        authorizedNetworks_ = null;
         authorizedNetworksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -791,7 +691,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -806,17 +706,62 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.clouddms.v1.SqlIpConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getEnableIpv4FieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                privateNetwork_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getRequireSslFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.clouddms.v1.SqlAclEntry m =
+                    input.readMessage(
+                        com.google.cloud.clouddms.v1.SqlAclEntry.parser(), extensionRegistry);
+                if (authorizedNetworksBuilder_ == null) {
+                  ensureAuthorizedNetworksIsMutable();
+                  authorizedNetworks_.add(m);
+                } else {
+                  authorizedNetworksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.clouddms.v1.SqlIpConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1754,7 +1699,18 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SqlIpConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

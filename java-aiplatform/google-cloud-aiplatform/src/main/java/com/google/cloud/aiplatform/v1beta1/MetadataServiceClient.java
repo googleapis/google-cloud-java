@@ -1157,6 +1157,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Artifact element : metadataServiceClient.listArtifacts(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1191,6 +1192,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Artifact> future =
    *       metadataServiceClient.listArtifactsPagedCallable().futureCall(request);
@@ -1226,6 +1228,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListArtifactsResponse response =
@@ -1993,6 +1996,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Context element : metadataServiceClient.listContexts(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2027,6 +2031,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Context> future =
    *       metadataServiceClient.listContextsPagedCallable().futureCall(request);
@@ -2062,6 +2067,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListContextsResponse response = metadataServiceClient.listContextsCallable().call(request);
@@ -2796,6 +2802,148 @@ public class MetadataServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Remove a set of children contexts from a parent Context. If any of the child Contexts were NOT
+   * added to the parent Context, they are simply skipped.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ContextName context =
+   *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
+   *   List<String> childContexts = new ArrayList<>();
+   *   RemoveContextChildrenResponse response =
+   *       metadataServiceClient.removeContextChildren(context, childContexts);
+   * }
+   * }</pre>
+   *
+   * @param context Required. The resource name of the parent Context.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+   * @param childContexts The resource names of the child Contexts.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveContextChildrenResponse removeContextChildren(
+      ContextName context, List<String> childContexts) {
+    RemoveContextChildrenRequest request =
+        RemoveContextChildrenRequest.newBuilder()
+            .setContext(context == null ? null : context.toString())
+            .addAllChildContexts(childContexts)
+            .build();
+    return removeContextChildren(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove a set of children contexts from a parent Context. If any of the child Contexts were NOT
+   * added to the parent Context, they are simply skipped.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   String context =
+   *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
+   *   List<String> childContexts = new ArrayList<>();
+   *   RemoveContextChildrenResponse response =
+   *       metadataServiceClient.removeContextChildren(context, childContexts);
+   * }
+   * }</pre>
+   *
+   * @param context Required. The resource name of the parent Context.
+   *     <p>Format:
+   *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+   * @param childContexts The resource names of the child Contexts.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveContextChildrenResponse removeContextChildren(
+      String context, List<String> childContexts) {
+    RemoveContextChildrenRequest request =
+        RemoveContextChildrenRequest.newBuilder()
+            .setContext(context)
+            .addAllChildContexts(childContexts)
+            .build();
+    return removeContextChildren(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove a set of children contexts from a parent Context. If any of the child Contexts were NOT
+   * added to the parent Context, they are simply skipped.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   RemoveContextChildrenRequest request =
+   *       RemoveContextChildrenRequest.newBuilder()
+   *           .setContext(
+   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+   *                   .toString())
+   *           .addAllChildContexts(new ArrayList<String>())
+   *           .build();
+   *   RemoveContextChildrenResponse response = metadataServiceClient.removeContextChildren(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveContextChildrenResponse removeContextChildren(
+      RemoveContextChildrenRequest request) {
+    return removeContextChildrenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Remove a set of children contexts from a parent Context. If any of the child Contexts were NOT
+   * added to the parent Context, they are simply skipped.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   RemoveContextChildrenRequest request =
+   *       RemoveContextChildrenRequest.newBuilder()
+   *           .setContext(
+   *               ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]")
+   *                   .toString())
+   *           .addAllChildContexts(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<RemoveContextChildrenResponse> future =
+   *       metadataServiceClient.removeContextChildrenCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveContextChildrenResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveContextChildrenRequest, RemoveContextChildrenResponse>
+      removeContextChildrenCallable() {
+    return stub.removeContextChildrenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Retrieves Artifacts and Executions within the specified Context, connected by Event edges and
    * returned as a LineageSubgraph.
    *
@@ -3273,6 +3421,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Execution element : metadataServiceClient.listExecutions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -3307,6 +3456,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Execution> future =
    *       metadataServiceClient.listExecutionsPagedCallable().futureCall(request);
@@ -3342,6 +3492,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListExecutionsResponse response =

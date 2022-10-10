@@ -50,65 +50,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private StandardSchedulerSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 9:
-            {
-              targetCpuUtilization_ = input.readDouble();
-              break;
-            }
-          case 17:
-            {
-              targetThroughputUtilization_ = input.readDouble();
-              break;
-            }
-          case 24:
-            {
-              minInstances_ = input.readInt32();
-              break;
-            }
-          case 32:
-            {
-              maxInstances_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.VersionProto
         .internal_static_google_appengine_v1_StandardSchedulerSettings_descriptor;
@@ -224,7 +165,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     if (maxInstances_ != 0) {
       output.writeInt32(4, maxInstances_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -246,7 +187,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     if (maxInstances_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxInstances_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -268,7 +209,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
         != java.lang.Double.doubleToLongBits(other.getTargetThroughputUtilization())) return false;
     if (getMinInstances() != other.getMinInstances()) return false;
     if (getMaxInstances() != other.getMaxInstances()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -293,7 +234,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     hash = (53 * hash) + getMinInstances();
     hash = (37 * hash) + MAX_INSTANCES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxInstances();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -422,17 +363,10 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.appengine.v1.StandardSchedulerSettings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -539,7 +473,7 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       if (other.getMaxInstances() != 0) {
         setMaxInstances(other.getMaxInstances());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -554,18 +488,55 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.appengine.v1.StandardSchedulerSettings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9:
+              {
+                targetCpuUtilization_ = input.readDouble();
+
+                break;
+              } // case 9
+            case 17:
+              {
+                targetThroughputUtilization_ = input.readDouble();
+
+                break;
+              } // case 17
+            case 24:
+              {
+                minInstances_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                maxInstances_ = input.readInt32();
+
+                break;
+              } // case 32
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.appengine.v1.StandardSchedulerSettings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -815,7 +786,18 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StandardSchedulerSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

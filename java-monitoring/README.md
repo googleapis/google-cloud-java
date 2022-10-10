@@ -11,59 +11,28 @@ Java idiomatic client for [Stackdriver Monitoring][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-monitoring</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>3.4.2</version>
+  <version>3.4.6</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.1')
-
-implementation 'com.google.cloud:google-cloud-monitoring'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-monitoring:3.4.3'
+implementation 'com.google.cloud:google-cloud-monitoring:3.4.6'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "3.4.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "3.4.6"
 ```
 
 ## Authentication
@@ -99,31 +68,6 @@ use this Stackdriver Monitoring Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-monitoring/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Alert Policy | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/CreateAlertPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/CreateAlertPolicy.java) |
-| Create Metric Descriptor | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/CreateMetricDescriptor.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/CreateMetricDescriptor.java) |
-| Create Time Series | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/CreateTimeSeries.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/CreateTimeSeries.java) |
-| Delete Alert Policy | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/DeleteAlertPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/DeleteAlertPolicy.java) |
-| Delete Metric Descriptor | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/DeleteMetricDescriptor.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/DeleteMetricDescriptor.java) |
-| Delete Notification Channel | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/DeleteNotificationChannel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/DeleteNotificationChannel.java) |
-| Enable Disable Alert Policy | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/EnableDisableAlertPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/EnableDisableAlertPolicy.java) |
-| Get Alert Policy | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/GetAlertPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/GetAlertPolicy.java) |
-| Get Monitored Resource | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/GetMonitoredResource.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/GetMonitoredResource.java) |
-| List Alert Policy | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/ListAlertPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/ListAlertPolicy.java) |
-| List Metric Descriptor | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/ListMetricDescriptor.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/ListMetricDescriptor.java) |
-| List Time Series | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/ListTimeSeries.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/ListTimeSeries.java) |
-| Monitored Resources List | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/MonitoredResourcesList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/MonitoredResourcesList.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/QuickstartSample.java) |
-| Time Series Headers List | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/TimeSeriesHeadersList.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/TimeSeriesHeadersList.java) |
-| Update Alert Policy | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/UpdateAlertPolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/UpdateAlertPolicy.java) |
-| Uptime Sample | [source code](https://github.com/googleapis/java-monitoring/blob/main/samples/snippets/src/main/java/com/example/monitoring/UptimeSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-monitoring&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/monitoring/UptimeSample.java) |
 
 
 

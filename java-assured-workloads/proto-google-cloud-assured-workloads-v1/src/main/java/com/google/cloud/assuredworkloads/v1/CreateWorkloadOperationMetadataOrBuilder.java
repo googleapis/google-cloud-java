@@ -115,8 +115,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources
-   * managed by the workload.
+   * Optional. Compliance controls that should be applied to the resources managed by
+   * the workload.
    * </pre>
    *
    * <code>
@@ -130,8 +130,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources
-   * managed by the workload.
+   * Optional. Compliance controls that should be applied to the resources managed by
+   * the workload.
    * </pre>
    *
    * <code>

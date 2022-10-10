@@ -103,6 +103,28 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
   }
 
   @Override
+  public void restrictAllowedResources(
+      RestrictAllowedResourcesRequest request,
+      StreamObserver<RestrictAllowedResourcesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestrictAllowedResourcesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RestrictAllowedResourcesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestrictAllowedResources, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestrictAllowedResourcesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteWorkload(
       DeleteWorkloadRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
@@ -160,6 +182,70 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
                   "Unrecognized response type %s for method ListWorkloads, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkloadsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listViolations(
+      ListViolationsRequest request, StreamObserver<ListViolationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListViolationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListViolationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListViolations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListViolationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getViolation(
+      GetViolationRequest request, StreamObserver<Violation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Violation) {
+      requests.add(request);
+      responseObserver.onNext(((Violation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetViolation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Violation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void acknowledgeViolation(
+      AcknowledgeViolationRequest request,
+      StreamObserver<AcknowledgeViolationResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AcknowledgeViolationResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AcknowledgeViolationResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AcknowledgeViolation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AcknowledgeViolationResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

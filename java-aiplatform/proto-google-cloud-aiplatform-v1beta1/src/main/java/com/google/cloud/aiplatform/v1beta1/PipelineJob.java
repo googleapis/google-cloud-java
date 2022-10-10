@@ -57,260 +57,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PipelineJob(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.Struct.Builder subBuilder = null;
-              if (pipelineSpec_ != null) {
-                subBuilder = pipelineSpec_.toBuilder();
-              }
-              pipelineSpec_ =
-                  input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pipelineSpec_);
-                pipelineSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.aiplatform.v1beta1.PipelineJobDetail.Builder subBuilder = null;
-              if (jobDetail_ != null) {
-                subBuilder = jobDetail_.toBuilder();
-              }
-              jobDetail_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.PipelineJobDetail.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(jobDetail_);
-                jobDetail_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (error_ != null) {
-                subBuilder = error_.toBuilder();
-              }
-              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(error_);
-                error_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.Builder subBuilder =
-                  null;
-              if (runtimeConfig_ != null) {
-                subBuilder = runtimeConfig_.toBuilder();
-              }
-              runtimeConfig_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(runtimeConfig_);
-                runtimeConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
-              if (encryptionSpec_ != null) {
-                subBuilder = encryptionSpec_.toBuilder();
-              }
-              encryptionSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(encryptionSpec_);
-                encryptionSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccount_ = s;
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case 154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              templateUri_ = s;
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata.Builder subBuilder =
-                  null;
-              if (templateMetadata_ != null) {
-                subBuilder = templateMetadata_.toBuilder();
-              }
-              templateMetadata_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(templateMetadata_);
-                templateMetadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.Pipeline
         .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_descriptor;
@@ -590,6 +336,89 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * @return The failurePolicy.
      */
     com.google.cloud.aiplatform.v1beta1.PipelineFailurePolicy getFailurePolicy();
+
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    int getInputArtifactsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    boolean containsInputArtifacts(java.lang.String key);
+    /** Use {@link #getInputArtifactsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+        getInputArtifacts();
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+        getInputArtifactsMap();
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+
+    /* nullable */
+    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+        getInputArtifactsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+                defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+        getInputArtifactsOrThrow(java.lang.String key);
   }
   /**
    *
@@ -626,95 +455,6 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private RuntimeConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  parameters_ =
-                      com.google.protobuf.MapField.newMapField(
-                          ParametersDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                com.google.protobuf.MapEntry<
-                        java.lang.String, com.google.cloud.aiplatform.v1beta1.Value>
-                    parameters__ =
-                        input.readMessage(
-                            ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
-                            extensionRegistry);
-                parameters_.getMutableMap().put(parameters__.getKey(), parameters__.getValue());
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                gcsOutputDirectory_ = s;
-                break;
-              }
-            case 26:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  parameterValues_ =
-                      com.google.protobuf.MapField.newMapField(
-                          ParameterValuesDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
-                    parameterValues__ =
-                        input.readMessage(
-                            ParameterValuesDefaultEntryHolder.defaultEntry.getParserForType(),
-                            extensionRegistry);
-                parameterValues_
-                    .getMutableMap()
-                    .put(parameterValues__.getKey(), parameterValues__.getValue());
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                failurePolicy_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.Pipeline
           .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_descriptor;
@@ -728,6 +468,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           return internalGetParameters();
         case 3:
           return internalGetParameterValues();
+        case 5:
+          return internalGetInputArtifacts();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -741,6 +483,862 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.class,
               com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.Builder.class);
+    }
+
+    public interface InputArtifactOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Artifact resource id from MLMD. Which is the last portion of an
+       * artifact resource
+       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * The artifact must stay within the same project, location and default
+       * metadatastore as the pipeline.
+       * </pre>
+       *
+       * <code>string artifact_id = 1;</code>
+       *
+       * @return Whether the artifactId field is set.
+       */
+      boolean hasArtifactId();
+      /**
+       *
+       *
+       * <pre>
+       * Artifact resource id from MLMD. Which is the last portion of an
+       * artifact resource
+       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * The artifact must stay within the same project, location and default
+       * metadatastore as the pipeline.
+       * </pre>
+       *
+       * <code>string artifact_id = 1;</code>
+       *
+       * @return The artifactId.
+       */
+      java.lang.String getArtifactId();
+      /**
+       *
+       *
+       * <pre>
+       * Artifact resource id from MLMD. Which is the last portion of an
+       * artifact resource
+       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * The artifact must stay within the same project, location and default
+       * metadatastore as the pipeline.
+       * </pre>
+       *
+       * <code>string artifact_id = 1;</code>
+       *
+       * @return The bytes for artifactId.
+       */
+      com.google.protobuf.ByteString getArtifactIdBytes();
+
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.KindCase
+          getKindCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of an input artifact.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact}
+     */
+    public static final class InputArtifact extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)
+        InputArtifactOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use InputArtifact.newBuilder() to construct.
+      private InputArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private InputArtifact() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new InputArtifact();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.Pipeline
+            .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.class,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.Builder
+                    .class);
+      }
+
+      private int kindCase_ = 0;
+      private java.lang.Object kind_;
+
+      public enum KindCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        ARTIFACT_ID(1),
+        KIND_NOT_SET(0);
+        private final int value;
+
+        private KindCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static KindCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static KindCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return ARTIFACT_ID;
+            case 0:
+              return KIND_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public KindCase getKindCase() {
+        return KindCase.forNumber(kindCase_);
+      }
+
+      public static final int ARTIFACT_ID_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Artifact resource id from MLMD. Which is the last portion of an
+       * artifact resource
+       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * The artifact must stay within the same project, location and default
+       * metadatastore as the pipeline.
+       * </pre>
+       *
+       * <code>string artifact_id = 1;</code>
+       *
+       * @return Whether the artifactId field is set.
+       */
+      public boolean hasArtifactId() {
+        return kindCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Artifact resource id from MLMD. Which is the last portion of an
+       * artifact resource
+       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * The artifact must stay within the same project, location and default
+       * metadatastore as the pipeline.
+       * </pre>
+       *
+       * <code>string artifact_id = 1;</code>
+       *
+       * @return The artifactId.
+       */
+      public java.lang.String getArtifactId() {
+        java.lang.Object ref = "";
+        if (kindCase_ == 1) {
+          ref = kind_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (kindCase_ == 1) {
+            kind_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Artifact resource id from MLMD. Which is the last portion of an
+       * artifact resource
+       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * The artifact must stay within the same project, location and default
+       * metadatastore as the pipeline.
+       * </pre>
+       *
+       * <code>string artifact_id = 1;</code>
+       *
+       * @return The bytes for artifactId.
+       */
+      public com.google.protobuf.ByteString getArtifactIdBytes() {
+        java.lang.Object ref = "";
+        if (kindCase_ == 1) {
+          ref = kind_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (kindCase_ == 1) {
+            kind_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (kindCase_ == 1) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (kindCase_ == 1) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact other =
+            (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact) obj;
+
+        if (!getKindCase().equals(other.getKindCase())) return false;
+        switch (kindCase_) {
+          case 1:
+            if (!getArtifactId().equals(other.getArtifactId())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (kindCase_) {
+          case 1:
+            hash = (37 * hash) + ARTIFACT_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getArtifactId().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The type of an input artifact.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifactOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.class,
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          kindCase_ = 0;
+          kind_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.Pipeline
+              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifact_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact build() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact result =
+              new com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact(this);
+          if (kindCase_ == 1) {
+            result.kind_ = kind_;
+          }
+          result.kindCase_ = kindCase_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+                  .getDefaultInstance()) return this;
+          switch (other.getKindCase()) {
+            case ARTIFACT_ID:
+              {
+                kindCase_ = 1;
+                kind_ = other.kind_;
+                onChanged();
+                break;
+              }
+            case KIND_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    kindCase_ = 1;
+                    kind_ = s;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int kindCase_ = 0;
+        private java.lang.Object kind_;
+
+        public KindCase getKindCase() {
+          return KindCase.forNumber(kindCase_);
+        }
+
+        public Builder clearKind() {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Artifact resource id from MLMD. Which is the last portion of an
+         * artifact resource
+         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * The artifact must stay within the same project, location and default
+         * metadatastore as the pipeline.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
+         *
+         * @return Whether the artifactId field is set.
+         */
+        @java.lang.Override
+        public boolean hasArtifactId() {
+          return kindCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Artifact resource id from MLMD. Which is the last portion of an
+         * artifact resource
+         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * The artifact must stay within the same project, location and default
+         * metadatastore as the pipeline.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
+         *
+         * @return The artifactId.
+         */
+        @java.lang.Override
+        public java.lang.String getArtifactId() {
+          java.lang.Object ref = "";
+          if (kindCase_ == 1) {
+            ref = kind_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (kindCase_ == 1) {
+              kind_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Artifact resource id from MLMD. Which is the last portion of an
+         * artifact resource
+         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * The artifact must stay within the same project, location and default
+         * metadatastore as the pipeline.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
+         *
+         * @return The bytes for artifactId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getArtifactIdBytes() {
+          java.lang.Object ref = "";
+          if (kindCase_ == 1) {
+            ref = kind_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (kindCase_ == 1) {
+              kind_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Artifact resource id from MLMD. Which is the last portion of an
+         * artifact resource
+         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * The artifact must stay within the same project, location and default
+         * metadatastore as the pipeline.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
+         *
+         * @param value The artifactId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setArtifactId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          kindCase_ = 1;
+          kind_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Artifact resource id from MLMD. Which is the last portion of an
+         * artifact resource
+         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * The artifact must stay within the same project, location and default
+         * metadatastore as the pipeline.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearArtifactId() {
+          if (kindCase_ == 1) {
+            kindCase_ = 0;
+            kind_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Artifact resource id from MLMD. Which is the last portion of an
+         * artifact resource
+         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * The artifact must stay within the same project, location and default
+         * metadatastore as the pipeline.
+         * </pre>
+         *
+         * <code>string artifact_id = 1;</code>
+         *
+         * @param value The bytes for artifactId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setArtifactIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          kindCase_ = 1;
+          kind_ = value;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact)
+      private static final com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+              .InputArtifact
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<InputArtifact> PARSER =
+          new com.google.protobuf.AbstractParser<InputArtifact>() {
+            @java.lang.Override
+            public InputArtifact parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<InputArtifact> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<InputArtifact> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int PARAMETERS_FIELD_NUMBER = 1;
@@ -1118,6 +1716,147 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int INPUT_ARTIFACTS_FIELD_NUMBER = 5;
+
+    private static final class InputArtifactsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String,
+                      com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+                      newDefaultInstance(
+                          com.google.cloud.aiplatform.v1beta1.Pipeline
+                              .internal_static_google_cloud_aiplatform_v1beta1_PipelineJob_RuntimeConfig_InputArtifactsEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                              .InputArtifact.getDefaultInstance());
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+        inputArtifacts_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+        internalGetInputArtifacts() {
+      if (inputArtifacts_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            InputArtifactsDefaultEntryHolder.defaultEntry);
+      }
+      return inputArtifacts_;
+    }
+
+    public int getInputArtifactsCount() {
+      return internalGetInputArtifacts().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsInputArtifacts(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetInputArtifacts().getMap().containsKey(key);
+    }
+    /** Use {@link #getInputArtifactsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+        getInputArtifacts() {
+      return getInputArtifactsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+        getInputArtifactsMap() {
+      return internalGetInputArtifacts().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+        getInputArtifactsOrDefault(
+            java.lang.String key,
+            com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+                defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          map = internalGetInputArtifacts().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The runtime artifacts of the PipelineJob. The key will be the input
+     * artifact name and the value would be one of the InputArtifact.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+        getInputArtifactsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          map = internalGetInputArtifacts().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1145,7 +1884,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(4, failurePolicy_);
       }
-      unknownFields.writeTo(output);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetInputArtifacts(), InputArtifactsDefaultEntryHolder.defaultEntry, 5);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1185,7 +1926,22 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, failurePolicy_);
       }
-      size += unknownFields.getSerializedSize();
+      for (java.util.Map.Entry<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          entry : internalGetInputArtifacts().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<
+                java.lang.String,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+            inputArtifacts__ =
+                InputArtifactsDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, inputArtifacts__);
+      }
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1205,7 +1961,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!getGcsOutputDirectory().equals(other.getGcsOutputDirectory())) return false;
       if (!internalGetParameterValues().equals(other.internalGetParameterValues())) return false;
       if (failurePolicy_ != other.failurePolicy_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!internalGetInputArtifacts().equals(other.internalGetInputArtifacts())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1228,7 +1985,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + FAILURE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + failurePolicy_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      if (!internalGetInputArtifacts().getMap().isEmpty()) {
+        hash = (37 * hash) + INPUT_ARTIFACTS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetInputArtifacts().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1356,6 +2117,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             return internalGetParameters();
           case 3:
             return internalGetParameterValues();
+          case 5:
+            return internalGetInputArtifacts();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -1368,6 +2131,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             return internalGetMutableParameters();
           case 3:
             return internalGetMutableParameterValues();
+          case 5:
+            return internalGetMutableInputArtifacts();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -1384,17 +2149,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1406,6 +2164,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableParameterValues().clear();
         failurePolicy_ = 0;
 
+        internalGetMutableInputArtifacts().clear();
         return this;
       }
 
@@ -1441,6 +2200,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         result.parameterValues_ = internalGetParameterValues();
         result.parameterValues_.makeImmutable();
         result.failurePolicy_ = failurePolicy_;
+        result.inputArtifacts_ = internalGetInputArtifacts();
+        result.inputArtifacts_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -1504,7 +2265,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         if (other.failurePolicy_ != 0) {
           setFailurePolicyValue(other.getFailurePolicyValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        internalGetMutableInputArtifacts().mergeFrom(other.internalGetInputArtifacts());
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1519,19 +2281,83 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String, com.google.cloud.aiplatform.v1beta1.Value>
+                      parameters__ =
+                          input.readMessage(
+                              ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableParameters()
+                      .getMutableMap()
+                      .put(parameters__.getKey(), parameters__.getValue());
+                  break;
+                } // case 10
+              case 18:
+                {
+                  gcsOutputDirectory_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+                      parameterValues__ =
+                          input.readMessage(
+                              ParameterValuesDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableParameterValues()
+                      .getMutableMap()
+                      .put(parameterValues__.getKey(), parameterValues__.getValue());
+                  break;
+                } // case 26
+              case 32:
+                {
+                  failurePolicy_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String,
+                          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig
+                              .InputArtifact>
+                      inputArtifacts__ =
+                          input.readMessage(
+                              InputArtifactsDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableInputArtifacts()
+                      .getMutableMap()
+                      .put(inputArtifacts__.getKey(), inputArtifacts__.getValue());
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2217,6 +3043,221 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private com.google.protobuf.MapField<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          inputArtifacts_;
+
+      private com.google.protobuf.MapField<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          internalGetInputArtifacts() {
+        if (inputArtifacts_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              InputArtifactsDefaultEntryHolder.defaultEntry);
+        }
+        return inputArtifacts_;
+      }
+
+      private com.google.protobuf.MapField<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          internalGetMutableInputArtifacts() {
+        onChanged();
+        ;
+        if (inputArtifacts_ == null) {
+          inputArtifacts_ =
+              com.google.protobuf.MapField.newMapField(
+                  InputArtifactsDefaultEntryHolder.defaultEntry);
+        }
+        if (!inputArtifacts_.isMutable()) {
+          inputArtifacts_ = inputArtifacts_.copy();
+        }
+        return inputArtifacts_;
+      }
+
+      public int getInputArtifactsCount() {
+        return internalGetInputArtifacts().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsInputArtifacts(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetInputArtifacts().getMap().containsKey(key);
+      }
+      /** Use {@link #getInputArtifactsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          getInputArtifacts() {
+        return getInputArtifactsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          getInputArtifactsMap() {
+        return internalGetInputArtifacts().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          getInputArtifactsOrDefault(
+              java.lang.String key,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+                  defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+            map = internalGetInputArtifacts().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact
+          getInputArtifactsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+            map = internalGetInputArtifacts().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearInputArtifacts() {
+        internalGetMutableInputArtifacts().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      public Builder removeInputArtifacts(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableInputArtifacts().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String,
+              com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+          getMutableInputArtifacts() {
+        return internalGetMutableInputArtifacts().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      public Builder putInputArtifacts(
+          java.lang.String key,
+          com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+
+        internalGetMutableInputArtifacts().getMutableMap().put(key, value);
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The runtime artifacts of the PipelineJob. The key will be the input
+       * artifact name and the value would be one of the InputArtifact.
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact&gt; input_artifacts = 5;
+       * </code>
+       */
+      public Builder putAllInputArtifacts(
+          java.util.Map<
+                  java.lang.String,
+                  com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig.InputArtifact>
+              values) {
+        internalGetMutableInputArtifacts().getMutableMap().putAll(values);
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2252,7 +3293,19 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new RuntimeConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3282,7 +4335,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (templateMetadata_ != null) {
       output.writeMessage(20, getTemplateMetadata());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3351,7 +4404,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (templateMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getTemplateMetadata());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3414,7 +4467,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (hasTemplateMetadata()) {
       if (!getTemplateMetadata().equals(other.getTemplateMetadata())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3481,7 +4534,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TEMPLATE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getTemplateMetadata().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3630,17 +4683,10 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.PipelineJob.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -3909,7 +4955,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTemplateMetadata()) {
         mergeTemplateMetadata(other.getTemplateMetadata());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3924,17 +4970,139 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.PipelineJob parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getPipelineSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 64:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(getJobDetailFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getRuntimeConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 130:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            case 138:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 146:
+              {
+                network_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 146
+            case 154:
+              {
+                templateUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getTemplateMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.aiplatform.v1beta1.PipelineJob) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6848,7 +8016,18 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PipelineJob(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

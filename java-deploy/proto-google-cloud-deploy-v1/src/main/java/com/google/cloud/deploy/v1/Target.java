@@ -59,193 +59,6 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Target(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetId_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotations_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AnnotationsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
-                  input.readMessage(
-                      AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 66:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 104:
-            {
-              requireApproval_ = input.readBool();
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.deploy.v1.GkeCluster.Builder subBuilder = null;
-              if (deploymentTargetCase_ == 15) {
-                subBuilder =
-                    ((com.google.cloud.deploy.v1.GkeCluster) deploymentTarget_).toBuilder();
-              }
-              deploymentTarget_ =
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.GkeCluster.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.deploy.v1.GkeCluster) deploymentTarget_);
-                deploymentTarget_ = subBuilder.buildPartial();
-              }
-              deploymentTargetCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                executionConfigs_ =
-                    new java.util.ArrayList<com.google.cloud.deploy.v1.ExecutionConfig>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              executionConfigs_.add(
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.ExecutionConfig.parser(), extensionRegistry));
-              break;
-            }
-          case 138:
-            {
-              com.google.cloud.deploy.v1.AnthosCluster.Builder subBuilder = null;
-              if (deploymentTargetCase_ == 17) {
-                subBuilder =
-                    ((com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_).toBuilder();
-              }
-              deploymentTarget_ =
-                  input.readMessage(
-                      com.google.cloud.deploy.v1.AnthosCluster.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_);
-                deploymentTarget_ = subBuilder.buildPartial();
-              }
-              deploymentTargetCase_ = 17;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        executionConfigs_ = java.util.Collections.unmodifiableList(executionConfigs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.deploy.v1.CloudDeployProto
         .internal_static_google_cloud_deploy_v1_Target_descriptor;
@@ -283,6 +96,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GKE(15),
     ANTHOS_CLUSTER(17),
+    RUN(18),
     DEPLOYMENTTARGET_NOT_SET(0);
     private final int value;
 
@@ -305,6 +119,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return GKE;
         case 17:
           return ANTHOS_CLUSTER;
+        case 18:
+          return RUN;
         case 0:
           return DEPLOYMENTTARGET_NOT_SET;
         default:
@@ -987,6 +803,57 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance();
   }
 
+  public static final int RUN_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a Cloud Run deployment target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   *
+   * @return Whether the run field is set.
+   */
+  @java.lang.Override
+  public boolean hasRun() {
+    return deploymentTargetCase_ == 18;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a Cloud Run deployment target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   *
+   * @return The run.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CloudRunLocation getRun() {
+    if (deploymentTargetCase_ == 18) {
+      return (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a Cloud Run deployment target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder() {
+    if (deploymentTargetCase_ == 18) {
+      return (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
+  }
+
   public static final int ETAG_FIELD_NUMBER = 12;
   private volatile java.lang.Object etag_;
   /**
@@ -1191,7 +1058,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (deploymentTargetCase_ == 17) {
       output.writeMessage(17, (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_);
     }
-    unknownFields.writeTo(output);
+    if (deploymentTargetCase_ == 18) {
+      output.writeMessage(18, (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1258,7 +1128,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, (com.google.cloud.deploy.v1.AnthosCluster) deploymentTarget_);
     }
-    size += unknownFields.getSerializedSize();
+    if (deploymentTargetCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1298,10 +1173,13 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       case 17:
         if (!getAnthosCluster().equals(other.getAnthosCluster())) return false;
         break;
+      case 18:
+        if (!getRun().equals(other.getRun())) return false;
+        break;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1353,10 +1231,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ANTHOS_CLUSTER_FIELD_NUMBER;
         hash = (53 * hash) + getAnthosCluster().hashCode();
         break;
+      case 18:
+        hash = (37 * hash) + RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getRun().hashCode();
+        break;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1510,19 +1392,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.deploy.v1.Target.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getExecutionConfigsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1552,14 +1425,24 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (gkeBuilder_ != null) {
+        gkeBuilder_.clear();
+      }
+      if (anthosClusterBuilder_ != null) {
+        anthosClusterBuilder_.clear();
+      }
+      if (runBuilder_ != null) {
+        runBuilder_.clear();
+      }
       etag_ = "";
 
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        executionConfigs_ = null;
         executionConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       deploymentTargetCase_ = 0;
       deploymentTarget_ = null;
       return this;
@@ -1620,6 +1503,13 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           result.deploymentTarget_ = deploymentTarget_;
         } else {
           result.deploymentTarget_ = anthosClusterBuilder_.build();
+        }
+      }
+      if (deploymentTargetCase_ == 18) {
+        if (runBuilder_ == null) {
+          result.deploymentTarget_ = deploymentTarget_;
+        } else {
+          result.deploymentTarget_ = runBuilder_.build();
         }
       }
       result.etag_ = etag_;
@@ -1751,12 +1641,17 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             mergeAnthosCluster(other.getAnthosCluster());
             break;
           }
+        case RUN:
+          {
+            mergeRun(other.getRun());
+            break;
+          }
         case DEPLOYMENTTARGET_NOT_SET:
           {
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1771,17 +1666,132 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.deploy.v1.Target parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                targetId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 50
+            case 66:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 98:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 104:
+              {
+                requireApproval_ = input.readBool();
+
+                break;
+              } // case 104
+            case 122:
+              {
+                input.readMessage(getGkeFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentTargetCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                com.google.cloud.deploy.v1.ExecutionConfig m =
+                    input.readMessage(
+                        com.google.cloud.deploy.v1.ExecutionConfig.parser(), extensionRegistry);
+                if (executionConfigsBuilder_ == null) {
+                  ensureExecutionConfigsIsMutable();
+                  executionConfigs_.add(m);
+                } else {
+                  executionConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getAnthosClusterFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentTargetCase_ = 17;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getRunFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentTargetCase_ = 18;
+                break;
+              } // case 146
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.deploy.v1.Target) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3513,6 +3523,216 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       return anthosClusterBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CloudRunLocation,
+            com.google.cloud.deploy.v1.CloudRunLocation.Builder,
+            com.google.cloud.deploy.v1.CloudRunLocationOrBuilder>
+        runBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     *
+     * @return Whether the run field is set.
+     */
+    @java.lang.Override
+    public boolean hasRun() {
+      return deploymentTargetCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     *
+     * @return The run.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CloudRunLocation getRun() {
+      if (runBuilder_ == null) {
+        if (deploymentTargetCase_ == 18) {
+          return (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
+      } else {
+        if (deploymentTargetCase_ == 18) {
+          return runBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    public Builder setRun(com.google.cloud.deploy.v1.CloudRunLocation value) {
+      if (runBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentTarget_ = value;
+        onChanged();
+      } else {
+        runBuilder_.setMessage(value);
+      }
+      deploymentTargetCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    public Builder setRun(com.google.cloud.deploy.v1.CloudRunLocation.Builder builderForValue) {
+      if (runBuilder_ == null) {
+        deploymentTarget_ = builderForValue.build();
+        onChanged();
+      } else {
+        runBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentTargetCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    public Builder mergeRun(com.google.cloud.deploy.v1.CloudRunLocation value) {
+      if (runBuilder_ == null) {
+        if (deploymentTargetCase_ == 18
+            && deploymentTarget_
+                != com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance()) {
+          deploymentTarget_ =
+              com.google.cloud.deploy.v1.CloudRunLocation.newBuilder(
+                      (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentTarget_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentTargetCase_ == 18) {
+          runBuilder_.mergeFrom(value);
+        } else {
+          runBuilder_.setMessage(value);
+        }
+      }
+      deploymentTargetCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    public Builder clearRun() {
+      if (runBuilder_ == null) {
+        if (deploymentTargetCase_ == 18) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentTargetCase_ == 18) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+        }
+        runBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    public com.google.cloud.deploy.v1.CloudRunLocation.Builder getRunBuilder() {
+      return getRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CloudRunLocationOrBuilder getRunOrBuilder() {
+      if ((deploymentTargetCase_ == 18) && (runBuilder_ != null)) {
+        return runBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentTargetCase_ == 18) {
+          return (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a Cloud Run deployment target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.CloudRunLocation run = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CloudRunLocation,
+            com.google.cloud.deploy.v1.CloudRunLocation.Builder,
+            com.google.cloud.deploy.v1.CloudRunLocationOrBuilder>
+        getRunFieldBuilder() {
+      if (runBuilder_ == null) {
+        if (!(deploymentTargetCase_ == 18)) {
+          deploymentTarget_ = com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
+        }
+        runBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CloudRunLocation,
+                com.google.cloud.deploy.v1.CloudRunLocation.Builder,
+                com.google.cloud.deploy.v1.CloudRunLocationOrBuilder>(
+                (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_,
+                getParentForChildren(),
+                isClean());
+        deploymentTarget_ = null;
+      }
+      deploymentTargetCase_ = 18;
+      onChanged();
+      ;
+      return runBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -4128,7 +4348,18 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Target(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

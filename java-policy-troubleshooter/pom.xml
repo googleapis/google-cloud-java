@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-policy-troubleshooter-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+  <version>1.2.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
   <name>Google IAM Policy Troubleshooter API Parent</name>
   <url>https://github.com/googleapis/java-policy-troubleshooter</url>
   <description>
@@ -12,9 +12,9 @@
   </description>
 
   <parent>
-    <groupId>com.google.api</groupId>
-    <artifactId>google-cloud-java</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-java-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
   </parent>
 
   <developers>
@@ -61,23 +61,23 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-policy-troubleshooter</artifactId>
-        <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+        <version>1.2.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-policy-troubleshooter-v1</artifactId>
-        <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-policy-troubleshooter-v1:current} -->
+        <version>1.2.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-policy-troubleshooter-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-policy-troubleshooter-v1</artifactId>
-        <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-policy-troubleshooter-v1:current} -->
+        <version>1.2.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-policy-troubleshooter-v1:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.3</version>
+        <version>3.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

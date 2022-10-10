@@ -75,6 +75,77 @@ public interface DiscoveryOccurrenceOrBuilder
   io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus getAnalysisStatus();
 
   /**
+   * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+   *
+   * @return Whether the analysisCompleted field is set.
+   */
+  boolean hasAnalysisCompleted();
+  /**
+   * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+   *
+   * @return The analysisCompleted.
+   */
+  io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getAnalysisCompleted();
+  /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+  io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder getAnalysisCompletedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  java.util.List<com.google.rpc.Status> getAnalysisErrorList();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  com.google.rpc.Status getAnalysisError(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  int getAnalysisErrorCount();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getAnalysisErrorOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates any errors encountered during analysis of a resource. There
+   * could be 0 or more of these errors.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status analysis_error = 8;</code>
+   */
+  com.google.rpc.StatusOrBuilder getAnalysisErrorOrBuilder(int index);
+
+  /**
    *
    *
    * <pre>

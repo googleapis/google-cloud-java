@@ -14,10 +14,10 @@
 
 
 deep-remove-regex:
-- "/samples/snippets/generated"
-- "/grpc-google-.*/src"
-- "/proto-google-.*/src"
-- "/google-.*/src"
+- "/java-os-config/samples/snippets/generated"
+- "/java-os-config/grpc-google-.*/src"
+- "/java-os-config/proto-google-.*/src"
+- "/java-os-config/google-.*/src"
 
 deep-copy-regex:
 - source: "/google/cloud/osconfig/(v.*)/.*-java/proto-google-.*/src"

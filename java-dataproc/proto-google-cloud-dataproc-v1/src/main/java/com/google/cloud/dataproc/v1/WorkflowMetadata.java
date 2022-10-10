@@ -55,217 +55,6 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private WorkflowMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              template_ = s;
-              break;
-            }
-          case 16:
-            {
-              version_ = input.readInt32();
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dataproc.v1.ClusterOperation.Builder subBuilder = null;
-              if (createCluster_ != null) {
-                subBuilder = createCluster_.toBuilder();
-              }
-              createCluster_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.ClusterOperation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createCluster_);
-                createCluster_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.dataproc.v1.WorkflowGraph.Builder subBuilder = null;
-              if (graph_ != null) {
-                subBuilder = graph_.toBuilder();
-              }
-              graph_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.WorkflowGraph.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(graph_);
-                graph_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.dataproc.v1.ClusterOperation.Builder subBuilder = null;
-              if (deleteCluster_ != null) {
-                subBuilder = deleteCluster_.toBuilder();
-              }
-              deleteCluster_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.ClusterOperation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deleteCluster_);
-                deleteCluster_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterName_ = s;
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                parameters_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ParametersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
-                  input.readMessage(
-                      ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              parameters_.getMutableMap().put(parameters__.getKey(), parameters__.getValue());
-              break;
-            }
-          case 74:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterUuid_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (dagTimeout_ != null) {
-                subBuilder = dagTimeout_.toBuilder();
-              }
-              dagTimeout_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dagTimeout_);
-                dagTimeout_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (dagStartTime_ != null) {
-                subBuilder = dagStartTime_.toBuilder();
-              }
-              dagStartTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dagStartTime_);
-                dagStartTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (dagEndTime_ != null) {
-                subBuilder = dagEndTime_.toBuilder();
-              }
-              dagEndTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dagEndTime_);
-                dagEndTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_WorkflowMetadata_descriptor;
@@ -1271,7 +1060,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (dagEndTime_ != null) {
       output.writeMessage(14, getDagEndTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1329,7 +1118,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (dagEndTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getDagEndTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1383,7 +1172,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     if (hasDagEndTime()) {
       if (!getDagEndTime().equals(other.getDagEndTime())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1440,7 +1229,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DAG_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDagEndTime().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1589,17 +1378,10 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dataproc.v1.WorkflowMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1831,7 +1613,7 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
       if (other.hasDagEndTime()) {
         mergeDagEndTime(other.getDagEndTime());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1846,17 +1628,120 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.WorkflowMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                template_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                version_ = input.readInt32();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getCreateClusterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getGraphFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getDeleteClusterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 48:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                clusterName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
+                    input.readMessage(
+                        ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableParameters()
+                    .getMutableMap()
+                    .put(parameters__.getKey(), parameters__.getValue());
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                clusterUuid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getDagTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getDagStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getDagEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.WorkflowMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4185,7 +4070,18 @@ public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WorkflowMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

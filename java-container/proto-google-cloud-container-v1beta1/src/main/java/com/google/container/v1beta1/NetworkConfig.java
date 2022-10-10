@@ -55,132 +55,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private NetworkConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case 40:
-            {
-              enableIntraNodeVisibility_ = input.readBool();
-              break;
-            }
-          case 58:
-            {
-              com.google.container.v1beta1.DefaultSnatStatus.Builder subBuilder = null;
-              if (defaultSnatStatus_ != null) {
-                subBuilder = defaultSnatStatus_.toBuilder();
-              }
-              defaultSnatStatus_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.DefaultSnatStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(defaultSnatStatus_);
-                defaultSnatStatus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              enableL4IlbSubsetting_ = input.readBool();
-              break;
-            }
-          case 88:
-            {
-              int rawValue = input.readEnum();
-
-              datapathProvider_ = rawValue;
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              privateIpv6GoogleAccess_ = rawValue;
-              break;
-            }
-          case 106:
-            {
-              com.google.container.v1beta1.DNSConfig.Builder subBuilder = null;
-              if (dnsConfig_ != null) {
-                subBuilder = dnsConfig_.toBuilder();
-              }
-              dnsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.DNSConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dnsConfig_);
-                dnsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.container.v1beta1.ServiceExternalIPsConfig.Builder subBuilder = null;
-              if (serviceExternalIpsConfig_ != null) {
-                subBuilder = serviceExternalIpsConfig_.toBuilder();
-              }
-              serviceExternalIpsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ServiceExternalIPsConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(serviceExternalIpsConfig_);
-                serviceExternalIpsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_NetworkConfig_descriptor;
@@ -629,7 +503,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (serviceExternalIpsConfig_ != null) {
       output.writeMessage(15, getServiceExternalIpsConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -672,7 +546,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getServiceExternalIpsConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -706,7 +580,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasServiceExternalIpsConfig()) {
       if (!getServiceExternalIpsConfig().equals(other.getServiceExternalIpsConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -741,7 +615,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getServiceExternalIpsConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -870,17 +744,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.container.v1beta1.NetworkConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1042,7 +909,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasServiceExternalIpsConfig()) {
         mergeServiceExternalIpsConfig(other.getServiceExternalIpsConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1057,17 +924,87 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.NetworkConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                network_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                subnetwork_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 40:
+              {
+                enableIntraNodeVisibility_ = input.readBool();
+
+                break;
+              } // case 40
+            case 58:
+              {
+                input.readMessage(
+                    getDefaultSnatStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 80:
+              {
+                enableL4IlbSubsetting_ = input.readBool();
+
+                break;
+              } // case 80
+            case 88:
+              {
+                datapathProvider_ = input.readEnum();
+
+                break;
+              } // case 88
+            case 96:
+              {
+                privateIpv6GoogleAccess_ = input.readEnum();
+
+                break;
+              } // case 96
+            case 106:
+              {
+                input.readMessage(getDnsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(
+                    getServiceExternalIpsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1beta1.NetworkConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2264,7 +2201,18 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NetworkConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

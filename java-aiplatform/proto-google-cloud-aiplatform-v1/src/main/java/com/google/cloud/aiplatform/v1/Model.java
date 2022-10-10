@@ -66,360 +66,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Model(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.aiplatform.v1.PredictSchemata.Builder subBuilder = null;
-              if (predictSchemata_ != null) {
-                subBuilder = predictSchemata_.toBuilder();
-              }
-              predictSchemata_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.PredictSchemata.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(predictSchemata_);
-                predictSchemata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              metadataSchemaUri_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Value.Builder subBuilder = null;
-              if (metadata_ != null) {
-                subBuilder = metadata_.toBuilder();
-              }
-              metadata_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metadata_);
-                metadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              trainingPipeline_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.aiplatform.v1.ModelContainerSpec.Builder subBuilder = null;
-              if (containerSpec_ != null) {
-                subBuilder = containerSpec_.toBuilder();
-              }
-              containerSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.ModelContainerSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(containerSpec_);
-                containerSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                supportedDeploymentResourcesTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              supportedDeploymentResourcesTypes_.add(rawValue);
-              break;
-            }
-          case 82:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  supportedDeploymentResourcesTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                supportedDeploymentResourcesTypes_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                supportedInputStorageFormats_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              supportedInputStorageFormats_.add(s);
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                supportedOutputStorageFormats_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              supportedOutputStorageFormats_.add(s);
-              break;
-            }
-          case 106:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                deployedModels_ =
-                    new java.util.ArrayList<com.google.cloud.aiplatform.v1.DeployedModelRef>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              deployedModels_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.DeployedModelRef.parser(), extensionRegistry));
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          case 138:
-            {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 162:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                supportedExportFormats_ =
-                    new java.util.ArrayList<com.google.cloud.aiplatform.v1.Model.ExportFormat>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              supportedExportFormats_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.Model.ExportFormat.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 186:
-            {
-              com.google.cloud.aiplatform.v1.ExplanationSpec.Builder subBuilder = null;
-              if (explanationSpec_ != null) {
-                subBuilder = explanationSpec_.toBuilder();
-              }
-              explanationSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.ExplanationSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(explanationSpec_);
-                explanationSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 194:
-            {
-              com.google.cloud.aiplatform.v1.EncryptionSpec.Builder subBuilder = null;
-              if (encryptionSpec_ != null) {
-                subBuilder = encryptionSpec_.toBuilder();
-              }
-              encryptionSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.EncryptionSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(encryptionSpec_);
-                encryptionSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 210:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              artifactUri_ = s;
-              break;
-            }
-          case 226:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              versionId_ = s;
-              break;
-            }
-          case 234:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                versionAliases_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              versionAliases_.add(s);
-              break;
-            }
-          case 242:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              versionDescription_ = s;
-              break;
-            }
-          case 250:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (versionCreateTime_ != null) {
-                subBuilder = versionCreateTime_.toBuilder();
-              }
-              versionCreateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(versionCreateTime_);
-                versionCreateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 258:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (versionUpdateTime_ != null) {
-                subBuilder = versionUpdateTime_.toBuilder();
-              }
-              versionUpdateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(versionUpdateTime_);
-                versionUpdateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        supportedDeploymentResourcesTypes_ =
-            java.util.Collections.unmodifiableList(supportedDeploymentResourcesTypes_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        supportedInputStorageFormats_ = supportedInputStorageFormats_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        supportedOutputStorageFormats_ = supportedOutputStorageFormats_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        deployedModels_ = java.util.Collections.unmodifiableList(deployedModels_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        supportedExportFormats_ = java.util.Collections.unmodifiableList(supportedExportFormats_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        versionAliases_ = versionAliases_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelProto
         .internal_static_google_cloud_aiplatform_v1_Model_descriptor;
@@ -801,81 +447,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ExportFormat(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                id_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  exportableContents_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                exportableContents_.add(rawValue);
-                break;
-              }
-            case 18:
-              {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while (input.getBytesUntilLimit() > 0) {
-                  int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    exportableContents_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  exportableContents_.add(rawValue);
-                }
-                input.popLimit(oldLimit);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          exportableContents_ = java.util.Collections.unmodifiableList(exportableContents_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1279,7 +850,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < exportableContents_.size(); i++) {
         output.writeEnumNoTag(exportableContents_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1305,7 +876,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         }
         exportableContentsMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1323,7 +894,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
       if (!getId().equals(other.getId())) return false;
       if (!exportableContents_.equals(other.exportableContents_)) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1340,7 +911,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + EXPORTABLE_CONTENTS_FIELD_NUMBER;
         hash = (53 * hash) + exportableContents_.hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1472,17 +1043,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1.Model.ExportFormat.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1592,7 +1156,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1607,18 +1171,56 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1.Model.ExportFormat parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  id_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureExportableContentsIsMutable();
+                  exportableContents_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureExportableContentsIsMutable();
+                    exportableContents_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1.Model.ExportFormat) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2085,7 +1687,19 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ExportFormat(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4012,6 +3626,63 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int MODEL_SOURCE_INFO_FIELD_NUMBER = 38;
+  private com.google.cloud.aiplatform.v1.ModelSourceInfo modelSourceInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the modelSourceInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelSourceInfo() {
+    return modelSourceInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The modelSourceInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ModelSourceInfo getModelSourceInfo() {
+    return modelSourceInfo_ == null
+        ? com.google.cloud.aiplatform.v1.ModelSourceInfo.getDefaultInstance()
+        : modelSourceInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Source of a model. It can either be automl training pipeline, custom
+   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ModelSourceInfoOrBuilder getModelSourceInfoOrBuilder() {
+    return getModelSourceInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4107,7 +3778,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (versionUpdateTime_ != null) {
       output.writeMessage(32, getVersionUpdateTime());
     }
-    unknownFields.writeTo(output);
+    if (modelSourceInfo_ != null) {
+      output.writeMessage(38, getModelSourceInfo());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4226,7 +3900,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (versionUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getVersionUpdateTime());
     }
-    size += unknownFields.getSerializedSize();
+    if (modelSourceInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getModelSourceInfo());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4297,7 +3974,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (hasModelSourceInfo() != other.hasModelSourceInfo()) return false;
+    if (hasModelSourceInfo()) {
+      if (!getModelSourceInfo().equals(other.getModelSourceInfo())) return false;
+    }
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4390,7 +4071,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    if (hasModelSourceInfo()) {
+      hash = (37 * hash) + MODEL_SOURCE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getModelSourceInfo().hashCode();
+    }
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4538,20 +4223,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1.Model.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSupportedExportFormatsFieldBuilder();
-        getDeployedModelsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -4597,10 +4272,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (supportedExportFormatsBuilder_ == null) {
         supportedExportFormats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        supportedExportFormats_ = null;
         supportedExportFormatsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       trainingPipeline_ = "";
 
       if (containerSpecBuilder_ == null) {
@@ -4631,10 +4307,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (deployedModelsBuilder_ == null) {
         deployedModels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        deployedModels_ = null;
         deployedModelsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (explanationSpecBuilder_ == null) {
         explanationSpec_ = null;
       } else {
@@ -4649,6 +4326,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
+      }
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfo_ = null;
+      } else {
+        modelSourceInfo_ = null;
+        modelSourceInfoBuilder_ = null;
       }
       return this;
     }
@@ -4771,6 +4454,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.encryptionSpec_ = encryptionSpec_;
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
+      if (modelSourceInfoBuilder_ == null) {
+        result.modelSourceInfo_ = modelSourceInfo_;
+      } else {
+        result.modelSourceInfo_ = modelSourceInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4979,7 +4667,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (other.hasModelSourceInfo()) {
+        mergeModelSourceInfo(other.getModelSourceInfo());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4994,17 +4685,226 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1.Model parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getPredictSchemataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                metadataSchemaUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                trainingPipeline_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 74:
+              {
+                input.readMessage(getContainerSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 80:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSupportedDeploymentResourcesTypesIsMutable();
+                supportedDeploymentResourcesTypes_.add(tmpRaw);
+                break;
+              } // case 80
+            case 82:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSupportedDeploymentResourcesTypesIsMutable();
+                  supportedDeploymentResourcesTypes_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSupportedInputStorageFormatsIsMutable();
+                supportedInputStorageFormats_.add(s);
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSupportedOutputStorageFormatsIsMutable();
+                supportedOutputStorageFormats_.add(s);
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                com.google.cloud.aiplatform.v1.DeployedModelRef m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.DeployedModelRef.parser(),
+                        extensionRegistry);
+                if (deployedModelsBuilder_ == null) {
+                  ensureDeployedModelsIsMutable();
+                  deployedModels_.add(m);
+                } else {
+                  deployedModelsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+            case 130:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 138
+            case 162:
+              {
+                com.google.cloud.aiplatform.v1.Model.ExportFormat m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.Model.ExportFormat.parser(),
+                        extensionRegistry);
+                if (supportedExportFormatsBuilder_ == null) {
+                  ensureSupportedExportFormatsIsMutable();
+                  supportedExportFormats_.add(m);
+                } else {
+                  supportedExportFormatsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
+            case 186:
+              {
+                input.readMessage(getExplanationSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
+            case 194:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 194
+            case 210:
+              {
+                artifactUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 210
+            case 226:
+              {
+                versionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 226
+            case 234:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureVersionAliasesIsMutable();
+                versionAliases_.add(s);
+                break;
+              } // case 234
+            case 242:
+              {
+                versionDescription_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 242
+            case 250:
+              {
+                input.readMessage(
+                    getVersionCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 250
+            case 258:
+              {
+                input.readMessage(
+                    getVersionUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 258
+            case 306:
+              {
+                input.readMessage(getModelSourceInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 306
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.aiplatform.v1.Model) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -10554,6 +10454,219 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return encryptionSpecBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.ModelSourceInfo modelSourceInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ModelSourceInfo,
+            com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder,
+            com.google.cloud.aiplatform.v1.ModelSourceInfoOrBuilder>
+        modelSourceInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the modelSourceInfo field is set.
+     */
+    public boolean hasModelSourceInfo() {
+      return modelSourceInfoBuilder_ != null || modelSourceInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The modelSourceInfo.
+     */
+    public com.google.cloud.aiplatform.v1.ModelSourceInfo getModelSourceInfo() {
+      if (modelSourceInfoBuilder_ == null) {
+        return modelSourceInfo_ == null
+            ? com.google.cloud.aiplatform.v1.ModelSourceInfo.getDefaultInstance()
+            : modelSourceInfo_;
+      } else {
+        return modelSourceInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelSourceInfo(com.google.cloud.aiplatform.v1.ModelSourceInfo value) {
+      if (modelSourceInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelSourceInfo_ = value;
+        onChanged();
+      } else {
+        modelSourceInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setModelSourceInfo(
+        com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder builderForValue) {
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelSourceInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeModelSourceInfo(com.google.cloud.aiplatform.v1.ModelSourceInfo value) {
+      if (modelSourceInfoBuilder_ == null) {
+        if (modelSourceInfo_ != null) {
+          modelSourceInfo_ =
+              com.google.cloud.aiplatform.v1.ModelSourceInfo.newBuilder(modelSourceInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelSourceInfo_ = value;
+        }
+        onChanged();
+      } else {
+        modelSourceInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearModelSourceInfo() {
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfo_ = null;
+        onChanged();
+      } else {
+        modelSourceInfo_ = null;
+        modelSourceInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder getModelSourceInfoBuilder() {
+
+      onChanged();
+      return getModelSourceInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ModelSourceInfoOrBuilder getModelSourceInfoOrBuilder() {
+      if (modelSourceInfoBuilder_ != null) {
+        return modelSourceInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return modelSourceInfo_ == null
+            ? com.google.cloud.aiplatform.v1.ModelSourceInfo.getDefaultInstance()
+            : modelSourceInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Source of a model. It can either be automl training pipeline, custom
+     * training pipeline, BigQuery ML, or existing Vertex AI Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ModelSourceInfo model_source_info = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.ModelSourceInfo,
+            com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder,
+            com.google.cloud.aiplatform.v1.ModelSourceInfoOrBuilder>
+        getModelSourceInfoFieldBuilder() {
+      if (modelSourceInfoBuilder_ == null) {
+        modelSourceInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.ModelSourceInfo,
+                com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder,
+                com.google.cloud.aiplatform.v1.ModelSourceInfoOrBuilder>(
+                getModelSourceInfo(), getParentForChildren(), isClean());
+        modelSourceInfo_ = null;
+      }
+      return modelSourceInfoBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -10586,7 +10699,18 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Model(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
