@@ -52,12 +52,6 @@
         <artifactId>google-cloud-containeranalysis</artifactId>
         <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
-
-      <dependency>
-        <groupId>io.perfmark</groupId>
-        <artifactId>perfmark-api</artifactId>
-        <version>0.25.0</version>
-      </dependency>
       <!-- TODO: This should maybe eventually be moved into this repo -->
       <dependency>
         <groupId>io.grafeas</groupId>

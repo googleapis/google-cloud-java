@@ -5,10 +5,12 @@
   <artifactId>google-cloud-distributedcloudedge-bom</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <name>Google Google Distributed Cloud Edge BOM</name>
