@@ -34,7 +34,6 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-dns</artifactId>
-      <version>v1-rev20220804-2.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-client</groupId>

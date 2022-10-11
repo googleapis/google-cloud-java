@@ -55,7 +55,6 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-translate</artifactId>
-        <version>v2-rev20170525-2.0.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
