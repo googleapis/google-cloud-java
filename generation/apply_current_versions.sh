@@ -9,23 +9,18 @@
 # # Run this script at the root of the monorepo
 # bash generation/apply_current_versions.sh
 
-function apply_module_versions_file() {
-  versions_file=$1
+set -e
 
-  # Normally java-XXX. For the root pom.xml, it's "."
-  MODULE=$(dirname $versions_file)
-
+SED_OPTIONS=""
+for versions_file in $(find . -mindepth 0 -maxdepth 2 -name versions.txt \
+    |sort --dictionary-order); do
   for KV in $(cut -f1,3 -d: $versions_file |grep -v "#"); do
     K=${KV%:*}; V=${KV#*:}
     echo Key:$K, Value:$V;
-    pom_files="$(find $MODULE -maxdepth 3 -name pom.xml) pom.xml CoverageAggregator/pom.xml google-cloud-gapic-bom/pom.xml"
-    for P in $pom_files; do
-      sed -i.bak -e "/x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}" $P && rm ${P}.bak
-    done
+    SED_OPTIONS="$SED_OPTIONS -e /x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}"
   done
-}
-
-for versions_txt in $(find . -mindepth 0 -maxdepth 2 -name versions.txt \
-    |sort --dictionary-order); do
-  apply_module_versions_file "${versions_txt}"
 done
+
+echo "Running sed command. It may take few minutes."
+find . -maxdepth 3 -name pom.xml |sort --dictionary-order |xargs sed -i.bak $SED_OPTIONS
+find . -maxdepth 3 -name pom.xml.bak |xargs rm
