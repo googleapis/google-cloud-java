@@ -52,100 +52,6 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private BatchPredictRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.automl.v1.BatchPredictInputConfig.Builder subBuilder = null;
-              if (inputConfig_ != null) {
-                subBuilder = inputConfig_.toBuilder();
-              }
-              inputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1.BatchPredictInputConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(inputConfig_);
-                inputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.automl.v1.BatchPredictOutputConfig.Builder subBuilder = null;
-              if (outputConfig_ != null) {
-                subBuilder = outputConfig_.toBuilder();
-              }
-              outputConfig_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1.BatchPredictOutputConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outputConfig_);
-                outputConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                params_ =
-                    com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
-                  input.readMessage(
-                      ParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              params_.getMutableMap().put(params__.getKey(), params__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.PredictionServiceProto
         .internal_static_google_cloud_automl_v1_BatchPredictRequest_descriptor;
@@ -715,7 +621,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetParams(), ParamsDefaultEntryHolder.defaultEntry, 5);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -743,7 +649,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, params__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -769,7 +675,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       if (!getOutputConfig().equals(other.getOutputConfig())) return false;
     }
     if (!internalGetParams().equals(other.internalGetParams())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -794,7 +700,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetParams().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -943,17 +849,10 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.automl.v1.BatchPredictRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1075,7 +974,7 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         mergeOutputConfig(other.getOutputConfig());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1090,17 +989,60 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1.BatchPredictRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 26:
+              {
+                input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> params__ =
+                    input.readMessage(
+                        ParamsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableParams()
+                    .getMutableMap()
+                    .put(params__.getKey(), params__.getValue());
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1.BatchPredictRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2277,7 +2219,18 @@ public final class BatchPredictRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchPredictRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

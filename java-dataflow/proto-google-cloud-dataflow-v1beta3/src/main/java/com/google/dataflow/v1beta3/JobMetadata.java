@@ -58,151 +58,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private JobMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.dataflow.v1beta3.SdkVersion.Builder subBuilder = null;
-              if (sdkVersion_ != null) {
-                subBuilder = sdkVersion_.toBuilder();
-              }
-              sdkVersion_ =
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.SdkVersion.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sdkVersion_);
-                sdkVersion_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                spannerDetails_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.SpannerIODetails>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              spannerDetails_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.SpannerIODetails.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                bigqueryDetails_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.BigQueryIODetails>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              bigqueryDetails_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.BigQueryIODetails.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                bigTableDetails_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.BigTableIODetails>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              bigTableDetails_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.BigTableIODetails.parser(), extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                pubsubDetails_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.PubSubIODetails>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              pubsubDetails_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.PubSubIODetails.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                fileDetails_ = new java.util.ArrayList<com.google.dataflow.v1beta3.FileIODetails>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              fileDetails_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.FileIODetails.parser(), extensionRegistry));
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                datastoreDetails_ =
-                    new java.util.ArrayList<com.google.dataflow.v1beta3.DatastoreIODetails>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              datastoreDetails_.add(
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.DatastoreIODetails.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        spannerDetails_ = java.util.Collections.unmodifiableList(spannerDetails_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        bigqueryDetails_ = java.util.Collections.unmodifiableList(bigqueryDetails_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        bigTableDetails_ = java.util.Collections.unmodifiableList(bigTableDetails_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        pubsubDetails_ = java.util.Collections.unmodifiableList(pubsubDetails_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        fileDetails_ = java.util.Collections.unmodifiableList(fileDetails_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        datastoreDetails_ = java.util.Collections.unmodifiableList(datastoreDetails_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.JobsProto
         .internal_static_google_dataflow_v1beta3_JobMetadata_descriptor;
@@ -719,7 +574,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < datastoreDetails_.size(); i++) {
       output.writeMessage(7, datastoreDetails_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -749,7 +604,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < datastoreDetails_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, datastoreDetails_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -774,7 +629,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!getPubsubDetailsList().equals(other.getPubsubDetailsList())) return false;
     if (!getFileDetailsList().equals(other.getFileDetailsList())) return false;
     if (!getDatastoreDetailsList().equals(other.getDatastoreDetailsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -813,7 +668,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DATASTORE_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getDatastoreDetailsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -943,24 +798,10 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.dataflow.v1beta3.JobMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSpannerDetailsFieldBuilder();
-        getBigqueryDetailsFieldBuilder();
-        getBigTableDetailsFieldBuilder();
-        getPubsubDetailsFieldBuilder();
-        getFileDetailsFieldBuilder();
-        getDatastoreDetailsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -974,40 +815,46 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       if (spannerDetailsBuilder_ == null) {
         spannerDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        spannerDetails_ = null;
         spannerDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (bigqueryDetailsBuilder_ == null) {
         bigqueryDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        bigqueryDetails_ = null;
         bigqueryDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (bigTableDetailsBuilder_ == null) {
         bigTableDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        bigTableDetails_ = null;
         bigTableDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (pubsubDetailsBuilder_ == null) {
         pubsubDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        pubsubDetails_ = null;
         pubsubDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (fileDetailsBuilder_ == null) {
         fileDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        fileDetails_ = null;
         fileDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (datastoreDetailsBuilder_ == null) {
         datastoreDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
+        datastoreDetails_ = null;
         datastoreDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1309,7 +1156,7 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1324,17 +1171,115 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.dataflow.v1beta3.JobMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getSdkVersionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.dataflow.v1beta3.SpannerIODetails m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.SpannerIODetails.parser(), extensionRegistry);
+                if (spannerDetailsBuilder_ == null) {
+                  ensureSpannerDetailsIsMutable();
+                  spannerDetails_.add(m);
+                } else {
+                  spannerDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.dataflow.v1beta3.BigQueryIODetails m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.BigQueryIODetails.parser(), extensionRegistry);
+                if (bigqueryDetailsBuilder_ == null) {
+                  ensureBigqueryDetailsIsMutable();
+                  bigqueryDetails_.add(m);
+                } else {
+                  bigqueryDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.dataflow.v1beta3.BigTableIODetails m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.BigTableIODetails.parser(), extensionRegistry);
+                if (bigTableDetailsBuilder_ == null) {
+                  ensureBigTableDetailsIsMutable();
+                  bigTableDetails_.add(m);
+                } else {
+                  bigTableDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.dataflow.v1beta3.PubSubIODetails m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.PubSubIODetails.parser(), extensionRegistry);
+                if (pubsubDetailsBuilder_ == null) {
+                  ensurePubsubDetailsIsMutable();
+                  pubsubDetails_.add(m);
+                } else {
+                  pubsubDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.dataflow.v1beta3.FileIODetails m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.FileIODetails.parser(), extensionRegistry);
+                if (fileDetailsBuilder_ == null) {
+                  ensureFileDetailsIsMutable();
+                  fileDetails_.add(m);
+                } else {
+                  fileDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.dataflow.v1beta3.DatastoreIODetails m =
+                    input.readMessage(
+                        com.google.dataflow.v1beta3.DatastoreIODetails.parser(), extensionRegistry);
+                if (datastoreDetailsBuilder_ == null) {
+                  ensureDatastoreDetailsIsMutable();
+                  datastoreDetails_.add(m);
+                } else {
+                  datastoreDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.dataflow.v1beta3.JobMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3703,7 +3648,18 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new JobMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

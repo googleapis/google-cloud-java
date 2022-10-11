@@ -51,76 +51,6 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private MachineTypesScopedList(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 405634274:
-            {
-              com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = warning_.toBuilder();
-              }
-              warning_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Warning.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(warning_);
-                warning_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-          case 637760522:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                machineTypes_ = new java.util.ArrayList<com.google.cloud.compute.v1.MachineType>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              machineTypes_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.MachineType.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        machineTypes_ = java.util.Collections.unmodifiableList(machineTypes_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_MachineTypesScopedList_descriptor;
@@ -272,7 +202,7 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
     for (int i = 0; i < machineTypes_.size(); i++) {
       output.writeMessage(79720065, machineTypes_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -288,7 +218,7 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(79720065, machineTypes_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -309,7 +239,7 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
     if (hasWarning()) {
       if (!getWarning().equals(other.getWarning())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -328,7 +258,7 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + WARNING_FIELD_NUMBER;
       hash = (53 * hash) + getWarning().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -477,10 +407,11 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
       super.clear();
       if (machineTypesBuilder_ == null) {
         machineTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        machineTypes_ = null;
         machineTypesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (warningBuilder_ == null) {
         warning_ = null;
       } else {
@@ -614,7 +545,7 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
       if (other.hasWarning()) {
         mergeWarning(other.getWarning());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -629,18 +560,50 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.MachineTypesScopedList parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 405634274:
+              {
+                input.readMessage(getWarningFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 405634274
+            case 637760522:
+              {
+                com.google.cloud.compute.v1.MachineType m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.MachineType.parser(), extensionRegistry);
+                if (machineTypesBuilder_ == null) {
+                  ensureMachineTypesIsMutable();
+                  machineTypes_.add(m);
+                } else {
+                  machineTypesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 637760522
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.MachineTypesScopedList) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1215,7 +1178,18 @@ public final class MachineTypesScopedList extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MachineTypesScopedList(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

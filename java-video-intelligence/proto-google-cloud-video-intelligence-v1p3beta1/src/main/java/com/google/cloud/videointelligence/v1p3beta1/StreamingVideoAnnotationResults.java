@@ -56,117 +56,6 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private StreamingVideoAnnotationResults(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                shotAnnotations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.VideoSegment>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              shotAnnotations_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.VideoSegment.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labelAnnotations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              labelAnnotations_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation.Builder
-                  subBuilder = null;
-              if (explicitAnnotation_ != null) {
-                subBuilder = explicitAnnotation_.toBuilder();
-              }
-              explicitAnnotation_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.ExplicitContentAnnotation
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(explicitAnnotation_);
-                explicitAnnotation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                objectAnnotations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              objectAnnotations_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        shotAnnotations_ = java.util.Collections.unmodifiableList(shotAnnotations_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        labelAnnotations_ = java.util.Collections.unmodifiableList(labelAnnotations_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingVideoAnnotationResults_descriptor;
@@ -508,7 +397,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
     for (int i = 0; i < objectAnnotations_.size(); i++) {
       output.writeMessage(4, objectAnnotations_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -530,7 +419,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, objectAnnotations_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -554,7 +443,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
       if (!getExplicitAnnotation().equals(other.getExplicitAnnotation())) return false;
     }
     if (!getObjectAnnotationsList().equals(other.getObjectAnnotationsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -581,7 +470,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
       hash = (37 * hash) + OBJECT_ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getObjectAnnotationsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -720,21 +609,10 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
 
     // Construct using
     // com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getShotAnnotationsFieldBuilder();
-        getLabelAnnotationsFieldBuilder();
-        getObjectAnnotationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -742,16 +620,18 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
       super.clear();
       if (shotAnnotationsBuilder_ == null) {
         shotAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        shotAnnotations_ = null;
         shotAnnotationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (labelAnnotationsBuilder_ == null) {
         labelAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        labelAnnotations_ = null;
         labelAnnotationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (explicitAnnotationBuilder_ == null) {
         explicitAnnotation_ = null;
       } else {
@@ -760,10 +640,11 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
       }
       if (objectAnnotationsBuilder_ == null) {
         objectAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        objectAnnotations_ = null;
         objectAnnotationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -966,7 +847,7 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -981,20 +862,81 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults parsedMessage =
-          null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.VideoSegment m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.VideoSegment.parser(),
+                        extensionRegistry);
+                if (shotAnnotationsBuilder_ == null) {
+                  ensureShotAnnotationsIsMutable();
+                  shotAnnotations_.add(m);
+                } else {
+                  shotAnnotationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation.parser(),
+                        extensionRegistry);
+                if (labelAnnotationsBuilder_ == null) {
+                  ensureLabelAnnotationsIsMutable();
+                  labelAnnotations_.add(m);
+                } else {
+                  labelAnnotationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getExplicitAnnotationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation
+                            .parser(),
+                        extensionRegistry);
+                if (objectAnnotationsBuilder_ == null) {
+                  ensureObjectAnnotationsIsMutable();
+                  objectAnnotations_.add(m);
+                } else {
+                  objectAnnotationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2460,7 +2402,18 @@ public final class StreamingVideoAnnotationResults extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StreamingVideoAnnotationResults(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

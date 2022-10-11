@@ -63,105 +63,6 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ResourceInfo(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Any.Builder subBuilder = null;
-              if (resource_ != null) {
-                subBuilder = resource_.toBuilder();
-              }
-              resource_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resource_);
-                resource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (time_ != null) {
-                subBuilder = time_.toBuilder();
-              }
-              time_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(time_);
-                time_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sub_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sub_.add(
-                  input.readMessage(
-                      com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        sub_ = java.util.Collections.unmodifiableList(sub_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoProto
         .internal_static_google_cloud_beyondcorp_appconnectors_v1_ResourceInfo_descriptor;
@@ -463,7 +364,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < sub_.size(); i++) {
       output.writeMessage(5, sub_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -489,7 +390,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < sub_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, sub_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -516,7 +417,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       if (!getTime().equals(other.getTime())) return false;
     }
     if (!getSubList().equals(other.getSubList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -543,7 +444,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SUB_FIELD_NUMBER;
       hash = (53 * hash) + getSubList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -682,19 +583,10 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSubFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -718,10 +610,11 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (subBuilder_ == null) {
         sub_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        sub_ = null;
         subBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -861,7 +754,7 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -876,18 +769,69 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                status_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo m =
+                    input.readMessage(
+                        com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.parser(),
+                        extensionRegistry);
+                if (subBuilder_ == null) {
+                  ensureSubIsMutable();
+                  sub_.add(m);
+                } else {
+                  subBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1857,7 +1801,18 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResourceInfo(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

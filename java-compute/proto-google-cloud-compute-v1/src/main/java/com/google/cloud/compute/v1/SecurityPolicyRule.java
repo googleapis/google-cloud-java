@@ -54,150 +54,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private SecurityPolicyRule(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              kind_ = s;
-              break;
-            }
-          case 540354522:
-            {
-              com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder subBuilder =
-                  null;
-              if (((bitField0_ & 0x00000080) != 0)) {
-                subBuilder = rateLimitOptions_.toBuilder();
-              }
-              rateLimitOptions_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rateLimitOptions_);
-                rateLimitOptions_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000080;
-              break;
-            }
-          case 829345322:
-            {
-              com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) != 0)) {
-                subBuilder = match_.toBuilder();
-              }
-              match_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(match_);
-                match_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000010;
-              break;
-            }
-          case 1306282458:
-            {
-              com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder subBuilder =
-                  null;
-              if (((bitField0_ & 0x00000100) != 0)) {
-                subBuilder = redirectOptions_.toBuilder();
-              }
-              redirectOptions_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(redirectOptions_);
-                redirectOptions_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000100;
-              break;
-            }
-          case 1501295026:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              action_ = s;
-              break;
-            }
-          case 1749491264:
-            {
-              bitField0_ |= 0x00000020;
-              preview_ = input.readBool();
-              break;
-            }
-          case -1670348478:
-            {
-              com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder subBuilder =
-                  null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = headerAction_.toBuilder();
-              }
-              headerAction_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(headerAction_);
-                headerAction_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              description_ = s;
-              break;
-            }
-          case -733754080:
-            {
-              bitField0_ |= 0x00000040;
-              priority_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_SecurityPolicyRule_descriptor;
@@ -734,7 +590,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(445151652, priority_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -773,7 +629,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -825,7 +681,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasRedirectOptions()) {
       if (!getRedirectOptions().equals(other.getRedirectOptions())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -872,7 +728,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + REDIRECT_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getRedirectOptions().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1220,7 +1076,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (other.hasRedirectOptions()) {
         mergeRedirectOptions(other.getRedirectOptions());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1235,17 +1091,86 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.SecurityPolicyRule parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 26336418
+            case 540354522:
+              {
+                input.readMessage(
+                    getRateLimitOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 540354522
+            case 829345322:
+              {
+                input.readMessage(getMatchFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 829345322
+            case 1306282458:
+              {
+                input.readMessage(getRedirectOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 1306282458
+            case 1501295026:
+              {
+                action_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 1501295026
+            case 1749491264:
+              {
+                preview_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 1749491264
+            case -1670348478:
+              {
+                input.readMessage(getHeaderActionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1670348478
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -911466526
+            case -733754080:
+              {
+                priority_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -733754080
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.SecurityPolicyRule) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2601,7 +2526,18 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SecurityPolicyRule(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

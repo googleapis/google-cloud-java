@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-game-servers</artifactId>
-  <version>2.3.3</version>
+  <version>2.3.5</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-game-servers:2.3.3'
+implementation 'com.google.cloud:google-cloud-game-servers:2.3.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-game-servers" % "2.3.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-game-servers" % "2.3.5"
 ```
 
 ## Authentication
@@ -68,29 +68,6 @@ use this Cloud Gaming Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-game-servers/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Cluster | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/clusters/CreateCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/clusters/CreateCluster.java) |
-| Delete Cluster | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/clusters/DeleteCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/clusters/DeleteCluster.java) |
-| Get Cluster | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/clusters/GetCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/clusters/GetCluster.java) |
-| List Clusters | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/clusters/ListClusters.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/clusters/ListClusters.java) |
-| Update Cluster | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/clusters/UpdateCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/clusters/UpdateCluster.java) |
-| Create Deployment | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/deployments/CreateDeployment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/deployments/CreateDeployment.java) |
-| Delete Deployment | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/deployments/DeleteDeployment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/deployments/DeleteDeployment.java) |
-| Get Deployment | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/deployments/GetDeployment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/deployments/GetDeployment.java) |
-| List Deployments | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/deployments/ListDeployments.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/deployments/ListDeployments.java) |
-| Update Deployment | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/deployments/UpdateDeployment.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/deployments/UpdateDeployment.java) |
-| Create Realm | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/realms/CreateRealm.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/realms/CreateRealm.java) |
-| Delete Realm | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/realms/DeleteRealm.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/realms/DeleteRealm.java) |
-| Get Realm | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/realms/GetRealm.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/realms/GetRealm.java) |
-| List Realms | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/realms/ListRealms.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/realms/ListRealms.java) |
-| Update Realm | [source code](https://github.com/googleapis/java-game-servers/blob/main/samples/snippets/src/main/java/com/example/gameservices/realms/UpdateRealm.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-game-servers&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/gameservices/realms/UpdateRealm.java) |
 
 
 

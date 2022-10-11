@@ -56,71 +56,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private VideoClassificationConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                annotationSpecSetConfigs_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
-                            .AnnotationSpecSetConfig>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              annotationSpecSetConfigs_.add(
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
-                          .AnnotationSpecSetConfig.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 16:
-            {
-              applyShotDetection_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        annotationSpecSetConfigs_ =
-            java.util.Collections.unmodifiableList(annotationSpecSetConfigs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_VideoClassificationConfig_descriptor;
@@ -213,57 +148,6 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AnnotationSpecSetConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                annotationSpecSet_ = s;
-                break;
-              }
-            case 16:
-              {
-                allowMultiLabel_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -371,7 +255,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       if (allowMultiLabel_ != false) {
         output.writeBool(2, allowMultiLabel_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -386,7 +270,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       if (allowMultiLabel_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowMultiLabel_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -410,7 +294,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
 
       if (!getAnnotationSpecSet().equals(other.getAnnotationSpecSet())) return false;
       if (getAllowMultiLabel() != other.getAllowMultiLabel()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -425,7 +309,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       hash = (53 * hash) + getAnnotationSpecSet().hashCode();
       hash = (37 * hash) + ALLOW_MULTI_LABEL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowMultiLabel());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -581,17 +465,10 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -705,7 +582,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         if (other.getAllowMultiLabel() != false) {
           setAllowMultiLabel(other.getAllowMultiLabel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -720,21 +597,43 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  annotationSpecSet_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  allowMultiLabel_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
-                      .AnnotationSpecSetConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -938,7 +837,19 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AnnotationSpecSetConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1110,7 +1021,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     if (applyShotDetection_ != false) {
       output.writeBool(2, applyShotDetection_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1127,7 +1038,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     if (applyShotDetection_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, applyShotDetection_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1146,7 +1057,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     if (!getAnnotationSpecSetConfigsList().equals(other.getAnnotationSpecSetConfigsList()))
       return false;
     if (getApplyShotDetection() != other.getApplyShotDetection()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1163,7 +1074,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
     hash = (37 * hash) + APPLY_SHOT_DETECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getApplyShotDetection());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1297,19 +1208,10 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAnnotationSpecSetConfigsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1317,10 +1219,11 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       super.clear();
       if (annotationSpecSetConfigsBuilder_ == null) {
         annotationSpecSetConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        annotationSpecSetConfigs_ = null;
         annotationSpecSetConfigsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       applyShotDetection_ = false;
 
       return this;
@@ -1445,7 +1348,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       if (other.getApplyShotDetection() != false) {
         setApplyShotDetection(other.getApplyShotDetection());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1460,19 +1363,54 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
+                        .AnnotationSpecSetConfig
+                    m =
+                        input.readMessage(
+                            com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
+                                .AnnotationSpecSetConfig.parser(),
+                            extensionRegistry);
+                if (annotationSpecSetConfigsBuilder_ == null) {
+                  ensureAnnotationSpecSetConfigsIsMutable();
+                  annotationSpecSetConfigs_.add(m);
+                } else {
+                  annotationSpecSetConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 16:
+              {
+                applyShotDetection_ = input.readBool();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2095,7 +2033,18 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VideoClassificationConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

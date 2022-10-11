@@ -54,87 +54,6 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private AudienceSequenceFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              scope_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (sequenceMaximumDuration_ != null) {
-                subBuilder = sequenceMaximumDuration_.toBuilder();
-              }
-              sequenceMaximumDuration_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sequenceMaximumDuration_);
-                sequenceMaximumDuration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sequenceSteps_ =
-                    new java.util.ArrayList<
-                        com.google.analytics.admin.v1alpha.AudienceSequenceFilter
-                            .AudienceSequenceStep>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sequenceSteps_.add(
-                  input.readMessage(
-                      com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        sequenceSteps_ = java.util.Collections.unmodifiableList(sequenceSteps_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AudienceProto
         .internal_static_google_analytics_admin_v1alpha_AudienceSequenceFilter_descriptor;
@@ -330,90 +249,6 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AudienceSequenceStep(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                scope_ = rawValue;
-                break;
-              }
-            case 16:
-              {
-                immediatelyFollows_ = input.readBool();
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (constraintDuration_ != null) {
-                  subBuilder = constraintDuration_.toBuilder();
-                }
-                constraintDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(constraintDuration_);
-                  constraintDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder subBuilder =
-                    null;
-                if (filterExpression_ != null) {
-                  subBuilder = filterExpression_.toBuilder();
-                }
-                filterExpression_ =
-                    input.readMessage(
-                        com.google.analytics.admin.v1alpha.AudienceFilterExpression.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(filterExpression_);
-                  filterExpression_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -646,7 +481,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       if (filterExpression_ != null) {
         output.writeMessage(4, getFilterExpression());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -671,7 +506,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       if (filterExpression_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getFilterExpression());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -699,7 +534,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       if (hasFilterExpression()) {
         if (!getFilterExpression().equals(other.getFilterExpression())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -722,7 +557,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         hash = (37 * hash) + FILTER_EXPRESSION_FIELD_NUMBER;
         hash = (53 * hash) + getFilterExpression().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -865,17 +700,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1012,7 +840,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         if (other.hasFilterExpression()) {
           mergeFilterExpression(other.getFilterExpression());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1027,20 +855,57 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  scope_ = input.readEnum();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  immediatelyFollows_ = input.readBool();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  input.readMessage(
+                      getConstraintDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getFilterExpressionFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1696,7 +1561,19 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AudienceSequenceStep(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1930,7 +1807,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     for (int i = 0; i < sequenceSteps_.size(); i++) {
       output.writeMessage(3, sequenceSteps_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1951,7 +1828,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     for (int i = 0; i < sequenceSteps_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, sequenceSteps_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1973,7 +1850,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       if (!getSequenceMaximumDuration().equals(other.getSequenceMaximumDuration())) return false;
     }
     if (!getSequenceStepsList().equals(other.getSequenceStepsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1994,7 +1871,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + SEQUENCE_STEPS_FIELD_NUMBER;
       hash = (53 * hash) + getSequenceStepsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2125,19 +2002,10 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.analytics.admin.v1alpha.AudienceSequenceFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSequenceStepsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2153,10 +2021,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       }
       if (sequenceStepsBuilder_ == null) {
         sequenceSteps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        sequenceSteps_ = null;
         sequenceStepsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -2283,7 +2152,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2298,18 +2167,59 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.admin.v1alpha.AudienceSequenceFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                scope_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    getSequenceMaximumDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep m =
+                    input.readMessage(
+                        com.google.analytics.admin.v1alpha.AudienceSequenceFilter
+                            .AudienceSequenceStep.parser(),
+                        extensionRegistry);
+                if (sequenceStepsBuilder_ == null) {
+                  ensureSequenceStepsIsMutable();
+                  sequenceSteps_.add(m);
+                } else {
+                  sequenceStepsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.analytics.admin.v1alpha.AudienceSequenceFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3096,7 +3006,18 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AudienceSequenceFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

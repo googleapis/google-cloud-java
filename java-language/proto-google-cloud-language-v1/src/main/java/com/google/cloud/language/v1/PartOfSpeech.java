@@ -65,129 +65,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PartOfSpeech(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              tag_ = rawValue;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              aspect_ = rawValue;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              case_ = rawValue;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              form_ = rawValue;
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              gender_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              mood_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              number_ = rawValue;
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              person_ = rawValue;
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              proper_ = rawValue;
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              reciprocity_ = rawValue;
-              break;
-            }
-          case 88:
-            {
-              int rawValue = input.readEnum();
-
-              tense_ = rawValue;
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              voice_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.language.v1.LanguageServiceProto
         .internal_static_google_cloud_language_v1_PartOfSpeech_descriptor;
@@ -3592,7 +3469,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     if (voice_ != com.google.cloud.language.v1.PartOfSpeech.Voice.VOICE_UNKNOWN.getNumber()) {
       output.writeEnum(12, voice_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3638,7 +3515,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     if (voice_ != com.google.cloud.language.v1.PartOfSpeech.Voice.VOICE_UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, voice_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3666,7 +3543,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     if (reciprocity_ != other.reciprocity_) return false;
     if (tense_ != other.tense_) return false;
     if (voice_ != other.voice_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3701,7 +3578,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + tense_;
     hash = (37 * hash) + VOICE_FIELD_NUMBER;
     hash = (53 * hash) + voice_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3832,17 +3709,10 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.language.v1.PartOfSpeech.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -3996,7 +3866,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (other.voice_ != 0) {
         setVoiceValue(other.getVoiceValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4011,17 +3881,103 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.language.v1.PartOfSpeech parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                tag_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                aspect_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                case_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 32:
+              {
+                form_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                gender_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                mood_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                number_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                person_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                proper_ = input.readEnum();
+
+                break;
+              } // case 72
+            case 80:
+              {
+                reciprocity_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 88:
+              {
+                tense_ = input.readEnum();
+
+                break;
+              } // case 88
+            case 96:
+              {
+                voice_ = input.readEnum();
+
+                break;
+              } // case 96
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.language.v1.PartOfSpeech) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5161,7 +5117,18 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PartOfSpeech(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -53,386 +53,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private LabelOperationMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              progressPercent_ = input.readInt32();
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              partialFailures_.add(
-                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelImageClassificationOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1
-                          .LabelImageClassificationOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1
-                            .LabelImageClassificationOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelVideoClassificationOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1
-                          .LabelVideoClassificationOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1
-                            .LabelVideoClassificationOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelVideoObjectDetectionOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1
-                          .LabelVideoObjectDetectionOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1
-                            .LabelVideoObjectDetectionOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelVideoObjectTrackingOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1
-                          .LabelVideoObjectTrackingOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1
-                            .LabelVideoObjectTrackingOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 7;
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 8;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 9) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelTextClassificationOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 9;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 11) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 12) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 13) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelTextEntityExtractionOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1
-                          .LabelTextEntityExtractionOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1
-                            .LabelTextEntityExtractionOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 13;
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
-                      .Builder
-                  subBuilder = null;
-              if (detailsCase_ == 14) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1
-                                .LabelImageOrientedBoundingBoxOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1
-                          .LabelImageOrientedBoundingBoxOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1
-                            .LabelImageOrientedBoundingBoxOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 14;
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 15) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.Operations
         .internal_static_google_cloud_datalabeling_v1beta1_LabelOperationMetadata_descriptor;
@@ -1509,7 +1129,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     if (createTime_ != null) {
       output.writeMessage(16, getCreateTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1608,7 +1228,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getCreateTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1680,7 +1300,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1753,7 +1373,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1884,32 +1504,60 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPartialFailuresFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (imageClassificationDetailsBuilder_ != null) {
+        imageClassificationDetailsBuilder_.clear();
+      }
+      if (imageBoundingBoxDetailsBuilder_ != null) {
+        imageBoundingBoxDetailsBuilder_.clear();
+      }
+      if (imageBoundingPolyDetailsBuilder_ != null) {
+        imageBoundingPolyDetailsBuilder_.clear();
+      }
+      if (imageOrientedBoundingBoxDetailsBuilder_ != null) {
+        imageOrientedBoundingBoxDetailsBuilder_.clear();
+      }
+      if (imagePolylineDetailsBuilder_ != null) {
+        imagePolylineDetailsBuilder_.clear();
+      }
+      if (imageSegmentationDetailsBuilder_ != null) {
+        imageSegmentationDetailsBuilder_.clear();
+      }
+      if (videoClassificationDetailsBuilder_ != null) {
+        videoClassificationDetailsBuilder_.clear();
+      }
+      if (videoObjectDetectionDetailsBuilder_ != null) {
+        videoObjectDetectionDetailsBuilder_.clear();
+      }
+      if (videoObjectTrackingDetailsBuilder_ != null) {
+        videoObjectTrackingDetailsBuilder_.clear();
+      }
+      if (videoEventDetailsBuilder_ != null) {
+        videoEventDetailsBuilder_.clear();
+      }
+      if (textClassificationDetailsBuilder_ != null) {
+        textClassificationDetailsBuilder_.clear();
+      }
+      if (textEntityExtractionDetailsBuilder_ != null) {
+        textEntityExtractionDetailsBuilder_.clear();
+      }
       progressPercent_ = 0;
 
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        partialFailures_ = null;
         partialFailuresBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -2197,7 +1845,7 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2212,18 +1860,140 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                progressPercent_ = input.readInt32();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (partialFailuresBuilder_ == null) {
+                  ensurePartialFailuresIsMutable();
+                  partialFailures_.add(m);
+                } else {
+                  partialFailuresBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getImageClassificationDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getImageBoundingBoxDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getVideoClassificationDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getVideoObjectDetectionDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getVideoObjectTrackingDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getVideoEventDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getTextClassificationDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 9;
+                break;
+              } // case 74
+            case 90:
+              {
+                input.readMessage(
+                    getImageBoundingPolyDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getImagePolylineDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getTextEntityExtractionDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 13;
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getImageOrientedBoundingBoxDetailsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getImageSegmentationDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.LabelOperationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5894,7 +5664,18 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LabelOperationMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

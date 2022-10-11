@@ -55,78 +55,6 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private BatchEnableServicesResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                services_ = new java.util.ArrayList<com.google.api.serviceusage.v1.Service>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              services_.add(
-                  input.readMessage(
-                      com.google.api.serviceusage.v1.Service.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                failures_ =
-                    new java.util.ArrayList<
-                        com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              failures_.add(
-                  input.readMessage(
-                      com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        services_ = java.util.Collections.unmodifiableList(services_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        failures_ = java.util.Collections.unmodifiableList(failures_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1_BatchEnableServicesResponse_descriptor;
@@ -230,59 +158,6 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private EnableFailure(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                serviceId_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                errorMessage_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -419,7 +294,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -434,7 +309,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -453,7 +328,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
       if (!getServiceId().equals(other.getServiceId())) return false;
       if (!getErrorMessage().equals(other.getErrorMessage())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -468,7 +343,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       hash = (53 * hash) + getServiceId().hashCode();
       hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getErrorMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -608,17 +483,10 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
       // Construct using
       // com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -725,7 +593,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           errorMessage_ = other.errorMessage_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -740,20 +608,43 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  errorMessage_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1005,7 +896,19 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new EnableFailure(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1204,7 +1107,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     for (int i = 0; i < failures_.size(); i++) {
       output.writeMessage(2, failures_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1219,7 +1122,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     for (int i = 0; i < failures_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, failures_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1237,7 +1140,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
 
     if (!getServicesList().equals(other.getServicesList())) return false;
     if (!getFailuresList().equals(other.getFailuresList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1256,7 +1159,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       hash = (37 * hash) + FAILURES_FIELD_NUMBER;
       hash = (53 * hash) + getFailuresList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1388,20 +1291,10 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.api.serviceusage.v1.BatchEnableServicesResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getServicesFieldBuilder();
-        getFailuresFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1409,16 +1302,18 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
       super.clear();
       if (servicesBuilder_ == null) {
         services_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        services_ = null;
         servicesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (failuresBuilder_ == null) {
         failures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        failures_ = null;
         failuresBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1569,7 +1464,7 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1584,18 +1479,59 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.serviceusage.v1.BatchEnableServicesResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.api.serviceusage.v1.Service m =
+                    input.readMessage(
+                        com.google.api.serviceusage.v1.Service.parser(), extensionRegistry);
+                if (servicesBuilder_ == null) {
+                  ensureServicesIsMutable();
+                  services_.add(m);
+                } else {
+                  servicesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure m =
+                    input.readMessage(
+                        com.google.api.serviceusage.v1.BatchEnableServicesResponse.EnableFailure
+                            .parser(),
+                        extensionRegistry);
+                if (failuresBuilder_ == null) {
+                  ensureFailuresIsMutable();
+                  failures_.add(m);
+                } else {
+                  failuresBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.api.serviceusage.v1.BatchEnableServicesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2412,7 +2348,18 @@ public final class BatchEnableServicesResponse extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BatchEnableServicesResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

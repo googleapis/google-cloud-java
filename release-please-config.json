@@ -40,6 +40,10 @@
       "component": "google-cloud-apigee-registry",
       "skip-github-release": true
     },
+    "java-apikeys": {
+      "component": "google-cloud-apikeys",
+      "skip-github-release": true
+    },
     "java-appengine-admin": {
       "component": "google-cloud-appengine-admin",
       "skip-github-release": true
@@ -98,6 +102,10 @@
     },
     "java-bigquery-data-exchange": {
       "component": "google-cloud-bigquery-data-exchange",
+      "skip-github-release": true
+    },
+    "java-bigquerydatapolicy": {
+      "component": "google-cloud-bigquerydatapolicy",
       "skip-github-release": true
     },
     "java-bigquerydatatransfer": {
@@ -206,6 +214,10 @@
     },
     "java-dialogflow": {
       "component": "google-cloud-dialogflow",
+      "skip-github-release": true
+    },
+    "java-distributedcloudedge": {
+      "component": "google-cloud-distributedcloudedge",
       "skip-github-release": true
     },
     "java-dlp": {
@@ -382,6 +394,10 @@
     },
     "java-profiler": {
       "component": "google-cloud-profiler",
+      "skip-github-release": true
+    },
+    "java-publicca": {
+      "component": "google-cloud-publicca",
       "skip-github-release": true
     },
     "java-recaptchaenterprise": {

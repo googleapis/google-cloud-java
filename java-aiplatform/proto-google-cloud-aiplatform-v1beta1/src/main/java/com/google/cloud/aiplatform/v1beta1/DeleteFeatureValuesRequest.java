@@ -52,103 +52,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     return this.unknownFields;
   }
 
-  private DeleteFeatureValuesRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              entityType_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity.Builder
-                  subBuilder = null;
-              if (deleteOptionCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
-                            deleteOption_)
-                        .toBuilder();
-              }
-              deleteOption_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
-                        deleteOption_);
-                deleteOption_ = subBuilder.buildPartial();
-              }
-              deleteOptionCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
-                      .SelectTimeRangeAndFeature.Builder
-                  subBuilder = null;
-              if (deleteOptionCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
-                                .SelectTimeRangeAndFeature)
-                            deleteOption_)
-                        .toBuilder();
-              }
-              deleteOption_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
-                          .SelectTimeRangeAndFeature.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
-                            .SelectTimeRangeAndFeature)
-                        deleteOption_);
-                deleteOption_ = subBuilder.buildPartial();
-              }
-              deleteOptionCase_ = 3;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_descriptor;
@@ -247,62 +150,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       return this.unknownFields;
     }
 
-    private SelectEntity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.aiplatform.v1beta1.EntityIdSelector.Builder subBuilder = null;
-                if (entityIdSelector_ != null) {
-                  subBuilder = entityIdSelector_.toBuilder();
-                }
-                entityIdSelector_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.EntityIdSelector.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(entityIdSelector_);
-                  entityIdSelector_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
           .internal_static_google_cloud_aiplatform_v1beta1_DeleteFeatureValuesRequest_SelectEntity_descriptor;
@@ -394,7 +241,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (entityIdSelector_ != null) {
         output.writeMessage(1, getEntityIdSelector());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -406,7 +253,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (entityIdSelector_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEntityIdSelector());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -427,7 +274,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (hasEntityIdSelector()) {
         if (!getEntityIdSelector().equals(other.getEntityIdSelector())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -442,7 +289,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         hash = (37 * hash) + ENTITY_ID_SELECTOR_FIELD_NUMBER;
         hash = (53 * hash) + getEntityIdSelector().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -584,17 +431,10 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -702,7 +542,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         if (other.hasEntityIdSelector()) {
           mergeEntityIdSelector(other.getEntityIdSelector());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -717,20 +557,38 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getEntityIdSelectorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectEntity)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -987,7 +845,19 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SelectEntity(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1142,82 +1012,6 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SelectTimeRangeAndFeature(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.type.Interval.Builder subBuilder = null;
-                if (timeRange_ != null) {
-                  subBuilder = timeRange_.toBuilder();
-                }
-                timeRange_ =
-                    input.readMessage(com.google.type.Interval.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(timeRange_);
-                  timeRange_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder subBuilder = null;
-                if (featureSelector_ != null) {
-                  subBuilder = featureSelector_.toBuilder();
-                }
-                featureSelector_ =
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.FeatureSelector.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(featureSelector_);
-                  featureSelector_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 24:
-              {
-                skipOnlineStorageDelete_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1387,7 +1181,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (skipOnlineStorageDelete_ != false) {
         output.writeBool(3, skipOnlineStorageDelete_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1405,7 +1199,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       if (skipOnlineStorageDelete_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, skipOnlineStorageDelete_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1436,7 +1230,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         if (!getFeatureSelector().equals(other.getFeatureSelector())) return false;
       }
       if (getSkipOnlineStorageDelete() != other.getSkipOnlineStorageDelete()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1457,7 +1251,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       }
       hash = (37 * hash) + SKIP_ONLINE_STORAGE_DELETE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipOnlineStorageDelete());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1615,17 +1409,10 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1763,7 +1550,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         if (other.getSkipOnlineStorageDelete() != false) {
           setSkipOnlineStorageDelete(other.getSkipOnlineStorageDelete());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1778,21 +1565,50 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getTimeRangeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getFeatureSelectorFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 24:
+                {
+                  skipOnlineStorageDelete_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest
-                      .SelectTimeRangeAndFeature)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2306,7 +2122,19 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SelectTimeRangeAndFeature(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2591,7 +2419,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
           (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.SelectTimeRangeAndFeature)
               deleteOption_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2618,7 +2446,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
                       .SelectTimeRangeAndFeature)
                   deleteOption_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2647,7 +2475,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2672,7 +2500,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2802,22 +2630,21 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (selectEntityBuilder_ != null) {
+        selectEntityBuilder_.clear();
+      }
+      if (selectTimeRangeAndFeatureBuilder_ != null) {
+        selectTimeRangeAndFeatureBuilder_.clear();
+      }
       entityType_ = "";
 
       deleteOptionCase_ = 0;
@@ -2937,7 +2764,7 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2952,19 +2779,50 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                entityType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getSelectEntityFieldBuilder().getBuilder(), extensionRegistry);
+                deleteOptionCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getSelectTimeRangeAndFeatureFieldBuilder().getBuilder(), extensionRegistry);
+                deleteOptionCase_ = 3;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3662,7 +3520,18 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteFeatureValuesRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

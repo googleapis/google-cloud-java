@@ -52,85 +52,6 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private SecurityHealthAnalyticsSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                      .NonOrgIamMemberSettings.Builder
-                  subBuilder = null;
-              if (nonOrgIamMemberSettings_ != null) {
-                subBuilder = nonOrgIamMemberSettings_.toBuilder();
-              }
-              nonOrgIamMemberSettings_ =
-                  input.readMessage(
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nonOrgIamMemberSettings_);
-                nonOrgIamMemberSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                      .AdminServiceAccountSettings.Builder
-                  subBuilder = null;
-              if (adminServiceAccountSettings_ != null) {
-                subBuilder = adminServiceAccountSettings_.toBuilder();
-              }
-              adminServiceAccountSettings_ =
-                  input.readMessage(
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .SecurityHealthAnalyticsSettings.AdminServiceAccountSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(adminServiceAccountSettings_);
-                adminServiceAccountSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_SecurityHealthAnalyticsSettings_descriptor;
@@ -278,59 +199,6 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       return this.unknownFields;
     }
 
-    private NonOrgIamMemberSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  approvedIdentities_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                approvedIdentities_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          approvedIdentities_ = approvedIdentities_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsProto
           .internal_static_google_cloud_securitycenter_settings_v1beta1_SecurityHealthAnalyticsSettings_NonOrgIamMemberSettings_descriptor;
@@ -467,7 +335,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         com.google.protobuf.GeneratedMessageV3.writeString(
             output, 1, approvedIdentities_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -484,7 +352,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         size += dataSize;
         size += 1 * getApprovedIdentitiesList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -508,7 +376,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
                   obj;
 
       if (!getApprovedIdentitiesList().equals(other.getApprovedIdentitiesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -523,7 +391,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         hash = (37 * hash) + APPROVED_IDENTITIES_FIELD_NUMBER;
         hash = (53 * hash) + getApprovedIdentitiesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -680,17 +548,10 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
 
       // Construct using
       // com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.NonOrgIamMemberSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -815,7 +676,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -830,22 +691,38 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                .NonOrgIamMemberSettings
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureApprovedIdentitiesIsMutable();
+                  approvedIdentities_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                      .NonOrgIamMemberSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1148,7 +1025,19 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new NonOrgIamMemberSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1297,59 +1186,6 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       return this.unknownFields;
     }
 
-    private AdminServiceAccountSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  approvedIdentities_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                approvedIdentities_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          approvedIdentities_ = approvedIdentities_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsProto
           .internal_static_google_cloud_securitycenter_settings_v1beta1_SecurityHealthAnalyticsSettings_AdminServiceAccountSettings_descriptor;
@@ -1482,7 +1318,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         com.google.protobuf.GeneratedMessageV3.writeString(
             output, 1, approvedIdentities_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1499,7 +1335,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         size += dataSize;
         size += 1 * getApprovedIdentitiesList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1523,7 +1359,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
                   obj;
 
       if (!getApprovedIdentitiesList().equals(other.getApprovedIdentitiesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1538,7 +1374,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         hash = (37 * hash) + APPROVED_IDENTITIES_FIELD_NUMBER;
         hash = (53 * hash) + getApprovedIdentitiesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1695,17 +1531,10 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
 
       // Construct using
       // com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.AdminServiceAccountSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1830,7 +1659,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1845,22 +1674,38 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                .AdminServiceAccountSettings
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureApprovedIdentitiesIsMutable();
+                  approvedIdentities_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-                      .AdminServiceAccountSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2154,7 +1999,19 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AdminServiceAccountSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2317,7 +2174,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
     if (adminServiceAccountSettings_ != null) {
       output.writeMessage(2, getAdminServiceAccountSettings());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2335,7 +2192,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, getAdminServiceAccountSettings());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2362,7 +2219,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       if (!getAdminServiceAccountSettings().equals(other.getAdminServiceAccountSettings()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2381,7 +2238,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       hash = (37 * hash) + ADMIN_SERVICE_ACCOUNT_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAdminServiceAccountSettings().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2521,17 +2378,10 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
 
     // Construct using
     // com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2654,7 +2504,7 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
       if (other.hasAdminServiceAccountSettings()) {
         mergeAdminServiceAccountSettings(other.getAdminServiceAccountSettings());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2669,20 +2519,45 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings
-          parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getNonOrgIamMemberSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getAdminServiceAccountSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.securitycenter.settings.v1beta1.SecurityHealthAnalyticsSettings)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3186,7 +3061,18 @@ public final class SecurityHealthAnalyticsSettings extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SecurityHealthAnalyticsSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

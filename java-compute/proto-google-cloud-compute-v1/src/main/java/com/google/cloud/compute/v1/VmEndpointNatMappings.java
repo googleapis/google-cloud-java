@@ -53,71 +53,6 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private VmEndpointNatMappings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 1823580074:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              instanceName_ = s;
-              break;
-            }
-          case 2049572938:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                interfaceNatMappings_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              interfaceNatMappings_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        interfaceNatMappings_ = java.util.Collections.unmodifiableList(interfaceNatMappings_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_VmEndpointNatMappings_descriptor;
@@ -272,7 +207,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < interfaceNatMappings_.size(); i++) {
       output.writeMessage(256196617, interfaceNatMappings_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -289,7 +224,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               256196617, interfaceNatMappings_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -310,7 +245,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       if (!getInstanceName().equals(other.getInstanceName())) return false;
     }
     if (!getInterfaceNatMappingsList().equals(other.getInterfaceNatMappingsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -329,7 +264,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + INTERFACE_NAT_MAPPINGS_FIELD_NUMBER;
       hash = (53 * hash) + getInterfaceNatMappingsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -458,19 +393,10 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.compute.v1.VmEndpointNatMappings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInterfaceNatMappingsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -480,10 +406,11 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000001);
       if (interfaceNatMappingsBuilder_ == null) {
         interfaceNatMappings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        interfaceNatMappings_ = null;
         interfaceNatMappingsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -609,7 +536,7 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -624,18 +551,52 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.VmEndpointNatMappings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 1823580074:
+              {
+                instanceName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 1823580074
+            case 2049572938:
+              {
+                com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappings
+                            .parser(),
+                        extensionRegistry);
+                if (interfaceNatMappingsBuilder_ == null) {
+                  ensureInterfaceNatMappingsIsMutable();
+                  interfaceNatMappings_.add(m);
+                } else {
+                  interfaceNatMappingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 2049572938
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.VmEndpointNatMappings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1101,7 +1062,18 @@ public final class VmEndpointNatMappings extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VmEndpointNatMappings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

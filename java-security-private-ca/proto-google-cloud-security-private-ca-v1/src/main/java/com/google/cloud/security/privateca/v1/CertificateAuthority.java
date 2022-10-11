@@ -59,272 +59,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private CertificateAuthority(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.security.privateca.v1.CertificateConfig.Builder subBuilder = null;
-              if (config_ != null) {
-                subBuilder = config_.toBuilder();
-              }
-              config_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.CertificateConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(config_);
-                config_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (lifetime_ != null) {
-                subBuilder = lifetime_.toBuilder();
-              }
-              lifetime_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lifetime_);
-                lifetime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec.Builder
-                  subBuilder = null;
-              if (keySpec_ != null) {
-                subBuilder = keySpec_.toBuilder();
-              }
-              keySpec_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(keySpec_);
-                keySpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.security.privateca.v1.SubordinateConfig.Builder subBuilder = null;
-              if (subordinateConfig_ != null) {
-                subBuilder = subordinateConfig_.toBuilder();
-              }
-              subordinateConfig_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.SubordinateConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(subordinateConfig_);
-                subordinateConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              tier_ = rawValue;
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                pemCaCertificates_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pemCaCertificates_.add(s);
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                caCertificateDescriptions_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.security.privateca.v1.CertificateDescription>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              caCertificateDescriptions_.add(
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.CertificateDescription.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gcsBucket_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.Builder
-                  subBuilder = null;
-              if (accessUrls_ != null) {
-                subBuilder = accessUrls_.toBuilder();
-              }
-              accessUrls_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(accessUrls_);
-                accessUrls_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (deleteTime_ != null) {
-                subBuilder = deleteTime_.toBuilder();
-              }
-              deleteTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deleteTime_);
-                deleteTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expireTime_ != null) {
-                subBuilder = expireTime_.toBuilder();
-              }
-              expireTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expireTime_);
-                expireTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 138:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        pemCaCertificates_ = pemCaCertificates_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        caCertificateDescriptions_ =
-            java.util.Collections.unmodifiableList(caCertificateDescriptions_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_descriptor;
@@ -1187,66 +921,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       return this.unknownFields;
     }
 
-    private AccessUrls(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                caCertificateAccessUrl_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  crlAccessUrls_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                crlAccessUrls_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          crlAccessUrls_ = crlAccessUrls_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_AccessUrls_descriptor;
@@ -1398,7 +1072,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       for (int i = 0; i < crlAccessUrls_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, crlAccessUrls_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1419,7 +1093,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         size += dataSize;
         size += 1 * getCrlAccessUrlsList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1438,7 +1112,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
       if (!getCaCertificateAccessUrl().equals(other.getCaCertificateAccessUrl())) return false;
       if (!getCrlAccessUrlsList().equals(other.getCrlAccessUrlsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1455,7 +1129,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + CRL_ACCESS_URLS_FIELD_NUMBER;
         hash = (53 * hash) + getCrlAccessUrlsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1590,17 +1264,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
       // Construct using
       // com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1717,7 +1384,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1732,19 +1399,44 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  caCertificateAccessUrl_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureCrlAccessUrlsIsMutable();
+                  crlAccessUrls_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2074,7 +1766,19 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AccessUrls(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2230,59 +1934,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private KeyVersionSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                keyVersionCase_ = 1;
-                keyVersion_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-                keyVersionCase_ = 2;
-                keyVersion_ = rawValue;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2521,7 +2172,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (keyVersionCase_ == 2) {
         output.writeEnum(2, ((java.lang.Integer) keyVersion_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2538,7 +2189,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedOutputStream.computeEnumSize(
                 2, ((java.lang.Integer) keyVersion_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2566,7 +2217,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2589,7 +2240,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2729,17 +2380,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
       // Construct using
       // com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2859,7 +2503,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2874,20 +2518,45 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  keyVersionCase_ = 1;
+                  keyVersion_ = s;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  int rawValue = input.readEnum();
+                  keyVersionCase_ = 2;
+                  keyVersion_ = rawValue;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3243,7 +2912,19 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new KeyVersionSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4332,7 +4013,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 17);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4410,7 +4091,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, labels__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4471,7 +4152,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (!getExpireTime().equals(other.getExpireTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4540,7 +4221,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4691,19 +4372,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.security.privateca.v1.CertificateAuthority.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCaCertificateDescriptionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -4745,10 +4417,11 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00000001);
       if (caCertificateDescriptionsBuilder_ == null) {
         caCertificateDescriptions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        caCertificateDescriptions_ = null;
         caCertificateDescriptionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       gcsBucket_ = "";
 
       if (accessUrlsBuilder_ == null) {
@@ -5009,7 +4682,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         mergeExpireTime(other.getExpireTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5024,18 +4697,148 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1.CertificateAuthority parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                type_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getLifetimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getKeySpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getSubordinateConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 56:
+              {
+                tier_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePemCaCertificatesIsMutable();
+                pemCaCertificates_.add(s);
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.cloud.security.privateca.v1.CertificateDescription m =
+                    input.readMessage(
+                        com.google.cloud.security.privateca.v1.CertificateDescription.parser(),
+                        extensionRegistry);
+                if (caCertificateDescriptionsBuilder_ == null) {
+                  ensureCaCertificateDescriptionsIsMutable();
+                  caCertificateDescriptions_.add(m);
+                } else {
+                  caCertificateDescriptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 90:
+              {
+                gcsBucket_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getAccessUrlsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            case 138:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 138
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.security.privateca.v1.CertificateAuthority) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8345,7 +8148,18 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CertificateAuthority(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

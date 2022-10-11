@@ -57,233 +57,6 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private HyperparameterTuningJob(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.aiplatform.v1beta1.StudySpec.Builder subBuilder = null;
-              if (studySpec_ != null) {
-                subBuilder = studySpec_.toBuilder();
-              }
-              studySpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.StudySpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(studySpec_);
-                studySpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 40:
-            {
-              maxTrialCount_ = input.readInt32();
-              break;
-            }
-          case 48:
-            {
-              parallelTrialCount_ = input.readInt32();
-              break;
-            }
-          case 56:
-            {
-              maxFailedTrialCount_ = input.readInt32();
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.aiplatform.v1beta1.CustomJobSpec.Builder subBuilder = null;
-              if (trialJobSpec_ != null) {
-                subBuilder = trialJobSpec_.toBuilder();
-              }
-              trialJobSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.CustomJobSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(trialJobSpec_);
-                trialJobSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                trials_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Trial>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              trials_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.Trial.parser(), extensionRegistry));
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 90:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.rpc.Status.Builder subBuilder = null;
-              if (error_ != null) {
-                subBuilder = error_.toBuilder();
-              }
-              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(error_);
-                error_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 138:
-            {
-              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
-              if (encryptionSpec_ != null) {
-                subBuilder = encryptionSpec_.toBuilder();
-              }
-              encryptionSpec_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(encryptionSpec_);
-                encryptionSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        trials_ = java.util.Collections.unmodifiableList(trials_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJobProto
         .internal_static_google_cloud_aiplatform_v1beta1_HyperparameterTuningJob_descriptor;
@@ -1179,7 +952,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     if (encryptionSpec_ != null) {
       output.writeMessage(17, getEncryptionSpec());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1243,7 +1016,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getEncryptionSpec());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1299,7 +1072,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1362,7 +1135,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1514,19 +1287,10 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTrialsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1556,10 +1320,11 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       }
       if (trialsBuilder_ == null) {
         trials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        trials_ = null;
         trialsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
 
       if (createTimeBuilder_ == null) {
@@ -1806,7 +1571,7 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1821,18 +1586,139 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getStudySpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 40:
+              {
+                maxTrialCount_ = input.readInt32();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                parallelTrialCount_ = input.readInt32();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                maxFailedTrialCount_ = input.readInt32();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(getTrialJobSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.aiplatform.v1beta1.Trial m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.Trial.parser(), extensionRegistry);
+                if (trialsBuilder_ == null) {
+                  ensureTrialsIsMutable();
+                  trials_.add(m);
+                } else {
+                  trialsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 80:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 90:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 138
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4538,7 +4424,18 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HyperparameterTuningJob(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

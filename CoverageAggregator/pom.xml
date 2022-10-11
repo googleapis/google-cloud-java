@@ -59,6 +59,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-apikeys</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apikeys:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-appengine-admin</artifactId>
       <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
     </dependency>
@@ -131,6 +136,11 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery-data-exchange</artifactId>
       <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigquerydatapolicy</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -266,6 +276,11 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dialogflow</artifactId>
       <version>4.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-distributedcloudedge</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -486,6 +501,11 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-profiler</artifactId>
       <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-profiler:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-publicca</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>

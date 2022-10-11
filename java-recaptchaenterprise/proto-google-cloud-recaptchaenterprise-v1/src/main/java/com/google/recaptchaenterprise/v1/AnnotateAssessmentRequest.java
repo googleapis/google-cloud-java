@@ -55,93 +55,6 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private AnnotateAssessmentRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              annotation_ = rawValue;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                reasons_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              reasons_.add(rawValue);
-              break;
-            }
-          case 26:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  reasons_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                reasons_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 34:
-            {
-              hashedAccountId_ = input.readBytes();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        reasons_ = java.util.Collections.unmodifiableList(reasons_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_AnnotateAssessmentRequest_descriptor;
@@ -978,7 +891,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (!hashedAccountId_.isEmpty()) {
       output.writeBytes(4, hashedAccountId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1011,7 +924,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (!hashedAccountId_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(4, hashedAccountId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1031,7 +944,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (annotation_ != other.annotation_) return false;
     if (!reasons_.equals(other.reasons_)) return false;
     if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1052,7 +965,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
     hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getHashedAccountId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1182,17 +1095,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1312,7 +1218,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
         setHashedAccountId(other.getHashedAccountId());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1327,18 +1233,68 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                annotation_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                int tmpRaw = input.readEnum();
+                ensureReasonsIsMutable();
+                reasons_.add(tmpRaw);
+                break;
+              } // case 24
+            case 26:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureReasonsIsMutable();
+                  reasons_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 26
+            case 34:
+              {
+                hashedAccountId_ = input.readBytes();
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1942,7 +1898,18 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AnnotateAssessmentRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

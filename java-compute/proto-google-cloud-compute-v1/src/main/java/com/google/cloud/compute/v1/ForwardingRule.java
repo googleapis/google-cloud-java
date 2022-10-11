@@ -75,289 +75,6 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ForwardingRule(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000100;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00004000;
-              name_ = s;
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 343815546:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              iPAddress_ = s;
-              break;
-            }
-          case 516375928:
-            {
-              bitField0_ |= 0x00020000;
-              noAutomateDnsZone_ = input.readBool();
-              break;
-            }
-          case 854835346:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00200000) != 0)) {
-                ports_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00200000;
-              }
-              ports_.add(s);
-              break;
-            }
-          case 954041312:
-            {
-              bitField0_ |= 0x00000400;
-              isMirroringCollector_ = input.readBool();
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00200000;
-              region_ = s;
-              break;
-            }
-          case 1424998602:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
-              labelFingerprint_ = s;
-              break;
-            }
-          case 1473193378:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
-              pscConnectionStatus_ = s;
-              break;
-            }
-          case 1542687882:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x04000000;
-              target_ = s;
-              break;
-            }
-          case 1740144634:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00040000;
-              portRange_ = s;
-              break;
-            }
-          case 1788397554:
-            {
-              if (!((mutable_bitField0_ & 0x04000000) != 0)) {
-                serviceDirectoryRegistrations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>();
-                mutable_bitField0_ |= 0x04000000;
-              }
-              serviceDirectoryRegistrations_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 1862979954:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
-              network_ = s;
-              break;
-            }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              fingerprint_ = s;
-              break;
-            }
-          case -1958308120:
-            {
-              bitField0_ |= 0x00080000;
-              pscConnectionId_ = input.readUInt64();
-              break;
-            }
-          case -1935290878:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              ipVersion_ = s;
-              break;
-            }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              backendService_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x02000000;
-              subnetwork_ = s;
-              break;
-            }
-          case -1415926102:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x01000000;
-              serviceName_ = s;
-              break;
-            }
-          case -1383845342:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              loadBalancingScheme_ = s;
-              break;
-            }
-          case -958896302:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00800000;
-              serviceLabel_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              description_ = s;
-              break;
-            }
-          case -733560928:
-            {
-              bitField0_ |= 0x00000004;
-              allPorts_ = input.readBool();
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
-              selfLink_ = s;
-              break;
-            }
-          case -577161382:
-            {
-              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
-                metadataFilters_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>();
-                mutable_bitField0_ |= 0x00008000;
-              }
-              metadataFilters_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
-              break;
-            }
-          case -390211094:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              iPProtocol_ = s;
-              break;
-            }
-          case -299689904:
-            {
-              bitField0_ |= 0x00000008;
-              allowGlobalAccess_ = input.readBool();
-              break;
-            }
-          case -293404678:
-            {
-              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00002000;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case -155784550:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
-              networkTier_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00200000) != 0)) {
-        ports_ = ports_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x04000000) != 0)) {
-        serviceDirectoryRegistrations_ =
-            java.util.Collections.unmodifiableList(serviceDirectoryRegistrations_);
-      }
-      if (((mutable_bitField0_ & 0x00008000) != 0)) {
-        metadataFilters_ = java.util.Collections.unmodifiableList(metadataFilters_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_ForwardingRule_descriptor;
@@ -3213,7 +2930,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3336,7 +3053,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3465,7 +3182,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasTarget()) {
       if (!getTarget().equals(other.getTarget())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3600,7 +3317,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TARGET_FIELD_NUMBER;
       hash = (53 * hash) + getTarget().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3749,20 +3466,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.ForwardingRule.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getMetadataFiltersFieldBuilder();
-        getServiceDirectoryRegistrationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3799,10 +3506,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00004000);
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
       } else {
+        metadataFilters_ = null;
         metadataFiltersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00008000);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
       network_ = "";
@@ -3825,10 +3533,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x02000000);
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
       } else {
+        serviceDirectoryRegistrations_ = null;
         serviceDirectoryRegistrationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x04000000);
       serviceLabel_ = "";
       bitField0_ = (bitField0_ & ~0x08000000);
       serviceName_ = "";
@@ -4239,7 +3948,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         target_ = other.target_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4254,17 +3963,239 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.ForwardingRule parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 26989658
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 244202930
+            case 343815546:
+              {
+                iPAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 343815546
+            case 516375928:
+              {
+                noAutomateDnsZone_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 516375928
+            case 854835346:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePortsIsMutable();
+                ports_.add(s);
+                break;
+              } // case 854835346
+            case 954041312:
+              {
+                isMirroringCollector_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 954041312
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 1111570338
+            case 1424998602:
+              {
+                labelFingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 1424998602
+            case 1473193378:
+              {
+                pscConnectionStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 1473193378
+            case 1542687882:
+              {
+                target_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 1542687882
+            case 1740144634:
+              {
+                portRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 1740144634
+            case 1788397554:
+              {
+                com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration
+                            .parser(),
+                        extensionRegistry);
+                if (serviceDirectoryRegistrationsBuilder_ == null) {
+                  ensureServiceDirectoryRegistrationsIsMutable();
+                  serviceDirectoryRegistrations_.add(m);
+                } else {
+                  serviceDirectoryRegistrationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1788397554
+            case 1862979954:
+              {
+                network_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 1862979954
+            case 1877428002:
+              {
+                fingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1877428002
+            case -1958308120:
+              {
+                pscConnectionId_ = input.readUInt64();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case -1958308120
+            case -1935290878:
+              {
+                ipVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -1935290878
+            case -1839398830:
+              {
+                backendService_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1839398830
+            case -1832345742:
+              {
+                subnetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case -1832345742
+            case -1415926102:
+              {
+                serviceName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case -1415926102
+            case -1383845342:
+              {
+                loadBalancingScheme_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -1383845342
+            case -958896302:
+              {
+                serviceLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case -958896302
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -911466526
+            case -733560928:
+              {
+                allPorts_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -733560928
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case -645248918
+            case -577161382:
+              {
+                com.google.cloud.compute.v1.MetadataFilter m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry);
+                if (metadataFiltersBuilder_ == null) {
+                  ensureMetadataFiltersIsMutable();
+                  metadataFilters_.add(m);
+                } else {
+                  metadataFiltersBuilder_.addMessage(m);
+                }
+                break;
+              } // case -577161382
+            case -390211094:
+              {
+                iPProtocol_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -390211094
+            case -299689904:
+              {
+                allowGlobalAccess_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -299689904
+            case -293404678:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case -293404678
+            case -155784550:
+              {
+                networkTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -155784550
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.ForwardingRule) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8316,7 +8247,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ForwardingRule(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

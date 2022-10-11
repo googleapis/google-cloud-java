@@ -52,136 +52,6 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private VideoContext(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                segments_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1beta2.VideoSegment>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              segments_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1beta2.VideoSegment.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.Builder subBuilder =
-                  null;
-              if (labelDetectionConfig_ != null) {
-                subBuilder = labelDetectionConfig_.toBuilder();
-              }
-              labelDetectionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(labelDetectionConfig_);
-                labelDetectionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig.Builder
-                  subBuilder = null;
-              if (shotChangeDetectionConfig_ != null) {
-                subBuilder = shotChangeDetectionConfig_.toBuilder();
-              }
-              shotChangeDetectionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1beta2.ShotChangeDetectionConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shotChangeDetectionConfig_);
-                shotChangeDetectionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig.Builder
-                  subBuilder = null;
-              if (explicitContentDetectionConfig_ != null) {
-                subBuilder = explicitContentDetectionConfig_.toBuilder();
-              }
-              explicitContentDetectionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(explicitContentDetectionConfig_);
-                explicitContentDetectionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.videointelligence.v1beta2.FaceDetectionConfig.Builder subBuilder =
-                  null;
-              if (faceDetectionConfig_ != null) {
-                subBuilder = faceDetectionConfig_.toBuilder();
-              }
-              faceDetectionConfig_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1beta2.FaceDetectionConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(faceDetectionConfig_);
-                faceDetectionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        segments_ = java.util.Collections.unmodifiableList(segments_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1beta2_VideoContext_descriptor;
@@ -525,7 +395,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (faceDetectionConfig_ != null) {
       output.writeMessage(5, getFaceDetectionConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -554,7 +424,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (faceDetectionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFaceDetectionConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -590,7 +460,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (hasFaceDetectionConfig()) {
       if (!getFaceDetectionConfig().equals(other.getFaceDetectionConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -621,7 +491,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FACE_DETECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getFaceDetectionConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -751,19 +621,10 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.videointelligence.v1beta2.VideoContext.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSegmentsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -771,10 +632,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        segments_ = null;
         segmentsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (labelDetectionConfigBuilder_ == null) {
         labelDetectionConfig_ = null;
       } else {
@@ -945,7 +807,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFaceDetectionConfig()) {
         mergeFaceDetectionConfig(other.getFaceDetectionConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -960,18 +822,74 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1beta2.VideoContext parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.videointelligence.v1beta2.VideoSegment m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1beta2.VideoSegment.parser(),
+                        extensionRegistry);
+                if (segmentsBuilder_ == null) {
+                  ensureSegmentsIsMutable();
+                  segments_.add(m);
+                } else {
+                  segmentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getLabelDetectionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getShotChangeDetectionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getExplicitContentDetectionConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getFaceDetectionConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.videointelligence.v1beta2.VideoContext) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2247,7 +2165,18 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VideoContext(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

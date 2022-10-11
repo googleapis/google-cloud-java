@@ -52,109 +52,6 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CommuteFilter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              commuteMethod_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              com.google.type.LatLng.Builder subBuilder = null;
-              if (startCoordinates_ != null) {
-                subBuilder = startCoordinates_.toBuilder();
-              }
-              startCoordinates_ =
-                  input.readMessage(com.google.type.LatLng.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startCoordinates_);
-                startCoordinates_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (travelDuration_ != null) {
-                subBuilder = travelDuration_.toBuilder();
-              }
-              travelDuration_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(travelDuration_);
-                travelDuration_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              allowImpreciseAddresses_ = input.readBool();
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-              trafficOptionCase_ = 5;
-              trafficOption_ = rawValue;
-              break;
-            }
-          case 50:
-            {
-              com.google.type.TimeOfDay.Builder subBuilder = null;
-              if (trafficOptionCase_ == 6) {
-                subBuilder = ((com.google.type.TimeOfDay) trafficOption_).toBuilder();
-              }
-              trafficOption_ =
-                  input.readMessage(com.google.type.TimeOfDay.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.type.TimeOfDay) trafficOption_);
-                trafficOption_ = subBuilder.buildPartial();
-              }
-              trafficOptionCase_ = 6;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.FiltersProto
         .internal_static_google_cloud_talent_v4_CommuteFilter_descriptor;
@@ -690,7 +587,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     if (trafficOptionCase_ == 6) {
       output.writeMessage(6, (com.google.type.TimeOfDay) trafficOption_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -722,7 +619,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.type.TimeOfDay) trafficOption_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -758,7 +655,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -793,7 +690,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -922,17 +819,10 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.talent.v4.CommuteFilter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -954,6 +844,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       allowImpreciseAddresses_ = false;
 
+      if (departureTimeBuilder_ != null) {
+        departureTimeBuilder_.clear();
+      }
       trafficOptionCase_ = 0;
       trafficOption_ = null;
       return this;
@@ -1083,7 +976,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1098,17 +991,69 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.talent.v4.CommuteFilter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                commuteMethod_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    getStartCoordinatesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getTravelDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 32:
+              {
+                allowImpreciseAddresses_ = input.readBool();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                int rawValue = input.readEnum();
+                trafficOptionCase_ = 5;
+                trafficOption_ = rawValue;
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(getDepartureTimeFieldBuilder().getBuilder(), extensionRegistry);
+                trafficOptionCase_ = 6;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.talent.v4.CommuteFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2072,7 +2017,18 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CommuteFilter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

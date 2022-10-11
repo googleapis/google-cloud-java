@@ -70,211 +70,6 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Route(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000008;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              name_ = s;
-              break;
-            }
-          case 28418250:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00080000;
-              }
-              tags_.add(s);
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 882556234:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
-              nextHopIp_ = s;
-              break;
-            }
-          case 1100551434:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                asPaths_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouteAsPath>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              asPaths_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouteAsPath.parser(), extensionRegistry));
-              break;
-            }
-          case 1589439210:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              nextHopIlb_ = s;
-              break;
-            }
-          case 1862979954:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              network_ = s;
-              break;
-            }
-          case 2098366306:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              nextHopNetwork_ = s;
-              break;
-            }
-          case -1287857278:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00010000;
-              routeType_ = s;
-              break;
-            }
-          case -1277564910:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              nextHopGateway_ = s;
-              break;
-            }
-          case -1244345598:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              destRange_ = s;
-              break;
-            }
-          case -1146901318:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              nextHopInstance_ = s;
-              break;
-            }
-          case -993505294:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
-              nextHopPeering_ = s;
-              break;
-            }
-          case -949668542:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
-              routeStatus_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              description_ = s;
-              break;
-            }
-          case -733754080:
-            {
-              bitField0_ |= 0x00004000;
-              priority_ = input.readUInt32();
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
-              selfLink_ = s;
-              break;
-            }
-          case -310238534:
-            {
-              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
-                warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>();
-                mutable_bitField0_ |= 0x00100000;
-              }
-              warnings_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Warnings.parser(), extensionRegistry));
-              break;
-            }
-          case -136211286:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              nextHopVpnTunnel_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00080000) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        asPaths_ = java.util.Collections.unmodifiableList(asPaths_);
-      }
-      if (((mutable_bitField0_ & 0x00100000) != 0)) {
-        warnings_ = java.util.Collections.unmodifiableList(warnings_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_Route_descriptor;
@@ -2001,7 +1796,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 519844501, nextHopVpnTunnel_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2080,7 +1875,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(519844501, nextHopVpnTunnel_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2170,7 +1965,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getWarningsList().equals(other.getWarningsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2265,7 +2060,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
       hash = (53 * hash) + getWarningsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2393,20 +2188,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.Route.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAsPathsFieldBuilder();
-        getWarningsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2414,10 +2199,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (asPathsBuilder_ == null) {
         asPaths_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        asPaths_ = null;
         asPathsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
@@ -2458,10 +2244,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00080000);
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
       } else {
+        warnings_ = null;
         warningsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00100000);
       return this;
     }
 
@@ -2785,7 +2572,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2800,17 +2587,172 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.Route parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 26989658
+            case 28418250:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 28418250
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 244202930
+            case 882556234:
+              {
+                nextHopIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 882556234
+            case 1100551434:
+              {
+                com.google.cloud.compute.v1.RouteAsPath m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouteAsPath.parser(), extensionRegistry);
+                if (asPathsBuilder_ == null) {
+                  ensureAsPathsIsMutable();
+                  asPaths_.add(m);
+                } else {
+                  asPathsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1100551434
+            case 1589439210:
+              {
+                nextHopIlb_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1589439210
+            case 1862979954:
+              {
+                network_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1862979954
+            case 2098366306:
+              {
+                nextHopNetwork_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 2098366306
+            case -1287857278:
+              {
+                routeType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case -1287857278
+            case -1277564910:
+              {
+                nextHopGateway_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case -1277564910
+            case -1244345598:
+              {
+                destRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1244345598
+            case -1146901318:
+              {
+                nextHopInstance_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case -1146901318
+            case -993505294:
+              {
+                nextHopPeering_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -993505294
+            case -949668542:
+              {
+                routeStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case -949668542
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -911466526
+            case -733754080:
+              {
+                priority_ = input.readUInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case -733754080
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -645248918
+            case -310238534:
+              {
+                com.google.cloud.compute.v1.Warnings m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.Warnings.parser(), extensionRegistry);
+                if (warningsBuilder_ == null) {
+                  ensureWarningsIsMutable();
+                  warnings_.add(m);
+                } else {
+                  warningsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -310238534
+            case -136211286:
+              {
+                nextHopVpnTunnel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -136211286
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.Route) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5778,7 +5720,18 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Route(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

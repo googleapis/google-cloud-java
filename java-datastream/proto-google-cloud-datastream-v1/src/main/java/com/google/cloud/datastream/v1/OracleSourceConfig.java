@@ -50,128 +50,6 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private OracleSourceConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.datastream.v1.OracleRdbms.Builder subBuilder = null;
-              if (includeObjects_ != null) {
-                subBuilder = includeObjects_.toBuilder();
-              }
-              includeObjects_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.OracleRdbms.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(includeObjects_);
-                includeObjects_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.datastream.v1.OracleRdbms.Builder subBuilder = null;
-              if (excludeObjects_ != null) {
-                subBuilder = excludeObjects_.toBuilder();
-              }
-              excludeObjects_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.OracleRdbms.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(excludeObjects_);
-                excludeObjects_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 24:
-            {
-              maxConcurrentCdcTasks_ = input.readInt32();
-              break;
-            }
-          case 802:
-            {
-              com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects.Builder
-                  subBuilder = null;
-              if (largeObjectsHandlingCase_ == 100) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects)
-                            largeObjectsHandling_)
-                        .toBuilder();
-              }
-              largeObjectsHandling_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects)
-                        largeObjectsHandling_);
-                largeObjectsHandling_ = subBuilder.buildPartial();
-              }
-              largeObjectsHandlingCase_ = 100;
-              break;
-            }
-          case 818:
-            {
-              com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects.Builder
-                  subBuilder = null;
-              if (largeObjectsHandlingCase_ == 102) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
-                            largeObjectsHandling_)
-                        .toBuilder();
-              }
-              largeObjectsHandling_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
-                        largeObjectsHandling_);
-                largeObjectsHandling_ = subBuilder.buildPartial();
-              }
-              largeObjectsHandlingCase_ = 102;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_OracleSourceConfig_descriptor;
@@ -223,45 +101,6 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private DropLargeObjects(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1_OracleSourceConfig_DropLargeObjects_descriptor;
@@ -291,7 +130,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -300,7 +139,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -316,7 +155,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects other =
           (com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -327,7 +166,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -461,17 +300,10 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -561,7 +393,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         if (other
             == com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects
                 .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -576,19 +408,31 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.datastream.v1.OracleSourceConfig.DropLargeObjects)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -627,7 +471,19 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DropLargeObjects(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -683,45 +539,6 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private StreamLargeObjects(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1_OracleSourceConfig_StreamLargeObjects_descriptor;
@@ -751,7 +568,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -760,7 +577,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -776,7 +593,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects other =
           (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects) obj;
 
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -787,7 +604,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -921,17 +738,10 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1022,7 +832,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         if (other
             == com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects
                 .getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1037,19 +847,31 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1088,7 +910,19 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new StreamLargeObjects(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1425,7 +1259,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
           (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
               largeObjectsHandling_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1457,7 +1291,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
               (com.google.cloud.datastream.v1.OracleSourceConfig.StreamLargeObjects)
                   largeObjectsHandling_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1493,7 +1327,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1526,7 +1360,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1655,17 +1489,10 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.datastream.v1.OracleSourceConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1685,6 +1512,12 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       maxConcurrentCdcTasks_ = 0;
 
+      if (dropLargeObjectsBuilder_ != null) {
+        dropLargeObjectsBuilder_.clear();
+      }
+      if (streamLargeObjectsBuilder_ != null) {
+        streamLargeObjectsBuilder_.clear();
+      }
       largeObjectsHandlingCase_ = 0;
       largeObjectsHandling_ = null;
       return this;
@@ -1815,7 +1648,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1830,18 +1663,63 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datastream.v1.OracleSourceConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getIncludeObjectsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getExcludeObjectsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 24:
+              {
+                maxConcurrentCdcTasks_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 802:
+              {
+                input.readMessage(
+                    getDropLargeObjectsFieldBuilder().getBuilder(), extensionRegistry);
+                largeObjectsHandlingCase_ = 100;
+                break;
+              } // case 802
+            case 818:
+              {
+                input.readMessage(
+                    getStreamLargeObjectsFieldBuilder().getBuilder(), extensionRegistry);
+                largeObjectsHandlingCase_ = 102;
+                break;
+              } // case 818
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datastream.v1.OracleSourceConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2808,7 +2686,18 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new OracleSourceConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

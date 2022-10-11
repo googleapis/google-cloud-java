@@ -55,83 +55,6 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private AzureServerConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                validVersions_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              validVersions_.add(
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                supportedAzureRegions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              supportedAzureRegions_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        validVersions_ = java.util.Collections.unmodifiableList(validVersions_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        supportedAzureRegions_ = supportedAzureRegions_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureServerConfig_descriptor;
@@ -360,7 +283,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 3, supportedAzureRegions_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -383,7 +306,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getSupportedAzureRegionsList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -402,7 +325,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
     if (!getName().equals(other.getName())) return false;
     if (!getValidVersionsList().equals(other.getValidVersionsList())) return false;
     if (!getSupportedAzureRegionsList().equals(other.getSupportedAzureRegionsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -423,7 +346,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + SUPPORTED_AZURE_REGIONS_FIELD_NUMBER;
       hash = (53 * hash) + getSupportedAzureRegionsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -553,19 +476,10 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.gkemulticloud.v1.AzureServerConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getValidVersionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -575,10 +489,11 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
 
       if (validVersionsBuilder_ == null) {
         validVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        validVersions_ = null;
         validVersionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       supportedAzureRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -715,7 +630,7 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -730,18 +645,58 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkemulticloud.v1.AzureServerConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfo m =
+                    input.readMessage(
+                        com.google.cloud.gkemulticloud.v1.AzureK8sVersionInfo.parser(),
+                        extensionRegistry);
+                if (validVersionsBuilder_ == null) {
+                  ensureValidVersionsIsMutable();
+                  validVersions_.add(m);
+                } else {
+                  validVersionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSupportedAzureRegionsIsMutable();
+                supportedAzureRegions_.add(s);
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkemulticloud.v1.AzureServerConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1437,7 +1392,18 @@ public final class AzureServerConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AzureServerConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

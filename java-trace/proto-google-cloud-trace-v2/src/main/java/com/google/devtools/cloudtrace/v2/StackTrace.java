@@ -50,67 +50,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private StackTrace(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.Builder subBuilder = null;
-              if (stackFrames_ != null) {
-                subBuilder = stackFrames_.toBuilder();
-              }
-              stackFrames_ =
-                  input.readMessage(
-                      com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stackFrames_);
-                stackFrames_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 16:
-            {
-              stackTraceHashId_ = input.readInt64();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudtrace.v2.TraceProto
         .internal_static_google_devtools_cloudtrace_v2_StackTrace_descriptor;
@@ -375,139 +314,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private StackFrame(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.devtools.cloudtrace.v2.TruncatableString.Builder subBuilder = null;
-                if (functionName_ != null) {
-                  subBuilder = functionName_.toBuilder();
-                }
-                functionName_ =
-                    input.readMessage(
-                        com.google.devtools.cloudtrace.v2.TruncatableString.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(functionName_);
-                  functionName_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.devtools.cloudtrace.v2.TruncatableString.Builder subBuilder = null;
-                if (originalFunctionName_ != null) {
-                  subBuilder = originalFunctionName_.toBuilder();
-                }
-                originalFunctionName_ =
-                    input.readMessage(
-                        com.google.devtools.cloudtrace.v2.TruncatableString.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(originalFunctionName_);
-                  originalFunctionName_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.devtools.cloudtrace.v2.TruncatableString.Builder subBuilder = null;
-                if (fileName_ != null) {
-                  subBuilder = fileName_.toBuilder();
-                }
-                fileName_ =
-                    input.readMessage(
-                        com.google.devtools.cloudtrace.v2.TruncatableString.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(fileName_);
-                  fileName_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 32:
-              {
-                lineNumber_ = input.readInt64();
-                break;
-              }
-            case 40:
-              {
-                columnNumber_ = input.readInt64();
-                break;
-              }
-            case 50:
-              {
-                com.google.devtools.cloudtrace.v2.Module.Builder subBuilder = null;
-                if (loadModule_ != null) {
-                  subBuilder = loadModule_.toBuilder();
-                }
-                loadModule_ =
-                    input.readMessage(
-                        com.google.devtools.cloudtrace.v2.Module.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(loadModule_);
-                  loadModule_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 58:
-              {
-                com.google.devtools.cloudtrace.v2.TruncatableString.Builder subBuilder = null;
-                if (sourceVersion_ != null) {
-                  subBuilder = sourceVersion_.toBuilder();
-                }
-                sourceVersion_ =
-                    input.readMessage(
-                        com.google.devtools.cloudtrace.v2.TruncatableString.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(sourceVersion_);
-                  sourceVersion_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -851,7 +657,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (sourceVersion_ != null) {
         output.writeMessage(7, getSourceVersion());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -882,7 +688,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (sourceVersion_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSourceVersion());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -920,7 +726,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (hasSourceVersion()) {
         if (!getSourceVersion().equals(other.getSourceVersion())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -955,7 +761,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + SOURCE_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getSourceVersion().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1087,17 +893,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.devtools.cloudtrace.v2.StackTrace.StackFrame.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1264,7 +1063,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         if (other.hasSourceVersion()) {
           mergeSourceVersion(other.getSourceVersion());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1279,18 +1078,74 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.devtools.cloudtrace.v2.StackTrace.StackFrame parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getFunctionNameFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getOriginalFunctionNameFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getFileNameFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  lineNumber_ = input.readInt64();
+
+                  break;
+                } // case 32
+              case 40:
+                {
+                  columnNumber_ = input.readInt64();
+
+                  break;
+                } // case 40
+              case 50:
+                {
+                  input.readMessage(getLoadModuleFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(getSourceVersionFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 58
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.devtools.cloudtrace.v2.StackTrace.StackFrame) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2407,7 +2262,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new StackFrame(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2530,68 +2397,6 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private StackFrames(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  frame_ =
-                      new java.util.ArrayList<
-                          com.google.devtools.cloudtrace.v2.StackTrace.StackFrame>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                frame_.add(
-                    input.readMessage(
-                        com.google.devtools.cloudtrace.v2.StackTrace.StackFrame.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 16:
-              {
-                droppedFramesCount_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          frame_ = java.util.Collections.unmodifiableList(frame_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2720,7 +2525,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (droppedFramesCount_ != 0) {
         output.writeInt32(2, droppedFramesCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2735,7 +2540,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (droppedFramesCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, droppedFramesCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2753,7 +2558,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
 
       if (!getFrameList().equals(other.getFrameList())) return false;
       if (getDroppedFramesCount() != other.getDroppedFramesCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2770,7 +2575,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + DROPPED_FRAMES_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getDroppedFramesCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2902,19 +2707,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.devtools.cloudtrace.v2.StackTrace.StackFrames.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getFrameFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -2922,10 +2718,11 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (frameBuilder_ == null) {
           frame_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          frame_ = null;
           frameBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         droppedFramesCount_ = 0;
 
         return this;
@@ -3048,7 +2845,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         if (other.getDroppedFramesCount() != 0) {
           setDroppedFramesCount(other.getDroppedFramesCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3063,18 +2860,51 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.devtools.cloudtrace.v2.StackTrace.StackFrames parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.devtools.cloudtrace.v2.StackTrace.StackFrame m =
+                      input.readMessage(
+                          com.google.devtools.cloudtrace.v2.StackTrace.StackFrame.parser(),
+                          extensionRegistry);
+                  if (frameBuilder_ == null) {
+                    ensureFrameIsMutable();
+                    frame_.add(m);
+                  } else {
+                    frameBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  droppedFramesCount_ = input.readInt32();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.devtools.cloudtrace.v2.StackTrace.StackFrames) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3536,7 +3366,19 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new StackFrames(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3648,7 +3490,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     if (stackTraceHashId_ != 0L) {
       output.writeInt64(2, stackTraceHashId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3663,7 +3505,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     if (stackTraceHashId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, stackTraceHashId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3684,7 +3526,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (!getStackFrames().equals(other.getStackFrames())) return false;
     }
     if (getStackTraceHashId() != other.getStackTraceHashId()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3701,7 +3543,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STACK_TRACE_HASH_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStackTraceHashId());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3830,17 +3672,10 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.devtools.cloudtrace.v2.StackTrace.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -3942,7 +3777,7 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
       if (other.getStackTraceHashId() != 0L) {
         setStackTraceHashId(other.getStackTraceHashId());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3957,17 +3792,43 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.devtools.cloudtrace.v2.StackTrace parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getStackFramesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 16:
+              {
+                stackTraceHashId_ = input.readInt64();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.cloudtrace.v2.StackTrace) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4262,7 +4123,18 @@ public final class StackTrace extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StackTrace(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

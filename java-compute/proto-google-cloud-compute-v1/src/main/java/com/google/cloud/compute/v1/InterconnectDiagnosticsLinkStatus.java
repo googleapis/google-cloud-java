@@ -54,131 +54,6 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     return this.unknownFields;
   }
 
-  private InterconnectDiagnosticsLinkStatus(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 408674:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              googleDemarc_ = s;
-              break;
-            }
-          case 1801447818:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              circuitId_ = s;
-              break;
-            }
-          case 1957738234:
-            {
-              com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
-                  subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = receivingOpticalPower_.toBuilder();
-              }
-              receivingOpticalPower_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(receivingOpticalPower_);
-                receivingOpticalPower_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-          case -1405283974:
-            {
-              com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.Builder subBuilder =
-                  null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = lacpStatus_.toBuilder();
-              }
-              lacpStatus_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lacpStatus_);
-                lacpStatus_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-          case -978233206:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                arpCaches_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              arpCaches_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -619517718:
-            {
-              com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
-                  subBuilder = null;
-              if (((bitField0_ & 0x00000010) != 0)) {
-                subBuilder = transmittingOpticalPower_.toBuilder();
-              }
-              transmittingOpticalPower_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(transmittingOpticalPower_);
-                transmittingOpticalPower_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000010;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        arpCaches_ = java.util.Collections.unmodifiableList(arpCaches_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InterconnectDiagnosticsLinkStatus_descriptor;
@@ -589,7 +464,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(459431197, getTransmittingOpticalPower());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -621,7 +496,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               459431197, getTransmittingOpticalPower());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -658,7 +533,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (hasTransmittingOpticalPower()) {
       if (!getTransmittingOpticalPower().equals(other.getTransmittingOpticalPower())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -693,7 +568,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       hash = (37 * hash) + TRANSMITTING_OPTICAL_POWER_FIELD_NUMBER;
       hash = (53 * hash) + getTransmittingOpticalPower().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -845,10 +720,11 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       super.clear();
       if (arpCachesBuilder_ == null) {
         arpCaches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        arpCaches_ = null;
         arpCachesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       circuitId_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       googleDemarc_ = "";
@@ -1040,7 +916,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       if (other.hasTransmittingOpticalPower()) {
         mergeTransmittingOpticalPower(other.getTransmittingOpticalPower());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1055,19 +931,77 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 408674:
+              {
+                googleDemarc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 408674
+            case 1801447818:
+              {
+                circuitId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1801447818
+            case 1957738234:
+              {
+                input.readMessage(
+                    getReceivingOpticalPowerFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1957738234
+            case -1405283974:
+              {
+                input.readMessage(getLacpStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1405283974
+            case -978233206:
+              {
+                com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.parser(),
+                        extensionRegistry);
+                if (arpCachesBuilder_ == null) {
+                  ensureArpCachesIsMutable();
+                  arpCaches_.add(m);
+                } else {
+                  arpCachesBuilder_.addMessage(m);
+                }
+                break;
+              } // case -978233206
+            case -619517718:
+              {
+                input.readMessage(
+                    getTransmittingOpticalPowerFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -619517718
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2340,7 +2274,18 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InterconnectDiagnosticsLinkStatus(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

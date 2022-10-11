@@ -164,8 +164,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * The filter clause of dimensions. Dimensions must be requested to be used in
-   * this filter. Metrics cannot be used in this filter.
+   * The filter clause of dimensions. Metrics cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
@@ -177,8 +176,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * The filter clause of dimensions. Dimensions must be requested to be used in
-   * this filter. Metrics cannot be used in this filter.
+   * The filter clause of dimensions. Metrics cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
@@ -190,8 +188,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    *
    * <pre>
-   * The filter clause of dimensions. Dimensions must be requested to be used in
-   * this filter. Metrics cannot be used in this filter.
+   * The filter clause of dimensions. Metrics cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
@@ -203,8 +200,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    * <pre>
    * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Metrics must be requested to be used in this filter.
-   * Dimensions cannot be used in this filter.
+   * SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
@@ -217,8 +213,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    * <pre>
    * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Metrics must be requested to be used in this filter.
-   * Dimensions cannot be used in this filter.
+   * SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
@@ -231,8 +226,7 @@ public interface RunRealtimeReportRequestOrBuilder
    *
    * <pre>
    * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Metrics must be requested to be used in this filter.
-   * Dimensions cannot be used in this filter.
+   * SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>

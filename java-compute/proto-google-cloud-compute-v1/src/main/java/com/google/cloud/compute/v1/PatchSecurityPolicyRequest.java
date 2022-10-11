@@ -54,83 +54,6 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
     return this.unknownFields;
   }
 
-  private PatchSecurityPolicyRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              requestId_ = s;
-              break;
-            }
-          case 1368660106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              securityPolicy_ = s;
-              break;
-            }
-          case 1729276898:
-            {
-              com.google.cloud.compute.v1.SecurityPolicy.Builder subBuilder = null;
-              if (securityPolicyResource_ != null) {
-                subBuilder = securityPolicyResource_.toBuilder();
-              }
-              securityPolicyResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SecurityPolicy.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(securityPolicyResource_);
-                securityPolicyResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_PatchSecurityPolicyRequest_descriptor;
@@ -393,7 +316,7 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -416,7 +339,7 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -442,7 +365,7 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
     if (hasSecurityPolicyResource()) {
       if (!getSecurityPolicyResource().equals(other.getSecurityPolicyResource())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -465,7 +388,7 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
       hash = (37 * hash) + SECURITY_POLICY_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityPolicyResource().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -595,17 +518,10 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.compute.v1.PatchSecurityPolicyRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -730,7 +646,7 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
       if (other.hasSecurityPolicyResource()) {
         mergeSecurityPolicyResource(other.getSecurityPolicyResource());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -745,18 +661,56 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.PatchSecurityPolicyRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 296879706:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 296879706
+            case 1368660106:
+              {
+                securityPolicy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1368660106
+            case 1729276898:
+              {
+                input.readMessage(
+                    getSecurityPolicyResourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 1729276898
+            case 1820481738:
+              {
+                project_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1820481738
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.PatchSecurityPolicyRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1341,7 +1295,18 @@ public final class PatchSecurityPolicyRequest extends com.google.protobuf.Genera
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PatchSecurityPolicyRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -58,190 +58,6 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private TranslationTaskDetails(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              inputPath_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              outputPath_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              schemaPath_ = s;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              fileEncoding_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.Builder subBuilder =
-                  null;
-              if (identifierSettings_ != null) {
-                subBuilder = identifierSettings_.toBuilder();
-              }
-              identifierSettings_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.IdentifierSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(identifierSettings_);
-                identifierSettings_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                specialTokenMap_ =
-                    com.google.protobuf.MapField.newMapField(
-                        SpecialTokenMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> specialTokenMap__ =
-                  input.readMessage(
-                      SpecialTokenMapDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              specialTokenMap_
-                  .getMutableMap()
-                  .put(specialTokenMap__.getKey(), specialTokenMap__.getValue());
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.bigquery.migration.v2alpha.Filter.Builder subBuilder = null;
-              if (filter_ != null) {
-                subBuilder = filter_.toBuilder();
-              }
-              filter_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.Filter.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(filter_);
-                filter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.bigquery.migration.v2alpha.TeradataOptions.Builder subBuilder = null;
-              if (languageOptionsCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2alpha.TeradataOptions) languageOptions_)
-                        .toBuilder();
-              }
-              languageOptions_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.TeradataOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2alpha.TeradataOptions) languageOptions_);
-                languageOptions_ = subBuilder.buildPartial();
-              }
-              languageOptionsCase_ = 10;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.bigquery.migration.v2alpha.BteqOptions.Builder subBuilder = null;
-              if (languageOptionsCase_ == 11) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.migration.v2alpha.BteqOptions) languageOptions_)
-                        .toBuilder();
-              }
-              languageOptions_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.BteqOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.migration.v2alpha.BteqOptions) languageOptions_);
-                languageOptions_ = subBuilder.buildPartial();
-              }
-              languageOptionsCase_ = 11;
-              break;
-            }
-          case 98:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                filePaths_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              filePaths_.add(
-                  input.readMessage(
-                      com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              translationExceptionTable_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        filePaths_ = java.util.Collections.unmodifiableList(filePaths_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.migration.v2alpha.TranslationTaskProto
         .internal_static_google_cloud_bigquery_migration_v2alpha_TranslationTaskDetails_descriptor;
@@ -1656,7 +1472,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(translationExceptionTable_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, translationExceptionTable_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1713,7 +1529,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(13, translationExceptionTable_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1755,7 +1571,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1804,7 +1620,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1957,34 +1773,32 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
 
     // Construct using
     // com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFilePathsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (teradataOptionsBuilder_ != null) {
+        teradataOptionsBuilder_.clear();
+      }
+      if (bteqOptionsBuilder_ != null) {
+        bteqOptionsBuilder_.clear();
+      }
       inputPath_ = "";
 
       outputPath_ = "";
 
       if (filePathsBuilder_ == null) {
         filePaths_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        filePaths_ = null;
         filePathsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       schemaPath_ = "";
 
       fileEncoding_ = 0;
@@ -2199,7 +2013,7 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2214,19 +2028,112 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                inputPath_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                outputPath_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                schemaPath_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 32:
+              {
+                fileEncoding_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getIdentifierSettingsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+                    specialTokenMap__ =
+                        input.readMessage(
+                            SpecialTokenMapDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSpecialTokenMap()
+                    .getMutableMap()
+                    .put(specialTokenMap__.getKey(), specialTokenMap__.getValue());
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 82:
+              {
+                input.readMessage(getTeradataOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                languageOptionsCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getBteqOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                languageOptionsCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping m =
+                    input.readMessage(
+                        com.google.cloud.bigquery.migration.v2alpha.TranslationFileMapping.parser(),
+                        extensionRegistry);
+                if (filePathsBuilder_ == null) {
+                  ensureFilePathsIsMutable();
+                  filePaths_.add(m);
+                } else {
+                  filePathsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+            case 106:
+              {
+                translationExceptionTable_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 106
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.migration.v2alpha.TranslationTaskDetails)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4425,7 +4332,18 @@ public final class TranslationTaskDetails extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TranslationTaskDetails(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

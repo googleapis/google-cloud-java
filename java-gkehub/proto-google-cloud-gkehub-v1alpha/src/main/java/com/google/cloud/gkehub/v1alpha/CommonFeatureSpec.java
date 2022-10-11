@@ -50,87 +50,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private CommonFeatureSpec(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 818:
-            {
-              com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec.Builder subBuilder =
-                  null;
-              if (featureSpecCase_ == 102) {
-                subBuilder =
-                    ((com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec) featureSpec_)
-                        .toBuilder();
-              }
-              featureSpec_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec) featureSpec_);
-                featureSpec_ = subBuilder.buildPartial();
-              }
-              featureSpecCase_ = 102;
-              break;
-            }
-          case 866:
-            {
-              com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec.Builder subBuilder =
-                  null;
-              if (featureSpecCase_ == 108) {
-                subBuilder =
-                    ((com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec) featureSpec_)
-                        .toBuilder();
-              }
-              featureSpec_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec) featureSpec_);
-                featureSpec_ = subBuilder.buildPartial();
-              }
-              featureSpecCase_ = 108;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1alpha.FeatureProto
         .internal_static_google_cloud_gkehub_v1alpha_CommonFeatureSpec_descriptor;
@@ -325,7 +244,7 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           108, (com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec) featureSpec_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -344,7 +263,7 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               108, (com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec) featureSpec_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -371,7 +290,7 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -394,7 +313,7 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -523,22 +442,21 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (multiclusteringressBuilder_ != null) {
+        multiclusteringressBuilder_.clear();
+      }
+      if (cloudauditloggingBuilder_ != null) {
+        cloudauditloggingBuilder_.clear();
+      }
       featureSpecCase_ = 0;
       featureSpec_ = null;
       return this;
@@ -649,7 +567,7 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -664,18 +582,45 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.v1alpha.CommonFeatureSpec parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 818:
+              {
+                input.readMessage(
+                    getMulticlusteringressFieldBuilder().getBuilder(), extensionRegistry);
+                featureSpecCase_ = 102;
+                break;
+              } // case 818
+            case 866:
+              {
+                input.readMessage(
+                    getCloudauditloggingFieldBuilder().getBuilder(), extensionRegistry);
+                featureSpecCase_ = 108;
+                break;
+              } // case 866
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkehub.v1alpha.CommonFeatureSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1179,7 +1124,18 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CommonFeatureSpec(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

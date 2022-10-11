@@ -53,67 +53,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private MaintenanceWindow(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.protobuf.Int32Value.Builder subBuilder = null;
-              if (hourOfDay_ != null) {
-                subBuilder = hourOfDay_.toBuilder();
-              }
-              hourOfDay_ =
-                  input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hourOfDay_);
-                hourOfDay_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              dayOfWeek_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_MaintenanceWindow_descriptor;
@@ -230,7 +169,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     if (dayOfWeek_ != com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, dayOfWeek_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -245,7 +184,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     if (dayOfWeek_ != com.google.type.DayOfWeek.DAY_OF_WEEK_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, dayOfWeek_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -266,7 +205,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       if (!getHourOfDay().equals(other.getHourOfDay())) return false;
     }
     if (dayOfWeek_ != other.dayOfWeek_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -283,7 +222,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + DAY_OF_WEEK_FIELD_NUMBER;
     hash = (53 * hash) + dayOfWeek_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -413,17 +352,10 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.metastore.v1alpha.MaintenanceWindow.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -526,7 +458,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       if (other.dayOfWeek_ != 0) {
         setDayOfWeekValue(other.getDayOfWeekValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -541,18 +473,43 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.metastore.v1alpha.MaintenanceWindow parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getHourOfDayFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 16:
+              {
+                dayOfWeek_ = input.readEnum();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.metastore.v1alpha.MaintenanceWindow) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -861,7 +818,18 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MaintenanceWindow(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

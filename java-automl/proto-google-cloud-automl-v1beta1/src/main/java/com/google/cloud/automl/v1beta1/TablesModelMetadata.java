@@ -54,128 +54,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private TablesModelMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.cloud.automl.v1beta1.ColumnSpec.Builder subBuilder = null;
-              if (targetColumnSpec_ != null) {
-                subBuilder = targetColumnSpec_.toBuilder();
-              }
-              targetColumnSpec_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ColumnSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetColumnSpec_);
-                targetColumnSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                inputFeatureColumnSpecs_ =
-                    new java.util.ArrayList<com.google.cloud.automl.v1beta1.ColumnSpec>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              inputFeatureColumnSpecs_.add(
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ColumnSpec.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              optimizationObjective_ = s;
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                tablesModelColumnInfo_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.automl.v1beta1.TablesModelColumnInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              tablesModelColumnInfo_.add(
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.TablesModelColumnInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 48:
-            {
-              trainBudgetMilliNodeHours_ = input.readInt64();
-              break;
-            }
-          case 56:
-            {
-              trainCostMilliNodeHours_ = input.readInt64();
-              break;
-            }
-          case 96:
-            {
-              disableEarlyStopping_ = input.readBool();
-              break;
-            }
-          case 141:
-            {
-              additionalOptimizationObjectiveConfig_ = input.readFloat();
-              additionalOptimizationObjectiveConfigCase_ = 17;
-              break;
-            }
-          case 149:
-            {
-              additionalOptimizationObjectiveConfig_ = input.readFloat();
-              additionalOptimizationObjectiveConfigCase_ = 18;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        inputFeatureColumnSpecs_ = java.util.Collections.unmodifiableList(inputFeatureColumnSpecs_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        tablesModelColumnInfo_ = java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Tables
         .internal_static_google_cloud_automl_v1beta1_TablesModelMetadata_descriptor;
@@ -804,7 +682,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     if (additionalOptimizationObjectiveConfigCase_ == 18) {
       output.writeFloat(18, (float) ((java.lang.Float) additionalOptimizationObjectiveConfig_));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -848,7 +726,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeFloatSize(
               18, (float) ((java.lang.Float) additionalOptimizationObjectiveConfig_));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -891,7 +769,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -935,7 +813,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1064,20 +942,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.automl.v1beta1.TablesModelMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInputFeatureColumnSpecsFieldBuilder();
-        getTablesModelColumnInfoFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1091,18 +959,20 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
       }
       if (inputFeatureColumnSpecsBuilder_ == null) {
         inputFeatureColumnSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        inputFeatureColumnSpecs_ = null;
         inputFeatureColumnSpecsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       optimizationObjective_ = "";
 
       if (tablesModelColumnInfoBuilder_ == null) {
         tablesModelColumnInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        tablesModelColumnInfo_ = null;
         tablesModelColumnInfoBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       trainBudgetMilliNodeHours_ = 0L;
 
       trainCostMilliNodeHours_ = 0L;
@@ -1311,7 +1181,7 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1326,18 +1196,101 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.TablesModelMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(
+                    getTargetColumnSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.automl.v1beta1.ColumnSpec m =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.ColumnSpec.parser(), extensionRegistry);
+                if (inputFeatureColumnSpecsBuilder_ == null) {
+                  ensureInputFeatureColumnSpecsIsMutable();
+                  inputFeatureColumnSpecs_.add(m);
+                } else {
+                  inputFeatureColumnSpecsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                optimizationObjective_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.automl.v1beta1.TablesModelColumnInfo m =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.TablesModelColumnInfo.parser(),
+                        extensionRegistry);
+                if (tablesModelColumnInfoBuilder_ == null) {
+                  ensureTablesModelColumnInfoIsMutable();
+                  tablesModelColumnInfo_.add(m);
+                } else {
+                  tablesModelColumnInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 48:
+              {
+                trainBudgetMilliNodeHours_ = input.readInt64();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                trainCostMilliNodeHours_ = input.readInt64();
+
+                break;
+              } // case 56
+            case 96:
+              {
+                disableEarlyStopping_ = input.readBool();
+
+                break;
+              } // case 96
+            case 141:
+              {
+                additionalOptimizationObjectiveConfig_ = input.readFloat();
+                additionalOptimizationObjectiveConfigCase_ = 17;
+                break;
+              } // case 141
+            case 149:
+              {
+                additionalOptimizationObjectiveConfig_ = input.readFloat();
+                additionalOptimizationObjectiveConfigCase_ = 18;
+                break;
+              } // case 149
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.automl.v1beta1.TablesModelMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3227,7 +3180,18 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TablesModelMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin</artifactId>
-  <version>0.13.3</version>
+  <version>0.13.5</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.analytics:google-analytics-admin:0.13.3'
+implementation 'com.google.analytics:google-analytics-admin:0.13.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.analytics" % "google-analytics-admin" % "0.13.3"
+libraryDependencies += "com.google.analytics" % "google-analytics-admin" % "0.13.5"
 ```
 
 ## Authentication
@@ -71,15 +71,6 @@ use this Analytics Admin Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-analytics-admin/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-analytics-admin/blob/main/samples/snippets/src/main/java/com/example/analyticsadmin/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-admin&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analyticsadmin/QuickstartSample.java) |
 
 
 

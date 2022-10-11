@@ -69,8 +69,11 @@ modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | 
 for module in $modules; do
   echo "Running for ${module}"
   rm -rf "${module}"
-  retry_with_backoff 3 10 git clone "https://github.com/googleapis/${module}"
-  rm -rf "${module}/.git"
+  url="https://github.com/googleapis/${module}"
+  if curl --output /dev/null --silent --head --fail "${url}"; then
+    retry_with_backoff 3 10 git clone "${url}"
+    rm -rf "${module}/.git"
+  fi
   echo "Done running for ${module}"
 done
 
@@ -87,8 +90,10 @@ git stash
 git checkout "${current_branch}"
 git stash pop
 
+# *.java and *.proto are connected -- Adding them to the same branch
 git checkout -b "${diff_java_branch}"
 git add "*.java"
+git add "*.proto"
 git commit -m "chore: Adding java diffs" --no-verify
 git push origin "${diff_java_branch}" --force
 
@@ -97,8 +102,17 @@ git checkout "${current_branch}"
 git stash pop
 
 git checkout -b "${diff_non_java_branch}"
+
 git add .
+ignore_list=("java-*/.github/*" "java-*/.kokoro/*" "java-*/samples/*" "java-*/CODE_OF_CONDUCT.md" "java-*/CONTRIBUTING.md" "java-*/LICENSE" "java-*/SECURITY.md" "java-*/java.header" "java-*/license-checks.xml" "java-*/renovate.json")
+
+for ignore in "${ignore_list[@]}"
+do
+  git reset "${ignore}"
+done
 git commit -m "chore: Adding non-java diffs" --no-verify
 git push origin "${diff_non_java_branch}" --force
+
+git checkout "${current_branch}"
 
 echo "Done running script"

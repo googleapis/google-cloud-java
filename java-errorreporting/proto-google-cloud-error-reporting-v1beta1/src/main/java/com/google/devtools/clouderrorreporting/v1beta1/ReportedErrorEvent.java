@@ -52,103 +52,6 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ReportedErrorEvent(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (eventTime_ != null) {
-                subBuilder = eventTime_.toBuilder();
-              }
-              eventTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(eventTime_);
-                eventTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder subBuilder =
-                  null;
-              if (serviceContext_ != null) {
-                subBuilder = serviceContext_.toBuilder();
-              }
-              serviceContext_ =
-                  input.readMessage(
-                      com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(serviceContext_);
-                serviceContext_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.Builder subBuilder =
-                  null;
-              if (context_ != null) {
-                subBuilder = context_.toBuilder();
-              }
-              context_ =
-                  input.readMessage(
-                      com.google.devtools.clouderrorreporting.v1beta1.ErrorContext.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(context_);
-                context_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
         .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportedErrorEvent_descriptor;
@@ -448,7 +351,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     if (context_ != null) {
       output.writeMessage(4, getContext());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -469,7 +372,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     if (context_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getContext());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -498,7 +401,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
     if (hasContext()) {
       if (!getContext().equals(other.getContext())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -523,7 +426,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getContext().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -655,17 +558,10 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
 
     // Construct using
     // com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -802,7 +698,7 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
       if (other.hasContext()) {
         mergeContext(other.getContext());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -817,19 +713,55 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getEventTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getServiceContextFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                message_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getContextFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1705,7 +1637,18 @@ public final class ReportedErrorEvent extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReportedErrorEvent(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

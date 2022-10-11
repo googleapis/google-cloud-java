@@ -52,111 +52,6 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     return this.unknownFields;
   }
 
-  private ObjectTrackingAnnotation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.videointelligence.v1p3beta1.Entity.Builder subBuilder = null;
-              if (entity_ != null) {
-                subBuilder = entity_.toBuilder();
-              }
-              entity_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.Entity.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entity_);
-                entity_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                frames_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              frames_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder subBuilder = null;
-              if (trackInfoCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_)
-                        .toBuilder();
-              }
-              trackInfo_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.VideoSegment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.videointelligence.v1p3beta1.VideoSegment) trackInfo_);
-                trackInfo_ = subBuilder.buildPartial();
-              }
-              trackInfoCase_ = 3;
-              break;
-            }
-          case 37:
-            {
-              confidence_ = input.readFloat();
-              break;
-            }
-          case 40:
-            {
-              trackInfo_ = input.readInt64();
-              trackInfoCase_ = 5;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        frames_ = java.util.Collections.unmodifiableList(frames_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p3beta1_ObjectTrackingAnnotation_descriptor;
@@ -501,7 +396,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
     if (trackInfoCase_ == 5) {
       output.writeInt64(5, (long) ((java.lang.Long) trackInfo_));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -529,7 +424,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeInt64Size(
               5, (long) ((java.lang.Long) trackInfo_));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -563,7 +458,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -596,7 +491,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -728,24 +623,18 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
     // Construct using
     // com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getFramesFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (segmentBuilder_ != null) {
+        segmentBuilder_.clear();
+      }
       if (entityBuilder_ == null) {
         entity_ = null;
       } else {
@@ -756,10 +645,11 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
 
       if (framesBuilder_ == null) {
         frames_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        frames_ = null;
         framesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       trackInfoCase_ = 0;
       trackInfo_ = null;
       return this;
@@ -920,7 +810,7 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -935,19 +825,69 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getEntityFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame.parser(),
+                        extensionRegistry);
+                if (framesBuilder_ == null) {
+                  ensureFramesIsMutable();
+                  frames_.add(m);
+                } else {
+                  framesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getSegmentFieldBuilder().getBuilder(), extensionRegistry);
+                trackInfoCase_ = 3;
+                break;
+              } // case 26
+            case 37:
+              {
+                confidence_ = input.readFloat();
+
+                break;
+              } // case 37
+            case 40:
+              {
+                trackInfo_ = input.readInt64();
+                trackInfoCase_ = 5;
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1992,7 +1932,18 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ObjectTrackingAnnotation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -61,161 +61,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Network(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ipAddress_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                macAddress_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              macAddress_.add(s);
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vlanId_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cidr_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.baremetalsolution.v2.VRF.Builder subBuilder = null;
-              if (vrf_ != null) {
-                subBuilder = vrf_.toBuilder();
-              }
-              vrf_ =
-                  input.readMessage(
-                      com.google.cloud.baremetalsolution.v2.VRF.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vrf_);
-                vrf_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              servicesCidr_ = s;
-              break;
-            }
-          case 106:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                reservations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.baremetalsolution.v2.NetworkAddressReservation>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              reservations_.add(
-                  input.readMessage(
-                      com.google.cloud.baremetalsolution.v2.NetworkAddressReservation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        macAddress_ = macAddress_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        reservations_ = java.util.Collections.unmodifiableList(reservations_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.baremetalsolution.v2.NetworkProto
         .internal_static_google_cloud_baremetalsolution_v2_Network_descriptor;
@@ -1278,7 +1123,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservations_.size(); i++) {
       output.writeMessage(13, reservations_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1336,7 +1181,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, reservations_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1367,7 +1212,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getServicesCidr().equals(other.getServicesCidr())) return false;
     if (!getReservationsList().equals(other.getReservationsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1410,7 +1255,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESERVATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getReservationsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1559,19 +1404,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.baremetalsolution.v2.Network.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getReservationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1604,10 +1440,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
       if (reservationsBuilder_ == null) {
         reservations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        reservations_ = null;
         reservationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1785,7 +1622,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1800,17 +1637,117 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.baremetalsolution.v2.Network parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16:
+              {
+                type_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                ipAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMacAddressIsMutable();
+                macAddress_.add(s);
+                break;
+              } // case 34
+            case 42:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 48:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                vlanId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                cidr_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getVrfFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 90
+            case 98:
+              {
+                servicesCidr_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 106:
+              {
+                com.google.cloud.baremetalsolution.v2.NetworkAddressReservation m =
+                    input.readMessage(
+                        com.google.cloud.baremetalsolution.v2.NetworkAddressReservation.parser(),
+                        extensionRegistry);
+                if (reservationsBuilder_ == null) {
+                  ensureReservationsIsMutable();
+                  reservations_.add(m);
+                } else {
+                  reservationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.baremetalsolution.v2.Network) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3643,7 +3580,18 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Network(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

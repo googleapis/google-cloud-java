@@ -53,110 +53,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private AllocationPolicy(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.Builder subBuilder = null;
-              if (location_ != null) {
-                subBuilder = location_.toBuilder();
-              }
-              location_ =
-                  input.readMessage(
-                      com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(location_);
-                location_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.Builder subBuilder = null;
-              if (network_ != null) {
-                subBuilder = network_.toBuilder();
-              }
-              network_ =
-                  input.readMessage(
-                      com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(network_);
-                network_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                instances_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              instances_.add(
-                  input.readMessage(
-                      com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        instances_ = java.util.Collections.unmodifiableList(instances_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.batch.v1.JobProto
         .internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor;
@@ -499,59 +395,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return this.unknownFields;
     }
 
-    private LocationPolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  allowedLocations_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                allowedLocations_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          allowedLocations_ = allowedLocations_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_LocationPolicy_descriptor;
@@ -689,7 +532,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < allowedLocations_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, allowedLocations_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -706,7 +549,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         size += dataSize;
         size += 1 * getAllowedLocationsList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -723,7 +566,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy) obj;
 
       if (!getAllowedLocationsList().equals(other.getAllowedLocationsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -738,7 +581,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + ALLOWED_LOCATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getAllowedLocationsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -862,17 +705,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -975,7 +811,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -990,18 +826,38 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllowedLocationsIsMutable();
+                  allowedLocations_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1307,7 +1163,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new LocationPolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1515,78 +1383,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Disk(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                type_ = s;
-                break;
-              }
-            case 16:
-              {
-                sizeGb_ = input.readInt64();
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                dataSourceCase_ = 4;
-                dataSource_ = s;
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                dataSourceCase_ = 5;
-                dataSource_ = s;
-                break;
-              }
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                diskInterface_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1945,7 +1741,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskInterface_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, diskInterface_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1969,7 +1765,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskInterface_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, diskInterface_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1999,7 +1795,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2028,7 +1824,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2162,17 +1958,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.Disk.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2306,7 +2095,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2321,18 +2110,63 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.Disk parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  type_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  sizeGb_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  dataSourceCase_ = 4;
+                  dataSource_ = s;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  dataSourceCase_ = 5;
+                  dataSource_ = s;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  diskInterface_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.Disk) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2939,7 +2773,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Disk(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3077,77 +2923,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AttachedDisk(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder subBuilder = null;
-                if (attachedCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.batch.v1.AllocationPolicy.Disk) attached_).toBuilder();
-                }
-                attached_ =
-                    input.readMessage(
-                        com.google.cloud.batch.v1.AllocationPolicy.Disk.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.cloud.batch.v1.AllocationPolicy.Disk) attached_);
-                  attached_ = subBuilder.buildPartial();
-                }
-                attachedCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                attachedCase_ = 2;
-                attached_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                deviceName_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3387,7 +3162,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deviceName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3407,7 +3182,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deviceName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deviceName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3435,7 +3210,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3460,7 +3235,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3593,22 +3368,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (newDiskBuilder_ != null) {
+          newDiskBuilder_.clear();
+        }
         deviceName_ = "";
 
         attachedCase_ = 0;
@@ -3726,7 +3497,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3741,18 +3512,50 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getNewDiskFieldBuilder().getBuilder(), extensionRegistry);
+                  attachedCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  attachedCase_ = 2;
+                  attached_ = s;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  deviceName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4191,7 +3994,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AttachedDisk(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4297,62 +4112,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Accelerator(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                type_ = s;
-                break;
-              }
-            case 16:
-              {
-                count_ = input.readInt64();
-                break;
-              }
-            case 24:
-              {
-                installGpuDrivers_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4477,7 +4236,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (installGpuDrivers_ != false) {
         output.writeBool(3, installGpuDrivers_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4495,7 +4254,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (installGpuDrivers_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, installGpuDrivers_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4514,7 +4273,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!getType().equals(other.getType())) return false;
       if (getCount() != other.getCount()) return false;
       if (getInstallGpuDrivers() != other.getInstallGpuDrivers()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4531,7 +4290,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
       hash = (37 * hash) + INSTALL_GPU_DRIVERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallGpuDrivers());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4663,17 +4422,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.Accelerator.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4777,7 +4529,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (other.getInstallGpuDrivers() != false) {
           setInstallGpuDrivers(other.getInstallGpuDrivers());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4792,18 +4544,49 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.Accelerator parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  type_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  count_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  installGpuDrivers_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.Accelerator) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5046,7 +4829,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Accelerator(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5305,101 +5100,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private InstancePolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                machineType_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                minCpuPlatform_ = s;
-                break;
-              }
-            case 32:
-              {
-                int rawValue = input.readEnum();
-
-                provisioningModel_ = rawValue;
-                break;
-              }
-            case 42:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  accelerators_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.batch.v1.AllocationPolicy.Accelerator>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                accelerators_.add(
-                    input.readMessage(
-                        com.google.cloud.batch.v1.AllocationPolicy.Accelerator.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 50:
-              {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  disks_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                disks_.add(
-                    input.readMessage(
-                        com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          disks_ = java.util.Collections.unmodifiableList(disks_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5745,7 +5445,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < disks_.size(); i++) {
         output.writeMessage(6, disks_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5772,7 +5472,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < disks_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, disks_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5793,7 +5493,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (provisioningModel_ != other.provisioningModel_) return false;
       if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
       if (!getDisksList().equals(other.getDisksList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5818,7 +5518,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + DISKS_FIELD_NUMBER;
         hash = (53 * hash) + getDisksList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5951,20 +5651,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getAcceleratorsFieldBuilder();
-          getDisksFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -5978,16 +5668,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
         if (acceleratorsBuilder_ == null) {
           accelerators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          accelerators_ = null;
           acceleratorsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (disksBuilder_ == null) {
           disks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          disks_ = null;
           disksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -6154,7 +5846,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6169,18 +5861,77 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  machineType_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  minCpuPlatform_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 32:
+                {
+                  provisioningModel_ = input.readEnum();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  com.google.cloud.batch.v1.AllocationPolicy.Accelerator m =
+                      input.readMessage(
+                          com.google.cloud.batch.v1.AllocationPolicy.Accelerator.parser(),
+                          extensionRegistry);
+                  if (acceleratorsBuilder_ == null) {
+                    ensureAcceleratorsIsMutable();
+                    accelerators_.add(m);
+                  } else {
+                    acceleratorsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              case 50:
+                {
+                  com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk m =
+                      input.readMessage(
+                          com.google.cloud.batch.v1.AllocationPolicy.AttachedDisk.parser(),
+                          extensionRegistry);
+                  if (disksBuilder_ == null) {
+                    ensureDisksIsMutable();
+                    disks_.add(m);
+                  } else {
+                    disksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7315,7 +7066,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new InstancePolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7450,72 +7213,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private InstancePolicyOrTemplate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy.Builder subBuilder = null;
-                if (policyTemplateCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy) policyTemplate_)
-                          .toBuilder();
-                }
-                policyTemplate_ =
-                    input.readMessage(
-                        com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.batch.v1.AllocationPolicy.InstancePolicy) policyTemplate_);
-                  policyTemplate_ = subBuilder.buildPartial();
-                }
-                policyTemplateCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                policyTemplateCase_ = 2;
-                policyTemplate_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7728,7 +7425,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (policyTemplateCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, policyTemplate_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -7745,7 +7442,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (policyTemplateCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, policyTemplate_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -7772,7 +7469,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7795,7 +7492,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7929,22 +7626,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (policyBuilder_ != null) {
+          policyBuilder_.clear();
+        }
         policyTemplateCase_ = 0;
         policyTemplate_ = null;
         return this;
@@ -8060,7 +7753,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -8075,19 +7768,44 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                  policyTemplateCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  policyTemplateCase_ = 2;
+                  policyTemplate_ = s;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -8500,7 +8218,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new InstancePolicyOrTemplate(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -8627,64 +8357,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private NetworkInterface(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                network_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                subnetwork_ = s;
-                break;
-              }
-            case 24:
-              {
-                noExternalIpAddress_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8847,7 +8519,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (noExternalIpAddress_ != false) {
         output.writeBool(3, noExternalIpAddress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8865,7 +8537,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (noExternalIpAddress_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, noExternalIpAddress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8884,7 +8556,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!getNetwork().equals(other.getNetwork())) return false;
       if (!getSubnetwork().equals(other.getSubnetwork())) return false;
       if (getNoExternalIpAddress() != other.getNoExternalIpAddress()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8901,7 +8573,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getSubnetwork().hashCode();
       hash = (37 * hash) + NO_EXTERNAL_IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoExternalIpAddress());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9033,17 +8705,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -9150,7 +8815,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (other.getNoExternalIpAddress() != false) {
           setNoExternalIpAddress(other.getNoExternalIpAddress());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9165,19 +8830,49 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  network_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  subnetwork_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 24:
+                {
+                  noExternalIpAddress_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9497,7 +9192,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new NetworkInterface(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -9619,63 +9326,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return this.unknownFields;
     }
 
-    private NetworkPolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  networkInterfaces_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                networkInterfaces_.add(
-                    input.readMessage(
-                        com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.batch.v1.JobProto
           .internal_static_google_cloud_batch_v1_AllocationPolicy_NetworkPolicy_descriptor;
@@ -9792,7 +9442,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < networkInterfaces_.size(); i++) {
         output.writeMessage(1, networkInterfaces_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9805,7 +9455,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, networkInterfaces_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9822,7 +9472,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy) obj;
 
       if (!getNetworkInterfacesList().equals(other.getNetworkInterfacesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9837,7 +9487,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + NETWORK_INTERFACES_FIELD_NUMBER;
         hash = (53 * hash) + getNetworkInterfacesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9969,19 +9619,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getNetworkInterfacesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -9989,10 +9630,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         super.clear();
         if (networkInterfacesBuilder_ == null) {
           networkInterfaces_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          networkInterfaces_ = null;
           networkInterfacesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -10109,7 +9751,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -10124,18 +9766,45 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface m =
+                      input.readMessage(
+                          com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.parser(),
+                          extensionRegistry);
+                  if (networkInterfacesBuilder_ == null) {
+                    ensureNetworkInterfacesIsMutable();
+                    networkInterfaces_.add(m);
+                  } else {
+                    networkInterfacesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -10581,7 +10250,19 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new NetworkPolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -10927,7 +10608,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < instances_.size(); i++) {
       output.writeMessage(8, instances_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -10955,7 +10636,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < instances_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, instances_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -10981,7 +10662,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     if (hasNetwork()) {
       if (!getNetwork().equals(other.getNetwork())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -11008,7 +10689,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getNetwork().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -11158,19 +10839,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.batch.v1.AllocationPolicy.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getInstancesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -11184,10 +10856,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       if (instancesBuilder_ == null) {
         instances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        instances_ = null;
         instancesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().clear();
       if (networkBuilder_ == null) {
         network_ = null;
@@ -11327,7 +11000,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (other.hasNetwork()) {
         mergeNetwork(other.getNetwork());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -11342,17 +11015,69 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.batch.v1.AllocationPolicy parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getNetworkFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate m =
+                    input.readMessage(
+                        com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate
+                            .parser(),
+                        extensionRegistry);
+                if (instancesBuilder_ == null) {
+                  ensureInstancesIsMutable();
+                  instances_.add(m);
+                } else {
+                  instancesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.batch.v1.AllocationPolicy) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -12392,7 +12117,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AllocationPolicy(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

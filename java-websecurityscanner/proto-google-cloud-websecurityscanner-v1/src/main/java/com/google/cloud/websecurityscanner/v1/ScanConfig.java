@@ -58,157 +58,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ScanConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 24:
-            {
-              maxQps_ = input.readInt32();
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                startingUrls_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              startingUrls_.add(s);
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.Builder subBuilder =
-                  null;
-              if (authentication_ != null) {
-                subBuilder = authentication_.toBuilder();
-              }
-              authentication_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authentication_);
-                authentication_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              userAgent_ = rawValue;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              blacklistPatterns_.add(s);
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule.Builder subBuilder = null;
-              if (schedule_ != null) {
-                subBuilder = schedule_.toBuilder();
-              }
-              schedule_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(schedule_);
-                schedule_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              exportToSecurityCommandCenter_ = rawValue;
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              riskLevel_ = rawValue;
-              break;
-            }
-          case 104:
-            {
-              managedScan_ = input.readBool();
-              break;
-            }
-          case 112:
-            {
-              staticIpScan_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        startingUrls_ = startingUrls_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        blacklistPatterns_ = blacklistPatterns_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.ScanConfigProto
         .internal_static_google_cloud_websecurityscanner_v1_ScanConfig_descriptor;
@@ -743,11 +592,14 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
+     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return Whether the googleAccount field is set.
      */
+    @java.lang.Deprecated
     boolean hasGoogleAccount();
     /**
      *
@@ -757,11 +609,14 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
+     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return The googleAccount.
      */
+    @java.lang.Deprecated
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount();
     /**
@@ -772,9 +627,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccountOrBuilder
         getGoogleAccountOrBuilder();
 
@@ -899,126 +755,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Authentication(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
-                        .Builder
-                    subBuilder = null;
-                if (authenticationCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                                  .GoogleAccount)
-                              authentication_)
-                          .toBuilder();
-                }
-                authentication_ =
-                    input.readMessage(
-                        com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                            .GoogleAccount.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                              .GoogleAccount)
-                          authentication_);
-                  authentication_ = subBuilder.buildPartial();
-                }
-                authenticationCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount
-                        .Builder
-                    subBuilder = null;
-                if (authenticationCase_ == 2) {
-                  subBuilder =
-                      ((com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                                  .CustomAccount)
-                              authentication_)
-                          .toBuilder();
-                }
-                authentication_ =
-                    input.readMessage(
-                        com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                            .CustomAccount.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                              .CustomAccount)
-                          authentication_);
-                  authentication_ = subBuilder.buildPartial();
-                }
-                authenticationCase_ = 2;
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
-                        .Builder
-                    subBuilder = null;
-                if (authenticationCase_ == 4) {
-                  subBuilder =
-                      ((com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                                  .IapCredential)
-                              authentication_)
-                          .toBuilder();
-                }
-                authentication_ =
-                    input.readMessage(
-                        com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                            .IapCredential.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                              .IapCredential)
-                          authentication_);
-                  authentication_ = subBuilder.buildPartial();
-                }
-                authenticationCase_ = 4;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.websecurityscanner.v1.ScanConfigProto
           .internal_static_google_cloud_websecurityscanner_v1_ScanConfig_Authentication_descriptor;
@@ -1034,6 +770,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.Builder.class);
     }
 
+    @java.lang.Deprecated
     public interface GoogleAccountOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount)
@@ -1101,6 +838,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * Protobuf type {@code
      * google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount}
      */
+    @java.lang.Deprecated
     public static final class GoogleAccount extends com.google.protobuf.GeneratedMessageV3
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount)
@@ -1125,60 +863,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private GoogleAccount(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  username_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  password_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1318,7 +1002,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1333,7 +1017,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1353,7 +1037,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         if (!getUsername().equals(other.getUsername())) return false;
         if (!getPassword().equals(other.getPassword())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1368,7 +1052,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getUsername().hashCode();
         hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
         hash = (53 * hash) + getPassword().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1513,17 +1197,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1634,7 +1311,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             password_ = other.password_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1649,20 +1326,43 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    username_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    password_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1920,7 +1620,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new GoogleAccount(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -2057,67 +1769,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private CustomAccount(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  username_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  password_ = s;
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  loginUrl_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2309,7 +1960,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loginUrl_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, loginUrl_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2327,7 +1978,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(loginUrl_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, loginUrl_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2348,7 +1999,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (!getUsername().equals(other.getUsername())) return false;
         if (!getPassword().equals(other.getPassword())) return false;
         if (!getLoginUrl().equals(other.getLoginUrl())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2365,7 +2016,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getPassword().hashCode();
         hash = (37 * hash) + LOGIN_URL_FIELD_NUMBER;
         hash = (53 * hash) + getLoginUrl().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2510,17 +2161,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -2638,7 +2282,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             loginUrl_ = other.loginUrl_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2653,20 +2297,49 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    username_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    password_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    loginUrl_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3030,7 +2703,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new CustomAccount(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3140,73 +2825,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private IapCredential(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
-                          .IapTestServiceAccountInfo.Builder
-                      subBuilder = null;
-                  if (iapCredentialsCase_ == 1) {
-                    subBuilder =
-                        ((com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                                    .IapCredential.IapTestServiceAccountInfo)
-                                iapCredentials_)
-                            .toBuilder();
-                  }
-                  iapCredentials_ =
-                      input.readMessage(
-                          com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                              .IapCredential.IapTestServiceAccountInfo.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
-                                .IapCredential.IapTestServiceAccountInfo)
-                            iapCredentials_);
-                    iapCredentials_ = subBuilder.buildPartial();
-                  }
-                  iapCredentialsCase_ = 1;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.websecurityscanner.v1.ScanConfigProto
             .internal_static_google_cloud_websecurityscanner_v1_ScanConfig_Authentication_IapCredential_descriptor;
@@ -3294,53 +2912,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private IapTestServiceAccountInfo(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    targetAudienceClientId_ = s;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3431,7 +3002,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetAudienceClientId_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 1, targetAudienceClientId_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -3445,7 +3016,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.GeneratedMessageV3.computeStringSize(
                     1, targetAudienceClientId_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -3469,7 +3040,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                       obj;
 
           if (!getTargetAudienceClientId().equals(other.getTargetAudienceClientId())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -3482,7 +3053,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           hash = (19 * hash) + getDescriptor().hashCode();
           hash = (37 * hash) + TARGET_AUDIENCE_CLIENT_ID_FIELD_NUMBER;
           hash = (53 * hash) + getTargetAudienceClientId().hashCode();
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -3644,17 +3215,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential.IapTestServiceAccountInfo.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -3768,7 +3332,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               targetAudienceClientId_ = other.targetAudienceClientId_;
               onChanged();
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -3783,22 +3347,37 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
-                    .IapTestServiceAccountInfo
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      targetAudienceClientId_ = input.readStringRequireUtf8();
+
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
-                          .IapTestServiceAccountInfo)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -3957,7 +3536,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new IapTestServiceAccountInfo(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -4113,7 +3704,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                       .IapTestServiceAccountInfo)
                   iapCredentials_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4130,7 +3721,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                           .IapTestServiceAccountInfo)
                       iapCredentials_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4157,7 +3748,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4176,7 +3767,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4321,22 +3912,18 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          if (iapTestServiceAccountInfoBuilder_ != null) {
+            iapTestServiceAccountInfoBuilder_.clear();
+          }
           iapCredentialsCase_ = 0;
           iapCredentials_ = null;
           return this;
@@ -4449,7 +4036,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 break;
               }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4464,20 +4051,38 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        getIapTestServiceAccountInfoFieldBuilder().getBuilder(), extensionRegistry);
+                    iapCredentialsCase_ = 1;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4808,7 +4413,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new IapCredential(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4835,6 +4452,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         implements
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      @java.lang.Deprecated
       GOOGLE_ACCOUNT(1),
       CUSTOM_ACCOUNT(2),
       IAP_CREDENTIAL(4),
@@ -4887,12 +4505,15 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
+     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return Whether the googleAccount field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasGoogleAccount() {
       return authenticationCase_ == 1;
     }
@@ -4904,12 +4525,15 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
+     *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
      * @return The googleAccount.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount() {
       if (authenticationCase_ == 1) {
@@ -4927,10 +4551,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccountOrBuilder
         getGoogleAccountOrBuilder() {
       if (authenticationCase_ == 1) {
@@ -5099,7 +4724,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential)
                 authentication_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5129,7 +4754,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential)
                     authentication_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5159,7 +4784,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5186,7 +4811,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5320,22 +4945,24 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (googleAccountBuilder_ != null) {
+          googleAccountBuilder_.clear();
+        }
+        if (customAccountBuilder_ != null) {
+          customAccountBuilder_.clear();
+        }
+        if (iapCredentialBuilder_ != null) {
+          iapCredentialBuilder_.clear();
+        }
         authenticationCase_ = 0;
         authentication_ = null;
         return this;
@@ -5465,7 +5092,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5480,19 +5107,49 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getGoogleAccountFieldBuilder().getBuilder(), extensionRegistry);
+                  authenticationCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getCustomAccountFieldBuilder().getBuilder(), extensionRegistry);
+                  authenticationCase_ = 2;
+                  break;
+                } // case 18
+              case 34:
+                {
+                  input.readMessage(getIapCredentialFieldBuilder().getBuilder(), extensionRegistry);
+                  authenticationCase_ = 4;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5525,12 +5182,15 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
+       *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
        * @return Whether the googleAccount field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasGoogleAccount() {
         return authenticationCase_ == 1;
       }
@@ -5542,12 +5202,15 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        *
+       * @deprecated google.cloud.websecurityscanner.v1.ScanConfig.Authentication.google_account is
+       *     deprecated. See google/cloud/websecurityscanner/v1/scan_config.proto;l=80
        * @return The googleAccount.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
           getGoogleAccount() {
         if (googleAccountBuilder_ == null) {
@@ -5573,9 +5236,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
+      @java.lang.Deprecated
       public Builder setGoogleAccount(
           com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount value) {
         if (googleAccountBuilder_ == null) {
@@ -5598,9 +5262,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
+      @java.lang.Deprecated
       public Builder setGoogleAccount(
           com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount.Builder
               builderForValue) {
@@ -5621,9 +5286,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
+      @java.lang.Deprecated
       public Builder mergeGoogleAccount(
           com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount value) {
         if (googleAccountBuilder_ == null) {
@@ -5661,9 +5327,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
+      @java.lang.Deprecated
       public Builder clearGoogleAccount() {
         if (googleAccountBuilder_ == null) {
           if (authenticationCase_ == 1) {
@@ -5688,9 +5355,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount.Builder
           getGoogleAccountBuilder() {
         return getGoogleAccountFieldBuilder().getBuilder();
@@ -5703,10 +5371,11 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccountOrBuilder
           getGoogleAccountOrBuilder() {
         if ((authenticationCase_ == 1) && (googleAccountBuilder_ != null)) {
@@ -5728,7 +5397,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * .google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount google_account = 1 [deprecated = true];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6304,7 +5973,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Authentication(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6418,65 +6099,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private Schedule(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (scheduleTime_ != null) {
-                  subBuilder = scheduleTime_.toBuilder();
-                }
-                scheduleTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(scheduleTime_);
-                  scheduleTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 16:
-              {
-                intervalDurationDays_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.websecurityscanner.v1.ScanConfigProto
           .internal_static_google_cloud_websecurityscanner_v1_ScanConfig_Schedule_descriptor;
@@ -6587,7 +6209,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (intervalDurationDays_ != 0) {
         output.writeInt32(2, intervalDurationDays_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6602,7 +6224,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (intervalDurationDays_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, intervalDurationDays_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6623,7 +6245,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (!getScheduleTime().equals(other.getScheduleTime())) return false;
       }
       if (getIntervalDurationDays() != other.getIntervalDurationDays()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6640,7 +6262,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + INTERVAL_DURATION_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getIntervalDurationDays();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6772,17 +6394,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -6889,7 +6504,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         if (other.getIntervalDurationDays() != 0) {
           setIntervalDurationDays(other.getIntervalDurationDays());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6904,18 +6519,43 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  intervalDurationDays_ = input.readInt32();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7217,7 +6857,19 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Schedule(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7747,6 +7399,24 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     return staticIpScan_;
   }
 
+  public static final int IGNORE_HTTP_STATUS_ERRORS_FIELD_NUMBER = 15;
+  private boolean ignoreHttpStatusErrors_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to keep scanning even if most requests return HTTP error codes.
+   * </pre>
+   *
+   * <code>bool ignore_http_status_errors = 15;</code>
+   *
+   * @return The ignoreHttpStatusErrors.
+   */
+  @java.lang.Override
+  public boolean getIgnoreHttpStatusErrors() {
+    return ignoreHttpStatusErrors_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7804,7 +7474,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     if (staticIpScan_ != false) {
       output.writeBool(14, staticIpScan_);
     }
-    unknownFields.writeTo(output);
+    if (ignoreHttpStatusErrors_ != false) {
+      output.writeBool(15, ignoreHttpStatusErrors_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -7867,7 +7540,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     if (staticIpScan_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, staticIpScan_);
     }
-    size += unknownFields.getSerializedSize();
+    if (ignoreHttpStatusErrors_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, ignoreHttpStatusErrors_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7901,7 +7577,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     if (riskLevel_ != other.riskLevel_) return false;
     if (getManagedScan() != other.getManagedScan()) return false;
     if (getStaticIpScan() != other.getStaticIpScan()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (getIgnoreHttpStatusErrors() != other.getIgnoreHttpStatusErrors()) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7944,7 +7621,9 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManagedScan());
     hash = (37 * hash) + STATIC_IP_SCAN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStaticIpScan());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (37 * hash) + IGNORE_HTTP_STATUS_ERRORS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreHttpStatusErrors());
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -8073,17 +7752,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1.ScanConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -8120,6 +7792,8 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       managedScan_ = false;
 
       staticIpScan_ = false;
+
+      ignoreHttpStatusErrors_ = false;
 
       return this;
     }
@@ -8177,6 +7851,7 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       result.riskLevel_ = riskLevel_;
       result.managedScan_ = managedScan_;
       result.staticIpScan_ = staticIpScan_;
+      result.ignoreHttpStatusErrors_ = ignoreHttpStatusErrors_;
       onBuilt();
       return result;
     }
@@ -8279,7 +7954,10 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getStaticIpScan() != false) {
         setStaticIpScan(other.getStaticIpScan());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (other.getIgnoreHttpStatusErrors() != false) {
+        setIgnoreHttpStatusErrors(other.getIgnoreHttpStatusErrors());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -8294,18 +7972,111 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.websecurityscanner.v1.ScanConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                maxQps_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStartingUrlsIsMutable();
+                startingUrls_.add(s);
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getAuthenticationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 48:
+              {
+                userAgent_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureBlacklistPatternsIsMutable();
+                blacklistPatterns_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getScheduleFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 80:
+              {
+                exportToSecurityCommandCenter_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 96:
+              {
+                riskLevel_ = input.readEnum();
+
+                break;
+              } // case 96
+            case 104:
+              {
+                managedScan_ = input.readBool();
+
+                break;
+              } // case 104
+            case 112:
+              {
+                staticIpScan_ = input.readBool();
+
+                break;
+              } // case 112
+            case 120:
+              {
+                ignoreHttpStatusErrors_ = input.readBool();
+
+                break;
+              } // case 120
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.websecurityscanner.v1.ScanConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -9743,6 +9514,58 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean ignoreHttpStatusErrors_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to keep scanning even if most requests return HTTP error codes.
+     * </pre>
+     *
+     * <code>bool ignore_http_status_errors = 15;</code>
+     *
+     * @return The ignoreHttpStatusErrors.
+     */
+    @java.lang.Override
+    public boolean getIgnoreHttpStatusErrors() {
+      return ignoreHttpStatusErrors_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to keep scanning even if most requests return HTTP error codes.
+     * </pre>
+     *
+     * <code>bool ignore_http_status_errors = 15;</code>
+     *
+     * @param value The ignoreHttpStatusErrors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoreHttpStatusErrors(boolean value) {
+
+      ignoreHttpStatusErrors_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to keep scanning even if most requests return HTTP error codes.
+     * </pre>
+     *
+     * <code>bool ignore_http_status_errors = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoreHttpStatusErrors() {
+
+      ignoreHttpStatusErrors_ = false;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -9775,7 +9598,18 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ScanConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

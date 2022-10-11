@@ -50,64 +50,6 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DiskParams(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case -1273597982:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                resourceManagerTags_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ResourceManagerTagsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  resourceManagerTags__ =
-                      input.readMessage(
-                          ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              resourceManagerTags_
-                  .getMutableMap()
-                  .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_DiskParams_descriptor;
@@ -256,7 +198,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
         internalGetResourceManagerTags(),
         ResourceManagerTagsDefaultEntryHolder.defaultEntry,
         377671164);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -277,7 +219,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               377671164, resourceManagerTags__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -294,7 +236,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
 
     if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -309,7 +251,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -458,17 +400,10 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.DiskParams.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -555,7 +490,7 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.DiskParams other) {
       if (other == com.google.cloud.compute.v1.DiskParams.getDefaultInstance()) return this;
       internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -570,17 +505,43 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.DiskParams parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case -1273597982:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    resourceManagerTags__ =
+                        input.readMessage(
+                            ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableResourceManagerTags()
+                    .getMutableMap()
+                    .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+                break;
+              } // case -1273597982
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.DiskParams) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -783,7 +744,18 @@ public final class DiskParams extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DiskParams(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

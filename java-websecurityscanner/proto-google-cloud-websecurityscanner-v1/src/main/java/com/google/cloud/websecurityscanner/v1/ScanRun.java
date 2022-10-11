@@ -56,151 +56,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ScanRun(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              executionState_ = rawValue;
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              resultState_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (endTime_ != null) {
-                subBuilder = endTime_.toBuilder();
-              }
-              endTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(endTime_);
-                endTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 48:
-            {
-              urlsCrawledCount_ = input.readInt64();
-              break;
-            }
-          case 56:
-            {
-              urlsTestedCount_ = input.readInt64();
-              break;
-            }
-          case 64:
-            {
-              hasVulnerabilities_ = input.readBool();
-              break;
-            }
-          case 72:
-            {
-              progressPercent_ = input.readInt32();
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.Builder subBuilder = null;
-              if (errorTrace_ != null) {
-                subBuilder = errorTrace_.toBuilder();
-              }
-              errorTrace_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.ScanRunErrorTrace.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(errorTrace_);
-                errorTrace_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                warningTraces_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              warningTraces_.add(
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        warningTraces_ = java.util.Collections.unmodifiableList(warningTraces_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.ScanRunProto
         .internal_static_google_cloud_websecurityscanner_v1_ScanRun_descriptor;
@@ -1063,7 +918,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < warningTraces_.size(); i++) {
       output.writeMessage(11, warningTraces_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1109,7 +964,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < warningTraces_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, warningTraces_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1145,7 +1000,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       if (!getErrorTrace().equals(other.getErrorTrace())) return false;
     }
     if (!getWarningTracesList().equals(other.getWarningTracesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1186,7 +1041,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + WARNING_TRACES_FIELD_NUMBER;
       hash = (53 * hash) + getWarningTracesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1316,19 +1171,10 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1.ScanRun.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getWarningTracesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1368,10 +1214,11 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (warningTracesBuilder_ == null) {
         warningTraces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        warningTraces_ = null;
         warningTracesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -1538,7 +1385,7 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1553,17 +1400,105 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.websecurityscanner.v1.ScanRun parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                executionState_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 24:
+              {
+                resultState_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 48:
+              {
+                urlsCrawledCount_ = input.readInt64();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                urlsTestedCount_ = input.readInt64();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                hasVulnerabilities_ = input.readBool();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                progressPercent_ = input.readInt32();
+
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(getErrorTraceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace m =
+                    input.readMessage(
+                        com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.parser(),
+                        extensionRegistry);
+                if (warningTracesBuilder_ == null) {
+                  ensureWarningTracesIsMutable();
+                  warningTraces_.add(m);
+                } else {
+                  warningTracesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1.ScanRun) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3090,7 +3025,18 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ScanRun(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

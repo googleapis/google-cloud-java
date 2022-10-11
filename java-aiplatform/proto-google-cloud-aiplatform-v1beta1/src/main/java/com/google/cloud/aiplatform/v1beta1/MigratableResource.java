@@ -51,167 +51,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private MigratableResource(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion.Builder
-                  subBuilder = null;
-              if (resourceCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion)
-                            resource_)
-                        .toBuilder();
-              }
-              resource_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion)
-                        resource_);
-                resource_ = subBuilder.buildPartial();
-              }
-              resourceCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel.Builder
-                  subBuilder = null;
-              if (resourceCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel) resource_)
-                        .toBuilder();
-              }
-              resource_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel) resource_);
-                resource_ = subBuilder.buildPartial();
-              }
-              resourceCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset.Builder
-                  subBuilder = null;
-              if (resourceCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset)
-                            resource_)
-                        .toBuilder();
-              }
-              resource_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset)
-                        resource_);
-                resource_ = subBuilder.buildPartial();
-              }
-              resourceCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset.Builder
-                  subBuilder = null;
-              if (resourceCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset)
-                            resource_)
-                        .toBuilder();
-              }
-              resource_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset)
-                        resource_);
-                resource_ = subBuilder.buildPartial();
-              }
-              resourceCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastMigrateTime_ != null) {
-                subBuilder = lastMigrateTime_.toBuilder();
-              }
-              lastMigrateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastMigrateTime_);
-                lastMigrateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastUpdateTime_ != null) {
-                subBuilder = lastUpdateTime_.toBuilder();
-              }
-              lastUpdateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastUpdateTime_);
-                lastUpdateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MigratableResourceProto
         .internal_static_google_cloud_aiplatform_v1beta1_MigratableResource_descriptor;
@@ -329,59 +168,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private MlEngineModelVersion(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                endpoint_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                version_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -532,7 +318,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -547,7 +333,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -566,7 +352,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       if (!getEndpoint().equals(other.getEndpoint())) return false;
       if (!getVersion().equals(other.getVersion())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -581,7 +367,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + getEndpoint().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getVersion().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -721,17 +507,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -839,7 +618,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           version_ = other.version_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -854,20 +633,43 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  endpoint_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  version_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1154,7 +956,19 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MlEngineModelVersion(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1266,59 +1080,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AutomlModel(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                model_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                modelDisplayName_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1458,7 +1219,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, modelDisplayName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1473,7 +1234,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, modelDisplayName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1491,7 +1252,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       if (!getModel().equals(other.getModel())) return false;
       if (!getModelDisplayName().equals(other.getModelDisplayName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1506,7 +1267,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + getModel().hashCode();
       hash = (37 * hash) + MODEL_DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getModelDisplayName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1640,17 +1401,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1754,7 +1508,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           modelDisplayName_ = other.modelDisplayName_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1769,19 +1523,43 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  model_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 26:
+                {
+                  modelDisplayName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2042,7 +1820,19 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AutomlModel(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2154,59 +1944,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AutomlDataset(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                dataset_ = s;
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                datasetDisplayName_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2346,7 +2083,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, datasetDisplayName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2361,7 +2098,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, datasetDisplayName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2379,7 +2116,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       if (!getDataset().equals(other.getDataset())) return false;
       if (!getDatasetDisplayName().equals(other.getDatasetDisplayName())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2394,7 +2131,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       hash = (53 * hash) + getDataset().hashCode();
       hash = (37 * hash) + DATASET_DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDatasetDisplayName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2528,17 +2265,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2643,7 +2373,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           datasetDisplayName_ = other.datasetDisplayName_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2658,19 +2388,43 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  dataset_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 34:
+                {
+                  datasetDisplayName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2931,7 +2685,19 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AutomlDataset(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3123,80 +2889,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private DataLabelingDataset(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                dataset_ = s;
-                break;
-              }
-            case 26:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  dataLabelingAnnotatedDatasets_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
-                              .DataLabelingAnnotatedDataset>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                dataLabelingAnnotatedDatasets_.add(
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
-                            .DataLabelingAnnotatedDataset.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                datasetDisplayName_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          dataLabelingAnnotatedDatasets_ =
-              java.util.Collections.unmodifiableList(dataLabelingAnnotatedDatasets_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.MigratableResourceProto
           .internal_static_google_cloud_aiplatform_v1beta1_MigratableResource_DataLabelingDataset_descriptor;
@@ -3308,60 +3000,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private DataLabelingAnnotatedDataset(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  annotatedDataset_ = s;
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  annotatedDatasetDisplayName_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3504,7 +3142,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.GeneratedMessageV3.writeString(
               output, 3, annotatedDatasetDisplayName_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3521,7 +3159,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.GeneratedMessageV3.computeStringSize(
                   3, annotatedDatasetDisplayName_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3547,7 +3185,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         if (!getAnnotatedDataset().equals(other.getAnnotatedDataset())) return false;
         if (!getAnnotatedDatasetDisplayName().equals(other.getAnnotatedDatasetDisplayName()))
           return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3562,7 +3200,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         hash = (53 * hash) + getAnnotatedDataset().hashCode();
         hash = (37 * hash) + ANNOTATED_DATASET_DISPLAY_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotatedDatasetDisplayName().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3721,17 +3359,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
         // Construct using
         // com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset.DataLabelingAnnotatedDataset.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -3852,7 +3483,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             annotatedDatasetDisplayName_ = other.annotatedDatasetDisplayName_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3867,22 +3498,43 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
-                  .DataLabelingAnnotatedDataset
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    annotatedDataset_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 26:
+                  {
+                    annotatedDatasetDisplayName_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
-                        .DataLabelingAnnotatedDataset)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4147,7 +3799,19 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new DataLabelingAnnotatedDataset(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4390,7 +4054,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, datasetDisplayName_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4410,7 +4074,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetDisplayName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, datasetDisplayName_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4431,7 +4095,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       if (!getDatasetDisplayName().equals(other.getDatasetDisplayName())) return false;
       if (!getDataLabelingAnnotatedDatasetsList()
           .equals(other.getDataLabelingAnnotatedDatasetsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4450,7 +4114,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         hash = (37 * hash) + DATA_LABELING_ANNOTATED_DATASETS_FIELD_NUMBER;
         hash = (53 * hash) + getDataLabelingAnnotatedDatasetsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4590,19 +4254,10 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getDataLabelingAnnotatedDatasetsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -4614,10 +4269,11 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
         if (dataLabelingAnnotatedDatasetsBuilder_ == null) {
           dataLabelingAnnotatedDatasets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          dataLabelingAnnotatedDatasets_ = null;
           dataLabelingAnnotatedDatasetsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4754,7 +4410,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4769,20 +4425,60 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  dataset_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 26:
+                {
+                  com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
+                          .DataLabelingAnnotatedDataset
+                      m =
+                          input.readMessage(
+                              com.google.cloud.aiplatform.v1beta1.MigratableResource
+                                  .DataLabelingDataset.DataLabelingAnnotatedDataset.parser(),
+                              extensionRegistry);
+                  if (dataLabelingAnnotatedDatasetsBuilder_ == null) {
+                    ensureDataLabelingAnnotatedDatasetsIsMutable();
+                    dataLabelingAnnotatedDatasets_.add(m);
+                  } else {
+                    dataLabelingAnnotatedDatasetsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              case 34:
+                {
+                  datasetDisplayName_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5514,7 +5210,19 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DataLabelingDataset(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5981,7 +5689,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     if (lastUpdateTime_ != null) {
       output.writeMessage(6, getLastUpdateTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6020,7 +5728,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     if (lastUpdateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLastUpdateTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -6061,7 +5769,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -6100,7 +5808,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6231,22 +5939,27 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.MigratableResource.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (mlEngineModelVersionBuilder_ != null) {
+        mlEngineModelVersionBuilder_.clear();
+      }
+      if (automlModelBuilder_ != null) {
+        automlModelBuilder_.clear();
+      }
+      if (automlDatasetBuilder_ != null) {
+        automlDatasetBuilder_.clear();
+      }
+      if (dataLabelingDatasetBuilder_ != null) {
+        dataLabelingDatasetBuilder_.clear();
+      }
       if (lastMigrateTimeBuilder_ == null) {
         lastMigrateTime_ = null;
       } else {
@@ -6409,7 +6122,7 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -6424,18 +6137,69 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.MigratableResource parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getMlEngineModelVersionFieldBuilder().getBuilder(), extensionRegistry);
+                resourceCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getAutomlModelFieldBuilder().getBuilder(), extensionRegistry);
+                resourceCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getAutomlDatasetFieldBuilder().getBuilder(), extensionRegistry);
+                resourceCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getDataLabelingDatasetFieldBuilder().getBuilder(), extensionRegistry);
+                resourceCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getLastMigrateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.MigratableResource) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7884,7 +7648,18 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MigratableResource(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

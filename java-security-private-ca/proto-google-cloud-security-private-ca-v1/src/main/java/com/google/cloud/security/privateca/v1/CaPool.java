@@ -57,109 +57,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private CaPool(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              tier_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.Builder subBuilder =
-                  null;
-              if (issuancePolicy_ != null) {
-                subBuilder = issuancePolicy_.toBuilder();
-              }
-              issuancePolicy_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(issuancePolicy_);
-                issuancePolicy_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.Builder subBuilder =
-                  null;
-              if (publishingOptions_ != null) {
-                subBuilder = publishingOptions_.toBuilder();
-              }
-              publishingOptions_ =
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(publishingOptions_);
-                publishingOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1_CaPool_descriptor;
@@ -420,55 +317,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private PublishingOptions(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                publishCaCert_ = input.readBool();
-                break;
-              }
-            case 16:
-              {
-                publishCrl_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1_CaPool_PublishingOptions_descriptor;
@@ -550,7 +398,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (publishCrl_ != false) {
         output.writeBool(2, publishCrl_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -565,7 +413,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (publishCrl_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, publishCrl_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -583,7 +431,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
       if (getPublishCaCert() != other.getPublishCaCert()) return false;
       if (getPublishCrl() != other.getPublishCrl()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -598,7 +446,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublishCaCert());
       hash = (37 * hash) + PUBLISH_CRL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublishCrl());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -735,17 +583,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -845,7 +686,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         if (other.getPublishCrl() != false) {
           setPublishCrl(other.getPublishCrl());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -860,19 +701,43 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1.CaPool.PublishingOptions parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  publishCaCert_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  publishCrl_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1.CaPool.PublishingOptions)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1045,7 +910,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PublishingOptions(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1458,154 +1335,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private IssuancePolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  allowedKeyTypes_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
-                              .AllowedKeyType>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                allowedKeyTypes_.add(
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                            .parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (maximumLifetime_ != null) {
-                  subBuilder = maximumLifetime_.toBuilder();
-                }
-                maximumLifetime_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(maximumLifetime_);
-                  maximumLifetime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes.Builder
-                    subBuilder = null;
-                if (allowedIssuanceModes_ != null) {
-                  subBuilder = allowedIssuanceModes_.toBuilder();
-                }
-                allowedIssuanceModes_ =
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(allowedIssuanceModes_);
-                  allowedIssuanceModes_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.security.privateca.v1.X509Parameters.Builder subBuilder = null;
-                if (baselineValues_ != null) {
-                  subBuilder = baselineValues_.toBuilder();
-                }
-                baselineValues_ =
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1.X509Parameters.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(baselineValues_);
-                  baselineValues_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 42:
-              {
-                com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder
-                    subBuilder = null;
-                if (identityConstraints_ != null) {
-                  subBuilder = identityConstraints_.toBuilder();
-                }
-                identityConstraints_ =
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(identityConstraints_);
-                  identityConstraints_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 50:
-              {
-                com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.Builder
-                    subBuilder = null;
-                if (passthroughExtensions_ != null) {
-                  subBuilder = passthroughExtensions_.toBuilder();
-                }
-                passthroughExtensions_ =
-                    input.readMessage(
-                        com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(passthroughExtensions_);
-                  passthroughExtensions_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          allowedKeyTypes_ = java.util.Collections.unmodifiableList(allowedKeyTypes_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_descriptor;
@@ -1752,100 +1481,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private AllowedKeyType(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                          .RsaKeyType.Builder
-                      subBuilder = null;
-                  if (keyTypeCase_ == 1) {
-                    subBuilder =
-                        ((com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
-                                    .AllowedKeyType.RsaKeyType)
-                                keyType_)
-                            .toBuilder();
-                  }
-                  keyType_ =
-                      input.readMessage(
-                          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
-                              .AllowedKeyType.RsaKeyType.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                                .RsaKeyType)
-                            keyType_);
-                    keyType_ = subBuilder.buildPartial();
-                  }
-                  keyTypeCase_ = 1;
-                  break;
-                }
-              case 18:
-                {
-                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                          .EcKeyType.Builder
-                      subBuilder = null;
-                  if (keyTypeCase_ == 2) {
-                    subBuilder =
-                        ((com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
-                                    .AllowedKeyType.EcKeyType)
-                                keyType_)
-                            .toBuilder();
-                  }
-                  keyType_ =
-                      input.readMessage(
-                          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
-                              .AllowedKeyType.EcKeyType.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                                .EcKeyType)
-                            keyType_);
-                    keyType_ = subBuilder.buildPartial();
-                  }
-                  keyTypeCase_ = 2;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
             .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_descriptor;
@@ -1931,56 +1566,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           return this.unknownFields;
         }
 
-        private RsaKeyType(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8:
-                  {
-                    minModulusSize_ = input.readInt64();
-                    break;
-                  }
-                case 16:
-                  {
-                    maxModulusSize_ = input.readInt64();
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
               .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_AllowedKeyType_RsaKeyType_descriptor;
@@ -2059,7 +1644,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           if (maxModulusSize_ != 0L) {
             output.writeInt64(2, maxModulusSize_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -2074,7 +1659,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           if (maxModulusSize_ != 0L) {
             size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxModulusSize_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -2098,7 +1683,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
           if (getMinModulusSize() != other.getMinModulusSize()) return false;
           if (getMaxModulusSize() != other.getMaxModulusSize()) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -2113,7 +1698,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinModulusSize());
           hash = (37 * hash) + MAX_MODULUS_SIZE_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxModulusSize());
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -2274,17 +1859,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -2400,7 +1978,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             if (other.getMaxModulusSize() != 0L) {
               setMaxModulusSize(other.getMaxModulusSize());
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -2415,21 +1993,43 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.RsaKeyType
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      minModulusSize_ = input.readInt64();
+
+                      break;
+                    } // case 8
+                  case 16:
+                    {
+                      maxModulusSize_ = input.readInt64();
+
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                          .RsaKeyType)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -2588,7 +2188,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new RsaKeyType(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -2681,53 +2293,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private EcKeyType(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8:
-                  {
-                    int rawValue = input.readEnum();
-
-                    signatureAlgorithm_ = rawValue;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3012,7 +2577,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   .getNumber()) {
             output.writeEnum(1, signatureAlgorithm_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -3027,7 +2592,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   .getNumber()) {
             size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, signatureAlgorithm_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -3050,7 +2615,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                       obj;
 
           if (signatureAlgorithm_ != other.signatureAlgorithm_) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -3063,7 +2628,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           hash = (19 * hash) + getDescriptor().hashCode();
           hash = (37 * hash) + SIGNATURE_ALGORITHM_FIELD_NUMBER;
           hash = (53 * hash) + signatureAlgorithm_;
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -3224,17 +2789,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
           // Construct using
           // com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -3344,7 +2902,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             if (other.signatureAlgorithm_ != 0) {
               setSignatureAlgorithmValue(other.getSignatureAlgorithmValue());
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -3359,21 +2917,37 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.EcKeyType
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      signatureAlgorithm_ = input.readEnum();
+
+                      break;
+                    } // case 8
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-                          .EcKeyType)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -3533,7 +3107,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new EcKeyType(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -3760,7 +3346,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                       .EcKeyType)
                   keyType_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3785,7 +3371,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                           .EcKeyType)
                       keyType_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3814,7 +3400,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3837,7 +3423,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3984,22 +3570,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          if (rsaBuilder_ != null) {
+            rsaBuilder_.clear();
+          }
+          if (ellipticCurveBuilder_ != null) {
+            ellipticCurveBuilder_.clear();
+          }
           keyTypeCase_ = 0;
           keyType_ = null;
           return this;
@@ -4122,7 +3707,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 break;
               }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4137,20 +3722,44 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getRsaFieldBuilder().getBuilder(), extensionRegistry);
+                    keyTypeCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getEllipticCurveFieldBuilder().getBuilder(), extensionRegistry);
+                    keyTypeCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4734,7 +4343,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new AllowedKeyType(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4822,56 +4443,6 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private IssuanceModes(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  allowCsrBasedIssuance_ = input.readBool();
-                  break;
-                }
-              case 16:
-                {
-                  allowConfigBasedIssuance_ = input.readBool();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
             .internal_static_google_cloud_security_privateca_v1_CaPool_IssuancePolicy_IssuanceModes_descriptor;
@@ -4947,7 +4518,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         if (allowConfigBasedIssuance_ != false) {
           output.writeBool(2, allowConfigBasedIssuance_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4963,7 +4534,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowConfigBasedIssuance_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4983,7 +4554,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
         if (getAllowCsrBasedIssuance() != other.getAllowCsrBasedIssuance()) return false;
         if (getAllowConfigBasedIssuance() != other.getAllowConfigBasedIssuance()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4999,7 +4570,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ALLOW_CONFIG_BASED_ISSUANCE_FIELD_NUMBER;
         hash =
             (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowConfigBasedIssuance());
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -5144,17 +4715,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -5260,7 +4824,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           if (other.getAllowConfigBasedIssuance() != false) {
             setAllowConfigBasedIssuance(other.getAllowConfigBasedIssuance());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -5275,20 +4839,43 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    allowCsrBasedIssuance_ = input.readBool();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    allowConfigBasedIssuance_ = input.readBool();
+
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -5442,7 +5029,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new IssuanceModes(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -5941,7 +5540,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (passthroughExtensions_ != null) {
         output.writeMessage(6, getPassthroughExtensions());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5972,7 +5571,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPassthroughExtensions());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6009,7 +5608,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (hasPassthroughExtensions()) {
         if (!getPassthroughExtensions().equals(other.getPassthroughExtensions())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6044,7 +5643,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + PASSTHROUGH_EXTENSIONS_FIELD_NUMBER;
         hash = (53 * hash) + getPassthroughExtensions().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6176,19 +5775,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getAllowedKeyTypesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -6196,10 +5786,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         if (allowedKeyTypesBuilder_ == null) {
           allowedKeyTypes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          allowedKeyTypes_ = null;
           allowedKeyTypesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (maximumLifetimeBuilder_ == null) {
           maximumLifetime_ = null;
         } else {
@@ -6388,7 +5979,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         if (other.hasPassthroughExtensions()) {
           mergePassthroughExtensions(other.getPassthroughExtensions());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6403,19 +5994,81 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.AllowedKeyType m =
+                      input.readMessage(
+                          com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy
+                              .AllowedKeyType.parser(),
+                          extensionRegistry);
+                  if (allowedKeyTypesBuilder_ == null) {
+                    ensureAllowedKeyTypesIsMutable();
+                    allowedKeyTypes_.add(m);
+                  } else {
+                    allowedKeyTypesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getMaximumLifetimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getAllowedIssuanceModesFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getBaselineValuesFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getIdentityConstraintsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getPassthroughExtensionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -8169,7 +7822,19 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new IssuancePolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -8527,7 +8192,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 5);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -8558,7 +8223,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, labels__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -8585,7 +8250,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (!getPublishingOptions().equals(other.getPublishingOptions())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -8612,7 +8277,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -8765,17 +8430,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.security.privateca.v1.CaPool.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -8903,7 +8561,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         mergePublishingOptions(other.getPublishingOptions());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -8918,17 +8576,67 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1.CaPool parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                tier_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getIssuancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getPublishingOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.security.privateca.v1.CaPool) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -9783,7 +9491,18 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CaPool(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
