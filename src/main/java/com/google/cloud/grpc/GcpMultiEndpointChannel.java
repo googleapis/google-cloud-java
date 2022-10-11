@@ -30,6 +30,7 @@ import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ClientCall.Listener;
 import io.grpc.ConnectivityState;
+import io.grpc.Context;
 import io.grpc.Grpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -118,6 +119,7 @@ import java.util.concurrent.TimeUnit;
 public class GcpMultiEndpointChannel extends ManagedChannel {
 
   public static final CallOptions.Key<String> ME_KEY = CallOptions.Key.create("MultiEndpoint");
+  public static final Context.Key<String> ME_CONTEXT_KEY = Context.key("MultiEndpoint");
   private final LabelKey endpointKey =
       LabelKey.create("endpoint", "Endpoint address.");
   private final Map<String, MultiEndpoint> multiEndpoints = new ConcurrentHashMap<>();
@@ -428,7 +430,10 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   @Override
   public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
       MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
-    final String multiEndpointKey = callOptions.getOption(ME_KEY);
+    String multiEndpointKey = callOptions.getOption(ME_KEY);
+    if (multiEndpointKey == null) {
+      multiEndpointKey = ME_CONTEXT_KEY.get(Context.current());
+    }
     MultiEndpoint me = defaultMultiEndpoint;
     if (multiEndpointKey != null) {
       me = multiEndpoints.getOrDefault(multiEndpointKey, defaultMultiEndpoint);
