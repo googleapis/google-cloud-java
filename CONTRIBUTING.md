@@ -9,6 +9,22 @@ Contributing
 
 Here are some guidelines for hacking on google-cloud-java.
 
+Repository Structure
+--------------------
+* `google-cloud-pom-parent`
+  * The root aggregator POM that lists all of the modules.
+  * Serves as the parent POM for the `google-cloud-gapic-bom` and module mini BOMs.
+  * Should not have any dependency management so as not to impact the BOMs.
+* `google-cloud-jar-parent`
+  * The root POM for all modules.
+  * The only POM where non-annotated versions should be managed using `dependencyManagement`.
+  * Contains common configuration for `jar` projects.
+* `generation`
+  * A collection of scripts that are used to make updates across modules.
+* `google-cloud-gapic-bom`
+  * A BOM for all non-preview libraries in the monorepo.
+* `java-*`
+  * Individual client libraries. 
 
 Using maven for build/test
 --------------------------
