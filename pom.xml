@@ -49,7 +49,6 @@
   </licenses>
 
   <modules>
-    <module>CoverageAggregator</module>
     <module>google-cloud-gapic-bom</module>
     <module>google-cloud-jar-parent</module>
     <module>java-accessapproval</module>

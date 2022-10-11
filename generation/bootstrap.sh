@@ -96,11 +96,6 @@ git commit -am 'chore: create google-cloud-gapic-bom'
 
 cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
 
-../../generate_coverage_aggregator.sh
-
-git add --all
-git commit -am 'chore: create CoverageAggregator module'
-
 ../../delete_non_generated_samples.sh
 
 git add --all

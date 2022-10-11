@@ -107,29 +107,12 @@ https://devrel.corp.google.com/admin/products/479.
 Find product document URL in the DevRel Services site.
 For example, "https://cloud.google.com/api-keys/" in
 https://devrel.corp.google.com/admin/products/479.
+The value must starts with "https://".
 
 ### API description
 
 Find the short description of the API. Usually the first sentence in the product
 document above.
-
-### Release level
-
-The first client generation is always "preview".
-
-### Transport
-
-Transport layer. Use "grpc".
-
-
-### Language
-
-Use "java"
-
-### Monorepo URL
-
-Use "https://github.com/googleapis/google-cloud-java"
-
 
 ### Example arguments
 
@@ -143,10 +126,6 @@ $ python3.9 new-client.py generate \
   --name-pretty="API Keys API" \
   --product-docs="https://cloud.google.com/api-keys/" \
   --api-description="API Keys lets you create and manage your API keys for your projects." \
-  --release-level=preview \
-  --transport=grpc \
-  --language=java \
-  --monorepo-url="https://github.com/googleapis/google-cloud-java"
 ```
 
 The command creates `workspace` directory in which it prepares the changes for

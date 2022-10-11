@@ -17,12 +17,6 @@ cd monorepo/google-cloud-java
 mvn test -T C1 -B
 ```
 
-To generate the coverage report, then run:
-```shell
-mvn jacoco:report-aggregate -T C1 -B
-```
-The coverage report will be in `monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate`.
-
 ### Input
 
 The file `repos.txt` lists all the split repos to include in the aggregation into the monorepo.

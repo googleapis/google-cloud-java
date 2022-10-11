@@ -51,6 +51,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -122,6 +124,13 @@ public class RecaptchaEnterpriseServiceSettings
   public PagedCallSettings<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
       listKeysSettings() {
     return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).listKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to retrieveLegacySecretKey. */
+  public UnaryCallSettings<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeySettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings())
+        .retrieveLegacySecretKeySettings();
   }
 
   /** Returns the object with the settings used for calls to getKey. */
@@ -300,6 +309,13 @@ public class RecaptchaEnterpriseServiceSettings
     public PagedCallSettings.Builder<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
         listKeysSettings() {
       return getStubSettingsBuilder().listKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveLegacySecretKey. */
+    public UnaryCallSettings.Builder<
+            RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+        retrieveLegacySecretKeySettings() {
+      return getStubSettingsBuilder().retrieveLegacySecretKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to getKey. */

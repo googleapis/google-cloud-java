@@ -424,7 +424,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated (Web keys only).
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -447,7 +447,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated (Web keys only).
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -1293,7 +1293,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated (Web keys only).
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1315,7 +1315,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated (Web keys only).
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1337,7 +1337,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated (Web keys only).
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1358,7 +1358,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated (Web keys only).
      * </pre>
      *
      * <code>string hostname = 4;</code>
@@ -1375,7 +1375,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The hostname of the page on which the token was generated.
+     * The hostname of the page on which the token was generated (Web keys only).
      * </pre>
      *
      * <code>string hostname = 4;</code>

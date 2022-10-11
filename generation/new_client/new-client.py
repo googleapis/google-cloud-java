@@ -36,7 +36,7 @@ def add_module_to_root_pom(pom_path: Path, new_module: str):
     matches = re.findall(r'<module>([\w\-]+?)</module>', content)
     matches.append(new_module)
 
-    # Make normal modules first and BOM and CoverageAggregator at the end
+    # Make normal modules first and BOM at the end
     matches.sort(key=lambda m: f"0{m}" if m.startswith('java-') else m)
     modules_lines = []
     for match in matches:
@@ -71,31 +71,27 @@ def add_module_to_root_pom(pom_path: Path, new_module: str):
 )
 @click.option(
     "--release-level",
-    required=True,
     type=click.Choice(["stable", "preview"]),
-    prompt=True,
     default="preview",
 )
 @click.option(
     "--transport",
-    required=True,
     type=click.Choice(["grpc", "http", "both"]),
-    prompt=True,
     default="grpc",
 )
-@click.option("--language", required=True, type=str, default="java")
+@click.option("--language", type=str, default="java")
 @click.option("--distribution-name", type=str)
 @click.option("--api-id", type=str)
 @click.option("--requires-billing", type=bool, default=True)
 @click.option("--destination-name", type=str, default=None)
-@click.option("--proto-path", type=str, default=None)
+@click.option("--proto-path", required=True, type=str, default=None)
 @click.option("--cloud-api", type=bool, default=True)
 @click.option("--group-id", type=str, default="com.google.cloud")
 @click.option(
     "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
 )
 @click.option("--library-type", type=str)
-@click.option("--monorepo-url", type=str, default=None)
+@click.option("--monorepo-url", type=str, default="https://github.com/googleapis/google-cloud-java")
 def generate(
     api_shortname,
     name_pretty,
@@ -129,12 +125,12 @@ def generate(
     if library_type is None:
         library_type = "GAPIC_AUTO"
 
+    if not product_docs.startswith("https"):
+        sys.exit("product_docs must starts with 'https://'")
+
     client_documentation = (
         f"https://cloud.google.com/{language}/docs/reference/{distribution_name_short}/latest/overview"
     )
-
-    if destination_name is None:
-        destination_name = api_shortname
 
     if proto_path is None:
         proto_path = f"/google/cloud/{api_shortname}"
@@ -215,26 +211,28 @@ def generate(
     print("Cloning googleapis-gen...")
     subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
-    print("Running copy-code...")
+    copy_code_parameters = [
+        "docker",
+        "run",
+        "--rm",
+        "--user",
+        f"{user}:{group}",
+        "-v",
+        f"{workdir.resolve()}:/repo",
+        "-v",
+        ""f"{workdir.resolve()}""/gen/googleapis-gen:/googleapis-gen",
+        "-w",
+        "/repo",
+        "--env", "HOME=/tmp",
+        "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest",
+        "copy-code",
+        "--source-repo=/googleapis-gen",
+        f"--config-file={owlbot_yaml_location_from_module}"
+    ]
+    print("Running copy-code: " + str(copy_code_parameters))
+    print("  in directory: " + str(workdir))
     subprocess.check_call(
-        [
-            "docker",
-            "run",
-            "--rm",
-            "--user",
-            f"{user}:{group}",
-            "-v",
-            f"{workdir.resolve()}:/repo",
-            "-v",
-            ""f"{workdir.resolve()}""/gen/googleapis-gen:/googleapis-gen",
-            "-w",
-            "/repo",
-            "--env", "HOME=/tmp",
-            "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest",
-            "copy-code",
-            "--source-repo=/googleapis-gen",
-            f"--config-file={owlbot_yaml_location_from_module}"
-        ],
+        copy_code_parameters,
         cwd=workdir,
     )
 
@@ -298,7 +296,7 @@ def generate(
         cwd=monorepo_root,
     )
 
-    print("Regenerating CoverageAggregator module and root pom.xml")
+    print("Regenerating root pom.xml")
 
     # This script takes care of updating the root pom.xml
     os.system(f"cd {monorepo_root} && generation/print_root_pom.sh > pom.xml")
@@ -318,13 +316,6 @@ def generate(
         ],
         cwd=monorepo_root,
     )
-    print("Regenerating CoverageAggregator")
-    subprocess.check_call(
-        [
-            "bash", "generation/generate_coverage_aggregator.sh"
-        ],
-        cwd=monorepo_root,
-    )
 
     print("Applying the versions")
     subprocess.check_call(
@@ -337,8 +328,7 @@ def generate(
     # Add the files to commit
     subprocess.check_call([
         "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
-        "release-please-config.json", ".release-please-manifest.json",
-        "CoverageAggregator/pom.xml"],
+        "release-please-config.json", ".release-please-manifest.json"],
         cwd=monorepo_root)
 
     subprocess.check_call(

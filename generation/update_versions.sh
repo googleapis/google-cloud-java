@@ -59,7 +59,7 @@ missing_artifacts=()
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
   # As of 9/21/22: BeyondCorp repos do not have artifacts released to maven central
-  if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ CoverageAggregator ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
+  if [[ "${path}" =~ google-cloud-gapic-bom ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
     continue
   fi
 
