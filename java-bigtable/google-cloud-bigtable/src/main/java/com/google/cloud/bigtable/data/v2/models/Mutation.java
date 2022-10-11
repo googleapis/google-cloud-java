@@ -88,6 +88,19 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   }
 
   /**
+   * Wraps the List of protobuf {@link com.google.bigtable.v2.Mutation}. This methods, like {@link
+   * #createUnsafe()}, allows setCell operation to use server side timestamp. This is dangerous
+   * because mutations will no longer be idempotent, which might cause multiple duplicate values to
+   * be stored in Bigtable. This option should only be used for advanced usecases with extreme care.
+   */
+  @BetaApi
+  public static Mutation fromProtoUnsafe(Iterable<com.google.bigtable.v2.Mutation> protos) {
+    Mutation mutation = new Mutation(true);
+    mutation.mutations.addAll(protos);
+    return mutation;
+  }
+
+  /**
    * Constructs a row mutation from an existing protobuf object.
    *
    * <p>Callers must ensure that the protobuf argument is not using serverside timestamps. The

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.common.base.Preconditions;
@@ -52,6 +53,13 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
   /** Creates a new instance of the mutation builder. */
   public static RowMutationEntry create(@Nonnull ByteString key) {
     return new RowMutationEntry(key, Mutation.create());
+  }
+
+  /** Creates a new instance from existing mutation. */
+  @BetaApi
+  public static RowMutationEntry createFromMutationUnsafe(
+      @Nonnull ByteString key, @Nonnull Mutation mutation) {
+    return new RowMutationEntry(key, mutation);
   }
 
   /**
