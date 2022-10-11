@@ -53,13 +53,6 @@
         <version>2.3.13-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
       </dependency>
       <!-- google-cloud-pubsub is used for testing -->
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-pubsub-bom</artifactId>
-        <version>1.120.13</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
