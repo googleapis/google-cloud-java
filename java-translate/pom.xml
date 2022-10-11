@@ -52,10 +52,6 @@
         <artifactId>google-cloud-translate</artifactId>
         <version>2.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.apis</groupId>
-        <artifactId>google-api-services-translate</artifactId>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
