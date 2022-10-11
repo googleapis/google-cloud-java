@@ -202,6 +202,11 @@ git add ./**/*.java
 git commit -m 'fix: applying a different code generation' --allow-empty
 popd
 
+if [ "${PROTOBUF_VERSION}" == "3.19.6" ];then
+  find . -name pom.xml| xargs sed -i -e "/google-cloud-shared-dependencies/{N;s|<version>.*<\/version>|<version>2.10.1<\/version>|;}"
+  git commit -a -m 'deps: shared deps 2.10.1'
+fi
+
 echo "Changes are ready in workspace/repo. Create a pull request: "
 echo "  cd workspace/repo && gh pr create --base ${BRANCH} \
     --title 'deps: regenerating with new Protobuf'" \
