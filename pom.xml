@@ -49,7 +49,7 @@
   </licenses>
 
   <modules>
-    <module>google-cloud-gapic-bom</module>
+    <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>

@@ -327,7 +327,7 @@ def generate(
 
     # Add the files to commit
     subprocess.check_call([
-        "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
+        "git", "add", "pom.xml", "gapic-libraries-bom/pom.xml",
         "release-please-config.json", ".release-please-manifest.json"],
         cwd=monorepo_root)
 

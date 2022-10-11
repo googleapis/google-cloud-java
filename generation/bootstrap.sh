@@ -91,10 +91,10 @@ git commit -am 'chore: consolidate config to parent'
 # add the gapic bom module to root pom.xml by regenerating aggregator pom
 ../../print_root_pom.sh > pom.xml
 
-git add google-cloud-gapic-bom/pom.xml
-git commit -am 'chore: create google-cloud-gapic-bom'
+git add gapic-libraries-bom/pom.xml
+git commit -am 'chore: create gapic-libraries-bom'
 
-cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
+cp ../../gapic_bom_versions.txt gapic-libraries-bom/versions.txt
 
 ../../delete_non_generated_samples.sh
 
