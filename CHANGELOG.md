@@ -1,6 +1,13 @@
 # Changelog
 
-## 1.2.0 (2021-07-18)
+## 1.3.0 (2022-10-12)
+
+### Features
+
+* Add switching delay to GcpMultiEndpointChannel. (#145)
+* Look for a multi-endpoint specified in gRPC context. (#149)
+
+## 1.2.0 (2022-07-18)
 
 ### Features
 
