@@ -164,6 +164,10 @@
       "component": "google-cloud-container",
       "skip-github-release": true
     },
+    "java-contentwarehouse": {
+      "component": "google-cloud-contentwarehouse",
+      "skip-github-release": true
+    },
     "java-datacatalog": {
       "component": "google-cloud-datacatalog",
       "skip-github-release": true

@@ -214,6 +214,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-contentwarehouse</artifactId>
+      <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datacatalog</artifactId>
       <version>1.9.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
     </dependency>

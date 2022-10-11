@@ -19,6 +19,8 @@
   </properties>
 
   <modules>
+    <module>CoverageAggregator</module>
+    <module>google-cloud-gapic-bom</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-aiplatform</module>
@@ -41,14 +43,14 @@
     <module>java-beyondcorp-appgateways</module>
     <module>java-beyondcorp-clientconnectorservices</module>
     <module>java-beyondcorp-clientgateways</module>
-    <module>java-bigquery-data-exchange</module>
     <module>java-bigqueryconnection</module>
+    <module>java-bigquery-data-exchange</module>
     <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
-    <module>java-billing</module>
     <module>java-billingbudgets</module>
+    <module>java-billing</module>
     <module>java-binary-authorization</module>
     <module>java-certificate-manager</module>
     <module>java-channel</module>
@@ -56,22 +58,22 @@
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-compute</module>
     <module>java-contact-center-insights</module>
-    <module>java-container</module>
     <module>java-containeranalysis</module>
+    <module>java-container</module>
     <module>java-contentwarehouse</module>
-    <module>java-data-fusion</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
+    <module>java-data-fusion</module>
     <module>java-datalabeling</module>
     <module>java-dataplex</module>
-    <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
+    <module>java-dataproc</module>
     <module>java-datastream</module>
     <module>java-debugger-client</module>
     <module>java-deploy</module>
-    <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>
+    <module>java-dialogflow</module>
     <module>java-distributedcloudedge</module>
     <module>java-dlp</module>
     <module>java-dms</module>
@@ -87,8 +89,8 @@
     <module>java-game-servers</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
-    <module>java-gke-multi-cloud</module>
     <module>java-gkehub</module>
+    <module>java-gke-multi-cloud</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
     <module>java-iam-admin</module>
@@ -101,11 +103,11 @@
     <module>java-managed-identities</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
-    <module>java-monitoring</module>
     <module>java-monitoring-dashboards</module>
+    <module>java-monitoring</module>
+    <module>java-networkconnectivity</module>
     <module>java-network-management</module>
     <module>java-network-security</module>
-    <module>java-networkconnectivity</module>
     <module>java-notebooks</module>
     <module>java-notification</module>
     <module>java-optimization</module>
@@ -122,19 +124,19 @@
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
     <module>java-redis</module>
-    <module>java-resource-settings</module>
     <module>java-resourcemanager</module>
+    <module>java-resource-settings</module>
     <module>java-retail</module>
     <module>java-run</module>
     <module>java-scheduler</module>
     <module>java-secretmanager</module>
-    <module>java-security-private-ca</module>
     <module>java-securitycenter</module>
     <module>java-securitycenter-settings</module>
+    <module>java-security-private-ca</module>
     <module>java-service-control</module>
+    <module>java-servicedirectory</module>
     <module>java-service-management</module>
     <module>java-service-usage</module>
-    <module>java-servicedirectory</module>
     <module>java-shell</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
@@ -155,8 +157,7 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
-    <module>CoverageAggregator</module>
-    <module>google-cloud-gapic-bom</module>
+
   </modules>
 
   <build>
