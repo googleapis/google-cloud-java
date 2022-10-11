@@ -36,7 +36,7 @@ def add_module_to_root_pom(pom_path: Path, new_module: str):
     matches = re.findall(r'<module>([\w\-]+?)</module>', content)
     matches.append(new_module)
 
-    # Make normal modules first and BOM and CoverageAggregator at the end
+    # Make normal modules first and BOM at the end
     matches.sort(key=lambda m: f"0{m}" if m.startswith('java-') else m)
     modules_lines = []
     for match in matches:
@@ -296,7 +296,7 @@ def generate(
         cwd=monorepo_root,
     )
 
-    print("Regenerating CoverageAggregator module and root pom.xml")
+    print("Regenerating root pom.xml")
 
     # This script takes care of updating the root pom.xml
     os.system(f"cd {monorepo_root} && generation/print_root_pom.sh > pom.xml")
@@ -316,13 +316,6 @@ def generate(
         ],
         cwd=monorepo_root,
     )
-    print("Regenerating CoverageAggregator")
-    subprocess.check_call(
-        [
-            "bash", "generation/generate_coverage_aggregator.sh"
-        ],
-        cwd=monorepo_root,
-    )
 
     print("Applying the versions")
     subprocess.check_call(
@@ -335,8 +328,7 @@ def generate(
     # Add the files to commit
     subprocess.check_call([
         "git", "add", "pom.xml", "google-cloud-gapic-bom/pom.xml",
-        "release-please-config.json", ".release-please-manifest.json",
-        "CoverageAggregator/pom.xml"],
+        "release-please-config.json", ".release-please-manifest.json"],
         cwd=monorepo_root)
 
     subprocess.check_call(

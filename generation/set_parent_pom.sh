@@ -15,7 +15,7 @@ parent_artifact_id=$(perl -nle 'print $1 if m|<artifactId>(.+)</artifactId>|' po
 # Then, apply the values as the parent pom of each module
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort | xargs dirname); do
   # example value of module is "./java-accessapproval"
-  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+  if [[ "${module}" = *google-cloud-gapic-bom ]]; then
     continue
   fi
   echo "Processing module $module"
