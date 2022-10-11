@@ -54,100 +54,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private WorkflowInvocation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              compilationResult_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder
-                  subBuilder = null;
-              if (invocationConfig_ != null) {
-                subBuilder = invocationConfig_.toBuilder();
-              }
-              invocationConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(invocationConfig_);
-                invocationConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.type.Interval.Builder subBuilder = null;
-              if (invocationTiming_ != null) {
-                subBuilder = invocationTiming_.toBuilder();
-              }
-              invocationTiming_ =
-                  input.readMessage(com.google.type.Interval.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(invocationTiming_);
-                invocationTiming_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataform.v1beta1.DataformProto
         .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_descriptor;
@@ -590,89 +496,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private InvocationConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  includedTargets_ =
-                      new java.util.ArrayList<com.google.cloud.dataform.v1beta1.Target>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                includedTargets_.add(
-                    input.readMessage(
-                        com.google.cloud.dataform.v1beta1.Target.parser(), extensionRegistry));
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  includedTags_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                includedTags_.add(s);
-                break;
-              }
-            case 24:
-              {
-                transitiveDependenciesIncluded_ = input.readBool();
-                break;
-              }
-            case 32:
-              {
-                transitiveDependentsIncluded_ = input.readBool();
-                break;
-              }
-            case 40:
-              {
-                fullyRefreshIncrementalTablesEnabled_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          includedTargets_ = java.util.Collections.unmodifiableList(includedTargets_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          includedTags_ = includedTags_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataform.v1beta1.DataformProto
           .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_InvocationConfig_descriptor;
@@ -918,7 +741,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (fullyRefreshIncrementalTablesEnabled_ != false) {
         output.writeBool(5, fullyRefreshIncrementalTablesEnabled_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -953,7 +776,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 5, fullyRefreshIncrementalTablesEnabled_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -977,7 +800,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         return false;
       if (getFullyRefreshIncrementalTablesEnabled()
           != other.getFullyRefreshIncrementalTablesEnabled()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1007,7 +830,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getFullyRefreshIncrementalTablesEnabled());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1144,19 +967,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getIncludedTargetsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -1164,10 +978,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         super.clear();
         if (includedTargetsBuilder_ == null) {
           includedTargets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          includedTargets_ = null;
           includedTargetsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         includedTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         transitiveDependenciesIncluded_ = false;
@@ -1326,7 +1141,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         if (other.getFullyRefreshIncrementalTablesEnabled() != false) {
           setFullyRefreshIncrementalTablesEnabled(other.getFullyRefreshIncrementalTablesEnabled());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1341,19 +1156,69 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dataform.v1beta1.Target m =
+                      input.readMessage(
+                          com.google.cloud.dataform.v1beta1.Target.parser(), extensionRegistry);
+                  if (includedTargetsBuilder_ == null) {
+                    ensureIncludedTargetsIsMutable();
+                    includedTargets_.add(m);
+                  } else {
+                    includedTargetsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIncludedTagsIsMutable();
+                  includedTags_.add(s);
+                  break;
+                } // case 18
+              case 24:
+                {
+                  transitiveDependenciesIncluded_ = input.readBool();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  transitiveDependentsIncluded_ = input.readBool();
+
+                  break;
+                } // case 32
+              case 40:
+                {
+                  fullyRefreshIncrementalTablesEnabled_ = input.readBool();
+
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2128,7 +1993,19 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new InvocationConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2432,7 +2309,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (invocationTiming_ != null) {
       output.writeMessage(5, getInvocationTiming());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2458,7 +2335,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (invocationTiming_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInvocationTiming());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2485,7 +2362,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasInvocationTiming()) {
       if (!getInvocationTiming().equals(other.getInvocationTiming())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2510,7 +2387,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + INVOCATION_TIMING_FIELD_NUMBER;
       hash = (53 * hash) + getInvocationTiming().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2639,17 +2516,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.dataform.v1beta1.WorkflowInvocation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2780,7 +2650,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (other.hasInvocationTiming()) {
         mergeInvocationTiming(other.getInvocationTiming());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2795,18 +2665,63 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataform.v1beta1.WorkflowInvocation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                compilationResult_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getInvocationConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 32:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getInvocationTimingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dataform.v1beta1.WorkflowInvocation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3588,7 +3503,18 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WorkflowInvocation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

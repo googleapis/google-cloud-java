@@ -54,104 +54,6 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private InitialStateConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 28634:
-            {
-              com.google.cloud.compute.v1.FileContentBuffer.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = pk_.toBuilder();
-              }
-              pk_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pk_);
-                pk_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-          case 794026:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dbs_ = new java.util.ArrayList<com.google.cloud.compute.v1.FileContentBuffer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dbs_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry));
-              break;
-            }
-          case 24616906:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                dbxs_ = new java.util.ArrayList<com.google.cloud.compute.v1.FileContentBuffer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              dbxs_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry));
-              break;
-            }
-          case 26305042:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                keks_ = new java.util.ArrayList<com.google.cloud.compute.v1.FileContentBuffer>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              keks_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dbs_ = java.util.Collections.unmodifiableList(dbs_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        dbxs_ = java.util.Collections.unmodifiableList(dbxs_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        keks_ = java.util.Collections.unmodifiableList(keks_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InitialStateConfig_descriptor;
@@ -447,7 +349,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < keks_.size(); i++) {
       output.writeMessage(3288130, keks_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -468,7 +370,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < keks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3288130, keks_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -491,7 +393,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
     if (hasPk()) {
       if (!getPk().equals(other.getPk())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -518,7 +420,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + PK_FIELD_NUMBER;
       hash = (53 * hash) + getPk().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -670,22 +572,25 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       super.clear();
       if (dbsBuilder_ == null) {
         dbs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dbs_ = null;
         dbsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (dbxsBuilder_ == null) {
         dbxs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        dbxs_ = null;
         dbxsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (keksBuilder_ == null) {
         keks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        keks_ = null;
         keksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (pkBuilder_ == null) {
         pk_ = null;
       } else {
@@ -890,7 +795,7 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
       if (other.hasPk()) {
         mergePk(other.getPk());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -905,17 +810,76 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.InitialStateConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 28634:
+              {
+                input.readMessage(getPkFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 28634
+            case 794026:
+              {
+                com.google.cloud.compute.v1.FileContentBuffer m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry);
+                if (dbsBuilder_ == null) {
+                  ensureDbsIsMutable();
+                  dbs_.add(m);
+                } else {
+                  dbsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 794026
+            case 24616906:
+              {
+                com.google.cloud.compute.v1.FileContentBuffer m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry);
+                if (dbxsBuilder_ == null) {
+                  ensureDbxsIsMutable();
+                  dbxs_.add(m);
+                } else {
+                  dbxsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 24616906
+            case 26305042:
+              {
+                com.google.cloud.compute.v1.FileContentBuffer m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.FileContentBuffer.parser(), extensionRegistry);
+                if (keksBuilder_ == null) {
+                  ensureKeksIsMutable();
+                  keks_.add(m);
+                } else {
+                  keksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26305042
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.InitialStateConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2186,7 +2150,18 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InitialStateConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

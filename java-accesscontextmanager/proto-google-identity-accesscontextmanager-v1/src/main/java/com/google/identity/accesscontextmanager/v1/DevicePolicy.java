@@ -62,136 +62,6 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DevicePolicy(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              requireScreenlock_ = input.readBool();
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                allowedEncryptionStatuses_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              allowedEncryptionStatuses_.add(rawValue);
-              break;
-            }
-          case 18:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  allowedEncryptionStatuses_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                allowedEncryptionStatuses_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                osConstraints_ =
-                    new java.util.ArrayList<
-                        com.google.identity.accesscontextmanager.v1.OsConstraint>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              osConstraints_.add(
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.OsConstraint.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                allowedDeviceManagementLevels_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              allowedDeviceManagementLevels_.add(rawValue);
-              break;
-            }
-          case 50:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  allowedDeviceManagementLevels_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                allowedDeviceManagementLevels_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 56:
-            {
-              requireAdminApproval_ = input.readBool();
-              break;
-            }
-          case 64:
-            {
-              requireCorpOwned_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        allowedEncryptionStatuses_ =
-            java.util.Collections.unmodifiableList(allowedEncryptionStatuses_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        osConstraints_ = java.util.Collections.unmodifiableList(osConstraints_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        allowedDeviceManagementLevels_ =
-            java.util.Collections.unmodifiableList(allowedDeviceManagementLevels_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessLevelProto
         .internal_static_google_identity_accesscontextmanager_v1_DevicePolicy_descriptor;
@@ -607,7 +477,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     if (requireCorpOwned_ != false) {
       output.writeBool(8, requireCorpOwned_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -656,7 +526,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     if (requireCorpOwned_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, requireCorpOwned_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -678,7 +548,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     if (!allowedDeviceManagementLevels_.equals(other.allowedDeviceManagementLevels_)) return false;
     if (getRequireAdminApproval() != other.getRequireAdminApproval()) return false;
     if (getRequireCorpOwned() != other.getRequireCorpOwned()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -707,7 +577,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireAdminApproval());
     hash = (37 * hash) + REQUIRE_CORP_OWNED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequireCorpOwned());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -845,19 +715,10 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.identity.accesscontextmanager.v1.DevicePolicy.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getOsConstraintsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -869,10 +730,11 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       if (osConstraintsBuilder_ == null) {
         osConstraints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        osConstraints_ = null;
         osConstraintsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowedDeviceManagementLevels_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
       requireAdminApproval_ = false;
@@ -1037,7 +899,7 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.getRequireCorpOwned() != false) {
         setRequireCorpOwned(other.getRequireCorpOwned());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1052,18 +914,101 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.identity.accesscontextmanager.v1.DevicePolicy parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                requireScreenlock_ = input.readBool();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAllowedEncryptionStatusesIsMutable();
+                allowedEncryptionStatuses_.add(tmpRaw);
+                break;
+              } // case 16
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureAllowedEncryptionStatusesIsMutable();
+                  allowedEncryptionStatuses_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.identity.accesscontextmanager.v1.OsConstraint m =
+                    input.readMessage(
+                        com.google.identity.accesscontextmanager.v1.OsConstraint.parser(),
+                        extensionRegistry);
+                if (osConstraintsBuilder_ == null) {
+                  ensureOsConstraintsIsMutable();
+                  osConstraints_.add(m);
+                } else {
+                  osConstraintsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 48:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAllowedDeviceManagementLevelsIsMutable();
+                allowedDeviceManagementLevels_.add(tmpRaw);
+                break;
+              } // case 48
+            case 50:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureAllowedDeviceManagementLevelsIsMutable();
+                  allowedDeviceManagementLevels_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 50
+            case 56:
+              {
+                requireAdminApproval_ = input.readBool();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                requireCorpOwned_ = input.readBool();
+
+                break;
+              } // case 64
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.identity.accesscontextmanager.v1.DevicePolicy) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2170,7 +2115,18 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DevicePolicy(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

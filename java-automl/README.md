@@ -11,77 +11,28 @@ Java idiomatic client for [Cloud Auto ML][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.2</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-automl</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-bigquery</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-storage</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>2.3.14</version>
+  <version>2.3.17</version>
 </dependency>
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-bigquery</artifactId>
-  <version>2.16.1</version>
-</dependency>
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-storage</artifactId>
-  <version>2.12.0</version>
-</dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.2')
-
-implementation 'com.google.cloud:google-cloud-automl'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-automl:2.3.15'
+implementation 'com.google.cloud:google-cloud-automl:2.3.17'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.3.15"
+libraryDependencies += "com.google.cloud" % "google-cloud-automl" % "2.3.17"
 ```
 
 ## Authentication
@@ -128,83 +79,6 @@ to learn how to use this Cloud Auto ML Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-automl/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Batch Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/BatchPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/BatchPredict.java) |
-| Cancel Operation | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/CancelOperation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/CancelOperation.java) |
-| Delete Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/DeleteDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/DeleteDataset.java) |
-| Delete Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/DeleteModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/DeleteModel.java) |
-| Deploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/DeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/DeployModel.java) |
-| Get Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/GetModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/GetModel.java) |
-| Get Model Evaluation | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/GetModelEvaluation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/GetModelEvaluation.java) |
-| Get Operation Status | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/GetOperationStatus.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/GetOperationStatus.java) |
-| Import Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/ImportDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/ImportDataset.java) |
-| List Datasets | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/ListDatasets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/ListDatasets.java) |
-| List Model Evaluations | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/ListModelEvaluations.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/ListModelEvaluations.java) |
-| List Models | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/ListModels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/ListModels.java) |
-| Set Endpoint | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/SetEndpoint.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/SetEndpoint.java) |
-| Tables Batch Predict Big Query | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/TablesBatchPredictBigQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/TablesBatchPredictBigQuery.java) |
-| Tables Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/TablesCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/TablesCreateDataset.java) |
-| Tables Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/TablesCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/TablesCreateModel.java) |
-| Tables Get Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/TablesGetModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/TablesGetModel.java) |
-| Tables Import Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/TablesImportDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/TablesImportDataset.java) |
-| Tables Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/TablesPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/TablesPredict.java) |
-| Undeploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/UndeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/UndeployModel.java) |
-| Video Classification Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/VideoClassificationCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/VideoClassificationCreateDataset.java) |
-| Video Classification Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/VideoClassificationCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/VideoClassificationCreateModel.java) |
-| Video Object Tracking Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/VideoObjectTrackingCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/VideoObjectTrackingCreateDataset.java) |
-| Video Object Tracking Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/beta/automl/VideoObjectTrackingCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/beta/automl/VideoObjectTrackingCreateModel.java) |
-| Batch Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/BatchPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/BatchPredict.java) |
-| Delete Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/DeleteDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/DeleteDataset.java) |
-| Delete Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/DeleteModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/DeleteModel.java) |
-| Deploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/DeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/DeployModel.java) |
-| Export Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/ExportDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/ExportDataset.java) |
-| Get Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/GetDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/GetDataset.java) |
-| Get Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/GetModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/GetModel.java) |
-| Get Model Evaluation | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/GetModelEvaluation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/GetModelEvaluation.java) |
-| Get Operation Status | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/GetOperationStatus.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/GetOperationStatus.java) |
-| Import Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/ImportDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/ImportDataset.java) |
-| Language Entity Extraction Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageEntityExtractionCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageEntityExtractionCreateDataset.java) |
-| Language Entity Extraction Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageEntityExtractionCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageEntityExtractionCreateModel.java) |
-| Language Entity Extraction Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageEntityExtractionPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageEntityExtractionPredict.java) |
-| Language Sentiment Analysis Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageSentimentAnalysisCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageSentimentAnalysisCreateDataset.java) |
-| Language Sentiment Analysis Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageSentimentAnalysisCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageSentimentAnalysisCreateModel.java) |
-| Language Sentiment Analysis Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageSentimentAnalysisPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageSentimentAnalysisPredict.java) |
-| Language Text Classification Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageTextClassificationCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageTextClassificationCreateDataset.java) |
-| Language Text Classification Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageTextClassificationCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageTextClassificationCreateModel.java) |
-| Language Text Classification Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/LanguageTextClassificationPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/LanguageTextClassificationPredict.java) |
-| List Datasets | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/ListDatasets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/ListDatasets.java) |
-| List Model Evaluations | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/ListModelEvaluations.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/ListModelEvaluations.java) |
-| List Models | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/ListModels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/ListModels.java) |
-| List Operation Status | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/ListOperationStatus.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/ListOperationStatus.java) |
-| Translate Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/TranslateCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/TranslateCreateDataset.java) |
-| Translate Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/TranslateCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/TranslateCreateModel.java) |
-| Translate Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/TranslatePredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/TranslatePredict.java) |
-| Undeploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/UndeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/UndeployModel.java) |
-| Vision Classification Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionClassificationCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionClassificationCreateDataset.java) |
-| Vision Classification Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionClassificationCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionClassificationCreateModel.java) |
-| Vision Classification Deploy Model Node Count | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionClassificationDeployModelNodeCount.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionClassificationDeployModelNodeCount.java) |
-| Vision Classification Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionClassificationPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionClassificationPredict.java) |
-| Vision Object Detection Create Dataset | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionCreateDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionCreateDataset.java) |
-| Vision Object Detection Create Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionCreateModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionCreateModel.java) |
-| Vision Object Detection Deploy Model Node Count | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionDeployModelNodeCount.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionDeployModelNodeCount.java) |
-| Vision Object Detection Predict | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionPredict.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/automl/VisionObjectDetectionPredict.java) |
-| Dataset Api | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/translate/automl/DatasetApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/translate/automl/DatasetApi.java) |
-| Model Api | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/translate/automl/ModelApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/translate/automl/ModelApi.java) |
-| Classification Undeploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/ClassificationUndeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/ClassificationUndeployModel.java) |
-| Prediction Api | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/PredictionApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/PredictionApi.java) |
-| Classification Deploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ClassificationDeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ClassificationDeployModel.java) |
-| Classification Deploy Model Node Count | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ClassificationDeployModelNodeCount.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ClassificationDeployModelNodeCount.java) |
-| Classification Undeploy Model | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ClassificationUndeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ClassificationUndeployModel.java) |
-| Model Api | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ModelApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ModelApi.java) |
-| Object Detection Deploy Model Node Count | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ObjectDetectionDeployModelNodeCount.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/ObjectDetectionDeployModelNodeCount.java) |
-| Prediction Api | [source code](https://github.com/googleapis/java-automl/blob/main/samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/PredictionApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/samples/automl/PredictionApi.java) |
 
 
 

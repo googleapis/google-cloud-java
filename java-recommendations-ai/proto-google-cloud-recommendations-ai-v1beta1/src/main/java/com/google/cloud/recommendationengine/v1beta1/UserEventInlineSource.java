@@ -52,63 +52,6 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private UserEventInlineSource(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                userEvents_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.recommendationengine.v1beta1.UserEvent>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              userEvents_.add(
-                  input.readMessage(
-                      com.google.cloud.recommendationengine.v1beta1.UserEvent.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        userEvents_ = java.util.Collections.unmodifiableList(userEvents_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.recommendationengine.v1beta1.Import
         .internal_static_google_cloud_recommendationengine_v1beta1_UserEventInlineSource_descriptor;
@@ -222,7 +165,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < userEvents_.size(); i++) {
       output.writeMessage(1, userEvents_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -234,7 +177,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < userEvents_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, userEvents_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -251,7 +194,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         (com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource) obj;
 
     if (!getUserEventsList().equals(other.getUserEventsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -266,7 +209,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + USER_EVENTS_FIELD_NUMBER;
       hash = (53 * hash) + getUserEventsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -398,19 +341,10 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
 
     // Construct using
     // com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getUserEventsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -418,10 +352,11 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
       super.clear();
       if (userEventsBuilder_ == null) {
         userEvents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        userEvents_ = null;
         userEventsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -541,7 +476,7 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -556,19 +491,45 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.recommendationengine.v1beta1.UserEvent m =
+                    input.readMessage(
+                        com.google.cloud.recommendationengine.v1beta1.UserEvent.parser(),
+                        extensionRegistry);
+                if (userEventsBuilder_ == null) {
+                  ensureUserEventsIsMutable();
+                  userEvents_.add(m);
+                } else {
+                  userEventsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.recommendationengine.v1beta1.UserEventInlineSource)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1007,7 +968,18 @@ public final class UserEventInlineSource extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UserEventInlineSource(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

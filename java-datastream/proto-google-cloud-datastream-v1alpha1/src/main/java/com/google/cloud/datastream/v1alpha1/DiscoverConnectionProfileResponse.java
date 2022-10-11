@@ -43,80 +43,6 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     return this.unknownFields;
   }
 
-  private DiscoverConnectionProfileResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 802:
-            {
-              com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder subBuilder = null;
-              if (dataObjectCase_ == 100) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1alpha1.OracleRdbms) dataObject_).toBuilder();
-              }
-              dataObject_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1alpha1.OracleRdbms.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datastream.v1alpha1.OracleRdbms) dataObject_);
-                dataObject_ = subBuilder.buildPartial();
-              }
-              dataObjectCase_ = 100;
-              break;
-            }
-          case 810:
-            {
-              com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder subBuilder = null;
-              if (dataObjectCase_ == 101) {
-                subBuilder =
-                    ((com.google.cloud.datastream.v1alpha1.MysqlRdbms) dataObject_).toBuilder();
-              }
-              dataObject_ =
-                  input.readMessage(
-                      com.google.cloud.datastream.v1alpha1.MysqlRdbms.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datastream.v1alpha1.MysqlRdbms) dataObject_);
-                dataObject_ = subBuilder.buildPartial();
-              }
-              dataObjectCase_ = 101;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1alpha1.CloudDatastreamServiceProto
         .internal_static_google_cloud_datastream_v1alpha1_DiscoverConnectionProfileResponse_descriptor;
@@ -301,7 +227,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     if (dataObjectCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.datastream.v1alpha1.MysqlRdbms) dataObject_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -320,7 +246,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               101, (com.google.cloud.datastream.v1alpha1.MysqlRdbms) dataObject_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -347,7 +273,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -370,7 +296,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -494,22 +420,21 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
 
     // Construct using
     // com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (oracleRdbmsBuilder_ != null) {
+        oracleRdbmsBuilder_.clear();
+      }
+      if (mysqlRdbmsBuilder_ != null) {
+        mysqlRdbmsBuilder_.clear();
+      }
       dataObjectCase_ = 0;
       dataObject_ = null;
       return this;
@@ -626,7 +551,7 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -641,19 +566,43 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 802:
+              {
+                input.readMessage(getOracleRdbmsFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 100;
+                break;
+              } // case 802
+            case 810:
+              {
+                input.readMessage(getMysqlRdbmsFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 101;
+                break;
+              } // case 810
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1127,7 +1076,18 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DiscoverConnectionProfileResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

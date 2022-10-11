@@ -62,672 +62,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ClusterUpdate(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desiredNodeVersion_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desiredMonitoringService_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.container.v1beta1.AddonsConfig.Builder subBuilder = null;
-              if (desiredAddonsConfig_ != null) {
-                subBuilder = desiredAddonsConfig_.toBuilder();
-              }
-              desiredAddonsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.AddonsConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredAddonsConfig_);
-                desiredAddonsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desiredNodePoolId_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desiredImageType_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.container.v1beta1.NodePoolAutoscaling.Builder subBuilder = null;
-              if (desiredNodePoolAutoscaling_ != null) {
-                subBuilder = desiredNodePoolAutoscaling_.toBuilder();
-              }
-              desiredNodePoolAutoscaling_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodePoolAutoscaling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredNodePoolAutoscaling_);
-                desiredNodePoolAutoscaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                desiredLocations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              desiredLocations_.add(s);
-              break;
-            }
-          case 98:
-            {
-              com.google.container.v1beta1.MasterAuthorizedNetworksConfig.Builder subBuilder = null;
-              if (desiredMasterAuthorizedNetworksConfig_ != null) {
-                subBuilder = desiredMasterAuthorizedNetworksConfig_.toBuilder();
-              }
-              desiredMasterAuthorizedNetworksConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.MasterAuthorizedNetworksConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredMasterAuthorizedNetworksConfig_);
-                desiredMasterAuthorizedNetworksConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.container.v1beta1.PodSecurityPolicyConfig.Builder subBuilder = null;
-              if (desiredPodSecurityPolicyConfig_ != null) {
-                subBuilder = desiredPodSecurityPolicyConfig_.toBuilder();
-              }
-              desiredPodSecurityPolicyConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.PodSecurityPolicyConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredPodSecurityPolicyConfig_);
-                desiredPodSecurityPolicyConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.container.v1beta1.ClusterAutoscaling.Builder subBuilder = null;
-              if (desiredClusterAutoscaling_ != null) {
-                subBuilder = desiredClusterAutoscaling_.toBuilder();
-              }
-              desiredClusterAutoscaling_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ClusterAutoscaling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredClusterAutoscaling_);
-                desiredClusterAutoscaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.container.v1beta1.BinaryAuthorization.Builder subBuilder = null;
-              if (desiredBinaryAuthorization_ != null) {
-                subBuilder = desiredBinaryAuthorization_.toBuilder();
-              }
-              desiredBinaryAuthorization_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.BinaryAuthorization.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredBinaryAuthorization_);
-                desiredBinaryAuthorization_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desiredLoggingService_ = s;
-              break;
-            }
-          case 170:
-            {
-              com.google.container.v1beta1.ResourceUsageExportConfig.Builder subBuilder = null;
-              if (desiredResourceUsageExportConfig_ != null) {
-                subBuilder = desiredResourceUsageExportConfig_.toBuilder();
-              }
-              desiredResourceUsageExportConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ResourceUsageExportConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredResourceUsageExportConfig_);
-                desiredResourceUsageExportConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 178:
-            {
-              com.google.container.v1beta1.VerticalPodAutoscaling.Builder subBuilder = null;
-              if (desiredVerticalPodAutoscaling_ != null) {
-                subBuilder = desiredVerticalPodAutoscaling_.toBuilder();
-              }
-              desiredVerticalPodAutoscaling_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.VerticalPodAutoscaling.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredVerticalPodAutoscaling_);
-                desiredVerticalPodAutoscaling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 202:
-            {
-              com.google.container.v1beta1.PrivateClusterConfig.Builder subBuilder = null;
-              if (desiredPrivateClusterConfig_ != null) {
-                subBuilder = desiredPrivateClusterConfig_.toBuilder();
-              }
-              desiredPrivateClusterConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.PrivateClusterConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredPrivateClusterConfig_);
-                desiredPrivateClusterConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 210:
-            {
-              com.google.container.v1beta1.IntraNodeVisibilityConfig.Builder subBuilder = null;
-              if (desiredIntraNodeVisibilityConfig_ != null) {
-                subBuilder = desiredIntraNodeVisibilityConfig_.toBuilder();
-              }
-              desiredIntraNodeVisibilityConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.IntraNodeVisibilityConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredIntraNodeVisibilityConfig_);
-                desiredIntraNodeVisibilityConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 226:
-            {
-              com.google.container.v1beta1.DefaultSnatStatus.Builder subBuilder = null;
-              if (desiredDefaultSnatStatus_ != null) {
-                subBuilder = desiredDefaultSnatStatus_.toBuilder();
-              }
-              desiredDefaultSnatStatus_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.DefaultSnatStatus.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredDefaultSnatStatus_);
-                desiredDefaultSnatStatus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 242:
-            {
-              com.google.container.v1beta1.ClusterTelemetry.Builder subBuilder = null;
-              if (desiredClusterTelemetry_ != null) {
-                subBuilder = desiredClusterTelemetry_.toBuilder();
-              }
-              desiredClusterTelemetry_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ClusterTelemetry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredClusterTelemetry_);
-                desiredClusterTelemetry_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 250:
-            {
-              com.google.container.v1beta1.ReleaseChannel.Builder subBuilder = null;
-              if (desiredReleaseChannel_ != null) {
-                subBuilder = desiredReleaseChannel_.toBuilder();
-              }
-              desiredReleaseChannel_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ReleaseChannel.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredReleaseChannel_);
-                desiredReleaseChannel_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 306:
-            {
-              com.google.container.v1beta1.TpuConfig.Builder subBuilder = null;
-              if (desiredTpuConfig_ != null) {
-                subBuilder = desiredTpuConfig_.toBuilder();
-              }
-              desiredTpuConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.TpuConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredTpuConfig_);
-                desiredTpuConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 314:
-            {
-              com.google.container.v1beta1.ILBSubsettingConfig.Builder subBuilder = null;
-              if (desiredL4IlbSubsettingConfig_ != null) {
-                subBuilder = desiredL4IlbSubsettingConfig_.toBuilder();
-              }
-              desiredL4IlbSubsettingConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ILBSubsettingConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredL4IlbSubsettingConfig_);
-                desiredL4IlbSubsettingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 370:
-            {
-              com.google.container.v1beta1.DatabaseEncryption.Builder subBuilder = null;
-              if (desiredDatabaseEncryption_ != null) {
-                subBuilder = desiredDatabaseEncryption_.toBuilder();
-              }
-              desiredDatabaseEncryption_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.DatabaseEncryption.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredDatabaseEncryption_);
-                desiredDatabaseEncryption_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 378:
-            {
-              com.google.container.v1beta1.WorkloadIdentityConfig.Builder subBuilder = null;
-              if (desiredWorkloadIdentityConfig_ != null) {
-                subBuilder = desiredWorkloadIdentityConfig_.toBuilder();
-              }
-              desiredWorkloadIdentityConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.WorkloadIdentityConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredWorkloadIdentityConfig_);
-                desiredWorkloadIdentityConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 386:
-            {
-              com.google.container.v1beta1.ShieldedNodes.Builder subBuilder = null;
-              if (desiredShieldedNodes_ != null) {
-                subBuilder = desiredShieldedNodes_.toBuilder();
-              }
-              desiredShieldedNodes_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ShieldedNodes.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredShieldedNodes_);
-                desiredShieldedNodes_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 394:
-            {
-              com.google.container.v1beta1.CostManagementConfig.Builder subBuilder = null;
-              if (desiredCostManagementConfig_ != null) {
-                subBuilder = desiredCostManagementConfig_.toBuilder();
-              }
-              desiredCostManagementConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.CostManagementConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredCostManagementConfig_);
-                desiredCostManagementConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 400:
-            {
-              int rawValue = input.readEnum();
-
-              desiredDatapathProvider_ = rawValue;
-              break;
-            }
-          case 408:
-            {
-              int rawValue = input.readEnum();
-
-              desiredPrivateIpv6GoogleAccess_ = rawValue;
-              break;
-            }
-          case 418:
-            {
-              com.google.container.v1beta1.Master.Builder subBuilder = null;
-              if (desiredMaster_ != null) {
-                subBuilder = desiredMaster_.toBuilder();
-              }
-              desiredMaster_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.Master.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredMaster_);
-                desiredMaster_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 426:
-            {
-              com.google.container.v1beta1.DNSConfig.Builder subBuilder = null;
-              if (desiredDnsConfig_ != null) {
-                subBuilder = desiredDnsConfig_.toBuilder();
-              }
-              desiredDnsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.DNSConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredDnsConfig_);
-                desiredDnsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 442:
-            {
-              com.google.container.v1beta1.NotificationConfig.Builder subBuilder = null;
-              if (desiredNotificationConfig_ != null) {
-                subBuilder = desiredNotificationConfig_.toBuilder();
-              }
-              desiredNotificationConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NotificationConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredNotificationConfig_);
-                desiredNotificationConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 482:
-            {
-              com.google.container.v1beta1.ServiceExternalIPsConfig.Builder subBuilder = null;
-              if (desiredServiceExternalIpsConfig_ != null) {
-                subBuilder = desiredServiceExternalIpsConfig_.toBuilder();
-              }
-              desiredServiceExternalIpsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ServiceExternalIPsConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredServiceExternalIpsConfig_);
-                desiredServiceExternalIpsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 490:
-            {
-              com.google.container.v1beta1.WorkloadCertificates.Builder subBuilder = null;
-              if (desiredWorkloadCertificates_ != null) {
-                subBuilder = desiredWorkloadCertificates_.toBuilder();
-              }
-              desiredWorkloadCertificates_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.WorkloadCertificates.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredWorkloadCertificates_);
-                desiredWorkloadCertificates_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 498:
-            {
-              com.google.container.v1beta1.WorkloadALTSConfig.Builder subBuilder = null;
-              if (desiredWorkloadAltsConfig_ != null) {
-                subBuilder = desiredWorkloadAltsConfig_.toBuilder();
-              }
-              desiredWorkloadAltsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.WorkloadALTSConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredWorkloadAltsConfig_);
-                desiredWorkloadAltsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 506:
-            {
-              com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder subBuilder = null;
-              if (desiredAuthenticatorGroupsConfig_ != null) {
-                subBuilder = desiredAuthenticatorGroupsConfig_.toBuilder();
-              }
-              desiredAuthenticatorGroupsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.AuthenticatorGroupsConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredAuthenticatorGroupsConfig_);
-                desiredAuthenticatorGroupsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 514:
-            {
-              com.google.container.v1beta1.LoggingConfig.Builder subBuilder = null;
-              if (desiredLoggingConfig_ != null) {
-                subBuilder = desiredLoggingConfig_.toBuilder();
-              }
-              desiredLoggingConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.LoggingConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredLoggingConfig_);
-                desiredLoggingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 522:
-            {
-              com.google.container.v1beta1.MonitoringConfig.Builder subBuilder = null;
-              if (desiredMonitoringConfig_ != null) {
-                subBuilder = desiredMonitoringConfig_.toBuilder();
-              }
-              desiredMonitoringConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.MonitoringConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredMonitoringConfig_);
-                desiredMonitoringConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 530:
-            {
-              com.google.container.v1beta1.IdentityServiceConfig.Builder subBuilder = null;
-              if (desiredIdentityServiceConfig_ != null) {
-                subBuilder = desiredIdentityServiceConfig_.toBuilder();
-              }
-              desiredIdentityServiceConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.IdentityServiceConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredIdentityServiceConfig_);
-                desiredIdentityServiceConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 538:
-            {
-              com.google.container.v1beta1.MeshCertificates.Builder subBuilder = null;
-              if (desiredMeshCertificates_ != null) {
-                subBuilder = desiredMeshCertificates_.toBuilder();
-              }
-              desiredMeshCertificates_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.MeshCertificates.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredMeshCertificates_);
-                desiredMeshCertificates_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 802:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              desiredMasterVersion_ = s;
-              break;
-            }
-          case 874:
-            {
-              com.google.container.v1beta1.GcfsConfig.Builder subBuilder = null;
-              if (desiredGcfsConfig_ != null) {
-                subBuilder = desiredGcfsConfig_.toBuilder();
-              }
-              desiredGcfsConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.GcfsConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredGcfsConfig_);
-                desiredGcfsConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 882:
-            {
-              com.google.container.v1beta1.NetworkTags.Builder subBuilder = null;
-              if (desiredNodePoolAutoConfigNetworkTags_ != null) {
-                subBuilder = desiredNodePoolAutoConfigNetworkTags_.toBuilder();
-              }
-              desiredNodePoolAutoConfigNetworkTags_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NetworkTags.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredNodePoolAutoConfigNetworkTags_);
-                desiredNodePoolAutoConfigNetworkTags_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 898:
-            {
-              com.google.container.v1beta1.ProtectConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) != 0)) {
-                subBuilder = desiredProtectConfig_.toBuilder();
-              }
-              desiredProtectConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ProtectConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredProtectConfig_);
-                desiredProtectConfig_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-          case 930:
-            {
-              com.google.container.v1beta1.NodePoolLoggingConfig.Builder subBuilder = null;
-              if (desiredNodePoolLoggingConfig_ != null) {
-                subBuilder = desiredNodePoolLoggingConfig_.toBuilder();
-              }
-              desiredNodePoolLoggingConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.NodePoolLoggingConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(desiredNodePoolLoggingConfig_);
-                desiredNodePoolLoggingConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        desiredLocations_ = desiredLocations_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_ClusterUpdate_descriptor;
@@ -3167,7 +2501,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredNodePoolLoggingConfig_ != null) {
       output.writeMessage(116, getDesiredNodePoolLoggingConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3372,7 +2706,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               116, getDesiredNodePoolLoggingConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3563,7 +2897,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredNodePoolLoggingConfig().equals(other.getDesiredNodePoolLoggingConfig()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3730,7 +3064,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolLoggingConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4511,7 +3845,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredNodePoolLoggingConfig()) {
         mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4526,17 +3860,330 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.ClusterUpdate parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34:
+              {
+                desiredNodeVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                desiredMonitoringService_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getDesiredAddonsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                desiredNodePoolId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                desiredImageType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getDesiredNodePoolAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDesiredLocationsIsMutable();
+                desiredLocations_.add(s);
+                break;
+              } // case 82
+            case 98:
+              {
+                input.readMessage(
+                    getDesiredMasterAuthorizedNetworksConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 98
+            case 114:
+              {
+                input.readMessage(
+                    getDesiredPodSecurityPolicyConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getDesiredClusterAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getDesiredBinaryAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            case 154:
+              {
+                desiredLoggingService_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 154
+            case 170:
+              {
+                input.readMessage(
+                    getDesiredResourceUsageExportConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getDesiredVerticalPodAutoscalingFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            case 202:
+              {
+                input.readMessage(
+                    getDesiredPrivateClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    getDesiredIntraNodeVisibilityConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 210
+            case 226:
+              {
+                input.readMessage(
+                    getDesiredDefaultSnatStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 226
+            case 242:
+              {
+                input.readMessage(
+                    getDesiredClusterTelemetryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 242
+            case 250:
+              {
+                input.readMessage(
+                    getDesiredReleaseChannelFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 250
+            case 306:
+              {
+                input.readMessage(
+                    getDesiredTpuConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 306
+            case 314:
+              {
+                input.readMessage(
+                    getDesiredL4IlbSubsettingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 314
+            case 370:
+              {
+                input.readMessage(
+                    getDesiredDatabaseEncryptionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 370
+            case 378:
+              {
+                input.readMessage(
+                    getDesiredWorkloadIdentityConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 378
+            case 386:
+              {
+                input.readMessage(
+                    getDesiredShieldedNodesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 386
+            case 394:
+              {
+                input.readMessage(
+                    getDesiredCostManagementConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 394
+            case 400:
+              {
+                desiredDatapathProvider_ = input.readEnum();
+
+                break;
+              } // case 400
+            case 408:
+              {
+                desiredPrivateIpv6GoogleAccess_ = input.readEnum();
+
+                break;
+              } // case 408
+            case 418:
+              {
+                input.readMessage(getDesiredMasterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 418
+            case 426:
+              {
+                input.readMessage(
+                    getDesiredDnsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 426
+            case 442:
+              {
+                input.readMessage(
+                    getDesiredNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 442
+            case 482:
+              {
+                input.readMessage(
+                    getDesiredServiceExternalIpsConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 482
+            case 490:
+              {
+                input.readMessage(
+                    getDesiredWorkloadCertificatesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 490
+            case 498:
+              {
+                input.readMessage(
+                    getDesiredWorkloadAltsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 498
+            case 506:
+              {
+                input.readMessage(
+                    getDesiredAuthenticatorGroupsConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 506
+            case 514:
+              {
+                input.readMessage(
+                    getDesiredLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 514
+            case 522:
+              {
+                input.readMessage(
+                    getDesiredMonitoringConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 522
+            case 530:
+              {
+                input.readMessage(
+                    getDesiredIdentityServiceConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 530
+            case 538:
+              {
+                input.readMessage(
+                    getDesiredMeshCertificatesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 538
+            case 802:
+              {
+                desiredMasterVersion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 802
+            case 874:
+              {
+                input.readMessage(
+                    getDesiredGcfsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 874
+            case 882:
+              {
+                input.readMessage(
+                    getDesiredNodePoolAutoConfigNetworkTagsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 882
+            case 898:
+              {
+                input.readMessage(
+                    getDesiredProtectConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 898
+            case 930:
+              {
+                input.readMessage(
+                    getDesiredNodePoolLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 930
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1beta1.ClusterUpdate) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -12520,7 +12167,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClusterUpdate(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -56,99 +56,6 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private KubernetesResource(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              membershipCrManifest_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                membershipResources_ =
-                    new java.util.ArrayList<com.google.cloud.gkehub.v1.ResourceManifest>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              membershipResources_.add(
-                  input.readMessage(
-                      com.google.cloud.gkehub.v1.ResourceManifest.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                connectResources_ =
-                    new java.util.ArrayList<com.google.cloud.gkehub.v1.ResourceManifest>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              connectResources_.add(
-                  input.readMessage(
-                      com.google.cloud.gkehub.v1.ResourceManifest.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.gkehub.v1.ResourceOptions.Builder subBuilder = null;
-              if (resourceOptions_ != null) {
-                subBuilder = resourceOptions_.toBuilder();
-              }
-              resourceOptions_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.v1.ResourceOptions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resourceOptions_);
-                resourceOptions_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        membershipResources_ = java.util.Collections.unmodifiableList(membershipResources_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        connectResources_ = java.util.Collections.unmodifiableList(connectResources_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.MembershipProto
         .internal_static_google_cloud_gkehub_v1_KubernetesResource_descriptor;
@@ -518,7 +425,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     if (resourceOptions_ != null) {
       output.writeMessage(4, getResourceOptions());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -540,7 +447,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     if (resourceOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getResourceOptions());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -563,7 +470,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     if (hasResourceOptions()) {
       if (!getResourceOptions().equals(other.getResourceOptions())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -588,7 +495,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + RESOURCE_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceOptions().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -719,20 +626,10 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.gkehub.v1.KubernetesResource.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getMembershipResourcesFieldBuilder();
-        getConnectResourcesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -742,16 +639,18 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
 
       if (membershipResourcesBuilder_ == null) {
         membershipResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        membershipResources_ = null;
         membershipResourcesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (connectResourcesBuilder_ == null) {
         connectResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        connectResources_ = null;
         connectResourcesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (resourceOptionsBuilder_ == null) {
         resourceOptions_ = null;
       } else {
@@ -920,7 +819,7 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
       if (other.hasResourceOptions()) {
         mergeResourceOptions(other.getResourceOptions());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -935,17 +834,69 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.v1.KubernetesResource parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                membershipCrManifest_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.gkehub.v1.ResourceManifest m =
+                    input.readMessage(
+                        com.google.cloud.gkehub.v1.ResourceManifest.parser(), extensionRegistry);
+                if (membershipResourcesBuilder_ == null) {
+                  ensureMembershipResourcesIsMutable();
+                  membershipResources_.add(m);
+                } else {
+                  membershipResourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.gkehub.v1.ResourceManifest m =
+                    input.readMessage(
+                        com.google.cloud.gkehub.v1.ResourceManifest.parser(), extensionRegistry);
+                if (connectResourcesBuilder_ == null) {
+                  ensureConnectResourcesIsMutable();
+                  connectResources_.add(m);
+                } else {
+                  connectResourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getResourceOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gkehub.v1.KubernetesResource) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2308,7 +2259,18 @@ public final class KubernetesResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KubernetesResource(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

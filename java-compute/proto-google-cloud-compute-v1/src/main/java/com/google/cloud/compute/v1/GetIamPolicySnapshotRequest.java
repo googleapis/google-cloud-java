@@ -53,66 +53,6 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private GetIamPolicySnapshotRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -301207064:
-            {
-              bitField0_ |= 0x00000001;
-              optionsRequestedPolicyVersion_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_GetIamPolicySnapshotRequest_descriptor;
@@ -283,7 +223,7 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(499220029, optionsRequestedPolicyVersion_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -303,7 +243,7 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               499220029, optionsRequestedPolicyVersion_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -327,7 +267,7 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
     }
     if (!getProject().equals(other.getProject())) return false;
     if (!getResource().equals(other.getResource())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -346,7 +286,7 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -476,17 +416,10 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.cloud.compute.v1.GetIamPolicySnapshotRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -595,7 +528,7 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
         resource_ = other.resource_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -610,18 +543,49 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.GetIamPolicySnapshotRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 1566449778:
+              {
+                resource_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1566449778
+            case 1820481738:
+              {
+                project_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1820481738
+            case -301207064:
+              {
+                optionsRequestedPolicyVersion_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -301207064
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.GetIamPolicySnapshotRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -938,7 +902,18 @@ public final class GetIamPolicySnapshotRequest extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetIamPolicySnapshotRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

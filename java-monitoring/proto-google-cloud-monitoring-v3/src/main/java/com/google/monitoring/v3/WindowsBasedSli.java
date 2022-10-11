@@ -52,130 +52,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private WindowsBasedSli(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold.Builder subBuilder =
-                  null;
-              if (windowCriterionCase_ == 2) {
-                subBuilder =
-                    ((com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold)
-                            windowCriterion_)
-                        .toBuilder();
-              }
-              windowCriterion_ =
-                  input.readMessage(
-                      com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold)
-                        windowCriterion_);
-                windowCriterion_ = subBuilder.buildPartial();
-              }
-              windowCriterionCase_ = 2;
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (windowPeriod_ != null) {
-                subBuilder = windowPeriod_.toBuilder();
-              }
-              windowPeriod_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(windowPeriod_);
-                windowPeriod_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              windowCriterionCase_ = 5;
-              windowCriterion_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.monitoring.v3.WindowsBasedSli.MetricRange.Builder subBuilder = null;
-              if (windowCriterionCase_ == 6) {
-                subBuilder =
-                    ((com.google.monitoring.v3.WindowsBasedSli.MetricRange) windowCriterion_)
-                        .toBuilder();
-              }
-              windowCriterion_ =
-                  input.readMessage(
-                      com.google.monitoring.v3.WindowsBasedSli.MetricRange.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.v3.WindowsBasedSli.MetricRange) windowCriterion_);
-                windowCriterion_ = subBuilder.buildPartial();
-              }
-              windowCriterionCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.monitoring.v3.WindowsBasedSli.MetricRange.Builder subBuilder = null;
-              if (windowCriterionCase_ == 7) {
-                subBuilder =
-                    ((com.google.monitoring.v3.WindowsBasedSli.MetricRange) windowCriterion_)
-                        .toBuilder();
-              }
-              windowCriterion_ =
-                  input.readMessage(
-                      com.google.monitoring.v3.WindowsBasedSli.MetricRange.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.monitoring.v3.WindowsBasedSli.MetricRange) windowCriterion_);
-                windowCriterion_ = subBuilder.buildPartial();
-              }
-              windowCriterionCase_ = 7;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.ServiceMonitoringProto
         .internal_static_google_monitoring_v3_WindowsBasedSli_descriptor;
@@ -312,82 +188,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private PerformanceThreshold(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.monitoring.v3.RequestBasedSli.Builder subBuilder = null;
-                if (typeCase_ == 1) {
-                  subBuilder = ((com.google.monitoring.v3.RequestBasedSli) type_).toBuilder();
-                }
-                type_ =
-                    input.readMessage(
-                        com.google.monitoring.v3.RequestBasedSli.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.monitoring.v3.RequestBasedSli) type_);
-                  type_ = subBuilder.buildPartial();
-                }
-                typeCase_ = 1;
-                break;
-              }
-            case 17:
-              {
-                threshold_ = input.readDouble();
-                break;
-              }
-            case 26:
-              {
-                com.google.monitoring.v3.BasicSli.Builder subBuilder = null;
-                if (typeCase_ == 3) {
-                  subBuilder = ((com.google.monitoring.v3.BasicSli) type_).toBuilder();
-                }
-                type_ =
-                    input.readMessage(
-                        com.google.monitoring.v3.BasicSli.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.monitoring.v3.BasicSli) type_);
-                  type_ = subBuilder.buildPartial();
-                }
-                typeCase_ = 3;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -595,7 +395,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (typeCase_ == 3) {
         output.writeMessage(3, (com.google.monitoring.v3.BasicSli) type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -617,7 +417,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, (com.google.monitoring.v3.BasicSli) type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -646,7 +446,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -674,7 +474,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -807,22 +607,21 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       }
 
       // Construct using com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (performanceBuilder_ != null) {
+          performanceBuilder_.clear();
+        }
+        if (basicSliPerformanceBuilder_ != null) {
+          basicSliPerformanceBuilder_.clear();
+        }
         threshold_ = 0D;
 
         typeCase_ = 0;
@@ -944,7 +743,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -959,19 +758,50 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getPerformanceFieldBuilder().getBuilder(), extensionRegistry);
+                  typeCase_ = 1;
+                  break;
+                } // case 10
+              case 17:
+                {
+                  threshold_ = input.readDouble();
+
+                  break;
+                } // case 17
+              case 26:
+                {
+                  input.readMessage(
+                      getBasicSliPerformanceFieldBuilder().getBuilder(), extensionRegistry);
+                  typeCase_ = 3;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1493,7 +1323,19 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PerformanceThreshold(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1618,67 +1460,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private MetricRange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                timeSeries_ = s;
-                break;
-              }
-            case 34:
-              {
-                com.google.monitoring.v3.Range.Builder subBuilder = null;
-                if (range_ != null) {
-                  subBuilder = range_.toBuilder();
-                }
-                range_ =
-                    input.readMessage(com.google.monitoring.v3.Range.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(range_);
-                  range_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1816,7 +1597,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (range_ != null) {
         output.writeMessage(4, getRange());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1831,7 +1612,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (range_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRange());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1852,7 +1633,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (hasRange()) {
         if (!getRange().equals(other.getRange())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1869,7 +1650,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + RANGE_FIELD_NUMBER;
         hash = (53 * hash) + getRange().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2004,17 +1785,10 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       }
 
       // Construct using com.google.monitoring.v3.WindowsBasedSli.MetricRange.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2120,7 +1894,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         if (other.hasRange()) {
           mergeRange(other.getRange());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2135,18 +1909,43 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.monitoring.v3.WindowsBasedSli.MetricRange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  timeSeries_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 34:
+                {
+                  input.readMessage(getRangeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.monitoring.v3.WindowsBasedSli.MetricRange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2482,7 +2281,19 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MetricRange(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2882,7 +2693,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           7, (com.google.monitoring.v3.WindowsBasedSli.MetricRange) windowCriterion_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2912,7 +2723,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.monitoring.v3.WindowsBasedSli.MetricRange) windowCriterion_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2948,7 +2759,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2983,7 +2794,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3114,22 +2925,24 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.monitoring.v3.WindowsBasedSli.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (goodTotalRatioThresholdBuilder_ != null) {
+        goodTotalRatioThresholdBuilder_.clear();
+      }
+      if (metricMeanInRangeBuilder_ != null) {
+        metricMeanInRangeBuilder_.clear();
+      }
+      if (metricSumInRangeBuilder_ != null) {
+        metricSumInRangeBuilder_.clear();
+      }
       if (windowPeriodBuilder_ == null) {
         windowPeriod_ = null;
       } else {
@@ -3275,7 +3088,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3290,17 +3103,65 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.monitoring.v3.WindowsBasedSli parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(
+                    getGoodTotalRatioThresholdFieldBuilder().getBuilder(), extensionRegistry);
+                windowCriterionCase_ = 2;
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getWindowPeriodFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                windowCriterionCase_ = 5;
+                windowCriterion_ = s;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getMetricMeanInRangeFieldBuilder().getBuilder(), extensionRegistry);
+                windowCriterionCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getMetricSumInRangeFieldBuilder().getBuilder(), extensionRegistry);
+                windowCriterionCase_ = 7;
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.v3.WindowsBasedSli) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4376,7 +4237,18 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WindowsBasedSli(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

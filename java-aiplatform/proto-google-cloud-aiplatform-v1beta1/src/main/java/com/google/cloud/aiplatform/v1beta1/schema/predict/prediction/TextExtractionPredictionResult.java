@@ -58,163 +58,6 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
     return this.unknownFields;
   }
 
-  private TextExtractionPredictionResult(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                ids_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              ids_.addLong(input.readInt64());
-              break;
-            }
-          case 10:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                ids_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                ids_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                displayNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              displayNames_.add(s);
-              break;
-            }
-          case 24:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                textSegmentStartOffsets_ = newLongList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              textSegmentStartOffsets_.addLong(input.readInt64());
-              break;
-            }
-          case 26:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                textSegmentStartOffsets_ = newLongList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                textSegmentStartOffsets_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 32:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                textSegmentEndOffsets_ = newLongList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              textSegmentEndOffsets_.addLong(input.readInt64());
-              break;
-            }
-          case 34:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                textSegmentEndOffsets_ = newLongList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                textSegmentEndOffsets_.addLong(input.readInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 45:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                confidences_ = newFloatList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              confidences_.addFloat(input.readFloat());
-              break;
-            }
-          case 42:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000010) != 0) && input.getBytesUntilLimit() > 0) {
-                confidences_ = newFloatList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                confidences_.addFloat(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        ids_.makeImmutable(); // C
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        displayNames_ = displayNames_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        textSegmentStartOffsets_.makeImmutable(); // C
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        textSegmentEndOffsets_.makeImmutable(); // C
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        confidences_.makeImmutable(); // C
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
         .TextExtractionPredictionResultProto
@@ -559,7 +402,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
     for (int i = 0; i < confidences_.size(); i++) {
       output.writeFloatNoTag(confidences_.getFloat(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -626,7 +469,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
       }
       confidencesMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -654,7 +497,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
       return false;
     if (!getTextSegmentEndOffsetsList().equals(other.getTextSegmentEndOffsetsList())) return false;
     if (!getConfidencesList().equals(other.getConfidencesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -685,7 +528,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
       hash = (37 * hash) + CONFIDENCES_FIELD_NUMBER;
       hash = (53 * hash) + getConfidencesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -841,17 +684,10 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
 
     // Construct using
     // com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1040,7 +876,7 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1055,21 +891,110 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult
-          parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                long v = input.readInt64();
+                ensureIdsIsMutable();
+                ids_.addLong(v);
+                break;
+              } // case 8
+            case 10:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureIdsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  ids_.addLong(input.readInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDisplayNamesIsMutable();
+                displayNames_.add(s);
+                break;
+              } // case 18
+            case 24:
+              {
+                long v = input.readInt64();
+                ensureTextSegmentStartOffsetsIsMutable();
+                textSegmentStartOffsets_.addLong(v);
+                break;
+              } // case 24
+            case 26:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTextSegmentStartOffsetsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  textSegmentStartOffsets_.addLong(input.readInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+            case 32:
+              {
+                long v = input.readInt64();
+                ensureTextSegmentEndOffsetsIsMutable();
+                textSegmentEndOffsets_.addLong(v);
+                break;
+              } // case 32
+            case 34:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTextSegmentEndOffsetsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  textSegmentEndOffsets_.addLong(input.readInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+            case 45:
+              {
+                float v = input.readFloat();
+                ensureConfidencesIsMutable();
+                confidences_.addFloat(v);
+                break;
+              } // case 45
+            case 42:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureConfidencesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  confidences_.addFloat(input.readFloat());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
-                    .TextExtractionPredictionResult)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1836,7 +1761,18 @@ public final class TextExtractionPredictionResult extends com.google.protobuf.Ge
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TextExtractionPredictionResult(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

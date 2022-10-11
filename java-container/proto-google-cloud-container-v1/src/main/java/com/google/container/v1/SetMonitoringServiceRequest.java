@@ -56,80 +56,6 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private SetMonitoringServiceRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              projectId_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zone_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterId_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              monitoringService_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_SetMonitoringServiceRequest_descriptor;
@@ -159,7 +85,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2292
+   *     google/container/v1/cluster_service.proto;l=2313
    * @return The projectId.
    */
   @java.lang.Override
@@ -187,7 +113,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2292
+   *     google/container/v1/cluster_service.proto;l=2313
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -219,7 +145,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2298
+   *     google/container/v1/cluster_service.proto;l=2319
    * @return The zone.
    */
   @java.lang.Override
@@ -248,7 +174,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2298
+   *     google/container/v1/cluster_service.proto;l=2319
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -278,7 +204,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2302
+   *     google/container/v1/cluster_service.proto;l=2323
    * @return The clusterId.
    */
   @java.lang.Override
@@ -305,7 +231,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2302
+   *     google/container/v1/cluster_service.proto;l=2323
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -467,7 +393,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -491,7 +417,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -512,7 +438,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
     if (!getClusterId().equals(other.getClusterId())) return false;
     if (!getMonitoringService().equals(other.getMonitoringService())) return false;
     if (!getName().equals(other.getName())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -533,7 +459,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getMonitoringService().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -662,17 +588,10 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.container.v1.SetMonitoringServiceRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -790,7 +709,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
         name_ = other.name_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -805,18 +724,61 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.SetMonitoringServiceRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                projectId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                zone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                clusterId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                monitoringService_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 50:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.container.v1.SetMonitoringServiceRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -833,7 +795,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2292
+     *     google/container/v1/cluster_service.proto;l=2313
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -860,7 +822,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2292
+     *     google/container/v1/cluster_service.proto;l=2313
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -887,7 +849,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2292
+     *     google/container/v1/cluster_service.proto;l=2313
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -913,7 +875,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2292
+     *     google/container/v1/cluster_service.proto;l=2313
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -935,7 +897,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2292
+     *     google/container/v1/cluster_service.proto;l=2313
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -965,7 +927,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2298
+     *     google/container/v1/cluster_service.proto;l=2319
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -993,7 +955,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2298
+     *     google/container/v1/cluster_service.proto;l=2319
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1021,7 +983,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2298
+     *     google/container/v1/cluster_service.proto;l=2319
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1048,7 +1010,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2298
+     *     google/container/v1/cluster_service.proto;l=2319
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1071,7 +1033,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2298
+     *     google/container/v1/cluster_service.proto;l=2319
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1099,7 +1061,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2302
+     *     google/container/v1/cluster_service.proto;l=2323
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1125,7 +1087,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2302
+     *     google/container/v1/cluster_service.proto;l=2323
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1151,7 +1113,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2302
+     *     google/container/v1/cluster_service.proto;l=2323
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1176,7 +1138,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2302
+     *     google/container/v1/cluster_service.proto;l=2323
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1197,7 +1159,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2302
+     *     google/container/v1/cluster_service.proto;l=2323
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1502,7 +1464,18 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SetMonitoringServiceRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

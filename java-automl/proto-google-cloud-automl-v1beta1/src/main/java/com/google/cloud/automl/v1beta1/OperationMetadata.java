@@ -52,283 +52,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private OperationMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              partialFailures_.add(
-                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.automl.v1beta1.DeleteOperationMetadata.Builder subBuilder = null;
-              if (detailsCase_ == 8) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.DeleteOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.DeleteOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 8;
-              break;
-            }
-          case 82:
-            {
-              com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder subBuilder =
-                  null;
-              if (detailsCase_ == 10) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 10;
-              break;
-            }
-          case 104:
-            {
-              progressPercent_ = input.readInt32();
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.Builder subBuilder = null;
-              if (detailsCase_ == 15) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ImportDataOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ImportDataOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.Builder subBuilder =
-                  null;
-              if (detailsCase_ == 16) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.BatchPredictOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 16;
-              break;
-            }
-          case 170:
-            {
-              com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.Builder subBuilder = null;
-              if (detailsCase_ == 21) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ExportDataOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ExportDataOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 21;
-              break;
-            }
-          case 178:
-            {
-              com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.Builder subBuilder =
-                  null;
-              if (detailsCase_ == 22) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ExportModelOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 22;
-              break;
-            }
-          case 194:
-            {
-              com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.Builder subBuilder =
-                  null;
-              if (detailsCase_ == 24) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.DeployModelOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.DeployModelOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 24;
-              break;
-            }
-          case 202:
-            {
-              com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.Builder subBuilder =
-                  null;
-              if (detailsCase_ == 25) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.UndeployModelOperationMetadata) details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 25;
-              break;
-            }
-          case 210:
-            {
-              com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata.Builder
-                  subBuilder = null;
-              if (detailsCase_ == 26) {
-                subBuilder =
-                    ((com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
-                            details_)
-                        .toBuilder();
-              }
-              details_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata)
-                        details_);
-                details_ = subBuilder.buildPartial();
-              }
-              detailsCase_ = 26;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Operations
         .internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
@@ -1160,7 +883,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           26, (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1227,7 +950,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
               26,
               (com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata) details_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1286,7 +1009,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1351,7 +1074,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1480,32 +1203,51 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.automl.v1beta1.OperationMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPartialFailuresFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (deleteDetailsBuilder_ != null) {
+        deleteDetailsBuilder_.clear();
+      }
+      if (deployModelDetailsBuilder_ != null) {
+        deployModelDetailsBuilder_.clear();
+      }
+      if (undeployModelDetailsBuilder_ != null) {
+        undeployModelDetailsBuilder_.clear();
+      }
+      if (createModelDetailsBuilder_ != null) {
+        createModelDetailsBuilder_.clear();
+      }
+      if (importDataDetailsBuilder_ != null) {
+        importDataDetailsBuilder_.clear();
+      }
+      if (batchPredictDetailsBuilder_ != null) {
+        batchPredictDetailsBuilder_.clear();
+      }
+      if (exportDataDetailsBuilder_ != null) {
+        exportDataDetailsBuilder_.clear();
+      }
+      if (exportModelDetailsBuilder_ != null) {
+        exportModelDetailsBuilder_.clear();
+      }
+      if (exportEvaluatedExamplesDetailsBuilder_ != null) {
+        exportEvaluatedExamplesDetailsBuilder_.clear();
+      }
       progressPercent_ = 0;
 
       if (partialFailuresBuilder_ == null) {
         partialFailures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        partialFailures_ = null;
         partialFailuresBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1769,7 +1511,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1784,18 +1526,124 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.OperationMetadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (partialFailuresBuilder_ == null) {
+                  ensurePartialFailuresIsMutable();
+                  partialFailures_.add(m);
+                } else {
+                  partialFailuresBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 66:
+              {
+                input.readMessage(getDeleteDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 8;
+                break;
+              } // case 66
+            case 82:
+              {
+                input.readMessage(
+                    getCreateModelDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 10;
+                break;
+              } // case 82
+            case 104:
+              {
+                progressPercent_ = input.readInt32();
+
+                break;
+              } // case 104
+            case 122:
+              {
+                input.readMessage(
+                    getImportDataDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getBatchPredictDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 16;
+                break;
+              } // case 130
+            case 170:
+              {
+                input.readMessage(
+                    getExportDataDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 21;
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getExportModelDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 22;
+                break;
+              } // case 178
+            case 194:
+              {
+                input.readMessage(
+                    getDeployModelDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 24;
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(
+                    getUndeployModelDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 25;
+                break;
+              } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    getExportEvaluatedExamplesDetailsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 26;
+                break;
+              } // case 210
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.automl.v1beta1.OperationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4717,7 +4565,18 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new OperationMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

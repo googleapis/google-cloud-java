@@ -64,342 +64,6 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Entry(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-              entryTypeCase_ = 2;
-              entryType_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.datacatalog.v1.Schema.Builder subBuilder = null;
-              if (schema_ != null) {
-                subBuilder = schema_.toBuilder();
-              }
-              schema_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.Schema.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(schema_);
-                schema_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.datacatalog.v1.GcsFilesetSpec.Builder subBuilder = null;
-              if (typeSpecCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.datacatalog.v1.GcsFilesetSpec) typeSpec_).toBuilder();
-              }
-              typeSpec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.GcsFilesetSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.GcsFilesetSpec) typeSpec_);
-                typeSpec_ = subBuilder.buildPartial();
-              }
-              typeSpecCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.datacatalog.v1.SystemTimestamps.Builder subBuilder = null;
-              if (sourceSystemTimestamps_ != null) {
-                subBuilder = sourceSystemTimestamps_.toBuilder();
-              }
-              sourceSystemTimestamps_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.SystemTimestamps.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceSystemTimestamps_);
-                sourceSystemTimestamps_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              linkedResource_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.datacatalog.v1.BigQueryTableSpec.Builder subBuilder = null;
-              if (typeSpecCase_ == 12) {
-                subBuilder =
-                    ((com.google.cloud.datacatalog.v1.BigQueryTableSpec) typeSpec_).toBuilder();
-              }
-              typeSpec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.BigQueryTableSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.BigQueryTableSpec) typeSpec_);
-                typeSpec_ = subBuilder.buildPartial();
-              }
-              typeSpecCase_ = 12;
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.datacatalog.v1.UsageSignal.Builder subBuilder = null;
-              if (usageSignal_ != null) {
-                subBuilder = usageSignal_.toBuilder();
-              }
-              usageSignal_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.UsageSignal.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(usageSignal_);
-                usageSignal_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec.Builder subBuilder = null;
-              if (typeSpecCase_ == 15) {
-                subBuilder =
-                    ((com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec) typeSpec_)
-                        .toBuilder();
-              }
-              typeSpec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec) typeSpec_);
-                typeSpec_ = subBuilder.buildPartial();
-              }
-              typeSpecCase_ = 15;
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              entryTypeCase_ = 16;
-              entryType_ = s;
-              break;
-            }
-          case 136:
-            {
-              int rawValue = input.readEnum();
-              systemCase_ = 17;
-              system_ = rawValue;
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              systemCase_ = 18;
-              system_ = s;
-              break;
-            }
-          case 162:
-            {
-              com.google.cloud.datacatalog.v1.DataSource.Builder subBuilder = null;
-              if (dataSource_ != null) {
-                subBuilder = dataSource_.toBuilder();
-              }
-              dataSource_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.DataSource.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dataSource_);
-                dataSource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 194:
-            {
-              com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder subBuilder = null;
-              if (specCase_ == 24) {
-                subBuilder =
-                    ((com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_).toBuilder();
-              }
-              spec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.DatabaseTableSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
-                spec_ = subBuilder.buildPartial();
-              }
-              specCase_ = 24;
-              break;
-            }
-          case 210:
-            {
-              com.google.cloud.datacatalog.v1.PersonalDetails.Builder subBuilder = null;
-              if (personalDetails_ != null) {
-                subBuilder = personalDetails_.toBuilder();
-              }
-              personalDetails_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.PersonalDetails.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(personalDetails_);
-                personalDetails_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 218:
-            {
-              com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder subBuilder = null;
-              if (specCase_ == 27) {
-                subBuilder =
-                    ((com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_).toBuilder();
-              }
-              spec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_);
-                spec_ = subBuilder.buildPartial();
-              }
-              specCase_ = 27;
-              break;
-            }
-          case 226:
-            {
-              com.google.cloud.datacatalog.v1.RoutineSpec.Builder subBuilder = null;
-              if (specCase_ == 28) {
-                subBuilder = ((com.google.cloud.datacatalog.v1.RoutineSpec) spec_).toBuilder();
-              }
-              spec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.RoutineSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.RoutineSpec) spec_);
-                spec_ = subBuilder.buildPartial();
-              }
-              specCase_ = 28;
-              break;
-            }
-          case 234:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fullyQualifiedName_ = s;
-              break;
-            }
-          case 266:
-            {
-              com.google.cloud.datacatalog.v1.FilesetSpec.Builder subBuilder = null;
-              if (specCase_ == 33) {
-                subBuilder = ((com.google.cloud.datacatalog.v1.FilesetSpec) spec_).toBuilder();
-              }
-              spec_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.FilesetSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.FilesetSpec) spec_);
-                spec_ = subBuilder.buildPartial();
-              }
-              specCase_ = 33;
-              break;
-            }
-          case 298:
-            {
-              com.google.cloud.datacatalog.v1.BusinessContext.Builder subBuilder = null;
-              if (businessContext_ != null) {
-                subBuilder = businessContext_.toBuilder();
-              }
-              businessContext_ =
-                  input.readMessage(
-                      com.google.cloud.datacatalog.v1.BusinessContext.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(businessContext_);
-                businessContext_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_Entry_descriptor;
@@ -2152,7 +1816,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (businessContext_ != null) {
       output.writeMessage(37, getBusinessContext());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2255,7 +1919,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (businessContext_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getBusinessContext());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2354,7 +2018,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2463,7 +2127,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2619,17 +2283,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.datacatalog.v1.Entry.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2641,6 +2298,27 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
 
       fullyQualifiedName_ = "";
 
+      if (gcsFilesetSpecBuilder_ != null) {
+        gcsFilesetSpecBuilder_.clear();
+      }
+      if (bigqueryTableSpecBuilder_ != null) {
+        bigqueryTableSpecBuilder_.clear();
+      }
+      if (bigqueryDateShardedSpecBuilder_ != null) {
+        bigqueryDateShardedSpecBuilder_.clear();
+      }
+      if (databaseTableSpecBuilder_ != null) {
+        databaseTableSpecBuilder_.clear();
+      }
+      if (dataSourceConnectionSpecBuilder_ != null) {
+        dataSourceConnectionSpecBuilder_.clear();
+      }
+      if (routineSpecBuilder_ != null) {
+        routineSpecBuilder_.clear();
+      }
+      if (filesetSpecBuilder_ != null) {
+        filesetSpecBuilder_.clear();
+      }
       displayName_ = "";
 
       description_ = "";
@@ -2991,7 +2669,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3006,17 +2684,183 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datacatalog.v1.Entry parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 16:
+              {
+                int rawValue = input.readEnum();
+                entryTypeCase_ = 2;
+                entryType_ = rawValue;
+                break;
+              } // case 16
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getGcsFilesetSpecFieldBuilder().getBuilder(), extensionRegistry);
+                typeSpecCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getSourceSystemTimestampsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 74:
+              {
+                linkedResource_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 98:
+              {
+                input.readMessage(
+                    getBigqueryTableSpecFieldBuilder().getBuilder(), extensionRegistry);
+                typeSpecCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getUsageSignalFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getBigqueryDateShardedSpecFieldBuilder().getBuilder(), extensionRegistry);
+                typeSpecCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                entryTypeCase_ = 16;
+                entryType_ = s;
+                break;
+              } // case 130
+            case 136:
+              {
+                int rawValue = input.readEnum();
+                systemCase_ = 17;
+                system_ = rawValue;
+                break;
+              } // case 136
+            case 146:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                systemCase_ = 18;
+                system_ = s;
+                break;
+              } // case 146
+            case 162:
+              {
+                input.readMessage(getDataSourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 162
+            case 194:
+              {
+                input.readMessage(
+                    getDatabaseTableSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 24;
+                break;
+              } // case 194
+            case 210:
+              {
+                input.readMessage(getPersonalDetailsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    getDataSourceConnectionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 27;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(getRoutineSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 28;
+                break;
+              } // case 226
+            case 234:
+              {
+                fullyQualifiedName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 234
+            case 266:
+              {
+                input.readMessage(getFilesetSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 33;
+                break;
+              } // case 266
+            case 298:
+              {
+                input.readMessage(getBusinessContextFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 298
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.datacatalog.v1.Entry) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7407,7 +7251,18 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Entry(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

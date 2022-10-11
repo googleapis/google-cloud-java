@@ -58,104 +58,6 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ChangeHistoryEvent(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (changeTime_ != null) {
-                subBuilder = changeTime_.toBuilder();
-              }
-              changeTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(changeTime_);
-                changeTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              actorType_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userActorEmail_ = s;
-              break;
-            }
-          case 40:
-            {
-              changesFiltered_ = input.readBool();
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                changes_ =
-                    new java.util.ArrayList<
-                        com.google.analytics.admin.v1beta.ChangeHistoryChange>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              changes_.add(
-                  input.readMessage(
-                      com.google.analytics.admin.v1beta.ChangeHistoryChange.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        changes_ = java.util.Collections.unmodifiableList(changes_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.ResourcesProto
         .internal_static_google_analytics_admin_v1beta_ChangeHistoryEvent_descriptor;
@@ -482,7 +384,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < changes_.size(); i++) {
       output.writeMessage(6, changes_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -510,7 +412,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < changes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, changes_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -535,7 +437,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     if (!getUserActorEmail().equals(other.getUserActorEmail())) return false;
     if (getChangesFiltered() != other.getChangesFiltered()) return false;
     if (!getChangesList().equals(other.getChangesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -562,7 +464,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + CHANGES_FIELD_NUMBER;
       hash = (53 * hash) + getChangesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -694,19 +596,10 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.analytics.admin.v1beta.ChangeHistoryEvent.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getChangesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -728,10 +621,11 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
 
       if (changesBuilder_ == null) {
         changes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        changes_ = null;
         changesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -872,7 +766,7 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -887,18 +781,75 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.admin.v1beta.ChangeHistoryEvent parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getChangeTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 24:
+              {
+                actorType_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                userActorEmail_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 40:
+              {
+                changesFiltered_ = input.readBool();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                com.google.analytics.admin.v1beta.ChangeHistoryChange m =
+                    input.readMessage(
+                        com.google.analytics.admin.v1beta.ChangeHistoryChange.parser(),
+                        extensionRegistry);
+                if (changesBuilder_ == null) {
+                  ensureChangesIsMutable();
+                  changes_.add(m);
+                } else {
+                  changesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.analytics.admin.v1beta.ChangeHistoryEvent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1864,7 +1815,18 @@ public final class ChangeHistoryEvent extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChangeHistoryEvent(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

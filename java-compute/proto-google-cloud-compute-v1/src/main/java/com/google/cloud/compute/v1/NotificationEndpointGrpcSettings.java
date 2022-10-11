@@ -55,89 +55,6 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     return this.unknownFields;
   }
 
-  private NotificationEndpointGrpcSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 925448936:
-            {
-              bitField0_ |= 0x00000010;
-              retryDurationSec_ = input.readUInt32();
-              break;
-            }
-          case 1043917994:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              endpoint_ = s;
-              break;
-            }
-          case -1892100894:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              payloadName_ = s;
-              break;
-            }
-          case -1080018406:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              authority_ = s;
-              break;
-            }
-          case -468655542:
-            {
-              com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = resendInterval_.toBuilder();
-              }
-              resendInterval_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(resendInterval_);
-                resendInterval_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_NotificationEndpointGrpcSettings_descriptor;
@@ -458,7 +375,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(478288969, getResendInterval());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -483,7 +400,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(478288969, getResendInterval());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -519,7 +436,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
     if (hasRetryDurationSec()) {
       if (getRetryDurationSec() != other.getRetryDurationSec()) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -550,7 +467,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       hash = (37 * hash) + RETRY_DURATION_SEC_FIELD_NUMBER;
       hash = (53 * hash) + getRetryDurationSec();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -839,7 +756,7 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
       if (other.hasRetryDurationSec()) {
         setRetryDurationSec(other.getRetryDurationSec());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -854,18 +771,61 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.NotificationEndpointGrpcSettings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 925448936:
+              {
+                retryDurationSec_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 925448936
+            case 1043917994:
+              {
+                endpoint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1043917994
+            case -1892100894:
+              {
+                payloadName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1892100894
+            case -1080018406:
+              {
+                authority_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1080018406
+            case -468655542:
+              {
+                input.readMessage(getResendIntervalFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -468655542
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.NotificationEndpointGrpcSettings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1517,7 +1477,18 @@ public final class NotificationEndpointGrpcSettings extends com.google.protobuf.
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NotificationEndpointGrpcSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

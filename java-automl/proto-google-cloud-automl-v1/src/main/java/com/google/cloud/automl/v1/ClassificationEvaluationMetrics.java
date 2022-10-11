@@ -56,112 +56,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private ClassificationEvaluationMetrics(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 13:
-            {
-              auPrc_ = input.readFloat();
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                confidenceMetricsEntry_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.automl.v1.ClassificationEvaluationMetrics
-                            .ConfidenceMetricsEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              confidenceMetricsEntry_.add(
-                  input.readMessage(
-                      com.google.cloud.automl.v1.ClassificationEvaluationMetrics
-                          .ConfidenceMetricsEntry.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Builder
-                  subBuilder = null;
-              if (confusionMatrix_ != null) {
-                subBuilder = confusionMatrix_.toBuilder();
-              }
-              confusionMatrix_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confusionMatrix_);
-                confusionMatrix_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              annotationSpecId_.add(s);
-              break;
-            }
-          case 53:
-            {
-              auRoc_ = input.readFloat();
-              break;
-            }
-          case 61:
-            {
-              logLoss_ = input.readFloat();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        confidenceMetricsEntry_ = java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.ClassificationProto
         .internal_static_google_cloud_automl_v1_ClassificationEvaluationMetrics_descriptor;
@@ -409,115 +303,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ConfidenceMetricsEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13:
-              {
-                confidenceThreshold_ = input.readFloat();
-                break;
-              }
-            case 21:
-              {
-                recall_ = input.readFloat();
-                break;
-              }
-            case 29:
-              {
-                precision_ = input.readFloat();
-                break;
-              }
-            case 37:
-              {
-                f1Score_ = input.readFloat();
-                break;
-              }
-            case 45:
-              {
-                recallAt1_ = input.readFloat();
-                break;
-              }
-            case 53:
-              {
-                precisionAt1_ = input.readFloat();
-                break;
-              }
-            case 61:
-              {
-                f1ScoreAt1_ = input.readFloat();
-                break;
-              }
-            case 69:
-              {
-                falsePositiveRate_ = input.readFloat();
-                break;
-              }
-            case 77:
-              {
-                falsePositiveRateAt1_ = input.readFloat();
-                break;
-              }
-            case 80:
-              {
-                truePositiveCount_ = input.readInt64();
-                break;
-              }
-            case 88:
-              {
-                falsePositiveCount_ = input.readInt64();
-                break;
-              }
-            case 96:
-              {
-                falseNegativeCount_ = input.readInt64();
-                break;
-              }
-            case 104:
-              {
-                trueNegativeCount_ = input.readInt64();
-                break;
-              }
-            case 112:
-              {
-                positionThreshold_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -859,7 +644,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (positionThreshold_ != 0) {
         output.writeInt32(14, positionThreshold_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -910,7 +695,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (positionThreshold_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, positionThreshold_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -951,7 +736,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (getFalsePositiveCount() != other.getFalsePositiveCount()) return false;
       if (getFalseNegativeCount() != other.getFalseNegativeCount()) return false;
       if (getTrueNegativeCount() != other.getTrueNegativeCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -990,7 +775,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFalseNegativeCount());
       hash = (37 * hash) + TRUE_NEGATIVE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrueNegativeCount());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1133,17 +918,10 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
       // Construct using
       // com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1324,7 +1102,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         if (other.getTrueNegativeCount() != 0L) {
           setTrueNegativeCount(other.getTrueNegativeCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1339,20 +1117,115 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  confidenceThreshold_ = input.readFloat();
+
+                  break;
+                } // case 13
+              case 21:
+                {
+                  recall_ = input.readFloat();
+
+                  break;
+                } // case 21
+              case 29:
+                {
+                  precision_ = input.readFloat();
+
+                  break;
+                } // case 29
+              case 37:
+                {
+                  f1Score_ = input.readFloat();
+
+                  break;
+                } // case 37
+              case 45:
+                {
+                  recallAt1_ = input.readFloat();
+
+                  break;
+                } // case 45
+              case 53:
+                {
+                  precisionAt1_ = input.readFloat();
+
+                  break;
+                } // case 53
+              case 61:
+                {
+                  f1ScoreAt1_ = input.readFloat();
+
+                  break;
+                } // case 61
+              case 69:
+                {
+                  falsePositiveRate_ = input.readFloat();
+
+                  break;
+                } // case 69
+              case 77:
+                {
+                  falsePositiveRateAt1_ = input.readFloat();
+
+                  break;
+                } // case 77
+              case 80:
+                {
+                  truePositiveCount_ = input.readInt64();
+
+                  break;
+                } // case 80
+              case 88:
+                {
+                  falsePositiveCount_ = input.readInt64();
+
+                  break;
+                } // case 88
+              case 96:
+                {
+                  falseNegativeCount_ = input.readInt64();
+
+                  break;
+                } // case 96
+              case 104:
+                {
+                  trueNegativeCount_ = input.readInt64();
+
+                  break;
+                } // case 104
+              case 112:
+                {
+                  positionThreshold_ = input.readInt32();
+
+                  break;
+                } // case 112
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2163,7 +2036,19 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConfidenceMetricsEntry(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2446,91 +2331,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       return this.unknownFields;
     }
 
-    private ConfusionMatrix(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                annotationSpecId_.add(s);
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                  row_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
-                              .Row>();
-                  mutable_bitField0_ |= 0x00000004;
-                }
-                row_.add(
-                    input.readMessage(
-                        com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
-                            .Row.parser(),
-                        extensionRegistry));
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  displayName_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                displayName_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          row_ = java.util.Collections.unmodifiableList(row_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          displayName_ = displayName_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.automl.v1.ClassificationProto
           .internal_static_google_cloud_automl_v1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
@@ -2634,73 +2434,6 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         return this.unknownFields;
       }
 
-      private Row(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    exampleCount_ = newIntList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  exampleCount_.addInt(input.readInt32());
-                  break;
-                }
-              case 10:
-                {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                    exampleCount_ = newIntList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
-                    exampleCount_.addInt(input.readInt32());
-                  }
-                  input.popLimit(limit);
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            exampleCount_.makeImmutable(); // C
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.automl.v1.ClassificationProto
             .internal_static_google_cloud_automl_v1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
@@ -2798,7 +2531,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         for (int i = 0; i < exampleCount_.size(); i++) {
           output.writeInt32NoTag(exampleCount_.getInt(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2821,7 +2554,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           }
           exampleCountMemoizedSerializedSize = dataSize;
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2840,7 +2573,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             (com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row) obj;
 
         if (!getExampleCountList().equals(other.getExampleCountList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2855,7 +2588,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           hash = (37 * hash) + EXAMPLE_COUNT_FIELD_NUMBER;
           hash = (53 * hash) + getExampleCountList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3000,17 +2733,10 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
         // Construct using
         // com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -3125,7 +2851,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3140,20 +2866,49 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int v = input.readInt32();
+                    ensureExampleCountIsMutable();
+                    exampleCount_.addInt(v);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureExampleCountIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      exampleCount_.addInt(input.readInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3343,7 +3098,19 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Row(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3648,7 +3415,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       for (int i = 0; i < displayName_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3676,7 +3443,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         size += dataSize;
         size += 1 * getDisplayNameList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3696,7 +3463,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (!getAnnotationSpecIdList().equals(other.getAnnotationSpecIdList())) return false;
       if (!getDisplayNameList().equals(other.getDisplayNameList())) return false;
       if (!getRowList().equals(other.getRowList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3719,7 +3486,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         hash = (37 * hash) + ROW_FIELD_NUMBER;
         hash = (53 * hash) + getRowList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3859,19 +3626,10 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
       // Construct using
       // com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getRowFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -3883,10 +3641,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         bitField0_ = (bitField0_ & ~0x00000002);
         if (rowBuilder_ == null) {
           row_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          row_ = null;
           rowBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4041,7 +3800,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4056,20 +3815,60 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAnnotationSpecIdIsMutable();
+                  annotationSpecId_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix.Row m =
+                      input.readMessage(
+                          com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix
+                              .Row.parser(),
+                          extensionRegistry);
+                  if (rowBuilder_ == null) {
+                    ensureRowIsMutable();
+                    row_.add(m);
+                  } else {
+                    rowBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDisplayNameIsMutable();
+                  displayName_.add(s);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfusionMatrix)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5018,7 +4817,19 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ConfusionMatrix(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5372,7 +5183,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     if (java.lang.Float.floatToRawIntBits(logLoss_) != 0) {
       output.writeFloat(7, logLoss_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -5406,7 +5217,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     if (java.lang.Float.floatToRawIntBits(logLoss_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, logLoss_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -5435,7 +5246,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       if (!getConfusionMatrix().equals(other.getConfusionMatrix())) return false;
     }
     if (!getAnnotationSpecIdList().equals(other.getAnnotationSpecIdList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -5464,7 +5275,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
       hash = (37 * hash) + ANNOTATION_SPEC_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAnnotationSpecIdList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -5596,19 +5407,10 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
     }
 
     // Construct using com.google.cloud.automl.v1.ClassificationEvaluationMetrics.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getConfidenceMetricsEntryFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -5622,10 +5424,11 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
 
       if (confidenceMetricsEntryBuilder_ == null) {
         confidenceMetricsEntry_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        confidenceMetricsEntry_ = null;
         confidenceMetricsEntryBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (confusionMatrixBuilder_ == null) {
         confusionMatrix_ = null;
       } else {
@@ -5783,7 +5586,7 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5798,18 +5601,78 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1.ClassificationEvaluationMetrics parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13:
+              {
+                auPrc_ = input.readFloat();
+
+                break;
+              } // case 13
+            case 26:
+              {
+                com.google.cloud.automl.v1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+                    m =
+                        input.readMessage(
+                            com.google.cloud.automl.v1.ClassificationEvaluationMetrics
+                                .ConfidenceMetricsEntry.parser(),
+                            extensionRegistry);
+                if (confidenceMetricsEntryBuilder_ == null) {
+                  ensureConfidenceMetricsEntryIsMutable();
+                  confidenceMetricsEntry_.add(m);
+                } else {
+                  confidenceMetricsEntryBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getConfusionMatrixFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAnnotationSpecIdIsMutable();
+                annotationSpecId_.add(s);
+                break;
+              } // case 42
+            case 53:
+              {
+                auRoc_ = input.readFloat();
+
+                break;
+              } // case 53
+            case 61:
+              {
+                logLoss_ = input.readFloat();
+
+                break;
+              } // case 61
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.automl.v1.ClassificationEvaluationMetrics) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6958,7 +6821,18 @@ public final class ClassificationEvaluationMetrics extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClassificationEvaluationMetrics(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -62,167 +62,6 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private RuntimeEnvironment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              maxWorkers_ = input.readInt32();
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zone_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceAccountEmail_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tempLocation_ = s;
-              break;
-            }
-          case 40:
-            {
-              bypassTempDirValidation_ = input.readBool();
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              machineType_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                additionalExperiments_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              additionalExperiments_.add(s);
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                additionalUserLabels_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AdditionalUserLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  additionalUserLabels__ =
-                      input.readMessage(
-                          AdditionalUserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              additionalUserLabels_
-                  .getMutableMap()
-                  .put(additionalUserLabels__.getKey(), additionalUserLabels__.getValue());
-              break;
-            }
-          case 88:
-            {
-              numWorkers_ = input.readInt32();
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kmsKeyName_ = s;
-              break;
-            }
-          case 112:
-            {
-              int rawValue = input.readEnum();
-
-              ipConfiguration_ = rawValue;
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              workerRegion_ = s;
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              workerZone_ = s;
-              break;
-            }
-          case 136:
-            {
-              enableStreamingEngine_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        additionalExperiments_ = additionalExperiments_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.TemplatesProto
         .internal_static_google_dataflow_v1beta3_RuntimeEnvironment_descriptor;
@@ -1101,7 +940,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (enableStreamingEngine_ != false) {
       output.writeBool(17, enableStreamingEngine_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1172,7 +1011,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (enableStreamingEngine_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableStreamingEngine_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1205,7 +1044,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (!getWorkerRegion().equals(other.getWorkerRegion())) return false;
     if (!getWorkerZone().equals(other.getWorkerZone())) return false;
     if (getEnableStreamingEngine() != other.getEnableStreamingEngine()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1252,7 +1091,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getWorkerZone().hashCode();
     hash = (37 * hash) + ENABLE_STREAMING_ENGINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStreamingEngine());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1401,17 +1240,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.dataflow.v1beta3.RuntimeEnvironment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1608,7 +1440,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       if (other.getEnableStreamingEngine() != false) {
         setEnableStreamingEngine(other.getEnableStreamingEngine());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1623,17 +1455,134 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.dataflow.v1beta3.RuntimeEnvironment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                maxWorkers_ = input.readInt32();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                zone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                serviceAccountEmail_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                tempLocation_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 40:
+              {
+                bypassTempDirValidation_ = input.readBool();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                machineType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdditionalExperimentsIsMutable();
+                additionalExperiments_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                network_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                subnetwork_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    additionalUserLabels__ =
+                        input.readMessage(
+                            AdditionalUserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAdditionalUserLabels()
+                    .getMutableMap()
+                    .put(additionalUserLabels__.getKey(), additionalUserLabels__.getValue());
+                break;
+              } // case 82
+            case 88:
+              {
+                numWorkers_ = input.readInt32();
+
+                break;
+              } // case 88
+            case 98:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 112:
+              {
+                ipConfiguration_ = input.readEnum();
+
+                break;
+              } // case 112
+            case 122:
+              {
+                workerRegion_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            case 130:
+              {
+                workerZone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 136:
+              {
+                enableStreamingEngine_ = input.readBool();
+
+                break;
+              } // case 136
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.dataflow.v1beta3.RuntimeEnvironment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3421,7 +3370,18 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RuntimeEnvironment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

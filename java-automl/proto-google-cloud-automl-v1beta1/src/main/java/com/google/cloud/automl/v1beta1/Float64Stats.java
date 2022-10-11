@@ -53,99 +53,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Float64Stats(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 9:
-            {
-              mean_ = input.readDouble();
-              break;
-            }
-          case 17:
-            {
-              standardDeviation_ = input.readDouble();
-              break;
-            }
-          case 25:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                quantiles_ = newDoubleList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              quantiles_.addDouble(input.readDouble());
-              break;
-            }
-          case 26:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                quantiles_ = newDoubleList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                quantiles_.addDouble(input.readDouble());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                histogramBuckets_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              histogramBuckets_.add(
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        quantiles_.makeImmutable(); // C
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        histogramBuckets_ = java.util.Collections.unmodifiableList(histogramBuckets_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.DataStatsOuterClass
         .internal_static_google_cloud_automl_v1beta1_Float64Stats_descriptor;
@@ -237,60 +144,6 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private HistogramBucket(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                min_ = input.readDouble();
-                break;
-              }
-            case 17:
-              {
-                max_ = input.readDouble();
-                break;
-              }
-            case 24:
-              {
-                count_ = input.readInt64();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -387,7 +240,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       if (count_ != 0L) {
         output.writeInt64(3, count_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -405,7 +258,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       if (count_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, count_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -426,7 +279,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToLongBits(getMax())
           != java.lang.Double.doubleToLongBits(other.getMax())) return false;
       if (getCount() != other.getCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -447,7 +300,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
               + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getMax()));
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -579,17 +432,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -694,7 +540,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         if (other.getCount() != 0L) {
           setCount(other.getCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -709,19 +555,49 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  min_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 17:
+                {
+                  max_ = input.readDouble();
+
+                  break;
+                } // case 17
+              case 24:
+                {
+                  count_ = input.readInt64();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -922,7 +798,19 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new HistogramBucket(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1166,7 +1054,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < histogramBuckets_.size(); i++) {
       output.writeMessage(4, histogramBuckets_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1194,7 +1082,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < histogramBuckets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, histogramBuckets_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1216,7 +1104,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         != java.lang.Double.doubleToLongBits(other.getStandardDeviation())) return false;
     if (!getQuantilesList().equals(other.getQuantilesList())) return false;
     if (!getHistogramBucketsList().equals(other.getHistogramBucketsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1244,7 +1132,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HISTOGRAM_BUCKETS_FIELD_NUMBER;
       hash = (53 * hash) + getHistogramBucketsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1373,19 +1261,10 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.automl.v1beta1.Float64Stats.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getHistogramBucketsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1399,10 +1278,11 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       if (histogramBucketsBuilder_ == null) {
         histogramBuckets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        histogramBuckets_ = null;
         histogramBucketsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1539,7 +1419,7 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1554,17 +1434,75 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.Float64Stats parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9:
+              {
+                mean_ = input.readDouble();
+
+                break;
+              } // case 9
+            case 17:
+              {
+                standardDeviation_ = input.readDouble();
+
+                break;
+              } // case 17
+            case 25:
+              {
+                double v = input.readDouble();
+                ensureQuantilesIsMutable();
+                quantiles_.addDouble(v);
+                break;
+              } // case 25
+            case 26:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureQuantilesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  quantiles_.addDouble(input.readDouble());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket m =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.Float64Stats.HistogramBucket.parser(),
+                        extensionRegistry);
+                if (histogramBucketsBuilder_ == null) {
+                  ensureHistogramBucketsIsMutable();
+                  histogramBuckets_.add(m);
+                } else {
+                  histogramBucketsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.Float64Stats) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2332,7 +2270,18 @@ public final class Float64Stats extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Float64Stats(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

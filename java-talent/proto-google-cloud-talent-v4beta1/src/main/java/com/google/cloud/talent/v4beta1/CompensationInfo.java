@@ -52,99 +52,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private CompensationInfo(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                entries_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              entries_.add(
-                  input.readMessage(
-                      com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder
-                  subBuilder = null;
-              if (annualizedBaseCompensationRange_ != null) {
-                subBuilder = annualizedBaseCompensationRange_.toBuilder();
-              }
-              annualizedBaseCompensationRange_ =
-                  input.readMessage(
-                      com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(annualizedBaseCompensationRange_);
-                annualizedBaseCompensationRange_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder
-                  subBuilder = null;
-              if (annualizedTotalCompensationRange_ != null) {
-                subBuilder = annualizedTotalCompensationRange_.toBuilder();
-              }
-              annualizedTotalCompensationRange_ =
-                  input.readMessage(
-                      com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(annualizedTotalCompensationRange_);
-                annualizedTotalCompensationRange_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        entries_ = java.util.Collections.unmodifiableList(entries_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4beta1.CommonProto
         .internal_static_google_cloud_talent_v4beta1_CompensationInfo_descriptor;
@@ -997,119 +904,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       return this.unknownFields;
     }
 
-    private CompensationEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                unit_ = rawValue;
-                break;
-              }
-            case 26:
-              {
-                com.google.type.Money.Builder subBuilder = null;
-                if (compensationAmountCase_ == 3) {
-                  subBuilder = ((com.google.type.Money) compensationAmount_).toBuilder();
-                }
-                compensationAmount_ =
-                    input.readMessage(com.google.type.Money.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.type.Money) compensationAmount_);
-                  compensationAmount_ = subBuilder.buildPartial();
-                }
-                compensationAmountCase_ = 3;
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.Builder
-                    subBuilder = null;
-                if (compensationAmountCase_ == 4) {
-                  subBuilder =
-                      ((com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange)
-                              compensationAmount_)
-                          .toBuilder();
-                }
-                compensationAmount_ =
-                    input.readMessage(
-                        com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange)
-                          compensationAmount_);
-                  compensationAmount_ = subBuilder.buildPartial();
-                }
-                compensationAmountCase_ = 4;
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                description_ = s;
-                break;
-              }
-            case 50:
-              {
-                com.google.protobuf.DoubleValue.Builder subBuilder = null;
-                if (expectedUnitsPerYear_ != null) {
-                  subBuilder = expectedUnitsPerYear_.toBuilder();
-                }
-                expectedUnitsPerYear_ =
-                    input.readMessage(com.google.protobuf.DoubleValue.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(expectedUnitsPerYear_);
-                  expectedUnitsPerYear_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.talent.v4beta1.CommonProto
           .internal_static_google_cloud_talent_v4beta1_CompensationInfo_CompensationEntry_descriptor;
@@ -1522,7 +1316,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (expectedUnitsPerYear_ != null) {
         output.writeMessage(6, getExpectedUnitsPerYear());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1562,7 +1356,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(6, getExpectedUnitsPerYear());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1596,7 +1390,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1629,7 +1423,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1769,17 +1563,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1789,6 +1576,12 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
         unit_ = 0;
 
+        if (amountBuilder_ != null) {
+          amountBuilder_.clear();
+        }
+        if (rangeBuilder_ != null) {
+          rangeBuilder_.clear();
+        }
         description_ = "";
 
         if (expectedUnitsPerYearBuilder_ == null) {
@@ -1935,7 +1728,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1950,19 +1743,68 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  unit_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  input.readMessage(getAmountFieldBuilder().getBuilder(), extensionRegistry);
+                  compensationAmountCase_ = 3;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getRangeFieldBuilder().getBuilder(), extensionRegistry);
+                  compensationAmountCase_ = 4;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  description_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getExpectedUnitsPerYearFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3006,7 +2848,19 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CompensationEntry(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3146,75 +3000,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private CompensationRange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.type.Money.Builder subBuilder = null;
-                if (minCompensation_ != null) {
-                  subBuilder = minCompensation_.toBuilder();
-                }
-                minCompensation_ =
-                    input.readMessage(com.google.type.Money.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(minCompensation_);
-                  minCompensation_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.type.Money.Builder subBuilder = null;
-                if (maxCompensation_ != null) {
-                  subBuilder = maxCompensation_.toBuilder();
-                }
-                maxCompensation_ =
-                    input.readMessage(com.google.type.Money.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(maxCompensation_);
-                  maxCompensation_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3363,7 +3148,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (maxCompensation_ != null) {
         output.writeMessage(2, getMaxCompensation());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3378,7 +3163,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (maxCompensation_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMaxCompensation());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3402,7 +3187,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (hasMinCompensation()) {
         if (!getMinCompensation().equals(other.getMinCompensation())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3421,7 +3206,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + MIN_COMPENSATION_FIELD_NUMBER;
         hash = (53 * hash) + getMinCompensation().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3555,17 +3340,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3683,7 +3461,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         if (other.hasMinCompensation()) {
           mergeMinCompensation(other.getMinCompensation());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3698,19 +3476,45 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getMinCompensationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getMaxCompensationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.talent.v4beta1.CompensationInfo.CompensationRange)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4152,7 +3956,19 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CompensationRange(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4420,7 +4236,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     if (annualizedTotalCompensationRange_ != null) {
       output.writeMessage(3, getAnnualizedTotalCompensationRange());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -4442,7 +4258,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, getAnnualizedTotalCompensationRange());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -4471,7 +4287,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (!getAnnualizedTotalCompensationRange()
           .equals(other.getAnnualizedTotalCompensationRange())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -4494,7 +4310,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ANNUALIZED_TOTAL_COMPENSATION_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getAnnualizedTotalCompensationRange().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -4623,19 +4439,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.talent.v4beta1.CompensationInfo.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getEntriesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -4643,10 +4450,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       super.clear();
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        entries_ = null;
         entriesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (annualizedBaseCompensationRangeBuilder_ == null) {
         annualizedBaseCompensationRange_ = null;
       } else {
@@ -4789,7 +4597,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       if (other.hasAnnualizedTotalCompensationRange()) {
         mergeAnnualizedTotalCompensationRange(other.getAnnualizedTotalCompensationRange());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4804,17 +4612,61 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.talent.v4beta1.CompensationInfo parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry m =
+                    input.readMessage(
+                        com.google.cloud.talent.v4beta1.CompensationInfo.CompensationEntry.parser(),
+                        extensionRegistry);
+                if (entriesBuilder_ == null) {
+                  ensureEntriesIsMutable();
+                  entries_.add(m);
+                } else {
+                  entriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getAnnualizedBaseCompensationRangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getAnnualizedTotalCompensationRangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.talent.v4beta1.CompensationInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -5783,7 +5635,18 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CompensationInfo(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

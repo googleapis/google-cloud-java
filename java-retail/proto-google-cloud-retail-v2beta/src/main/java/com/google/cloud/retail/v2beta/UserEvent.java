@@ -66,250 +66,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private UserEvent(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              eventType_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              visitorId_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (eventTime_ != null) {
-                subBuilder = eventTime_.toBuilder();
-              }
-              eventTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(eventTime_);
-                eventTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                experimentIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              experimentIds_.add(s);
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              attributionToken_ = s;
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                productDetails_ =
-                    new java.util.ArrayList<com.google.cloud.retail.v2beta.ProductDetail>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              productDetails_.add(
-                  input.readMessage(
-                      com.google.cloud.retail.v2beta.ProductDetail.parser(), extensionRegistry));
-              break;
-            }
-          case 58:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                attributes_ =
-                    com.google.protobuf.MapField.newMapField(
-                        AttributesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.retail.v2beta.CustomAttribute>
-                  attributes__ =
-                      input.readMessage(
-                          AttributesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              attributes_.getMutableMap().put(attributes__.getKey(), attributes__.getValue());
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cartId_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.retail.v2beta.PurchaseTransaction.Builder subBuilder = null;
-              if (purchaseTransaction_ != null) {
-                subBuilder = purchaseTransaction_.toBuilder();
-              }
-              purchaseTransaction_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2beta.PurchaseTransaction.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(purchaseTransaction_);
-                purchaseTransaction_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              searchQuery_ = s;
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                pageCategories_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              pageCategories_.add(s);
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.retail.v2beta.UserInfo.Builder subBuilder = null;
-              if (userInfo_ != null) {
-                subBuilder = userInfo_.toBuilder();
-              }
-              userInfo_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2beta.UserInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(userInfo_);
-                userInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uri_ = s;
-              break;
-            }
-          case 114:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              referrerUri_ = s;
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageViewId_ = s;
-              break;
-            }
-          case 130:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
-              break;
-            }
-          case 138:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              orderBy_ = s;
-              break;
-            }
-          case 144:
-            {
-              offset_ = input.readInt32();
-              break;
-            }
-          case 170:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sessionId_ = s;
-              break;
-            }
-          case 178:
-            {
-              com.google.cloud.retail.v2beta.CompletionDetail.Builder subBuilder = null;
-              if (completionDetail_ != null) {
-                subBuilder = completionDetail_.toBuilder();
-              }
-              completionDetail_ =
-                  input.readMessage(
-                      com.google.cloud.retail.v2beta.CompletionDetail.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(completionDetail_);
-                completionDetail_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        experimentIds_ = experimentIds_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        productDetails_ = java.util.Collections.unmodifiableList(productDetails_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        pageCategories_ = pageCategories_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.UserEventProto
         .internal_static_google_cloud_retail_v2beta_UserEvent_descriptor;
@@ -1835,7 +1591,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (completionDetail_ != null) {
       output.writeMessage(22, getCompletionDetail());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1922,7 +1678,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (completionDetail_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getCompletionDetail());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1969,7 +1725,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getUri().equals(other.getUri())) return false;
     if (!getReferrerUri().equals(other.getReferrerUri())) return false;
     if (!getPageViewId().equals(other.getPageViewId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2036,7 +1792,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getReferrerUri().hashCode();
     hash = (37 * hash) + PAGE_VIEW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPageViewId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2186,19 +1942,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.retail.v2beta.UserEvent.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getProductDetailsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2222,10 +1969,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
 
       if (productDetailsBuilder_ == null) {
         productDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        productDetails_ = null;
         productDetailsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (completionDetailBuilder_ == null) {
         completionDetail_ = null;
       } else {
@@ -2500,7 +2248,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         pageViewId_ = other.pageViewId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2515,17 +2263,169 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.retail.v2beta.UserEvent parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                eventType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                visitorId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getEventTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExperimentIdsIsMutable();
+                experimentIds_.add(s);
+                break;
+              } // case 34
+            case 42:
+              {
+                attributionToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.cloud.retail.v2beta.ProductDetail m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2beta.ProductDetail.parser(), extensionRegistry);
+                if (productDetailsBuilder_ == null) {
+                  ensureProductDetailsIsMutable();
+                  productDetails_.add(m);
+                } else {
+                  productDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.retail.v2beta.CustomAttribute>
+                    attributes__ =
+                        input.readMessage(
+                            AttributesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAttributes()
+                    .getMutableMap()
+                    .put(attributes__.getKey(), attributes__.getValue());
+                break;
+              } // case 58
+            case 66:
+              {
+                cartId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getPurchaseTransactionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                searchQuery_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePageCategoriesIsMutable();
+                pageCategories_.add(s);
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getUserInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                uri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 106
+            case 114:
+              {
+                referrerUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 114
+            case 122:
+              {
+                pageViewId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            case 130:
+              {
+                filter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
+            case 138:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
+            case 144:
+              {
+                offset_ = input.readInt32();
+
+                break;
+              } // case 144
+            case 170:
+              {
+                sessionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getCompletionDetailFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.retail.v2beta.UserEvent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -6331,7 +6231,18 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UserEvent(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

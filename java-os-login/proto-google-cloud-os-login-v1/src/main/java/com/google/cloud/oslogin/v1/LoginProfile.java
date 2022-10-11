@@ -54,89 +54,6 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private LoginProfile(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                posixAccounts_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              posixAccounts_.add(
-                  input.readMessage(
-                      com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                sshPublicKeys_ =
-                    com.google.protobuf.MapField.newMapField(
-                        SshPublicKeysDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<
-                      java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
-                  sshPublicKeys__ =
-                      input.readMessage(
-                          SshPublicKeysDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              sshPublicKeys_
-                  .getMutableMap()
-                  .put(sshPublicKeys__.getKey(), sshPublicKeys__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        posixAccounts_ = java.util.Collections.unmodifiableList(posixAccounts_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.oslogin.v1.OsLoginProto
         .internal_static_google_cloud_oslogin_v1_LoginProfile_descriptor;
@@ -421,7 +338,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSshPublicKeys(), SshPublicKeysDefaultEntryHolder.defaultEntry, 3);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -449,7 +366,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, sshPublicKeys__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -467,7 +384,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getPosixAccountsList().equals(other.getPosixAccountsList())) return false;
     if (!internalGetSshPublicKeys().equals(other.internalGetSshPublicKeys())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -488,7 +405,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SSH_PUBLIC_KEYS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSshPublicKeys().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -638,19 +555,10 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.oslogin.v1.LoginProfile.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPosixAccountsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -660,10 +568,11 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
 
       if (posixAccountsBuilder_ == null) {
         posixAccounts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        posixAccounts_ = null;
         posixAccountsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableSshPublicKeys().clear();
       return this;
     }
@@ -786,7 +695,7 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableSshPublicKeys().mergeFrom(other.internalGetSshPublicKeys());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -801,17 +710,64 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.oslogin.v1.LoginProfile parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.oslogin.common.OsLoginProto.PosixAccount m =
+                    input.readMessage(
+                        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.parser(),
+                        extensionRegistry);
+                if (posixAccountsBuilder_ == null) {
+                  ensurePosixAccountsIsMutable();
+                  posixAccounts_.add(m);
+                } else {
+                  posixAccountsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
+                    sshPublicKeys__ =
+                        input.readMessage(
+                            SshPublicKeysDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSshPublicKeys()
+                    .getMutableMap()
+                    .put(sshPublicKeys__.getKey(), sshPublicKeys__.getValue());
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.oslogin.v1.LoginProfile) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1510,7 +1466,18 @@ public final class LoginProfile extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LoginProfile(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

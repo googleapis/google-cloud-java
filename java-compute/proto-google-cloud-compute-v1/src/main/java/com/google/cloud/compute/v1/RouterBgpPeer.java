@@ -62,179 +62,6 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private RouterBgpPeer(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 779522:
-            {
-              com.google.cloud.compute.v1.RouterBgpPeerBfd.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) != 0)) {
-                subBuilder = bfd_.toBuilder();
-              }
-              bfd_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterBgpPeerBfd.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bfd_);
-                bfd_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000004;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              name_ = s;
-              break;
-            }
-          case 168524210:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                advertisedGroups_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              advertisedGroups_.add(s);
-              break;
-            }
-          case 223745690:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              ipv6NexthopAddress_ = s;
-              break;
-            }
-          case 283599458:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                advertisedIpRanges_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.RouterAdvertisedIpRange>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              advertisedIpRanges_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterAdvertisedIpRange.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 556585208:
-            {
-              bitField0_ |= 0x00000400;
-              peerAsn_ = input.readUInt32();
-              break;
-            }
-          case 1389628850:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
-              managementType_ = s;
-              break;
-            }
-          case 1451743512:
-            {
-              bitField0_ |= 0x00000010;
-              enableIpv6_ = input.readBool();
-              break;
-            }
-          case 1491890656:
-            {
-              bitField0_ |= 0x00000002;
-              advertisedRoutePriority_ = input.readUInt32();
-              break;
-            }
-          case 1661886154:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              peerIpAddress_ = s;
-              break;
-            }
-          case -1800852454:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
-              enable_ = s;
-              break;
-            }
-          case -1797892646:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              advertiseMode_ = s;
-              break;
-            }
-          case -1044789534:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
-              ipAddress_ = s;
-              break;
-            }
-          case -792129910:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              interfaceName_ = s;
-              break;
-            }
-          case -548463382:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              routerApplianceInstance_ = s;
-              break;
-            }
-          case -363074430:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
-              peerIpv6NexthopAddress_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_RouterBgpPeer_descriptor;
@@ -1799,7 +1626,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 491486608, peerIpv6NexthopAddress_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1870,7 +1697,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               491486608, peerIpv6NexthopAddress_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1944,7 +1771,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasRouterApplianceInstance()) {
       if (!getRouterApplianceInstance().equals(other.getRouterApplianceInstance())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2019,7 +1846,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ROUTER_APPLIANCE_INSTANCE_FIELD_NUMBER;
       hash = (53 * hash) + getRouterApplianceInstance().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2172,10 +1999,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        advertisedIpRanges_ = null;
         advertisedIpRangesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       advertisedRoutePriority_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
       if (bfdBuilder_ == null) {
@@ -2458,7 +2286,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         routerApplianceInstance_ = other.routerApplianceInstance_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2473,17 +2301,136 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.RouterBgpPeer parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 779522:
+              {
+                input.readMessage(getBfdFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 779522
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 26989658
+            case 168524210:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdvertisedGroupsIsMutable();
+                advertisedGroups_.add(s);
+                break;
+              } // case 168524210
+            case 223745690:
+              {
+                ipv6NexthopAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 223745690
+            case 283599458:
+              {
+                com.google.cloud.compute.v1.RouterAdvertisedIpRange m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterAdvertisedIpRange.parser(),
+                        extensionRegistry);
+                if (advertisedIpRangesBuilder_ == null) {
+                  ensureAdvertisedIpRangesIsMutable();
+                  advertisedIpRanges_.add(m);
+                } else {
+                  advertisedIpRangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 283599458
+            case 556585208:
+              {
+                peerAsn_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 556585208
+            case 1389628850:
+              {
+                managementType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 1389628850
+            case 1451743512:
+              {
+                enableIpv6_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 1451743512
+            case 1491890656:
+              {
+                advertisedRoutePriority_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 1491890656
+            case 1661886154:
+              {
+                peerIpAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1661886154
+            case -1800852454:
+              {
+                enable_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case -1800852454
+            case -1797892646:
+              {
+                advertiseMode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1797892646
+            case -1044789534:
+              {
+                ipAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case -1044789534
+            case -792129910:
+              {
+                interfaceName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case -792129910
+            case -548463382:
+              {
+                routerApplianceInstance_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case -548463382
+            case -363074430:
+              {
+                peerIpv6NexthopAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -363074430
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.RouterBgpPeer) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4703,7 +4650,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RouterBgpPeer(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

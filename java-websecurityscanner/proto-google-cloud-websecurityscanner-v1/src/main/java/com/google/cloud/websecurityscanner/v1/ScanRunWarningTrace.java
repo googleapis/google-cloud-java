@@ -54,52 +54,6 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private ScanRunWarningTrace(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              code_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.ScanRunWarningTraceProto
         .internal_static_google_cloud_websecurityscanner_v1_ScanRunWarningTrace_descriptor;
@@ -182,6 +136,16 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>BLOCKED_BY_IAP = 4;</code>
      */
     BLOCKED_BY_IAP(4),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that no seeds is found for a scan
+     * </pre>
+     *
+     * <code>NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN = 5;</code>
+     */
+    NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -240,6 +204,16 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
      * <code>BLOCKED_BY_IAP = 4;</code>
      */
     public static final int BLOCKED_BY_IAP_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that no seeds is found for a scan
+     * </pre>
+     *
+     * <code>NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN = 5;</code>
+     */
+    public static final int NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -275,6 +249,8 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
           return TOO_MANY_FUZZ_TASKS;
         case 4:
           return BLOCKED_BY_IAP;
+        case 5:
+          return NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN;
         default:
           return null;
       }
@@ -387,7 +363,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(1, code_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -401,7 +377,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, code_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -418,7 +394,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
         (com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace) obj;
 
     if (code_ != other.code_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -431,7 +407,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CODE_FIELD_NUMBER;
     hash = (53 * hash) + code_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -563,17 +539,10 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -662,7 +631,7 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
       if (other.code_ != 0) {
         setCodeValue(other.getCodeValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -677,18 +646,37 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                code_ = input.readEnum();
+
+                break;
+              } // case 8
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.websecurityscanner.v1.ScanRunWarningTrace) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -817,7 +805,18 @@ public final class ScanRunWarningTrace extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ScanRunWarningTrace(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

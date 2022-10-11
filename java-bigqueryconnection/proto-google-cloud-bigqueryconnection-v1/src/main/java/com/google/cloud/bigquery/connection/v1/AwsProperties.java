@@ -50,87 +50,6 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AwsProperties(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 18:
-            {
-              com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.Builder subBuilder = null;
-              if (authenticationMethodCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole)
-                            authenticationMethod_)
-                        .toBuilder();
-              }
-              authenticationMethod_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole)
-                        authenticationMethod_);
-                authenticationMethod_ = subBuilder.buildPartial();
-              }
-              authenticationMethodCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.bigquery.connection.v1.AwsAccessRole.Builder subBuilder = null;
-              if (authenticationMethodCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_)
-                        .toBuilder();
-              }
-              authenticationMethod_ =
-                  input.readMessage(
-                      com.google.cloud.bigquery.connection.v1.AwsAccessRole.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_);
-                authenticationMethod_ = subBuilder.buildPartial();
-              }
-              authenticationMethodCase_ = 3;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.connection.v1.ConnectionOuterClass
         .internal_static_google_cloud_bigquery_connection_v1_AwsProperties_descriptor;
@@ -341,7 +260,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           3, (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -361,7 +280,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.bigquery.connection.v1.AwsAccessRole) authenticationMethod_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -388,7 +307,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -411,7 +330,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -541,22 +460,21 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.bigquery.connection.v1.AwsProperties.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (crossAccountRoleBuilder_ != null) {
+        crossAccountRoleBuilder_.clear();
+      }
+      if (accessRoleBuilder_ != null) {
+        accessRoleBuilder_.clear();
+      }
       authenticationMethodCase_ = 0;
       authenticationMethod_ = null;
       return this;
@@ -667,7 +585,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -682,18 +600,44 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.bigquery.connection.v1.AwsProperties parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18:
+              {
+                input.readMessage(
+                    getCrossAccountRoleFieldBuilder().getBuilder(), extensionRegistry);
+                authenticationMethodCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getAccessRoleFieldBuilder().getBuilder(), extensionRegistry);
+                authenticationMethodCase_ = 3;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.bigquery.connection.v1.AwsProperties) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1232,7 +1176,18 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AwsProperties(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

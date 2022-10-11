@@ -53,78 +53,6 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private ForwardSshTunnelConnectivity(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              hostname_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              username_ = s;
-              break;
-            }
-          case 24:
-            {
-              port_ = input.readInt32();
-              break;
-            }
-          case 802:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              authenticationMethodCase_ = 100;
-              authenticationMethod_ = s;
-              break;
-            }
-          case 810:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              authenticationMethodCase_ = 101;
-              authenticationMethod_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1alpha1.CloudDatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1alpha1_ForwardSshTunnelConnectivity_descriptor;
@@ -472,7 +400,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     if (authenticationMethodCase_ == 101) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 101, authenticationMethod_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -496,7 +424,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
     if (authenticationMethodCase_ == 101) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, authenticationMethod_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -526,7 +454,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -555,7 +483,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -687,17 +615,10 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
 
     // Construct using
     // com.google.cloud.datastream.v1alpha1.ForwardSshTunnelConnectivity.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -832,7 +753,7 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -847,19 +768,63 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datastream.v1alpha1.ForwardSshTunnelConnectivity parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                hostname_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                username_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                port_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 802:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                authenticationMethodCase_ = 100;
+                authenticationMethod_ = s;
+                break;
+              } // case 802
+            case 810:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                authenticationMethodCase_ = 101;
+                authenticationMethod_ = s;
+                break;
+              } // case 810
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datastream.v1alpha1.ForwardSshTunnelConnectivity)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1443,7 +1408,18 @@ public final class ForwardSshTunnelConnectivity extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ForwardSshTunnelConnectivity(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

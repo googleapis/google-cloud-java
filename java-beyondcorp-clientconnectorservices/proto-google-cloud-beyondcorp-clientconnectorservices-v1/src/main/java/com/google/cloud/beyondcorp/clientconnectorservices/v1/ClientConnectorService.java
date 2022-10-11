@@ -55,136 +55,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private ClientConnectorService(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-                      .Builder
-                  subBuilder = null;
-              if (ingress_ != null) {
-                subBuilder = ingress_.toBuilder();
-              }
-              ingress_ =
-                  input.readMessage(
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                          .Ingress.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ingress_);
-                ingress_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
-                      .Builder
-                  subBuilder = null;
-              if (egress_ != null) {
-                subBuilder = egress_.toBuilder();
-              }
-              egress_ =
-                  input.readMessage(
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                          .Egress.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(egress_);
-                egress_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
@@ -543,72 +413,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private Ingress(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                        .Ingress.Config.Builder
-                    subBuilder = null;
-                if (ingressConfigCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.beyondcorp.clientconnectorservices.v1
-                                  .ClientConnectorService.Ingress.Config)
-                              ingressConfig_)
-                          .toBuilder();
-                }
-                ingressConfig_ =
-                    input.readMessage(
-                        com.google.cloud.beyondcorp.clientconnectorservices.v1
-                            .ClientConnectorService.Ingress.Config.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                              .Ingress.Config)
-                          ingressConfig_);
-                  ingressConfig_ = subBuilder.buildPartial();
-                }
-                ingressConfigCase_ = 1;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
@@ -772,73 +576,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private Config(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  int rawValue = input.readEnum();
-
-                  transportProtocol_ = rawValue;
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    destinationRoutes_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.beyondcorp.clientconnectorservices.v1
-                                .ClientConnectorService.Ingress.Config.DestinationRoute>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  destinationRoutes_.add(
-                      input.readMessage(
-                          com.google.cloud.beyondcorp.clientconnectorservices.v1
-                              .ClientConnectorService.Ingress.Config.DestinationRoute.parser(),
-                          extensionRegistry));
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            destinationRoutes_ = java.util.Collections.unmodifiableList(destinationRoutes_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1100,60 +837,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           return this.unknownFields;
         }
 
-        private DestinationRoute(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 10:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    address_ = s;
-                    break;
-                  }
-                case 18:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    netmask_ = s;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.beyondcorp.clientconnectorservices.v1
               .ClientConnectorServicesServiceProto
@@ -1296,7 +979,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(netmask_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, netmask_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -1311,7 +994,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(netmask_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, netmask_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -1336,7 +1019,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
           if (!getAddress().equals(other.getAddress())) return false;
           if (!getNetmask().equals(other.getNetmask())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -1351,7 +1034,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           hash = (53 * hash) + getAddress().hashCode();
           hash = (37 * hash) + NETMASK_FIELD_NUMBER;
           hash = (53 * hash) + getNetmask().hashCode();
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -1516,17 +1199,10 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
           // Construct using
           // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -1648,7 +1324,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               netmask_ = other.netmask_;
               onChanged();
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -1663,22 +1339,43 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-                    .Config.DestinationRoute
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      address_ = input.readStringRequireUtf8();
+
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      netmask_ = input.readStringRequireUtf8();
+
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                          .Ingress.Config.DestinationRoute)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -1943,7 +1640,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new DestinationRoute(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -2129,7 +1838,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         for (int i = 0; i < destinationRoutes_.size(); i++) {
           output.writeMessage(2, destinationRoutes_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2149,7 +1858,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   2, destinationRoutes_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2173,7 +1882,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
         if (transportProtocol_ != other.transportProtocol_) return false;
         if (!getDestinationRoutesList().equals(other.getDestinationRoutesList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2190,7 +1899,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           hash = (37 * hash) + DESTINATION_ROUTES_FIELD_NUMBER;
           hash = (53 * hash) + getDestinationRoutesList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2351,19 +2060,10 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
         // Construct using
         // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getDestinationRoutesFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -2373,10 +2073,11 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
           if (destinationRoutesBuilder_ == null) {
             destinationRoutes_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            destinationRoutes_ = null;
             destinationRoutesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -2520,7 +2221,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2535,22 +2236,55 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-                  .Config
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    transportProtocol_ = input.readEnum();
+
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                            .Ingress.Config.DestinationRoute
+                        m =
+                            input.readMessage(
+                                com.google.cloud.beyondcorp.clientconnectorservices.v1
+                                    .ClientConnectorService.Ingress.Config.DestinationRoute
+                                    .parser(),
+                                extensionRegistry);
+                    if (destinationRoutesBuilder_ == null) {
+                      ensureDestinationRoutesIsMutable();
+                      destinationRoutes_.add(m);
+                    } else {
+                      destinationRoutesBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                        .Ingress.Config)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3161,7 +2895,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new Config(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3314,7 +3060,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .Config)
                 ingressConfig_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3331,7 +3077,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                         .Ingress.Config)
                     ingressConfig_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3358,7 +3104,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3377,7 +3123,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3536,22 +3282,18 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (configBuilder_ != null) {
+          configBuilder_.clear();
+        }
         ingressConfigCase_ = 0;
         ingressConfig_ = null;
         return this;
@@ -3668,7 +3410,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3683,21 +3425,37 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  ingressConfigCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                      .Ingress)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4021,7 +3779,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Ingress(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4127,72 +3897,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       return this.unknownFields;
     }
 
-    private Egress(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
-                        .PeeredVpc.Builder
-                    subBuilder = null;
-                if (destinationTypeCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.beyondcorp.clientconnectorservices.v1
-                                  .ClientConnectorService.Egress.PeeredVpc)
-                              destinationType_)
-                          .toBuilder();
-                }
-                destinationType_ =
-                    input.readMessage(
-                        com.google.cloud.beyondcorp.clientconnectorservices.v1
-                            .ClientConnectorService.Egress.PeeredVpc.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                              .Egress.PeeredVpc)
-                          destinationType_);
-                  destinationType_ = subBuilder.buildPartial();
-                }
-                destinationTypeCase_ = 1;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
@@ -4275,53 +3979,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private PeeredVpc(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  networkVpc_ = s;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4409,7 +4066,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkVpc_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, networkVpc_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -4421,7 +4078,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkVpc_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, networkVpc_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -4445,7 +4102,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     obj;
 
         if (!getNetworkVpc().equals(other.getNetworkVpc())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -4458,7 +4115,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + NETWORK_VPC_FIELD_NUMBER;
         hash = (53 * hash) + getNetworkVpc().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -4619,17 +4276,10 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
         // Construct using
         // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -4744,7 +4394,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             networkVpc_ = other.networkVpc_;
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4759,22 +4409,37 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
-                  .PeeredVpc
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    networkVpc_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                        .Egress.PeeredVpc)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4923,7 +4588,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new PeeredVpc(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -5076,7 +4753,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .PeeredVpc)
                 destinationType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5093,7 +4770,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                         .Egress.PeeredVpc)
                     destinationType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5120,7 +4797,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5139,7 +4816,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5297,22 +4974,18 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (peeredVpcBuilder_ != null) {
+          peeredVpcBuilder_.clear();
+        }
         destinationTypeCase_ = 0;
         destinationType_ = null;
         return this;
@@ -5428,7 +5101,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5443,20 +5116,37 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getPeeredVpcFieldBuilder().getBuilder(), extensionRegistry);
+                  destinationTypeCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5780,7 +5470,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Egress(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6205,7 +5907,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(8, state_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -6238,7 +5940,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, state_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -6274,7 +5976,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       if (!getEgress().equals(other.getEgress())) return false;
     }
     if (state_ != other.state_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -6307,7 +6009,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -6447,17 +6149,10 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
     // Construct using
     // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -6626,7 +6321,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -6641,20 +6336,73 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService parsedMessage =
-          null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 50:
+              {
+                input.readMessage(getIngressFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getEgressFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 64:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 64
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7883,7 +7631,18 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClientConnectorService(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

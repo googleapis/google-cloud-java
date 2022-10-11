@@ -54,105 +54,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Volume(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              volume_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.lifesciences.v2beta.PersistentDisk.Builder subBuilder = null;
-              if (storageCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.lifesciences.v2beta.PersistentDisk) storage_).toBuilder();
-              }
-              storage_ =
-                  input.readMessage(
-                      com.google.cloud.lifesciences.v2beta.PersistentDisk.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.lifesciences.v2beta.PersistentDisk) storage_);
-                storage_ = subBuilder.buildPartial();
-              }
-              storageCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.lifesciences.v2beta.ExistingDisk.Builder subBuilder = null;
-              if (storageCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.lifesciences.v2beta.ExistingDisk) storage_).toBuilder();
-              }
-              storage_ =
-                  input.readMessage(
-                      com.google.cloud.lifesciences.v2beta.ExistingDisk.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.lifesciences.v2beta.ExistingDisk) storage_);
-                storage_ = subBuilder.buildPartial();
-              }
-              storageCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.lifesciences.v2beta.NFSMount.Builder subBuilder = null;
-              if (storageCase_ == 4) {
-                subBuilder = ((com.google.cloud.lifesciences.v2beta.NFSMount) storage_).toBuilder();
-              }
-              storage_ =
-                  input.readMessage(
-                      com.google.cloud.lifesciences.v2beta.NFSMount.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.lifesciences.v2beta.NFSMount) storage_);
-                storage_ = subBuilder.buildPartial();
-              }
-              storageCase_ = 4;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.lifesciences.v2beta.WorkflowsProto
         .internal_static_google_cloud_lifesciences_v2beta_Volume_descriptor;
@@ -452,7 +353,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (storageCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.lifesciences.v2beta.NFSMount) storage_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -479,7 +380,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.lifesciences.v2beta.NFSMount) storage_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -510,7 +411,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -539,7 +440,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -670,17 +571,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.lifesciences.v2beta.Volume.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -688,6 +582,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       volume_ = "";
 
+      if (persistentDiskBuilder_ != null) {
+        persistentDiskBuilder_.clear();
+      }
+      if (existingDiskBuilder_ != null) {
+        existingDiskBuilder_.clear();
+      }
+      if (nfsMountBuilder_ != null) {
+        nfsMountBuilder_.clear();
+      }
       storageCase_ = 0;
       storage_ = null;
       return this;
@@ -814,7 +717,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -829,17 +732,55 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.lifesciences.v2beta.Volume parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                volume_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getPersistentDiskFieldBuilder().getBuilder(), extensionRegistry);
+                storageCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getExistingDiskFieldBuilder().getBuilder(), extensionRegistry);
+                storageCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getNfsMountFieldBuilder().getBuilder(), extensionRegistry);
+                storageCase_ = 4;
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.lifesciences.v2beta.Volume) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1642,7 +1583,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Volume(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

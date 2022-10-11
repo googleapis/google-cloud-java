@@ -56,127 +56,6 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private AnnotateTextResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sentences_ = new java.util.ArrayList<com.google.cloud.language.v1.Sentence>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sentences_.add(
-                  input.readMessage(
-                      com.google.cloud.language.v1.Sentence.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                tokens_ = new java.util.ArrayList<com.google.cloud.language.v1.Token>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              tokens_.add(
-                  input.readMessage(
-                      com.google.cloud.language.v1.Token.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                entities_ = new java.util.ArrayList<com.google.cloud.language.v1.Entity>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              entities_.add(
-                  input.readMessage(
-                      com.google.cloud.language.v1.Entity.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.language.v1.Sentiment.Builder subBuilder = null;
-              if (documentSentiment_ != null) {
-                subBuilder = documentSentiment_.toBuilder();
-              }
-              documentSentiment_ =
-                  input.readMessage(
-                      com.google.cloud.language.v1.Sentiment.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(documentSentiment_);
-                documentSentiment_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              language_ = s;
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                categories_ =
-                    new java.util.ArrayList<com.google.cloud.language.v1.ClassificationCategory>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              categories_.add(
-                  input.readMessage(
-                      com.google.cloud.language.v1.ClassificationCategory.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        sentences_ = java.util.Collections.unmodifiableList(sentences_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        tokens_ = java.util.Collections.unmodifiableList(tokens_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        entities_ = java.util.Collections.unmodifiableList(entities_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        categories_ = java.util.Collections.unmodifiableList(categories_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.language.v1.LanguageServiceProto
         .internal_static_google_cloud_language_v1_AnnotateTextResponse_descriptor;
@@ -630,7 +509,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < categories_.size(); i++) {
       output.writeMessage(6, categories_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -657,7 +536,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < categories_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, categories_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -682,7 +561,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     }
     if (!getLanguage().equals(other.getLanguage())) return false;
     if (!getCategoriesList().equals(other.getCategoriesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -715,7 +594,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getCategoriesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -844,22 +723,10 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.language.v1.AnnotateTextResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSentencesFieldBuilder();
-        getTokensFieldBuilder();
-        getEntitiesFieldBuilder();
-        getCategoriesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -867,22 +734,25 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       super.clear();
       if (sentencesBuilder_ == null) {
         sentences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        sentences_ = null;
         sentencesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (tokensBuilder_ == null) {
         tokens_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        tokens_ = null;
         tokensBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        entities_ = null;
         entitiesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (documentSentimentBuilder_ == null) {
         documentSentiment_ = null;
       } else {
@@ -893,10 +763,11 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
 
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        categories_ = null;
         categoriesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -1132,7 +1003,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1147,18 +1018,97 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.language.v1.AnnotateTextResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.language.v1.Sentence m =
+                    input.readMessage(
+                        com.google.cloud.language.v1.Sentence.parser(), extensionRegistry);
+                if (sentencesBuilder_ == null) {
+                  ensureSentencesIsMutable();
+                  sentences_.add(m);
+                } else {
+                  sentencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.language.v1.Token m =
+                    input.readMessage(
+                        com.google.cloud.language.v1.Token.parser(), extensionRegistry);
+                if (tokensBuilder_ == null) {
+                  ensureTokensIsMutable();
+                  tokens_.add(m);
+                } else {
+                  tokensBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.language.v1.Entity m =
+                    input.readMessage(
+                        com.google.cloud.language.v1.Entity.parser(), extensionRegistry);
+                if (entitiesBuilder_ == null) {
+                  ensureEntitiesIsMutable();
+                  entities_.add(m);
+                } else {
+                  entitiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getDocumentSentimentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                language_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.cloud.language.v1.ClassificationCategory m =
+                    input.readMessage(
+                        com.google.cloud.language.v1.ClassificationCategory.parser(),
+                        extensionRegistry);
+                if (categoriesBuilder_ == null) {
+                  ensureCategoriesIsMutable();
+                  categories_.add(m);
+                } else {
+                  categoriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.language.v1.AnnotateTextResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2999,7 +2949,18 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AnnotateTextResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

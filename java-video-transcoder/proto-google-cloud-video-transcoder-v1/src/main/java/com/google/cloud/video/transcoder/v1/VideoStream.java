@@ -50,114 +50,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private VideoStream(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.Builder
-                  subBuilder = null;
-              if (codecSettingsCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings)
-                            codecSettings_)
-                        .toBuilder();
-              }
-              codecSettings_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings)
-                        codecSettings_);
-                codecSettings_ = subBuilder.buildPartial();
-              }
-              codecSettingsCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.Builder
-                  subBuilder = null;
-              if (codecSettingsCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings)
-                            codecSettings_)
-                        .toBuilder();
-              }
-              codecSettings_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings)
-                        codecSettings_);
-                codecSettings_ = subBuilder.buildPartial();
-              }
-              codecSettingsCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.Builder subBuilder =
-                  null;
-              if (codecSettingsCase_ == 3) {
-                subBuilder =
-                    ((com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings)
-                            codecSettings_)
-                        .toBuilder();
-              }
-              codecSettings_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings)
-                        codecSettings_);
-                codecSettings_ = subBuilder.buildPartial();
-              }
-              codecSettingsCase_ = 3;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_VideoStream_descriptor;
@@ -688,168 +580,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private H264CodecSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                widthPixels_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                heightPixels_ = input.readInt32();
-                break;
-              }
-            case 25:
-              {
-                frameRate_ = input.readDouble();
-                break;
-              }
-            case 32:
-              {
-                bitrateBps_ = input.readInt32();
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                pixelFormat_ = s;
-                break;
-              }
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                rateControlMode_ = s;
-                break;
-              }
-            case 56:
-              {
-                crfLevel_ = input.readInt32();
-                break;
-              }
-            case 64:
-              {
-                allowOpenGop_ = input.readBool();
-                break;
-              }
-            case 72:
-              {
-                gopMode_ = input.readInt32();
-                gopModeCase_ = 9;
-                break;
-              }
-            case 82:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (gopModeCase_ == 10) {
-                  subBuilder = ((com.google.protobuf.Duration) gopMode_).toBuilder();
-                }
-                gopMode_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.protobuf.Duration) gopMode_);
-                  gopMode_ = subBuilder.buildPartial();
-                }
-                gopModeCase_ = 10;
-                break;
-              }
-            case 88:
-              {
-                enableTwoPass_ = input.readBool();
-                break;
-              }
-            case 96:
-              {
-                vbvSizeBits_ = input.readInt32();
-                break;
-              }
-            case 104:
-              {
-                vbvFullnessBits_ = input.readInt32();
-                break;
-              }
-            case 114:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                entropyCoder_ = s;
-                break;
-              }
-            case 120:
-              {
-                bPyramid_ = input.readBool();
-                break;
-              }
-            case 128:
-              {
-                bFrameCount_ = input.readInt32();
-                break;
-              }
-            case 137:
-              {
-                aqStrength_ = input.readDouble();
-                break;
-              }
-            case 146:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                profile_ = s;
-                break;
-              }
-            case 154:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                tune_ = s;
-                break;
-              }
-            case 162:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                preset_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1688,7 +1418,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 20, preset_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1761,7 +1491,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, preset_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1808,7 +1538,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1873,7 +1603,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2007,17 +1737,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2039,6 +1762,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
         allowOpenGop_ = false;
 
+        if (gopDurationBuilder_ != null) {
+          gopDurationBuilder_.clear();
+        }
         enableTwoPass_ = false;
 
         vbvSizeBits_ = 0;
@@ -2250,7 +1976,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2265,19 +1991,151 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  widthPixels_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  heightPixels_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 25:
+                {
+                  frameRate_ = input.readDouble();
+
+                  break;
+                } // case 25
+              case 32:
+                {
+                  bitrateBps_ = input.readInt32();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  pixelFormat_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  rateControlMode_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 50
+              case 56:
+                {
+                  crfLevel_ = input.readInt32();
+
+                  break;
+                } // case 56
+              case 64:
+                {
+                  allowOpenGop_ = input.readBool();
+
+                  break;
+                } // case 64
+              case 72:
+                {
+                  gopMode_ = input.readInt32();
+                  gopModeCase_ = 9;
+                  break;
+                } // case 72
+              case 82:
+                {
+                  input.readMessage(getGopDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  gopModeCase_ = 10;
+                  break;
+                } // case 82
+              case 88:
+                {
+                  enableTwoPass_ = input.readBool();
+
+                  break;
+                } // case 88
+              case 96:
+                {
+                  vbvSizeBits_ = input.readInt32();
+
+                  break;
+                } // case 96
+              case 104:
+                {
+                  vbvFullnessBits_ = input.readInt32();
+
+                  break;
+                } // case 104
+              case 114:
+                {
+                  entropyCoder_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 114
+              case 120:
+                {
+                  bPyramid_ = input.readBool();
+
+                  break;
+                } // case 120
+              case 128:
+                {
+                  bFrameCount_ = input.readInt32();
+
+                  break;
+                } // case 128
+              case 137:
+                {
+                  aqStrength_ = input.readDouble();
+
+                  break;
+                } // case 137
+              case 146:
+                {
+                  profile_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 146
+              case 154:
+                {
+                  tune_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 154
+              case 162:
+                {
+                  preset_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 162
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4140,7 +3998,19 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new H264CodecSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4673,161 +4543,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private H265CodecSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                widthPixels_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                heightPixels_ = input.readInt32();
-                break;
-              }
-            case 25:
-              {
-                frameRate_ = input.readDouble();
-                break;
-              }
-            case 32:
-              {
-                bitrateBps_ = input.readInt32();
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                pixelFormat_ = s;
-                break;
-              }
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                rateControlMode_ = s;
-                break;
-              }
-            case 56:
-              {
-                crfLevel_ = input.readInt32();
-                break;
-              }
-            case 64:
-              {
-                allowOpenGop_ = input.readBool();
-                break;
-              }
-            case 72:
-              {
-                gopMode_ = input.readInt32();
-                gopModeCase_ = 9;
-                break;
-              }
-            case 82:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (gopModeCase_ == 10) {
-                  subBuilder = ((com.google.protobuf.Duration) gopMode_).toBuilder();
-                }
-                gopMode_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.protobuf.Duration) gopMode_);
-                  gopMode_ = subBuilder.buildPartial();
-                }
-                gopModeCase_ = 10;
-                break;
-              }
-            case 88:
-              {
-                enableTwoPass_ = input.readBool();
-                break;
-              }
-            case 96:
-              {
-                vbvSizeBits_ = input.readInt32();
-                break;
-              }
-            case 104:
-              {
-                vbvFullnessBits_ = input.readInt32();
-                break;
-              }
-            case 112:
-              {
-                bPyramid_ = input.readBool();
-                break;
-              }
-            case 120:
-              {
-                bFrameCount_ = input.readInt32();
-                break;
-              }
-            case 129:
-              {
-                aqStrength_ = input.readDouble();
-                break;
-              }
-            case 138:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                profile_ = s;
-                break;
-              }
-            case 146:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                tune_ = s;
-                break;
-              }
-            case 154:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                preset_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5638,7 +5353,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 19, preset_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5708,7 +5423,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, preset_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5754,7 +5469,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5817,7 +5532,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5951,17 +5666,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -5983,6 +5691,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
         allowOpenGop_ = false;
 
+        if (gopDurationBuilder_ != null) {
+          gopDurationBuilder_.clear();
+        }
         enableTwoPass_ = false;
 
         vbvSizeBits_ = 0;
@@ -6187,7 +5898,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6202,19 +5913,145 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  widthPixels_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  heightPixels_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 25:
+                {
+                  frameRate_ = input.readDouble();
+
+                  break;
+                } // case 25
+              case 32:
+                {
+                  bitrateBps_ = input.readInt32();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  pixelFormat_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  rateControlMode_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 50
+              case 56:
+                {
+                  crfLevel_ = input.readInt32();
+
+                  break;
+                } // case 56
+              case 64:
+                {
+                  allowOpenGop_ = input.readBool();
+
+                  break;
+                } // case 64
+              case 72:
+                {
+                  gopMode_ = input.readInt32();
+                  gopModeCase_ = 9;
+                  break;
+                } // case 72
+              case 82:
+                {
+                  input.readMessage(getGopDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  gopModeCase_ = 10;
+                  break;
+                } // case 82
+              case 88:
+                {
+                  enableTwoPass_ = input.readBool();
+
+                  break;
+                } // case 88
+              case 96:
+                {
+                  vbvSizeBits_ = input.readInt32();
+
+                  break;
+                } // case 96
+              case 104:
+                {
+                  vbvFullnessBits_ = input.readInt32();
+
+                  break;
+                } // case 104
+              case 112:
+                {
+                  bPyramid_ = input.readBool();
+
+                  break;
+                } // case 112
+              case 120:
+                {
+                  bFrameCount_ = input.readInt32();
+
+                  break;
+                } // case 120
+              case 129:
+                {
+                  aqStrength_ = input.readDouble();
+
+                  break;
+                } // case 129
+              case 138:
+                {
+                  profile_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 138
+              case 146:
+                {
+                  tune_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 146
+              case 154:
+                {
+                  preset_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 154
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -8031,7 +7868,19 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new H265CodecSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -8364,112 +8213,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Vp9CodecSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                widthPixels_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                heightPixels_ = input.readInt32();
-                break;
-              }
-            case 25:
-              {
-                frameRate_ = input.readDouble();
-                break;
-              }
-            case 32:
-              {
-                bitrateBps_ = input.readInt32();
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                pixelFormat_ = s;
-                break;
-              }
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                rateControlMode_ = s;
-                break;
-              }
-            case 56:
-              {
-                crfLevel_ = input.readInt32();
-                break;
-              }
-            case 64:
-              {
-                gopMode_ = input.readInt32();
-                gopModeCase_ = 8;
-                break;
-              }
-            case 74:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (gopModeCase_ == 9) {
-                  subBuilder = ((com.google.protobuf.Duration) gopMode_).toBuilder();
-                }
-                gopMode_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom((com.google.protobuf.Duration) gopMode_);
-                  gopMode_ = subBuilder.buildPartial();
-                }
-                gopModeCase_ = 9;
-                break;
-              }
-            case 82:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                profile_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8972,7 +8715,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, profile_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -9015,7 +8758,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(profile_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, profile_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -9051,7 +8794,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -9093,7 +8836,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -9227,17 +8970,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -9257,6 +8993,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
         crfLevel_ = 0;
 
+        if (gopDurationBuilder_ != null) {
+          gopDurationBuilder_.clear();
+        }
         profile_ = "";
 
         gopModeCase_ = 0;
@@ -9407,7 +9146,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9422,19 +9161,91 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  widthPixels_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  heightPixels_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 25:
+                {
+                  frameRate_ = input.readDouble();
+
+                  break;
+                } // case 25
+              case 32:
+                {
+                  bitrateBps_ = input.readInt32();
+
+                  break;
+                } // case 32
+              case 42:
+                {
+                  pixelFormat_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              case 50:
+                {
+                  rateControlMode_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 50
+              case 56:
+                {
+                  crfLevel_ = input.readInt32();
+
+                  break;
+                } // case 56
+              case 64:
+                {
+                  gopMode_ = input.readInt32();
+                  gopModeCase_ = 8;
+                  break;
+                } // case 64
+              case 74:
+                {
+                  input.readMessage(getGopDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  gopModeCase_ = 9;
+                  break;
+                } // case 74
+              case 82:
+                {
+                  profile_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 82
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -10528,7 +10339,19 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Vp9CodecSettings(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -10780,7 +10603,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           3, (com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings) codecSettings_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -10807,7 +10630,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               3,
               (com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings) codecSettings_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -10837,7 +10660,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -10864,7 +10687,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -10993,22 +10816,24 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.transcoder.v1.VideoStream.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (h264Builder_ != null) {
+        h264Builder_.clear();
+      }
+      if (h265Builder_ != null) {
+        h265Builder_.clear();
+      }
+      if (vp9Builder_ != null) {
+        vp9Builder_.clear();
+      }
       codecSettingsCase_ = 0;
       codecSettings_ = null;
       return this;
@@ -11131,7 +10956,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -11146,17 +10971,49 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.transcoder.v1.VideoStream parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getH264FieldBuilder().getBuilder(), extensionRegistry);
+                codecSettingsCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getH265FieldBuilder().getBuilder(), extensionRegistry);
+                codecSettingsCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getVp9FieldBuilder().getBuilder(), extensionRegistry);
+                codecSettingsCase_ = 3;
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.video.transcoder.v1.VideoStream) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -11877,7 +11734,18 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VideoStream(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

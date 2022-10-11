@@ -229,4 +229,43 @@ public interface ResponseMetaDataOrBuilder
    * @return The bytes for emptyReason.
    */
   com.google.protobuf.ByteString getEmptyReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If `subjectToThresholding` is true, this report is subject to thresholding
+   * and only returns data that meets the minimum aggregation thresholds. It is
+   * possible for a request to be subject to thresholding thresholding and no
+   * data is absent from the report, and this happens when all data is above the
+   * thresholds. To learn more, see [Data
+   * thresholds](https://support.google.com/analytics/answer/9383630) and [About
+   * Demographics and
+   * Interests](https://support.google.com/analytics/answer/2799357).
+   * </pre>
+   *
+   * <code>optional bool subject_to_thresholding = 8;</code>
+   *
+   * @return Whether the subjectToThresholding field is set.
+   */
+  boolean hasSubjectToThresholding();
+  /**
+   *
+   *
+   * <pre>
+   * If `subjectToThresholding` is true, this report is subject to thresholding
+   * and only returns data that meets the minimum aggregation thresholds. It is
+   * possible for a request to be subject to thresholding thresholding and no
+   * data is absent from the report, and this happens when all data is above the
+   * thresholds. To learn more, see [Data
+   * thresholds](https://support.google.com/analytics/answer/9383630) and [About
+   * Demographics and
+   * Interests](https://support.google.com/analytics/answer/2799357).
+   * </pre>
+   *
+   * <code>optional bool subject_to_thresholding = 8;</code>
+   *
+   * @return The subjectToThresholding.
+   */
+  boolean getSubjectToThresholding();
 }

@@ -86,76 +86,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Row(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dimensionValues_ =
-                    new java.util.ArrayList<com.google.analytics.data.v1beta.DimensionValue>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dimensionValues_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.DimensionValue.parser(), extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                metricValues_ =
-                    new java.util.ArrayList<com.google.analytics.data.v1beta.MetricValue>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              metricValues_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.MetricValue.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dimensionValues_ = java.util.Collections.unmodifiableList(dimensionValues_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        metricValues_ = java.util.Collections.unmodifiableList(metricValues_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_Row_descriptor;
@@ -335,7 +265,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metricValues_.size(); i++) {
       output.writeMessage(2, metricValues_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -350,7 +280,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < metricValues_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, metricValues_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -367,7 +297,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
     if (!getDimensionValuesList().equals(other.getDimensionValuesList())) return false;
     if (!getMetricValuesList().equals(other.getMetricValuesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -386,7 +316,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + METRIC_VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getMetricValuesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -547,20 +477,10 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.analytics.data.v1beta.Row.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDimensionValuesFieldBuilder();
-        getMetricValuesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -568,16 +488,18 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (dimensionValuesBuilder_ == null) {
         dimensionValues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dimensionValues_ = null;
         dimensionValuesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (metricValuesBuilder_ == null) {
         metricValues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        metricValues_ = null;
         metricValuesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -726,7 +648,7 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -741,17 +663,58 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1beta.Row parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.analytics.data.v1beta.DimensionValue m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.DimensionValue.parser(),
+                        extensionRegistry);
+                if (dimensionValuesBuilder_ == null) {
+                  ensureDimensionValuesIsMutable();
+                  dimensionValues_.add(m);
+                } else {
+                  dimensionValuesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.analytics.data.v1beta.MetricValue m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.MetricValue.parser(), extensionRegistry);
+                if (metricValuesBuilder_ == null) {
+                  ensureMetricValuesIsMutable();
+                  metricValues_.add(m);
+                } else {
+                  metricValuesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.analytics.data.v1beta.Row) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1520,7 +1483,18 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Row(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

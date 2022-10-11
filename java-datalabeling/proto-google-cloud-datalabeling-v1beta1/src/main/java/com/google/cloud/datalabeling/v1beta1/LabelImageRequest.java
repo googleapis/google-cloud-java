@@ -53,159 +53,6 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
     return this.unknownFields;
   }
 
-  private LabelImageRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder subBuilder = null;
-              if (basicConfig_ != null) {
-                subBuilder = basicConfig_.toBuilder();
-              }
-              basicConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(basicConfig_);
-                basicConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              feature_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig.Builder subBuilder =
-                  null;
-              if (requestConfigCase_ == 4) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig)
-                            requestConfig_)
-                        .toBuilder();
-              }
-              requestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig)
-                        requestConfig_);
-                requestConfig_ = subBuilder.buildPartial();
-              }
-              requestConfigCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig.Builder subBuilder = null;
-              if (requestConfigCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig) requestConfig_)
-                        .toBuilder();
-              }
-              requestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig) requestConfig_);
-                requestConfig_ = subBuilder.buildPartial();
-              }
-              requestConfigCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.datalabeling.v1beta1.PolylineConfig.Builder subBuilder = null;
-              if (requestConfigCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.PolylineConfig) requestConfig_)
-                        .toBuilder();
-              }
-              requestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.PolylineConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.PolylineConfig) requestConfig_);
-                requestConfig_ = subBuilder.buildPartial();
-              }
-              requestConfigCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.datalabeling.v1beta1.SegmentationConfig.Builder subBuilder = null;
-              if (requestConfigCase_ == 7) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.SegmentationConfig) requestConfig_)
-                        .toBuilder();
-              }
-              requestConfig_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.SegmentationConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.SegmentationConfig) requestConfig_);
-                requestConfig_ = subBuilder.buildPartial();
-              }
-              requestConfigCase_ = 7;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataLabelingServiceOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_LabelImageRequest_descriptor;
@@ -944,7 +791,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           7, (com.google.cloud.datalabeling.v1beta1.SegmentationConfig) requestConfig_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -984,7 +831,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.datalabeling.v1beta1.SegmentationConfig) requestConfig_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1024,7 +871,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1063,7 +910,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1193,22 +1040,27 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.LabelImageRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (imageClassificationConfigBuilder_ != null) {
+        imageClassificationConfigBuilder_.clear();
+      }
+      if (boundingPolyConfigBuilder_ != null) {
+        boundingPolyConfigBuilder_.clear();
+      }
+      if (polylineConfigBuilder_ != null) {
+        polylineConfigBuilder_.clear();
+      }
+      if (segmentationConfigBuilder_ != null) {
+        segmentationConfigBuilder_.clear();
+      }
       parent_ = "";
 
       if (basicConfigBuilder_ == null) {
@@ -1370,7 +1222,7 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1385,18 +1237,76 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.LabelImageRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getBasicConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 24:
+              {
+                feature_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getImageClassificationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                requestConfigCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getBoundingPolyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                requestConfigCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getPolylineConfigFieldBuilder().getBuilder(), extensionRegistry);
+                requestConfigCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getSegmentationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                requestConfigCase_ = 7;
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.LabelImageRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2833,7 +2743,18 @@ public final class LabelImageRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LabelImageRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

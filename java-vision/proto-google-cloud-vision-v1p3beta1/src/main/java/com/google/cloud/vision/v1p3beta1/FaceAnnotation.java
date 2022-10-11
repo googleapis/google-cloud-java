@@ -59,169 +59,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private FaceAnnotation(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder subBuilder = null;
-              if (boundingPoly_ != null) {
-                subBuilder = boundingPoly_.toBuilder();
-              }
-              boundingPoly_ =
-                  input.readMessage(
-                      com.google.cloud.vision.v1p3beta1.BoundingPoly.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(boundingPoly_);
-                boundingPoly_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder subBuilder = null;
-              if (fdBoundingPoly_ != null) {
-                subBuilder = fdBoundingPoly_.toBuilder();
-              }
-              fdBoundingPoly_ =
-                  input.readMessage(
-                      com.google.cloud.vision.v1p3beta1.BoundingPoly.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fdBoundingPoly_);
-                fdBoundingPoly_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                landmarks_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              landmarks_.add(
-                  input.readMessage(
-                      com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 37:
-            {
-              rollAngle_ = input.readFloat();
-              break;
-            }
-          case 45:
-            {
-              panAngle_ = input.readFloat();
-              break;
-            }
-          case 53:
-            {
-              tiltAngle_ = input.readFloat();
-              break;
-            }
-          case 61:
-            {
-              detectionConfidence_ = input.readFloat();
-              break;
-            }
-          case 69:
-            {
-              landmarkingConfidence_ = input.readFloat();
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              joyLikelihood_ = rawValue;
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              sorrowLikelihood_ = rawValue;
-              break;
-            }
-          case 88:
-            {
-              int rawValue = input.readEnum();
-
-              angerLikelihood_ = rawValue;
-              break;
-            }
-          case 96:
-            {
-              int rawValue = input.readEnum();
-
-              surpriseLikelihood_ = rawValue;
-              break;
-            }
-          case 104:
-            {
-              int rawValue = input.readEnum();
-
-              underExposedLikelihood_ = rawValue;
-              break;
-            }
-          case 112:
-            {
-              int rawValue = input.readEnum();
-
-              blurredLikelihood_ = rawValue;
-              break;
-            }
-          case 120:
-            {
-              int rawValue = input.readEnum();
-
-              headwearLikelihood_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        landmarks_ = java.util.Collections.unmodifiableList(landmarks_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1p3beta1_FaceAnnotation_descriptor;
@@ -334,68 +171,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Landmark(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24:
-              {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-            case 34:
-              {
-                com.google.cloud.vision.v1p3beta1.Position.Builder subBuilder = null;
-                if (position_ != null) {
-                  subBuilder = position_.toBuilder();
-                }
-                position_ =
-                    input.readMessage(
-                        com.google.cloud.vision.v1p3beta1.Position.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(position_);
-                  position_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1387,7 +1162,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (position_ != null) {
         output.writeMessage(4, getPosition());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1404,7 +1179,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (position_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPosition());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1425,7 +1200,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (hasPosition()) {
         if (!getPosition().equals(other.getPosition())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1442,7 +1217,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + POSITION_FIELD_NUMBER;
         hash = (53 * hash) + getPosition().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1574,17 +1349,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1689,7 +1457,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         if (other.hasPosition()) {
           mergePosition(other.getPosition());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1704,18 +1472,43 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24:
+                {
+                  type_ = input.readEnum();
+
+                  break;
+                } // case 24
+              case 34:
+                {
+                  input.readMessage(getPositionFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2031,7 +1824,19 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Landmark(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2658,7 +2463,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (headwearLikelihood_ != com.google.cloud.vision.v1p3beta1.Likelihood.UNKNOWN.getNumber()) {
       output.writeEnum(15, headwearLikelihood_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2713,7 +2518,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (headwearLikelihood_ != com.google.cloud.vision.v1p3beta1.Likelihood.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, headwearLikelihood_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2755,7 +2560,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (underExposedLikelihood_ != other.underExposedLikelihood_) return false;
     if (blurredLikelihood_ != other.blurredLikelihood_) return false;
     if (headwearLikelihood_ != other.headwearLikelihood_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2802,7 +2607,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + blurredLikelihood_;
     hash = (37 * hash) + HEADWEAR_LIKELIHOOD_FIELD_NUMBER;
     hash = (53 * hash) + headwearLikelihood_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2931,19 +2736,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.FaceAnnotation.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getLandmarksFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2963,10 +2759,11 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (landmarksBuilder_ == null) {
         landmarks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        landmarks_ = null;
         landmarksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       rollAngle_ = 0F;
 
       panAngle_ = 0F;
@@ -3169,7 +2966,7 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (other.headwearLikelihood_ != 0) {
         setHeadwearLikelihoodValue(other.getHeadwearLikelihoodValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3184,17 +2981,129 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vision.v1p3beta1.FaceAnnotation parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getFdBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark m =
+                    input.readMessage(
+                        com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark.parser(),
+                        extensionRegistry);
+                if (landmarksBuilder_ == null) {
+                  ensureLandmarksIsMutable();
+                  landmarks_.add(m);
+                } else {
+                  landmarksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 37:
+              {
+                rollAngle_ = input.readFloat();
+
+                break;
+              } // case 37
+            case 45:
+              {
+                panAngle_ = input.readFloat();
+
+                break;
+              } // case 45
+            case 53:
+              {
+                tiltAngle_ = input.readFloat();
+
+                break;
+              } // case 53
+            case 61:
+              {
+                detectionConfidence_ = input.readFloat();
+
+                break;
+              } // case 61
+            case 69:
+              {
+                landmarkingConfidence_ = input.readFloat();
+
+                break;
+              } // case 69
+            case 72:
+              {
+                joyLikelihood_ = input.readEnum();
+
+                break;
+              } // case 72
+            case 80:
+              {
+                sorrowLikelihood_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 88:
+              {
+                angerLikelihood_ = input.readEnum();
+
+                break;
+              } // case 88
+            case 96:
+              {
+                surpriseLikelihood_ = input.readEnum();
+
+                break;
+              } // case 96
+            case 104:
+              {
+                underExposedLikelihood_ = input.readEnum();
+
+                break;
+              } // case 104
+            case 112:
+              {
+                blurredLikelihood_ = input.readEnum();
+
+                break;
+              } // case 112
+            case 120:
+              {
+                headwearLikelihood_ = input.readEnum();
+
+                break;
+              } // case 120
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.FaceAnnotation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4980,7 +4889,18 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FaceAnnotation(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

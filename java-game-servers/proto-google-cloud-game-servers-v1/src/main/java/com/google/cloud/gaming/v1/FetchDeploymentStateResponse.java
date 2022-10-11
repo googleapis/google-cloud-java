@@ -53,78 +53,6 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private FetchDeploymentStateResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                clusterState_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.gaming.v1.FetchDeploymentStateResponse
-                            .DeployedClusterState>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              clusterState_.add(
-                  input.readMessage(
-                      com.google.cloud.gaming.v1.FetchDeploymentStateResponse.DeployedClusterState
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unavailable_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unavailable_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        clusterState_ = java.util.Collections.unmodifiableList(clusterState_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        unavailable_ = unavailable_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.GameServerDeployments
         .internal_static_google_cloud_gaming_v1_FetchDeploymentStateResponse_descriptor;
@@ -260,69 +188,6 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private DeployedClusterState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                cluster_ = s;
-                break;
-              }
-            case 18:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  fleetDetails_ =
-                      new java.util.ArrayList<com.google.cloud.gaming.v1.DeployedFleetDetails>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                fleetDetails_.add(
-                    input.readMessage(
-                        com.google.cloud.gaming.v1.DeployedFleetDetails.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          fleetDetails_ = java.util.Collections.unmodifiableList(fleetDetails_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -485,7 +350,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       for (int i = 0; i < fleetDetails_.size(); i++) {
         output.writeMessage(2, fleetDetails_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -500,7 +365,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       for (int i = 0; i < fleetDetails_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, fleetDetails_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -520,7 +385,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
 
       if (!getCluster().equals(other.getCluster())) return false;
       if (!getFleetDetailsList().equals(other.getFleetDetailsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -537,7 +402,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         hash = (37 * hash) + FLEET_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getFleetDetailsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -678,19 +543,10 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
 
       // Construct using
       // com.google.cloud.gaming.v1.FetchDeploymentStateResponse.DeployedClusterState.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getFleetDetailsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -700,10 +556,11 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
 
         if (fleetDetailsBuilder_ == null) {
           fleetDetails_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          fleetDetails_ = null;
           fleetDetailsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -834,7 +691,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -849,20 +706,51 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.gaming.v1.FetchDeploymentStateResponse.DeployedClusterState parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  cluster_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.cloud.gaming.v1.DeployedFleetDetails m =
+                      input.readMessage(
+                          com.google.cloud.gaming.v1.DeployedFleetDetails.parser(),
+                          extensionRegistry);
+                  if (fleetDetailsBuilder_ == null) {
+                    ensureFleetDetailsIsMutable();
+                    fleetDetails_.add(m);
+                  } else {
+                    fleetDetailsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.gaming.v1.FetchDeploymentStateResponse.DeployedClusterState)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1390,7 +1278,19 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new DeployedClusterState(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1578,7 +1478,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     for (int i = 0; i < unavailable_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, unavailable_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1598,7 +1498,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       size += dataSize;
       size += 1 * getUnavailableList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1616,7 +1516,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
 
     if (!getClusterStateList().equals(other.getClusterStateList())) return false;
     if (!getUnavailableList().equals(other.getUnavailableList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1635,7 +1535,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       hash = (37 * hash) + UNAVAILABLE_FIELD_NUMBER;
       hash = (53 * hash) + getUnavailableList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1765,19 +1665,10 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
     }
 
     // Construct using com.google.cloud.gaming.v1.FetchDeploymentStateResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getClusterStateFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1785,10 +1676,11 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
       super.clear();
       if (clusterStateBuilder_ == null) {
         clusterState_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        clusterState_ = null;
         clusterStateBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       unavailable_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -1920,7 +1812,7 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1935,18 +1827,53 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gaming.v1.FetchDeploymentStateResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.gaming.v1.FetchDeploymentStateResponse.DeployedClusterState m =
+                    input.readMessage(
+                        com.google.cloud.gaming.v1.FetchDeploymentStateResponse.DeployedClusterState
+                            .parser(),
+                        extensionRegistry);
+                if (clusterStateBuilder_ == null) {
+                  ensureClusterStateIsMutable();
+                  clusterState_.add(m);
+                } else {
+                  clusterStateBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUnavailableIsMutable();
+                unavailable_.add(s);
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gaming.v1.FetchDeploymentStateResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2573,7 +2500,18 @@ public final class FetchDeploymentStateResponse extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FetchDeploymentStateResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

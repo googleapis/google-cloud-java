@@ -346,6 +346,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+   *
+   * @return Whether the desiredCostManagementConfig field is set.
+   */
+  boolean hasDesiredCostManagementConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+   *
+   * @return The desiredCostManagementConfig.
+   */
+  com.google.container.v1.CostManagementConfig getDesiredCostManagementConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1.CostManagementConfig desired_cost_management_config = 49;</code>
+   */
+  com.google.container.v1.CostManagementConfigOrBuilder getDesiredCostManagementConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * DNSConfig contains clusterDNS config for this cluster.
    * </pre>
    *

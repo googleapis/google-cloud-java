@@ -55,96 +55,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private GitHubEventsConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              installationId_ = input.readInt64();
-              break;
-            }
-          case 34:
-            {
-              com.google.cloudbuild.v1.PullRequestFilter.Builder subBuilder = null;
-              if (eventCase_ == 4) {
-                subBuilder = ((com.google.cloudbuild.v1.PullRequestFilter) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(
-                      com.google.cloudbuild.v1.PullRequestFilter.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloudbuild.v1.PullRequestFilter) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloudbuild.v1.PushFilter.Builder subBuilder = null;
-              if (eventCase_ == 5) {
-                subBuilder = ((com.google.cloudbuild.v1.PushFilter) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(
-                      com.google.cloudbuild.v1.PushFilter.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloudbuild.v1.PushFilter) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 5;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              owner_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_descriptor;
@@ -463,7 +373,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, name_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -491,7 +401,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, name_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -521,7 +431,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -550,7 +460,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -681,17 +591,10 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloudbuild.v1.GitHubEventsConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -703,6 +606,12 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
 
       name_ = "";
 
+      if (pullRequestBuilder_ != null) {
+        pullRequestBuilder_.clear();
+      }
+      if (pushBuilder_ != null) {
+        pushBuilder_.clear();
+      }
       eventCase_ = 0;
       event_ = null;
       return this;
@@ -826,7 +735,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -841,17 +750,61 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloudbuild.v1.GitHubEventsConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                installationId_ = input.readInt64();
+
+                break;
+              } // case 8
+            case 34:
+              {
+                input.readMessage(getPullRequestFieldBuilder().getBuilder(), extensionRegistry);
+                eventCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getPushFieldBuilder().getBuilder(), extensionRegistry);
+                eventCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                owner_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloudbuild.v1.GitHubEventsConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1605,7 +1558,18 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GitHubEventsConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

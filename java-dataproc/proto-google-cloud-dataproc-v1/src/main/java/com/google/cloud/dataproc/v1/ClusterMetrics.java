@@ -52,76 +52,6 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ClusterMetrics(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hdfsMetrics_ =
-                    com.google.protobuf.MapField.newMapField(
-                        HdfsMetricsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> hdfsMetrics__ =
-                  input.readMessage(
-                      HdfsMetricsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              hdfsMetrics_.getMutableMap().put(hdfsMetrics__.getKey(), hdfsMetrics__.getValue());
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                yarnMetrics_ =
-                    com.google.protobuf.MapField.newMapField(
-                        YarnMetricsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> yarnMetrics__ =
-                  input.readMessage(
-                      YarnMetricsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              yarnMetrics_.getMutableMap().put(yarnMetrics__.getKey(), yarnMetrics__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_ClusterMetrics_descriptor;
@@ -364,7 +294,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
         output, internalGetHdfsMetrics(), HdfsMetricsDefaultEntryHolder.defaultEntry, 1);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetYarnMetrics(), YarnMetricsDefaultEntryHolder.defaultEntry, 2);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -393,7 +323,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, yarnMetrics__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -411,7 +341,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
 
     if (!internalGetHdfsMetrics().equals(other.internalGetHdfsMetrics())) return false;
     if (!internalGetYarnMetrics().equals(other.internalGetYarnMetrics())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -430,7 +360,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + YARN_METRICS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetYarnMetrics().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -585,17 +515,10 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataproc.v1.ClusterMetrics.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -686,7 +609,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance()) return this;
       internalGetMutableHdfsMetrics().mergeFrom(other.internalGetHdfsMetrics());
       internalGetMutableYarnMetrics().mergeFrom(other.internalGetYarnMetrics());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -701,17 +624,53 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.ClusterMetrics parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> hdfsMetrics__ =
+                    input.readMessage(
+                        HdfsMetricsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableHdfsMetrics()
+                    .getMutableMap()
+                    .put(hdfsMetrics__.getKey(), hdfsMetrics__.getValue());
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Long> yarnMetrics__ =
+                    input.readMessage(
+                        YarnMetricsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableYarnMetrics()
+                    .getMutableMap()
+                    .put(yarnMetrics__.getKey(), yarnMetrics__.getValue());
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.ClusterMetrics) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1063,7 +1022,18 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClusterMetrics(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

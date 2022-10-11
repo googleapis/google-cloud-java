@@ -56,107 +56,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
     return this.unknownFields;
   }
 
-  private OSPolicyAssignmentReport(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instance_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              osPolicyAssignment_ = s;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                osPolicyCompliances_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              osPolicyCompliances_.add(
-                  input.readMessage(
-                      com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                          .parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lastRunId_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        osPolicyCompliances_ = java.util.Collections.unmodifiableList(osPolicyCompliances_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.osconfig.v1.OSPolicyAssignmentReportsProto
         .internal_static_google_cloud_osconfig_v1_OSPolicyAssignmentReport_descriptor;
@@ -403,87 +302,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private OSPolicyCompliance(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                osPolicyId_ = s;
-                break;
-              }
-            case 16:
-              {
-                int rawValue = input.readEnum();
-
-                complianceState_ = rawValue;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                complianceStateReason_ = s;
-                break;
-              }
-            case 34:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  osPolicyResourceCompliances_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                              .OSPolicyResourceCompliance>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                osPolicyResourceCompliances_.add(
-                    input.readMessage(
-                        com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                            .OSPolicyResourceCompliance.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          osPolicyResourceCompliances_ =
-              java.util.Collections.unmodifiableList(osPolicyResourceCompliances_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -952,114 +770,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
         return this.unknownFields;
       }
 
-      private OSPolicyResourceCompliance(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  osPolicyResourceId_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    configSteps_ =
-                        new java.util.ArrayList<
-                            com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                                .OSPolicyResourceCompliance.OSPolicyResourceConfigStep>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  configSteps_.add(
-                      input.readMessage(
-                          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                              .OSPolicyResourceCompliance.OSPolicyResourceConfigStep.parser(),
-                          extensionRegistry));
-                  break;
-                }
-              case 24:
-                {
-                  int rawValue = input.readEnum();
-
-                  complianceState_ = rawValue;
-                  break;
-                }
-              case 34:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  complianceStateReason_ = s;
-                  break;
-                }
-              case 42:
-                {
-                  com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                          .OSPolicyResourceCompliance.ExecResourceOutput.Builder
-                      subBuilder = null;
-                  if (outputCase_ == 5) {
-                    subBuilder =
-                        ((com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                                    .OSPolicyResourceCompliance.ExecResourceOutput)
-                                output_)
-                            .toBuilder();
-                  }
-                  output_ =
-                      input.readMessage(
-                          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                              .OSPolicyResourceCompliance.ExecResourceOutput.parser(),
-                          extensionRegistry);
-                  if (subBuilder != null) {
-                    subBuilder.mergeFrom(
-                        (com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                                .OSPolicyResourceCompliance.ExecResourceOutput)
-                            output_);
-                    output_ = subBuilder.buildPartial();
-                  }
-                  outputCase_ = 5;
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            configSteps_ = java.util.Collections.unmodifiableList(configSteps_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.osconfig.v1.OSPolicyAssignmentReportsProto
             .internal_static_google_cloud_osconfig_v1_OSPolicyAssignmentReport_OSPolicyCompliance_OSPolicyResourceCompliance_descriptor;
@@ -1346,60 +1056,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
         @java.lang.Override
         public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
-        }
-
-        private OSPolicyResourceConfigStep(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 8:
-                  {
-                    int rawValue = input.readEnum();
-
-                    type_ = rawValue;
-                    break;
-                  }
-                case 18:
-                  {
-                    java.lang.String s = input.readStringRequireUtf8();
-
-                    errorMessage_ = s;
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1760,7 +1416,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -1778,7 +1434,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
             size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -1803,7 +1459,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
           if (type_ != other.type_) return false;
           if (!getErrorMessage().equals(other.getErrorMessage())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -1818,7 +1474,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           hash = (53 * hash) + type_;
           hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
           hash = (53 * hash) + getErrorMessage().hashCode();
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -1980,17 +1636,10 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
           // Construct using
           // com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance.OSPolicyResourceCompliance.OSPolicyResourceConfigStep.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -2111,7 +1760,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
               errorMessage_ = other.errorMessage_;
               onChanged();
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -2126,22 +1775,43 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                    .OSPolicyResourceCompliance.OSPolicyResourceConfigStep
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      type_ = input.readEnum();
+
+                      break;
+                    } // case 8
+                  case 18:
+                    {
+                      errorMessage_ = input.readStringRequireUtf8();
+
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                          .OSPolicyResourceCompliance.OSPolicyResourceConfigStep)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -2407,7 +2077,19 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new OSPolicyResourceConfigStep(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -2482,51 +2164,6 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           return this.unknownFields;
         }
 
-        private ExecResourceOutput(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          this();
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                case 18:
-                  {
-                    enforcementOutput_ = input.readBytes();
-                    break;
-                  }
-                default:
-                  {
-                    if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                      done = true;
-                    }
-                    break;
-                  }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(this);
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(this);
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.osconfig.v1.OSPolicyAssignmentReportsProto
               .internal_static_google_cloud_osconfig_v1_OSPolicyAssignmentReport_OSPolicyCompliance_OSPolicyResourceCompliance_ExecResourceOutput_descriptor;
@@ -2581,7 +2218,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           if (!enforcementOutput_.isEmpty()) {
             output.writeBytes(2, enforcementOutput_);
           }
-          unknownFields.writeTo(output);
+          getUnknownFields().writeTo(output);
         }
 
         @java.lang.Override
@@ -2593,7 +2230,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           if (!enforcementOutput_.isEmpty()) {
             size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, enforcementOutput_);
           }
-          size += unknownFields.getSerializedSize();
+          size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
         }
@@ -2617,7 +2254,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                       obj;
 
           if (!getEnforcementOutput().equals(other.getEnforcementOutput())) return false;
-          if (!unknownFields.equals(other.unknownFields)) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
 
@@ -2630,7 +2267,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           hash = (19 * hash) + getDescriptor().hashCode();
           hash = (37 * hash) + ENFORCEMENT_OUTPUT_FIELD_NUMBER;
           hash = (53 * hash) + getEnforcementOutput().hashCode();
-          hash = (29 * hash) + unknownFields.hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
         }
@@ -2791,17 +2428,10 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
           // Construct using
           // com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance.OSPolicyResourceCompliance.ExecResourceOutput.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
+          private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
-            maybeForceBuilderInitialization();
-          }
-
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
 
           @java.lang.Override
@@ -2915,7 +2545,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
             if (other.getEnforcementOutput() != com.google.protobuf.ByteString.EMPTY) {
               setEnforcementOutput(other.getEnforcementOutput());
             }
-            this.mergeUnknownFields(other.unknownFields);
+            this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
           }
@@ -2930,22 +2560,37 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                    .OSPolicyResourceCompliance.ExecResourceOutput
-                parsedMessage = null;
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
             try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 18:
+                    {
+                      enforcementOutput_ = input.readBytes();
+
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage =
-                  (com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                          .OSPolicyResourceCompliance.ExecResourceOutput)
-                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
+              onChanged();
+            } // finally
             return this;
           }
 
@@ -3047,7 +2692,19 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
-                return new ExecResourceOutput(input, extensionRegistry);
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
               }
             };
 
@@ -3480,7 +3137,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                       .OSPolicyResourceCompliance.ExecResourceOutput)
                   output_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3513,7 +3170,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                           .OSPolicyResourceCompliance.ExecResourceOutput)
                       output_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3548,7 +3205,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3577,7 +3234,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3736,19 +3393,10 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
         // Construct using
         // com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance.OSPolicyResourceCompliance.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-            getConfigStepsFieldBuilder();
-          }
         }
 
         @java.lang.Override
@@ -3758,14 +3406,18 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
           if (configStepsBuilder_ == null) {
             configSteps_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            configSteps_ = null;
             configStepsBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           complianceState_ = 0;
 
           complianceStateReason_ = "";
 
+          if (execResourceOutputBuilder_ != null) {
+            execResourceOutputBuilder_.clear();
+          }
           outputCase_ = 0;
           output_ = null;
           return this;
@@ -3939,7 +3591,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                 break;
               }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -3954,22 +3606,74 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                  .OSPolicyResourceCompliance
-              parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    osPolicyResourceId_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
+                            .OSPolicyResourceCompliance.OSPolicyResourceConfigStep
+                        m =
+                            input.readMessage(
+                                com.google.cloud.osconfig.v1.OSPolicyAssignmentReport
+                                    .OSPolicyCompliance.OSPolicyResourceCompliance
+                                    .OSPolicyResourceConfigStep.parser(),
+                                extensionRegistry);
+                    if (configStepsBuilder_ == null) {
+                      ensureConfigStepsIsMutable();
+                      configSteps_.add(m);
+                    } else {
+                      configStepsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                case 24:
+                  {
+                    complianceState_ = input.readEnum();
+
+                    break;
+                  } // case 24
+                case 34:
+                  {
+                    complianceStateReason_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(
+                        getExecResourceOutputFieldBuilder().getBuilder(), extensionRegistry);
+                    outputCase_ = 5;
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
-                        .OSPolicyResourceCompliance)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -5141,7 +4845,19 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new OSPolicyResourceCompliance(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -5466,7 +5182,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
       for (int i = 0; i < osPolicyResourceCompliances_.size(); i++) {
         output.writeMessage(4, osPolicyResourceCompliances_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5492,7 +5208,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, osPolicyResourceCompliances_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5514,7 +5230,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
       if (!getComplianceStateReason().equals(other.getComplianceStateReason())) return false;
       if (!getOsPolicyResourceCompliancesList().equals(other.getOsPolicyResourceCompliancesList()))
         return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5535,7 +5251,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
         hash = (37 * hash) + OS_POLICY_RESOURCE_COMPLIANCES_FIELD_NUMBER;
         hash = (53 * hash) + getOsPolicyResourceCompliancesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5675,19 +5391,10 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
       // Construct using
       // com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getOsPolicyResourceCompliancesFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -5701,10 +5408,11 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
         if (osPolicyResourceCompliancesBuilder_ == null) {
           osPolicyResourceCompliances_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          osPolicyResourceCompliances_ = null;
           osPolicyResourceCompliancesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -5845,7 +5553,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5860,20 +5568,66 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance parsedMessage =
-            null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  osPolicyId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  complianceState_ = input.readEnum();
+
+                  break;
+                } // case 16
+              case 26:
+                {
+                  complianceStateReason_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
+                          .OSPolicyResourceCompliance
+                      m =
+                          input.readMessage(
+                              com.google.cloud.osconfig.v1.OSPolicyAssignmentReport
+                                  .OSPolicyCompliance.OSPolicyResourceCompliance.parser(),
+                              extensionRegistry);
+                  if (osPolicyResourceCompliancesBuilder_ == null) {
+                    ensureOsPolicyResourceCompliancesIsMutable();
+                    osPolicyResourceCompliances_.add(m);
+                  } else {
+                    osPolicyResourceCompliancesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6790,7 +6544,19 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new OSPolicyCompliance(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7189,7 +6955,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastRunId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastRunId_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -7217,7 +6983,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastRunId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastRunId_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7242,7 +7008,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getLastRunId().equals(other.getLastRunId())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7269,7 +7035,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + LAST_RUN_ID_FIELD_NUMBER;
     hash = (53 * hash) + getLastRunId().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -7399,19 +7165,10 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
     }
 
     // Construct using com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getOsPolicyCompliancesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -7425,10 +7182,11 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
 
       if (osPolicyCompliancesBuilder_ == null) {
         osPolicyCompliances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        osPolicyCompliances_ = null;
         osPolicyCompliancesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (updateTimeBuilder_ == null) {
         updateTime_ = null;
       } else {
@@ -7579,7 +7337,7 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
         lastRunId_ = other.lastRunId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -7594,18 +7352,76 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.osconfig.v1.OSPolicyAssignmentReport parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                instance_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                osPolicyAssignment_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance m =
+                    input.readMessage(
+                        com.google.cloud.osconfig.v1.OSPolicyAssignmentReport.OSPolicyCompliance
+                            .parser(),
+                        extensionRegistry);
+                if (osPolicyCompliancesBuilder_ == null) {
+                  ensureOsPolicyCompliancesIsMutable();
+                  osPolicyCompliances_.add(m);
+                } else {
+                  osPolicyCompliancesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                lastRunId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.osconfig.v1.OSPolicyAssignmentReport) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8716,7 +8532,18 @@ public final class OSPolicyAssignmentReport extends com.google.protobuf.Generate
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new OSPolicyAssignmentReport(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

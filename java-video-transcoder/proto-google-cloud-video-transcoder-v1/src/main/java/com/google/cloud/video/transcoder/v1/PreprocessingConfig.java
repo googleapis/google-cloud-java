@@ -50,153 +50,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private PreprocessingConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.Builder subBuilder =
-                  null;
-              if (color_ != null) {
-                subBuilder = color_.toBuilder();
-              }
-              color_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(color_);
-                color_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.Builder subBuilder =
-                  null;
-              if (denoise_ != null) {
-                subBuilder = denoise_.toBuilder();
-              }
-              denoise_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(denoise_);
-                denoise_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.Builder subBuilder =
-                  null;
-              if (deblock_ != null) {
-                subBuilder = deblock_.toBuilder();
-              }
-              deblock_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deblock_);
-                deblock_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.Builder subBuilder =
-                  null;
-              if (audio_ != null) {
-                subBuilder = audio_.toBuilder();
-              }
-              audio_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(audio_);
-                audio_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.Builder subBuilder =
-                  null;
-              if (crop_ != null) {
-                subBuilder = crop_.toBuilder();
-              }
-              crop_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(crop_);
-                crop_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.Builder subBuilder =
-                  null;
-              if (pad_ != null) {
-                subBuilder = pad_.toBuilder();
-              }
-              pad_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pad_);
-                pad_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_descriptor;
@@ -293,60 +146,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Color(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                saturation_ = input.readDouble();
-                break;
-              }
-            case 17:
-              {
-                contrast_ = input.readDouble();
-                break;
-              }
-            case 25:
-              {
-                brightness_ = input.readDouble();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -447,7 +246,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (java.lang.Double.doubleToRawLongBits(brightness_) != 0) {
         output.writeDouble(3, brightness_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -465,7 +264,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (java.lang.Double.doubleToRawLongBits(brightness_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, brightness_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -487,7 +286,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           != java.lang.Double.doubleToLongBits(other.getContrast())) return false;
       if (java.lang.Double.doubleToLongBits(getBrightness())
           != java.lang.Double.doubleToLongBits(other.getBrightness())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -513,7 +312,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getBrightness()));
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -646,17 +445,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -762,7 +554,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         if (other.getBrightness() != 0D) {
           setBrightness(other.getBrightness());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -777,19 +569,49 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  saturation_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 17:
+                {
+                  contrast_ = input.readDouble();
+
+                  break;
+                } // case 17
+              case 25:
+                {
+                  brightness_ = input.readDouble();
+
+                  break;
+                } // case 25
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1002,7 +824,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Color(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1105,57 +939,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Denoise(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                strength_ = input.readDouble();
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                tune_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1267,7 +1050,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tune_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1282,7 +1065,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tune_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tune_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1301,7 +1084,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (java.lang.Double.doubleToLongBits(getStrength())
           != java.lang.Double.doubleToLongBits(other.getStrength())) return false;
       if (!getTune().equals(other.getTune())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1319,7 +1102,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
                   java.lang.Double.doubleToLongBits(getStrength()));
       hash = (37 * hash) + TUNE_FIELD_NUMBER;
       hash = (53 * hash) + getTune().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1454,17 +1237,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
       // Construct using
       // com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1567,7 +1343,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           tune_ = other.tune_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1582,19 +1358,43 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  strength_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 18:
+                {
+                  tune_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1809,7 +1609,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Denoise(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1895,55 +1707,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       return this.unknownFields;
     }
 
-    private Deblock(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                strength_ = input.readDouble();
-                break;
-              }
-            case 16:
-              {
-                enabled_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deblock_descriptor;
@@ -2017,7 +1780,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (enabled_ != false) {
         output.writeBool(2, enabled_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2032,7 +1795,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (enabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enabled_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2051,7 +1814,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (java.lang.Double.doubleToLongBits(getStrength())
           != java.lang.Double.doubleToLongBits(other.getStrength())) return false;
       if (getEnabled() != other.getEnabled()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2069,7 +1832,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
                   java.lang.Double.doubleToLongBits(getStrength()));
       hash = (37 * hash) + ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2204,17 +1967,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
       // Construct using
       // com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2316,7 +2072,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         if (other.getEnabled() != false) {
           setEnabled(other.getEnabled());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2331,19 +2087,43 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  strength_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 16:
+                {
+                  enabled_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2492,7 +2272,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Deblock(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2599,60 +2391,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       return this.unknownFields;
     }
 
-    private Audio(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                lufs_ = input.readDouble();
-                break;
-              }
-            case 16:
-              {
-                highBoost_ = input.readBool();
-                break;
-              }
-            case 24:
-              {
-                lowBoost_ = input.readBool();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Audio_descriptor;
@@ -2756,7 +2494,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (lowBoost_ != false) {
         output.writeBool(3, lowBoost_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2774,7 +2512,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (lowBoost_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, lowBoost_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2794,7 +2532,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           != java.lang.Double.doubleToLongBits(other.getLufs())) return false;
       if (getHighBoost() != other.getHighBoost()) return false;
       if (getLowBoost() != other.getLowBoost()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2813,7 +2551,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHighBoost());
       hash = (37 * hash) + LOW_BOOST_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLowBoost());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2945,17 +2683,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3061,7 +2792,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         if (other.getLowBoost() != false) {
           setLowBoost(other.getLowBoost());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3076,19 +2807,49 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  lufs_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 16:
+                {
+                  highBoost_ = input.readBool();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  lowBoost_ = input.readBool();
+
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3316,7 +3077,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Audio(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3424,65 +3197,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Crop(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                topPixels_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                bottomPixels_ = input.readInt32();
-                break;
-              }
-            case 24:
-              {
-                leftPixels_ = input.readInt32();
-                break;
-              }
-            case 32:
-              {
-                rightPixels_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3598,7 +3312,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (rightPixels_ != 0) {
         output.writeInt32(4, rightPixels_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3619,7 +3333,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (rightPixels_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, rightPixels_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3639,7 +3353,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (getBottomPixels() != other.getBottomPixels()) return false;
       if (getLeftPixels() != other.getLeftPixels()) return false;
       if (getRightPixels() != other.getRightPixels()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3658,7 +3372,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + getLeftPixels();
       hash = (37 * hash) + RIGHT_PIXELS_FIELD_NUMBER;
       hash = (53 * hash) + getRightPixels();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3791,17 +3505,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -3913,7 +3620,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         if (other.getRightPixels() != 0) {
           setRightPixels(other.getRightPixels());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3928,19 +3635,55 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  topPixels_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  bottomPixels_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  leftPixels_ = input.readInt32();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  rightPixels_ = input.readInt32();
+
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4187,7 +3930,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Crop(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -4295,65 +4050,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Pad(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                topPixels_ = input.readInt32();
-                break;
-              }
-            case 16:
-              {
-                bottomPixels_ = input.readInt32();
-                break;
-              }
-            case 24:
-              {
-                leftPixels_ = input.readInt32();
-                break;
-              }
-            case 32:
-              {
-                rightPixels_ = input.readInt32();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4469,7 +4165,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (rightPixels_ != 0) {
         output.writeInt32(4, rightPixels_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4490,7 +4186,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (rightPixels_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, rightPixels_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -4510,7 +4206,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (getBottomPixels() != other.getBottomPixels()) return false;
       if (getLeftPixels() != other.getLeftPixels()) return false;
       if (getRightPixels() != other.getRightPixels()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -4529,7 +4225,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + getLeftPixels();
       hash = (37 * hash) + RIGHT_PIXELS_FIELD_NUMBER;
       hash = (53 * hash) + getRightPixels();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4662,17 +4358,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4783,7 +4472,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         if (other.getRightPixels() != 0) {
           setRightPixels(other.getRightPixels());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4798,19 +4487,55 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  topPixels_ = input.readInt32();
+
+                  break;
+                } // case 8
+              case 16:
+                {
+                  bottomPixels_ = input.readInt32();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  leftPixels_ = input.readInt32();
+
+                  break;
+                } // case 24
+              case 32:
+                {
+                  rightPixels_ = input.readInt32();
+
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5057,7 +4782,19 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Pad(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5401,7 +5138,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     if (pad_ != null) {
       output.writeMessage(6, getPad());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -5428,7 +5165,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     if (pad_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPad());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -5468,7 +5205,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     if (hasPad()) {
       if (!getPad().equals(other.getPad())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -5503,7 +5240,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + PAD_FIELD_NUMBER;
       hash = (53 * hash) + getPad().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -5633,17 +5370,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.video.transcoder.v1.PreprocessingConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -5810,7 +5540,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       if (other.hasPad()) {
         mergePad(other.getPad());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -5825,18 +5555,67 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.transcoder.v1.PreprocessingConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getColorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getDenoiseFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getDeblockFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getAudioFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getCropFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getPadFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.video.transcoder.v1.PreprocessingConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -7003,7 +6782,18 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PreprocessingConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
