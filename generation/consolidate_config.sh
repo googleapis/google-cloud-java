@@ -34,7 +34,14 @@ function removeArtifact {
 function removeArtifactVersion {
   type=$1
   name=$2
-  perl_command="s/(\s*<${type}>\s*?<groupId>[a-z\-\.]*<\/groupId>\s*?<artifactId>${name//-/\-}<\/artifactId>\s*?(<scope>.*?<\/scope>)?)\s*?<version>.*?<\/version>(.*?<\/${type}>)/\$1\$3/s"
+  perl_command="s/(\s*<${type}>\s*?<groupId>[a-z\-\.]*<\/groupId>\s*?<artifactId>${name//-/\-}<\/artifactId>\s*?(<scope>.*?<\/scope>)?)\s*?<version>[^\\n]*?<\/version>(.*?<\/${type}>)/\$1\$3/s"
+  runRegexOnPoms "$perl_command" "$name"
+}
+
+function annotateArtifactVersion {
+  type=$1
+  name=$2
+  perl_command="s/(\s*<${type}>\s*?<groupId>[a-z\-\.]*<\/groupId>\s*?<artifactId>${name//-/\-}<\/artifactId>\s*?(<scope>.*?<\/scope>)?\s*?)(<version>[^\\n]*?<\/version>)([^:\\n]*\\n.*?<\/${type}>)/\$1\$3<!-- {x-version-update:${name//-/\-}:current} -->\$4/s"
   runRegexOnPoms "$perl_command" "$name"
 }
 
@@ -78,3 +85,10 @@ removeArtifactVersion 'dependency' 'google-api-services-cloudresourcemanager'
 removeArtifactVersion 'dependency' 'google-api-services-storage'
 removeArtifactVersion 'dependency' 'google-cloud-storage'
 removeArtifactVersion 'plugin' 'maven-checkstyle-plugin'
+removeArtifactVersion 'dependency' 'mockito-all'
+removeArtifactVersion 'dependency' 'objenesis'
+annotateArtifactVersion 'dependency' 'grafeas'
+annotateArtifactVersion 'dependency' 'proto-google-cloud-orgpolicy-v1'
+annotateArtifactVersion 'dependency' 'proto-google-identity-accesscontextmanager-v1'
+annotateArtifactVersion 'dependency' 'proto-google-cloud-os-config-v1'
+annotateArtifactVersion 'dependency' 'google-cloud-resourcemanager'
