@@ -307,8 +307,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback issued for the transaction with no other details.
-     * When possible, specify the type by using CHARGEBACK_FRAUD or
+     * Indicates that the transaction had a chargeback issued with no other
+     * details. When possible, specify the type by using CHARGEBACK_FRAUD or
      * CHARGEBACK_DISPUTE instead.
      * </pre>
      *
@@ -319,9 +319,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to an alleged unauthorized transaction
-     * from the cardholder's perspective (for example, the card number was
-     * stolen).
+     * Indicates that the transaction had a chargeback issued related to an
+     * alleged unauthorized transaction from the cardholder's perspective (for
+     * example, the card number was stolen).
      * </pre>
      *
      * <code>CHARGEBACK_FRAUD = 8;</code>
@@ -331,14 +331,59 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to the cardholder having provided their
-     * card details but allegedly not being satisfied with the purchase
-     * (for example, misrepresentation, attempted cancellation).
+     * Indicates that the transaction had a chargeback issued related to the
+     * cardholder having provided their card details but allegedly not being
+     * satisfied with the purchase (for example, misrepresentation, attempted
+     * cancellation).
      * </pre>
      *
      * <code>CHARGEBACK_DISPUTE = 9;</code>
      */
     CHARGEBACK_DISPUTE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was refunded by the
+     * seller.
+     * </pre>
+     *
+     * <code>REFUND = 10;</code>
+     */
+    REFUND(10),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was determined to be
+     * fraudulent by the seller, and was cancelled and refunded as a result.
+     * </pre>
+     *
+     * <code>REFUND_FRAUD = 11;</code>
+     */
+    REFUND_FRAUD(11),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was accepted, and the user was
+     * charged.
+     * </pre>
+     *
+     * <code>TRANSACTION_ACCEPTED = 12;</code>
+     */
+    TRANSACTION_ACCEPTED(12),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was declined, for example due to
+     * invalid card details.
+     * </pre>
+     *
+     * <code>TRANSACTION_DECLINED = 13;</code>
+     */
+    TRANSACTION_DECLINED(13),
     /**
      *
      *
@@ -404,6 +449,17 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>INCORRECT_PASSWORD = 6;</code>
      */
     INCORRECT_PASSWORD(6),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user sent unwanted and abusive messages to other users
+     * of the platform, such as spam, scams, phishing, or social engineering.
+     * </pre>
+     *
+     * <code>SOCIAL_SPAM = 14;</code>
+     */
+    SOCIAL_SPAM(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -421,8 +477,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback issued for the transaction with no other details.
-     * When possible, specify the type by using CHARGEBACK_FRAUD or
+     * Indicates that the transaction had a chargeback issued with no other
+     * details. When possible, specify the type by using CHARGEBACK_FRAUD or
      * CHARGEBACK_DISPUTE instead.
      * </pre>
      *
@@ -433,9 +489,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to an alleged unauthorized transaction
-     * from the cardholder's perspective (for example, the card number was
-     * stolen).
+     * Indicates that the transaction had a chargeback issued related to an
+     * alleged unauthorized transaction from the cardholder's perspective (for
+     * example, the card number was stolen).
      * </pre>
      *
      * <code>CHARGEBACK_FRAUD = 8;</code>
@@ -445,14 +501,59 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates a chargeback related to the cardholder having provided their
-     * card details but allegedly not being satisfied with the purchase
-     * (for example, misrepresentation, attempted cancellation).
+     * Indicates that the transaction had a chargeback issued related to the
+     * cardholder having provided their card details but allegedly not being
+     * satisfied with the purchase (for example, misrepresentation, attempted
+     * cancellation).
      * </pre>
      *
      * <code>CHARGEBACK_DISPUTE = 9;</code>
      */
     public static final int CHARGEBACK_DISPUTE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was refunded by the
+     * seller.
+     * </pre>
+     *
+     * <code>REFUND = 10;</code>
+     */
+    public static final int REFUND_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the completed payment transaction was determined to be
+     * fraudulent by the seller, and was cancelled and refunded as a result.
+     * </pre>
+     *
+     * <code>REFUND_FRAUD = 11;</code>
+     */
+    public static final int REFUND_FRAUD_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was accepted, and the user was
+     * charged.
+     * </pre>
+     *
+     * <code>TRANSACTION_ACCEPTED = 12;</code>
+     */
+    public static final int TRANSACTION_ACCEPTED_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the payment transaction was declined, for example due to
+     * invalid card details.
+     * </pre>
+     *
+     * <code>TRANSACTION_DECLINED = 13;</code>
+     */
+    public static final int TRANSACTION_DECLINED_VALUE = 13;
     /**
      *
      *
@@ -518,6 +619,17 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * <code>INCORRECT_PASSWORD = 6;</code>
      */
     public static final int INCORRECT_PASSWORD_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the user sent unwanted and abusive messages to other users
+     * of the platform, such as spam, scams, phishing, or social engineering.
+     * </pre>
+     *
+     * <code>SOCIAL_SPAM = 14;</code>
+     */
+    public static final int SOCIAL_SPAM_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -551,6 +663,14 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           return CHARGEBACK_FRAUD;
         case 9:
           return CHARGEBACK_DISPUTE;
+        case 10:
+          return REFUND;
+        case 11:
+          return REFUND_FRAUD;
+        case 12:
+          return TRANSACTION_ACCEPTED;
+        case 13:
+          return TRANSACTION_DECLINED;
         case 2:
           return PAYMENT_HEURISTICS;
         case 7:
@@ -563,6 +683,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
           return CORRECT_PASSWORD;
         case 6:
           return INCORRECT_PASSWORD;
+        case 14:
+          return SOCIAL_SPAM;
         default:
           return null;
       }
@@ -679,9 +801,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can
-   * be left empty to provide reasons that apply to an event without concluding
-   * whether the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can be left
+   * empty to provide reasons that apply to an event without concluding whether
+   * the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -698,9 +820,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can
-   * be left empty to provide reasons that apply to an event without concluding
-   * whether the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can be left
+   * empty to provide reasons that apply to an event without concluding whether
+   * the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -741,8 +863,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
@@ -762,8 +883,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
@@ -780,8 +900,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
@@ -799,8 +918,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
@@ -817,8 +935,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the
-   * Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the Event.
    * </pre>
    *
    * <code>
@@ -841,8 +958,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. Optional unique stable hashed user identifier to apply to the
-   * assessment. This is an alternative to setting the hashed_account_id in
+   * Optional. Unique stable hashed user identifier to apply to the assessment.
+   * This is an alternative to setting the hashed_account_id in
    * CreateAssessment, for example when the account identifier is not yet known
    * in the initial request. It is recommended that the identifier is hashed
    * using hmac-sha256 with stable secret.
@@ -1426,9 +1543,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
-     * whether the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1445,9 +1562,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
-     * whether the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1467,9 +1584,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
-     * whether the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1492,9 +1609,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
-     * whether the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1518,9 +1635,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The annotation that will be assigned to the Event. This field can
-     * be left empty to provide reasons that apply to an event without concluding
-     * whether the event is legitimate or fraudulent.
+     * Optional. The annotation that will be assigned to the Event. This field can be left
+     * empty to provide reasons that apply to an event without concluding whether
+     * the event is legitimate or fraudulent.
      * </pre>
      *
      * <code>
@@ -1548,8 +1665,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1568,8 +1684,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1585,8 +1700,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1604,8 +1718,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1630,8 +1743,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1655,8 +1767,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1681,8 +1792,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1701,8 +1811,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1718,8 +1827,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1736,8 +1844,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1758,8 +1865,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1779,8 +1885,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional reasons for the annotation that will be assigned to the
-     * Event.
+     * Optional. Optional reasons for the annotation that will be assigned to the Event.
      * </pre>
      *
      * <code>
@@ -1804,8 +1909,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier to apply to the
-     * assessment. This is an alternative to setting the hashed_account_id in
+     * Optional. Unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
      * CreateAssessment, for example when the account identifier is not yet known
      * in the initial request. It is recommended that the identifier is hashed
      * using hmac-sha256 with stable secret.
@@ -1823,8 +1928,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier to apply to the
-     * assessment. This is an alternative to setting the hashed_account_id in
+     * Optional. Unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
      * CreateAssessment, for example when the account identifier is not yet known
      * in the initial request. It is recommended that the identifier is hashed
      * using hmac-sha256 with stable secret.
@@ -1848,8 +1953,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. Optional unique stable hashed user identifier to apply to the
-     * assessment. This is an alternative to setting the hashed_account_id in
+     * Optional. Unique stable hashed user identifier to apply to the assessment.
+     * This is an alternative to setting the hashed_account_id in
      * CreateAssessment, for example when the account identifier is not yet known
      * in the initial request. It is recommended that the identifier is hashed
      * using hmac-sha256 with stable secret.

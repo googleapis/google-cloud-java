@@ -22,7 +22,7 @@ package com.google.recaptchaenterprise.v1;
  *
  *
  * <pre>
- * Account Defender risk assessment.
+ * Account defender risk assessment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment}
@@ -71,7 +71,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels returned by Account Defender for this request.
+   * Labels returned by account defender for this request.
    * </pre>
    *
    * Protobuf enum {@code
@@ -102,8 +102,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The request is potentially a suspicious login event and should be further
-     * verified either via multi-factor authentication or another system.
+     * The request is potentially a suspicious login event and must be further
+     * verified either through multi-factor authentication or another system.
      * </pre>
      *
      * <code>SUSPICIOUS_LOGIN_ACTIVITY = 2;</code>
@@ -114,7 +114,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The request matched a profile that previously had suspicious account
-     * creation behavior. This could mean this is a fake account.
+     * creation behavior. This can mean that this is a fake account.
      * </pre>
      *
      * <code>SUSPICIOUS_ACCOUNT_CREATION = 3;</code>
@@ -125,8 +125,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The account in the request has a high number of related accounts. It does
-     * not necessarily imply that the account is bad but could require
-     * investigating.
+     * not necessarily imply that the account is bad but can require further
+     * investigation.
      * </pre>
      *
      * <code>RELATED_ACCOUNTS_NUMBER_HIGH = 4;</code>
@@ -159,8 +159,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The request is potentially a suspicious login event and should be further
-     * verified either via multi-factor authentication or another system.
+     * The request is potentially a suspicious login event and must be further
+     * verified either through multi-factor authentication or another system.
      * </pre>
      *
      * <code>SUSPICIOUS_LOGIN_ACTIVITY = 2;</code>
@@ -171,7 +171,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The request matched a profile that previously had suspicious account
-     * creation behavior. This could mean this is a fake account.
+     * creation behavior. This can mean that this is a fake account.
      * </pre>
      *
      * <code>SUSPICIOUS_ACCOUNT_CREATION = 3;</code>
@@ -182,8 +182,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The account in the request has a high number of related accounts. It does
-     * not necessarily imply that the account is bad but could require
-     * investigating.
+     * not necessarily imply that the account is bad but can require further
+     * investigation.
      * </pre>
      *
      * <code>RELATED_ACCOUNTS_NUMBER_HIGH = 4;</code>
@@ -580,7 +580,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Account Defender risk assessment.
+   * Account defender risk assessment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment}

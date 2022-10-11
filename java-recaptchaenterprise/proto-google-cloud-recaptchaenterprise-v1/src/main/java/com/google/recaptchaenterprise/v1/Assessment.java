@@ -278,7 +278,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -296,7 +296,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -338,7 +338,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -355,7 +356,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -375,7 +377,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -1612,7 +1615,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1629,7 +1632,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1653,7 +1656,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1679,7 +1682,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1702,7 +1705,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1733,7 +1736,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1756,7 +1759,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1774,7 +1777,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1796,7 +1799,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1832,7 +1835,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1849,7 +1853,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1872,7 +1877,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1897,7 +1903,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1919,7 +1926,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1949,7 +1957,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1971,7 +1980,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1988,7 +1998,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2009,7 +2020,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>

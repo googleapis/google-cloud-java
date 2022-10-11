@@ -41,6 +41,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -74,6 +76,11 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable() {
     throw new UnsupportedOperationException("Not implemented: listKeysCallable()");
+  }
+
+  public UnaryCallable<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: retrieveLegacySecretKeyCallable()");
   }
 
   public UnaryCallable<GetKeyRequest, Key> getKeyCallable() {

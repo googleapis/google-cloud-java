@@ -39,6 +39,7 @@ import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
+import com.google.recaptchaenterprise.v1.KeyName;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -52,6 +53,8 @@ import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -628,6 +631,133 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns the secret key related to the specified public key. You must use the legacy secret key
+   * only in a 3rd party integration with legacy reCAPTCHA.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName key = KeyName.of("[PROJECT]", "[KEY]");
+   *   RetrieveLegacySecretKeyResponse response =
+   *       recaptchaEnterpriseServiceClient.retrieveLegacySecretKey(key);
+   * }
+   * }</pre>
+   *
+   * @param key Required. The public key name linked to the requested secret key in the format
+   *     "projects/{project}/keys/{key}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(KeyName key) {
+    RetrieveLegacySecretKeyRequest request =
+        RetrieveLegacySecretKeyRequest.newBuilder()
+            .setKey(key == null ? null : key.toString())
+            .build();
+    return retrieveLegacySecretKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the secret key related to the specified public key. You must use the legacy secret key
+   * only in a 3rd party integration with legacy reCAPTCHA.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String key = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   RetrieveLegacySecretKeyResponse response =
+   *       recaptchaEnterpriseServiceClient.retrieveLegacySecretKey(key);
+   * }
+   * }</pre>
+   *
+   * @param key Required. The public key name linked to the requested secret key in the format
+   *     "projects/{project}/keys/{key}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(String key) {
+    RetrieveLegacySecretKeyRequest request =
+        RetrieveLegacySecretKeyRequest.newBuilder().setKey(key).build();
+    return retrieveLegacySecretKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the secret key related to the specified public key. You must use the legacy secret key
+   * only in a 3rd party integration with legacy reCAPTCHA.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   RetrieveLegacySecretKeyRequest request =
+   *       RetrieveLegacySecretKeyRequest.newBuilder()
+   *           .setKey(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   RetrieveLegacySecretKeyResponse response =
+   *       recaptchaEnterpriseServiceClient.retrieveLegacySecretKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(
+      RetrieveLegacySecretKeyRequest request) {
+    return retrieveLegacySecretKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the secret key related to the specified public key. You must use the legacy secret key
+   * only in a 3rd party integration with legacy reCAPTCHA.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   RetrieveLegacySecretKeyRequest request =
+   *       RetrieveLegacySecretKeyRequest.newBuilder()
+   *           .setKey(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<RetrieveLegacySecretKeyResponse> future =
+   *       recaptchaEnterpriseServiceClient.retrieveLegacySecretKeyCallable().futureCall(request);
+   *   // Do something.
+   *   RetrieveLegacySecretKeyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeyCallable() {
+    return stub.retrieveLegacySecretKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the specified key.
    *
    * <p>Sample code:
@@ -1156,7 +1286,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the memberships in a group of related accounts.
+   * Get memberships in a group of related accounts.
    *
    * <p>Sample code:
    *
@@ -1194,7 +1324,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the memberships in a group of related accounts.
+   * Get memberships in a group of related accounts.
    *
    * <p>Sample code:
    *
@@ -1229,7 +1359,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the memberships in a group of related accounts.
+   * Get memberships in a group of related accounts.
    *
    * <p>Sample code:
    *
@@ -1267,7 +1397,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the memberships in a group of related accounts.
+   * Get memberships in a group of related accounts.
    *
    * <p>Sample code:
    *
@@ -1306,7 +1436,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the memberships in a group of related accounts.
+   * Get memberships in a group of related accounts.
    *
    * <p>Sample code:
    *
@@ -1377,10 +1507,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Required. The name of the project to search related account group memberships
-   *     from, in the format "projects/{project}".
+   *     from. Specify the project name in the following format: "projects/{project}".
    * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
    *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous CreateAssessment or AnnotateAssessment call.
+   *     previous `CreateAssessment` or `AnnotateAssessment` call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
@@ -1420,10 +1550,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Required. The name of the project to search related account group memberships
-   *     from, in the format "projects/{project}".
+   *     from. Specify the project name in the following format: "projects/{project}".
    * @param hashedAccountId Optional. The unique stable hashed user identifier we should search
    *     connections to. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous CreateAssessment or AnnotateAssessment call.
+   *     previous `CreateAssessment` or `AnnotateAssessment` call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse

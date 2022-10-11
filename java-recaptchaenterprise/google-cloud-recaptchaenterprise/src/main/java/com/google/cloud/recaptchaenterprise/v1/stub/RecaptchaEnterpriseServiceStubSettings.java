@@ -67,6 +67,8 @@ import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -127,6 +129,8 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<CreateKeyRequest, Key> createKeySettings;
   private final PagedCallSettings<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
       listKeysSettings;
+  private final UnaryCallSettings<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeySettings;
   private final UnaryCallSettings<GetKeyRequest, Key> getKeySettings;
   private final UnaryCallSettings<UpdateKeyRequest, Key> updateKeySettings;
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
@@ -462,6 +466,12 @@ public class RecaptchaEnterpriseServiceStubSettings
     return listKeysSettings;
   }
 
+  /** Returns the object with the settings used for calls to retrieveLegacySecretKey. */
+  public UnaryCallSettings<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeySettings() {
+    return retrieveLegacySecretKeySettings;
+  }
+
   /** Returns the object with the settings used for calls to getKey. */
   public UnaryCallSettings<GetKeyRequest, Key> getKeySettings() {
     return getKeySettings;
@@ -595,6 +605,7 @@ public class RecaptchaEnterpriseServiceStubSettings
     annotateAssessmentSettings = settingsBuilder.annotateAssessmentSettings().build();
     createKeySettings = settingsBuilder.createKeySettings().build();
     listKeysSettings = settingsBuilder.listKeysSettings().build();
+    retrieveLegacySecretKeySettings = settingsBuilder.retrieveLegacySecretKeySettings().build();
     getKeySettings = settingsBuilder.getKeySettings().build();
     updateKeySettings = settingsBuilder.updateKeySettings().build();
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
@@ -619,6 +630,9 @@ public class RecaptchaEnterpriseServiceStubSettings
     private final PagedCallSettings.Builder<
             ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
         listKeysSettings;
+    private final UnaryCallSettings.Builder<
+            RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+        retrieveLegacySecretKeySettings;
     private final UnaryCallSettings.Builder<GetKeyRequest, Key> getKeySettings;
     private final UnaryCallSettings.Builder<UpdateKeyRequest, Key> updateKeySettings;
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
@@ -680,6 +694,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       annotateAssessmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listKeysSettings = PagedCallSettings.newBuilder(LIST_KEYS_PAGE_STR_FACT);
+      retrieveLegacySecretKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -698,6 +713,7 @@ public class RecaptchaEnterpriseServiceStubSettings
               annotateAssessmentSettings,
               createKeySettings,
               listKeysSettings,
+              retrieveLegacySecretKeySettings,
               getKeySettings,
               updateKeySettings,
               deleteKeySettings,
@@ -716,6 +732,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       annotateAssessmentSettings = settings.annotateAssessmentSettings.toBuilder();
       createKeySettings = settings.createKeySettings.toBuilder();
       listKeysSettings = settings.listKeysSettings.toBuilder();
+      retrieveLegacySecretKeySettings = settings.retrieveLegacySecretKeySettings.toBuilder();
       getKeySettings = settings.getKeySettings.toBuilder();
       updateKeySettings = settings.updateKeySettings.toBuilder();
       deleteKeySettings = settings.deleteKeySettings.toBuilder();
@@ -733,6 +750,7 @@ public class RecaptchaEnterpriseServiceStubSettings
               annotateAssessmentSettings,
               createKeySettings,
               listKeysSettings,
+              retrieveLegacySecretKeySettings,
               getKeySettings,
               updateKeySettings,
               deleteKeySettings,
@@ -776,6 +794,11 @@ public class RecaptchaEnterpriseServiceStubSettings
           .listKeysSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .retrieveLegacySecretKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getKeySettings()
@@ -856,6 +879,13 @@ public class RecaptchaEnterpriseServiceStubSettings
     public PagedCallSettings.Builder<ListKeysRequest, ListKeysResponse, ListKeysPagedResponse>
         listKeysSettings() {
       return listKeysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveLegacySecretKey. */
+    public UnaryCallSettings.Builder<
+            RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+        retrieveLegacySecretKeySettings() {
+      return retrieveLegacySecretKeySettings;
     }
 
     /** Returns the builder for the settings used for calls to getKey. */

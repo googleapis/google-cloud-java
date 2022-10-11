@@ -22,30 +22,30 @@ package com.google.recaptchaenterprise.v1;
  *
  *
  * <pre>
- * A membership in a group of related accounts.
+ * The retrieve legacy secret key request message.
  * </pre>
  *
- * Protobuf type {@code google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership}
+ * Protobuf type {@code google.cloud.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest}
  */
-public final class RelatedAccountGroupMembership extends com.google.protobuf.GeneratedMessageV3
+public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership)
-    RelatedAccountGroupMembershipOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest)
+    RetrieveLegacySecretKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RelatedAccountGroupMembership.newBuilder() to construct.
-  private RelatedAccountGroupMembership(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use RetrieveLegacySecretKeyRequest.newBuilder() to construct.
+  private RetrieveLegacySecretKeyRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RelatedAccountGroupMembership() {
-    name_ = "";
-    hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+  private RetrieveLegacySecretKeyRequest() {
+    key_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RelatedAccountGroupMembership();
+    return new RetrieveLegacySecretKeyRequest();
   }
 
   @java.lang.Override
@@ -55,44 +55,44 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
-        .internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_descriptor;
+        .internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
-        .internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_fieldAccessorTable
+        .internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.class,
-            com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.Builder.class);
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.class,
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int KEY_FIELD_NUMBER = 1;
+  private volatile java.lang.Object key_;
   /**
    *
    *
    * <pre>
-   * Required. The resource name for this membership in the format
-   * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+   * Required. The public key name linked to the requested secret key in the format
+   * "projects/{project}/keys/{key}".
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The name.
+   * @return The key.
    */
   @java.lang.Override
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getKey() {
+    java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      key_ = s;
       return s;
     }
   }
@@ -100,47 +100,27 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name for this membership in the format
-   * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+   * Required. The public key name linked to the requested secret key in the format
+   * "projects/{project}/keys/{key}".
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for name.
+   * @return The bytes for key.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
-    java.lang.Object ref = name_;
+  public com.google.protobuf.ByteString getKeyBytes() {
+    java.lang.Object ref = key_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      name_ = b;
+      key_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int HASHED_ACCOUNT_ID_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString hashedAccountId_;
-  /**
-   *
-   *
-   * <pre>
-   * The unique stable hashed user identifier of the member. The identifier
-   * corresponds to a `hashed_account_id` provided in a previous
-   * `CreateAssessment` or `AnnotateAssessment` call.
-   * </pre>
-   *
-   * <code>bytes hashed_account_id = 2;</code>
-   *
-   * @return The hashedAccountId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getHashedAccountId() {
-    return hashedAccountId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -157,11 +137,8 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-    }
-    if (!hashedAccountId_.isEmpty()) {
-      output.writeBytes(2, hashedAccountId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -172,11 +149,8 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
-    if (!hashedAccountId_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, hashedAccountId_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(key_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -188,14 +162,13 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership)) {
+    if (!(obj instanceof com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest)) {
       return super.equals(obj);
     }
-    com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership other =
-        (com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership) obj;
+    com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest other =
+        (com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
+    if (!getKey().equals(other.getKey())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -207,80 +180,78 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getHashedAccountId().hashCode();
+    hash = (37 * hash) + KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKey().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseDelimitedFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseDelimitedFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership parseFrom(
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -298,7 +269,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
   }
 
   public static Builder newBuilder(
-      com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership prototype) {
+      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -316,31 +287,31 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * A membership in a group of related accounts.
+   * The retrieve legacy secret key request message.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership}
+   * Protobuf type {@code google.cloud.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership)
-      com.google.recaptchaenterprise.v1.RelatedAccountGroupMembershipOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest)
+      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
-          .internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_descriptor;
+          .internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
-          .internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_fieldAccessorTable
+          .internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.class,
-              com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.Builder.class);
+              com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.class,
+              com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.Builder.class);
     }
 
-    // Construct using com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.newBuilder()
+    // Construct using com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -350,9 +321,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      name_ = "";
-
-      hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+      key_ = "";
 
       return this;
     }
@@ -360,18 +329,18 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
-          .internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_descriptor;
+          .internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership
+    public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest
         getDefaultInstanceForType() {
-      return com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.getDefaultInstance();
+      return com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership build() {
-      com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership result = buildPartial();
+    public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest build() {
+      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -379,11 +348,10 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     }
 
     @java.lang.Override
-    public com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership buildPartial() {
-      com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership result =
-          new com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership(this);
-      result.name_ = name_;
-      result.hashedAccountId_ = hashedAccountId_;
+    public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest buildPartial() {
+      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest result =
+          new com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest(this);
+      result.key_ = key_;
       onBuilt();
       return result;
     }
@@ -423,8 +391,8 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership) {
-        return mergeFrom((com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership) other);
+      if (other instanceof com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest) {
+        return mergeFrom((com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -432,16 +400,13 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
     }
 
     public Builder mergeFrom(
-        com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership other) {
+        com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest other) {
       if (other
-          == com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.getDefaultInstance())
+          == com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.getDefaultInstance())
         return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getKey().isEmpty()) {
+        key_ = other.key_;
         onChanged();
-      }
-      if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
-        setHashedAccountId(other.getHashedAccountId());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -471,16 +436,10 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
               break;
             case 10:
               {
-                name_ = input.readStringRequireUtf8();
+                key_ = input.readStringRequireUtf8();
 
                 break;
               } // case 10
-            case 18:
-              {
-                hashedAccountId_ = input.readBytes();
-
-                break;
-              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -498,27 +457,27 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object key_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The resource name for this membership in the format
-     * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+     * Required. The public key name linked to the requested secret key in the format
+     * "projects/{project}/keys/{key}".
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The name.
+     * @return The key.
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        key_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -528,22 +487,22 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name for this membership in the format
-     * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+     * Required. The public key name linked to the requested secret key in the format
+     * "projects/{project}/keys/{key}".
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The bytes for name.
+     * @return The bytes for key.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+    public com.google.protobuf.ByteString getKeyBytes() {
+      java.lang.Object ref = key_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        name_ = b;
+        key_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -553,23 +512,23 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name for this membership in the format
-     * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+     * Required. The public key name linked to the requested secret key in the format
+     * "projects/{project}/keys/{key}".
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The name to set.
+     * @param value The key to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setKey(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      name_ = value;
+      key_ = value;
       onChanged();
       return this;
     }
@@ -577,19 +536,19 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name for this membership in the format
-     * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+     * Required. The public key name linked to the requested secret key in the format
+     * "projects/{project}/keys/{key}".
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearName() {
+    public Builder clearKey() {
 
-      name_ = getDefaultInstance().getName();
+      key_ = getDefaultInstance().getKey();
       onChanged();
       return this;
     }
@@ -597,85 +556,24 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name for this membership in the format
-     * `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+     * Required. The public key name linked to the requested secret key in the format
+     * "projects/{project}/keys/{key}".
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string key = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The bytes for name to set.
+     * @param value The bytes for key to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.ByteString hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
-    /**
-     *
-     *
-     * <pre>
-     * The unique stable hashed user identifier of the member. The identifier
-     * corresponds to a `hashed_account_id` provided in a previous
-     * `CreateAssessment` or `AnnotateAssessment` call.
-     * </pre>
-     *
-     * <code>bytes hashed_account_id = 2;</code>
-     *
-     * @return The hashedAccountId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getHashedAccountId() {
-      return hashedAccountId_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The unique stable hashed user identifier of the member. The identifier
-     * corresponds to a `hashed_account_id` provided in a previous
-     * `CreateAssessment` or `AnnotateAssessment` call.
-     * </pre>
-     *
-     * <code>bytes hashed_account_id = 2;</code>
-     *
-     * @param value The hashedAccountId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHashedAccountId(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      hashedAccountId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The unique stable hashed user identifier of the member. The identifier
-     * corresponds to a `hashed_account_id` provided in a previous
-     * `CreateAssessment` or `AnnotateAssessment` call.
-     * </pre>
-     *
-     * <code>bytes hashed_account_id = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearHashedAccountId() {
-
-      hashedAccountId_ = getDefaultInstance().getHashedAccountId();
+      key_ = value;
       onChanged();
       return this;
     }
@@ -691,26 +589,26 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership)
+    // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership)
-  private static final com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership
+  // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest)
+  private static final com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership();
+    DEFAULT_INSTANCE = new com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest();
   }
 
-  public static com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership
+  public static com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RelatedAccountGroupMembership> PARSER =
-      new com.google.protobuf.AbstractParser<RelatedAccountGroupMembership>() {
+  private static final com.google.protobuf.Parser<RetrieveLegacySecretKeyRequest> PARSER =
+      new com.google.protobuf.AbstractParser<RetrieveLegacySecretKeyRequest>() {
         @java.lang.Override
-        public RelatedAccountGroupMembership parsePartialFrom(
+        public RetrieveLegacySecretKeyRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -729,17 +627,17 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
         }
       };
 
-  public static com.google.protobuf.Parser<RelatedAccountGroupMembership> parser() {
+  public static com.google.protobuf.Parser<RetrieveLegacySecretKeyRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RelatedAccountGroupMembership> getParserForType() {
+  public com.google.protobuf.Parser<RetrieveLegacySecretKeyRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership
+  public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
