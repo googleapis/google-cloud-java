@@ -1234,7 +1234,7 @@ public final class GcpManagedChannelTest {
     gcpChannel.notifyWhenStateChanged(ConnectivityState.SHUTDOWN, () ->
         immediateCallbackCalled.set(true));
 
-    TimeUnit.MILLISECONDS.sleep(1);
+    TimeUnit.MILLISECONDS.sleep(2);
 
     assertThat(immediateCallbackCalled.get()).isTrue();
 

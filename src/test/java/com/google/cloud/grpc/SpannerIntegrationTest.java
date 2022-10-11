@@ -1014,9 +1014,6 @@ public final class SpannerIntegrationTest {
     List<ListenableFuture<Session>> futures = new ArrayList<>();
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
 
-    // Initial log messages count.
-    int logCount = logRecords.size();
-
     // Should create one session per channel.
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     for (int i = 0; i < MAX_CHANNEL; i++) {
@@ -1028,8 +1025,6 @@ public final class SpannerIntegrationTest {
           poolIndex + ": Channel " + i + " created.");
       assertThat(lastLogMessage()).isEqualTo(
           poolIndex + ": Channel " + i + " picked for bind operation.");
-      logCount += 3;
-      assertThat(logRecords.size()).isEqualTo(logCount);
       assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     }
     // Each channel should have 1 active stream with the CreateSession request because we create them concurrently.
@@ -1058,7 +1053,8 @@ public final class SpannerIntegrationTest {
     // Verify the channel is in use.
     assertEquals(1, currentChannel.getActiveStreamsCount());
 
-    logCount = logRecords.size();
+    // Initial log messages count.
+    int logCount = logRecords.size();
 
     // Create another 1 session per channel sequentially.
     // Without the round-robin it won't use the currentChannel as it has more active streams (1) than other channels.
