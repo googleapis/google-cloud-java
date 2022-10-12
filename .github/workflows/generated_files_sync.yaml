@@ -46,11 +46,11 @@ jobs:
       run: git --no-pager diff --exit-code
 
   gapic-bom:
-    name: google-cloud-gapic-bom does not have diff from generated one
+    name: gapic-libraries-bom does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Generate google-cloud-gapic-bom/pom.xml
+    - name: Generate gapic-libraries-bom/pom.xml
       run: |
         bash generation/generate_gapic_bom.sh
     - name: Apply versions from versions.txt files
@@ -93,3 +93,13 @@ jobs:
           exit 1
         fi
 
+  consolidate-config:
+    name: parent handles config for child modules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Apply consolidate_config.sh
+        run: |
+          bash generation/consolidate_config.sh
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code

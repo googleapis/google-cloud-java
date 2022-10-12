@@ -83,7 +83,7 @@ case ${JOB_TYPE} in
     ;;
   samples)
     mvn -B \
-      -pl "!google-cloud-gapic-bom" \
+      -pl "!gapic-libraries-bom" \
       -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \

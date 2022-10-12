@@ -3,9 +3,9 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-java-parent</artifactId>
+  <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -13,31 +13,42 @@
     <version>1.5.3</version>
   </parent>
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
     <skipUnitTests>false</skipUnitTests>
   </properties>
+
+  <developers>
+    <developer>
+      <id>suztomo</id>
+      <name>Tomo Suzuki</name>
+      <email>suztomo@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
 
   <modules>
   </modules>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <skip>${skipUnitTests}</skip>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <configuration>
-          <forkCount>1C</forkCount>
-          <reuseForks>true</reuseForks>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

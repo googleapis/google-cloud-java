@@ -128,7 +128,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
-      <version>2.9.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

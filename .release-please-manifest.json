@@ -1,5 +1,6 @@
 {
-  "google-cloud-gapic-bom": "0.0.0",
+  "gapic-libraries-bom": "0.0.0",
+  "google-cloud-jar-parent": "0.0.0",
   "java-accessapproval": "2.4.9",
   "java-accesscontextmanager": "1.4.5",
   "java-aiplatform": "3.4.0",

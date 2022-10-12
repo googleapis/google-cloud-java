@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-gapic-bom</artifactId>
+  <artifactId>gapic-libraries-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gapic-bom:current} -->
+  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:gapic-libraries-bom:current} -->
   <name>Google Cloud Java BOM</name>
   <url>https://github.com/googleapis/java-cloud-bom</url>
   <description>
@@ -13,37 +13,11 @@
     detail of the Libraries BOM.
   </description>
 
-  <developers>
-    <developer>
-      <id>chingor</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
-    <url>https://github.com/googleapis/google-cloud-java</url>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <url>https://github.com/googleapis/google-cloud-java/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
-
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
+  <parent>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <groupId>com.google.cloud</groupId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+  </parent>
 
   <dependencyManagement>
     <dependencies>
@@ -51,86 +25,4 @@ BOM_ARTIFACT_LIST
     </dependencies>
   </dependencyManagement>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.13</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>sonatype-nexus-staging</serverId>
-          <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>false</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.12.0</version>
-        <configuration>
-          <skipDeploy>true</skipDeploy>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <profiles>
-    <profile>
-      <id>release</id>
-      <activation>
-        <property>
-          <name>performRelease</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.0.1</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-                <configuration>
-                  <gpgArguments>
-                    <arg>--pinentry-mode</arg>
-                    <arg>loopback</arg>
-                  </gpgArguments>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.2.1</version>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>

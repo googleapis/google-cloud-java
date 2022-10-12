@@ -65,6 +65,7 @@ echo "Working directory: $(pwd)"
 
 cp ../../../license-checks.xml .
 cp ../../../java.header .
+cp -R ../../../google-cloud-jar-parent google-cloud-jar-parent
 
 git add --all
 git commit -m 'chore: add template files'
@@ -80,15 +81,20 @@ bash ../../set_parent_pom.sh
 git add --all
 git commit -am 'chore: point modules to the aggregator pom as parent'
 
+../../consolidate_config.sh
+
+git add --all
+git commit -am 'chore: consolidate config to parent'
+
 ../../generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml by regenerating aggregator pom
 ../../print_root_pom.sh > pom.xml
 
-git add google-cloud-gapic-bom/pom.xml
-git commit -am 'chore: create google-cloud-gapic-bom'
+git add gapic-libraries-bom/pom.xml
+git commit -am 'chore: create gapic-libraries-bom'
 
-cp ../../gapic_bom_versions.txt google-cloud-gapic-bom/versions.txt
+cp ../../gapic_bom_versions.txt gapic-libraries-bom/versions.txt
 
 ../../delete_non_generated_samples.sh
 

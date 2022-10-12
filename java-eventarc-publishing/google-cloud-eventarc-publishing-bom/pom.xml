@@ -5,10 +5,11 @@
   <artifactId>google-cloud-eventarc-publishing-bom</artifactId>
   <version>0.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -18,48 +19,9 @@
     BOM for Eventarc Publishing
   </description>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>chingor13</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google LLC</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-       <id>neenushaji</id>
-       <name>Neenu Shaji</name>
-       <email>neenushaji@google.com</email>
-       <organization>Google LLC</organization>
-       <roles>
-         <role>Developer</role>
-       </roles>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/googleapis/java-eventarc-publishing.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-eventarc-publishing.git</developerConnection>
-    <url>https://github.com/googleapis/java-eventarc-publishing</url>
-  </scm>
-
   <properties>
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 
   <dependencyManagement>
     <dependencies>

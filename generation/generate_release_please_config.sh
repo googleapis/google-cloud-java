@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 GENERATION_DIR=$(dirname -- "$0")
 
@@ -22,12 +22,8 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-o
   module_name="${path:2}"
   version_file="${path}/versions.txt"
 
-  # Java-Grafeas is a special case
-  if [[ "${module_name}" = "java-grafeas" ]]; then
-    module_line=$(grep -E "^grafeas:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
-  else
-    module_line=$(grep -E "^google-.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
-  fi
+  module_line=$(grep -E "^((google-.*|grafeas|gapic\-libraries)).*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
+
   artifact_name=$(echo "${module_line}" | cut -d ":" -f1)
   module_released_version=$(echo "${module_line}" | cut -d ":" -f2)
   module_snapshot_version=$(echo "${module_line}" | cut -d ":" -f3)

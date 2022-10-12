@@ -25,7 +25,7 @@ for dir in $(find . -mindepth 2 -maxdepth 2 -name owlbot.py | sort | xargs dirna
   done
   perl_command+='\n])/s'
   # execute the replacement in owlbot.py
-  perl -0pe "$perl_command" 'owlbot.py' > 'owlbot.py.new' && rm 'owlbot.py' && mv 'owlbot.py.new' 'owlbot.py'
+  perl -i -0pe "$perl_command" 'owlbot.py'
 
   popd
 
