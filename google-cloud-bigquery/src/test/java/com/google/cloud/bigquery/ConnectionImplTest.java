@@ -29,6 +29,7 @@ import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.ListenableFuture;
 import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.AbstractList;
@@ -37,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.Before;
 import org.junit.Test;
@@ -365,59 +367,6 @@ public class ConnectionImplTest {
         .createJobForQuery(any(com.google.api.services.bigquery.model.Job.class));
   }
 
-  // calls executeSelect with a Fast query and emulates that no schema is returned with the first
-  // page
-  @Test
-  public void testFastQueryNullSchema() throws BigQuerySQLException {
-    ConnectionImpl connectionSpy = Mockito.spy(connection);
-    QueryRequest queryReqMock = new QueryRequest();
-    com.google.api.services.bigquery.model.JobStatistics stats =
-        new com.google.api.services.bigquery.model.JobStatistics()
-            .setQuery(new JobStatistics2().setSchema(FAST_QUERY_TABLESCHEMA));
-    com.google.api.services.bigquery.model.Job jobResponseMock =
-        new com.google.api.services.bigquery.model.Job()
-            // .setConfiguration(QUERY_JOB.g)
-            .setJobReference(QUERY_JOB.toPb())
-            .setId(JOB)
-            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"))
-            .setStatistics(stats);
-    // emulating a legacy query
-    doReturn(true).when(connectionSpy).isFastQuerySupported();
-    com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
-        new QueryResponse()
-            .setSchema(FAST_QUERY_TABLESCHEMA)
-            .setJobComplete(false) // so that it goes to the else part in queryRpc
-            .setTotalRows(new BigInteger(String.valueOf(4L)))
-            .setJobReference(QUERY_JOB.toPb())
-            .setRows(TABLE_ROWS);
-    when(bigqueryRpcMock.queryRpc(any(String.class), any(QueryRequest.class)))
-        .thenReturn(mockQueryRes);
-    doReturn(GET_QUERY_RESULTS_RESPONSE_NULL_SCHEMA) // wiring the null schema for the test case
-        .when(connectionSpy)
-        .getQueryResultsFirstPage(any(JobId.class));
-    doReturn(BQ_RS_MOCK_RES)
-        .when(connectionSpy)
-        .getSubsequentQueryResultsWithJob(
-            any(Long.class),
-            any(Long.class),
-            any(JobId.class),
-            any(GetQueryResultsResponse.class),
-            any(Schema.class),
-            any(Boolean.class));
-    doReturn(jobResponseMock).when(connectionSpy).createDryRunJob(any(String.class));
-    BigQueryResult res = connectionSpy.executeSelect(SQL_QUERY);
-    assertEquals(res.getTotalRows(), 2);
-    assertEquals(QUERY_SCHEMA, res.getSchema());
-    verify(connectionSpy, times(1))
-        .getSubsequentQueryResultsWithJob(
-            any(Long.class),
-            any(Long.class),
-            any(JobId.class),
-            any(GetQueryResultsResponse.class),
-            any(Schema.class),
-            any(Boolean.class));
-  }
-
   // exercises getSubsequentQueryResultsWithJob for fast running queries
   @Test
   public void testFastQueryLongRunning() throws SQLException {
@@ -446,6 +395,137 @@ public class ConnectionImplTest {
     assertEquals(res.getTotalRows(), 2);
     assertEquals(QUERY_SCHEMA, res.getSchema());
     verify(bigqueryRpcMock, times(1)).queryRpc(any(String.class), any(QueryRequest.class));
+  }
+
+  @Test
+  public void testFastQueryLongRunningAsync()
+      throws SQLException, ExecutionException, InterruptedException {
+    ConnectionImpl connectionSpy = Mockito.spy(connection);
+    // emulating a fast query
+    doReturn(true).when(connectionSpy).isFastQuerySupported();
+    doReturn(GET_QUERY_RESULTS_RESPONSE)
+        .when(connectionSpy)
+        .getQueryResultsFirstPage(any(JobId.class));
+
+    doReturn(TABLE_NAME).when(connectionSpy).getDestinationTable(any(JobId.class));
+    doReturn(BQ_RS_MOCK_RES)
+        .when(connectionSpy)
+        .tableDataList(any(GetQueryResultsResponse.class), any(JobId.class));
+
+    com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
+        new QueryResponse()
+            .setSchema(FAST_QUERY_TABLESCHEMA)
+            .setJobComplete(false)
+            .setTotalRows(new BigInteger(String.valueOf(4L)))
+            .setJobReference(QUERY_JOB.toPb())
+            .setRows(TABLE_ROWS);
+    when(bigqueryRpcMock.queryRpc(any(String.class), any(QueryRequest.class)))
+        .thenReturn(mockQueryRes);
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut =
+        connectionSpy.executeSelectAsync(SQL_QUERY);
+    ExecuteSelectResponse exSelRes = executeSelectFut.get();
+    BigQueryResult res = exSelRes.getResultSet();
+    assertEquals(res.getTotalRows(), 2);
+    assertEquals(QUERY_SCHEMA, res.getSchema());
+    assertTrue(exSelRes.getIsSuccessful());
+    verify(bigqueryRpcMock, times(1)).queryRpc(any(String.class), any(QueryRequest.class));
+  }
+
+  @Test
+  public void testFastQuerySinglePageAsync()
+      throws BigQuerySQLException, ExecutionException, InterruptedException {
+    com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
+        new QueryResponse().setSchema(FAST_QUERY_TABLESCHEMA).setJobComplete(true);
+    when(bigqueryRpcMock.queryRpc(any(String.class), any(QueryRequest.class)))
+        .thenReturn(mockQueryRes);
+    ConnectionImpl connectionSpy = Mockito.spy(connection);
+    doReturn(BQ_RS_MOCK_RES)
+        .when(connectionSpy)
+        .processQueryResponseResults(any(QueryResponse.class));
+
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut =
+        connectionSpy.executeSelectAsync(SQL_QUERY);
+    ExecuteSelectResponse exSelRes = executeSelectFut.get();
+    BigQueryResult res = exSelRes.getResultSet();
+    assertEquals(res.getTotalRows(), 2);
+    assertEquals(QUERY_SCHEMA, res.getSchema());
+    assertTrue(exSelRes.getIsSuccessful());
+    verify(connectionSpy, times(1))
+        .processQueryResponseResults(
+            any(com.google.api.services.bigquery.model.QueryResponse.class));
+  }
+
+  @Test
+  public void testExecuteSelectSlowWithParamsAsync()
+      throws BigQuerySQLException, ExecutionException, InterruptedException {
+    ConnectionImpl connectionSpy = Mockito.spy(connection);
+    List<Parameter> parameters = new ArrayList<>();
+    Map<String, String> labels = new HashMap<>();
+    doReturn(false).when(connectionSpy).isFastQuerySupported();
+    com.google.api.services.bigquery.model.JobStatistics jobStatistics =
+        new com.google.api.services.bigquery.model.JobStatistics();
+    com.google.api.services.bigquery.model.Job jobResponseMock =
+        new com.google.api.services.bigquery.model.Job()
+            .setJobReference(QUERY_JOB.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"))
+            .setStatistics(jobStatistics);
+
+    doReturn(jobResponseMock)
+        .when(connectionSpy)
+        .createQueryJob(SQL_QUERY, connectionSettings, parameters, labels);
+    doReturn(GET_QUERY_RESULTS_RESPONSE)
+        .when(connectionSpy)
+        .getQueryResultsFirstPage(any(JobId.class));
+    doReturn(BQ_RS_MOCK_RES)
+        .when(connectionSpy)
+        .getResultSet(
+            any(GetQueryResultsResponse.class),
+            any(JobId.class),
+            any(String.class),
+            any(Boolean.class));
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut =
+        connectionSpy.executeSelectAsync(SQL_QUERY, parameters, labels);
+    ExecuteSelectResponse exSelRes = executeSelectFut.get();
+    BigQueryResult res = exSelRes.getResultSet();
+    assertTrue(exSelRes.getIsSuccessful());
+    assertEquals(res.getTotalRows(), 2);
+    assertEquals(QUERY_SCHEMA, res.getSchema());
+    verify(connectionSpy, times(1))
+        .getResultSet(
+            any(GetQueryResultsResponse.class),
+            any(JobId.class),
+            any(String.class),
+            any(Boolean.class));
+  }
+
+  @Test
+  public void testFastQueryMultiplePagesAsync()
+      throws BigQuerySQLException, ExecutionException, InterruptedException {
+    com.google.api.services.bigquery.model.QueryResponse mockQueryRes =
+        new QueryResponse()
+            .setSchema(FAST_QUERY_TABLESCHEMA)
+            .setJobComplete(true)
+            .setPageToken(PAGE_TOKEN);
+    when(bigqueryRpcMock.queryRpc(any(String.class), any(QueryRequest.class)))
+        .thenReturn(mockQueryRes);
+    ConnectionImpl connectionSpy = Mockito.spy(connection);
+
+    doReturn(BQ_RS_MOCK_RES_MULTI_PAGE)
+        .when(connectionSpy)
+        .processQueryResponseResults(
+            any(com.google.api.services.bigquery.model.QueryResponse.class));
+
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut =
+        connectionSpy.executeSelectAsync(SQL_QUERY);
+    ExecuteSelectResponse exSelRes = executeSelectFut.get();
+    BigQueryResult res = exSelRes.getResultSet();
+    assertTrue(exSelRes.getIsSuccessful());
+    assertEquals(res.getTotalRows(), 4);
+    assertEquals(QUERY_SCHEMA, res.getSchema());
+    verify(connectionSpy, times(1))
+        .processQueryResponseResults(
+            any(com.google.api.services.bigquery.model.QueryResponse.class));
   }
 
   @Test

@@ -47,6 +47,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -187,24 +192,7 @@ class ConnectionImpl implements Connection {
   @BetaApi
   @Override
   public BigQueryResult executeSelect(String sql) throws BigQuerySQLException {
-    try {
-      // use jobs.query if all the properties of connectionSettings are supported
-      if (isFastQuerySupported()) {
-        logger.log(Level.INFO, "\n Using Fast Query Path");
-        String projectId = bigQueryOptions.getProjectId();
-        QueryRequest queryRequest = createQueryRequest(connectionSettings, sql, null, null);
-        return queryRpc(projectId, queryRequest, sql, false);
-      }
-      // use jobs.insert otherwise
-      logger.log(Level.INFO, "\n Not Using Fast Query Path, using jobs.insert");
-      com.google.api.services.bigquery.model.Job queryJob =
-          createQueryJob(sql, connectionSettings, null, null);
-      JobId jobId = JobId.fromPb(queryJob.getJobReference());
-      GetQueryResultsResponse firstPage = getQueryResultsFirstPage(jobId);
-      return getResultSet(firstPage, jobId, sql, false);
-    } catch (BigQueryException e) {
-      throw new BigQuerySQLException(e.getMessage(), e, e.getErrors());
-    }
+    return getExecuteSelectResponse(sql, null, null);
   }
 
   /**
@@ -225,6 +213,12 @@ class ConnectionImpl implements Connection {
   @BetaApi
   @Override
   public BigQueryResult executeSelect(
+      String sql, List<Parameter> parameters, Map<String, String>... labels)
+      throws BigQuerySQLException {
+    return getExecuteSelectResponse(sql, parameters, labels);
+  }
+
+  private BigQueryResult getExecuteSelectResponse(
       String sql, List<Parameter> parameters, Map<String, String>... labels)
       throws BigQuerySQLException {
     Map<String, String> labelMap = null;
@@ -252,29 +246,181 @@ class ConnectionImpl implements Connection {
       throw new BigQuerySQLException(e.getMessage(), e, e.getErrors());
     }
   }
+  /**
+   * Execute a SQL statement that returns a single ResultSet and returns a ListenableFuture to
+   * process the response asynchronously.
+   *
+   * <p>Example of running a query.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *  ConnectionSettings connectionSettings =
+   *        ConnectionSettings.newBuilder()
+   *            .setUseReadAPI(true)
+   *            .build();
+   *   Connection connection = bigquery.createConnection(connectionSettings);
+   *   String selectQuery = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+   * ListenableFuture<ExecuteSelectResponse> executeSelectFuture = connection.executeSelectAsync(selectQuery);
+   * ExecuteSelectResponse executeSelectRes = executeSelectFuture.get();
+   *
+   *  if(!executeSelectRes.getIsSuccessful()){
+   * throw executeSelectRes.getBigQuerySQLException();
+   * }
+   *
+   *  BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * ResultSet rs = bigQueryResult.getResultSet();
+   * while (rs.next()) {
+   * System.out.println(rs.getString(1));
+   * }
+   *
+   * </pre>
+   *
+   * @param sql a static SQL SELECT statement
+   * @return a ListenableFuture that is used to get the data produced by the query
+   * @throws BigQuerySQLException upon failure
+   */
+  @BetaApi
+  @Override
+  public ListenableFuture<ExecuteSelectResponse> executeSelectAsync(String sql)
+      throws BigQuerySQLException {
+    return getExecuteSelectFuture(sql, null);
+  }
+
+  /** This method calls the overloaded executeSelect(...) methods and returns a Future */
+  private ListenableFuture<ExecuteSelectResponse> getExecuteSelectFuture(
+      String sql, List<Parameter> parameters, Map<String, String>... labels)
+      throws BigQuerySQLException {
+    ExecutorService execService =
+        Executors.newFixedThreadPool(
+            2); // two fixed threads. One for the async operation and the other for processing the
+    // callback
+    ListeningExecutorService lExecService = MoreExecutors.listeningDecorator(execService);
+    ListenableFuture<ExecuteSelectResponse> executeSelectFuture =
+        lExecService.submit(
+            () -> {
+              try {
+                return ExecuteSelectResponse.newBuilder()
+                    .setResultSet(
+                        this.executeSelect(
+                            sql,
+                            parameters,
+                            labels)) // calling the overloaded executeSelect method, it takes care
+                    // of null parameters and labels
+                    .setIsSuccessful(true)
+                    .build();
+              } catch (BigQuerySQLException ex) {
+                return ExecuteSelectResponse
+                    .newBuilder() // passing back the null result with isSuccessful set to false
+                    .setIsSuccessful(false)
+                    .setBigQuerySQLException(ex)
+                    .build();
+              }
+            });
+
+    Futures.addCallback(
+        executeSelectFuture,
+        new FutureCallback<ExecuteSelectResponse>() {
+          public void onSuccess(ExecuteSelectResponse result) {
+            execService.shutdownNow(); // shutdown the executor service as we do not need it
+          }
+
+          public void onFailure(Throwable t) {
+            logger.log(
+                Level.WARNING,
+                "\n"
+                    + String.format(
+                        "Async task failed or cancelled with error %s", t.getMessage()));
+            try {
+              close(); // attempt to stop the execution as the developer might have called
+              // Future.cancel()
+            } catch (BigQuerySQLException e) {
+              logger.log(
+                  Level.WARNING,
+                  "\n"
+                      + String.format("Exception while closing the connection %s", e.getMessage()));
+            }
+            execService.shutdownNow(); // shutdown the executor service as we do not need it
+          }
+        },
+        execService);
+
+    return executeSelectFuture;
+  }
+
+  /**
+   * Execute a SQL statement that returns a single ResultSet and returns a ListenableFuture to
+   * process the response asynchronously.
+   *
+   * <p>Example of running a query.
+   *
+   * <pre>
+   * {
+   *   &#64;code
+   *  ConnectionSettings connectionSettings =
+   *        ConnectionSettings.newBuilder()
+   *            ..setUseReadAPI(true)
+   *            .build();
+   *   Connection connection = bigquery.createConnection(connectionSettings);
+   *     String selectQuery =
+   *         "SELECT TimestampField, StringField, BooleanField FROM "
+   *             + MY_TABLE
+   *             + " WHERE StringField = @stringParam"
+   *             + " AND IntegerField IN UNNEST(@integerList)";
+   *     QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+   *     QueryParameterValue intArrayParameter =
+   *         QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+   *     Parameter stringParam =
+   *         Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
+   *     Parameter intArrayParam =
+   *         Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
+   *     List<Parameter> parameters = ImmutableList.of(stringParam, intArrayParam);
+   *
+   *     ListenableFuture<ExecuteSelectResponse> executeSelectFut =
+   *         connection.executeSelectAsync(selectQuery, parameters);
+   * ExecuteSelectResponse executeSelectRes = executeSelectFuture.get();
+   *
+   *  if(!executeSelectRes.getIsSuccessful()){
+   * throw executeSelectRes.getBigQuerySQLException();
+   * }
+   *
+   *  BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * ResultSet rs = bigQueryResult.getResultSet();
+   * while (rs.next()) {
+   * System.out.println(rs.getString(1));
+   * }
+   *
+   * </pre>
+   *
+   * @param sql SQL SELECT query
+   * @param parameters named or positional parameters. The set of query parameters must either be
+   *     all positional or all named parameters.
+   * @param labels (optional) the labels associated with this query. You can use these to organize
+   *     and group your query jobs. Label keys and values can be no longer than 63 characters, can
+   *     only contain lowercase letters, numeric characters, underscores and dashes. International
+   *     characters are allowed. Label values are optional and Label is a Varargs. You should pass
+   *     all the Labels in a single Map .Label keys must start with a letter and each label in the
+   *     list must have a different key.
+   * @return a ListenableFuture that is used to get the data produced by the query
+   * @throws BigQuerySQLException upon failure
+   */
+  @BetaApi
+  @Override
+  public ListenableFuture<ExecuteSelectResponse> executeSelectAsync(
+      String sql, List<Parameter> parameters, Map<String, String>... labels)
+      throws BigQuerySQLException {
+    return getExecuteSelectFuture(sql, parameters, labels);
+  }
 
   @VisibleForTesting
   BigQueryResult getResultSet(
       GetQueryResultsResponse firstPage, JobId jobId, String sql, Boolean hasQueryParameters) {
-    if (firstPage.getJobComplete()
-        && firstPage.getTotalRows() != null
-        && firstPage.getSchema()
-            != null) { // firstPage.getTotalRows() is null if job is not complete. We need to make
-      // sure that the schema is not null, as it is required for the ResultSet
-      return getSubsequentQueryResultsWithJob(
-          firstPage.getTotalRows().longValue(),
-          (long) firstPage.getRows().size(),
-          jobId,
-          firstPage,
-          hasQueryParameters);
-    } else { // job is still running, use dryrun to get Schema
-      com.google.api.services.bigquery.model.Job dryRunJob = createDryRunJob(sql);
-      Schema schema = Schema.fromPb(dryRunJob.getStatistics().getQuery().getSchema());
-      // TODO: check how can we get totalRows and pageRows while the job is still running.
-      // `firstPage.getTotalRows()` returns null
-      return getSubsequentQueryResultsWithJob(
-          null, null, jobId, firstPage, schema, hasQueryParameters);
-    }
+    return getSubsequentQueryResultsWithJob(
+        firstPage.getTotalRows().longValue(),
+        (long) firstPage.getRows().size(),
+        jobId,
+        firstPage,
+        hasQueryParameters);
   }
 
   static class EndOfFieldValueList
@@ -337,21 +483,6 @@ class ConnectionImpl implements Connection {
                   results.getJobComplete(), results.getSchema() == null, totalRows, pageRows));
       JobId jobId = JobId.fromPb(results.getJobReference());
       GetQueryResultsResponse firstPage = getQueryResultsFirstPage(jobId);
-      // We might get null schema from the backend occasionally. Ref:
-      // https://github.com/googleapis/java-bigquery/issues/2103/. Using queryDryRun in such cases
-      // to get the schema
-      if (firstPage.getSchema() == null) { // get schema using dry run
-        // Log the status if the job was complete complete
-        logger.log(
-            Level.WARNING,
-            "\n"
-                + "Received null schema, Using dryRun the get the Schema. jobComplete:"
-                + firstPage.getJobComplete());
-        com.google.api.services.bigquery.model.Job dryRunJob = createDryRunJob(sql);
-        Schema schema = Schema.fromPb(dryRunJob.getStatistics().getQuery().getSchema());
-        return getSubsequentQueryResultsWithJob(
-            totalRows, pageRows, jobId, firstPage, schema, hasQueryParameters);
-      }
       return getSubsequentQueryResultsWithJob(
           totalRows, pageRows, jobId, firstPage, hasQueryParameters);
     }

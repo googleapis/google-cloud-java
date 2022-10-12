@@ -62,6 +62,7 @@ import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
+import com.google.cloud.bigquery.ExecuteSelectResponse;
 import com.google.cloud.bigquery.ExternalTableDefinition;
 import com.google.cloud.bigquery.ExtractJobConfiguration;
 import com.google.cloud.bigquery.Field;
@@ -135,6 +136,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.InputStream;
@@ -157,6 +159,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -2787,6 +2790,155 @@ public class ITBigQueryTest {
     }
     assertEquals(300000, cnt); // total 300000 rows should be read
     connection.close();
+  }
+
+  @Test
+  public void testReadAPIIterationAndOrderAsync()
+      throws SQLException, ExecutionException,
+          InterruptedException { // use read API to read 300K records and check the order
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by confirmed_cases asc limit 300000";
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setPriority(
+                QueryJobConfiguration.Priority
+                    .INTERACTIVE) // required for this integration test so that isFastQuerySupported
+            // returns false
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut = connection.executeSelectAsync(query);
+    ExecuteSelectResponse exSelRes = executeSelectFut.get();
+    BigQueryResult bigQueryResult = exSelRes.getResultSet();
+    ResultSet rs = bigQueryResult.getResultSet();
+    int cnt = 0;
+    int lasConfirmedCases = Integer.MIN_VALUE;
+    while (rs.next()) { // pagination starts after approx 120,000 records
+      assertNotNull(rs.getDate(0));
+      assertNotNull(rs.getString(1));
+      assertNotNull(rs.getString(2));
+      assertTrue(rs.getInt(3) >= 0);
+      assertTrue(rs.getInt(4) >= 0);
+
+      // check if the records are sorted
+      assertTrue(rs.getInt(3) >= lasConfirmedCases);
+      lasConfirmedCases = rs.getInt(3);
+      ++cnt;
+    }
+    assertEquals(300000, cnt); // total 300000 rows should be read
+    connection.close();
+  }
+
+  @Test
+  // Cancel the future and check if the operations got cancelled. Tests the wiring of future
+  // callback.
+  // TODO(prasmish): Remove this test case if it turns out to be flaky, as expecting the process to
+  // be uncompleted in 1000ms is nondeterministic! Though very likely it won't be complete in the
+  // specified amount of time
+  public void testExecuteSelectAsyncCancel()
+      throws SQLException, ExecutionException,
+          InterruptedException { // use read API to read 300K records and check the order
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by confirmed_cases asc limit 300000";
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setPriority(
+                QueryJobConfiguration.Priority
+                    .INTERACTIVE) // required for this integration test so that isFastQuerySupported
+            // returns false
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut = connection.executeSelectAsync(query);
+
+    // Cancel the future with 1000ms delay
+    Thread testCloseAsync =
+        new Thread(
+            () -> {
+              try {
+                Thread.sleep(1000);
+                executeSelectFut.cancel(true);
+              } catch (InterruptedException e) {
+                assertNotNull(e);
+              }
+            });
+    testCloseAsync.start();
+
+    try {
+      executeSelectFut.get();
+      fail(); // this line should not be reached
+    } catch (CancellationException e) {
+      assertNotNull(e);
+    }
+  }
+
+  @Test
+  // Timeouts the future and check if the operations got cancelled.
+  // TODO(prasmish): Remove this test case if it turns out to be flaky, as expecting the process to
+  // be uncompleted in 1000ms is nondeterministic! Though very likely it won't be complete in the
+  // specified amount of time
+  public void testExecuteSelectAsyncTimeout()
+      throws SQLException, ExecutionException,
+          InterruptedException { // use read API to read 300K records and check the order
+    String query =
+        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+            + TABLE_ID_LARGE.getTable()
+            + " where date is not null and county is not null and state_name is not null order by confirmed_cases asc limit 300000";
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setPriority(
+                QueryJobConfiguration.Priority
+                    .INTERACTIVE) // required for this integration test so that isFastQuerySupported
+            // returns false
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut = connection.executeSelectAsync(query);
+
+    try {
+      executeSelectFut.get(1000, TimeUnit.MILLISECONDS);
+      fail(); // this line should not be reached
+    } catch (CancellationException | TimeoutException e) {
+      assertNotNull(e);
+    }
+  }
+
+  @Test
+  public void testExecuteSelectWithNamedQueryParametersAsync()
+      throws BigQuerySQLException, ExecutionException, InterruptedException {
+    String query =
+        "SELECT TimestampField, StringField, BooleanField FROM "
+            + TABLE_ID.getTable()
+            + " WHERE StringField = @stringParam"
+            + " AND IntegerField IN UNNEST(@integerList)";
+    QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+    QueryParameterValue intArrayParameter =
+        QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+    Parameter stringParam =
+        Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
+    Parameter intArrayParam =
+        Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
+
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder().setDefaultDataset(DatasetId.of(DATASET)).build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    List<Parameter> parameters = ImmutableList.of(stringParam, intArrayParam);
+
+    ListenableFuture<ExecuteSelectResponse> executeSelectFut =
+        connection.executeSelectAsync(query, parameters);
+    ExecuteSelectResponse exSelRes = executeSelectFut.get();
+    BigQueryResult rs = exSelRes.getResultSet();
+    assertEquals(2, rs.getTotalRows());
   }
 
   // Ref: https://github.com/googleapis/java-bigquery/issues/2070. Adding a pre-submit test to see

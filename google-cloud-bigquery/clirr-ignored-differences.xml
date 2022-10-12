@@ -24,4 +24,14 @@
     <className>com/google/cloud/bigquery/RoutineInfo*</className>
     <method>*RemoteFunctionOptions(*)</method>
   </difference>
-</differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/bigquery/Connection</className>
+    <method>com.google.common.util.concurrent.ListenableFuture executeSelectAsync(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/bigquery/Connection</className>
+    <method>com.google.common.util.concurrent.ListenableFuture executeSelectAsync(java.lang.String, java.util.List, java.util.Map[])</method>
+  </difference>
+  </differences>
