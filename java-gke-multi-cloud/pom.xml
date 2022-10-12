@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-multi-cloud-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
   <name>Google Anthos Multicloud Parent</name>
   <url>https://github.com/googleapis/java-gke-multi-cloud</url>
   <description>
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-multi-cloud</artifactId>
-        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+        <version>0.3.0</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gke-multi-cloud-v1</artifactId>
-        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-multi-cloud-v1:current} -->
+        <version>0.3.0</version><!-- {x-version-update:grpc-google-cloud-gke-multi-cloud-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gke-multi-cloud-v1</artifactId>
-        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-multi-cloud-v1:current} -->
+        <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-gke-multi-cloud-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
