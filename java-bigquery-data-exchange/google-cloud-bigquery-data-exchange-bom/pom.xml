@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-data-exchange-bom</artifactId>
-  <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery-data-exchange</artifactId>
-        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquery-data-exchange-v1beta1</artifactId>
-        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquery-data-exchange-v1beta1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-bigquery-data-exchange-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquery-data-exchange-v1beta1</artifactId>
-        <version>0.3.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquery-data-exchange-v1beta1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-bigquery-data-exchange-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

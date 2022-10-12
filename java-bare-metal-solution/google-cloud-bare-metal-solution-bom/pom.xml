@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bare-metal-solution-bom</artifactId>
-  <version>0.3.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+  <version>0.4.0</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bare-metal-solution</artifactId>
-        <version>0.3.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+        <version>0.4.0</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bare-metal-solution-v2</artifactId>
-        <version>0.3.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bare-metal-solution-v2:current} -->
+        <version>0.4.0</version><!-- {x-version-update:grpc-google-cloud-bare-metal-solution-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bare-metal-solution-v2</artifactId>
-        <version>0.3.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bare-metal-solution-v2:current} -->
+        <version>0.4.0</version><!-- {x-version-update:proto-google-cloud-bare-metal-solution-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
