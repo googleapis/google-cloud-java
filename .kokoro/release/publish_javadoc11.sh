@@ -30,11 +30,14 @@ pushd $(dirname "$0")/../../
 # install docuploader package
 python3 -m pip install gcp-docuploader
 
+# TODO: Change this to env_var
 doclet_name="java-docfx-doclet-1.7.0.jar"
 
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-excluded_modules=('gapic-libraries-bom')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
+
+failed_modules=()
 
 for module in $modules
 do
@@ -49,6 +52,10 @@ do
 
     # cloud RAD generation
     mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
+    if [ "$?" -ne "0" ]; then
+      failed_modules+=("${module}")
+      continue
+    fi
     # include CHANGELOG if exists
     if [ -e CHANGELOG.md ]; then
       cp CHANGELOG.md target/docfx-yml/history.md
@@ -79,3 +86,5 @@ do
     popd # out of $module
   fi
 done
+
+echo "These modules failed ${failed_modules[*]}"
