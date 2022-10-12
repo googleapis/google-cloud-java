@@ -4,7 +4,9 @@ set -e
 
 violations=0
 for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
-  if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || [[ "${pomFile}" =~ .*CoverageAggregator.* ]]; then
+  if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] \
+      || [[ "${pomFile}" =~ .*CoverageAggregator.* ]] \
+      || [[ "${pomFile}" =~ .*google-cloud-examples.* ]]; then
     continue
   fi
 

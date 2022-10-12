@@ -20,6 +20,9 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-o
 
   # path starts with ./{module}, we need to exclude the first two chars
   module_name="${path:2}"
+  if [ "${module_name}" == "google-cloud-examples" ];then
+    continue
+  fi
   version_file="${path}/versions.txt"
 
   module_line=$(grep -E "^((google-.*|grafeas|gapic\-libraries)).*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
