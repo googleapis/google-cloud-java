@@ -40,6 +40,7 @@
   "java-contact-center-insights": "2.3.9",
   "java-containeranalysis": "2.4.9",
   "java-container": "2.6.0",
+  "java-contentwarehouse": "0.0.0",
   "java-datacatalog": "1.9.5",
   "java-dataflow": "0.7.5",
   "java-dataform": "0.2.3",
