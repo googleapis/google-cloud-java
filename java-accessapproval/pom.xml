@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-accessapproval-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+  <version>2.5.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   <name>Google Cloud Access Approval Parent</name>
   <url>https://github.com/googleapis/java-accessapproval</url>
   <description>
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-accessapproval-v1</artifactId>
-        <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-accessapproval-v1:current} -->
+        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-accessapproval-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-accessapproval-v1</artifactId>
-        <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-accessapproval-v1:current} -->
+        <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-accessapproval-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-accessapproval</artifactId>
-        <version>2.4.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
       </dependency>
 
       <!-- Test dependencies -->
