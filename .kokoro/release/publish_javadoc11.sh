@@ -30,14 +30,16 @@ pushd $(dirname "$0")/../../
 # install docuploader package
 python3 -m pip install gcp-docuploader
 
+# TODO: Change this to env_var
 doclet_name="java-docfx-doclet-1.7.0.jar"
 
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-excluded_modules=('gapic-libraries-bom')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
 
-for module in $modules
-do
+failed_modules=()
+
+for module in $modules; do
   # Proceed if module is not excluded
   if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
     pushd $module
@@ -49,6 +51,10 @@ do
 
     # cloud RAD generation
     mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
+    if [ "$?" -ne "0" ]; then
+      failed_modules+=("${module}")
+      continue
+    fi
     # include CHANGELOG if exists
     if [ -e CHANGELOG.md ]; then
       cp CHANGELOG.md target/docfx-yml/history.md
@@ -58,24 +64,31 @@ do
 
     # create metadata
     python3 -m docuploader create-metadata \
-     --name ${NAME} \
-     --version ${VERSION} \
-     --xrefs devsite://java/gax \
-     --xrefs devsite://java/google-cloud-core \
-     --xrefs devsite://java/api-common \
-     --xrefs devsite://java/proto-google-common-protos \
-     --xrefs devsite://java/google-api-client \
-     --xrefs devsite://java/google-http-client \
-     --xrefs devsite://java/protobuf \
-     --language java
+      --name ${NAME} \
+      --version ${VERSION} \
+      --xrefs devsite://java/gax \
+      --xrefs devsite://java/google-cloud-core \
+      --xrefs devsite://java/api-common \
+      --xrefs devsite://java/proto-google-common-protos \
+      --xrefs devsite://java/google-api-client \
+      --xrefs devsite://java/google-http-client \
+      --xrefs devsite://java/protobuf \
+      --language java
 
     # upload yml to production bucket
     python3 -m docuploader upload . \
-     --credentials ${CREDENTIALS} \
-     --staging-bucket ${STAGING_BUCKET_V2} \
-     --destination-prefix docfx
+      --credentials ${CREDENTIALS} \
+      --staging-bucket ${STAGING_BUCKET_V2} \
+      --destination-prefix docfx
 
     popd # out of target/docfx-yml
     popd # out of $module
   fi
 done
+
+if [ ${#failed_modules[@]} -eq 0 ]; then
+  echo "All modules uploaded to CloudRAD"
+else
+  echo "These modules failed: ${failed_modules[*]}"
+  exit 1
+fi
