@@ -27,6 +27,11 @@ fi
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
+python3 --version
+
+# Force latest protobuf version
+python3 -m pip install protobuf
+
 # install docuploader package
 python3 -m pip install gcp-docuploader
 
@@ -74,6 +79,8 @@ for module in $modules; do
 
     pushd target/docfx-yml
 
+    echo "Creating metadata"
+
     # create metadata
     python3 -m docuploader create-metadata \
       --name ${NAME} \
@@ -86,6 +93,8 @@ for module in $modules; do
       --xrefs devsite://java/google-http-client \
       --xrefs devsite://java/protobuf \
       --language java
+
+    echo "Uploading tarball"
 
     # upload yml to production bucket
     python3 -m docuploader upload . \
