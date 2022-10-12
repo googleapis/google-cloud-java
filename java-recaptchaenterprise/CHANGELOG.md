@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recaptchaenterprise-v3.0.11...google-cloud-recaptchaenterprise-v3.1.0) (2022-10-12)
+
+
+### Features
+
+* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* [recaptchaenterprise] add RetrieveLegacySecretKey method ([#8571](https://github.com/googleapis/google-cloud-java/issues/8571)) ([d768aa4](https://github.com/googleapis/google-cloud-java/commit/d768aa47d9a9b3f3c2b2c4d0965269f155509589))
+* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* add annotation reasons REFUND, REFUND_FRAUD, TRANSACTION_ACCEPTED, TRANSACTION_DECLINED and SOCIAL_SPAM ([d768aa4](https://github.com/googleapis/google-cloud-java/commit/d768aa47d9a9b3f3c2b2c4d0965269f155509589))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-recaptchaenterprise-v1 to v3.0.6 ([#8314](https://github.com/googleapis/google-cloud-java/issues/8314)) ([62dc4dd](https://github.com/googleapis/google-cloud-java/commit/62dc4dd3e6c871462018fb309318d460e6e5a272))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-recaptchaenterprise-v1beta1 to v0.42.6 ([#8318](https://github.com/googleapis/google-cloud-java/issues/8318)) ([c5424fb](https://github.com/googleapis/google-cloud-java/commit/c5424fb47710dd53e06a90eacf0be33a3c88ad43))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [3.0.9](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.8...v3.0.9) (2022-09-22)
 
 
