@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>1.0.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
   </parent>
   <properties>
     <skipUnitTests>false</skipUnitTests>
