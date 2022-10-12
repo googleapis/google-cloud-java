@@ -58,7 +58,7 @@ for module in $modules; do
     # Extract Cloud RAD module name from `distribution_name` in .repo-metadata.json
     NAME=$(grep -o '"distribution_name": "[^"]*' .repo-metadata.json | grep -o '[^"]*$' | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
-    VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
+    VERSION=$(grep "^${NAME}:" versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
