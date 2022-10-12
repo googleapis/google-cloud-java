@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-usage-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+  <version>2.4.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
   <name>Google Service Usage Parent</name>
   <url>https://github.com/googleapis/java-service-usage</url>
   <description>
@@ -30,27 +30,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-usage</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-usage-v1beta1</artifactId>
-        <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1beta1:current} -->
+        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-usage-v1</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1:current} -->
+        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-usage-v1</artifactId>
-        <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1:current} -->
+        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-service-usage-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-usage-v1beta1</artifactId>
-        <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1beta1:current} -->
+        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-service-usage-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

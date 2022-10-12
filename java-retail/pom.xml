@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-retail-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-retail:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-retail:current} -->
   <name>Google Cloud Retail Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -30,37 +30,37 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-retail</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-retail:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-retail:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-retail-v2beta</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2beta:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-retail-v2beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-retail-v2alpha</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2alpha:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-retail-v2alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-retail-v2beta</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-retail-v2beta:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-retail-v2beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-retail-v2alpha</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-retail-v2alpha:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-retail-v2alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-retail-v2</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-retail-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-retail-v2</artifactId>
-        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-retail-v2:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-retail-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
