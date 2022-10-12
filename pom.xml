@@ -56,6 +56,7 @@
     <module>java-aiplatform</module>
     <module>java-analytics-admin</module>
     <module>java-analytics-data</module>
+    <module>java-analyticshub</module>
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>

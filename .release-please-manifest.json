@@ -6,6 +6,7 @@
   "java-aiplatform": "3.4.0",
   "java-analytics-admin": "0.13.4",
   "java-analytics-data": "0.14.7",
+  "java-analyticshub": "0.0.0",
   "java-api-gateway": "2.3.6",
   "java-apigee-connect": "2.3.7",
   "java-apigee-registry": "0.3.1",
