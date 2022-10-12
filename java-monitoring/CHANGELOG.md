@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-monitoring-v3.4.6...google-cloud-monitoring-v3.5.0) (2022-10-12)
+
+
+### Features
+
+* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-monitoring-v3 to v3.4.2 ([#8276](https://github.com/googleapis/google-cloud-java/issues/8276)) ([85e8ae0](https://github.com/googleapis/google-cloud-java/commit/85e8ae089cba883dee8f5639046690977ef39186))
+* **deps:** update dependency com.google.api.grpc:proto-google-cloud-monitoring-v3 to v3.4.2 ([#8285](https://github.com/googleapis/google-cloud-java/issues/8285)) ([2832653](https://github.com/googleapis/google-cloud-java/commit/2832653660ec01b6daf37fa53659cbf7a86a597a))
+* **deps:** update dependency com.google.cloud:google-cloud-monitoring-parent to v3.4.2 ([#8291](https://github.com/googleapis/google-cloud-java/issues/8291)) ([1c6a84a](https://github.com/googleapis/google-cloud-java/commit/1c6a84a8f98f3d84741bdc3916e1f926bc07ac65))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [3.4.5](https://github.com/googleapis/java-monitoring/compare/v3.4.4...v3.4.5) (2022-09-20)
 
 
