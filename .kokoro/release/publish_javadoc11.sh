@@ -33,6 +33,18 @@ python3 -m pip install gcp-docuploader
 # TODO: Change this to env_var
 doclet_name="java-docfx-doclet-1.7.0.jar"
 
+mvn -B -ntp \
+  -DtrimStackTrace=false \
+  -Dclirr.skip=true \
+  -Denforcer.skip=true \
+  -Dcheckstyle.skip=true \
+  -Dflatten.skip=true \
+  -Danimal.sniffer.skip=true \
+  -DskipTests=true \
+  -Djacoco.skip=true \
+  -T 1C \
+  install
+
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
@@ -46,7 +58,7 @@ for module in $modules; do
     # Extract Cloud RAD module name from `distribution_name` in .repo-metadata.json
     NAME=$(grep -o '"distribution_name": "[^"]*' .repo-metadata.json | grep -o '[^"]*$' | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
-    VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
+    VERSION=$(grep "^${NAME}:" versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
