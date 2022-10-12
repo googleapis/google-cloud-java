@@ -29,11 +29,8 @@ pushd $(dirname "$0")/../../
 
 python3 --version
 
-# Force latest protobuf version
-python3 -m pip install protobuf
-
 # install docuploader package
-python3 -m pip install gcp-docuploader
+python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
 # TODO: Change this to env_var
 doclet_name="java-docfx-doclet-1.7.0.jar"
