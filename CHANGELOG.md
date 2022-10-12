@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.7](https://github.com/googleapis/java-logging/compare/v3.11.6...v3.11.7) (2022-10-12)
+
+
+### Bug Fixes
+
+* Add safe directory for environment tests ([#1131](https://github.com/googleapis/java-logging/issues/1131)) ([a6ff3c6](https://github.com/googleapis/java-logging/commit/a6ff3c663647bb92ee542a60a3eb25b1392a5457))
+
 ## [3.11.6](https://github.com/googleapis/java-logging/compare/v3.11.5...v3.11.6) (2022-10-07)
 
 
