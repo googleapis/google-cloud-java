@@ -14,9 +14,7 @@ release_please_config_file="release-please-config.json"
 
 echo "{" > "${release_please_manifest_file}"
 
-module_list=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order \
-   |grep -v google-cloud-examples \
-   |xargs dirname)
+module_list=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order |xargs dirname)
 num_modules=$(echo "${module_list}"| wc -l)
 num_modules=$((num_modules))
 for path in $module_list; do

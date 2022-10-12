@@ -3,6 +3,11 @@ Google Cloud Java Client Examples
 
 Examples for google-cloud (Java idiomatic client for [Google Cloud Platform][cloud-platform] services).
 
+**Note about migration**: In September 2022, this folder was moved from [main_202208 branch](
+https://github.com/googleapis/google-cloud-java/tree/main_202208/google-cloud-examples)
+to this branch. The `pom.xml` file has been removed as we no longer build the directory.
+The old branch has pom.xml to build the project.
+
 [![CircleCI](https://circleci.com/gh/googleapis/google-cloud-java/tree/master.svg?style=shield)](https://circleci.com/gh/googleapis/google-cloud-java/tree/master)
 [![Coverage Status](https://coveralls.io/repos/googleapis/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/googleapis/google-cloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)
