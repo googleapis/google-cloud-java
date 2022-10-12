@@ -64,7 +64,7 @@ to add `google-cloud-analyticshub` as a dependency in your code.
 ## About Analytics Hub API
 
 
-[Analytics Hub API][product-docs] TBD
+[Analytics Hub API][product-docs] Analytics Hub is a data exchange that allows you to efficiently and securely exchange data assets across organizations to address challenges of data reliability and cost.
 
 See the [Analytics Hub API client library docs][javadocs] to learn how to
 use this Analytics Hub API Client Library.
@@ -163,7 +163,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/bigquery/TBD
+[product-docs]: https://cloud.google.com/analytics-hub
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-analyticshub/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-analyticshub/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-analyticshub/java7.html
