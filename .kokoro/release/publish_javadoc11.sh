@@ -33,6 +33,18 @@ python3 -m pip install gcp-docuploader
 # TODO: Change this to env_var
 doclet_name="java-docfx-doclet-1.7.0.jar"
 
+mvn -B -ntp \
+  -DtrimStackTrace=false \
+  -Dclirr.skip=true \
+  -Denforcer.skip=true \
+  -Dcheckstyle.skip=true \
+  -Dflatten.skip=true \
+  -Danimal.sniffer.skip=true \
+  -DskipTests=true \
+  -Djacoco.skip=true \
+  -T 1C \
+  install
+
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
