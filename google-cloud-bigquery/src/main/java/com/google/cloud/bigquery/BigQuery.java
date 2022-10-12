@@ -232,6 +232,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify a label filter. See
      * https://cloud.google.com/bigquery/docs/adding-using-labels#filtering_datasets_using_labels
+     *
+     * @param labelFilter In the form "labels.key:value"
      */
     public static DatasetListOption labelFilter(String labelFilter) {
       return new DatasetListOption(BigQueryRpc.Option.LABEL_FILTER, labelFilter);
@@ -264,7 +266,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the dataset's fields to be returned by the RPC call. If this
-     * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can be
+     * option is not provided all dataset's fields are returned. { code DatasetOption.fields} can be
      * used to specify only the fields of interest. {@link Dataset#getDatasetId()} is always
      * returned, even if not specified.
      */
