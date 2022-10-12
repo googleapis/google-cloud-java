@@ -25,12 +25,12 @@
 # This script calls ./generation/diff_directory.sh for every pair, but you do not need to do anything for it. You just need to run this script.
 # Search total-diff.txt for any artifact, and it will show you a complete scenario, what all files exist etc etc.
 
-cloudRepoId=comgooglecloud-5570
-apiRepoId=comgoogleapi-5038
-analyticsRepoId=comgoogleanalytics-1052
+cloudRepoId=comgooglecloud-5899
+apiRepoId=comgoogleapi-5340
+analyticsRepoId=comgoogleanalytics-1058
 
 #-maxDepth 2 will just loop over all the packages we have, like java-vision etc, not maven submodules within it
-#-maxDepth 3 and 4 output same number of modules (more than 2 ofcourse) so 3 is covering all the modules
+#-maxDepth 3 and 4 output same number of modules (more than 2) so 3 is covering all the modules
 for module in $(find . -mindepth 1 -maxdepth 3 -name pom.xml | sort | xargs dirname); do
 
   if [[ "${module}" = *gapic-libraries-bom ]]; then
