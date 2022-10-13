@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-logging</artifactId>
-      <version>3.11.6</version>
+      <version>3.11.7</version>
     </dependency>
     <!-- [END logging_install_without_bom] -->
 
