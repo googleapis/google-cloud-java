@@ -316,6 +316,20 @@ def generate(
         ],
         cwd=monorepo_root,
     )
+    print("Consolidating configurations")
+    subprocess.check_call(
+        [
+            "bash", "generation/consolidate_config.sh"
+        ],
+        cwd=monorepo_root,
+    )
+    print("Setting parent poms")
+    subprocess.check_call(
+        [
+            "bash", "generation/set_parent_pom.sh"
+        ],
+        cwd=monorepo_root,
+    )
 
     print("Applying the versions")
     subprocess.check_call(
