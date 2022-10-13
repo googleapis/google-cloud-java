@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataform-bom</artifactId>
-  <version>0.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
+  <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,27 +28,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataform</artifactId>
-        <version>0.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
+        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataform-v1alpha2</artifactId>
-        <version>0.2.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataform-v1alpha2:current} -->
+        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataform-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataform-v1beta1</artifactId>
-        <version>0.2.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataform-v1beta1:current} -->
+        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataform-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataform-v1alpha2</artifactId>
-        <version>0.2.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataform-v1alpha2:current} -->
+        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataform-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataform-v1beta1</artifactId>
-        <version>0.2.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataform-v1beta1:current} -->
+        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataform-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
