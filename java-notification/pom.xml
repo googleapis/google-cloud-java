@@ -55,7 +55,7 @@
       <artifactId>guava</artifactId>
     </dependency>
 
-    <!-- Test dependencies -->
+    <!--  Test dependencies  -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
