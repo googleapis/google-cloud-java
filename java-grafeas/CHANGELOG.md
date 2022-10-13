@@ -1,5 +1,38 @@
 # Changelog
 
+## [2.4.7](https://github.com/googleapis/java-grafeas/compare/v2.4.6...v2.4.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([7b7b38e](https://github.com/googleapis/java-grafeas/commit/7b7b38e560aaedf7d029e1683284f904076d2ca9))
+
+## [2.4.6](https://github.com/googleapis/java-grafeas/compare/v2.4.5...v2.4.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#555](https://github.com/googleapis/java-grafeas/issues/555)) ([1a14b7f](https://github.com/googleapis/java-grafeas/commit/1a14b7fd96d27303132669680f6d14dd0bcc52d6))
+* Update dependency certifi to v2022.9.24 ([#535](https://github.com/googleapis/java-grafeas/issues/535)) ([9a4e7db](https://github.com/googleapis/java-grafeas/commit/9a4e7dbdfb012724b33ba92351a1b54afa1042d6))
+* Update dependency charset-normalizer to v2.1.1 ([#539](https://github.com/googleapis/java-grafeas/issues/539)) ([ba84014](https://github.com/googleapis/java-grafeas/commit/ba8401485bd353855b44da39e3358d19578b556b))
+* Update dependency click to v8.1.3 ([#540](https://github.com/googleapis/java-grafeas/issues/540)) ([e22abe1](https://github.com/googleapis/java-grafeas/commit/e22abe1a3c777f3b30e894982546ff668456c44b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#560](https://github.com/googleapis/java-grafeas/issues/560)) ([06c59de](https://github.com/googleapis/java-grafeas/commit/06c59deb5ceaac9ef05d97d6c23b5bc26c8541bc))
+* Update dependency gcp-releasetool to v1.8.8 ([#536](https://github.com/googleapis/java-grafeas/issues/536)) ([84583fd](https://github.com/googleapis/java-grafeas/commit/84583fd23699b52ec4b37dc31f876775619d2723))
+* Update dependency google-api-core to v2.10.1 ([#541](https://github.com/googleapis/java-grafeas/issues/541)) ([06c8f6a](https://github.com/googleapis/java-grafeas/commit/06c8f6abfe218b87c4bd8e94453044f7a601f4eb))
+* Update dependency google-auth to v2.12.0 ([#542](https://github.com/googleapis/java-grafeas/issues/542)) ([2069620](https://github.com/googleapis/java-grafeas/commit/2069620d7392b153d42eedb9720f52a8065765a5))
+* Update dependency google-cloud-core to v2.3.2 ([#537](https://github.com/googleapis/java-grafeas/issues/537)) ([aae27f1](https://github.com/googleapis/java-grafeas/commit/aae27f1d9e4f5ad2cb0e09eb1f442e6d9d8ff571))
+* Update dependency google-cloud-storage to v2.5.0 ([#543](https://github.com/googleapis/java-grafeas/issues/543)) ([e5eb0c5](https://github.com/googleapis/java-grafeas/commit/e5eb0c550c88ef924c025e5a1b08c84d836983c1))
+* Update dependency google-crc32c to v1.5.0 ([#544](https://github.com/googleapis/java-grafeas/issues/544)) ([611860e](https://github.com/googleapis/java-grafeas/commit/611860e37050bfcbcbe382a2d965b4c98dbb7682))
+* Update dependency googleapis-common-protos to v1.56.4 ([#538](https://github.com/googleapis/java-grafeas/issues/538)) ([1c0cfe1](https://github.com/googleapis/java-grafeas/commit/1c0cfe1764c46d8238f96c46c87c43db277a6356))
+* Update dependency importlib-metadata to v4.12.0 ([#545](https://github.com/googleapis/java-grafeas/issues/545)) ([af0acad](https://github.com/googleapis/java-grafeas/commit/af0acadc9e89e4f30ade427e45fdd047146c1b14))
+* Update dependency jeepney to v0.8.0 ([#546](https://github.com/googleapis/java-grafeas/issues/546)) ([a47c8f1](https://github.com/googleapis/java-grafeas/commit/a47c8f1e9c4d7e4248f5cb8e581ee4a2c8ec2905))
+* Update dependency jinja2 to v3.1.2 ([#547](https://github.com/googleapis/java-grafeas/issues/547)) ([98caa33](https://github.com/googleapis/java-grafeas/commit/98caa3310b4ab83e4f19e46788720f2ccd4d7e96))
+* Update dependency protobuf to v4 ([#556](https://github.com/googleapis/java-grafeas/issues/556)) ([4664765](https://github.com/googleapis/java-grafeas/commit/4664765c7cfb03c19b723da9a04076e235f76713))
+* Update dependency pyjwt to v2.5.0 ([#551](https://github.com/googleapis/java-grafeas/issues/551)) ([379c94f](https://github.com/googleapis/java-grafeas/commit/379c94f56043b0d8ccce5377d62218935e85a083))
+* Update dependency requests to v2.28.1 ([#552](https://github.com/googleapis/java-grafeas/issues/552)) ([677f080](https://github.com/googleapis/java-grafeas/commit/677f0805295892d9783d1b7e3e390fbb5e806d5a))
+* Update dependency typing-extensions to v4.3.0 ([#553](https://github.com/googleapis/java-grafeas/issues/553)) ([c4fd13b](https://github.com/googleapis/java-grafeas/commit/c4fd13b8e2c35b13bb0d14ad8834bf2dd1e9b76b))
+* Update dependency zipp to v3.8.1 ([#554](https://github.com/googleapis/java-grafeas/issues/554)) ([6a1ce86](https://github.com/googleapis/java-grafeas/commit/6a1ce869193fc93489ff8eaf9674a6f8255852be))
+
 ## [2.4.5](https://github.com/googleapis/java-grafeas/compare/v2.4.4...v2.4.5) (2022-09-15)
 
 

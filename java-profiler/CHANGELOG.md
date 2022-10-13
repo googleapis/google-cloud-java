@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-profiler/compare/v2.3.4...v2.3.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([8c287c4](https://github.com/googleapis/java-profiler/commit/8c287c43da8c07be9cd7299b5e489671881f0383))
+
+## [2.3.4](https://github.com/googleapis/java-profiler/compare/v2.3.3...v2.3.4) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#313](https://github.com/googleapis/java-profiler/issues/313)) ([23fc308](https://github.com/googleapis/java-profiler/commit/23fc3082476a6e459f8636b5bd8b67ccd3015c69))
+
 ## [2.3.3](https://github.com/googleapis/java-profiler/compare/v2.3.2...v2.3.3) (2022-09-15)
 
 

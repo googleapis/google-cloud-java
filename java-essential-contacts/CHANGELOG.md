@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-essential-contacts/compare/v2.3.5...v2.3.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([e34d50f](https://github.com/googleapis/java-essential-contacts/commit/e34d50f91d999fceb48401aeab253c7d0c79cc83))
+
+## [2.3.5](https://github.com/googleapis/java-essential-contacts/compare/v2.3.4...v2.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#270](https://github.com/googleapis/java-essential-contacts/issues/270)) ([024ea17](https://github.com/googleapis/java-essential-contacts/commit/024ea1761010a32d8d8c65e5f7815bed1790e524))
+
 ## [2.3.4](https://github.com/googleapis/java-essential-contacts/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 

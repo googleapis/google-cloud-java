@@ -24,6 +24,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-bigquerymigration</artifactId>
   <version>0.6.2</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:

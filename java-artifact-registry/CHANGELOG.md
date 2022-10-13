@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.9](https://github.com/googleapis/java-artifact-registry/compare/v1.2.8...v1.2.9) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([d88f516](https://github.com/googleapis/java-artifact-registry/commit/d88f5168d8961316242c147cb42e6b7d1419052e))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#341](https://github.com/googleapis/java-artifact-registry/issues/341)) ([7d9a4ed](https://github.com/googleapis/java-artifact-registry/commit/7d9a4edaefe2dc263b916827aa63c6a8d5ee8e92))
+
 ## [1.2.8](https://github.com/googleapis/java-artifact-registry/compare/v1.2.7...v1.2.8) (2022-09-27)
 
 

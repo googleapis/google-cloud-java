@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.8](https://github.com/googleapis/java-shell/compare/v2.2.7...v2.2.8) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#269](https://github.com/googleapis/java-shell/issues/269)) ([ae92683](https://github.com/googleapis/java-shell/commit/ae92683b920d6fd98f186e7013044719dad95ceb))
+* Update dependency jinja2 to v3.1.2 ([#258](https://github.com/googleapis/java-shell/issues/258)) ([dd25cbc](https://github.com/googleapis/java-shell/commit/dd25cbc91d59facf0a3fdb76a77d8a71d64a7ca0))
+* Update dependency keyring to v23.9.3 ([#259](https://github.com/googleapis/java-shell/issues/259)) ([7769f1e](https://github.com/googleapis/java-shell/commit/7769f1e9a9cc7a058d65667314df2963313d9188))
+* Update dependency markupsafe to v2.1.1 ([#260](https://github.com/googleapis/java-shell/issues/260)) ([3b66c4e](https://github.com/googleapis/java-shell/commit/3b66c4e11d1a799b097d2b59425076ecd752a480))
+* Update dependency protobuf to v3.20.2 ([#261](https://github.com/googleapis/java-shell/issues/261)) ([9d842ca](https://github.com/googleapis/java-shell/commit/9d842ca25d2d6c97845e089abf13f523c88beb5a))
+* Update dependency protobuf to v4 ([#266](https://github.com/googleapis/java-shell/issues/266)) ([d6c21e4](https://github.com/googleapis/java-shell/commit/d6c21e40871aa1fe751641826a91b6e0d0805b92))
+* Update dependency pyjwt to v2.5.0 ([#262](https://github.com/googleapis/java-shell/issues/262)) ([e5194df](https://github.com/googleapis/java-shell/commit/e5194df1217b3af9e5e25b1b5a811f8cda006349))
+* Update dependency requests to v2.28.1 ([#263](https://github.com/googleapis/java-shell/issues/263)) ([defd300](https://github.com/googleapis/java-shell/commit/defd30095abd34c2c0ebe232d6a70068a0c76b53))
+* Update dependency typing-extensions to v4.3.0 ([#264](https://github.com/googleapis/java-shell/issues/264)) ([934e15c](https://github.com/googleapis/java-shell/commit/934e15c677c4d2db72c74a5b162c9849d472cf17))
+* Update dependency zipp to v3.8.1 ([#265](https://github.com/googleapis/java-shell/issues/265)) ([fb953ea](https://github.com/googleapis/java-shell/commit/fb953eae17f62b96d70d02c6ab021a497ec0d722))
+
 ## [2.2.7](https://github.com/googleapis/java-shell/compare/v2.2.6...v2.2.7) (2022-09-27)
 
 

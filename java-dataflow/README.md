@@ -24,6 +24,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-dataflow</artifactId>
   <version>0.7.6</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:

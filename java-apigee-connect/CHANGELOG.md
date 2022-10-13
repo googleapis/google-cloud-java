@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/java-apigee-connect/compare/v2.3.6...v2.3.7) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([9e2f23e](https://github.com/googleapis/java-apigee-connect/commit/9e2f23e93fdc45636767e5cc9da174affd1ab61b))
+
+## [2.3.6](https://github.com/googleapis/java-apigee-connect/compare/v2.3.5...v2.3.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#246](https://github.com/googleapis/java-apigee-connect/issues/246)) ([b72fd0e](https://github.com/googleapis/java-apigee-connect/commit/b72fd0e514674c80e365d05bef792cd62b430872))
+
 ## [2.3.5](https://github.com/googleapis/java-apigee-connect/compare/v2.3.4...v2.3.5) (2022-09-30)
 
 

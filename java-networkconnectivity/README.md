@@ -21,6 +21,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-networkconnectivity</artifactId>
   <version>1.2.9</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:

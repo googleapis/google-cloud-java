@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.3.12](https://github.com/googleapis/java-tasks/compare/v2.3.11...v2.3.12) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([79d519c](https://github.com/googleapis/java-tasks/commit/79d519c1d0970ed16b779be4015de0101971570e))
+
+## [2.3.11](https://github.com/googleapis/java-tasks/compare/v2.3.10...v2.3.11) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#768](https://github.com/googleapis/java-tasks/issues/768)) ([8c15961](https://github.com/googleapis/java-tasks/commit/8c15961d67c2bfcd0adb190d4db47cc3aad6d5a2))
+* Update dependency charset-normalizer to v2.1.1 ([#772](https://github.com/googleapis/java-tasks/issues/772)) ([a2d0846](https://github.com/googleapis/java-tasks/commit/a2d084683252784b5a476f045ab6639cadc3bdb7))
+* Update dependency click to v8.1.3 ([#773](https://github.com/googleapis/java-tasks/issues/773)) ([34059c2](https://github.com/googleapis/java-tasks/commit/34059c23419a4b6d4b1b1b09f57c49b7234a336d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#793](https://github.com/googleapis/java-tasks/issues/793)) ([ba4f11f](https://github.com/googleapis/java-tasks/commit/ba4f11f2f6e7090d4a4627fc7b97cca0108e4580))
+* Update dependency gcp-releasetool to v1.8.8 ([#769](https://github.com/googleapis/java-tasks/issues/769)) ([c78e26f](https://github.com/googleapis/java-tasks/commit/c78e26f3b3842db2af114ed1c53f4d8922acbf7b))
+* Update dependency google-api-core to v2.10.1 ([#774](https://github.com/googleapis/java-tasks/issues/774)) ([7b35804](https://github.com/googleapis/java-tasks/commit/7b3580427996bca2748df1f8e8e3afeb2fae997c))
+* Update dependency google-auth to v2.12.0 ([#775](https://github.com/googleapis/java-tasks/issues/775)) ([3e3c456](https://github.com/googleapis/java-tasks/commit/3e3c456f40255ea56c0f89e0384c36adfaffd5e8))
+* Update dependency google-cloud-core to v2.3.2 ([#770](https://github.com/googleapis/java-tasks/issues/770)) ([83b6536](https://github.com/googleapis/java-tasks/commit/83b65361a4e4f3a42c6383480acb7422c1db09c2))
+* Update dependency google-cloud-storage to v2.5.0 ([#776](https://github.com/googleapis/java-tasks/issues/776)) ([47d9a9e](https://github.com/googleapis/java-tasks/commit/47d9a9ede1544cb586b022b759bb49810a4383d3))
+* Update dependency jinja2 to v3.1.2 ([#788](https://github.com/googleapis/java-tasks/issues/788)) ([df82325](https://github.com/googleapis/java-tasks/commit/df82325fe78995b19b83b2cec96f8d4be45b3e9e))
+* Update dependency markupsafe to v2.1.1 ([#778](https://github.com/googleapis/java-tasks/issues/778)) ([6722e83](https://github.com/googleapis/java-tasks/commit/6722e834724d921e60e512d70f0d55790f81da07))
+* Update dependency protobuf to v3.20.2 ([#779](https://github.com/googleapis/java-tasks/issues/779)) ([1df1015](https://github.com/googleapis/java-tasks/commit/1df101599f59f9dc65769747dcfea4b6d6a3daec))
+* Update dependency requests to v2.28.1 ([#781](https://github.com/googleapis/java-tasks/issues/781)) ([5b16d6e](https://github.com/googleapis/java-tasks/commit/5b16d6e7c49aeb637885a166179411603b1c489d))
+
 ## [2.3.10](https://github.com/googleapis/java-tasks/compare/v2.3.9...v2.3.10) (2022-09-22)
 
 

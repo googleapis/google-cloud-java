@@ -1,5 +1,45 @@
 # Changelog
 
+## [2.4.10](https://github.com/googleapis/java-accessapproval/compare/v2.4.9...v2.4.10) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.20 ([#852](https://github.com/googleapis/java-accessapproval/issues/852)) ([8c9a1f4](https://github.com/googleapis/java-accessapproval/commit/8c9a1f43a550dc0545b90c00e52328aa939cc383))
+
+## [2.4.9](https://github.com/googleapis/java-accessapproval/compare/v2.4.8...v2.4.9) (2022-10-04)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#845](https://github.com/googleapis/java-accessapproval/issues/845)) ([e946a60](https://github.com/googleapis/java-accessapproval/commit/e946a60ef7fee9fe223e6a4531e36b5b1631083e))
+* Update dependency certifi to v2022.9.24 ([#825](https://github.com/googleapis/java-accessapproval/issues/825)) ([cbb298f](https://github.com/googleapis/java-accessapproval/commit/cbb298f095eea66b37c225afc654953d764bdb7e))
+* Update dependency charset-normalizer to v2.1.1 ([#829](https://github.com/googleapis/java-accessapproval/issues/829)) ([c3daca4](https://github.com/googleapis/java-accessapproval/commit/c3daca44f3e8452db5fea8d96229810d671d2e86))
+* Update dependency click to v8.1.3 ([#830](https://github.com/googleapis/java-accessapproval/issues/830)) ([9ce9416](https://github.com/googleapis/java-accessapproval/commit/9ce9416833138ce2890fcf992cc1d2116551f719))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.15 ([#821](https://github.com/googleapis/java-accessapproval/issues/821)) ([47e93b4](https://github.com/googleapis/java-accessapproval/commit/47e93b401c52e007b64bad55f1d6df2afc5a8a54))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.16 ([#823](https://github.com/googleapis/java-accessapproval/issues/823)) ([e0777b3](https://github.com/googleapis/java-accessapproval/commit/e0777b3510dcf46863e430ae76a969f87a24c46c))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.17 ([#847](https://github.com/googleapis/java-accessapproval/issues/847)) ([c2dd1ef](https://github.com/googleapis/java-accessapproval/commit/c2dd1ef4cc84e82b45ee99c74584a46120e5cdd5))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.18 ([#850](https://github.com/googleapis/java-accessapproval/issues/850)) ([06cb129](https://github.com/googleapis/java-accessapproval/commit/06cb1299c416737eaf3275abcce734312b877ab6))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.19 ([#851](https://github.com/googleapis/java-accessapproval/issues/851)) ([d17cbea](https://github.com/googleapis/java-accessapproval/commit/d17cbea78df17740a5ea5519ac4d5602b5608117))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#853](https://github.com/googleapis/java-accessapproval/issues/853)) ([739e85d](https://github.com/googleapis/java-accessapproval/commit/739e85ddd60763b0bfd585e0bcdad7aba294ee3a))
+* Update dependency gcp-releasetool to v1.8.8 ([#826](https://github.com/googleapis/java-accessapproval/issues/826)) ([cb0d2d6](https://github.com/googleapis/java-accessapproval/commit/cb0d2d6a5efa6f66b108081b6274b0e3066c1a53))
+* Update dependency google-api-core to v2.10.1 ([#831](https://github.com/googleapis/java-accessapproval/issues/831)) ([2b33785](https://github.com/googleapis/java-accessapproval/commit/2b337853dbad4971f9c6e450b1f6d5b6ce89d660))
+* Update dependency google-auth to v2.12.0 ([#832](https://github.com/googleapis/java-accessapproval/issues/832)) ([bc42d47](https://github.com/googleapis/java-accessapproval/commit/bc42d4776f93d2ce72a5a87763b2967f9e64a563))
+* Update dependency google-cloud-core to v2.3.2 ([#827](https://github.com/googleapis/java-accessapproval/issues/827)) ([ac7091f](https://github.com/googleapis/java-accessapproval/commit/ac7091f0a6713a669a38649d413f56c508d234ad))
+* Update dependency google-cloud-storage to v2.5.0 ([#833](https://github.com/googleapis/java-accessapproval/issues/833)) ([b8b9315](https://github.com/googleapis/java-accessapproval/commit/b8b9315127b4358c877b62fc9f32757948b760fb))
+* Update dependency google-crc32c to v1.5.0 ([#834](https://github.com/googleapis/java-accessapproval/issues/834)) ([9de608d](https://github.com/googleapis/java-accessapproval/commit/9de608de9c0b636d0e5e512a44aa36acf9156d06))
+* Update dependency googleapis-common-protos to v1.56.4 ([#828](https://github.com/googleapis/java-accessapproval/issues/828)) ([de69d39](https://github.com/googleapis/java-accessapproval/commit/de69d398547d7914d7cc72e7794756a92819b359))
+* Update dependency importlib-metadata to v4.12.0 ([#835](https://github.com/googleapis/java-accessapproval/issues/835)) ([4c461c2](https://github.com/googleapis/java-accessapproval/commit/4c461c202e67d8d4a9e5e5c239e23bcb89b1bece))
+* Update dependency jeepney to v0.8.0 ([#836](https://github.com/googleapis/java-accessapproval/issues/836)) ([c597237](https://github.com/googleapis/java-accessapproval/commit/c597237657e9f0c975b450b1107cd2fa5b7fd675))
+* Update dependency jinja2 to v3.1.2 ([#837](https://github.com/googleapis/java-accessapproval/issues/837)) ([73299bd](https://github.com/googleapis/java-accessapproval/commit/73299bd28b678ea5019c65e2995a6dea95ca1626))
+* Update dependency keyring to v23.9.3 ([#838](https://github.com/googleapis/java-accessapproval/issues/838)) ([ff0e845](https://github.com/googleapis/java-accessapproval/commit/ff0e845d70598bf949b984e839df6f8c2af9df25))
+* Update dependency markupsafe to v2.1.1 ([#839](https://github.com/googleapis/java-accessapproval/issues/839)) ([835b4ca](https://github.com/googleapis/java-accessapproval/commit/835b4caebdff7587b10f90a25db1c8d301cc03fb))
+* Update dependency protobuf to v3.20.2 ([#840](https://github.com/googleapis/java-accessapproval/issues/840)) ([17ced61](https://github.com/googleapis/java-accessapproval/commit/17ced6119e609dd9c665bf3aea0c58e91bfa818b))
+* Update dependency protobuf to v4 ([#846](https://github.com/googleapis/java-accessapproval/issues/846)) ([1bb940d](https://github.com/googleapis/java-accessapproval/commit/1bb940df731b51c6277cb6ad59a277eb92229073))
+* Update dependency pyjwt to v2.5.0 ([#841](https://github.com/googleapis/java-accessapproval/issues/841)) ([1d8a439](https://github.com/googleapis/java-accessapproval/commit/1d8a4393785ffcf6068b8bdc3a1d2aa756fb118d))
+* Update dependency typing-extensions to v4.3.0 ([#843](https://github.com/googleapis/java-accessapproval/issues/843)) ([91e2ea4](https://github.com/googleapis/java-accessapproval/commit/91e2ea4526626225a2ee4929e98f72f6eadd271c))
+* Update dependency zipp to v3.8.1 ([#844](https://github.com/googleapis/java-accessapproval/issues/844)) ([b9ea279](https://github.com/googleapis/java-accessapproval/commit/b9ea279e39b032b01179e591d8814966ddc8cb5e))
+
 ## [2.4.8](https://github.com/googleapis/java-accessapproval/compare/v2.4.7...v2.4.8) (2022-09-21)
 
 

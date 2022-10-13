@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.1.3](https://github.com/googleapis/java-dataplex/compare/v1.1.2...v1.1.3) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#105](https://github.com/googleapis/java-dataplex/issues/105)) ([9bb8f07](https://github.com/googleapis/java-dataplex/commit/9bb8f0723b7c8d156e686fe2ed5f2336a869d572))
+* Update dependency charset-normalizer to v2.1.1 ([#110](https://github.com/googleapis/java-dataplex/issues/110)) ([537f9e5](https://github.com/googleapis/java-dataplex/commit/537f9e5bb0efc5b9e540e4115fd5f6b6635a4842))
+* Update dependency click to v8.1.3 ([#111](https://github.com/googleapis/java-dataplex/issues/111)) ([8a8a153](https://github.com/googleapis/java-dataplex/commit/8a8a153150c1d6f497eb7f2a8260e644e9142d88))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#129](https://github.com/googleapis/java-dataplex/issues/129)) ([01e6809](https://github.com/googleapis/java-dataplex/commit/01e6809aad11cbae214317eef1d601e15752baf1))
+* Update dependency gcp-releasetool to v1.8.8 ([#106](https://github.com/googleapis/java-dataplex/issues/106)) ([45fcc10](https://github.com/googleapis/java-dataplex/commit/45fcc1022c0abbd7e8c3d7b58de46ec5bee197aa))
+* Update dependency google-api-core to v2.10.1 ([#112](https://github.com/googleapis/java-dataplex/issues/112)) ([49cdb75](https://github.com/googleapis/java-dataplex/commit/49cdb75c1c175247a33890d3bbaf751b0d9cd4eb))
+* Update dependency google-auth to v2.11.1 ([#107](https://github.com/googleapis/java-dataplex/issues/107)) ([24840aa](https://github.com/googleapis/java-dataplex/commit/24840aa4e0814e9745129a45377ada060622a674))
+* Update dependency google-cloud-core to v2.3.2 ([#108](https://github.com/googleapis/java-dataplex/issues/108)) ([5c58de0](https://github.com/googleapis/java-dataplex/commit/5c58de0349033e0123c12adeda176e2556597751))
+* Update dependency google-cloud-storage to v2.5.0 ([#113](https://github.com/googleapis/java-dataplex/issues/113)) ([476e17e](https://github.com/googleapis/java-dataplex/commit/476e17e9a3f95cfc13c468048da0b4715b4b9ca2))
+* Update dependency google-crc32c to v1.5.0 ([#114](https://github.com/googleapis/java-dataplex/issues/114)) ([a4dab3e](https://github.com/googleapis/java-dataplex/commit/a4dab3ed9470eacce79d4ff289ee3224deb24f86))
+* Update dependency googleapis-common-protos to v1.56.4 ([#109](https://github.com/googleapis/java-dataplex/issues/109)) ([688ef92](https://github.com/googleapis/java-dataplex/commit/688ef9274585fac3c6d4cce2f736dc446b5bef45))
+* Update dependency importlib-metadata to v4.12.0 ([#124](https://github.com/googleapis/java-dataplex/issues/124)) ([afb5d7c](https://github.com/googleapis/java-dataplex/commit/afb5d7c43e0e822f4240250b644e39ceef4c5868))
+* Update dependency jeepney to v0.8.0 ([#125](https://github.com/googleapis/java-dataplex/issues/125)) ([1c8bc34](https://github.com/googleapis/java-dataplex/commit/1c8bc341922285d69d4a706d0100498d1ce40214))
+* Update dependency jinja2 to v3.1.2 ([#126](https://github.com/googleapis/java-dataplex/issues/126)) ([a1fa942](https://github.com/googleapis/java-dataplex/commit/a1fa942a2871c453075939ba2501829121f79e28))
+* Update dependency keyring to v23.9.3 ([#127](https://github.com/googleapis/java-dataplex/issues/127)) ([641f9ec](https://github.com/googleapis/java-dataplex/commit/641f9ec1edff1b02ace5cbc7ade3725762a1c853))
+* Update dependency markupsafe to v2.1.1 ([#115](https://github.com/googleapis/java-dataplex/issues/115)) ([b4c7ace](https://github.com/googleapis/java-dataplex/commit/b4c7ace59a20d42b6b846b7e8c30bf28f68f184d))
+* Update dependency protobuf to v3.20.2 ([#116](https://github.com/googleapis/java-dataplex/issues/116)) ([324f52a](https://github.com/googleapis/java-dataplex/commit/324f52a09931ef277b1f90abae8d5532805779cf))
+* Update dependency requests to v2.28.1 ([#118](https://github.com/googleapis/java-dataplex/issues/118)) ([d31a5da](https://github.com/googleapis/java-dataplex/commit/d31a5da9bcfb6cbb21a1ba42adeb09303f9ecca5))
+* Update dependency zipp to v3.8.1 ([#120](https://github.com/googleapis/java-dataplex/issues/120)) ([07b9bee](https://github.com/googleapis/java-dataplex/commit/07b9bee1c87ec2f9e4e772ce9919b99540a1b031))
+
 ## [1.1.2](https://github.com/googleapis/java-dataplex/compare/v1.1.1...v1.1.2) (2022-09-15)
 
 

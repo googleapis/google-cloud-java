@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.3.5](https://github.com/googleapis/java-resource-settings/compare/v1.3.4...v1.3.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([78114fb](https://github.com/googleapis/java-resource-settings/commit/78114fb17accfd069bfcc27aff5ef0308a3432e5))
+
+## [1.3.4](https://github.com/googleapis/java-resource-settings/compare/v1.3.3...v1.3.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#232](https://github.com/googleapis/java-resource-settings/issues/232)) ([e859ded](https://github.com/googleapis/java-resource-settings/commit/e859ded58ed0455c69a9b7cf5d0b60da69540358))
+* Update dependency certifi to v2022.9.24 ([#222](https://github.com/googleapis/java-resource-settings/issues/222)) ([2315fa4](https://github.com/googleapis/java-resource-settings/commit/2315fa440d0f0a434b1996b9a456f3e0bd1807c0))
+* Update dependency charset-normalizer to v2.1.1 ([#227](https://github.com/googleapis/java-resource-settings/issues/227)) ([b4ffff3](https://github.com/googleapis/java-resource-settings/commit/b4ffff33c8ce2c6351a94148c9c5fa5e941701ba))
+* Update dependency click to v8.1.3 ([#228](https://github.com/googleapis/java-resource-settings/issues/228)) ([9bca984](https://github.com/googleapis/java-resource-settings/commit/9bca984835990b60ea7685d813b8a02750dc997a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#237](https://github.com/googleapis/java-resource-settings/issues/237)) ([a405027](https://github.com/googleapis/java-resource-settings/commit/a40502726b8864680baa7b9e4e8f0ac9087e1094))
+* Update dependency gcp-releasetool to v1.8.8 ([#223](https://github.com/googleapis/java-resource-settings/issues/223)) ([86a3fb9](https://github.com/googleapis/java-resource-settings/commit/86a3fb99e0014c1718637453717723f01e9d9b71))
+* Update dependency google-auth to v2.11.1 ([#224](https://github.com/googleapis/java-resource-settings/issues/224)) ([f47fa23](https://github.com/googleapis/java-resource-settings/commit/f47fa23ac16c389279f8d80718fd4989ba8f4af1))
+* Update dependency google-cloud-core to v2.3.2 ([#225](https://github.com/googleapis/java-resource-settings/issues/225)) ([c24443e](https://github.com/googleapis/java-resource-settings/commit/c24443ec9e0f55fc787a413823e24163e05540bd))
+* Update dependency googleapis-common-protos to v1.56.4 ([#226](https://github.com/googleapis/java-resource-settings/issues/226)) ([e8c5723](https://github.com/googleapis/java-resource-settings/commit/e8c5723942f076881c9779862867712d38dc179b))
+* Update dependency protobuf to v3.20.2 ([#220](https://github.com/googleapis/java-resource-settings/issues/220)) ([66c93db](https://github.com/googleapis/java-resource-settings/commit/66c93dbd095824e7fb908d1065356a0f45f9f72a))
+* Update dependency pyjwt to v2.5.0 ([#229](https://github.com/googleapis/java-resource-settings/issues/229)) ([e5027f7](https://github.com/googleapis/java-resource-settings/commit/e5027f7e19b87cae82e9bca91fb8ed28f3a72fa0))
+* Update dependency requests to v2.28.1 ([#230](https://github.com/googleapis/java-resource-settings/issues/230)) ([eff60df](https://github.com/googleapis/java-resource-settings/commit/eff60dfe4e43c58969cde52ec4b7be9020aab014))
+* Update dependency typing-extensions to v4.3.0 ([#221](https://github.com/googleapis/java-resource-settings/issues/221)) ([e91cb59](https://github.com/googleapis/java-resource-settings/commit/e91cb596e81174898940367896217b803cba6aa3))
+* Update dependency zipp to v3.8.1 ([#231](https://github.com/googleapis/java-resource-settings/issues/231)) ([f77a069](https://github.com/googleapis/java-resource-settings/commit/f77a0699797d1f675d984672e359c8baa4fb0323))
+
 ## [1.3.3](https://github.com/googleapis/java-resource-settings/compare/v1.3.2...v1.3.3) (2022-09-15)
 
 

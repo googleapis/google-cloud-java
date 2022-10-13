@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-orgpolicy/compare/v2.3.5...v2.3.6) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#396](https://github.com/googleapis/java-orgpolicy/issues/396)) ([d581c2f](https://github.com/googleapis/java-orgpolicy/commit/d581c2fdff630a9ebf57e9fb12f25ef2730ec4e3))
+* Update dependency charset-normalizer to v2.1.1 ([#399](https://github.com/googleapis/java-orgpolicy/issues/399)) ([66665eb](https://github.com/googleapis/java-orgpolicy/commit/66665eba67f0c7e2a98845eee0927413e519d765))
+* Update dependency click to v8.1.3 ([#400](https://github.com/googleapis/java-orgpolicy/issues/400)) ([641091e](https://github.com/googleapis/java-orgpolicy/commit/641091e4bec534f0602e9bc89364120a780f2c54))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#405](https://github.com/googleapis/java-orgpolicy/issues/405)) ([be0b79d](https://github.com/googleapis/java-orgpolicy/commit/be0b79d245f7808334681537ad511ec169c94aba))
+* Update dependency gcp-releasetool to v1.8.8 ([#397](https://github.com/googleapis/java-orgpolicy/issues/397)) ([908a540](https://github.com/googleapis/java-orgpolicy/commit/908a5407acd2e629399c161f4a611253434d6514))
+* Update dependency google-api-core to v2.10.1 ([#401](https://github.com/googleapis/java-orgpolicy/issues/401)) ([378eb32](https://github.com/googleapis/java-orgpolicy/commit/378eb321abbd6a973ed744cd3a34799be69b720e))
+* Update dependency google-auth to v2.12.0 ([#402](https://github.com/googleapis/java-orgpolicy/issues/402)) ([4cad60a](https://github.com/googleapis/java-orgpolicy/commit/4cad60a207d22645e302f4ec2fca8e626bd45d07))
+* Update dependency google-cloud-storage to v2.5.0 ([#403](https://github.com/googleapis/java-orgpolicy/issues/403)) ([4ed2cff](https://github.com/googleapis/java-orgpolicy/commit/4ed2cff1b577e38acfa137500875656afec631ce))
+* Update dependency googleapis-common-protos to v1.56.4 ([#398](https://github.com/googleapis/java-orgpolicy/issues/398)) ([4c48828](https://github.com/googleapis/java-orgpolicy/commit/4c48828bee407ed6cf6ed2afebb663cab95e3074))
+
 ## [2.3.5](https://github.com/googleapis/java-orgpolicy/compare/v2.3.4...v2.3.5) (2022-09-27)
 
 

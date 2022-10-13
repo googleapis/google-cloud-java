@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.9.5](https://github.com/googleapis/java-datacatalog/compare/v1.9.4...v1.9.5) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#889](https://github.com/googleapis/java-datacatalog/issues/889)) ([7cce568](https://github.com/googleapis/java-datacatalog/commit/7cce5686c97aed3ced1711b6e0cc63a90d7e38e7))
+* Update dependency certifi to v2022.9.24 ([#869](https://github.com/googleapis/java-datacatalog/issues/869)) ([ae9d4e2](https://github.com/googleapis/java-datacatalog/commit/ae9d4e2ff9a7d0b5442dc3e2ee1dbe58e51a3f4f))
+* Update dependency click to v8.1.3 ([#874](https://github.com/googleapis/java-datacatalog/issues/874)) ([63bfde6](https://github.com/googleapis/java-datacatalog/commit/63bfde6058adaad44471cf60c8f5aeb379810c0c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#897](https://github.com/googleapis/java-datacatalog/issues/897)) ([08ba2f7](https://github.com/googleapis/java-datacatalog/commit/08ba2f70f660b553c1998179a201ca58df840467))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.6 ([#860](https://github.com/googleapis/java-datacatalog/issues/860)) ([2d81181](https://github.com/googleapis/java-datacatalog/commit/2d81181c6bbb7e99264d61e1f8391a5a56470d5c))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#891](https://github.com/googleapis/java-datacatalog/issues/891)) ([a5666ab](https://github.com/googleapis/java-datacatalog/commit/a5666abb1adf25c4092f76264b0f5ca8943f376d))
+* Update dependency google-api-core to v2.10.1 ([#875](https://github.com/googleapis/java-datacatalog/issues/875)) ([8a06f04](https://github.com/googleapis/java-datacatalog/commit/8a06f046588b12be9d59adff85422d6d52801524))
+* Update dependency googleapis-common-protos to v1.56.4 ([#872](https://github.com/googleapis/java-datacatalog/issues/872)) ([c18ed8c](https://github.com/googleapis/java-datacatalog/commit/c18ed8c6710c8b705e460bc6684231243a39393e))
+* Update dependency jeepney to v0.8.0 ([#880](https://github.com/googleapis/java-datacatalog/issues/880)) ([5a7a86a](https://github.com/googleapis/java-datacatalog/commit/5a7a86a0a25254d35930e39101b297ec4ad4be30))
+* Update dependency protobuf to v3.20.2 ([#884](https://github.com/googleapis/java-datacatalog/issues/884)) ([8a3ae10](https://github.com/googleapis/java-datacatalog/commit/8a3ae10d76bc08704327575e0f763cfdc3cd1e23))
+* Update dependency protobuf to v4 ([#890](https://github.com/googleapis/java-datacatalog/issues/890)) ([8ba310c](https://github.com/googleapis/java-datacatalog/commit/8ba310c9fbcabf984595e5e9605174e53a14c709))
+* Update dependency pyjwt to v2.5.0 ([#885](https://github.com/googleapis/java-datacatalog/issues/885)) ([ed3bf6e](https://github.com/googleapis/java-datacatalog/commit/ed3bf6e482450c37c25b3c6ce288d1800543d45c))
+* Update dependency zipp to v3.8.1 ([#888](https://github.com/googleapis/java-datacatalog/issues/888)) ([0b6262a](https://github.com/googleapis/java-datacatalog/commit/0b6262a107cbe980351e530e212e50fd558f875c))
+
 ## [1.9.4](https://github.com/googleapis/java-datacatalog/compare/v1.9.3...v1.9.4) (2022-09-17)
 
 

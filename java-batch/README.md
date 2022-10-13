@@ -73,6 +73,19 @@ use this Cloud Batch Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-batch/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Create With Container No Mounting | [source code](https://github.com/googleapis/java-batch/blob/main/samples/snippets/src/main/java/CreateWithContainerNoMounting.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-batch&page=editor&open_in_editor=samples/snippets/src/main/java/CreateWithContainerNoMounting.java) |
+| Create With Script No Mounting | [source code](https://github.com/googleapis/java-batch/blob/main/samples/snippets/src/main/java/CreateWithScriptNoMounting.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-batch&page=editor&open_in_editor=samples/snippets/src/main/java/CreateWithScriptNoMounting.java) |
+| Delete Job | [source code](https://github.com/googleapis/java-batch/blob/main/samples/snippets/src/main/java/DeleteJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-batch&page=editor&open_in_editor=samples/snippets/src/main/java/DeleteJob.java) |
+| Get Job | [source code](https://github.com/googleapis/java-batch/blob/main/samples/snippets/src/main/java/GetJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-batch&page=editor&open_in_editor=samples/snippets/src/main/java/GetJob.java) |
+| List Jobs | [source code](https://github.com/googleapis/java-batch/blob/main/samples/snippets/src/main/java/ListJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-batch&page=editor&open_in_editor=samples/snippets/src/main/java/ListJobs.java) |
+
+
 
 ## Troubleshooting
 

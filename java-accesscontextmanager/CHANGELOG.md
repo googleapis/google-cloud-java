@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.4.5](https://github.com/googleapis/java-accesscontextmanager/compare/v1.4.4...v1.4.5) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2daf1f0](https://github.com/googleapis/java-accesscontextmanager/commit/2daf1f0b6f8ff412b520553b704c83b8d5d3b8f5))
+
+## [1.4.4](https://github.com/googleapis/java-accesscontextmanager/compare/v1.4.3...v1.4.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#401](https://github.com/googleapis/java-accesscontextmanager/issues/401)) ([497050c](https://github.com/googleapis/java-accesscontextmanager/commit/497050cc95beb0568b4d24cf11d426de9bb63a51))
+* Update dependency certifi to v2022.9.24 ([#381](https://github.com/googleapis/java-accesscontextmanager/issues/381)) ([85409ed](https://github.com/googleapis/java-accesscontextmanager/commit/85409ed9a5241305dead9dfcec6e687ea51b10f2))
+* Update dependency charset-normalizer to v2.1.1 ([#385](https://github.com/googleapis/java-accesscontextmanager/issues/385)) ([2da0d4d](https://github.com/googleapis/java-accesscontextmanager/commit/2da0d4d8b3caa365cedf7967efec4ebeef2a1aaf))
+* Update dependency click to v8.1.3 ([#386](https://github.com/googleapis/java-accesscontextmanager/issues/386)) ([5453dca](https://github.com/googleapis/java-accesscontextmanager/commit/5453dcae28a73cefbc46a5ef9833628b00a5ea37))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#405](https://github.com/googleapis/java-accesscontextmanager/issues/405)) ([a12189b](https://github.com/googleapis/java-accesscontextmanager/commit/a12189b7a2ec3014559b16ce2b0b436ed5b14f65))
+* Update dependency gcp-releasetool to v1.8.8 ([#382](https://github.com/googleapis/java-accesscontextmanager/issues/382)) ([d8799c0](https://github.com/googleapis/java-accesscontextmanager/commit/d8799c0ef9367649331b4834f138110efaa0177f))
+* Update dependency google-api-core to v2.10.1 ([#387](https://github.com/googleapis/java-accesscontextmanager/issues/387)) ([5b4e9d2](https://github.com/googleapis/java-accesscontextmanager/commit/5b4e9d2490dd08a415a10639e2ce2e08fb2a4cb5))
+* Update dependency google-auth to v2.12.0 ([#388](https://github.com/googleapis/java-accesscontextmanager/issues/388)) ([cef4dab](https://github.com/googleapis/java-accesscontextmanager/commit/cef4dab0b4d06a19ee67f39c015cb07522040011))
+* Update dependency google-cloud-core to v2.3.2 ([#383](https://github.com/googleapis/java-accesscontextmanager/issues/383)) ([9190799](https://github.com/googleapis/java-accesscontextmanager/commit/9190799d15eb2c5aa57a663288ec8555bb202129))
+* Update dependency google-cloud-storage to v2.5.0 ([#389](https://github.com/googleapis/java-accesscontextmanager/issues/389)) ([a2e6adc](https://github.com/googleapis/java-accesscontextmanager/commit/a2e6adc911d25d30605c6ffd75333c80a3864815))
+* Update dependency google-crc32c to v1.5.0 ([#390](https://github.com/googleapis/java-accesscontextmanager/issues/390)) ([8239680](https://github.com/googleapis/java-accesscontextmanager/commit/82396807564dcc415cf4394d523b6356c99395b6))
+* Update dependency googleapis-common-protos to v1.56.4 ([#384](https://github.com/googleapis/java-accesscontextmanager/issues/384)) ([e280efd](https://github.com/googleapis/java-accesscontextmanager/commit/e280efd9958fde6647ca486071452cae065c40fe))
+* Update dependency importlib-metadata to v4.12.0 ([#391](https://github.com/googleapis/java-accesscontextmanager/issues/391)) ([cf739d9](https://github.com/googleapis/java-accesscontextmanager/commit/cf739d9c58d7c3c047135ead4200af9649b4756c))
+* Update dependency jeepney to v0.8.0 ([#392](https://github.com/googleapis/java-accesscontextmanager/issues/392)) ([2910185](https://github.com/googleapis/java-accesscontextmanager/commit/291018512479827ef840bb01b0e1cf0427f1f863))
+* Update dependency jinja2 to v3.1.2 ([#393](https://github.com/googleapis/java-accesscontextmanager/issues/393)) ([d96f7ef](https://github.com/googleapis/java-accesscontextmanager/commit/d96f7ef09b9e8de68f58bdecd09e649bfe67a7ed))
+* Update dependency keyring to v23.9.3 ([#394](https://github.com/googleapis/java-accesscontextmanager/issues/394)) ([0a40552](https://github.com/googleapis/java-accesscontextmanager/commit/0a405521e78a515376289065bc5ef2d92a86dce3))
+* Update dependency markupsafe to v2.1.1 ([#395](https://github.com/googleapis/java-accesscontextmanager/issues/395)) ([2e61844](https://github.com/googleapis/java-accesscontextmanager/commit/2e61844c3ccb77eeb9dd97bf43453892de1ec766))
+* Update dependency protobuf to v3.20.2 ([#396](https://github.com/googleapis/java-accesscontextmanager/issues/396)) ([b73737d](https://github.com/googleapis/java-accesscontextmanager/commit/b73737d4f5b81539026443a1ab36cc9c8605f89d))
+* Update dependency protobuf to v4 ([#402](https://github.com/googleapis/java-accesscontextmanager/issues/402)) ([853e1f5](https://github.com/googleapis/java-accesscontextmanager/commit/853e1f5bae6e399a1c1601deb33a211c1cc16c99))
+* Update dependency pyjwt to v2.5.0 ([#397](https://github.com/googleapis/java-accesscontextmanager/issues/397)) ([71e699e](https://github.com/googleapis/java-accesscontextmanager/commit/71e699ee49aecf3dd77eb27ec640b6b4c6cee5db))
+* Update dependency requests to v2.28.1 ([#398](https://github.com/googleapis/java-accesscontextmanager/issues/398)) ([2397952](https://github.com/googleapis/java-accesscontextmanager/commit/239795204f6ccea67fb41100b81230d3a73b681d))
+* Update dependency typing-extensions to v4.3.0 ([#399](https://github.com/googleapis/java-accesscontextmanager/issues/399)) ([ac12e13](https://github.com/googleapis/java-accesscontextmanager/commit/ac12e130add91b78f0f0ede6e479c950c2b8f067))
+* Update dependency zipp to v3.8.1 ([#400](https://github.com/googleapis/java-accesscontextmanager/issues/400)) ([b908fe4](https://github.com/googleapis/java-accesscontextmanager/commit/b908fe4c79bddb57243227acb8928210dff37ad8))
+
 ## [1.4.3](https://github.com/googleapis/java-accesscontextmanager/compare/v1.4.2...v1.4.3) (2022-09-15)
 
 

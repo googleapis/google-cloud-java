@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.1.8](https://github.com/googleapis/java-deploy/compare/v1.1.7...v1.1.8) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2913d41](https://github.com/googleapis/java-deploy/commit/2913d416913d81cf7dc05f780a914072ecc5009e))
+
+## [1.1.7](https://github.com/googleapis/java-deploy/compare/v1.1.6...v1.1.7) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#167](https://github.com/googleapis/java-deploy/issues/167)) ([ed2b08e](https://github.com/googleapis/java-deploy/commit/ed2b08e2c0440b111bbdf3a6b7c2444f6c29eee4))
+* Update dependency charset-normalizer to v2.1.1 ([#172](https://github.com/googleapis/java-deploy/issues/172)) ([0181b5e](https://github.com/googleapis/java-deploy/commit/0181b5e2109bfacae4b10e117646bc2a2dc3a300))
+* Update dependency click to v8.1.3 ([#173](https://github.com/googleapis/java-deploy/issues/173)) ([121b935](https://github.com/googleapis/java-deploy/commit/121b935f223f377dff634f12fcad39b973e8bde7))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#188](https://github.com/googleapis/java-deploy/issues/188)) ([b2887ad](https://github.com/googleapis/java-deploy/commit/b2887ad77f0ce44df5b62ac7428eeddbadd23459))
+* Update dependency gcp-releasetool to v1.8.8 ([#168](https://github.com/googleapis/java-deploy/issues/168)) ([e029e62](https://github.com/googleapis/java-deploy/commit/e029e62c27e9aa3855f8812d01b2d4b3d4df69fc))
+* Update dependency google-api-core to v2.10.1 ([#174](https://github.com/googleapis/java-deploy/issues/174)) ([3894744](https://github.com/googleapis/java-deploy/commit/3894744eda8d392d7ae031689b7577e0d5d76cf6))
+* Update dependency google-auth to v2.11.1 ([#169](https://github.com/googleapis/java-deploy/issues/169)) ([419b393](https://github.com/googleapis/java-deploy/commit/419b393ac8282d13370b3e6006794d3dee012591))
+* Update dependency google-cloud-core to v2.3.2 ([#170](https://github.com/googleapis/java-deploy/issues/170)) ([e7bc990](https://github.com/googleapis/java-deploy/commit/e7bc99073b2a5abc07f4c329f6985bdb84d97f02))
+* Update dependency google-cloud-storage to v2.5.0 ([#175](https://github.com/googleapis/java-deploy/issues/175)) ([6b6c5fb](https://github.com/googleapis/java-deploy/commit/6b6c5fb8f253a3c99f740f42c1718a7f14090f63))
+* Update dependency google-crc32c to v1.5.0 ([#176](https://github.com/googleapis/java-deploy/issues/176)) ([e103980](https://github.com/googleapis/java-deploy/commit/e103980a8786f7b20f021b78a5cc6fb1820465bf))
+* Update dependency googleapis-common-protos to v1.56.4 ([#171](https://github.com/googleapis/java-deploy/issues/171)) ([7ecf4b3](https://github.com/googleapis/java-deploy/commit/7ecf4b39700a5f691a0c8d797025d362b34e671e))
+* Update dependency importlib-metadata to v4.12.0 ([#177](https://github.com/googleapis/java-deploy/issues/177)) ([f44ec16](https://github.com/googleapis/java-deploy/commit/f44ec1625c9597179724edaf6d439506e71ab6e9))
+* Update dependency markupsafe to v2.1.1 ([#178](https://github.com/googleapis/java-deploy/issues/178)) ([cec5f35](https://github.com/googleapis/java-deploy/commit/cec5f35dfbb2098587db5a93e2056780712a0e20))
+* Update dependency protobuf to v3.20.2 ([#179](https://github.com/googleapis/java-deploy/issues/179)) ([793f9df](https://github.com/googleapis/java-deploy/commit/793f9df1d5d2e5c6b88650d8aa8d2d80597f2ad1))
+* Update dependency pyjwt to v2.5.0 ([#180](https://github.com/googleapis/java-deploy/issues/180)) ([4d8b485](https://github.com/googleapis/java-deploy/commit/4d8b48536d07f54f1243c1744665b4d65100c357))
+
 ## [1.1.6](https://github.com/googleapis/java-deploy/compare/v1.1.5...v1.1.6) (2022-09-15)
 
 

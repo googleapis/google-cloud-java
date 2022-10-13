@@ -8,9 +8,6 @@ Java idiomatic client for [Google Distributed Cloud Edge][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 
 ## Quickstart
 
@@ -64,7 +61,7 @@ to add `google-cloud-distributedcloudedge` as a dependency in your code.
 ## About Google Distributed Cloud Edge
 
 
-[Google Distributed Cloud Edge][product-docs] Google Distributed Cloud Edge allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.
+[Google Distributed Cloud Edge][product-docs] provides management of Kubernetes Clusters on Google Edge Cloud deployments.
 
 See the [Google Distributed Cloud Edge client library docs][javadocs] to learn how to
 use this Google Distributed Cloud Edge Client Library.
@@ -132,9 +129,6 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -163,7 +157,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/distributed-cloud/edge/latest/
+[product-docs]: cloud.google.com/distributed-cloud/edge/latest/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-distributedcloudedge/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-distributedcloudedge/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-distributedcloudedge/java7.html
@@ -175,7 +169,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-distributedcloudedge/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-distributedcloudedge/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-distributedcloudedge/java11.html
-[stability-image]: https://img.shields.io/badge/stability-preview-yellow
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-distributedcloudedge.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-distributedcloudedge&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication

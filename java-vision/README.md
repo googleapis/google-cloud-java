@@ -11,8 +11,31 @@ Java idiomatic client for [Cloud Vision][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.3</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-vision</artifactId>
+  </dependency>
+</dependencies>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
@@ -21,8 +44,16 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-vision</artifactId>
   <version>3.1.2</version>
 </dependency>
+
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.3')
+
+implementation 'com.google.cloud:google-cloud-vision'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
@@ -68,6 +99,57 @@ use this Cloud Vision Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-vision/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Async Batch Annotate Images Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/AsyncBatchAnnotateImagesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/AsyncBatchAnnotateImagesGcs.java) |
+| Detect | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/Detect.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/Detect.java) |
+| Detect Batch Annotate Files | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/DetectBatchAnnotateFiles.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/DetectBatchAnnotateFiles.java) |
+| Detect Batch Annotate Files Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/DetectBatchAnnotateFilesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/DetectBatchAnnotateFilesGcs.java) |
+| Detect Beta | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/DetectBeta.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/DetectBeta.java) |
+| Import Product Sets | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/ImportProductSets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/ImportProductSets.java) |
+| Product In Product Set Management | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/ProductInProductSetManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/ProductInProductSetManagement.java) |
+| Product Management | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/ProductManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/ProductManagement.java) |
+| Product Search | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/ProductSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/ProductSearch.java) |
+| Product Set Management | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/ProductSetManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/ProductSetManagement.java) |
+| Reference Image Management | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/ReferenceImageManagement.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/ReferenceImageManagement.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/quickstart/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/quickstart/QuickstartSample.java) |
+| Async Batch Annotate Images | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/AsyncBatchAnnotateImages.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/AsyncBatchAnnotateImages.java) |
+| Batch Annotate Files | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/BatchAnnotateFiles.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/BatchAnnotateFiles.java) |
+| Batch Annotate Files Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/BatchAnnotateFilesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/BatchAnnotateFilesGcs.java) |
+| Detect Crop Hints | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectCropHints.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectCropHints.java) |
+| Detect Crop Hints Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectCropHintsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectCropHintsGcs.java) |
+| Detect Faces | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectFaces.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectFaces.java) |
+| Detect Faces Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectFacesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectFacesGcs.java) |
+| Detect Labels | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLabels.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLabels.java) |
+| Detect Labels Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLabelsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLabelsGcs.java) |
+| Detect Landmarks | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLandmarks.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLandmarks.java) |
+| Detect Landmarks Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLandmarksGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLandmarksGcs.java) |
+| Detect Landmarks Url | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLandmarksUrl.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLandmarksUrl.java) |
+| Detect Logos | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLogos.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLogos.java) |
+| Detect Logos Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectLogosGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectLogosGcs.java) |
+| Detect Properties | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectProperties.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectProperties.java) |
+| Detect Properties Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectPropertiesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectPropertiesGcs.java) |
+| Detect Safe Search | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectSafeSearch.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectSafeSearch.java) |
+| Detect Safe Search Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectSafeSearchGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectSafeSearchGcs.java) |
+| Detect Text | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectText.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectText.java) |
+| Detect Text Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectTextGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectTextGcs.java) |
+| Detect Web Detections | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectWebDetections.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectWebDetections.java) |
+| Detect Web Detections Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectWebDetectionsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectWebDetectionsGcs.java) |
+| Detect Web Entities | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntities.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntities.java) |
+| Detect Web Entities Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntitiesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntitiesGcs.java) |
+| Detect Web Entities Include Geo Results | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntitiesIncludeGeoResults.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntitiesIncludeGeoResults.java) |
+| Detect Web Entities Include Geo Results Gcs | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntitiesIncludeGeoResultsGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/DetectWebEntitiesIncludeGeoResultsGcs.java) |
+| Purge Products | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/PurgeProducts.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/PurgeProducts.java) |
+| Purge Products In Product Set | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/PurgeProductsInProductSet.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/PurgeProductsInProductSet.java) |
+| Set Endpoint | [source code](https://github.com/googleapis/java-vision/blob/main/samples/snippets/src/main/java/com/example/vision/snippets/SetEndpoint.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/vision/snippets/SetEndpoint.java) |
+| Application | [source code](https://github.com/googleapis/java-vision/blob/main/samples/spring-framework/src/main/java/com/example/vision/Application.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/spring-framework/src/main/java/com/example/vision/Application.java) |
+| Vision Controller | [source code](https://github.com/googleapis/java-vision/blob/main/samples/spring-framework/src/main/java/com/example/vision/VisionController.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-vision&page=editor&open_in_editor=samples/spring-framework/src/main/java/com/example/vision/VisionController.java) |
 
 
 

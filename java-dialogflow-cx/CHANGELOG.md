@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.14.7](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.6...v0.14.7) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#579](https://github.com/googleapis/java-dialogflow-cx/issues/579)) ([488f6d2](https://github.com/googleapis/java-dialogflow-cx/commit/488f6d21ba10cf86840f4694cd1cd52e8376823a))
+
+
+### Documentation
+
+* clarified gcs_bucket field of the SecuritySettings message ([2ea0320](https://github.com/googleapis/java-dialogflow-cx/commit/2ea03207230d2ba1230e3e87371053ffbb38a8d0))
+* Clarified gcs_bucket field of the SecuritySettings message ([#578](https://github.com/googleapis/java-dialogflow-cx/issues/578)) ([2ea0320](https://github.com/googleapis/java-dialogflow-cx/commit/2ea03207230d2ba1230e3e87371053ffbb38a8d0))
+
 ## [0.14.6](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.5...v0.14.6) (2022-09-15)
 
 
