@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.6.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+  <version>2.7.0</version><!-- {x-version-update:google-cloud-redis:current} -->
   <name>Google Cloud Redis Parent</name>
   <url>https://github.com/googleapis/java-redis</url>
   <description>
@@ -30,27 +30,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1</artifactId>
-        <version>2.6.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+        <version>2.7.0</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
-        <version>0.94.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
-        <version>0.94.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
+        <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1</artifactId>
-        <version>2.6.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
+        <version>2.7.0</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis</artifactId>
-        <version>2.6.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-redis:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
