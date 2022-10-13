@@ -1,5 +1,40 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-aiplatform-v3.4.2...google-cloud-aiplatform-v3.5.0) (2022-10-13)
+
+
+### Features
+
+* [aiplatform] add deleteFeatureValues in aiplatform v1beta1 featurestore_service.proto ([#8409](https://github.com/googleapis/google-cloud-java/issues/8409)) ([a9183e5](https://github.com/googleapis/google-cloud-java/commit/a9183e5abca764897776409d431331c3fe7999e4))
+* [aiplatform] add model_monitoring_stats_anomalies,model_monitoring_status to BatchPredictionJob in aiplatform v1beta1 batch_prediction_job.proto ([#8242](https://github.com/googleapis/google-cloud-java/issues/8242)) ([148fcb1](https://github.com/googleapis/google-cloud-java/commit/148fcb1e3767634ce527f0b4000699770a33f382))
+* [aiplatform] add model_source_info to Model in aiplatform v1 model.proto ([#8441](https://github.com/googleapis/google-cloud-java/issues/8441)) ([86683e4](https://github.com/googleapis/google-cloud-java/commit/86683e443e001293612497cd7dee4db5d9899d66))
+* [aiplatform] add model_source_info to Model in aiplatform v1beta1 model.proto ([#8452](https://github.com/googleapis/google-cloud-java/issues/8452)) ([18c0ade](https://github.com/googleapis/google-cloud-java/commit/18c0ade7d8ed66b604b577559fb74893b5b70d91))
+* [aiplatform] add timestamp_outside_retention_rows_count to ImportFeatureValuesResponse and ImportFeatureValuesOperationMetadata in aiplatform v1 featurestore_service.proto ([#8429](https://github.com/googleapis/google-cloud-java/issues/8429)) ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* [aiplatform] add timestamp_outside_retention_rows_count to ImportFeatureValuesResponse and ImportFeatureValuesOperationMetadata in aiplatform v1beta1 featurestore_service.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* add InputArtifact to RuntimeConfig in aiplatform v1beta1 pipeline_job.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* add order_by to ListArtifactsRequest, ListContextsRequest, and ListExecutionsRequest in aiplatform v1 metadata_service.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* add order_by to ListArtifactsRequest, ListContextsRequest, and ListExecutionsRequest in aiplatform v1beta1 metadata_service.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* add read_mask to ListPipelineJobsRequest in aiplatform v1beta1 pipeline_service.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* add RemoveContextChildren rpc to aiplatform v1 metadata_service.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* add RemoveContextChildren rpc to aiplatform v1beta1 metadata_service.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+* add TransferLearningConfig in aiplatform v1beta1 study.proto ([045035f](https://github.com/googleapis/google-cloud-java/commit/045035fa705ad8932d520ed7b39ab3d4e0191b76))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-bigquery to v2.15.0 ([#8231](https://github.com/googleapis/google-cloud-java/issues/8231)) ([2c0b9ad](https://github.com/googleapis/google-cloud-java/commit/2c0b9ad05b4ff658ac7a08bde6637653825d2802))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
 ## [3.4.2](https://github.com/googleapis/java-aiplatform/compare/v3.4.1...v3.4.2) (2022-10-10)
 
 
