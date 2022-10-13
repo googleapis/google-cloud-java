@@ -17,6 +17,7 @@
     <artifactId>google-cloud-pom-parent</artifactId>
     <groupId>com.google.cloud</groupId>
     <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <dependencyManagement>

@@ -5,11 +5,12 @@
   <artifactId>google-cloud-analyticshub-bom</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Analytics Hub API BOM</name>

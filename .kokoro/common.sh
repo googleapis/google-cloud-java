@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 
 function retry_with_backoff {
     attempts_left=$1
