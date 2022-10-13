@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-optimization:1.1.12:1.1.13-SNAPSHOT
-proto-google-cloud-optimization-v1:1.1.12:1.1.13-SNAPSHOT
-grpc-google-cloud-optimization-v1:1.1.12:1.1.13-SNAPSHOT
+google-cloud-optimization:1.1.14:1.1.15-SNAPSHOT
+proto-google-cloud-optimization-v1:1.1.14:1.1.15-SNAPSHOT
+grpc-google-cloud-optimization-v1:1.1.14:1.1.15-SNAPSHOT
