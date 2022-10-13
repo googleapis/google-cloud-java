@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.4.2](https://github.com/googleapis/java-vpcaccess/compare/v2.4.1...v2.4.2) (2022-10-04)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#248](https://github.com/googleapis/java-vpcaccess/issues/248)) ([9e8b375](https://github.com/googleapis/java-vpcaccess/commit/9e8b375e51ef006521e19d49bd4da10cb826157e))
+* Update dependency click to v8.1.3 ([#251](https://github.com/googleapis/java-vpcaccess/issues/251)) ([cffa814](https://github.com/googleapis/java-vpcaccess/commit/cffa814f50fe1a41804f4e9927056a52f5b3a576))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#265](https://github.com/googleapis/java-vpcaccess/issues/265)) ([a0df065](https://github.com/googleapis/java-vpcaccess/commit/a0df0653b337fdaa3fb04af8385a384186fcb4d3))
+* Update dependency google-api-core to v2.10.1 ([#252](https://github.com/googleapis/java-vpcaccess/issues/252)) ([ecd7b77](https://github.com/googleapis/java-vpcaccess/commit/ecd7b773badc00e2c1a187da94d3f3d23e65255b))
+* Update dependency google-auth to v2.11.1 ([#249](https://github.com/googleapis/java-vpcaccess/issues/249)) ([1ec1066](https://github.com/googleapis/java-vpcaccess/commit/1ec10665db8fc7b69600dd57e4ef597f26f26bd7))
+* Update dependency google-cloud-storage to v2.5.0 ([#253](https://github.com/googleapis/java-vpcaccess/issues/253)) ([99f525d](https://github.com/googleapis/java-vpcaccess/commit/99f525d5d3370bcfd40d954d345638f946554bc7))
+* Update dependency google-crc32c to v1.5.0 ([#254](https://github.com/googleapis/java-vpcaccess/issues/254)) ([c00a190](https://github.com/googleapis/java-vpcaccess/commit/c00a1909cd5fe21587cfbf4a7bacb6925c7d7d4a))
+* Update dependency googleapis-common-protos to v1.56.4 ([#250](https://github.com/googleapis/java-vpcaccess/issues/250)) ([b24aacf](https://github.com/googleapis/java-vpcaccess/commit/b24aacfc1089a4e8ff876ee9ff081f0757178551))
+* Update dependency importlib-metadata to v4.12.0 ([#255](https://github.com/googleapis/java-vpcaccess/issues/255)) ([5441ac1](https://github.com/googleapis/java-vpcaccess/commit/5441ac16cf04d3b9a1c599953fcd696ad454d1b2))
+* Update dependency jeepney to v0.8.0 ([#256](https://github.com/googleapis/java-vpcaccess/issues/256)) ([d766d33](https://github.com/googleapis/java-vpcaccess/commit/d766d3310aa82710ec3e52562c547e88e02da3f7))
+* Update dependency jinja2 to v3.1.2 ([#263](https://github.com/googleapis/java-vpcaccess/issues/263)) ([e6c8449](https://github.com/googleapis/java-vpcaccess/commit/e6c8449549b5b64b64e1636e21ce9fd9425ab729))
+* Update dependency markupsafe to v2.1.1 ([#257](https://github.com/googleapis/java-vpcaccess/issues/257)) ([81ed6eb](https://github.com/googleapis/java-vpcaccess/commit/81ed6eb9cbb694445653f9579c714aed085393f8))
+* Update dependency protobuf to v3.20.2 ([#258](https://github.com/googleapis/java-vpcaccess/issues/258)) ([842690f](https://github.com/googleapis/java-vpcaccess/commit/842690f73094c0de350aff43bddc86447da437db))
+* Update dependency pyjwt to v2.5.0 ([#259](https://github.com/googleapis/java-vpcaccess/issues/259)) ([b776afd](https://github.com/googleapis/java-vpcaccess/commit/b776afd3091a3613412fd7938c123c974e37bbdf))
+* Update dependency requests to v2.28.1 ([#260](https://github.com/googleapis/java-vpcaccess/issues/260)) ([14d4f9e](https://github.com/googleapis/java-vpcaccess/commit/14d4f9ecfa9f2107857ed82c63d20e7c4bd093a7))
+* Update dependency typing-extensions to v4.3.0 ([#261](https://github.com/googleapis/java-vpcaccess/issues/261)) ([db0c998](https://github.com/googleapis/java-vpcaccess/commit/db0c998a1db19d4d7341166ee0403fc2ba0eb36d))
+* Update dependency zipp to v3.8.1 ([#262](https://github.com/googleapis/java-vpcaccess/issues/262)) ([ff75167](https://github.com/googleapis/java-vpcaccess/commit/ff751674b2524c6e5be3e85915621a7d4900a5cf))
+
 ## [2.4.1](https://github.com/googleapis/java-vpcaccess/compare/v2.4.0...v2.4.1) (2022-09-27)
 
 

@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.4...v2.3.0) (2022-10-04)
+
+
+### Features
+
+* Added NO_STARTING_URL_FOUND_FOR_MANAGED_SCAN to ScanRunWarningTrace.Code ([#741](https://github.com/googleapis/java-websecurityscanner/issues/741)) ([9cd376d](https://github.com/googleapis/java-websecurityscanner/commit/9cd376dc142d388cdbaa9ef5f0881df0513ce67c))
+
+
+### Bug Fixes
+
+* Added fix to return a list of the endpoints that encountered errors during crawl, along with the specific error message when the starting URL returns Http errors ([9cd376d](https://github.com/googleapis/java-websecurityscanner/commit/9cd376dc142d388cdbaa9ef5f0881df0513ce67c))
+* GoogleAccount is deprecated ([9cd376d](https://github.com/googleapis/java-websecurityscanner/commit/9cd376dc142d388cdbaa9ef5f0881df0513ce67c))
+* update protobuf to v3.21.7 ([e03db73](https://github.com/googleapis/java-websecurityscanner/commit/e03db73a21f37f7aafbaffa06161bdeb70c00cbf))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#761](https://github.com/googleapis/java-websecurityscanner/issues/761)) ([1ceec9b](https://github.com/googleapis/java-websecurityscanner/commit/1ceec9bf9e19c224760a61e03413caec7a33350d))
+* Update dependency certifi to v2022.9.24 ([#754](https://github.com/googleapis/java-websecurityscanner/issues/754)) ([2b6c4b4](https://github.com/googleapis/java-websecurityscanner/commit/2b6c4b4b1a3028a12c570fa18d1d5db7172b2555))
+* Update dependency charset-normalizer to v2.1.1 ([#763](https://github.com/googleapis/java-websecurityscanner/issues/763)) ([5b03038](https://github.com/googleapis/java-websecurityscanner/commit/5b03038650c6b0c0fa6588ef08e137953a7ced02))
+* Update dependency click to v8.1.3 ([#764](https://github.com/googleapis/java-websecurityscanner/issues/764)) ([29f0967](https://github.com/googleapis/java-websecurityscanner/commit/29f09673e6904caeff4ec39a1c5f6f6c5b727c75))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#774](https://github.com/googleapis/java-websecurityscanner/issues/774)) ([e76a110](https://github.com/googleapis/java-websecurityscanner/commit/e76a1104a0dc7eb0042105a514b80c94f72c0ed6))
+* Update dependency gcp-releasetool to v1.8.8 ([#755](https://github.com/googleapis/java-websecurityscanner/issues/755)) ([d787a88](https://github.com/googleapis/java-websecurityscanner/commit/d787a88599978e892e4990c11081f41a8defdf39))
+* Update dependency google-api-core to v2.10.1 ([#765](https://github.com/googleapis/java-websecurityscanner/issues/765)) ([8c131b5](https://github.com/googleapis/java-websecurityscanner/commit/8c131b5f3b40ec091ab3b901492af48b939157b1))
+* Update dependency google-auth to v2.11.1 ([#756](https://github.com/googleapis/java-websecurityscanner/issues/756)) ([9b74593](https://github.com/googleapis/java-websecurityscanner/commit/9b74593503160e80f4e7fc57f133dbf71bcfb7cf))
+* Update dependency google-cloud-core to v2.3.2 ([#757](https://github.com/googleapis/java-websecurityscanner/issues/757)) ([7236255](https://github.com/googleapis/java-websecurityscanner/commit/7236255c211acb9f9bbffd30927052d97f7540fc))
+* Update dependency google-cloud-storage to v2.5.0 ([#766](https://github.com/googleapis/java-websecurityscanner/issues/766)) ([5067cd4](https://github.com/googleapis/java-websecurityscanner/commit/5067cd4bd020e1b5b58124d1c17d0bf12a410aa4))
+* Update dependency googleapis-common-protos to v1.56.4 ([#758](https://github.com/googleapis/java-websecurityscanner/issues/758)) ([8bc8fc3](https://github.com/googleapis/java-websecurityscanner/commit/8bc8fc306a8cf5bdf9e26a48db5f0c90501ec526))
+* Update dependency joda-time:joda-time to v2.11.2 ([#751](https://github.com/googleapis/java-websecurityscanner/issues/751)) ([0c8718d](https://github.com/googleapis/java-websecurityscanner/commit/0c8718d48d5edd05f3a3ca65f1fbd11f17d0edd2))
+* Update dependency protobuf to v4 ([#762](https://github.com/googleapis/java-websecurityscanner/issues/762)) ([c7e5ee5](https://github.com/googleapis/java-websecurityscanner/commit/c7e5ee53fa1edca71ba10bf9cbaee94e3e4fe430))
+* Update dependency zipp to v3.8.1 ([#760](https://github.com/googleapis/java-websecurityscanner/issues/760)) ([af0e798](https://github.com/googleapis/java-websecurityscanner/commit/af0e79800e9e279def200046345c34a56a5d9d6b))
+
 ## [2.2.4](https://github.com/googleapis/java-websecurityscanner/compare/v2.2.3...v2.2.4) (2022-09-15)
 
 

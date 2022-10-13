@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.0.6](https://github.com/googleapis/java-domains/compare/v1.0.5...v1.0.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([7df022b](https://github.com/googleapis/java-domains/commit/7df022b4241a6369c7a13c1c7b2fc4ece0ee49e0))
+
+## [1.0.5](https://github.com/googleapis/java-domains/compare/v1.0.4...v1.0.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#298](https://github.com/googleapis/java-domains/issues/298)) ([7bcaa5b](https://github.com/googleapis/java-domains/commit/7bcaa5b4b84fe8e0e0e13b2f1fb7a88abc05aa7e))
+* Update dependency certifi to v2022.9.24 ([#278](https://github.com/googleapis/java-domains/issues/278)) ([5385c50](https://github.com/googleapis/java-domains/commit/5385c50ea2a399639d0106c3e8bcda92f77e4231))
+* Update dependency click to v8.1.3 ([#283](https://github.com/googleapis/java-domains/issues/283)) ([3397dd2](https://github.com/googleapis/java-domains/commit/3397dd2b435ea53d30fcd2a589e4fb03e78c7a5a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#303](https://github.com/googleapis/java-domains/issues/303)) ([cd3485b](https://github.com/googleapis/java-domains/commit/cd3485b8adad2279f4ace288c0055c4750c3db66))
+* Update dependency google-api-core to v2.10.1 ([#284](https://github.com/googleapis/java-domains/issues/284)) ([656b66c](https://github.com/googleapis/java-domains/commit/656b66cdedce4fe22b019030da0ade030529e663))
+* Update dependency google-auth to v2.12.0 ([#285](https://github.com/googleapis/java-domains/issues/285)) ([86d514b](https://github.com/googleapis/java-domains/commit/86d514bc5ddb2f180806655406c91610d5059e77))
+* Update dependency google-cloud-core to v2.3.2 ([#280](https://github.com/googleapis/java-domains/issues/280)) ([9ee17a7](https://github.com/googleapis/java-domains/commit/9ee17a78d3f12ad115884e30dbb3935ad488a4f9))
+* Update dependency google-crc32c to v1.5.0 ([#287](https://github.com/googleapis/java-domains/issues/287)) ([ae3c6eb](https://github.com/googleapis/java-domains/commit/ae3c6eb7c8fa917d6c1bab7f7c7cea418abf9f46))
+* Update dependency googleapis-common-protos to v1.56.4 ([#281](https://github.com/googleapis/java-domains/issues/281)) ([1d392c0](https://github.com/googleapis/java-domains/commit/1d392c04734acd7017ba97109521b024c988ac17))
+* Update dependency importlib-metadata to v4.12.0 ([#288](https://github.com/googleapis/java-domains/issues/288)) ([753d006](https://github.com/googleapis/java-domains/commit/753d006b3b4928c7bb01ba5c5d1985b1bf064697))
+* Update dependency jeepney to v0.8.0 ([#289](https://github.com/googleapis/java-domains/issues/289)) ([c430768](https://github.com/googleapis/java-domains/commit/c430768e24d9a3ea936f898454dd3781ed17d5f0))
+* Update dependency jinja2 to v3.1.2 ([#290](https://github.com/googleapis/java-domains/issues/290)) ([bc762b6](https://github.com/googleapis/java-domains/commit/bc762b6bb88ca75b3f6874f8dd4331e9487cceda))
+* Update dependency protobuf to v3.20.2 ([#293](https://github.com/googleapis/java-domains/issues/293)) ([7ae3a69](https://github.com/googleapis/java-domains/commit/7ae3a699c743a79d0f5c2280ff0fafb382ee2e4b))
+* Update dependency protobuf to v4 ([#299](https://github.com/googleapis/java-domains/issues/299)) ([f8021c3](https://github.com/googleapis/java-domains/commit/f8021c3e286520aee64109e018bbbfe056df9dfa))
+* Update dependency pyjwt to v2.5.0 ([#294](https://github.com/googleapis/java-domains/issues/294)) ([a8f0d11](https://github.com/googleapis/java-domains/commit/a8f0d11cce118f4ad50ea3de073ecec0b507f402))
+* Update dependency requests to v2.28.1 ([#295](https://github.com/googleapis/java-domains/issues/295)) ([acf9a98](https://github.com/googleapis/java-domains/commit/acf9a9834cb5eb81a884d6e1932c9290603865d5))
+* Update dependency typing-extensions to v4.3.0 ([#296](https://github.com/googleapis/java-domains/issues/296)) ([357a6d9](https://github.com/googleapis/java-domains/commit/357a6d914406baedeb9bc65bb9526c0f5d3ae192))
+* Update dependency zipp to v3.8.1 ([#297](https://github.com/googleapis/java-domains/issues/297)) ([41e5b9a](https://github.com/googleapis/java-domains/commit/41e5b9a30547d39de1387a65368c1e15973ad804))
+
 ## [1.0.4](https://github.com/googleapis/java-domains/compare/v1.0.3...v1.0.4) (2022-09-15)
 
 

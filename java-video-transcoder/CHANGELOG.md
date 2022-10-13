@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.2.5](https://github.com/googleapis/java-video-transcoder/compare/v1.2.4...v1.2.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([f1c292a](https://github.com/googleapis/java-video-transcoder/commit/f1c292ae52e7dbf86167fb6feb3606f699d01362))
+
+## [1.2.4](https://github.com/googleapis/java-video-transcoder/compare/v1.2.3...v1.2.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#396](https://github.com/googleapis/java-video-transcoder/issues/396)) ([5931697](https://github.com/googleapis/java-video-transcoder/commit/5931697a46d6a8da2b385afae4cce096c51874ee))
+* Update dependency certifi to v2022.9.24 ([#399](https://github.com/googleapis/java-video-transcoder/issues/399)) ([7d0d479](https://github.com/googleapis/java-video-transcoder/commit/7d0d4799a557c6707b7bf7deb765a5f79e1e859a))
+* Update dependency charset-normalizer to v2.1.1 ([#406](https://github.com/googleapis/java-video-transcoder/issues/406)) ([792a082](https://github.com/googleapis/java-video-transcoder/commit/792a08262400dc21be30b90fc0c3212a7af92b34))
+* Update dependency click to v8.1.3 ([#407](https://github.com/googleapis/java-video-transcoder/issues/407)) ([8b8d240](https://github.com/googleapis/java-video-transcoder/commit/8b8d240bbf5e3f0486fb44f7103796b0408488dd))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#410](https://github.com/googleapis/java-video-transcoder/issues/410)) ([3f1c955](https://github.com/googleapis/java-video-transcoder/commit/3f1c955da25f328f1d14c217945e608caff1634e))
+* Update dependency gcp-releasetool to v1.8.8 ([#400](https://github.com/googleapis/java-video-transcoder/issues/400)) ([9dc373b](https://github.com/googleapis/java-video-transcoder/commit/9dc373bb35e63cf8a158cfd1cc9d485cfad900f9))
+* Update dependency google-api-core to v2.10.1 ([#408](https://github.com/googleapis/java-video-transcoder/issues/408)) ([decb969](https://github.com/googleapis/java-video-transcoder/commit/decb969da7bc302f62b9b6cf71f4bf6d42df65d0))
+* Update dependency google-auth to v2.12.0 ([#403](https://github.com/googleapis/java-video-transcoder/issues/403)) ([3437f06](https://github.com/googleapis/java-video-transcoder/commit/3437f0647376bd5696e19bdd460633b3e4055bf3))
+* Update dependency google-cloud-core to v2.3.2 ([#401](https://github.com/googleapis/java-video-transcoder/issues/401)) ([10e4e5c](https://github.com/googleapis/java-video-transcoder/commit/10e4e5c5cfea0c8a05de4257b17e186cbd1bef3c))
+* Update dependency google-cloud-storage to v2.5.0 ([#404](https://github.com/googleapis/java-video-transcoder/issues/404)) ([20c6c71](https://github.com/googleapis/java-video-transcoder/commit/20c6c71aaff00540049d511ee5c146d70e303266))
+* Update dependency google-crc32c to v1.5.0 ([#405](https://github.com/googleapis/java-video-transcoder/issues/405)) ([52beedd](https://github.com/googleapis/java-video-transcoder/commit/52beedd449912d521f493f028b6ea01fd82d9d6c))
+* Update dependency googleapis-common-protos to v1.56.4 ([#402](https://github.com/googleapis/java-video-transcoder/issues/402)) ([f95176b](https://github.com/googleapis/java-video-transcoder/commit/f95176bf02c20ecf75575dfa9ade45db72c49d8d))
+* Update dependency importlib-metadata to v4.12.0 ([#386](https://github.com/googleapis/java-video-transcoder/issues/386)) ([332023f](https://github.com/googleapis/java-video-transcoder/commit/332023f0a19dc96838c90490fe2bc0aa2f55545f))
+* Update dependency jeepney to v0.8.0 ([#387](https://github.com/googleapis/java-video-transcoder/issues/387)) ([7593e40](https://github.com/googleapis/java-video-transcoder/commit/7593e40a2feb11cd57c336445e0a0a771fc875db))
+* Update dependency keyring to v23.9.3 ([#389](https://github.com/googleapis/java-video-transcoder/issues/389)) ([10c0cdf](https://github.com/googleapis/java-video-transcoder/commit/10c0cdf308cc332fe1526822210f792904b0290a))
+* Update dependency markupsafe to v2.1.1 ([#390](https://github.com/googleapis/java-video-transcoder/issues/390)) ([8d4deb2](https://github.com/googleapis/java-video-transcoder/commit/8d4deb2dbac7205714c8c3e12da20c2117e8a5f4))
+* Update dependency protobuf to v3.20.2 ([#391](https://github.com/googleapis/java-video-transcoder/issues/391)) ([d3ba79c](https://github.com/googleapis/java-video-transcoder/commit/d3ba79c0114695a2eeb6c59420713edec6bcf610))
+* Update dependency pyjwt to v2.5.0 ([#392](https://github.com/googleapis/java-video-transcoder/issues/392)) ([9490d69](https://github.com/googleapis/java-video-transcoder/commit/9490d69d62d89658e5221fdbc616c82246474ee4))
+* Update dependency typing-extensions to v4.3.0 ([#394](https://github.com/googleapis/java-video-transcoder/issues/394)) ([9598f3a](https://github.com/googleapis/java-video-transcoder/commit/9598f3af114ba436d75b63d5c8424f6446197e62))
+* Update dependency zipp to v3.8.1 ([#395](https://github.com/googleapis/java-video-transcoder/issues/395)) ([1007c07](https://github.com/googleapis/java-video-transcoder/commit/1007c07520951a7897fc1f173e3b4b0453befb84))
+
 ## [1.2.3](https://github.com/googleapis/java-video-transcoder/compare/v1.2.2...v1.2.3) (2022-09-15)
 
 

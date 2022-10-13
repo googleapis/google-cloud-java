@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.5.6](https://github.com/googleapis/java-bigqueryconnection/compare/v2.5.5...v2.5.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([3d6513f](https://github.com/googleapis/java-bigqueryconnection/commit/3d6513f7a22eb922fd6c967712956cccdd241546))
+
+## [2.5.5](https://github.com/googleapis/java-bigqueryconnection/compare/v2.5.4...v2.5.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#758](https://github.com/googleapis/java-bigqueryconnection/issues/758)) ([4481245](https://github.com/googleapis/java-bigqueryconnection/commit/448124534c08ad80db939abecb9be075efbd3110))
+* Update dependency charset-normalizer to v2.1.1 ([#762](https://github.com/googleapis/java-bigqueryconnection/issues/762)) ([76858e5](https://github.com/googleapis/java-bigqueryconnection/commit/76858e55f1acbb9dba4ff2e114ab1b8e8ed7d86d))
+* Update dependency click to v8.1.3 ([#763](https://github.com/googleapis/java-bigqueryconnection/issues/763)) ([df9e5c7](https://github.com/googleapis/java-bigqueryconnection/commit/df9e5c7d06f57d4c4bca373b4f09cda61f65bec2))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#784](https://github.com/googleapis/java-bigqueryconnection/issues/784)) ([fe95be1](https://github.com/googleapis/java-bigqueryconnection/commit/fe95be138e139a7c99e3fbd9e0f1620be11f1d62))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#782](https://github.com/googleapis/java-bigqueryconnection/issues/782)) ([bdd93d3](https://github.com/googleapis/java-bigqueryconnection/commit/bdd93d313c0eb28da9bed0e65a6679c5af685582))
+* Update dependency gcp-releasetool to v1.8.8 ([#759](https://github.com/googleapis/java-bigqueryconnection/issues/759)) ([f79debf](https://github.com/googleapis/java-bigqueryconnection/commit/f79debfbda64be275512b6135d768cb44df9e966))
+* Update dependency google-api-core to v2.10.1 ([#764](https://github.com/googleapis/java-bigqueryconnection/issues/764)) ([3f8113a](https://github.com/googleapis/java-bigqueryconnection/commit/3f8113ae85b454ecaad92dcec70c02c96647da59))
+* Update dependency google-auth to v2.12.0 ([#765](https://github.com/googleapis/java-bigqueryconnection/issues/765)) ([b736b73](https://github.com/googleapis/java-bigqueryconnection/commit/b736b73970fe482261194178d0388129eb0d0224))
+* Update dependency google-cloud-core to v2.3.2 ([#760](https://github.com/googleapis/java-bigqueryconnection/issues/760)) ([6964c01](https://github.com/googleapis/java-bigqueryconnection/commit/6964c01a1ba03cc31124f159973e39621f0b2c85))
+* Update dependency google-cloud-storage to v2.5.0 ([#766](https://github.com/googleapis/java-bigqueryconnection/issues/766)) ([7b09ee8](https://github.com/googleapis/java-bigqueryconnection/commit/7b09ee8998fc717ebae9bca98121d5d9919bbbfa))
+* Update dependency google-crc32c to v1.5.0 ([#767](https://github.com/googleapis/java-bigqueryconnection/issues/767)) ([1a5231c](https://github.com/googleapis/java-bigqueryconnection/commit/1a5231c133fa62a55b074f347f9b5d63f7b7f46e))
+* Update dependency googleapis-common-protos to v1.56.4 ([#761](https://github.com/googleapis/java-bigqueryconnection/issues/761)) ([f00bc24](https://github.com/googleapis/java-bigqueryconnection/commit/f00bc2470b5dc15ba30e26c0e77ee9e91dc93d91))
+* Update dependency importlib-metadata to v4.12.0 ([#768](https://github.com/googleapis/java-bigqueryconnection/issues/768)) ([ce0fffb](https://github.com/googleapis/java-bigqueryconnection/commit/ce0fffb820592d44bcab53bb9347cf0e3a9fe042))
+* Update dependency jeepney to v0.8.0 ([#769](https://github.com/googleapis/java-bigqueryconnection/issues/769)) ([dfe57c6](https://github.com/googleapis/java-bigqueryconnection/commit/dfe57c64b36d2063f694ccf7a86977d1306c123d))
+* Update dependency jinja2 to v3.1.2 ([#778](https://github.com/googleapis/java-bigqueryconnection/issues/778)) ([237afa2](https://github.com/googleapis/java-bigqueryconnection/commit/237afa2bcfcde5b36a60727833a98fc7149e695d))
+* Update dependency keyring to v23.9.3 ([#779](https://github.com/googleapis/java-bigqueryconnection/issues/779)) ([4f07643](https://github.com/googleapis/java-bigqueryconnection/commit/4f07643bd8e8cfc7e5317d6c70b0c3ab7e2d72dc))
+* Update dependency markupsafe to v2.1.1 ([#770](https://github.com/googleapis/java-bigqueryconnection/issues/770)) ([bbb1a47](https://github.com/googleapis/java-bigqueryconnection/commit/bbb1a4718d1dc4fb6920acca581280490d587911))
+
 ## [2.5.4](https://github.com/googleapis/java-bigqueryconnection/compare/v2.5.3...v2.5.4) (2022-09-20)
 
 

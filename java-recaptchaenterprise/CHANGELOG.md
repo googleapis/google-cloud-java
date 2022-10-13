@@ -1,5 +1,41 @@
 # Changelog
 
+## [3.0.12](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.11...v3.0.12) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([c0158b9](https://github.com/googleapis/java-recaptchaenterprise/commit/c0158b992bc86c2bd87553d3d56a41e9416f76af))
+
+## [3.0.11](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.10...v3.0.11) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#921](https://github.com/googleapis/java-recaptchaenterprise/issues/921)) ([b951e7b](https://github.com/googleapis/java-recaptchaenterprise/commit/b951e7b7a16e6a2b4a81433d7739b938f662b9b3))
+
+## [3.0.10](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.9...v3.0.10) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#912](https://github.com/googleapis/java-recaptchaenterprise/issues/912)) ([f21605c](https://github.com/googleapis/java-recaptchaenterprise/commit/f21605c94c54abca54680f511738b51fc66471a2))
+* Update dependency certifi to v2022.9.24 ([#900](https://github.com/googleapis/java-recaptchaenterprise/issues/900)) ([71cc9ea](https://github.com/googleapis/java-recaptchaenterprise/commit/71cc9ea0fbe5d2c9fd5c36e90ca26adddfd20e51))
+* Update dependency charset-normalizer to v2.1.1 ([#907](https://github.com/googleapis/java-recaptchaenterprise/issues/907)) ([640fb36](https://github.com/googleapis/java-recaptchaenterprise/commit/640fb361c5d23dff35c963d1f0b878b013984462))
+* Update dependency gcp-releasetool to v1.8.8 ([#903](https://github.com/googleapis/java-recaptchaenterprise/issues/903)) ([19fff21](https://github.com/googleapis/java-recaptchaenterprise/commit/19fff213932e7d5ed0aed5d75df688e707496c50))
+* Update dependency google-auth to v2.11.1 ([#904](https://github.com/googleapis/java-recaptchaenterprise/issues/904)) ([5a0a441](https://github.com/googleapis/java-recaptchaenterprise/commit/5a0a4419d5f38d48d3b9cac2c3a004e4177a0a72))
+* Update dependency google-cloud-core to v2.3.2 ([#905](https://github.com/googleapis/java-recaptchaenterprise/issues/905)) ([b39f44d](https://github.com/googleapis/java-recaptchaenterprise/commit/b39f44dcdd8fa557a4f54823f55250789365533e))
+* Update dependency googleapis-common-protos to v1.56.4 ([#906](https://github.com/googleapis/java-recaptchaenterprise/issues/906)) ([3b7a24e](https://github.com/googleapis/java-recaptchaenterprise/commit/3b7a24e780fab9c04c71562580eec54ec6f7831e))
+* Update dependency markupsafe to v2.1.1 ([#901](https://github.com/googleapis/java-recaptchaenterprise/issues/901)) ([88f8811](https://github.com/googleapis/java-recaptchaenterprise/commit/88f8811c5d5bb91fa808373f5e9b9faa53aec3cf))
+* Update dependency org.seleniumhq.selenium:selenium-chrome-driver to v4.5.0 ([#916](https://github.com/googleapis/java-recaptchaenterprise/issues/916)) ([3830275](https://github.com/googleapis/java-recaptchaenterprise/commit/3830275ce5115bf7aeda48c3cdb0e1fb0be0e90a))
+* Update dependency org.seleniumhq.selenium:selenium-java to v4.5.0 ([#917](https://github.com/googleapis/java-recaptchaenterprise/issues/917)) ([ec2ca13](https://github.com/googleapis/java-recaptchaenterprise/commit/ec2ca132dfd4296c35d79e1da099e41704c24fc3))
+* Update dependency protobuf to v3.20.2 ([#902](https://github.com/googleapis/java-recaptchaenterprise/issues/902)) ([a1ba04c](https://github.com/googleapis/java-recaptchaenterprise/commit/a1ba04ccce3e6bf466ca600393225779d0f46505))
+* Update dependency protobuf to v4 ([#913](https://github.com/googleapis/java-recaptchaenterprise/issues/913)) ([47813bf](https://github.com/googleapis/java-recaptchaenterprise/commit/47813bfe37bdbac227e89322a1658a6010196462))
+* Update dependency pyjwt to v2.5.0 ([#908](https://github.com/googleapis/java-recaptchaenterprise/issues/908)) ([3008c69](https://github.com/googleapis/java-recaptchaenterprise/commit/3008c6961a6ee8cdbfa4197b8fa549893bb212da))
+* Update dependency requests to v2.28.1 ([#909](https://github.com/googleapis/java-recaptchaenterprise/issues/909)) ([4481f67](https://github.com/googleapis/java-recaptchaenterprise/commit/4481f6725252c36528ecb39f4d3874fbda5a1c16))
+* Update dependency typing-extensions to v4.3.0 ([#910](https://github.com/googleapis/java-recaptchaenterprise/issues/910)) ([ec1c77a](https://github.com/googleapis/java-recaptchaenterprise/commit/ec1c77aa4193724b7b5faf535ab060e525f57a7f))
+* Update dependency zipp to v3.8.1 ([#911](https://github.com/googleapis/java-recaptchaenterprise/issues/911)) ([3de719f](https://github.com/googleapis/java-recaptchaenterprise/commit/3de719f4e1259a908182cb0a84cde0691d8da3c5))
+
 ## [3.0.9](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.8...v3.0.9) (2022-09-22)
 
 

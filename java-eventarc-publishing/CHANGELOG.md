@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.7](https://github.com/googleapis/java-eventarc-publishing/compare/v0.3.6...v0.3.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([a44c294](https://github.com/googleapis/java-eventarc-publishing/commit/a44c29476d69e2c9b2f965b19f36e6ce05945a57))
+
+## [0.3.6](https://github.com/googleapis/java-eventarc-publishing/compare/v0.3.6-SNAPSHOT...v0.3.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#151](https://github.com/googleapis/java-eventarc-publishing/issues/151)) ([e2de96a](https://github.com/googleapis/java-eventarc-publishing/commit/e2de96a6e11ef210d58487edfdf0af2ed42045dc))
+
 ## [0.3.5](https://github.com/googleapis/java-eventarc-publishing/compare/v0.3.4...v0.3.5) (2022-09-29)
 
 

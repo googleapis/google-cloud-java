@@ -11,8 +11,30 @@ Java idiomatic client for [Recommender][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.3</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-recommender</artifactId>
+  </dependency>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
@@ -21,8 +43,16 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-recommender</artifactId>
   <version>2.5.7</version>
 </dependency>
+
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.3')
+
+implementation 'com.google.cloud:google-cloud-recommender'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
@@ -68,6 +98,15 @@ use this Recommender Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-recommender/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| List Recommendations | [source code](https://github.com/googleapis/java-recommender/blob/main/samples/snippets/src/main/java/com/example/recommender/ListRecommendations.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-recommender&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/recommender/ListRecommendations.java) |
 
 
 

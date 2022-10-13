@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.1.7](https://github.com/googleapis/java-service-management/compare/v3.1.6...v3.1.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([9c95d59](https://github.com/googleapis/java-service-management/commit/9c95d5980fc6fb9e113a975e11a824dd6c3a27ab))
+
+## [3.1.6](https://github.com/googleapis/java-service-management/compare/v3.1.5...v3.1.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#309](https://github.com/googleapis/java-service-management/issues/309)) ([2c32cb0](https://github.com/googleapis/java-service-management/commit/2c32cb08df99878caf7dffc08005e32714ba0037))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#313](https://github.com/googleapis/java-service-management/issues/313)) ([de68658](https://github.com/googleapis/java-service-management/commit/de686586a01689479a1e3ae890b0070259061b46))
+* Update dependency google-api-core to v2.10.1 ([#297](https://github.com/googleapis/java-service-management/issues/297)) ([ed997c8](https://github.com/googleapis/java-service-management/commit/ed997c8150fda386f93ed291f0f420a1c53659a8))
+* Update dependency google-auth to v2.12.0 ([#298](https://github.com/googleapis/java-service-management/issues/298)) ([0375462](https://github.com/googleapis/java-service-management/commit/0375462f7af9a48fa83b56ac8b4457f2009a11a1))
+* Update dependency google-cloud-storage to v2.5.0 ([#299](https://github.com/googleapis/java-service-management/issues/299)) ([9755362](https://github.com/googleapis/java-service-management/commit/97553626ca65709a3fea86bfd28b339e9c507c99))
+* Update dependency google-crc32c to v1.5.0 ([#300](https://github.com/googleapis/java-service-management/issues/300)) ([2e4b87b](https://github.com/googleapis/java-service-management/commit/2e4b87bcbafe40d421c0f506dc4537bb6283c476))
+* Update dependency importlib-metadata to v4.12.0 ([#301](https://github.com/googleapis/java-service-management/issues/301)) ([9f6c9d1](https://github.com/googleapis/java-service-management/commit/9f6c9d127b67765df97103ef7da73e9445d46cd1))
+* Update dependency jeepney to v0.8.0 ([#302](https://github.com/googleapis/java-service-management/issues/302)) ([166201f](https://github.com/googleapis/java-service-management/commit/166201fe7cd6a7c3c948e30cba00a718accc1beb))
+* Update dependency jinja2 to v3.1.2 ([#303](https://github.com/googleapis/java-service-management/issues/303)) ([4330974](https://github.com/googleapis/java-service-management/commit/43309749cee8ce839f63c86c8175c3482d1a0ee0))
+* Update dependency keyring to v23.9.3 ([#304](https://github.com/googleapis/java-service-management/issues/304)) ([bb1d595](https://github.com/googleapis/java-service-management/commit/bb1d5959be63ca50b5e7a5cb7131473b096eda12))
+* Update dependency protobuf to v4 ([#310](https://github.com/googleapis/java-service-management/issues/310)) ([4f0050f](https://github.com/googleapis/java-service-management/commit/4f0050f851b50ed159bf7c7aa9b7449a95e5f444))
+* Update dependency pyjwt to v2.5.0 ([#305](https://github.com/googleapis/java-service-management/issues/305)) ([17590c9](https://github.com/googleapis/java-service-management/commit/17590c9e5906b265173f9f6d4bc6d790dc5b16c4))
+* Update dependency requests to v2.28.1 ([#306](https://github.com/googleapis/java-service-management/issues/306)) ([47c8000](https://github.com/googleapis/java-service-management/commit/47c800066f120e4e6ac834636481645e41c6b356))
+* Update dependency typing-extensions to v4.3.0 ([#307](https://github.com/googleapis/java-service-management/issues/307)) ([eb8037c](https://github.com/googleapis/java-service-management/commit/eb8037c5425e7c39836787355c4e31f8078f0778))
+* Update dependency zipp to v3.8.1 ([#308](https://github.com/googleapis/java-service-management/issues/308)) ([c0580b8](https://github.com/googleapis/java-service-management/commit/c0580b8e8a0612ea5bf9836b2f64a1686b1e9f36))
+
 ## [3.1.5](https://github.com/googleapis/java-service-management/compare/v3.1.4...v3.1.5) (2022-09-15)
 
 

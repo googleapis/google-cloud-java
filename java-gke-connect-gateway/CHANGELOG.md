@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.6](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.4.5...v0.4.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#238](https://github.com/googleapis/java-gke-connect-gateway/issues/238)) ([652a847](https://github.com/googleapis/java-gke-connect-gateway/commit/652a8471f2e2b33d7fb46c5ce217a6be492c69f0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#242](https://github.com/googleapis/java-gke-connect-gateway/issues/242)) ([c2626f6](https://github.com/googleapis/java-gke-connect-gateway/commit/c2626f6ee0ca86cf302007896f26b8e51786f880))
+* Update dependency jeepney to v0.8.0 ([#229](https://github.com/googleapis/java-gke-connect-gateway/issues/229)) ([43025ea](https://github.com/googleapis/java-gke-connect-gateway/commit/43025ea616ce7adae53dc578cf653c4201b9e2da))
+
 ## [0.4.5](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.4.4...v0.4.5) (2022-09-15)
 
 

@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.9.6](https://github.com/googleapis/java-mediatranslation/compare/v0.9.5...v0.9.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([ee07847](https://github.com/googleapis/java-mediatranslation/commit/ee07847d9df3591ee7332c954e6057782965b199))
+
+## [0.9.5](https://github.com/googleapis/java-mediatranslation/compare/v0.9.4...v0.9.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#717](https://github.com/googleapis/java-mediatranslation/issues/717)) ([3602a30](https://github.com/googleapis/java-mediatranslation/commit/3602a3070b2c242d5106e64e4249802aa8c80eda))
+* Update dependency certifi to v2022.9.24 ([#697](https://github.com/googleapis/java-mediatranslation/issues/697)) ([8190cf0](https://github.com/googleapis/java-mediatranslation/commit/8190cf0f1d4fa4ed40d0097c49d32a23edbf5a1c))
+* Update dependency charset-normalizer to v2.1.1 ([#701](https://github.com/googleapis/java-mediatranslation/issues/701)) ([d115739](https://github.com/googleapis/java-mediatranslation/commit/d115739f9bc90fcd1d8aa0fb62959a200147a796))
+* Update dependency click to v8.1.3 ([#702](https://github.com/googleapis/java-mediatranslation/issues/702)) ([a471d1a](https://github.com/googleapis/java-mediatranslation/commit/a471d1a4df63b86eee8f14eb3fc7cf9053235de0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#722](https://github.com/googleapis/java-mediatranslation/issues/722)) ([e90d86c](https://github.com/googleapis/java-mediatranslation/commit/e90d86c34aec037c031352210e8481b75fa6e4a2))
+* Update dependency gcp-releasetool to v1.8.8 ([#698](https://github.com/googleapis/java-mediatranslation/issues/698)) ([969f8fa](https://github.com/googleapis/java-mediatranslation/commit/969f8faaf9c0c1974fb1e9d418d15e9d3a068e6b))
+* Update dependency google-api-core to v2.10.1 ([#703](https://github.com/googleapis/java-mediatranslation/issues/703)) ([4dadbe6](https://github.com/googleapis/java-mediatranslation/commit/4dadbe646aa935804164369f053af760389ad2df))
+* Update dependency google-auth to v2.12.0 ([#704](https://github.com/googleapis/java-mediatranslation/issues/704)) ([9681f63](https://github.com/googleapis/java-mediatranslation/commit/9681f63507af9208e5c1419c4325520170dcb146))
+* Update dependency google-cloud-core to v2.3.2 ([#699](https://github.com/googleapis/java-mediatranslation/issues/699)) ([a974e8f](https://github.com/googleapis/java-mediatranslation/commit/a974e8f3a493ddb44b500536da08be7e69e42505))
+* Update dependency google-cloud-storage to v2.5.0 ([#705](https://github.com/googleapis/java-mediatranslation/issues/705)) ([8db616d](https://github.com/googleapis/java-mediatranslation/commit/8db616d213b1521678efbbf101c3d43633ed0a90))
+* Update dependency google-crc32c to v1.5.0 ([#706](https://github.com/googleapis/java-mediatranslation/issues/706)) ([1231343](https://github.com/googleapis/java-mediatranslation/commit/1231343bcf518fdb4cf86c5986d25a1b074e2393))
+* Update dependency googleapis-common-protos to v1.56.4 ([#700](https://github.com/googleapis/java-mediatranslation/issues/700)) ([e0d8031](https://github.com/googleapis/java-mediatranslation/commit/e0d8031002658e9eee16c2dc44bfc9c59d400667))
+* Update dependency importlib-metadata to v4.12.0 ([#707](https://github.com/googleapis/java-mediatranslation/issues/707)) ([3c59f3a](https://github.com/googleapis/java-mediatranslation/commit/3c59f3a7eddf616b34146f151ff503de8d235f88))
+* Update dependency jeepney to v0.8.0 ([#708](https://github.com/googleapis/java-mediatranslation/issues/708)) ([68fe63f](https://github.com/googleapis/java-mediatranslation/commit/68fe63fb2d7db8da6574c67a697965d4052d4444))
+* Update dependency jinja2 to v3.1.2 ([#709](https://github.com/googleapis/java-mediatranslation/issues/709)) ([0ac5772](https://github.com/googleapis/java-mediatranslation/commit/0ac5772b838dc676f4057384946fbed8c3406da9))
+* Update dependency markupsafe to v2.1.1 ([#711](https://github.com/googleapis/java-mediatranslation/issues/711)) ([f60eccb](https://github.com/googleapis/java-mediatranslation/commit/f60eccba3c85b6f9b4fef4f4cbe2a48040c4b7c7))
+* Update dependency protobuf to v3.20.2 ([#712](https://github.com/googleapis/java-mediatranslation/issues/712)) ([b124480](https://github.com/googleapis/java-mediatranslation/commit/b1244809ec527c28527921bba3c5f41e1928e2e0))
+* Update dependency protobuf to v4 ([#718](https://github.com/googleapis/java-mediatranslation/issues/718)) ([68c6c05](https://github.com/googleapis/java-mediatranslation/commit/68c6c057b155b0b06d91b29713fbaac2b7c4f32d))
+* Update dependency pyjwt to v2.5.0 ([#713](https://github.com/googleapis/java-mediatranslation/issues/713)) ([3eb6a3d](https://github.com/googleapis/java-mediatranslation/commit/3eb6a3dbd8292d54140a03599f7c83752f570b2a))
+* Update dependency requests to v2.28.1 ([#714](https://github.com/googleapis/java-mediatranslation/issues/714)) ([e344d33](https://github.com/googleapis/java-mediatranslation/commit/e344d3361a0bdbd03cef0d53946aff7660c08857))
+* Update dependency typing-extensions to v4.3.0 ([#716](https://github.com/googleapis/java-mediatranslation/issues/716)) ([0efefa1](https://github.com/googleapis/java-mediatranslation/commit/0efefa117385a87a9737be23a0498297499a8c84))
+* Update dependency zipp to v3.8.1 ([#715](https://github.com/googleapis/java-mediatranslation/issues/715)) ([c85ed12](https://github.com/googleapis/java-mediatranslation/commit/c85ed12e0f1597056c07f5f9558877de37c23306))
+
 ## [0.9.4](https://github.com/googleapis/java-mediatranslation/compare/v0.9.3...v0.9.4) (2022-09-15)
 
 

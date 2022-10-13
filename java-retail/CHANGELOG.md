@@ -1,5 +1,53 @@
 # Changelog
 
+## [2.5.2](https://github.com/googleapis/java-retail/compare/v2.5.1...v2.5.2) (2022-10-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.0 ([#578](https://github.com/googleapis/java-retail/issues/578)) ([ebb21ca](https://github.com/googleapis/java-retail/commit/ebb21ca6bff55085fba676e2315d235a9f3d7896))
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#581](https://github.com/googleapis/java-retail/issues/581)) ([c0451a3](https://github.com/googleapis/java-retail/commit/c0451a3194ae273ea6fe133a6fa96ff953b80282))
+
+## [2.5.1](https://github.com/googleapis/java-retail/compare/v2.5.0...v2.5.1) (2022-10-03)
+
+
+### Bug Fixes
+
+* **samples:** Bug fix for removing buckets from bq. ([#548](https://github.com/googleapis/java-retail/issues/548)) ([c407fe3](https://github.com/googleapis/java-retail/commit/c407fe3581a39598d86eb968b2650c8e8f4e8063))
+* **samples:** Bug fix for setup script ([#549](https://github.com/googleapis/java-retail/issues/549)) ([abc4b3e](https://github.com/googleapis/java-retail/commit/abc4b3eab3ae664ceeb4de54b3623406aac85950))
+* **samples:** Lro added out-of-order step. ([#539](https://github.com/googleapis/java-retail/issues/539)) ([2befbb1](https://github.com/googleapis/java-retail/commit/2befbb1349131345488890ad33eb20ba91692f1b))
+* **samples:** Removed delays on LRO ([#527](https://github.com/googleapis/java-retail/issues/527)) ([934c6b4](https://github.com/googleapis/java-retail/commit/934c6b4dd259e18d1aee88abbffd4b88d1b70343))
+* **samples:** Replaced your-project-id with default. ([#541](https://github.com/googleapis/java-retail/issues/541)) ([f1b2397](https://github.com/googleapis/java-retail/commit/f1b23977282b213029533756449213d591673f62))
+* **samples:** Updating both json files. ([#540](https://github.com/googleapis/java-retail/issues/540)) ([22386d5](https://github.com/googleapis/java-retail/commit/22386d50f0cf66449236562e241bce212ada70ea))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#566](https://github.com/googleapis/java-retail/issues/566)) ([95ea349](https://github.com/googleapis/java-retail/commit/95ea3490140be099b54deaa0ff74ad4659869a92))
+* Update dependency certifi to v2022.9.24 ([#568](https://github.com/googleapis/java-retail/issues/568)) ([45253be](https://github.com/googleapis/java-retail/commit/45253be7a091375b790bb229a9ca55a65b4a3f32))
+* Update dependency charset-normalizer to v2.1.1 ([#556](https://github.com/googleapis/java-retail/issues/556)) ([f244afc](https://github.com/googleapis/java-retail/commit/f244afcf0a27c84a489ed3621201b9e18d168cdb))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.16.1 ([#542](https://github.com/googleapis/java-retail/issues/542)) ([e9e88d3](https://github.com/googleapis/java-retail/commit/e9e88d3014f1e35655b76e0f834889a37ac02f00))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#577](https://github.com/googleapis/java-retail/issues/577)) ([a963dc6](https://github.com/googleapis/java-retail/commit/a963dc6cf0b4ef93ee5bf411cf5f97a98062e633))
+* Update dependency com.google.cloud:google-cloud-storage to v2.12.0 ([#543](https://github.com/googleapis/java-retail/issues/543)) ([24386db](https://github.com/googleapis/java-retail/commit/24386db488f724d4e10965cd25605f3af2ed403a))
+* Update dependency gcp-releasetool to v1.8.8 ([#569](https://github.com/googleapis/java-retail/issues/569)) ([45a7e22](https://github.com/googleapis/java-retail/commit/45a7e22e2793aa21b9044865944e28d436cfa9d6))
+* Update dependency google-api-core to v2.10.1 ([#558](https://github.com/googleapis/java-retail/issues/558)) ([8712708](https://github.com/googleapis/java-retail/commit/8712708260b380e4856a34aa03434448190ce5dd))
+* Update dependency google-auth to v2.11.1 ([#570](https://github.com/googleapis/java-retail/issues/570)) ([0b4e3a5](https://github.com/googleapis/java-retail/commit/0b4e3a5d1b0fecdeffc9c1f160ea9b08fe220300))
+* Update dependency google-cloud-core to v2.3.2 ([#554](https://github.com/googleapis/java-retail/issues/554)) ([98db758](https://github.com/googleapis/java-retail/commit/98db758b0b9d12281b150a341790eecd4d5664a2))
+* Update dependency google-cloud-storage to v2.5.0 ([#559](https://github.com/googleapis/java-retail/issues/559)) ([01ddcf9](https://github.com/googleapis/java-retail/commit/01ddcf9b16dce0ab80430ac20938ff4b9216b382))
+* Update dependency google-crc32c to v1.5.0 ([#560](https://github.com/googleapis/java-retail/issues/560)) ([e877900](https://github.com/googleapis/java-retail/commit/e87790009c7f5b3bf131f1db04ad97713b6b6c8c))
+* Update dependency googleapis-common-protos to v1.56.4 ([#555](https://github.com/googleapis/java-retail/issues/555)) ([1cb27b3](https://github.com/googleapis/java-retail/commit/1cb27b3ee903c2104911c27217b78bd9cacea26a))
+* Update dependency importlib-metadata to v4.12.0 ([#561](https://github.com/googleapis/java-retail/issues/561)) ([9f4d04b](https://github.com/googleapis/java-retail/commit/9f4d04b23e909829b129f2acc2d6061e8894a20f))
+* Update dependency jeepney to v0.8.0 ([#571](https://github.com/googleapis/java-retail/issues/571)) ([5ca90a0](https://github.com/googleapis/java-retail/commit/5ca90a04c6f0c8de9f90675b6ef91612701a15d8))
+* Update dependency jinja2 to v3.1.2 ([#572](https://github.com/googleapis/java-retail/issues/572)) ([0cf30ee](https://github.com/googleapis/java-retail/commit/0cf30eee9ba1256164255444344b4be5d09a5143))
+* Update dependency keyring to v23.9.3 ([#573](https://github.com/googleapis/java-retail/issues/573)) ([ab772da](https://github.com/googleapis/java-retail/commit/ab772dafca75ae557b8f2558e32da6899082b2c0))
+* Update dependency markupsafe to v2.1.1 ([#553](https://github.com/googleapis/java-retail/issues/553)) ([fce0ade](https://github.com/googleapis/java-retail/commit/fce0ade246a75dc35b05e106f1b7f5aa73fc516e))
+* Update dependency protobuf to v3.20.2 ([#574](https://github.com/googleapis/java-retail/issues/574)) ([7fa228e](https://github.com/googleapis/java-retail/commit/7fa228eb669cb0b59e64ca0d2e8641e01df05a9e))
+* Update dependency protobuf to v4 ([#567](https://github.com/googleapis/java-retail/issues/567)) ([cf6be4c](https://github.com/googleapis/java-retail/commit/cf6be4ceff0cd39af95b8e0201aa1657579b21a0))
+* Update dependency pyjwt to v2.5.0 ([#562](https://github.com/googleapis/java-retail/issues/562)) ([96ec337](https://github.com/googleapis/java-retail/commit/96ec337e1ec00811b23f1f509156749d2a062301))
+* Update dependency requests to v2.28.1 ([#563](https://github.com/googleapis/java-retail/issues/563)) ([8bd27c1](https://github.com/googleapis/java-retail/commit/8bd27c1a264132f932701ae5b5f14b6540bdb8a1))
+* Update dependency typing-extensions to v4.3.0 ([#564](https://github.com/googleapis/java-retail/issues/564)) ([7c0cd75](https://github.com/googleapis/java-retail/commit/7c0cd7590d9d52acf7c82ecc1cbd8df85ba5e7ca))
+* Update dependency zipp to v3.8.1 ([#565](https://github.com/googleapis/java-retail/issues/565)) ([4c30271](https://github.com/googleapis/java-retail/commit/4c302718f919d231d02fa5415a45825aab38fe18))
+
 ## [2.5.0](https://github.com/googleapis/java-retail/compare/v2.4.0...v2.5.0) (2022-09-16)
 
 

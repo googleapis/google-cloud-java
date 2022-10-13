@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.5.6](https://github.com/googleapis/java-resourcemanager/compare/v1.5.5...v1.5.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#864](https://github.com/googleapis/java-resourcemanager/issues/864)) ([1307497](https://github.com/googleapis/java-resourcemanager/commit/1307497f7aa03fb8b64e6b3c19b37f3262880f90))
+* Update dependency certifi to v2022.9.24 ([#845](https://github.com/googleapis/java-resourcemanager/issues/845)) ([f243701](https://github.com/googleapis/java-resourcemanager/commit/f24370146f627fa6eeb87d31512ce0616a606eab))
+* Update dependency charset-normalizer to v2.1.1 ([#849](https://github.com/googleapis/java-resourcemanager/issues/849)) ([3cf47e4](https://github.com/googleapis/java-resourcemanager/commit/3cf47e41b3760c8ed49c6d296b6e23e7e2ce91f3))
+* Update dependency click to v8.1.3 ([#850](https://github.com/googleapis/java-resourcemanager/issues/850)) ([2fd0025](https://github.com/googleapis/java-resourcemanager/commit/2fd002558d59bd2ecf3a7b1b200c7cc57d7fdbf3))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#869](https://github.com/googleapis/java-resourcemanager/issues/869)) ([f4b90de](https://github.com/googleapis/java-resourcemanager/commit/f4b90de815077b2957d8f0337113acc5f5438bd8))
+* Update dependency gcp-releasetool to v1.8.8 ([#844](https://github.com/googleapis/java-resourcemanager/issues/844)) ([d088781](https://github.com/googleapis/java-resourcemanager/commit/d088781c1b3d5aefe38956e4ef17d84e0691f40c))
+* Update dependency google-api-core to v2.10.1 ([#851](https://github.com/googleapis/java-resourcemanager/issues/851)) ([7b8a7e7](https://github.com/googleapis/java-resourcemanager/commit/7b8a7e7643514d0998e86463d7602057d6dc7585))
+* Update dependency google-auth to v2.11.1 ([#846](https://github.com/googleapis/java-resourcemanager/issues/846)) ([1a3352b](https://github.com/googleapis/java-resourcemanager/commit/1a3352b13db34995720772c1dc3bb24d7f3545ab))
+* Update dependency google-auth to v2.12.0 ([#867](https://github.com/googleapis/java-resourcemanager/issues/867)) ([4ba8470](https://github.com/googleapis/java-resourcemanager/commit/4ba84703b7ed62eb04bf35097003d7b78228aea0))
+* Update dependency google-cloud-core to v2.3.2 ([#847](https://github.com/googleapis/java-resourcemanager/issues/847)) ([52b6a89](https://github.com/googleapis/java-resourcemanager/commit/52b6a8978db20b3ff050afe8528f3398c0946072))
+* Update dependency google-cloud-storage to v2.5.0 ([#852](https://github.com/googleapis/java-resourcemanager/issues/852)) ([2b7debb](https://github.com/googleapis/java-resourcemanager/commit/2b7debb9cc1bc552027f77da4180005b9dd5423a))
+* Update dependency google-crc32c to v1.5.0 ([#853](https://github.com/googleapis/java-resourcemanager/issues/853)) ([66ffd8f](https://github.com/googleapis/java-resourcemanager/commit/66ffd8fcf8ad8f0aea670714470ae71916772263))
+* Update dependency googleapis-common-protos to v1.56.4 ([#848](https://github.com/googleapis/java-resourcemanager/issues/848)) ([ec7c627](https://github.com/googleapis/java-resourcemanager/commit/ec7c6275822494ccfeb25f4ff2f5b05eedb0093a))
+* Update dependency importlib-metadata to v4.12.0 ([#854](https://github.com/googleapis/java-resourcemanager/issues/854)) ([08fd624](https://github.com/googleapis/java-resourcemanager/commit/08fd62466725d12abeb82ee90935ee3b9423b72d))
+* Update dependency jeepney to v0.8.0 ([#861](https://github.com/googleapis/java-resourcemanager/issues/861)) ([9e8ac19](https://github.com/googleapis/java-resourcemanager/commit/9e8ac1953d82ae3c96b5bc583e3f025d5101ca68))
+* Update dependency jinja2 to v3.1.2 ([#862](https://github.com/googleapis/java-resourcemanager/issues/862)) ([a8652d3](https://github.com/googleapis/java-resourcemanager/commit/a8652d3db3e82e008c1e73bedea2621e7b39e690))
+* Update dependency keyring to v23.9.3 ([#863](https://github.com/googleapis/java-resourcemanager/issues/863)) ([e63bc9b](https://github.com/googleapis/java-resourcemanager/commit/e63bc9bee09f15cd67a9d0150736249349638373))
+* Update dependency markupsafe to v2.1.1 ([#855](https://github.com/googleapis/java-resourcemanager/issues/855)) ([3035585](https://github.com/googleapis/java-resourcemanager/commit/3035585d64d09444f6e29c73f79533457d9fb78f))
+* Update dependency protobuf to v3.20.2 ([#856](https://github.com/googleapis/java-resourcemanager/issues/856)) ([fde2c62](https://github.com/googleapis/java-resourcemanager/commit/fde2c62feebaa754109f889bf2c29e1cea94161e))
+* Update dependency protobuf to v4 ([#865](https://github.com/googleapis/java-resourcemanager/issues/865)) ([7046404](https://github.com/googleapis/java-resourcemanager/commit/7046404b7ff70deb4caa501e3d6bccf71e87e0c8))
+* Update dependency pyjwt to v2.5.0 ([#857](https://github.com/googleapis/java-resourcemanager/issues/857)) ([c89e69f](https://github.com/googleapis/java-resourcemanager/commit/c89e69f04a219c279e19a7507a0c20ec8c977393))
+* Update dependency typing-extensions to v4.3.0 ([#859](https://github.com/googleapis/java-resourcemanager/issues/859)) ([cbbc3ee](https://github.com/googleapis/java-resourcemanager/commit/cbbc3ee7e8d181242f3a2d1365d59c541e1df68a))
+* Update dependency zipp to v3.8.1 ([#860](https://github.com/googleapis/java-resourcemanager/issues/860)) ([a63e32b](https://github.com/googleapis/java-resourcemanager/commit/a63e32bd23ff65d3c86eb18336a273cb1b4c5927))
+
 ## [1.5.5](https://github.com/googleapis/java-resourcemanager/compare/v1.5.4...v1.5.5) (2022-09-15)
 
 

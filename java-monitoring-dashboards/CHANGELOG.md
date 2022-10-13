@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.5.6](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.5.5...v2.5.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([fe64f03](https://github.com/googleapis/java-monitoring-dashboards/commit/fe64f0385b292cb96e69c3f1f0f32e79971a704d))
+
+## [2.5.5](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.5.4...v2.5.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#651](https://github.com/googleapis/java-monitoring-dashboards/issues/651)) ([6145ac3](https://github.com/googleapis/java-monitoring-dashboards/commit/6145ac38bfc691085bd0ad24d76b3918e1f0fdc1))
+
 ## [2.5.4](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.5.3...v2.5.4) (2022-09-15)
 
 

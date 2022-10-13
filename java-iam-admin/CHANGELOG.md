@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-iam-admin/compare/v1.2.5...v1.3.0) (2022-10-03)
+
+
+### Features
+
+* Replace java_outer_classname option with use_java_stubby_library, add DisableServiceAccountKey and EnableServiceAccountKey, and update comments ([#170](https://github.com/googleapis/java-iam-admin/issues/170)) ([9aac609](https://github.com/googleapis/java-iam-admin/commit/9aac609241998e4f4fdb5373d61f3f2d7c41e4dc))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#177](https://github.com/googleapis/java-iam-admin/issues/177)) ([14a70f1](https://github.com/googleapis/java-iam-admin/commit/14a70f15a88be6a374eb2a369d30b363c76c33b9))
+* Update dependency certifi to v2022.9.24 ([#179](https://github.com/googleapis/java-iam-admin/issues/179)) ([717d1d4](https://github.com/googleapis/java-iam-admin/commit/717d1d4a2db54db08c8937f4392174eea70aa4a8))
+* Update dependency charset-normalizer to v2.1.1 ([#183](https://github.com/googleapis/java-iam-admin/issues/183)) ([f8d5fbf](https://github.com/googleapis/java-iam-admin/commit/f8d5fbf25b2f4a6f49350ac95abbdd9a3323a6af))
+* Update dependency click to v8.1.3 ([#184](https://github.com/googleapis/java-iam-admin/issues/184)) ([3dd9f26](https://github.com/googleapis/java-iam-admin/commit/3dd9f26db47093de8ca39f17730b80164fcfad3a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#199](https://github.com/googleapis/java-iam-admin/issues/199)) ([08984e9](https://github.com/googleapis/java-iam-admin/commit/08984e95aec4cb9b82067f63cb305d3948d3199a))
+* Update dependency gcp-releasetool to v1.8.8 ([#180](https://github.com/googleapis/java-iam-admin/issues/180)) ([44f56b7](https://github.com/googleapis/java-iam-admin/commit/44f56b7644259d9a1c088dbba0cd9b115ad8d79e))
+* Update dependency google-api-core to v2.10.1 ([#185](https://github.com/googleapis/java-iam-admin/issues/185)) ([aff58c8](https://github.com/googleapis/java-iam-admin/commit/aff58c877de0ac542bb5d736b23d066e1b4d3034))
+* Update dependency google-auth to v2.12.0 ([#192](https://github.com/googleapis/java-iam-admin/issues/192)) ([77a2b4c](https://github.com/googleapis/java-iam-admin/commit/77a2b4c277b06dd4c89f9dd22a5523b66925d4ee))
+* Update dependency google-cloud-core to v2.3.2 ([#181](https://github.com/googleapis/java-iam-admin/issues/181)) ([c6d7cf3](https://github.com/googleapis/java-iam-admin/commit/c6d7cf3f57bf6016b15f7dfb07650066370d1c55))
+* Update dependency google-cloud-storage to v2.5.0 ([#193](https://github.com/googleapis/java-iam-admin/issues/193)) ([c653fd5](https://github.com/googleapis/java-iam-admin/commit/c653fd5e1703152235db82c2c3bc432ec4637e37))
+* Update dependency google-crc32c to v1.5.0 ([#194](https://github.com/googleapis/java-iam-admin/issues/194)) ([13f53b8](https://github.com/googleapis/java-iam-admin/commit/13f53b8f99b7f9a59e0675c205fcd8030508e703))
+* Update dependency googleapis-common-protos to v1.56.4 ([#182](https://github.com/googleapis/java-iam-admin/issues/182)) ([7dd0fad](https://github.com/googleapis/java-iam-admin/commit/7dd0faddae40374794eff395846fe9b9fe98bb18))
+* Update dependency importlib-metadata to v4.12.0 ([#195](https://github.com/googleapis/java-iam-admin/issues/195)) ([5b7dbd4](https://github.com/googleapis/java-iam-admin/commit/5b7dbd4e24c75776b60d777d0229b9a9e6c02346))
+* Update dependency jeepney to v0.8.0 ([#196](https://github.com/googleapis/java-iam-admin/issues/196)) ([e02b609](https://github.com/googleapis/java-iam-admin/commit/e02b60996650c2d3c261474a1ab912a95a35b9d0))
+* Update dependency jinja2 to v3.1.2 ([#186](https://github.com/googleapis/java-iam-admin/issues/186)) ([51e10e0](https://github.com/googleapis/java-iam-admin/commit/51e10e089cea3515c9441432ca2eb6894d1d833c))
+* Update dependency keyring to v23.9.3 ([#187](https://github.com/googleapis/java-iam-admin/issues/187)) ([db3f2af](https://github.com/googleapis/java-iam-admin/commit/db3f2af00d57d9048ff481953065fe59ad9b64fa))
+* Update dependency markupsafe to v2.1.1 ([#188](https://github.com/googleapis/java-iam-admin/issues/188)) ([b56cd55](https://github.com/googleapis/java-iam-admin/commit/b56cd55a933b70303777c5d6f11291e2db76ddba))
+* Update dependency protobuf to v3.20.2 ([#189](https://github.com/googleapis/java-iam-admin/issues/189)) ([210d492](https://github.com/googleapis/java-iam-admin/commit/210d492d34a5794c89ebc0dd8232523641b70e4f))
+* Update dependency protobuf to v4 ([#178](https://github.com/googleapis/java-iam-admin/issues/178)) ([5793368](https://github.com/googleapis/java-iam-admin/commit/5793368b1a55f58815e54596f2fa7aba9b5e3c2c))
+* Update dependency pyjwt to v2.5.0 ([#190](https://github.com/googleapis/java-iam-admin/issues/190)) ([23049b2](https://github.com/googleapis/java-iam-admin/commit/23049b2655468518ec1b7a97208972dc8f351768))
+* Update dependency requests to v2.28.1 ([#191](https://github.com/googleapis/java-iam-admin/issues/191)) ([8ca59d1](https://github.com/googleapis/java-iam-admin/commit/8ca59d1dc61928abf964cf9d5f805c5ddce33154))
+* Update dependency typing-extensions to v4.3.0 ([#175](https://github.com/googleapis/java-iam-admin/issues/175)) ([6e24940](https://github.com/googleapis/java-iam-admin/commit/6e2494027fda01b155193188c44d85738a119ae3))
+* Update dependency zipp to v3.8.1 ([#176](https://github.com/googleapis/java-iam-admin/issues/176)) ([ed17b74](https://github.com/googleapis/java-iam-admin/commit/ed17b74ffd3acc928560845120c8c0a4ff38843a))
+
 ## [1.2.5](https://github.com/googleapis/java-iam-admin/compare/v1.2.4...v1.2.5) (2022-09-15)
 
 

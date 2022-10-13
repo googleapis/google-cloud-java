@@ -21,6 +21,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-datastream</artifactId>
   <version>1.2.2</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:

@@ -73,6 +73,15 @@ use this Analytics Admin Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-analytics-admin/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-analytics-admin/blob/main/samples/snippets/src/main/java/com/example/analyticsadmin/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-analytics-admin&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/analyticsadmin/QuickstartSample.java) |
+
+
 
 ## Troubleshooting
 

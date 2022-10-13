@@ -11,28 +11,67 @@ Java idiomatic client for [Cloud Video Intelligence][product-docs].
 
 ## Quickstart
 
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-If you are using Maven, add this to your pom.xml file:
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>libraries-bom</artifactId>
+      <version>26.1.3</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-video-intelligence</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-storage</artifactId>
+  </dependency>
+
+```
+
+If you are using Maven without BOM, add this to your dependencies:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>2.2.12</version>
+  <version>2.2.13</version>
 </dependency>
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-storage</artifactId>
+  <version>2.13.0</version>
+</dependency>
+
 ```
 
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.1.3')
+
+implementation 'com.google.cloud:google-cloud-video-intelligence'
+```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-video-intelligence:2.2.12'
+implementation 'com.google.cloud:google-cloud-video-intelligence:2.2.13'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.2.12"
+libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.2.13"
 ```
 
 ## Authentication
@@ -68,6 +107,43 @@ use this Cloud Video Intelligence Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-video-intelligence/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Detect | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/Detect.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/Detect.java) |
+| Detect Logo | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/DetectLogo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/DetectLogo.java) |
+| Detect Logo Gcs | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/DetectLogoGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/DetectLogoGcs.java) |
+| Streaming Annotation To Storage | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingAnnotationToStorage.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingAnnotationToStorage.java) |
+| Streaming Auto Ml Action Recognition | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingAutoMlActionRecognition.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingAutoMlActionRecognition.java) |
+| Streaming Auto Ml Classification | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingAutoMlClassification.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingAutoMlClassification.java) |
+| Streaming Auto Ml Object Tracking | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingAutoMlObjectTracking.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingAutoMlObjectTracking.java) |
+| Streaming Explicit Content Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingExplicitContentDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingExplicitContentDetection.java) |
+| Streaming Label Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingLabelDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingLabelDetection.java) |
+| Streaming Object Tracking | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingObjectTracking.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingObjectTracking.java) |
+| Streaming Shot Change Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/StreamingShotChangeDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/StreamingShotChangeDetection.java) |
+| Text Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/TextDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/TextDetection.java) |
+| Track Objects | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/beta/video/TrackObjects.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/beta/video/TrackObjects.java) |
+| Detect | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/com/example/video/Detect.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/video/Detect.java) |
+| Logo Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/com/example/video/LogoDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/video/LogoDetection.java) |
+| Logo Detection Gcs | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/com/example/video/LogoDetectionGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/video/LogoDetectionGcs.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/com/example/video/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/video/QuickstartSample.java) |
+| Text Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/com/example/video/TextDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/video/TextDetection.java) |
+| Track Objects | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/com/example/video/TrackObjects.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/video/TrackObjects.java) |
+| Detect | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/Detect.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/Detect.java) |
+| Detect Faces | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/DetectFaces.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/DetectFaces.java) |
+| Detect Faces Gcs | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/DetectFacesGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/DetectFacesGcs.java) |
+| Detect Person | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/DetectPerson.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/DetectPerson.java) |
+| Detect Person Gcs | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/DetectPersonGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/DetectPersonGcs.java) |
+| Logo Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/LogoDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/LogoDetection.java) |
+| Logo Detection Gcs | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/LogoDetectionGcs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/LogoDetectionGcs.java) |
+| Quickstart Sample | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/QuickstartSample.java) |
+| Text Detection | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/TextDetection.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/TextDetection.java) |
+| Track Objects | [source code](https://github.com/googleapis/java-video-intelligence/blob/main/samples/snippets/src/main/java/video/TrackObjects.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-video-intelligence&page=editor&open_in_editor=samples/snippets/src/main/java/video/TrackObjects.java) |
 
 
 

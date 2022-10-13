@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.8](https://github.com/googleapis/java-dms/compare/v2.2.7...v2.2.8) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([89f7092](https://github.com/googleapis/java-dms/commit/89f7092967434d6f61d12c53666d44ce39c74f22))
+
+## [2.2.7](https://github.com/googleapis/java-dms/compare/v2.2.6...v2.2.7) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#295](https://github.com/googleapis/java-dms/issues/295)) ([546d822](https://github.com/googleapis/java-dms/commit/546d822e260d02a27efe4036fc07365ea4123bd0))
+
 ## [2.2.6](https://github.com/googleapis/java-dms/compare/v2.2.5...v2.2.6) (2022-09-29)
 
 
