@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-management-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+  <version>3.2.0</version><!-- {x-version-update:google-cloud-service-management:current} -->
   <name>Google Service Management API Parent</name>
   <url>https://github.com/googleapis/java-service-management</url>
   <description>
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-management</artifactId>
-        <version>3.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+        <version>3.2.0</version><!-- {x-version-update:google-cloud-service-management:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-management-v1</artifactId>
-        <version>3.1.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-management-v1:current} -->
+        <version>3.2.0</version><!-- {x-version-update:proto-google-cloud-service-management-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-management-v1</artifactId>
-        <version>3.1.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
+        <version>3.2.0</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

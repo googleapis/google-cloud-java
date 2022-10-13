@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-service-usage:2.3.7:2.3.8-SNAPSHOT
-grpc-google-cloud-service-usage-v1beta1:0.7.7:0.7.8-SNAPSHOT
-grpc-google-cloud-service-usage-v1:2.3.7:2.3.8-SNAPSHOT
-proto-google-cloud-service-usage-v1:2.3.7:2.3.8-SNAPSHOT
-proto-google-cloud-service-usage-v1beta1:0.7.7:0.7.8-SNAPSHOT
+google-cloud-service-usage:2.4.0:2.4.0
+grpc-google-cloud-service-usage-v1beta1:0.8.0:0.8.0
+grpc-google-cloud-service-usage-v1:2.4.0:2.4.0
+proto-google-cloud-service-usage-v1:2.4.0:2.4.0
+proto-google-cloud-service-usage-v1beta1:0.8.0:0.8.0
