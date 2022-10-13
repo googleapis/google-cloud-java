@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-grafeas:2.4.6:2.4.7-SNAPSHOT
+grafeas:2.4.7:2.4.8-SNAPSHOT

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managed-identities-bom</artifactId>
-  <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+  <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Managed Service for Microsoft Active Directory BOM</name>
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-managed-identities</artifactId>
-        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+        <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-managed-identities-v1</artifactId>
-        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-managed-identities-v1:current} -->
+        <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-managed-identities-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-managed-identities-v1</artifactId>
-        <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-managed-identities-v1:current} -->
+        <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-managed-identities-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

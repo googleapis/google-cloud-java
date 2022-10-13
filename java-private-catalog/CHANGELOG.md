@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.4.5](https://github.com/googleapis/java-private-catalog/compare/v0.4.4...v0.4.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([5b1906c](https://github.com/googleapis/java-private-catalog/commit/5b1906c2f50755dd42271532b3ae03809e674396))
+
+## [0.4.4](https://github.com/googleapis/java-private-catalog/compare/v0.4.3...v0.4.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#226](https://github.com/googleapis/java-private-catalog/issues/226)) ([8d182d1](https://github.com/googleapis/java-private-catalog/commit/8d182d1e8b9e08a75a4cdf5bf489d9af2d586d2a))
+* Update dependency charset-normalizer to v2.1.1 ([#230](https://github.com/googleapis/java-private-catalog/issues/230)) ([98c882d](https://github.com/googleapis/java-private-catalog/commit/98c882d0c391ed8327d27e0519ab51022c51c097))
+* Update dependency click to v8.1.3 ([#231](https://github.com/googleapis/java-private-catalog/issues/231)) ([b8f785d](https://github.com/googleapis/java-private-catalog/commit/b8f785d06896595dba5a58a291e20b97a70287a0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#251](https://github.com/googleapis/java-private-catalog/issues/251)) ([7316f04](https://github.com/googleapis/java-private-catalog/commit/7316f0426b4c7aaacc8e41e6d17c8394cf500579))
+* Update dependency gcp-releasetool to v1.8.8 ([#227](https://github.com/googleapis/java-private-catalog/issues/227)) ([b62c2fd](https://github.com/googleapis/java-private-catalog/commit/b62c2fd868e2a9694831fdc09638beb6d588f112))
+* Update dependency google-api-core to v2.10.1 ([#232](https://github.com/googleapis/java-private-catalog/issues/232)) ([2725502](https://github.com/googleapis/java-private-catalog/commit/27255024df3d6c4510e24ca1b63496ce21db6bd8))
+* Update dependency google-auth to v2.12.0 ([#233](https://github.com/googleapis/java-private-catalog/issues/233)) ([22ce809](https://github.com/googleapis/java-private-catalog/commit/22ce809a573457e1aee8a2930fb715ff1961ff54))
+* Update dependency google-cloud-core to v2.3.2 ([#228](https://github.com/googleapis/java-private-catalog/issues/228)) ([76d46a5](https://github.com/googleapis/java-private-catalog/commit/76d46a5527f46ae4e5b9d75cb70133df7367c1f5))
+* Update dependency google-cloud-storage to v2.5.0 ([#234](https://github.com/googleapis/java-private-catalog/issues/234)) ([fd5a62a](https://github.com/googleapis/java-private-catalog/commit/fd5a62ab456e2b85412f3e98cce4b1b6eb45cf55))
+* Update dependency google-crc32c to v1.5.0 ([#235](https://github.com/googleapis/java-private-catalog/issues/235)) ([a8a8a50](https://github.com/googleapis/java-private-catalog/commit/a8a8a50a63b046655632d24e1335ce91d83223b0))
+* Update dependency googleapis-common-protos to v1.56.4 ([#229](https://github.com/googleapis/java-private-catalog/issues/229)) ([7f6378a](https://github.com/googleapis/java-private-catalog/commit/7f6378a105c46fd95217d29449d948a058d2d885))
+* Update dependency importlib-metadata to v4.12.0 ([#236](https://github.com/googleapis/java-private-catalog/issues/236)) ([91eb01e](https://github.com/googleapis/java-private-catalog/commit/91eb01e025968ccf65c6364c1506ad39072b100d))
+* Update dependency jeepney to v0.8.0 ([#237](https://github.com/googleapis/java-private-catalog/issues/237)) ([8832cb3](https://github.com/googleapis/java-private-catalog/commit/8832cb3995c6acc9f33873680359ece9e7c1ccf7))
+* Update dependency jinja2 to v3.1.2 ([#238](https://github.com/googleapis/java-private-catalog/issues/238)) ([16c3033](https://github.com/googleapis/java-private-catalog/commit/16c3033a786e69ce1be55fe4803d8453231e5e5e))
+* Update dependency protobuf to v4 ([#247](https://github.com/googleapis/java-private-catalog/issues/247)) ([3a9d02c](https://github.com/googleapis/java-private-catalog/commit/3a9d02c54fb608bf27ada0465e6d460abccfc4a7))
+* Update dependency pyjwt to v2.5.0 ([#242](https://github.com/googleapis/java-private-catalog/issues/242)) ([f44a6cd](https://github.com/googleapis/java-private-catalog/commit/f44a6cdd16a6bb3fe2158b12f75afb5e49e5df8c))
+* Update dependency zipp to v3.8.1 ([#245](https://github.com/googleapis/java-private-catalog/issues/245)) ([31c3770](https://github.com/googleapis/java-private-catalog/commit/31c3770c9fa15131b0842150528b1ad4bfe4c6c8))
+
 ## [0.4.3](https://github.com/googleapis/java-private-catalog/compare/v0.4.2...v0.4.3) (2022-09-15)
 
 

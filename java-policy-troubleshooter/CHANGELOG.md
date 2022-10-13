@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.2.6](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.2.5...v1.2.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([56379be](https://github.com/googleapis/java-policy-troubleshooter/commit/56379bedeb4ebe84b4e6254d13a7a88cc30e4f49))
+
+## [1.2.5](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.2.4...v1.2.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#287](https://github.com/googleapis/java-policy-troubleshooter/issues/287)) ([d15fd12](https://github.com/googleapis/java-policy-troubleshooter/commit/d15fd121df421c0d4f41fa5e4ae5c9a0353c11ca))
+* Update dependency certifi to v2022.9.24 ([#267](https://github.com/googleapis/java-policy-troubleshooter/issues/267)) ([c3465aa](https://github.com/googleapis/java-policy-troubleshooter/commit/c3465aa9951f08d652b9d442aa98336dea902726))
+* Update dependency charset-normalizer to v2.1.1 ([#271](https://github.com/googleapis/java-policy-troubleshooter/issues/271)) ([23dd3a3](https://github.com/googleapis/java-policy-troubleshooter/commit/23dd3a3e7df8c80aa5c0d28a43d6962e544b9f2a))
+* Update dependency click to v8.1.3 ([#272](https://github.com/googleapis/java-policy-troubleshooter/issues/272)) ([ca8fc06](https://github.com/googleapis/java-policy-troubleshooter/commit/ca8fc06d0226526da366bf0bec4fc5776dee6073))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#292](https://github.com/googleapis/java-policy-troubleshooter/issues/292)) ([6ff03bd](https://github.com/googleapis/java-policy-troubleshooter/commit/6ff03bd93bd62201c1f95bbc1adcbd74c50f5872))
+* Update dependency gcp-releasetool to v1.8.8 ([#268](https://github.com/googleapis/java-policy-troubleshooter/issues/268)) ([9cf37e7](https://github.com/googleapis/java-policy-troubleshooter/commit/9cf37e714e398f30ad2411a89df33abd10b6989d))
+* Update dependency google-api-core to v2.10.1 ([#273](https://github.com/googleapis/java-policy-troubleshooter/issues/273)) ([3e64066](https://github.com/googleapis/java-policy-troubleshooter/commit/3e640666804963bbd186fb0437dd5fc03865b130))
+* Update dependency google-auth to v2.12.0 ([#274](https://github.com/googleapis/java-policy-troubleshooter/issues/274)) ([76e3c8c](https://github.com/googleapis/java-policy-troubleshooter/commit/76e3c8cd0baaeb7b075c381bf6b56486611422fb))
+* Update dependency google-cloud-core to v2.3.2 ([#269](https://github.com/googleapis/java-policy-troubleshooter/issues/269)) ([7b7edcf](https://github.com/googleapis/java-policy-troubleshooter/commit/7b7edcf99cfeaaa5961ec94b7e138668a0024535))
+* Update dependency google-cloud-storage to v2.5.0 ([#275](https://github.com/googleapis/java-policy-troubleshooter/issues/275)) ([47427e2](https://github.com/googleapis/java-policy-troubleshooter/commit/47427e2e56fae6b3000f6c998285fd589001a063))
+* Update dependency google-crc32c to v1.5.0 ([#276](https://github.com/googleapis/java-policy-troubleshooter/issues/276)) ([8d05c89](https://github.com/googleapis/java-policy-troubleshooter/commit/8d05c8909f94c49cb602c5eb019a6d4caf3fe218))
+* Update dependency googleapis-common-protos to v1.56.4 ([#270](https://github.com/googleapis/java-policy-troubleshooter/issues/270)) ([a89ccf3](https://github.com/googleapis/java-policy-troubleshooter/commit/a89ccf368af346d546e320bb99715008b731052a))
+* Update dependency importlib-metadata to v4.12.0 ([#277](https://github.com/googleapis/java-policy-troubleshooter/issues/277)) ([b64b032](https://github.com/googleapis/java-policy-troubleshooter/commit/b64b032c47d34df44825d9cd66e5c9155b41c496))
+* Update dependency jeepney to v0.8.0 ([#278](https://github.com/googleapis/java-policy-troubleshooter/issues/278)) ([6b319c4](https://github.com/googleapis/java-policy-troubleshooter/commit/6b319c4507a079c09b03ef18fe8841be6b476e98))
+* Update dependency jinja2 to v3.1.2 ([#279](https://github.com/googleapis/java-policy-troubleshooter/issues/279)) ([d89fd4e](https://github.com/googleapis/java-policy-troubleshooter/commit/d89fd4ef5ccae9b2b18fe82903edc73442537cc2))
+* Update dependency keyring to v23.9.3 ([#280](https://github.com/googleapis/java-policy-troubleshooter/issues/280)) ([6974bd9](https://github.com/googleapis/java-policy-troubleshooter/commit/6974bd99f3646a7b88557bab993daa1952176d6b))
+* Update dependency protobuf to v4 ([#288](https://github.com/googleapis/java-policy-troubleshooter/issues/288)) ([a021774](https://github.com/googleapis/java-policy-troubleshooter/commit/a0217748981c44ef6cd834441cf7ebf6cbc6707e))
+* Update dependency pyjwt to v2.5.0 ([#283](https://github.com/googleapis/java-policy-troubleshooter/issues/283)) ([e6816f8](https://github.com/googleapis/java-policy-troubleshooter/commit/e6816f82bb3cf1c6222d239b92110d2100228835))
+* Update dependency typing-extensions to v4.3.0 ([#285](https://github.com/googleapis/java-policy-troubleshooter/issues/285)) ([16fb747](https://github.com/googleapis/java-policy-troubleshooter/commit/16fb747c8d9f55c2f62e5bb0fd5a4e6b0a3ed46c))
+* Update dependency zipp to v3.8.1 ([#286](https://github.com/googleapis/java-policy-troubleshooter/issues/286)) ([7e4f401](https://github.com/googleapis/java-policy-troubleshooter/commit/7e4f401dca9cb01a1677fad362b0565e01ec2dd3))
+
 ## [1.2.4](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.2.3...v1.2.4) (2022-09-15)
 
 

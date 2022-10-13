@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.2](https://github.com/googleapis/java-bigquerymigration/compare/v0.6.1...v0.6.2) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([556690c](https://github.com/googleapis/java-bigquerymigration/commit/556690c4c18612e2e0b4fcd8e3ed213dc6a674e0))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#172](https://github.com/googleapis/java-bigquerymigration/issues/172)) ([f1d1040](https://github.com/googleapis/java-bigquerymigration/commit/f1d104003fbada0f9e8cc5135d537639d826f6ef))
+
 ## [0.6.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.6.0...v0.6.1) (2022-09-27)
 
 

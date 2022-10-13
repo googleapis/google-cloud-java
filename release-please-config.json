@@ -12,6 +12,10 @@
       "component": "google-cloud-jar-parent",
       "skip-github-release": true
     },
+    "google-cloud-pom-parent": {
+      "component": "google-cloud-pom-parent",
+      "skip-github-release": true
+    },
     "java-accessapproval": {
       "component": "google-cloud-accessapproval",
       "skip-github-release": true
@@ -30,6 +34,10 @@
     },
     "java-analytics-data": {
       "component": "google-analytics-data",
+      "skip-github-release": true
+    },
+    "java-analyticshub": {
+      "component": "google-cloud-analyticshub",
       "skip-github-release": true
     },
     "java-api-gateway": {

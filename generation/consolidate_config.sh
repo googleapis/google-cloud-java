@@ -9,8 +9,8 @@ set -e
 function runRegexOnPoms {
   perl_command=$1
   search=$2
-  for pomFile in $(find . -mindepth 2 -maxdepth 3 -name pom.xml | sort ); do
-    if [[ $pomFile =~ .*google-cloud-jar-parent.* ]]; then
+  for pomFile in $(find . -mindepth 2 -maxdepth 3 -name pom.xml |sort --dictionary-order); do
+    if [[ $pomFile =~ .*google-cloud-jar-parent.* ]] || [[ $pomFile =~ .*google-cloud-pom-parent.* ]]; then
       continue
     fi
 

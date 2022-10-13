@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.2](https://github.com/googleapis/java-batch/compare/v0.3.1...v0.3.2) (2022-10-03)
+
+
+### Documentation
+
+* **samples:** Added basic samples and tests ([#43](https://github.com/googleapis/java-batch/issues/43)) ([62bdc9a](https://github.com/googleapis/java-batch/commit/62bdc9a31d657818110b9d2f4560ee391fd27942))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#77](https://github.com/googleapis/java-batch/issues/77)) ([bf0394e](https://github.com/googleapis/java-batch/commit/bf0394e4a45eaf3a966f7840a69afe0d44faad0a))
+* Update dependency google-resumable-media to v2.4.0 ([#74](https://github.com/googleapis/java-batch/issues/74)) ([b05cbba](https://github.com/googleapis/java-batch/commit/b05cbbaa3b28016d0d5f90f2b18d358f2d3bb535))
+* Update dependency protobuf to v3.20.3 ([#75](https://github.com/googleapis/java-batch/issues/75)) ([9d639bc](https://github.com/googleapis/java-batch/commit/9d639bc48ecfe9bc278e56574207e9745dc8eea5))
+
 ## [0.3.1](https://github.com/googleapis/java-batch/compare/v0.3.0...v0.3.1) (2022-09-28)
 
 

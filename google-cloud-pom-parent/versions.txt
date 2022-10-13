@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:0.0.0:1.0.0-SNAPSHOT
+google-cloud-pom-parent:0.0.0:1.0.0-SNAPSHOT

@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.0.8](https://github.com/googleapis/java-dataproc/compare/v4.0.7...v4.0.8) (2022-10-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#955](https://github.com/googleapis/java-dataproc/issues/955)) ([1e7e031](https://github.com/googleapis/java-dataproc/commit/1e7e0314992012a0c0639003c552f8d78e6a63af))
+
+## [4.0.7](https://github.com/googleapis/java-dataproc/compare/v4.0.6...v4.0.7) (2022-10-05)
+
+
+### Documentation
+
+* [owlbot-java] samples do not need deploy plugin and deps upgrade ([#1583](https://github.com/googleapis/java-dataproc/issues/1583)) ([#926](https://github.com/googleapis/java-dataproc/issues/926)) ([3395143](https://github.com/googleapis/java-dataproc/commit/339514326c8ae8469cbe69ca9271ae4ff3b80e1b))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#952](https://github.com/googleapis/java-dataproc/issues/952)) ([42e0c36](https://github.com/googleapis/java-dataproc/commit/42e0c364ee0fb7705ff6246b99b064a17d85f6ed))
+
 ## [4.0.6](https://github.com/googleapis/java-dataproc/compare/v4.0.5...v4.0.6) (2022-09-21)
 
 

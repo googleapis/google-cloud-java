@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-container/compare/v2.5.2...v2.6.0) (2022-10-04)
+
+
+### Features
+
+* added High Throughput Logging API for Google Kubernetes Engine ([144a9ee](https://github.com/googleapis/java-container/commit/144a9ee5f035d5d9c0bc73d5f9712fe30e3ba8e7))
+* Added High Throughput Logging API for Google Kubernetes Engine ([#780](https://github.com/googleapis/java-container/issues/780)) ([144a9ee](https://github.com/googleapis/java-container/commit/144a9ee5f035d5d9c0bc73d5f9712fe30e3ba8e7))
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([cbba028](https://github.com/googleapis/java-container/commit/cbba02878516184d91d8c5f85ca927026b80a7ed))
+
+
+### Documentation
+
+* missing period in description for min CPU platform ([144a9ee](https://github.com/googleapis/java-container/commit/144a9ee5f035d5d9c0bc73d5f9712fe30e3ba8e7))
+* missing period in description for min CPU platform ([144a9ee](https://github.com/googleapis/java-container/commit/144a9ee5f035d5d9c0bc73d5f9712fe30e3ba8e7))
+* ReservationAffinity key field docs incorrect ([144a9ee](https://github.com/googleapis/java-container/commit/144a9ee5f035d5d9c0bc73d5f9712fe30e3ba8e7))
+* ReservationAffinity key field docs incorrect ([144a9ee](https://github.com/googleapis/java-container/commit/144a9ee5f035d5d9c0bc73d5f9712fe30e3ba8e7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#819](https://github.com/googleapis/java-container/issues/819)) ([e2f3a0c](https://github.com/googleapis/java-container/commit/e2f3a0c2742dc4baf4d3bea03794be354c340aa0))
+* Update dependency protobuf to v3.20.3 ([#818](https://github.com/googleapis/java-container/issues/818)) ([6897c90](https://github.com/googleapis/java-container/commit/6897c906a5d2a6abb76acadc0cf7a6a7c8970b01))
+
 ## [2.5.2](https://github.com/googleapis/java-container/compare/v2.5.1...v2.5.2) (2022-09-16)
 
 

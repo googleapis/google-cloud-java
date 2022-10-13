@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.2.6](https://github.com/googleapis/java-webrisk/compare/v2.2.5...v2.2.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2d05be7](https://github.com/googleapis/java-webrisk/commit/2d05be766702baa05fd46f27ea2e1554bc39c2fd))
+
+## [2.2.5](https://github.com/googleapis/java-webrisk/compare/v2.2.4...v2.2.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#713](https://github.com/googleapis/java-webrisk/issues/713)) ([8792308](https://github.com/googleapis/java-webrisk/commit/879230866e3fab23c396fca92af252860cddab92))
+* Update dependency click to v8.1.3 ([#714](https://github.com/googleapis/java-webrisk/issues/714)) ([4379187](https://github.com/googleapis/java-webrisk/commit/43791879eaf8b0df4278578d85bda6331a039097))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#727](https://github.com/googleapis/java-webrisk/issues/727)) ([9e60a09](https://github.com/googleapis/java-webrisk/commit/9e60a0932473c265e59e75428da7d8c0a6286339))
+* Update dependency google-api-core to v2.10.1 ([#715](https://github.com/googleapis/java-webrisk/issues/715)) ([3cd4399](https://github.com/googleapis/java-webrisk/commit/3cd439949d9c13164dcd1764f0b923142eae5d1d))
+* Update dependency google-cloud-core to v2.3.2 ([#711](https://github.com/googleapis/java-webrisk/issues/711)) ([f51b7e0](https://github.com/googleapis/java-webrisk/commit/f51b7e0f49fde201afde44104a4bbbbe539bae71))
+* Update dependency google-cloud-storage to v2.5.0 ([#716](https://github.com/googleapis/java-webrisk/issues/716)) ([4f4b143](https://github.com/googleapis/java-webrisk/commit/4f4b143ac6a7f042fe8f0550212b827344d53656))
+* Update dependency google-crc32c to v1.5.0 ([#717](https://github.com/googleapis/java-webrisk/issues/717)) ([6841701](https://github.com/googleapis/java-webrisk/commit/68417011516a330a8da165e6194e78d92b4681f6))
+* Update dependency googleapis-common-protos to v1.56.4 ([#712](https://github.com/googleapis/java-webrisk/issues/712)) ([c977eab](https://github.com/googleapis/java-webrisk/commit/c977eab19caafb68306a7d5b967a5f49ec61cbc1))
+* Update dependency markupsafe to v2.1.1 ([#718](https://github.com/googleapis/java-webrisk/issues/718)) ([e7075e2](https://github.com/googleapis/java-webrisk/commit/e7075e23d61d2a94671524ee83de09b49aab0e57))
+* Update dependency protobuf to v3.20.2 ([#719](https://github.com/googleapis/java-webrisk/issues/719)) ([7f72d19](https://github.com/googleapis/java-webrisk/commit/7f72d1983ca5ae63ccc1f0d03216292f641230d3))
+
 ## [2.2.4](https://github.com/googleapis/java-webrisk/compare/v2.2.3...v2.2.4) (2022-09-15)
 
 

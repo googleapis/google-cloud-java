@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.4.6](https://github.com/googleapis/java-talent/compare/v2.4.5...v2.4.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([63dbf29](https://github.com/googleapis/java-talent/commit/63dbf29c2333b44f9d29b065f8888f081efd4e80))
+
+## [2.4.5](https://github.com/googleapis/java-talent/compare/v2.4.4...v2.4.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#841](https://github.com/googleapis/java-talent/issues/841)) ([18e85c4](https://github.com/googleapis/java-talent/commit/18e85c4bb512ae0e1f56a84c63ff93556cb847bc))
+* Update dependency charset-normalizer to v2.1.1 ([#845](https://github.com/googleapis/java-talent/issues/845)) ([978e0ed](https://github.com/googleapis/java-talent/commit/978e0ed48fcebc258bcefd1d2968cc45836863f7))
+* Update dependency click to v8.1.3 ([#846](https://github.com/googleapis/java-talent/issues/846)) ([b6faeaa](https://github.com/googleapis/java-talent/commit/b6faeaa9832d025c0e19649e3bdc29757e3d1db8))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#866](https://github.com/googleapis/java-talent/issues/866)) ([b6c1fa1](https://github.com/googleapis/java-talent/commit/b6c1fa1b6c39b2df297ac047bb2ec6e1d752d579))
+* Update dependency gcp-releasetool to v1.8.8 ([#842](https://github.com/googleapis/java-talent/issues/842)) ([a99dade](https://github.com/googleapis/java-talent/commit/a99dade46b1148d6349b8fa12b9ecda9241d18c9))
+* Update dependency google-api-core to v2.10.1 ([#847](https://github.com/googleapis/java-talent/issues/847)) ([8b5cd96](https://github.com/googleapis/java-talent/commit/8b5cd965a57aab0484fb06dc529eedc4a5108ed5))
+* Update dependency google-auth to v2.12.0 ([#848](https://github.com/googleapis/java-talent/issues/848)) ([6b753c6](https://github.com/googleapis/java-talent/commit/6b753c6caf2acd9715e556b613c5ae9088506aa3))
+* Update dependency google-cloud-core to v2.3.2 ([#843](https://github.com/googleapis/java-talent/issues/843)) ([f41762f](https://github.com/googleapis/java-talent/commit/f41762f4980ef6239c0be1358cad3624c6b100b6))
+* Update dependency google-cloud-storage to v2.5.0 ([#849](https://github.com/googleapis/java-talent/issues/849)) ([6c5a1f6](https://github.com/googleapis/java-talent/commit/6c5a1f6373edf58b9e693ef00084fe89db0c6cdf))
+* Update dependency googleapis-common-protos to v1.56.4 ([#844](https://github.com/googleapis/java-talent/issues/844)) ([180d97b](https://github.com/googleapis/java-talent/commit/180d97b04f551abec43dfa39f0f2a510bbe46fe8))
+* Update dependency importlib-metadata to v4.12.0 ([#851](https://github.com/googleapis/java-talent/issues/851)) ([62289d0](https://github.com/googleapis/java-talent/commit/62289d0b2ae13c022bec124053ad9ce553d2e034))
+* Update dependency jeepney to v0.8.0 ([#852](https://github.com/googleapis/java-talent/issues/852)) ([bfcd7c3](https://github.com/googleapis/java-talent/commit/bfcd7c3537596b58e78439a516073bb3a9dfa164))
+
 ## [2.4.4](https://github.com/googleapis/java-talent/compare/v2.4.3...v2.4.4) (2022-09-15)
 
 

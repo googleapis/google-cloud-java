@@ -63,9 +63,8 @@ done
 # cwd: monorepo/google-cloud-java
 echo "Working directory: $(pwd)"
 
-cp ../../../license-checks.xml .
-cp ../../../java.header .
 cp -R ../../../google-cloud-jar-parent google-cloud-jar-parent
+cp -R ../../../google-cloud-pom-parent google-cloud-pom-parent
 
 git add --all
 git commit -m 'chore: add template files'

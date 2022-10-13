@@ -70,6 +70,20 @@ use this Cloud Tasks Client Library.
 
 
 
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-tasks/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Tasks Sample Application | [source code](https://github.com/googleapis/java-tasks/blob/main/samples/native-image-sample/src/main/java/com/example/tasks/TasksSampleApplication.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-tasks&page=editor&open_in_editor=samples/native-image-sample/src/main/java/com/example/tasks/TasksSampleApplication.java) |
+| Create Http Task | [source code](https://github.com/googleapis/java-tasks/blob/main/samples/snippets/src/main/java/com/example/task/CreateHttpTask.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-tasks&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/task/CreateHttpTask.java) |
+| Create Http Task With Token | [source code](https://github.com/googleapis/java-tasks/blob/main/samples/snippets/src/main/java/com/example/task/CreateHttpTaskWithToken.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-tasks&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/task/CreateHttpTaskWithToken.java) |
+| Create Queue | [source code](https://github.com/googleapis/java-tasks/blob/main/samples/snippets/src/main/java/com/example/task/CreateQueue.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-tasks&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/task/CreateQueue.java) |
+| Delete Queue | [source code](https://github.com/googleapis/java-tasks/blob/main/samples/snippets/src/main/java/com/example/task/DeleteQueue.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-tasks&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/task/DeleteQueue.java) |
+| List Queues | [source code](https://github.com/googleapis/java-tasks/blob/main/samples/snippets/src/main/java/com/example/task/ListQueues.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-tasks&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/task/ListQueues.java) |
+
+
 
 ## Troubleshooting
 

@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.6](https://github.com/googleapis/java-orchestration-airflow/compare/v1.3.5...v1.3.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([668990c](https://github.com/googleapis/java-orchestration-airflow/commit/668990c4e5d67a200386531f1d07ed10560c2e98))
+
+## [1.3.5](https://github.com/googleapis/java-orchestration-airflow/compare/v1.3.4...v1.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#264](https://github.com/googleapis/java-orchestration-airflow/issues/264)) ([87a9cd3](https://github.com/googleapis/java-orchestration-airflow/commit/87a9cd3c8a461416ab8fc16fb5554f2bfcf207b8))
+* Update dependency google-crc32c to v1.5.0 ([#258](https://github.com/googleapis/java-orchestration-airflow/issues/258)) ([36e1892](https://github.com/googleapis/java-orchestration-airflow/commit/36e1892698b348fa04d1206ec74a89ecade6db38))
+* Update dependency importlib-metadata to v4.12.0 ([#259](https://github.com/googleapis/java-orchestration-airflow/issues/259)) ([75101fc](https://github.com/googleapis/java-orchestration-airflow/commit/75101fcdd64a75c0349185954627d901ab8bbeda))
+* Update dependency jeepney to v0.8.0 ([#260](https://github.com/googleapis/java-orchestration-airflow/issues/260)) ([8e5ba73](https://github.com/googleapis/java-orchestration-airflow/commit/8e5ba73b133a983d5855999942e9a8f4a72d1601))
+* Update dependency protobuf to v4 ([#261](https://github.com/googleapis/java-orchestration-airflow/issues/261)) ([8f15254](https://github.com/googleapis/java-orchestration-airflow/commit/8f1525468e3fe68273907bbaaf3559183a3a0d45))
+
 ## [1.3.4](https://github.com/googleapis/java-orchestration-airflow/compare/v1.3.3...v1.3.4) (2022-09-15)
 
 

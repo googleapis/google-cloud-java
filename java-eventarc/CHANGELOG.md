@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.3.8](https://github.com/googleapis/java-eventarc/compare/v1.3.7...v1.3.8) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([02d0f40](https://github.com/googleapis/java-eventarc/commit/02d0f4048182990c4ce8213cf0442b853fcc294c))
+
+## [1.3.7](https://github.com/googleapis/java-eventarc/compare/v1.3.6...v1.3.7) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#255](https://github.com/googleapis/java-eventarc/issues/255)) ([a7ccd09](https://github.com/googleapis/java-eventarc/commit/a7ccd090c29ae00c5cc5a3cce8e094c3a6648a4c))
+* Update dependency certifi to v2022.9.24 ([#235](https://github.com/googleapis/java-eventarc/issues/235)) ([ff72557](https://github.com/googleapis/java-eventarc/commit/ff72557aba3cf11a90f57bda1af7726e3d9fddf5))
+* Update dependency charset-normalizer to v2.1.1 ([#239](https://github.com/googleapis/java-eventarc/issues/239)) ([018d0be](https://github.com/googleapis/java-eventarc/commit/018d0be11f3c1d26e9b70a854f8859510c26543b))
+* Update dependency click to v8.1.3 ([#240](https://github.com/googleapis/java-eventarc/issues/240)) ([87dafd1](https://github.com/googleapis/java-eventarc/commit/87dafd16731759b4f2212fab7bb4587a7eb30021))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#260](https://github.com/googleapis/java-eventarc/issues/260)) ([7c07579](https://github.com/googleapis/java-eventarc/commit/7c075797882e364b672674a35c91b2c2a4b82fac))
+* Update dependency gcp-releasetool to v1.8.8 ([#236](https://github.com/googleapis/java-eventarc/issues/236)) ([d63e828](https://github.com/googleapis/java-eventarc/commit/d63e82825c9a675b5272e47851e9cee53845313b))
+* Update dependency google-api-core to v2.10.1 ([#241](https://github.com/googleapis/java-eventarc/issues/241)) ([7681082](https://github.com/googleapis/java-eventarc/commit/7681082ddb5129b568508c45cd2a1aa4cf4d1318))
+* Update dependency google-auth to v2.12.0 ([#242](https://github.com/googleapis/java-eventarc/issues/242)) ([8475a1f](https://github.com/googleapis/java-eventarc/commit/8475a1f0f118da32a918e5cbbdea3f8e9a30bdac))
+* Update dependency google-cloud-storage to v2.5.0 ([#243](https://github.com/googleapis/java-eventarc/issues/243)) ([11132cf](https://github.com/googleapis/java-eventarc/commit/11132cfb2f338b3a0ca3caf8dd640c16bcd3093e))
+* Update dependency google-crc32c to v1.5.0 ([#244](https://github.com/googleapis/java-eventarc/issues/244)) ([8374613](https://github.com/googleapis/java-eventarc/commit/83746132a913f40f5b34121aee6220e4268dc3c1))
+* Update dependency googleapis-common-protos to v1.56.4 ([#238](https://github.com/googleapis/java-eventarc/issues/238)) ([54883de](https://github.com/googleapis/java-eventarc/commit/54883de6fcc90e031a2408d6f4159e4c7bcacb85))
+* Update dependency importlib-metadata to v4.12.0 ([#247](https://github.com/googleapis/java-eventarc/issues/247)) ([bbea803](https://github.com/googleapis/java-eventarc/commit/bbea80375400601afb2bd2b0aab8bfb258655611))
+* Update dependency jeepney to v0.8.0 ([#248](https://github.com/googleapis/java-eventarc/issues/248)) ([e0c1f14](https://github.com/googleapis/java-eventarc/commit/e0c1f14f320a5eda6af9f50b3ca022d95021cc2f))
+* Update dependency jinja2 to v3.1.2 ([#249](https://github.com/googleapis/java-eventarc/issues/249)) ([7df2faf](https://github.com/googleapis/java-eventarc/commit/7df2fafcc19f37174b0e40fcb0c0487d9345fc4f))
+* Update dependency keyring to v23.9.3 ([#250](https://github.com/googleapis/java-eventarc/issues/250)) ([4595a9a](https://github.com/googleapis/java-eventarc/commit/4595a9a8f4b62f7f6511f8413c29f9eb40381893))
+* Update dependency markupsafe to v2.1.1 ([#245](https://github.com/googleapis/java-eventarc/issues/245)) ([e2f6f88](https://github.com/googleapis/java-eventarc/commit/e2f6f888b78807af7230bc4adfcf2bbff5cdcfea))
+* Update dependency protobuf to v4 ([#256](https://github.com/googleapis/java-eventarc/issues/256)) ([24e0518](https://github.com/googleapis/java-eventarc/commit/24e051834c3bf258f88b6190ca9ae688d75e5346))
+* Update dependency pyjwt to v2.5.0 ([#251](https://github.com/googleapis/java-eventarc/issues/251)) ([15dbd42](https://github.com/googleapis/java-eventarc/commit/15dbd4209dc163ca395a7b32ebdf97b6fb1b2e2a))
+* Update dependency requests to v2.28.1 ([#252](https://github.com/googleapis/java-eventarc/issues/252)) ([937802f](https://github.com/googleapis/java-eventarc/commit/937802f140e5db573c440f015d2976c06e495212))
+* Update dependency typing-extensions to v4.3.0 ([#253](https://github.com/googleapis/java-eventarc/issues/253)) ([852a2fa](https://github.com/googleapis/java-eventarc/commit/852a2faec81e3179bd79a5381637d9366e9582ff))
+* Update dependency zipp to v3.8.1 ([#254](https://github.com/googleapis/java-eventarc/issues/254)) ([cdab8ad](https://github.com/googleapis/java-eventarc/commit/cdab8ad432a50b576e1fccce0c769ecfca7d847f))
+
 ## [1.3.6](https://github.com/googleapis/java-eventarc/compare/v1.3.5...v1.3.6) (2022-09-15)
 
 

@@ -1,5 +1,46 @@
 # Changelog
 
+## [1.2.8](https://github.com/googleapis/java-binary-authorization/compare/v1.2.7...v1.2.8) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([7e92fc0](https://github.com/googleapis/java-binary-authorization/commit/7e92fc0b28f5b1bbf52e070e17431fb91d1666e8))
+
+
+### Documentation
+
+* [owlbot-java] samples do not need deploy plugin and deps upgrade ([#1583](https://github.com/googleapis/java-binary-authorization/issues/1583)) ([#273](https://github.com/googleapis/java-binary-authorization/issues/273)) ([20c56f3](https://github.com/googleapis/java-binary-authorization/commit/20c56f386d5516848c662473a377af35b8eb4930))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#296](https://github.com/googleapis/java-binary-authorization/issues/296)) ([99775f2](https://github.com/googleapis/java-binary-authorization/commit/99775f2926da14724916464a2eb284fb188e17cf))
+* Update dependency certifi to v2022.9.24 ([#276](https://github.com/googleapis/java-binary-authorization/issues/276)) ([1640a69](https://github.com/googleapis/java-binary-authorization/commit/1640a694e1a93626b84746ffd3064abdd2a13e03))
+* Update dependency charset-normalizer to v2.1.1 ([#280](https://github.com/googleapis/java-binary-authorization/issues/280)) ([2e3f88a](https://github.com/googleapis/java-binary-authorization/commit/2e3f88acbb06f8a85486c33b260d75477f41a200))
+* Update dependency click to v8.1.3 ([#281](https://github.com/googleapis/java-binary-authorization/issues/281)) ([06784ed](https://github.com/googleapis/java-binary-authorization/commit/06784edc130cb1c12ba332c015cc3bc91bb94449))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#303](https://github.com/googleapis/java-binary-authorization/issues/303)) ([30f22c2](https://github.com/googleapis/java-binary-authorization/commit/30f22c2a2eee01a07c49b6c4063c0b0fb51d8c76))
+* Update dependency gcp-releasetool to v1.8.8 ([#277](https://github.com/googleapis/java-binary-authorization/issues/277)) ([628c44f](https://github.com/googleapis/java-binary-authorization/commit/628c44f5cd15373234fc9e74a24508b8c754bd38))
+* Update dependency google-api-core to v2.10.1 ([#282](https://github.com/googleapis/java-binary-authorization/issues/282)) ([8991507](https://github.com/googleapis/java-binary-authorization/commit/89915070e073b8b190871f9277b14aa9a83aff1a))
+* Update dependency google-auth to v2.12.0 ([#283](https://github.com/googleapis/java-binary-authorization/issues/283)) ([21a18c3](https://github.com/googleapis/java-binary-authorization/commit/21a18c3bdf9c3d8cb7b9373fb90bc877c7bc460b))
+* Update dependency google-cloud-core to v2.3.2 ([#278](https://github.com/googleapis/java-binary-authorization/issues/278)) ([7798d5b](https://github.com/googleapis/java-binary-authorization/commit/7798d5b247e4ce33234c3b021cd6f90bae0dab90))
+* Update dependency google-cloud-storage to v2.5.0 ([#284](https://github.com/googleapis/java-binary-authorization/issues/284)) ([9db78e3](https://github.com/googleapis/java-binary-authorization/commit/9db78e36ff0ec71f55c3a461d67ec88dc7438e2c))
+* Update dependency google-crc32c to v1.5.0 ([#285](https://github.com/googleapis/java-binary-authorization/issues/285)) ([11256f6](https://github.com/googleapis/java-binary-authorization/commit/11256f60434380193875a9de6a36175bb387963c))
+* Update dependency google-resumable-media to v2.4.0 ([#299](https://github.com/googleapis/java-binary-authorization/issues/299)) ([12ddbb9](https://github.com/googleapis/java-binary-authorization/commit/12ddbb97f55f9fbec37b40caa20c0ece53d1d177))
+* Update dependency googleapis-common-protos to v1.56.4 ([#279](https://github.com/googleapis/java-binary-authorization/issues/279)) ([9709b14](https://github.com/googleapis/java-binary-authorization/commit/9709b14bcabc8ef5283c9d902bfa54fb92f7bbf1))
+* Update dependency importlib-metadata to v4.12.0 ([#286](https://github.com/googleapis/java-binary-authorization/issues/286)) ([f51db10](https://github.com/googleapis/java-binary-authorization/commit/f51db100aa1becd3b3860dba462add09887f3dbb))
+* Update dependency jeepney to v0.8.0 ([#287](https://github.com/googleapis/java-binary-authorization/issues/287)) ([b951c37](https://github.com/googleapis/java-binary-authorization/commit/b951c37239b55920bfd89dedb96af7b1397a4caa))
+* Update dependency jinja2 to v3.1.2 ([#288](https://github.com/googleapis/java-binary-authorization/issues/288)) ([ffd2347](https://github.com/googleapis/java-binary-authorization/commit/ffd2347ba6a157110d0c4925df8979840ffc7197))
+* Update dependency keyring to v23.9.3 ([#289](https://github.com/googleapis/java-binary-authorization/issues/289)) ([7078803](https://github.com/googleapis/java-binary-authorization/commit/7078803a0cde79de542d292574aac2677835bae2))
+* Update dependency markupsafe to v2.1.1 ([#290](https://github.com/googleapis/java-binary-authorization/issues/290)) ([5469e46](https://github.com/googleapis/java-binary-authorization/commit/5469e46df1ac140ca4d308eeb43bfb41d341a72a))
+* Update dependency protobuf to v3.20.2 ([#291](https://github.com/googleapis/java-binary-authorization/issues/291)) ([9644c7f](https://github.com/googleapis/java-binary-authorization/commit/9644c7f679a786aaea6686eaf219142003f1ea11))
+* Update dependency protobuf to v3.20.3 ([#300](https://github.com/googleapis/java-binary-authorization/issues/300)) ([a5b20f7](https://github.com/googleapis/java-binary-authorization/commit/a5b20f7364ccf3e4c91bd86efd55c4e5b6eb15c7))
+* Update dependency protobuf to v4 ([#297](https://github.com/googleapis/java-binary-authorization/issues/297)) ([bc3ba5f](https://github.com/googleapis/java-binary-authorization/commit/bc3ba5f176dec003fe555becd1bce6e2cc415c29))
+* Update dependency pyjwt to v2.5.0 ([#292](https://github.com/googleapis/java-binary-authorization/issues/292)) ([5716f17](https://github.com/googleapis/java-binary-authorization/commit/5716f177c2f26190ec9ca6c6ccd0a321a75b553d))
+* Update dependency requests to v2.28.1 ([#293](https://github.com/googleapis/java-binary-authorization/issues/293)) ([9212623](https://github.com/googleapis/java-binary-authorization/commit/92126233c88c5d993c9d1b1402f103c65c3cb2bd))
+* Update dependency typing-extensions to v4.3.0 ([#294](https://github.com/googleapis/java-binary-authorization/issues/294)) ([496eed2](https://github.com/googleapis/java-binary-authorization/commit/496eed218c7fa57b1007e9f4c3977ea04d2f2bde))
+* Update dependency zipp to v3.8.1 ([#295](https://github.com/googleapis/java-binary-authorization/issues/295)) ([43a78ce](https://github.com/googleapis/java-binary-authorization/commit/43a78ce22a83ec39cdeca08d73be79bfd00c28fc))
+
 ## [1.2.7](https://github.com/googleapis/java-binary-authorization/compare/v1.2.6...v1.2.7) (2022-09-20)
 
 

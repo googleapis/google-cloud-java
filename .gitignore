@@ -15,6 +15,8 @@ sdist/
 *.egg
 MANIFEST
 
+.flattened-pom.xml
+
 # Python utilities
 __pycache__/
 *.py[cod]
@@ -56,4 +58,3 @@ generation/new_client/workspace
 
 # Monorepo repository generation
 monorepo
-

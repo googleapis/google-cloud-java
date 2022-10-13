@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommender-bom</artifactId>
-  <version>2.5.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
+  <version>2.5.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Cloud Recommender BOM</name>
@@ -24,27 +24,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recommender</artifactId>
-        <version>2.5.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
+        <version>2.5.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recommender-v1</artifactId>
-        <version>2.5.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommender-v1:current} -->
+        <version>2.5.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommender-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recommender-v1beta1</artifactId>
-        <version>0.17.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommender-v1beta1:current} -->
+        <version>0.17.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommender-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommender-v1</artifactId>
-        <version>2.5.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1:current} -->
+        <version>2.5.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommender-v1beta1</artifactId>
-        <version>0.17.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
+        <version>0.17.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

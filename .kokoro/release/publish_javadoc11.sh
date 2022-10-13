@@ -53,8 +53,7 @@ if [[ -z "${module_list}" ]]; then
 else
   modules=($(echo "${module_list}" | tr ',' ' '))
 fi
-
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 failed_modules=()
 
 for module in "${modules[@]}"; do

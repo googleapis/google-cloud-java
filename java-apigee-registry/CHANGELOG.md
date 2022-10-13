@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-apigee-registry/compare/v0.3.0...v0.3.1) (2022-10-03)
+
+
+### Bug Fixes
+
+* Additional error codes added to service configuration for retry ([#39](https://github.com/googleapis/java-apigee-registry/issues/39)) ([a884213](https://github.com/googleapis/java-apigee-registry/commit/a88421384ea41c8cbcfb9170e2d504eeb7a1274f))
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#48](https://github.com/googleapis/java-apigee-registry/issues/48)) ([7d0d732](https://github.com/googleapis/java-apigee-registry/commit/7d0d73298364ede2d3e313064c3398df2e2814bd))
+* Update dependency charset-normalizer to v2.1.1 ([#53](https://github.com/googleapis/java-apigee-registry/issues/53)) ([90f3682](https://github.com/googleapis/java-apigee-registry/commit/90f3682007a863ba34e0b83f514418b8a464d72e))
+* Update dependency click to v8.1.3 ([#54](https://github.com/googleapis/java-apigee-registry/issues/54)) ([3709f0c](https://github.com/googleapis/java-apigee-registry/commit/3709f0ca0cd58ce00becaff20b17bb42024a3dfc))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#42](https://github.com/googleapis/java-apigee-registry/issues/42)) ([745297f](https://github.com/googleapis/java-apigee-registry/commit/745297f3682f2abb23934873132d7210d6068b61))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#44](https://github.com/googleapis/java-apigee-registry/issues/44)) ([8d185d7](https://github.com/googleapis/java-apigee-registry/commit/8d185d76ea35a6579ff402399b4edbbb05b96de6))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#65](https://github.com/googleapis/java-apigee-registry/issues/65)) ([cf0b074](https://github.com/googleapis/java-apigee-registry/commit/cf0b0746243f5ba8b9390c57fe8e6144bf4ab9fc))
+* Update dependency gcp-releasetool to v1.8.8 ([#49](https://github.com/googleapis/java-apigee-registry/issues/49)) ([302ec1d](https://github.com/googleapis/java-apigee-registry/commit/302ec1d8e6b695cf826ccf85085448cbb54fb725))
+* Update dependency google-api-core to v2.10.1 ([#55](https://github.com/googleapis/java-apigee-registry/issues/55)) ([455f663](https://github.com/googleapis/java-apigee-registry/commit/455f6630fc9734540f4694486caf997a344387f3))
+* Update dependency google-auth to v2.11.1 ([#50](https://github.com/googleapis/java-apigee-registry/issues/50)) ([484022b](https://github.com/googleapis/java-apigee-registry/commit/484022b77e6b309ca8919882c72c3e9022a1fd9c))
+* Update dependency google-cloud-core to v2.3.2 ([#51](https://github.com/googleapis/java-apigee-registry/issues/51)) ([65b3a28](https://github.com/googleapis/java-apigee-registry/commit/65b3a285aeb68af4d6d939481bf4fc34803ec194))
+* Update dependency google-cloud-storage to v2.5.0 ([#56](https://github.com/googleapis/java-apigee-registry/issues/56)) ([aa21783](https://github.com/googleapis/java-apigee-registry/commit/aa21783712cb8fc0698287d80b1efb08eabc3680))
+* Update dependency google-crc32c to v1.5.0 ([#57](https://github.com/googleapis/java-apigee-registry/issues/57)) ([c1ea6e5](https://github.com/googleapis/java-apigee-registry/commit/c1ea6e50183b256e65e1f8afe47eb9ff67999da0))
+* Update dependency googleapis-common-protos to v1.56.4 ([#52](https://github.com/googleapis/java-apigee-registry/issues/52)) ([991fcd1](https://github.com/googleapis/java-apigee-registry/commit/991fcd1693c88203a19557b119d9740fd8d5c9a5))
+* Update dependency importlib-metadata to v4.12.0 ([#58](https://github.com/googleapis/java-apigee-registry/issues/58)) ([603638e](https://github.com/googleapis/java-apigee-registry/commit/603638e3686158c1d227d84f41d341a9b99cc6ca))
+* Update dependency jeepney to v0.8.0 ([#59](https://github.com/googleapis/java-apigee-registry/issues/59)) ([bba02e8](https://github.com/googleapis/java-apigee-registry/commit/bba02e8c354b888ec6b266046247e248d0aa7a13))
+* Update dependency jinja2 to v3.1.2 ([#60](https://github.com/googleapis/java-apigee-registry/issues/60)) ([2b2878f](https://github.com/googleapis/java-apigee-registry/commit/2b2878f78dbf1f849fddc7d76961e5e22d24946a))
+* Update dependency keyring to v23.9.3 ([#61](https://github.com/googleapis/java-apigee-registry/issues/61)) ([932a388](https://github.com/googleapis/java-apigee-registry/commit/932a3881daecfd127824975e4b8864c1a6108e22))
+* Update dependency markupsafe to v2.1.1 ([#62](https://github.com/googleapis/java-apigee-registry/issues/62)) ([8685073](https://github.com/googleapis/java-apigee-registry/commit/8685073986bbdbec6152c8515a83e916db892c1f))
+* Update dependency protobuf to v3.20.2 ([#63](https://github.com/googleapis/java-apigee-registry/issues/63)) ([32a6367](https://github.com/googleapis/java-apigee-registry/commit/32a6367633f19bee5088eee80c07bb3f9afeda0a))
+
 ## [0.3.0](https://github.com/googleapis/java-apigee-registry/compare/v0.2.2...v0.3.0) (2022-08-22)
 
 

@@ -24,19 +24,19 @@ function replaceParent {
 # Then, apply the values as the parent pom of each module
 for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order | xargs dirname); do
   # example value of module is "./java-accessapproval"
-  if [[ "${module}" = *gapic-libraries-bom ]] || [[ "${module}" = *google-cloud-jar-parent ]]; then
+  if [[ "${module}" = *gapic-libraries-bom ]] || [[ "${module}" = *google-cloud-jar-parent ]] || [[ "${module}" = *google-cloud-pom-parent ]]; then
     continue
   fi
   echo "Processing module $module"
   pushd $module
 
-  replaceParent ../google-cloud-jar-parent/pom.xml pom.xml
+  replaceParent ../google-cloud-jar-parent/pom.xml
 
   # update the bom projects as well by removing parent
   if ls -1 | grep 'bom'; then
     BOM=$(ls -1 | grep 'bom')
     cd "$BOM"
-    replaceParent ../../pom.xml
+    replaceParent ../../google-cloud-pom-parent/pom.xml
   fi
 
   popd

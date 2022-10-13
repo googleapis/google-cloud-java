@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.4.6](https://github.com/googleapis/java-bigqueryreservation/compare/v2.4.5...v2.4.6) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([d4851cd](https://github.com/googleapis/java-bigqueryreservation/commit/d4851cd8494e83930d0850d29f8e0a858b3972be))
+
+## [2.4.5](https://github.com/googleapis/java-bigqueryreservation/compare/v2.4.4...v2.4.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#741](https://github.com/googleapis/java-bigqueryreservation/issues/741)) ([dadf620](https://github.com/googleapis/java-bigqueryreservation/commit/dadf620e430b0ec9eddbd0aff8f467da89adb51a))
+* Update dependency certifi to v2022.9.24 ([#720](https://github.com/googleapis/java-bigqueryreservation/issues/720)) ([4d6dba8](https://github.com/googleapis/java-bigqueryreservation/commit/4d6dba8e3aba8b2d52a1be8585986a703bdb59d7))
+* Update dependency charset-normalizer to v2.1.1 ([#724](https://github.com/googleapis/java-bigqueryreservation/issues/724)) ([108175e](https://github.com/googleapis/java-bigqueryreservation/commit/108175eb372f2152a46128a6c3c55d55b48bb3a2))
+* Update dependency click to v8.1.3 ([#725](https://github.com/googleapis/java-bigqueryreservation/issues/725)) ([e97a24d](https://github.com/googleapis/java-bigqueryreservation/commit/e97a24df5acbadf037c0ae02f2788b30d8d92014))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#745](https://github.com/googleapis/java-bigqueryreservation/issues/745)) ([c320498](https://github.com/googleapis/java-bigqueryreservation/commit/c320498d642dde36954d309cea6f50dbbf7093e5))
+* Update dependency gcp-releasetool to v1.8.8 ([#721](https://github.com/googleapis/java-bigqueryreservation/issues/721)) ([ab6f2db](https://github.com/googleapis/java-bigqueryreservation/commit/ab6f2dbace45fb138bfd31de8a7a6e2b27356df3))
+* Update dependency google-api-core to v2.10.1 ([#726](https://github.com/googleapis/java-bigqueryreservation/issues/726)) ([e7621d3](https://github.com/googleapis/java-bigqueryreservation/commit/e7621d30e5ec4523040376ed76c0f3173304d3f4))
+* Update dependency google-auth to v2.12.0 ([#727](https://github.com/googleapis/java-bigqueryreservation/issues/727)) ([8fddb5c](https://github.com/googleapis/java-bigqueryreservation/commit/8fddb5c2e10a80d79a94008711df90d2a7683fde))
+* Update dependency google-cloud-core to v2.3.2 ([#722](https://github.com/googleapis/java-bigqueryreservation/issues/722)) ([2390910](https://github.com/googleapis/java-bigqueryreservation/commit/239091014ea12c6a3f4bb50e19b9c415134fd028))
+* Update dependency google-cloud-storage to v2.5.0 ([#728](https://github.com/googleapis/java-bigqueryreservation/issues/728)) ([ff27085](https://github.com/googleapis/java-bigqueryreservation/commit/ff270858200f5e475a6cf8558ecde4c1ea69e948))
+* Update dependency google-crc32c to v1.5.0 ([#729](https://github.com/googleapis/java-bigqueryreservation/issues/729)) ([fe0cba9](https://github.com/googleapis/java-bigqueryreservation/commit/fe0cba92d585bf713b2ffb8c797259e26aee9711))
+* Update dependency googleapis-common-protos to v1.56.4 ([#723](https://github.com/googleapis/java-bigqueryreservation/issues/723)) ([d7790cc](https://github.com/googleapis/java-bigqueryreservation/commit/d7790cc411df18004723f1c4ecc4f4c4c03ba59b))
+* Update dependency importlib-metadata to v4.12.0 ([#730](https://github.com/googleapis/java-bigqueryreservation/issues/730)) ([4239923](https://github.com/googleapis/java-bigqueryreservation/commit/4239923c5a8dd1c65d89add94022ad984eb019c2))
+* Update dependency jeepney to v0.8.0 ([#731](https://github.com/googleapis/java-bigqueryreservation/issues/731)) ([031bace](https://github.com/googleapis/java-bigqueryreservation/commit/031bacef2709c4edff1a6eaae8ce711144b65bb9))
+* Update dependency jinja2 to v3.1.2 ([#732](https://github.com/googleapis/java-bigqueryreservation/issues/732)) ([e7b05f8](https://github.com/googleapis/java-bigqueryreservation/commit/e7b05f825469d04803339f663a1f263a277973a0))
+* Update dependency keyring to v23.9.3 ([#733](https://github.com/googleapis/java-bigqueryreservation/issues/733)) ([0fe7b09](https://github.com/googleapis/java-bigqueryreservation/commit/0fe7b0984189bb80f4a8e34694d52ea31abcc579))
+* Update dependency markupsafe to v2.1.1 ([#735](https://github.com/googleapis/java-bigqueryreservation/issues/735)) ([64810a5](https://github.com/googleapis/java-bigqueryreservation/commit/64810a5db8be3b23e69f3ca1c866a81a4e9d2351))
+* Update dependency requests to v2.28.1 ([#738](https://github.com/googleapis/java-bigqueryreservation/issues/738)) ([8c032bf](https://github.com/googleapis/java-bigqueryreservation/commit/8c032bf3784c882cb165fa66b56b8f49d0199495))
+* Update dependency zipp to v3.8.1 ([#740](https://github.com/googleapis/java-bigqueryreservation/issues/740)) ([7d2c712](https://github.com/googleapis/java-bigqueryreservation/commit/7d2c712f68aa81dcd4a84fe7f5231187443f2a4d))
+
 ## [2.4.4](https://github.com/googleapis/java-bigqueryreservation/compare/v2.4.3...v2.4.4) (2022-09-15)
 
 

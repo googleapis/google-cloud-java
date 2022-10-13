@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.5.4](https://github.com/googleapis/java-security-private-ca/compare/v2.5.3...v2.5.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#472](https://github.com/googleapis/java-security-private-ca/issues/472)) ([41f2dc2](https://github.com/googleapis/java-security-private-ca/commit/41f2dc2939878632459cce2bc17cb3a3ba55df04))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#481](https://github.com/googleapis/java-security-private-ca/issues/481)) ([744e0c6](https://github.com/googleapis/java-security-private-ca/commit/744e0c6f1187846d45d033a5c8b65d2bc7af4708))
+* Update dependency google-api-core to v2.10.1 ([#469](https://github.com/googleapis/java-security-private-ca/issues/469)) ([9aeda2c](https://github.com/googleapis/java-security-private-ca/commit/9aeda2ce3471a56c6df101929cc87798e577a380))
+* Update dependency google-crc32c to v1.5.0 ([#470](https://github.com/googleapis/java-security-private-ca/issues/470)) ([37650e7](https://github.com/googleapis/java-security-private-ca/commit/37650e7499592d3bdee1316ee2629b5f1027a337))
+* Update dependency googleapis-common-protos to v1.56.4 ([#468](https://github.com/googleapis/java-security-private-ca/issues/468)) ([5eedec1](https://github.com/googleapis/java-security-private-ca/commit/5eedec187b7f7cb16c6bc001bfbc2d9bafdc42e5))
+* Update dependency importlib-metadata to v4.12.0 ([#474](https://github.com/googleapis/java-security-private-ca/issues/474)) ([3f78d76](https://github.com/googleapis/java-security-private-ca/commit/3f78d76ef8cf12d0e984411a63f8e7ba125b263e))
+* Update dependency jeepney to v0.8.0 ([#471](https://github.com/googleapis/java-security-private-ca/issues/471)) ([fae78b7](https://github.com/googleapis/java-security-private-ca/commit/fae78b73b4421c438d41a775808e93bf486517bc))
+* Update dependency jinja2 to v3.1.2 ([#475](https://github.com/googleapis/java-security-private-ca/issues/475)) ([6ed4755](https://github.com/googleapis/java-security-private-ca/commit/6ed4755a5745e693ab3a6f178224ae03816d75a1))
+* Update dependency keyring to v23.9.3 ([#476](https://github.com/googleapis/java-security-private-ca/issues/476)) ([b770954](https://github.com/googleapis/java-security-private-ca/commit/b77095498465397ee810b0a39b1b4a14d760eab7))
+* Update dependency markupsafe to v2.1.1 ([#477](https://github.com/googleapis/java-security-private-ca/issues/477)) ([b004522](https://github.com/googleapis/java-security-private-ca/commit/b0045222f2cefb49ea695fd0cbcf1c872da48fdd))
+* Update dependency protobuf to v3.20.2 ([#478](https://github.com/googleapis/java-security-private-ca/issues/478)) ([1c1f819](https://github.com/googleapis/java-security-private-ca/commit/1c1f8191f06a8e94ce666bae14742da3a3849dd3))
+
 ## [2.5.3](https://github.com/googleapis/java-security-private-ca/compare/v2.5.2...v2.5.3) (2022-09-15)
 
 

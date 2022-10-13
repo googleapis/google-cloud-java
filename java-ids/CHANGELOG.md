@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.7](https://github.com/googleapis/java-ids/compare/v1.2.6...v1.2.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([6a97474](https://github.com/googleapis/java-ids/commit/6a974746312efc2dd1681ab4cc8cc04bc8933d2c))
+
+## [1.2.6](https://github.com/googleapis/java-ids/compare/v1.2.5...v1.2.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#172](https://github.com/googleapis/java-ids/issues/172)) ([622b056](https://github.com/googleapis/java-ids/commit/622b0568a198c7c9386a27e24590d8a00ea25a55))
+
 ## [1.2.5](https://github.com/googleapis/java-ids/compare/v1.2.4...v1.2.5) (2022-09-28)
 
 

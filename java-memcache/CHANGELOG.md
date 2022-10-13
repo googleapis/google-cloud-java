@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-memcache/compare/v2.3.5...v2.3.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([eb6e2d8](https://github.com/googleapis/java-memcache/commit/eb6e2d8fe27315ecabb8e70e07e89a4771663641))
+
+## [2.3.5](https://github.com/googleapis/java-memcache/compare/v2.3.4...v2.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#683](https://github.com/googleapis/java-memcache/issues/683)) ([25b1df6](https://github.com/googleapis/java-memcache/commit/25b1df65140d8c4c2fdc56d5bff78aca23154ddb))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#686](https://github.com/googleapis/java-memcache/issues/686)) ([f307047](https://github.com/googleapis/java-memcache/commit/f307047ec46a6ff3d5c75ef5db4d0755437b564c))
+
 ## [2.3.4](https://github.com/googleapis/java-memcache/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 

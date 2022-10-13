@@ -24,6 +24,7 @@ If you are using Maven, add this to your pom.xml file:
   <artifactId>google-cloud-mediatranslation</artifactId>
   <version>0.9.6</version>
 </dependency>
+
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
@@ -71,6 +72,16 @@ use this Media Translation API Client Library.
 
 
 
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/java-mediatranslation/tree/main/samples) directory.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Translate From File | [source code](https://github.com/googleapis/java-mediatranslation/blob/main/samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromFile.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-mediatranslation&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromFile.java) |
+| Translate From Mic | [source code](https://github.com/googleapis/java-mediatranslation/blob/main/samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromMic.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-mediatranslation&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/mediatranslation/TranslateFromMic.java) |
 
 
 

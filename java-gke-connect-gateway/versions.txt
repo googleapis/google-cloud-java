@@ -3,4 +3,4 @@
 
 google-cloud-gke-connect-gateway:0.4.6:0.4.7-SNAPSHOT
 grpc-google-cloud-gke-connect-gateway-v1beta1:0.4.6:0.4.7-SNAPSHOT
-proto-google-cloud-gke-connect-gateway-v1beta1:0.4.5:0.4.6-SNAPSHOT
+proto-google-cloud-gke-connect-gateway-v1beta1:0.4.6:0.4.7-SNAPSHOT

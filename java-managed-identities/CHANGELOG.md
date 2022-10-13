@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.1.6](https://github.com/googleapis/java-managed-identities/compare/v1.1.5...v1.1.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([09966d5](https://github.com/googleapis/java-managed-identities/commit/09966d5d990e5fe7de6b741ce973d3d9c099d47d))
+
+## [1.1.5](https://github.com/googleapis/java-managed-identities/compare/v1.1.4...v1.1.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#275](https://github.com/googleapis/java-managed-identities/issues/275)) ([ec7fc35](https://github.com/googleapis/java-managed-identities/commit/ec7fc3569317d93c217a04ee9361753bc3d204ca))
+* Update dependency charset-normalizer to v2.1.1 ([#279](https://github.com/googleapis/java-managed-identities/issues/279)) ([389400d](https://github.com/googleapis/java-managed-identities/commit/389400d1d099c4d053a0f9d619d1d3590c779b72))
+* Update dependency click to v8.1.3 ([#280](https://github.com/googleapis/java-managed-identities/issues/280)) ([d5e1186](https://github.com/googleapis/java-managed-identities/commit/d5e118620dd08807c22873a7d01205fdfeac5b6d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#302](https://github.com/googleapis/java-managed-identities/issues/302)) ([20a5989](https://github.com/googleapis/java-managed-identities/commit/20a59892dfbad5cdbe724e7d45fa888f3237c670))
+* Update dependency gcp-releasetool to v1.8.8 ([#276](https://github.com/googleapis/java-managed-identities/issues/276)) ([54f8591](https://github.com/googleapis/java-managed-identities/commit/54f85914664401e7ce7514bda1dd22b59a0bd358))
+* Update dependency google-api-core to v2.10.1 ([#281](https://github.com/googleapis/java-managed-identities/issues/281)) ([fcab24e](https://github.com/googleapis/java-managed-identities/commit/fcab24e2671b66e5fe90a44c67641af886805c2f))
+* Update dependency google-auth to v2.12.0 ([#282](https://github.com/googleapis/java-managed-identities/issues/282)) ([b72facf](https://github.com/googleapis/java-managed-identities/commit/b72facfd425a6c532687b6b377b3c0cb63596f8e))
+* Update dependency google-cloud-core to v2.3.2 ([#277](https://github.com/googleapis/java-managed-identities/issues/277)) ([956402d](https://github.com/googleapis/java-managed-identities/commit/956402dc0dba61ea3dfcb4819cea8e984a6161e9))
+* Update dependency google-cloud-storage to v2.5.0 ([#283](https://github.com/googleapis/java-managed-identities/issues/283)) ([2ac12c0](https://github.com/googleapis/java-managed-identities/commit/2ac12c0e9b00f71352648e4486630e63d4014f0d))
+* Update dependency google-crc32c to v1.5.0 ([#284](https://github.com/googleapis/java-managed-identities/issues/284)) ([55b53fb](https://github.com/googleapis/java-managed-identities/commit/55b53fb1648d8ed51a244ad263ce2bed58e886be))
+* Update dependency google-resumable-media to v2.4.0 ([#299](https://github.com/googleapis/java-managed-identities/issues/299)) ([7b1f80c](https://github.com/googleapis/java-managed-identities/commit/7b1f80c7e1f0c6587e22a35dfc4a354f87bf7df7))
+* Update dependency googleapis-common-protos to v1.56.4 ([#278](https://github.com/googleapis/java-managed-identities/issues/278)) ([732150e](https://github.com/googleapis/java-managed-identities/commit/732150e7164b892f8044913070296b62dcc51a83))
+* Update dependency keyring to v23.9.3 ([#294](https://github.com/googleapis/java-managed-identities/issues/294)) ([a187045](https://github.com/googleapis/java-managed-identities/commit/a187045ecbc82d289a6c4a9140f92ab8a4115e24))
+* Update dependency markupsafe to v2.1.1 ([#295](https://github.com/googleapis/java-managed-identities/issues/295)) ([3a70035](https://github.com/googleapis/java-managed-identities/commit/3a70035fcd39216a534f3348a522057842c1f3f7))
+* Update dependency protobuf to v3.20.2 ([#296](https://github.com/googleapis/java-managed-identities/issues/296)) ([b3bde96](https://github.com/googleapis/java-managed-identities/commit/b3bde96c6efc010348a11e386cf7ce68963b3f92))
+* Update dependency protobuf to v3.20.3 ([#300](https://github.com/googleapis/java-managed-identities/issues/300)) ([19675a3](https://github.com/googleapis/java-managed-identities/commit/19675a30b8944dc0179cefcafc8870d0ccc5d650))
+* Update dependency protobuf to v4 ([#297](https://github.com/googleapis/java-managed-identities/issues/297)) ([7c1cb10](https://github.com/googleapis/java-managed-identities/commit/7c1cb1038028b4a46a7e7920d4425005cd6d1c63))
+
 ## [1.1.4](https://github.com/googleapis/java-managed-identities/compare/v1.1.3...v1.1.4) (2022-09-15)
 
 

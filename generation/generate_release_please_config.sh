@@ -14,9 +14,10 @@ release_please_config_file="release-please-config.json"
 
 echo "{" > "${release_please_manifest_file}"
 
-num_modules=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | wc -l)
+module_list=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order |xargs dirname)
+num_modules=$(echo "${module_list}"| wc -l)
 num_modules=$((num_modules))
-for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order | xargs dirname); do
+for path in $module_list; do
 
   # path starts with ./{module}, we need to exclude the first two chars
   module_name="${path:2}"

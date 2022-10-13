@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.6.4](https://github.com/googleapis/java-network-security/compare/v0.6.3...v0.6.4) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([c5f4762](https://github.com/googleapis/java-network-security/commit/c5f47626cc18e3fd42ffd4f1bdde5fc10ab6333f))
+
+## [0.6.3](https://github.com/googleapis/java-network-security/compare/v0.6.2...v0.6.3) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#207](https://github.com/googleapis/java-network-security/issues/207)) ([96bf4f8](https://github.com/googleapis/java-network-security/commit/96bf4f822590e0f96dbbcc0ee5a58491c06262d8))
+* Update dependency charset-normalizer to v2.1.1 ([#211](https://github.com/googleapis/java-network-security/issues/211)) ([c6e5453](https://github.com/googleapis/java-network-security/commit/c6e5453051e036c3c56a68abbbd204be93f9970b))
+* Update dependency click to v8.1.3 ([#212](https://github.com/googleapis/java-network-security/issues/212)) ([74e5b4c](https://github.com/googleapis/java-network-security/commit/74e5b4cec5d0ea0fc01e299e3997f467fcf0fb13))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#232](https://github.com/googleapis/java-network-security/issues/232)) ([58e4bac](https://github.com/googleapis/java-network-security/commit/58e4bac35813d755ea5c4f5955ca666a955a5717))
+* Update dependency gcp-releasetool to v1.8.8 ([#208](https://github.com/googleapis/java-network-security/issues/208)) ([ab4879d](https://github.com/googleapis/java-network-security/commit/ab4879d0f9500c4671223775b3275ce68a3e2e9f))
+* Update dependency google-auth to v2.12.0 ([#214](https://github.com/googleapis/java-network-security/issues/214)) ([e711709](https://github.com/googleapis/java-network-security/commit/e7117095810ab9e4d9db0e33f3912027690498c4))
+* Update dependency google-cloud-core to v2.3.2 ([#209](https://github.com/googleapis/java-network-security/issues/209)) ([4382c4e](https://github.com/googleapis/java-network-security/commit/4382c4e8fa2523aafdd6337d66fe230d7e343b82))
+* Update dependency google-cloud-storage to v2.5.0 ([#215](https://github.com/googleapis/java-network-security/issues/215)) ([915d49e](https://github.com/googleapis/java-network-security/commit/915d49e4d6700316add4859c32becae7843cccdb))
+* Update dependency google-crc32c to v1.5.0 ([#216](https://github.com/googleapis/java-network-security/issues/216)) ([00b50a0](https://github.com/googleapis/java-network-security/commit/00b50a0a70188e331540a9353e4455944359c446))
+* Update dependency googleapis-common-protos to v1.56.4 ([#210](https://github.com/googleapis/java-network-security/issues/210)) ([cffbc84](https://github.com/googleapis/java-network-security/commit/cffbc84bda3cfe6eaec830b38476a9d1acddac3a))
+* Update dependency importlib-metadata to v4.12.0 ([#217](https://github.com/googleapis/java-network-security/issues/217)) ([dbfd1f8](https://github.com/googleapis/java-network-security/commit/dbfd1f815c1ff869bce148e6b84e21b2912dc798))
+* Update dependency jeepney to v0.8.0 ([#218](https://github.com/googleapis/java-network-security/issues/218)) ([03fa6af](https://github.com/googleapis/java-network-security/commit/03fa6af5c1b66537e9c9cd957201ab33970162e9))
+* Update dependency jinja2 to v3.1.2 ([#219](https://github.com/googleapis/java-network-security/issues/219)) ([ec8a9ef](https://github.com/googleapis/java-network-security/commit/ec8a9ef18ab0f48e72d2912560f5a840e039cb77))
+* Update dependency keyring to v23.9.3 ([#220](https://github.com/googleapis/java-network-security/issues/220)) ([c284b10](https://github.com/googleapis/java-network-security/commit/c284b10d8e697ba358cf04d193f46ed255da1528))
+* Update dependency protobuf to v3.20.2 ([#222](https://github.com/googleapis/java-network-security/issues/222)) ([a6e05a1](https://github.com/googleapis/java-network-security/commit/a6e05a1828a6a36a6c50b4869ec8d1c0b41969a0))
+* Update dependency protobuf to v4 ([#228](https://github.com/googleapis/java-network-security/issues/228)) ([9ae5581](https://github.com/googleapis/java-network-security/commit/9ae558182b7d9d5375164954b5e7e502167e242f))
+* Update dependency pyjwt to v2.5.0 ([#223](https://github.com/googleapis/java-network-security/issues/223)) ([8935cf5](https://github.com/googleapis/java-network-security/commit/8935cf5501d89816326fc1ef15ae2dd3eb3cb551))
+* Update dependency requests to v2.28.1 ([#224](https://github.com/googleapis/java-network-security/issues/224)) ([dc1d387](https://github.com/googleapis/java-network-security/commit/dc1d3873ad85ba387a263283d86b4dfac9ccb913))
+
 ## [0.6.2](https://github.com/googleapis/java-network-security/compare/v0.6.1...v0.6.2) (2022-09-15)
 
 

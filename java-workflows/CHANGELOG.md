@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-workflows/compare/v2.3.5...v2.3.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([1801fe6](https://github.com/googleapis/java-workflows/commit/1801fe649d6ed1dae397e16c25a7954099cfd56b))
+
+## [2.3.5](https://github.com/googleapis/java-workflows/compare/v2.3.4...v2.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#500](https://github.com/googleapis/java-workflows/issues/500)) ([a2f473d](https://github.com/googleapis/java-workflows/commit/a2f473d185597e87c26623a5061c9a7a77897256))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#510](https://github.com/googleapis/java-workflows/issues/510)) ([d96993d](https://github.com/googleapis/java-workflows/commit/d96993d3b448e2b7e692755c4d4de07589b2ff2c))
+* Update dependency gcp-releasetool to v1.8.8 ([#501](https://github.com/googleapis/java-workflows/issues/501)) ([93c739b](https://github.com/googleapis/java-workflows/commit/93c739b003a5bbfa54c898f79ce97359125f029d))
+* Update dependency google-auth to v2.11.1 ([#502](https://github.com/googleapis/java-workflows/issues/502)) ([7bae540](https://github.com/googleapis/java-workflows/commit/7bae540d91e8f1fababcf109979e1933ce865fd8))
+* Update dependency googleapis-common-protos to v1.56.4 ([#504](https://github.com/googleapis/java-workflows/issues/504)) ([dc290f5](https://github.com/googleapis/java-workflows/commit/dc290f5f1d7fd6108ea18b2b38df0cdd0549c042))
+* Update dependency pyjwt to v2.5.0 ([#505](https://github.com/googleapis/java-workflows/issues/505)) ([2e04e11](https://github.com/googleapis/java-workflows/commit/2e04e11635a737038a758de03b4d7cb3aafbb609))
+* Update dependency requests to v2.28.1 ([#506](https://github.com/googleapis/java-workflows/issues/506)) ([6974473](https://github.com/googleapis/java-workflows/commit/6974473fc07943b6e94cff1a4186200c3afe905c))
+
 ## [2.3.4](https://github.com/googleapis/java-workflows/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 

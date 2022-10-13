@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.4.4](https://github.com/googleapis/java-network-management/compare/v1.4.3...v1.4.4) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([cb5d739](https://github.com/googleapis/java-network-management/commit/cb5d739a38bbb8822fffce3e438c474480c20bdd))
+
+## [1.4.3](https://github.com/googleapis/java-network-management/compare/v1.4.2...v1.4.3) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#222](https://github.com/googleapis/java-network-management/issues/222)) ([ce21ce0](https://github.com/googleapis/java-network-management/commit/ce21ce0c5a53979a78b7cb8428a2a11e7262d563))
+* Update dependency charset-normalizer to v2.1.1 ([#226](https://github.com/googleapis/java-network-management/issues/226)) ([77af46e](https://github.com/googleapis/java-network-management/commit/77af46ec8e8b4728b8d949259edd501f8d437edc))
+* Update dependency click to v8.1.3 ([#227](https://github.com/googleapis/java-network-management/issues/227)) ([cdf3dbd](https://github.com/googleapis/java-network-management/commit/cdf3dbdfe26632db9fb8c9dcb35059cecd247e6b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#247](https://github.com/googleapis/java-network-management/issues/247)) ([e8e6001](https://github.com/googleapis/java-network-management/commit/e8e60019d0a1265a35893739ece51ab27dfbd878))
+* Update dependency gcp-releasetool to v1.8.8 ([#223](https://github.com/googleapis/java-network-management/issues/223)) ([3cadb0f](https://github.com/googleapis/java-network-management/commit/3cadb0f453e05967eccae76ae97428a30606a14b))
+* Update dependency google-api-core to v2.10.1 ([#228](https://github.com/googleapis/java-network-management/issues/228)) ([30c6b21](https://github.com/googleapis/java-network-management/commit/30c6b2149d2d1ac818be3a0277a1d2a78622fadb))
+* Update dependency google-auth to v2.12.0 ([#229](https://github.com/googleapis/java-network-management/issues/229)) ([b4d42a5](https://github.com/googleapis/java-network-management/commit/b4d42a56415e98a8bdd7fe58c19e521d2e293bf1))
+* Update dependency google-cloud-core to v2.3.2 ([#224](https://github.com/googleapis/java-network-management/issues/224)) ([c6d96db](https://github.com/googleapis/java-network-management/commit/c6d96dbadf639111912e526a2c74f78f65639367))
+* Update dependency google-cloud-storage to v2.5.0 ([#230](https://github.com/googleapis/java-network-management/issues/230)) ([4327f41](https://github.com/googleapis/java-network-management/commit/4327f41ca6b06862864d25d403ebf633abbbf5ba))
+* Update dependency google-crc32c to v1.5.0 ([#231](https://github.com/googleapis/java-network-management/issues/231)) ([ea4e8bb](https://github.com/googleapis/java-network-management/commit/ea4e8bbccf8e9163d82a25ffb64655d993c210cd))
+* Update dependency googleapis-common-protos to v1.56.4 ([#225](https://github.com/googleapis/java-network-management/issues/225)) ([1e37a70](https://github.com/googleapis/java-network-management/commit/1e37a70cb41f24e8454281a6f41feb3bb527b15d))
+* Update dependency importlib-metadata to v4.12.0 ([#232](https://github.com/googleapis/java-network-management/issues/232)) ([10346a6](https://github.com/googleapis/java-network-management/commit/10346a6630bb7e4dcf5cae5646ada4787c5dda11))
+* Update dependency jeepney to v0.8.0 ([#239](https://github.com/googleapis/java-network-management/issues/239)) ([d109935](https://github.com/googleapis/java-network-management/commit/d109935e8d3cbe8a9e21803a0eb8051957a8e9b1))
+* Update dependency jinja2 to v3.1.2 ([#240](https://github.com/googleapis/java-network-management/issues/240)) ([09fc225](https://github.com/googleapis/java-network-management/commit/09fc225b2c33d93294edcb474e37236b10b488dd))
+* Update dependency keyring to v23.9.3 ([#241](https://github.com/googleapis/java-network-management/issues/241)) ([c3bc7c3](https://github.com/googleapis/java-network-management/commit/c3bc7c3116e745767f4b1c2c4d379e77036b9867))
+* Update dependency markupsafe to v2.1.1 ([#233](https://github.com/googleapis/java-network-management/issues/233)) ([ce48a27](https://github.com/googleapis/java-network-management/commit/ce48a271d0ea0e93d0355583d0c59bf36c4e7879))
+* Update dependency protobuf to v3.20.2 ([#234](https://github.com/googleapis/java-network-management/issues/234)) ([6204d54](https://github.com/googleapis/java-network-management/commit/6204d54b81a45ae4cba9d46be04cfad1ac854378))
+* Update dependency protobuf to v4 ([#243](https://github.com/googleapis/java-network-management/issues/243)) ([7749f31](https://github.com/googleapis/java-network-management/commit/7749f3176a16a899a3e99c9ac742fae16a3445b6))
+* Update dependency pyjwt to v2.5.0 ([#235](https://github.com/googleapis/java-network-management/issues/235)) ([e665fa6](https://github.com/googleapis/java-network-management/commit/e665fa6daf199bf7962f755066107a5062064512))
+* Update dependency requests to v2.28.1 ([#236](https://github.com/googleapis/java-network-management/issues/236)) ([d9a6884](https://github.com/googleapis/java-network-management/commit/d9a688449d1c19b730b4f92b30ac6337da949f20))
+* Update dependency typing-extensions to v4.3.0 ([#237](https://github.com/googleapis/java-network-management/issues/237)) ([3e397a0](https://github.com/googleapis/java-network-management/commit/3e397a0971d2874bff5469c25babd94abc8d264a))
+* Update dependency zipp to v3.8.1 ([#238](https://github.com/googleapis/java-network-management/issues/238)) ([9772aac](https://github.com/googleapis/java-network-management/commit/9772aacdad00d523e373f7672b197794cbdeefc5))
+
 ## [1.4.2](https://github.com/googleapis/java-network-management/compare/v1.4.1...v1.4.2) (2022-09-15)
 
 
