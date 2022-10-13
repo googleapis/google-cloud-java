@@ -20,5 +20,5 @@ branches:
     branch: 1.116.x
   - bumpMinorPreMajor: true
     handleGHRelease: true
-    releaseType: java-lts
+    releaseType: java-backport
     branch: 1.117.x
