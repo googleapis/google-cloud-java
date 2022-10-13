@@ -47,13 +47,17 @@ mvn -B -ntp \
   -T 1C \
   install
 
-# Retrieve list of modules from aggregator pom
-modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
+if [[ -z "${module_list}" ]]; then
+  # Retrieve list of modules from aggregator pom
+  modules=($(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g'))
+else
+  modules=($(echo "${module_list}" | tr ',' ' '))
+fi
 
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
 failed_modules=()
 
-for module in $modules; do
+for module in "${modules[@]}"; do
   # Proceed if module is not excluded
   if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
     pushd $module
@@ -73,11 +77,9 @@ for module in $modules; do
     if [ -e CHANGELOG.md ]; then
       cp CHANGELOG.md target/docfx-yml/history.md
     fi
-
     pushd target/docfx-yml
 
-    echo "Creating metadata"
-
+    echo "Creating metadata for ${module}..."
     # create metadata
     python3 -m docuploader create-metadata \
       --name ${NAME} \
@@ -91,13 +93,14 @@ for module in $modules; do
       --xrefs devsite://java/protobuf \
       --language java
 
-    echo "Uploading tarball"
-
+    echo "Uploading tarball for ${module}..."
     # upload yml to production bucket
     python3 -m docuploader upload . \
       --credentials ${CREDENTIALS} \
       --staging-bucket ${STAGING_BUCKET_V2} \
       --destination-prefix docfx
+
+    echo "Uploaded tarball for ${module}"
 
     popd # out of target/docfx-yml
     popd # out of $module
