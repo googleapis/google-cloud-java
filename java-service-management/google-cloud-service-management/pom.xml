@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-management</artifactId>
-  <version>3.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+  <version>3.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
   <packaging>jar</packaging>
   <name>Google Service Management API</name>
   <url>https://github.com/googleapis/java-service-management</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-management-parent</artifactId>
-    <version>3.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+    <version>3.1.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-service-management</site.installationModule>

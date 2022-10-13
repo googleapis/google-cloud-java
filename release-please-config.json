@@ -12,6 +12,10 @@
       "component": "google-cloud-jar-parent",
       "skip-github-release": true
     },
+    "google-cloud-pom-parent": {
+      "component": "google-cloud-pom-parent",
+      "skip-github-release": true
+    },
     "java-accessapproval": {
       "component": "google-cloud-accessapproval",
       "skip-github-release": true

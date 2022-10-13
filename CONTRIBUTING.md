@@ -11,8 +11,10 @@ Here are some guidelines for hacking on google-cloud-java.
 
 Repository Structure
 --------------------
-* `google-cloud-pom-parent`
+* `google-cloud-java` (`/pom.xml`)
   * The root aggregator POM that lists all of the modules.
+  * Does not get released.
+* `google-cloud-pom-parent`
   * Serves as the parent POM for the `gapic-libraries-bom` and module mini BOMs.
   * Should not have any dependency management so as not to impact the BOMs.
 * `google-cloud-jar-parent`

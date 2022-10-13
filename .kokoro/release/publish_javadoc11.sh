@@ -47,7 +47,7 @@ mvn -B -ntp \
 
 # Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 
 failed_modules=()
 
