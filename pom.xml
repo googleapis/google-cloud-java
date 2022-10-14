@@ -8,44 +8,6 @@
   <version>1.0.0</version>
   <packaging>pom</packaging>
 
-  <name>Google Cloud Java root project</name>
-  <url>https://github.com/googleapis/google-cloud-java</url>
-  <description>
-    Aggregator POM for Google Cloud Java
-  </description>
-
-  <developers>
-    <developer>
-      <id>suztomo</id>
-      <name>Tomo Suzuki</name>
-      <email>suztomo@google.com</email>
-      <organization>Google</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-  <scm>
-    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
-    <url>https://github.com/googleapis/google-cloud-java</url>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <url>https://github.com/googleapis/google-cloud-java/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
-
-  <licenses>
-    <license>
-      <name>Apache-2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
-
   <modules>
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
@@ -66,17 +28,49 @@
           <skip>true</skip>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.13</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>sonatype-nexus-staging</serverId>
-          <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
-
+  <profiles>
+    <profile>
+      <!-- profile for nexus-staging:release invocation -->
+      <id>release-staging-repository</id>
+      <activation>
+        <property>
+          <!-- The root project not using nexus-staging-maven-plugin when signing -->
+          <name>!gpg.executable</name>
+        </property>
+      </activation>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>sonatype-nexus-staging</id>
+          <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <site>
+          <id>github-pages-site</id>
+          <name>Deployment through GitHub's site deployment plugin</name>
+          <url>site/google-cloud-bom</url>
+        </site>
+      </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- The root project runs nexus-staging:release task -->
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.13</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>sonatype-nexus-staging</serverId>
+              <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
