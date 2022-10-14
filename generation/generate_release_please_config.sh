@@ -32,7 +32,7 @@ for path in $module_list; do
   # concatenating module name and module version
   rp_manifest_line="${tab}\"${module_name}\": \"${module_released_version}\""
   # Generate the JSON block with formatting
-  rp_config_line+="${tab}${tab}\"${module_name}\": {\n${tab}${tab}${tab}\"component\": \"${artifact_name}\",\n${tab}${tab}${tab}\"skip-github-release\": true\n${tab}${tab}}"
+  rp_config_line+="${tab}${tab}\"${module_name}\": {\n${tab}${tab}${tab}\"component\": \"${artifact_name}\"\n${tab}${tab}}"
 
   # adding " , " where it's necessary
   if [[ ${num_modules} -gt 1 ]]; then
