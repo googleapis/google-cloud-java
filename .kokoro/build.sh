@@ -135,7 +135,7 @@ case ${JOB_TYPE} in
     ;;
   lint)
     mvn com.coveo:fmt-maven-plugin:check -B -ntp
-    mvn checkstyle:check@checkstyle
+    mvn checkstyle:check@checkstyle -B -ntp
     RETURN_CODE=$?
     ;;
   *) ;;
