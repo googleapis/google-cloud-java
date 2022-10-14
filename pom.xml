@@ -183,11 +183,6 @@
           <id>sonatype-nexus-staging</id>
           <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-        <site>
-          <id>github-pages-site</id>
-          <name>Deployment through GitHub's site deployment plugin</name>
-          <url>site/google-cloud-bom</url>
-        </site>
       </distributionManagement>
       <build>
         <plugins>
