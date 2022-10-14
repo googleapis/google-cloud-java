@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-orchestration-airflow</artifactId>
-  <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+  <version>1.4.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Composer</name>
   <url>https://github.com/googleapis/java-orchestration-airflow</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-orchestration-airflow-parent</artifactId>
-    <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+    <version>1.4.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-orchestration-airflow</site.installationModule>
