@@ -8,6 +8,44 @@
   <version>1.0.0</version>
   <packaging>pom</packaging>
 
+  <name>Google Cloud Java root project</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    Aggregator POM for Google Cloud Java
+  </description>
+
+  <developers>
+    <developer>
+      <id>suztomo</id>
+      <name>Tomo Suzuki</name>
+      <email>suztomo@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
   <modules>
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>
@@ -36,7 +74,6 @@
         <configuration>
           <serverId>sonatype-nexus-staging</serverId>
           <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>false</autoReleaseAfterClose>
         </configuration>
       </plugin>
     </plugins>
