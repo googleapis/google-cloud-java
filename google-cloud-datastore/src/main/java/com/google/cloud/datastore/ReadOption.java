@@ -17,9 +17,12 @@
 package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.ByteString;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -68,6 +71,21 @@ public abstract class ReadOption implements Serializable {
     }
   }
 
+  /** Specifies transaction to be used when running a {@link Query}. */
+  @InternalApi
+  static class TransactionId extends ReadOption {
+
+    private final ByteString transactionId;
+
+    TransactionId(ByteString transactionId) {
+      this.transactionId = transactionId;
+    }
+
+    public ByteString getTransactionId() {
+      return transactionId;
+    }
+  }
+
   private ReadOption() {}
 
   /**
@@ -88,7 +106,33 @@ public abstract class ReadOption implements Serializable {
     return new ReadTime(time);
   }
 
+  /**
+   * Returns a {@code ReadOption} that specifies transaction id, allowing Datastore to execute a
+   * {@link Query} in this transaction.
+   */
+  @InternalApi
+  public static ReadOption transactionId(String transactionId) {
+    return new TransactionId(ByteString.copyFrom(transactionId.getBytes()));
+  }
+
+  /**
+   * Returns a {@code ReadOption} that specifies transaction id, allowing Datastore to execute a
+   * {@link Query} in this transaction.
+   */
+  @InternalApi
+  public static ReadOption transactionId(ByteString transactionId) {
+    return new TransactionId(transactionId);
+  }
+
   static Map<Class<? extends ReadOption>, ReadOption> asImmutableMap(ReadOption... options) {
+    ImmutableMap.Builder<Class<? extends ReadOption>, ReadOption> builder = ImmutableMap.builder();
+    for (ReadOption option : options) {
+      builder.put(option.getClass(), option);
+    }
+    return builder.buildOrThrow();
+  }
+
+  static Map<Class<? extends ReadOption>, ReadOption> asImmutableMap(List<ReadOption> options) {
     ImmutableMap.Builder<Class<? extends ReadOption>, ReadOption> builder = ImmutableMap.builder();
     for (ReadOption option : options) {
       builder.put(option.getClass(), option);

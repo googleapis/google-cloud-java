@@ -20,14 +20,16 @@ import com.google.cloud.datastore.Query.ResultType;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
+import com.google.datastore.v1.ReadOptions;
 import com.google.protobuf.ByteString;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.Optional;
 
 class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T> {
 
   private final DatastoreImpl datastore;
-  private final com.google.datastore.v1.ReadOptions readOptionsPb;
+  private final Optional<ReadOptions> readOptionsPb;
   private final com.google.datastore.v1.PartitionId partitionIdPb;
   private final ResultType<T> queryResultType;
   private RecordQuery<T> query;
@@ -41,7 +43,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
 
   QueryResultsImpl(
       DatastoreImpl datastore,
-      com.google.datastore.v1.ReadOptions readOptionsPb,
+      Optional<ReadOptions> readOptionsPb,
       RecordQuery<T> query,
       String namespace) {
     this.datastore = datastore;
@@ -68,9 +70,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private void sendRequest() {
     com.google.datastore.v1.RunQueryRequest.Builder requestPb =
         com.google.datastore.v1.RunQueryRequest.newBuilder();
-    if (readOptionsPb != null) {
-      requestPb.setReadOptions(readOptionsPb);
-    }
+    readOptionsPb.ifPresent(requestPb::setReadOptions);
     requestPb.setPartitionId(partitionIdPb);
     query.populatePb(requestPb);
     runQueryResponsePb = datastore.runQuery(requestPb.build());

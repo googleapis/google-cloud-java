@@ -1045,40 +1045,8 @@ public abstract class StructuredQuery<V> extends Query<V> implements RecordQuery
   }
 
   com.google.datastore.v1.Query toPb() {
-    com.google.datastore.v1.Query.Builder queryPb = com.google.datastore.v1.Query.newBuilder();
-    if (kind != null) {
-      queryPb.addKindBuilder().setName(kind);
-    }
-    if (startCursor != null) {
-      queryPb.setStartCursor(startCursor.getByteString());
-    }
-    if (endCursor != null) {
-      queryPb.setEndCursor(endCursor.getByteString());
-    }
-    if (offset > 0) {
-      queryPb.setOffset(offset);
-    }
-    if (limit != null) {
-      queryPb.setLimit(com.google.protobuf.Int32Value.newBuilder().setValue(limit));
-    }
-    if (filter != null) {
-      queryPb.setFilter(filter.toPb());
-    }
-    for (OrderBy value : orderBy) {
-      queryPb.addOrder(value.toPb());
-    }
-    for (String value : distinctOn) {
-      queryPb.addDistinctOn(
-          com.google.datastore.v1.PropertyReference.newBuilder().setName(value).build());
-    }
-    for (String value : projection) {
-      com.google.datastore.v1.Projection.Builder expressionPb =
-          com.google.datastore.v1.Projection.newBuilder();
-      expressionPb.setProperty(
-          com.google.datastore.v1.PropertyReference.newBuilder().setName(value).build());
-      queryPb.addProjection(expressionPb.build());
-    }
-    return queryPb.build();
+    StructuredQueryProtoPreparer protoPreparer = new StructuredQueryProtoPreparer();
+    return protoPreparer.prepare(this);
   }
 
   @SuppressWarnings("unchecked")

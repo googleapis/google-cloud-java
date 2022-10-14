@@ -456,6 +456,16 @@ public final class GqlQuery<V> extends Query<V> implements RecordQuery<V> {
     return builder.buildOrThrow();
   }
 
+  @InternalApi
+  public Map<String, Binding> getNamedBindingsMap() {
+    return namedBindings;
+  }
+
+  @InternalApi
+  public List<Binding> getPositionalBindingsMap() {
+    return positionalBindings;
+  }
+
   /** Returns an immutable list of positional bindings (using original order). */
   public List<Object> getNumberArgs() {
     ImmutableList.Builder<Object> builder = ImmutableList.builder();
@@ -504,17 +514,8 @@ public final class GqlQuery<V> extends Query<V> implements RecordQuery<V> {
   }
 
   com.google.datastore.v1.GqlQuery toPb() {
-    com.google.datastore.v1.GqlQuery.Builder queryPb =
-        com.google.datastore.v1.GqlQuery.newBuilder();
-    queryPb.setQueryString(queryString);
-    queryPb.setAllowLiterals(allowLiteral);
-    for (Map.Entry<String, Binding> entry : namedBindings.entrySet()) {
-      queryPb.putNamedBindings(entry.getKey(), entry.getValue().toPb());
-    }
-    for (Binding argument : positionalBindings) {
-      queryPb.addPositionalBindings(argument.toPb());
-    }
-    return queryPb.build();
+    GqlQueryProtoPreparer protoPreparer = new GqlQueryProtoPreparer();
+    return protoPreparer.prepare(this);
   }
 
   @InternalApi
