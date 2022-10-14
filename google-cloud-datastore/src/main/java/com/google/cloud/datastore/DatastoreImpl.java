@@ -180,8 +180,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return run(toReadOptionsPb(options), query);
   }
 
+  @SuppressWarnings("unchecked")
   <T> QueryResults<T> run(com.google.datastore.v1.ReadOptions readOptionsPb, Query<T> query) {
-    return new QueryResultsImpl<>(this, readOptionsPb, query);
+    return new QueryResultsImpl<>(
+        this, readOptionsPb, (RecordQuery<T>) query, query.getNamespace());
   }
 
   com.google.datastore.v1.RunQueryResponse runQuery(

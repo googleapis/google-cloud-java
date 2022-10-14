@@ -613,7 +613,7 @@ public class DatastoreTest {
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
     datastore.add(ENTITY3, entity4, entity5);
     List<RunQueryResponse> responses = new ArrayList<>();
-    Query<Key> query = Query.newKeyQueryBuilder().build();
+    RecordQuery<Key> query = Query.newKeyQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
     query.populatePb(requestPb);
     QueryResultBatch queryResultBatchPb =
@@ -722,7 +722,7 @@ public class DatastoreTest {
     datastore.add(ENTITY3, entity4, entity5);
     DatastoreRpc datastoreRpc = datastore.getOptions().getDatastoreRpcV1();
     List<RunQueryResponse> responses = new ArrayList<>();
-    Query<Entity> query = Query.newEntityQueryBuilder().build();
+    RecordQuery<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
     query.populatePb(requestPb);
     QueryResultBatch queryResultBatchPb =

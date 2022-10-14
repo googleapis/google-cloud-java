@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -71,7 +72,7 @@ import java.util.TreeMap;
  * @param <V> the type of the result values this query will produce
  * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
  */
-public final class GqlQuery<V> extends Query<V> {
+public final class GqlQuery<V> extends Query<V> implements RecordQuery<V> {
 
   private static final long serialVersionUID = -5514894742849230793L;
 
@@ -79,6 +80,8 @@ public final class GqlQuery<V> extends Query<V> {
   private final boolean allowLiteral;
   private final ImmutableMap<String, Binding> namedBindings;
   private final ImmutableList<Binding> positionalBindings;
+
+  private final ResultType<V> resultType;
 
   static final class Binding implements Serializable {
 
@@ -423,7 +426,8 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   private GqlQuery(Builder<V> builder) {
-    super(builder.resultType, builder.namespace);
+    super(builder.namespace);
+    resultType = checkNotNull(builder.resultType);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
     namedBindings = ImmutableMap.copyOf(builder.namedBindings);
@@ -462,8 +466,14 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
+  public ResultType<V> getType() {
+    return resultType;
+  }
+
+  @Override
   public String toString() {
-    return super.toStringHelper()
+    return toStringHelper()
+        .add("type", getType())
         .add("queryString", queryString)
         .add("allowLiteral", allowLiteral)
         .add("namedBindings", namedBindings)
@@ -507,13 +517,15 @@ public final class GqlQuery<V> extends Query<V> {
     return queryPb.build();
   }
 
+  @InternalApi
   @Override
-  void populatePb(com.google.datastore.v1.RunQueryRequest.Builder requestPb) {
+  public void populatePb(com.google.datastore.v1.RunQueryRequest.Builder requestPb) {
     requestPb.setGqlQuery(toPb());
   }
 
+  @InternalApi
   @Override
-  Query<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb) {
+  public RecordQuery<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb) {
     return StructuredQuery.<V>fromPb(getType(), getNamespace(), responsePb.getQuery())
         .nextQuery(responsePb);
   }

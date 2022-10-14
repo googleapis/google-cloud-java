@@ -16,8 +16,6 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
@@ -39,7 +37,6 @@ public abstract class Query<V> implements Serializable {
 
   private static final long serialVersionUID = 7967659059395653941L;
 
-  private final ResultType<V> resultType;
   private final String namespace;
 
   /**
@@ -156,13 +153,8 @@ public abstract class Query<V> implements Serializable {
     }
   }
 
-  Query(ResultType<V> resultType, String namespace) {
-    this.resultType = checkNotNull(resultType);
+  Query(String namespace) {
     this.namespace = namespace;
-  }
-
-  ResultType<V> getType() {
-    return resultType;
   }
 
   public String getNamespace() {
@@ -170,12 +162,8 @@ public abstract class Query<V> implements Serializable {
   }
 
   ToStringHelper toStringHelper() {
-    return MoreObjects.toStringHelper(this).add("type", resultType).add("namespace", namespace);
+    return MoreObjects.toStringHelper(this).add("namespace", namespace);
   }
-
-  abstract void populatePb(com.google.datastore.v1.RunQueryRequest.Builder requestPb);
-
-  abstract Query<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb);
 
   /**
    * Returns a new {@link GqlQuery} builder.
