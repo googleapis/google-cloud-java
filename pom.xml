@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-java</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <modules>
@@ -148,7 +148,6 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
-
   </modules>
 
   <!-- Do not deploy the aggregator POM -->
@@ -162,15 +161,49 @@
           <skip>true</skip>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.13</version>
-        <configuration>
-          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
-
+  <profiles>
+    <profile>
+      <!-- profile for nexus-staging:release invocation -->
+      <id>release-staging-repository</id>
+      <activation>
+        <property>
+          <!-- The root project not using nexus-staging-maven-plugin when signing -->
+          <name>!gpg.executable</name>
+        </property>
+      </activation>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>sonatype-nexus-staging</id>
+          <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <site>
+          <id>github-pages-site</id>
+          <name>Deployment through GitHub's site deployment plugin</name>
+          <url>site/google-cloud-bom</url>
+        </site>
+      </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- The root project runs nexus-staging:release task -->
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.13</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>sonatype-nexus-staging</serverId>
+              <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
