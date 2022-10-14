@@ -695,8 +695,6 @@
         <artifactId>google-cloud-notification</artifactId>
         <version>0.123.20-beta</version><!-- {x-version-update:google-cloud-notification:current} -->
       </dependency>
-
     </dependencies>
   </dependencyManagement>
-
 </project>
