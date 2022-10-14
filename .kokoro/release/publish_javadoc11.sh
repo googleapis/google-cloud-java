@@ -67,7 +67,7 @@ for module in "${modules[@]}"; do
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
-    mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
+    mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name} -Dcheckstyle.skip=true
     if [ "$?" -ne "0" ]; then
       failed_modules+=("${module}")
       continue
