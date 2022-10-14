@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-analyticshub-bom</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-analyticshub</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
+        <version>0.1.0</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-analyticshub-v1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-analyticshub-v1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-analyticshub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-analyticshub-v1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-analyticshub-v1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-analyticshub-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
