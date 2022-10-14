@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.6.5](https://github.com/googleapis/java-redis/compare/v2.6.4...v2.6.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#721](https://github.com/googleapis/java-redis/issues/721)) ([c564220](https://github.com/googleapis/java-redis/commit/c564220ef5e6b88c18da573ba58c56cd213226b9))
+* Update dependency certifi to v2022.9.24 ([#700](https://github.com/googleapis/java-redis/issues/700)) ([3026972](https://github.com/googleapis/java-redis/commit/3026972136e134390e01ec3f7336c0d4e9aadd23))
+* Update dependency charset-normalizer to v2.1.1 ([#704](https://github.com/googleapis/java-redis/issues/704)) ([a9a8fd0](https://github.com/googleapis/java-redis/commit/a9a8fd0e126688943d77e21535e576dc7859d191))
+* Update dependency click to v8.1.3 ([#705](https://github.com/googleapis/java-redis/issues/705)) ([72211c3](https://github.com/googleapis/java-redis/commit/72211c3a318aa8725a399976a196b1652399e375))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#724](https://github.com/googleapis/java-redis/issues/724)) ([5d8d067](https://github.com/googleapis/java-redis/commit/5d8d0677d71892bbbcc7003e83e8568b7591144b))
+* Update dependency gcp-releasetool to v1.8.8 ([#701](https://github.com/googleapis/java-redis/issues/701)) ([7b527bd](https://github.com/googleapis/java-redis/commit/7b527bdc122d25164ed63967a1dfaec615d1cb72))
+* Update dependency google-api-core to v2.10.1 ([#706](https://github.com/googleapis/java-redis/issues/706)) ([63e2432](https://github.com/googleapis/java-redis/commit/63e2432c47756f591a698eefb75b3049ffe64995))
+* Update dependency google-auth to v2.12.0 ([#707](https://github.com/googleapis/java-redis/issues/707)) ([e05bffa](https://github.com/googleapis/java-redis/commit/e05bffa0ca1448211309d6f97939971e444ccf31))
+* Update dependency google-cloud-core to v2.3.2 ([#702](https://github.com/googleapis/java-redis/issues/702)) ([01be1b4](https://github.com/googleapis/java-redis/commit/01be1b4259db5b9f979b815ae9a2c2f097926057))
+* Update dependency google-cloud-storage to v2.5.0 ([#708](https://github.com/googleapis/java-redis/issues/708)) ([7b5ac86](https://github.com/googleapis/java-redis/commit/7b5ac863db37b8a2d4eb65293aa0bec23baf12bb))
+* Update dependency google-crc32c to v1.5.0 ([#709](https://github.com/googleapis/java-redis/issues/709)) ([ca413b8](https://github.com/googleapis/java-redis/commit/ca413b8062b2451f8d937557606a1a648e2df7cc))
+* Update dependency googleapis-common-protos to v1.56.4 ([#703](https://github.com/googleapis/java-redis/issues/703)) ([3fe63ed](https://github.com/googleapis/java-redis/commit/3fe63ed1aeae8afa33a8c1aa9d667518969daf4d))
+* Update dependency importlib-metadata to v4.12.0 ([#710](https://github.com/googleapis/java-redis/issues/710)) ([ea9b5d1](https://github.com/googleapis/java-redis/commit/ea9b5d1087307a0adba7e1e2ff5af2d22b604ed9))
+* Update dependency jeepney to v0.8.0 ([#711](https://github.com/googleapis/java-redis/issues/711)) ([7d872e7](https://github.com/googleapis/java-redis/commit/7d872e7ee0f8ca33fa845dcd7c2a12226499189b))
+* Update dependency jinja2 to v3.1.2 ([#713](https://github.com/googleapis/java-redis/issues/713)) ([b05b1bf](https://github.com/googleapis/java-redis/commit/b05b1bf327aeb29ceb1c932d2f983b40ddf045c1))
+* Update dependency keyring to v23.9.3 ([#714](https://github.com/googleapis/java-redis/issues/714)) ([bd45e8e](https://github.com/googleapis/java-redis/commit/bd45e8e036ab935b5cb4435b8aef551e99f0cd95))
+* Update dependency protobuf to v3.20.2 ([#716](https://github.com/googleapis/java-redis/issues/716)) ([e13b64f](https://github.com/googleapis/java-redis/commit/e13b64fa5e5654511557b768e2cfff46e111c51a))
+* Update dependency protobuf to v4 ([#722](https://github.com/googleapis/java-redis/issues/722)) ([e3bda3c](https://github.com/googleapis/java-redis/commit/e3bda3c94a5845ce0de4ae55c5eda79b25a34594))
+* Update dependency pyjwt to v2.5.0 ([#717](https://github.com/googleapis/java-redis/issues/717)) ([65fe002](https://github.com/googleapis/java-redis/commit/65fe0024a1a2a9ee9893efff2b10c0dacca92930))
+* Update dependency requests to v2.28.1 ([#718](https://github.com/googleapis/java-redis/issues/718)) ([04e28c0](https://github.com/googleapis/java-redis/commit/04e28c016b10bc4f00fd0a981124e4ce3c5f9e71))
+* Update dependency typing-extensions to v4.3.0 ([#719](https://github.com/googleapis/java-redis/issues/719)) ([75c9ea2](https://github.com/googleapis/java-redis/commit/75c9ea285d0fea600d928eb61c632e3802baca40))
+* Update dependency zipp to v3.8.1 ([#720](https://github.com/googleapis/java-redis/issues/720)) ([592720b](https://github.com/googleapis/java-redis/commit/592720bb5155be42f576c6e5c6dea81707c67828))
+
 ## [2.6.4](https://github.com/googleapis/java-redis/compare/v2.6.3...v2.6.4) (2022-09-15)
 
 

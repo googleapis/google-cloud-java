@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.4.5](https://github.com/googleapis/java-servicedirectory/compare/v2.4.4...v2.4.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([96140e6](https://github.com/googleapis/java-servicedirectory/commit/96140e6498f3bad03d0f6f879dfb142fb25b04e2))
+
+## [2.4.4](https://github.com/googleapis/java-servicedirectory/compare/v2.4.3...v2.4.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#738](https://github.com/googleapis/java-servicedirectory/issues/738)) ([f7fa1e3](https://github.com/googleapis/java-servicedirectory/commit/f7fa1e3b7599973b154516e3f08175b0ec4189d8))
+* Update dependency certifi to v2022.9.24 ([#718](https://github.com/googleapis/java-servicedirectory/issues/718)) ([8b752e6](https://github.com/googleapis/java-servicedirectory/commit/8b752e6bd6388a35cb0dde17813541b7e0740a5c))
+* Update dependency charset-normalizer to v2.1.1 ([#723](https://github.com/googleapis/java-servicedirectory/issues/723)) ([d17df59](https://github.com/googleapis/java-servicedirectory/commit/d17df5986a8b4d9930b7741e134990b05a62b6a0))
+* Update dependency click to v8.1.3 ([#724](https://github.com/googleapis/java-servicedirectory/issues/724)) ([6bd01c3](https://github.com/googleapis/java-servicedirectory/commit/6bd01c3f9a48d568c1989cd3c569ac911e01fe51))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#742](https://github.com/googleapis/java-servicedirectory/issues/742)) ([45d1c99](https://github.com/googleapis/java-servicedirectory/commit/45d1c99e7aad2e4aef0b0ba3088ed89a4aaf0b9f))
+* Update dependency gcp-releasetool to v1.8.8 ([#719](https://github.com/googleapis/java-servicedirectory/issues/719)) ([e7b3ba6](https://github.com/googleapis/java-servicedirectory/commit/e7b3ba6074d46b58a8418404a778c4942d7493a6))
+* Update dependency google-api-core to v2.10.1 ([#725](https://github.com/googleapis/java-servicedirectory/issues/725)) ([705037e](https://github.com/googleapis/java-servicedirectory/commit/705037e665756b67d2eca285461d3f6069508d97))
+* Update dependency google-auth to v2.11.1 ([#720](https://github.com/googleapis/java-servicedirectory/issues/720)) ([b6e207c](https://github.com/googleapis/java-servicedirectory/commit/b6e207c4f0022bdae8fe89ae5afc463be73ec827))
+* Update dependency google-cloud-core to v2.3.2 ([#721](https://github.com/googleapis/java-servicedirectory/issues/721)) ([c2f0331](https://github.com/googleapis/java-servicedirectory/commit/c2f033117ef23f75cc0450b969e79c8bdc99b563))
+* Update dependency google-cloud-storage to v2.5.0 ([#726](https://github.com/googleapis/java-servicedirectory/issues/726)) ([494ae77](https://github.com/googleapis/java-servicedirectory/commit/494ae77835e102062e07698a8724c3cab2cdbbba))
+* Update dependency google-crc32c to v1.5.0 ([#727](https://github.com/googleapis/java-servicedirectory/issues/727)) ([dc76e65](https://github.com/googleapis/java-servicedirectory/commit/dc76e65d3a6fa0a968624dc83da134bd99682370))
+* Update dependency googleapis-common-protos to v1.56.4 ([#722](https://github.com/googleapis/java-servicedirectory/issues/722)) ([b2a990e](https://github.com/googleapis/java-servicedirectory/commit/b2a990e7e9bd428aa65c63cd30458dc40bcdfaa4))
+* Update dependency importlib-metadata to v4.12.0 ([#728](https://github.com/googleapis/java-servicedirectory/issues/728)) ([f929c38](https://github.com/googleapis/java-servicedirectory/commit/f929c38bf4c702f658e9f2788d2506d5f09caeb9))
+* Update dependency jeepney to v0.8.0 ([#729](https://github.com/googleapis/java-servicedirectory/issues/729)) ([5e7e18b](https://github.com/googleapis/java-servicedirectory/commit/5e7e18b24e539470411d7145f782a8364fdc6f5f))
+* Update dependency jinja2 to v3.1.2 ([#730](https://github.com/googleapis/java-servicedirectory/issues/730)) ([0d6a3f3](https://github.com/googleapis/java-servicedirectory/commit/0d6a3f3f984b1c88800b7d3be93effa8f9beb2da))
+* Update dependency protobuf to v4 ([#739](https://github.com/googleapis/java-servicedirectory/issues/739)) ([86c66fb](https://github.com/googleapis/java-servicedirectory/commit/86c66fb189410ec1f37df4c8403acde9b890ed98))
+* Update dependency pyjwt to v2.5.0 ([#734](https://github.com/googleapis/java-servicedirectory/issues/734)) ([f840541](https://github.com/googleapis/java-servicedirectory/commit/f840541e2243f57d4d3e3521d3d2f6fd3ca652b5))
+* Update dependency requests to v2.28.1 ([#735](https://github.com/googleapis/java-servicedirectory/issues/735)) ([5c39702](https://github.com/googleapis/java-servicedirectory/commit/5c397020bdcec38cef3c8940103cca9adbffab11))
+* Update dependency zipp to v3.8.1 ([#737](https://github.com/googleapis/java-servicedirectory/issues/737)) ([2ebb5fc](https://github.com/googleapis/java-servicedirectory/commit/2ebb5fc9cb3ab2841cc80bfe91f094166c36045e))
+
 ## [2.4.3](https://github.com/googleapis/java-servicedirectory/compare/v2.4.2...v2.4.3) (2022-09-15)
 
 

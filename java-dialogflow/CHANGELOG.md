@@ -1,5 +1,26 @@
 # Changelog
 
+## [4.9.1](https://github.com/googleapis/java-dialogflow/compare/v4.9.0...v4.9.1) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.20 ([#1030](https://github.com/googleapis/java-dialogflow/issues/1030)) ([86aad23](https://github.com/googleapis/java-dialogflow/commit/86aad238bab432a62a0ad58811479d6f0ae1a431))
+
+## [4.9.0](https://github.com/googleapis/java-dialogflow/compare/v4.8.7...v4.9.0) (2022-10-05)
+
+
+### Features
+
+* Add Agent Assist Summarization API (https://cloud.google.com/agent-assist/docs/summarization) ([#1026](https://github.com/googleapis/java-dialogflow/issues/1026)) ([edffdff](https://github.com/googleapis/java-dialogflow/commit/edffdffca3708af60b2b658c07a5bb1124f3dfdb))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.18 ([#1027](https://github.com/googleapis/java-dialogflow/issues/1027)) ([b972dd2](https://github.com/googleapis/java-dialogflow/commit/b972dd228083c0fbce17965a499e9986ff925092))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.19 ([#1029](https://github.com/googleapis/java-dialogflow/issues/1029)) ([d67f691](https://github.com/googleapis/java-dialogflow/commit/d67f691f270ef7a6bb0e6b6ee9eade9421b6b302))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1031](https://github.com/googleapis/java-dialogflow/issues/1031)) ([23263b7](https://github.com/googleapis/java-dialogflow/commit/23263b71bfe94d7a7a841853fd0af9c64bdb390f))
+
 ## [4.8.7](https://github.com/googleapis/java-dialogflow/compare/v4.8.6...v4.8.7) (2022-09-27)
 
 

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 
 function retry_with_backoff {
     attempts_left=$1
@@ -108,7 +108,7 @@ function assign_modules_to_job() {
 function run_graalvm_tests() {
   printf "Running GraalVM ITs on:\n%s\n" "${module_list[*]}"
   mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "${module_list},!CoverageAggregator" \
+    -pl "${module_list}" \
     -amd \
     -ntp \
     -DtrimStackTrace=false \
@@ -142,7 +142,7 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  mvn -B -pl "${module_list},!CoverageAggregator" \
+  mvn -B -pl "${module_list}" \
     -amd \
     -ntp \
     -DtrimStackTrace=false \

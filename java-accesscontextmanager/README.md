@@ -8,40 +8,31 @@ Java idiomatic client for [Identity Access Context Manager][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-
 ## Quickstart
 
 
 If you are using Maven, add this to your pom.xml file:
 
-
 ```xml
 <dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-identity-accesscontextmanager</artifactId>
-  <version>1.4.5</version>
+  <groupId>com.google.api.grpc</groupId>
+  <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
+  <version>1.0.4</version>
 </dependency>
 ```
 
-If you are using Gradle without BOM, add this to your dependencies:
-
+If you are using Gradle, add this to your dependencies
 ```Groovy
-implementation 'com.google.cloud:google-identity-accesscontextmanager:1.4.5'
+compile 'com.google.api.grpc:proto-google-identity-accesscontextmanager-v1:1.0.4'
 ```
-
-If you are using SBT, add this to your dependencies:
-
+If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-identity-accesscontextmanager" % "1.4.5"
+libraryDependencies += "com.google.api.grpc" % "proto-google-identity-accesscontextmanager-v1" % "1.0.4"
 ```
 
 ## Authentication
 
 See the [Authentication][authentication] section in the base directory's README.
-
-## Authorization
-
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Identity Access Context Manager APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Identity Access Context Manager API calls.
 
 ## Getting Started
 
@@ -55,8 +46,8 @@ You will need to [enable billing][enable-billing] to use Google Identity Access 
 
 ### Installation and setup
 
-You'll need to obtain the `google-identity-accesscontextmanager` library.  See the [Quickstart](#quickstart) section
-to add `google-identity-accesscontextmanager` as a dependency in your code.
+You'll need to obtain the `proto-google-identity-accesscontextmanager-v1` library.  See the [Quickstart](#quickstart) section
+to add `proto-google-identity-accesscontextmanager-v1` as a dependency in your code.
 
 ## About Identity Access Context Manager
 
@@ -79,55 +70,14 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 Identity Access Context Manager uses gRPC for the transport layer.
 
-## Supported Java Versions
+## Java Versions
 
-Java 8 or above is required for using this client.
-
-Google's Java client libraries,
-[Google Cloud Client Libraries][cloudlibs]
-and
-[Google Cloud API Libraries][apilibs],
-follow the
-[Oracle Java SE support roadmap][oracle]
-(see the Oracle Java SE Product Releases section).
-
-### For new development
-
-In general, new feature development occurs with support for the lowest Java
-LTS version covered by  Oracle's Premier Support (which typically lasts 5 years
-from initial General Availability). If the minimum required JVM for a given
-library is changed, it is accompanied by a [semver][semver] major release.
-
-Java 11 and (in September 2021) Java 17 are the best choices for new
-development.
-
-### Keeping production systems current
-
-Google tests its client libraries with all current LTS versions covered by
-Oracle's Extended Support (which typically lasts 8 years from initial
-General Availability).
-
-#### Legacy support
-
-Google's client libraries support legacy versions of Java runtimes with long
-term stable libraries that don't receive feature updates on a best efforts basis
-as it may not be possible to backport all patches.
-
-Google provides updates on a best efforts basis to apps that continue to use
-Java 7, though apps might need to upgrade to current versions of the library
-that supports their JVM.
-
-#### Where to find specific information
-
-The latest versions and the supported Java versions are identified on
-the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
-and on [google-cloud-java][g-c-j].
+Java 7 or above is required for using this client.
 
 ## Versioning
 
 
 This library follows [Semantic Versioning](http://semver.org/).
-
 
 
 ## Contributing
@@ -141,7 +91,6 @@ Please note that this project is released with a Contributor Code of Conduct. By
 this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
 information.
 
-
 ## License
 
 Apache 2.0 - See [LICENSE][license] for more information.
@@ -150,12 +99,11 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 Java Version | Status
 ------------ | ------
+Java 7 | [![Kokoro CI][kokoro-badge-image-1]][kokoro-badge-link-1]
 Java 8 | [![Kokoro CI][kokoro-badge-image-2]][kokoro-badge-link-2]
 Java 8 OSX | [![Kokoro CI][kokoro-badge-image-3]][kokoro-badge-link-3]
 Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
-
-Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: n/a
 [javadocs]: https://googleapis.dev/java/proto-google-identity-accesscontextmanager-v1/latest/index.html
@@ -169,13 +117,10 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-accesscontextmanager/java11.html
-[stability-image]: https://img.shields.io/badge/stability-stable-green
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-identity-accesscontextmanager.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-identity-accesscontextmanager&core=gav
+[stability-image]: https://img.shields.io/badge/stability-ga-green
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.api.grpc/proto-google-identity-accesscontextmanager-v1.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.api.grpc%20AND%20a:proto-google-identity-accesscontextmanager-v1&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
-[auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
-[predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
-[iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
@@ -187,9 +132,3 @@ Java is a registered trademark of Oracle and/or its affiliates.
 
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
-
-[semver]: https://semver.org/
-[cloudlibs]: https://cloud.google.com/apis/docs/client-libraries-explained
-[apilibs]: https://cloud.google.com/apis/docs/client-libraries-explained#google_api_client_libraries
-[oracle]: https://www.oracle.com/java/technologies/java-se-support-roadmap.html
-[g-c-j]: http://github.com/googleapis/google-cloud-java

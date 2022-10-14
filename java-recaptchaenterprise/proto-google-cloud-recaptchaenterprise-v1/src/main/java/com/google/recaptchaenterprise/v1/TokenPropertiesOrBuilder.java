@@ -106,7 +106,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated (Web keys only).
    * </pre>
    *
    * <code>string hostname = 4;</code>
@@ -118,7 +118,7 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
-   * The hostname of the page on which the token was generated.
+   * The hostname of the page on which the token was generated (Web keys only).
    * </pre>
    *
    * <code>string hostname = 4;</code>

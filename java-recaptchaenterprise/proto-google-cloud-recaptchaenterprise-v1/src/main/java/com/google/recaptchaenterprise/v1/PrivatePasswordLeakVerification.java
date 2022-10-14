@@ -77,7 +77,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+   * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
    * is used to look up password leaks associated with that hash prefix.
    * </pre>
    *
@@ -96,7 +96,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Encrypted Scrypt hash of the canonicalized username+password. It is
+   * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
    * re-encrypted by the server and returned through
    * `reencrypted_user_credentials_hash`.
    * </pre>
@@ -117,8 +117,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They should be compared with the client-side decryption
+   * Output only. List of prefixes of the encrypted potential password leaks that matched the
+   * given parameters. They must be compared with the client-side decryption
    * prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
@@ -136,8 +136,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They should be compared with the client-side decryption
+   * Output only. List of prefixes of the encrypted potential password leaks that matched the
+   * given parameters. They must be compared with the client-side decryption
    * prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
@@ -154,8 +154,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They should be compared with the client-side decryption
+   * Output only. List of prefixes of the encrypted potential password leaks that matched the
+   * given parameters. They must be compared with the client-side decryption
    * prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
@@ -176,8 +176,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-   * field. Used to match potential password leaks within
+   * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+   * field. It is used to match potential password leaks within
    * `encrypted_leak_match_prefixes`.
    * </pre>
    *
@@ -625,7 +625,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+     * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
      * is used to look up password leaks associated with that hash prefix.
      * </pre>
      *
@@ -641,7 +641,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+     * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
      * is used to look up password leaks associated with that hash prefix.
      * </pre>
      *
@@ -663,7 +663,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+     * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
      * is used to look up password leaks associated with that hash prefix.
      * </pre>
      *
@@ -684,7 +684,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Encrypted Scrypt hash of the canonicalized username+password. It is
+     * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
      * re-encrypted by the server and returned through
      * `reencrypted_user_credentials_hash`.
      * </pre>
@@ -702,7 +702,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Encrypted Scrypt hash of the canonicalized username+password. It is
+     * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
      * re-encrypted by the server and returned through
      * `reencrypted_user_credentials_hash`.
      * </pre>
@@ -726,7 +726,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Encrypted Scrypt hash of the canonicalized username+password. It is
+     * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
      * re-encrypted by the server and returned through
      * `reencrypted_user_credentials_hash`.
      * </pre>
@@ -757,8 +757,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -777,8 +777,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -795,8 +795,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -814,8 +814,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -840,8 +840,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -865,8 +865,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -888,8 +888,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -912,8 +912,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-     * field. Used to match potential password leaks within
+     * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+     * field. It is used to match potential password leaks within
      * `encrypted_leak_match_prefixes`.
      * </pre>
      *
@@ -931,8 +931,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-     * field. Used to match potential password leaks within
+     * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+     * field. It is used to match potential password leaks within
      * `encrypted_leak_match_prefixes`.
      * </pre>
      *
@@ -956,8 +956,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-     * field. Used to match potential password leaks within
+     * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+     * field. It is used to match potential password leaks within
      * `encrypted_leak_match_prefixes`.
      * </pre>
      *

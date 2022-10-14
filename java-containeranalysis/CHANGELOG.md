@@ -1,5 +1,43 @@
 # Changelog
 
+## [2.4.10](https://github.com/googleapis/java-containeranalysis/compare/v2.4.9...v2.4.10) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency io.grafeas:grafeas to v2.4.7 ([#970](https://github.com/googleapis/java-containeranalysis/issues/970)) ([7c61bff](https://github.com/googleapis/java-containeranalysis/commit/7c61bff75257da193cd98d74f4bcf0987fb86e58))
+
+## [2.4.9](https://github.com/googleapis/java-containeranalysis/compare/v2.4.8...v2.4.9) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([8d793cb](https://github.com/googleapis/java-containeranalysis/commit/8d793cbf3fbc3abc4c16363850a5cfc6f5cd7227))
+
+## [2.4.8](https://github.com/googleapis/java-containeranalysis/compare/v2.4.7...v2.4.8) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#963](https://github.com/googleapis/java-containeranalysis/issues/963)) ([4435e11](https://github.com/googleapis/java-containeranalysis/commit/4435e11ba6279dea0fda573b0d8b6ceb836aadaa))
+* Update dependency certifi to v2022.9.24 ([#947](https://github.com/googleapis/java-containeranalysis/issues/947)) ([10c9412](https://github.com/googleapis/java-containeranalysis/commit/10c9412145a63d113bb7dc16128be010dcff14f1))
+* Update dependency charset-normalizer to v2.1.1 ([#952](https://github.com/googleapis/java-containeranalysis/issues/952)) ([08cb67b](https://github.com/googleapis/java-containeranalysis/commit/08cb67b1cd14241670d522dd9a9648aab55df821))
+* Update dependency click to v8.1.3 ([#953](https://github.com/googleapis/java-containeranalysis/issues/953)) ([9daafc6](https://github.com/googleapis/java-containeranalysis/commit/9daafc6057dc6340d74308ff877c2392c39db07f))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#967](https://github.com/googleapis/java-containeranalysis/issues/967)) ([c8ab975](https://github.com/googleapis/java-containeranalysis/commit/c8ab97504f785647fad3043a6d04364eda833807))
+* Update dependency gcp-releasetool to v1.8.8 ([#948](https://github.com/googleapis/java-containeranalysis/issues/948)) ([301f24d](https://github.com/googleapis/java-containeranalysis/commit/301f24da5567b0bc4512af250ceef14cd7053b11))
+* Update dependency google-api-core to v2.10.1 ([#954](https://github.com/googleapis/java-containeranalysis/issues/954)) ([4d57bbc](https://github.com/googleapis/java-containeranalysis/commit/4d57bbca2b3d895777ef48ce810df52459962271))
+* Update dependency google-auth to v2.11.1 ([#949](https://github.com/googleapis/java-containeranalysis/issues/949)) ([54016ee](https://github.com/googleapis/java-containeranalysis/commit/54016ee86b99ed39f223779be67ccce953f05a55))
+* Update dependency google-cloud-core to v2.3.2 ([#950](https://github.com/googleapis/java-containeranalysis/issues/950)) ([e1e8a02](https://github.com/googleapis/java-containeranalysis/commit/e1e8a02b8cd99d0565c9163d60b03fbd4f920105))
+* Update dependency google-cloud-storage to v2.5.0 ([#955](https://github.com/googleapis/java-containeranalysis/issues/955)) ([a25910c](https://github.com/googleapis/java-containeranalysis/commit/a25910c87c08c111b471255773c62a646025409b))
+* Update dependency google-crc32c to v1.5.0 ([#956](https://github.com/googleapis/java-containeranalysis/issues/956)) ([57935bd](https://github.com/googleapis/java-containeranalysis/commit/57935bd05524ad0dbdfe1fd5de65b7d2dafd066c))
+* Update dependency googleapis-common-protos to v1.56.4 ([#951](https://github.com/googleapis/java-containeranalysis/issues/951)) ([66db23b](https://github.com/googleapis/java-containeranalysis/commit/66db23b13940dc51d0d0c2350015def7c4191224))
+* Update dependency markupsafe to v2.1.1 ([#957](https://github.com/googleapis/java-containeranalysis/issues/957)) ([1a18577](https://github.com/googleapis/java-containeranalysis/commit/1a1857757929ab4ad5546ed634a2be71d10b07ce))
+* Update dependency protobuf to v3.20.2 ([#958](https://github.com/googleapis/java-containeranalysis/issues/958)) ([9e7b260](https://github.com/googleapis/java-containeranalysis/commit/9e7b2609ba8a89d49222387a72b81b70fb45424d))
+* Update dependency protobuf to v4 ([#964](https://github.com/googleapis/java-containeranalysis/issues/964)) ([0b0bb24](https://github.com/googleapis/java-containeranalysis/commit/0b0bb2498ea5e4bed1911f8b2b7feff2a63964a3))
+* Update dependency requests to v2.28.1 ([#960](https://github.com/googleapis/java-containeranalysis/issues/960)) ([c86d47b](https://github.com/googleapis/java-containeranalysis/commit/c86d47bdd86682f066ae3fc651916ef5e7d71fff))
+* Update dependency typing-extensions to v4.3.0 ([#961](https://github.com/googleapis/java-containeranalysis/issues/961)) ([c10e3da](https://github.com/googleapis/java-containeranalysis/commit/c10e3da0cf4d4fe42e0d86a34a73c299a552821b))
+* Update dependency zipp to v3.8.1 ([#962](https://github.com/googleapis/java-containeranalysis/issues/962)) ([ab22872](https://github.com/googleapis/java-containeranalysis/commit/ab22872c16e2382a2dcb2299b778d23d57bc3653))
+
 ## [2.4.7](https://github.com/googleapis/java-containeranalysis/compare/v2.4.6...v2.4.7) (2022-09-20)
 
 

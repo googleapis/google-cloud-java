@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.9](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.8...v1.2.9) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([1750ae0](https://github.com/googleapis/java-networkconnectivity/commit/1750ae093154ba4a56830d0f3a1ad30220a44d25))
+
+## [1.2.8](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.7...v1.2.8) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#321](https://github.com/googleapis/java-networkconnectivity/issues/321)) ([bde5bc3](https://github.com/googleapis/java-networkconnectivity/commit/bde5bc38dca5df2a093b843d2dcd71598b28e7af))
+
 ## [1.2.7](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.6...v1.2.7) (2022-09-28)
 
 

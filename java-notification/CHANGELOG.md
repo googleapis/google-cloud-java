@@ -1,5 +1,63 @@
 # Changelog
 
+## [0.123.19](https://github.com/googleapis/java-notification/compare/v0.123.18...v0.123.19) (2022-10-10)
+
+
+### Dependencies
+
+* Update dependency google-api-core to v2.10.2 ([#734](https://github.com/googleapis/java-notification/issues/734)) ([72c8135](https://github.com/googleapis/java-notification/commit/72c813548bb49b5945c8c5128ac7af28329791b6))
+* Update dependency typing-extensions to v4.4.0 ([#733](https://github.com/googleapis/java-notification/issues/733)) ([d1e6b4e](https://github.com/googleapis/java-notification/commit/d1e6b4e5f208569b278895f88282d6c0efc1093e))
+* Update dependency zipp to v3.9.0 ([#735](https://github.com/googleapis/java-notification/issues/735)) ([4923b38](https://github.com/googleapis/java-notification/commit/4923b38c23dd7f275983fd59785d0f7c20172b66))
+
+## [0.123.18](https://github.com/googleapis/java-notification/compare/v0.123.17...v0.123.18) (2022-10-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-pubsub-bom to v1.120.20 ([#725](https://github.com/googleapis/java-notification/issues/725)) ([8bee33e](https://github.com/googleapis/java-notification/commit/8bee33e8bcc40bfe82d1eebee2c3b604164e69d0))
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#727](https://github.com/googleapis/java-notification/issues/727)) ([a2ad176](https://github.com/googleapis/java-notification/commit/a2ad1769b073c36f5df8bccda9d84b819abd9d71))
+* Update dependency gcp-releasetool to v1.8.10 ([#726](https://github.com/googleapis/java-notification/issues/726)) ([6f8edc7](https://github.com/googleapis/java-notification/commit/6f8edc7107fc15109d5ba16f5e537826f3d5cd02))
+
+## [0.123.17](https://github.com/googleapis/java-notification/compare/v0.123.16...v0.123.17) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#721](https://github.com/googleapis/java-notification/issues/721)) ([63edf98](https://github.com/googleapis/java-notification/commit/63edf9832f49f90de52951b11872c1cb109492f7))
+
+## [0.123.16](https://github.com/googleapis/java-notification/compare/v0.123.15...v0.123.16) (2022-10-02)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#710](https://github.com/googleapis/java-notification/issues/710)) ([5832d1a](https://github.com/googleapis/java-notification/commit/5832d1add924a9c81e9b5ae5bf4c3021ce736926))
+* Update dependency certifi to v2022.9.24 ([#690](https://github.com/googleapis/java-notification/issues/690)) ([bb6f623](https://github.com/googleapis/java-notification/commit/bb6f623bca744d2b73fea08cf1d544f07dd0f95b))
+* Update dependency charset-normalizer to v2.1.1 ([#695](https://github.com/googleapis/java-notification/issues/695)) ([6c2870e](https://github.com/googleapis/java-notification/commit/6c2870e741ca64f9c2e1dbcf68f206c6a57cf5af))
+* Update dependency click to v8.1.3 ([#696](https://github.com/googleapis/java-notification/issues/696)) ([f48037a](https://github.com/googleapis/java-notification/commit/f48037a949098dcca811c3e1ce40f09c2c31c084))
+* Update dependency gcp-releasetool to v1.8.8 ([#691](https://github.com/googleapis/java-notification/issues/691)) ([b020ff0](https://github.com/googleapis/java-notification/commit/b020ff0aa0a05ce652e81f11dca49f7aaac38eb0))
+* Update dependency gcp-releasetool to v1.8.9 ([#718](https://github.com/googleapis/java-notification/issues/718)) ([c628cb1](https://github.com/googleapis/java-notification/commit/c628cb1d971ed28fbee3fb17504113ba15a2ae42))
+* Update dependency google-api-core to v2.10.1 ([#697](https://github.com/googleapis/java-notification/issues/697)) ([d5eae31](https://github.com/googleapis/java-notification/commit/d5eae31320e91b586e5e912ae5b74cb25063fba1))
+* Update dependency google-auth to v2.11.1 ([#692](https://github.com/googleapis/java-notification/issues/692)) ([42c976c](https://github.com/googleapis/java-notification/commit/42c976cba2613f8f3038f9d9bfe974f027dc9ee5))
+* Update dependency google-auth to v2.12.0 ([#713](https://github.com/googleapis/java-notification/issues/713)) ([e8eea02](https://github.com/googleapis/java-notification/commit/e8eea0271db6654d71c764f4db2ce0234cce368f))
+* Update dependency google-cloud-core to v2.3.2 ([#693](https://github.com/googleapis/java-notification/issues/693)) ([bef18ba](https://github.com/googleapis/java-notification/commit/bef18bae6ab96bc3b2a6a05bff1875ce5fec6d90))
+* Update dependency google-cloud-storage to v2.5.0 ([#698](https://github.com/googleapis/java-notification/issues/698)) ([dbaef2e](https://github.com/googleapis/java-notification/commit/dbaef2e23c18151c4d4b8b6b0abe54879eab174a))
+* Update dependency google-crc32c to v1.5.0 ([#699](https://github.com/googleapis/java-notification/issues/699)) ([b754c92](https://github.com/googleapis/java-notification/commit/b754c928b60ee925e9f9013022b1ff7badc1d4f1))
+* Update dependency google-resumable-media to v2.4.0 ([#714](https://github.com/googleapis/java-notification/issues/714)) ([23e4ab2](https://github.com/googleapis/java-notification/commit/23e4ab2f501f7b9bcb7848f61364116c612e367d))
+* Update dependency googleapis-common-protos to v1.56.4 ([#694](https://github.com/googleapis/java-notification/issues/694)) ([e6f1c4d](https://github.com/googleapis/java-notification/commit/e6f1c4d89c5b259d251d21259dbf5da84f30eeae))
+* Update dependency importlib-metadata to v4.12.0 ([#700](https://github.com/googleapis/java-notification/issues/700)) ([3b7fca3](https://github.com/googleapis/java-notification/commit/3b7fca3517e78bd289fa4c9d99200ecc1cc00534))
+* Update dependency importlib-metadata to v4.13.0 ([#716](https://github.com/googleapis/java-notification/issues/716)) ([3772974](https://github.com/googleapis/java-notification/commit/37729742c15fb4cbdc83b3bd70aaa0cf5d2cd6c9))
+* Update dependency importlib-metadata to v5 ([#717](https://github.com/googleapis/java-notification/issues/717)) ([b7db4a0](https://github.com/googleapis/java-notification/commit/b7db4a037fa10d67419c2171e447e8a482036e1e))
+* Update dependency jeepney to v0.8.0 ([#701](https://github.com/googleapis/java-notification/issues/701)) ([e6c35c4](https://github.com/googleapis/java-notification/commit/e6c35c40cf9dcd06776f46fffc9617fa67cf7977))
+* Update dependency jinja2 to v3.1.2 ([#702](https://github.com/googleapis/java-notification/issues/702)) ([6909467](https://github.com/googleapis/java-notification/commit/69094673541868449550dbead2958f8a29292fc3))
+* Update dependency keyring to v23.9.3 ([#703](https://github.com/googleapis/java-notification/issues/703)) ([37b32e8](https://github.com/googleapis/java-notification/commit/37b32e8fb7cf60ea5641e98208627d692fee6a36))
+* Update dependency protobuf to v3.20.2 ([#705](https://github.com/googleapis/java-notification/issues/705)) ([a165ba9](https://github.com/googleapis/java-notification/commit/a165ba9cecabfe1745d759902d2fb8775c59bf09))
+* Update dependency protobuf to v3.20.3 ([#715](https://github.com/googleapis/java-notification/issues/715)) ([f3a503f](https://github.com/googleapis/java-notification/commit/f3a503f7cfc726809978a1e8dbf2cc6465ce3ee8))
+* Update dependency protobuf to v4 ([#711](https://github.com/googleapis/java-notification/issues/711)) ([97b6a46](https://github.com/googleapis/java-notification/commit/97b6a46c1345baf174ac8f1b2c3f7f827cb89299))
+* Update dependency pyjwt to v2.5.0 ([#706](https://github.com/googleapis/java-notification/issues/706)) ([8ba4981](https://github.com/googleapis/java-notification/commit/8ba4981c398e18b2fd5874ea97abfc7121af9497))
+* Update dependency requests to v2.28.1 ([#707](https://github.com/googleapis/java-notification/issues/707)) ([1da4574](https://github.com/googleapis/java-notification/commit/1da45742781ab629e3024f007ac29f6c79be858b))
+* Update dependency typing-extensions to v4.3.0 ([#708](https://github.com/googleapis/java-notification/issues/708)) ([f7e52fd](https://github.com/googleapis/java-notification/commit/f7e52fdcca64fc496643146f735fd45577ccf85e))
+* Update dependency zipp to v3.8.1 ([#709](https://github.com/googleapis/java-notification/issues/709)) ([cc24cd7](https://github.com/googleapis/java-notification/commit/cc24cd77cc53e018371007fe4d7174ea0236acb7))
+
 ## [0.123.15](https://github.com/googleapis/java-notification/compare/v0.123.14...v0.123.15) (2022-09-22)
 
 

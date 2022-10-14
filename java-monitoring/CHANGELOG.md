@@ -1,5 +1,36 @@
 # Changelog
 
+## [3.4.6](https://github.com/googleapis/java-monitoring/compare/v3.4.5...v3.4.6) (2022-10-03)
+
+
+### Documentation
+
+* [owlbot-java] samples do not need deploy plugin and deps upgrade ([#1583](https://github.com/googleapis/java-monitoring/issues/1583)) ([#937](https://github.com/googleapis/java-monitoring/issues/937)) ([7026581](https://github.com/googleapis/java-monitoring/commit/70265817713dd7cd61373554eddd5b773dca9590))
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#959](https://github.com/googleapis/java-monitoring/issues/959)) ([90aa742](https://github.com/googleapis/java-monitoring/commit/90aa74262cf06c160ec28ba87602fc2229266caa))
+* Update dependency certifi to v2022.9.24 ([#941](https://github.com/googleapis/java-monitoring/issues/941)) ([2e2d50d](https://github.com/googleapis/java-monitoring/commit/2e2d50d6f53cc0be427819ae0187569ab39e543a))
+* Update dependency charset-normalizer to v2.1.1 ([#945](https://github.com/googleapis/java-monitoring/issues/945)) ([9504770](https://github.com/googleapis/java-monitoring/commit/95047703ea97b21aea29c650cc04e8bf971347af))
+* Update dependency click to v8.1.3 ([#946](https://github.com/googleapis/java-monitoring/issues/946)) ([267a72f](https://github.com/googleapis/java-monitoring/commit/267a72f574159e8f5f90c70ec4ed748498a54910))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#966](https://github.com/googleapis/java-monitoring/issues/966)) ([01c630f](https://github.com/googleapis/java-monitoring/commit/01c630fa158100d93f847ec221ef7dffd8e16cfa))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#964](https://github.com/googleapis/java-monitoring/issues/964)) ([f8f3194](https://github.com/googleapis/java-monitoring/commit/f8f3194e9a786f3b2df188f6d74413108ed9bccb))
+* Update dependency gcp-releasetool to v1.8.8 ([#942](https://github.com/googleapis/java-monitoring/issues/942)) ([e8e851d](https://github.com/googleapis/java-monitoring/commit/e8e851df812981de16fb4719d11794c2441d0b98))
+* Update dependency google-api-core to v2.10.1 ([#947](https://github.com/googleapis/java-monitoring/issues/947)) ([ffb6362](https://github.com/googleapis/java-monitoring/commit/ffb636277cabdb9a81f974c668b779908bd90c0d))
+* Update dependency google-cloud-core to v2.3.2 ([#943](https://github.com/googleapis/java-monitoring/issues/943)) ([7623023](https://github.com/googleapis/java-monitoring/commit/762302385b36fcceee82e33694abca8aadd3146e))
+* Update dependency google-cloud-storage to v2.5.0 ([#949](https://github.com/googleapis/java-monitoring/issues/949)) ([f6d2e13](https://github.com/googleapis/java-monitoring/commit/f6d2e136f33fb603b3098ecc81769943423b141e))
+* Update dependency google-crc32c to v1.5.0 ([#950](https://github.com/googleapis/java-monitoring/issues/950)) ([0f15fe2](https://github.com/googleapis/java-monitoring/commit/0f15fe2224563b150fe057ed1cc6ff5087d00943))
+* Update dependency importlib-metadata to v4.12.0 ([#951](https://github.com/googleapis/java-monitoring/issues/951)) ([5366932](https://github.com/googleapis/java-monitoring/commit/53669329410586e177c4fc9ebe241c30cca1108f))
+* Update dependency jeepney to v0.8.0 ([#952](https://github.com/googleapis/java-monitoring/issues/952)) ([183eedb](https://github.com/googleapis/java-monitoring/commit/183eedbe660fccb711b371bb3c9e5487a0724e9f))
+* Update dependency keyring to v23.9.3 ([#962](https://github.com/googleapis/java-monitoring/issues/962)) ([8d4c382](https://github.com/googleapis/java-monitoring/commit/8d4c382fb0ec6a1a7bb8c1241835e0410a36d8f2))
+* Update dependency markupsafe to v2.1.1 ([#953](https://github.com/googleapis/java-monitoring/issues/953)) ([f4940e1](https://github.com/googleapis/java-monitoring/commit/f4940e1024713d8482d6bb55c5de72df1dc80c52))
+* Update dependency protobuf to v3.20.2 ([#954](https://github.com/googleapis/java-monitoring/issues/954)) ([f073156](https://github.com/googleapis/java-monitoring/commit/f0731569431f1ea2953792650054c14758628db6))
+* Update dependency protobuf to v4 ([#960](https://github.com/googleapis/java-monitoring/issues/960)) ([4dee05b](https://github.com/googleapis/java-monitoring/commit/4dee05be109d5c384d2c7122a043050b45ab0fd7))
+* Update dependency pyjwt to v2.5.0 ([#955](https://github.com/googleapis/java-monitoring/issues/955)) ([7f653b8](https://github.com/googleapis/java-monitoring/commit/7f653b80320859c41e722bb134fd0a2441885599))
+* Update dependency requests to v2.28.1 ([#956](https://github.com/googleapis/java-monitoring/issues/956)) ([11d0cbc](https://github.com/googleapis/java-monitoring/commit/11d0cbcf44cb158d71ab0538b5bf9f14c3af9ed6))
+* Update dependency zipp to v3.8.1 ([#958](https://github.com/googleapis/java-monitoring/issues/958)) ([dc0c863](https://github.com/googleapis/java-monitoring/commit/dc0c8633b6ea17d92067da8f6588a09dcf60589b))
+
 ## [3.4.5](https://github.com/googleapis/java-monitoring/compare/v3.4.4...v3.4.5) (2022-09-20)
 
 

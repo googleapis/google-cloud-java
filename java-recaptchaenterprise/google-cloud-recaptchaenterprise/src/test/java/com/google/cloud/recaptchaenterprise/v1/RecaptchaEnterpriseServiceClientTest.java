@@ -62,6 +62,8 @@ import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.RiskAnalysis;
 import com.google.recaptchaenterprise.v1.ScoreMetrics;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -400,6 +402,84 @@ public class RecaptchaEnterpriseServiceClientTest {
               .setPageToken("pageToken873572522")
               .build();
       client.listKeys(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveLegacySecretKeyTest() throws Exception {
+    RetrieveLegacySecretKeyResponse expectedResponse =
+        RetrieveLegacySecretKeyResponse.newBuilder()
+            .setLegacySecretKey("legacySecretKey1016952774")
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    KeyName key = KeyName.of("[PROJECT]", "[KEY]");
+
+    RetrieveLegacySecretKeyResponse actualResponse = client.retrieveLegacySecretKey(key);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetrieveLegacySecretKeyRequest actualRequest =
+        ((RetrieveLegacySecretKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(key.toString(), actualRequest.getKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void retrieveLegacySecretKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      KeyName key = KeyName.of("[PROJECT]", "[KEY]");
+      client.retrieveLegacySecretKey(key);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveLegacySecretKeyTest2() throws Exception {
+    RetrieveLegacySecretKeyResponse expectedResponse =
+        RetrieveLegacySecretKeyResponse.newBuilder()
+            .setLegacySecretKey("legacySecretKey1016952774")
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String key = "key106079";
+
+    RetrieveLegacySecretKeyResponse actualResponse = client.retrieveLegacySecretKey(key);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RetrieveLegacySecretKeyRequest actualRequest =
+        ((RetrieveLegacySecretKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(key, actualRequest.getKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void retrieveLegacySecretKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String key = "key106079";
+      client.retrieveLegacySecretKey(key);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

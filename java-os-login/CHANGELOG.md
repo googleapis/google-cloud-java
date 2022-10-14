@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.2.7](https://github.com/googleapis/java-os-login/compare/v2.2.6...v2.2.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([687833d](https://github.com/googleapis/java-os-login/commit/687833da5d0797464016a985a85c07519aa1ffc3))
+
+## [2.2.6](https://github.com/googleapis/java-os-login/compare/v2.2.5...v2.2.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#741](https://github.com/googleapis/java-os-login/issues/741)) ([9c6fd2b](https://github.com/googleapis/java-os-login/commit/9c6fd2b589ac444c9ed51ac7b871e1a70b5ed7fc))
+* Update dependency click to v8.1.3 ([#742](https://github.com/googleapis/java-os-login/issues/742)) ([bdd7629](https://github.com/googleapis/java-os-login/commit/bdd7629451b3bb90f174b494445928c4e77f9f1c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#762](https://github.com/googleapis/java-os-login/issues/762)) ([65f7580](https://github.com/googleapis/java-os-login/commit/65f75805530812b2e30219435ca32abcd4ccb7aa))
+* Update dependency gcp-releasetool to v1.8.8 ([#737](https://github.com/googleapis/java-os-login/issues/737)) ([2d9eb89](https://github.com/googleapis/java-os-login/commit/2d9eb89727f18413597447d9f81e3185a4bb82b3))
+* Update dependency google-api-core to v2.10.1 ([#743](https://github.com/googleapis/java-os-login/issues/743)) ([def9dc0](https://github.com/googleapis/java-os-login/commit/def9dc0071cacecfa4753827f151e19e5479718d))
+* Update dependency google-auth to v2.11.1 ([#738](https://github.com/googleapis/java-os-login/issues/738)) ([3647122](https://github.com/googleapis/java-os-login/commit/36471226ca349daeae6b6e8ac8d91404a3556b8f))
+* Update dependency google-auth to v2.12.0 ([#755](https://github.com/googleapis/java-os-login/issues/755)) ([a080732](https://github.com/googleapis/java-os-login/commit/a08073269774714b8fe561b8a5a464f54e0280a1))
+* Update dependency google-cloud-core to v2.3.2 ([#739](https://github.com/googleapis/java-os-login/issues/739)) ([aaf1442](https://github.com/googleapis/java-os-login/commit/aaf1442b17042a083a37b19053ad0627fe910037))
+* Update dependency google-cloud-storage to v2.5.0 ([#756](https://github.com/googleapis/java-os-login/issues/756)) ([85c6062](https://github.com/googleapis/java-os-login/commit/85c6062848024a61f20cc58d9e5118cae1bc1433))
+* Update dependency google-crc32c to v1.5.0 ([#757](https://github.com/googleapis/java-os-login/issues/757)) ([b4208f4](https://github.com/googleapis/java-os-login/commit/b4208f440fb805eb256803cf88d59233960dff60))
+* Update dependency importlib-metadata to v4.12.0 ([#758](https://github.com/googleapis/java-os-login/issues/758)) ([0d60abc](https://github.com/googleapis/java-os-login/commit/0d60abc2bbac9423bc09b86c8c04bb4cb01814cf))
+* Update dependency jeepney to v0.8.0 ([#759](https://github.com/googleapis/java-os-login/issues/759)) ([8a22fe5](https://github.com/googleapis/java-os-login/commit/8a22fe585435420504ffb85c4b90ff0e4650140b))
+* Update dependency jinja2 to v3.1.2 ([#744](https://github.com/googleapis/java-os-login/issues/744)) ([aabe2b1](https://github.com/googleapis/java-os-login/commit/aabe2b15184c589bdcf59ca937fee3b9f744eef2))
+* Update dependency keyring to v23.9.3 ([#745](https://github.com/googleapis/java-os-login/issues/745)) ([5ed2864](https://github.com/googleapis/java-os-login/commit/5ed2864bcf0e4e64a7c9f27f03b94960f0a491e8))
+* Update dependency markupsafe to v2.1.1 ([#746](https://github.com/googleapis/java-os-login/issues/746)) ([4445a84](https://github.com/googleapis/java-os-login/commit/4445a8481aae718a56e8151348363646b15ca05d))
+* Update dependency protobuf to v3.20.2 ([#747](https://github.com/googleapis/java-os-login/issues/747)) ([2185850](https://github.com/googleapis/java-os-login/commit/21858508874594ad32ccba6a4642706a0c1d9d04))
+* Update dependency pyjwt to v2.5.0 ([#748](https://github.com/googleapis/java-os-login/issues/748)) ([4332ab3](https://github.com/googleapis/java-os-login/commit/4332ab3f893873e0935b79f00d77002c623f6d11))
+* Update dependency typing-extensions to v4.3.0 ([#750](https://github.com/googleapis/java-os-login/issues/750)) ([91467b6](https://github.com/googleapis/java-os-login/commit/91467b621d759b8b4eaa925c8dcd4578a8ed55a8))
+
 ## [2.2.5](https://github.com/googleapis/java-os-login/compare/v2.2.4...v2.2.5) (2022-09-15)
 
 

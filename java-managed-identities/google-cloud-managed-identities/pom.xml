@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managed-identities</artifactId>
-  <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+  <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
   <packaging>jar</packaging>
   <name>Google Managed Service for Microsoft Active Directory</name>
   <url>https://github.com/googleapis/java-managed-identities</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-managed-identities-parent</artifactId>
-    <version>1.1.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+    <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-managed-identities</site.installationModule>
@@ -68,7 +68,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
-      <version>4.13.2</version>
     </dependency>
 
     <dependency>

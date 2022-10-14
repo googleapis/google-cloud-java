@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-gke-backup-v1</artifactId>
-  <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
+  <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
   <name>proto-google-cloud-gke-backup-v1</name>
   <description>Proto library for google-cloud-gke-backup</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gke-backup-parent</artifactId>
-    <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+    <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
   </parent>
   <dependencies>
     <dependency>

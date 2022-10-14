@@ -228,6 +228,59 @@ public final class RecaptchaEnterpriseServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
+          com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+      getRetrieveLegacySecretKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetrieveLegacySecretKey",
+      requestType = com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
+          com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+      getRetrieveLegacySecretKeyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+        getRetrieveLegacySecretKeyMethod;
+    if ((getRetrieveLegacySecretKeyMethod =
+            RecaptchaEnterpriseServiceGrpc.getRetrieveLegacySecretKeyMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getRetrieveLegacySecretKeyMethod =
+                RecaptchaEnterpriseServiceGrpc.getRetrieveLegacySecretKeyMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getRetrieveLegacySecretKeyMethod =
+              getRetrieveLegacySecretKeyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
+                          com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RetrieveLegacySecretKey"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "RetrieveLegacySecretKey"))
+                      .build();
+        }
+      }
+    }
+    return getRetrieveLegacySecretKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1.GetKeyRequest, com.google.recaptchaenterprise.v1.Key>
       getGetKeyMethod;
 
@@ -731,6 +784,24 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Returns the secret key related to the specified public key.
+     * You must use the legacy secret key only in a 3rd party integration with
+     * legacy reCAPTCHA.
+     * </pre>
+     */
+    public void retrieveLegacySecretKey(
+        com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRetrieveLegacySecretKeyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the specified key.
      * </pre>
      */
@@ -818,7 +889,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
-     * Get the memberships in a group of related accounts.
+     * Get memberships in a group of related accounts.
      * </pre>
      */
     public void listRelatedAccountGroupMemberships(
@@ -876,6 +947,13 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       com.google.recaptchaenterprise.v1.ListKeysRequest,
                       com.google.recaptchaenterprise.v1.ListKeysResponse>(
                       this, METHODID_LIST_KEYS)))
+          .addMethod(
+              getRetrieveLegacySecretKeyMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
+                      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>(
+                      this, METHODID_RETRIEVE_LEGACY_SECRET_KEY)))
           .addMethod(
               getGetKeyMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1020,6 +1098,26 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Returns the secret key related to the specified public key.
+     * You must use the legacy secret key only in a 3rd party integration with
+     * legacy reCAPTCHA.
+     * </pre>
+     */
+    public void retrieveLegacySecretKey(
+        com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetrieveLegacySecretKeyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the specified key.
      * </pre>
      */
@@ -1114,7 +1212,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
-     * Get the memberships in a group of related accounts.
+     * Get memberships in a group of related accounts.
      * </pre>
      */
     public void listRelatedAccountGroupMemberships(
@@ -1224,6 +1322,22 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Returns the secret key related to the specified public key.
+     * You must use the legacy secret key only in a 3rd party integration with
+     * legacy reCAPTCHA.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse
+        retrieveLegacySecretKey(
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveLegacySecretKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the specified key.
      * </pre>
      */
@@ -1309,7 +1423,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
-     * Get the memberships in a group of related accounts.
+     * Get memberships in a group of related accounts.
      * </pre>
      */
     public com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse
@@ -1414,6 +1528,23 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Returns the secret key related to the specified public key.
+     * You must use the legacy secret key only in a 3rd party integration with
+     * legacy reCAPTCHA.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
+        retrieveLegacySecretKey(
+            com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetrieveLegacySecretKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the specified key.
      * </pre>
      */
@@ -1501,7 +1632,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
-     * Get the memberships in a group of related accounts.
+     * Get memberships in a group of related accounts.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1534,14 +1665,15 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_ANNOTATE_ASSESSMENT = 1;
   private static final int METHODID_CREATE_KEY = 2;
   private static final int METHODID_LIST_KEYS = 3;
-  private static final int METHODID_GET_KEY = 4;
-  private static final int METHODID_UPDATE_KEY = 5;
-  private static final int METHODID_DELETE_KEY = 6;
-  private static final int METHODID_MIGRATE_KEY = 7;
-  private static final int METHODID_GET_METRICS = 8;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 9;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 10;
-  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 11;
+  private static final int METHODID_RETRIEVE_LEGACY_SECRET_KEY = 4;
+  private static final int METHODID_GET_KEY = 5;
+  private static final int METHODID_UPDATE_KEY = 6;
+  private static final int METHODID_DELETE_KEY = 7;
+  private static final int METHODID_MIGRATE_KEY = 8;
+  private static final int METHODID_GET_METRICS = 9;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 10;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 11;
+  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1583,6 +1715,13 @@ public final class RecaptchaEnterpriseServiceGrpc {
           serviceImpl.listKeys(
               (com.google.recaptchaenterprise.v1.ListKeysRequest) request,
               (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.ListKeysResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RETRIEVE_LEGACY_SECRET_KEY:
+          serviceImpl.retrieveLegacySecretKey(
+              (com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>)
                   responseObserver);
           break;
         case METHODID_GET_KEY:
@@ -1705,6 +1844,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getAnnotateAssessmentMethod())
                       .addMethod(getCreateKeyMethod())
                       .addMethod(getListKeysMethod())
+                      .addMethod(getRetrieveLegacySecretKeyMethod())
                       .addMethod(getGetKeyMethod())
                       .addMethod(getUpdateKeyMethod())
                       .addMethod(getDeleteKeyMethod())

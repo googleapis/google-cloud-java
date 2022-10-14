@@ -40,6 +40,9 @@
             "MigrateKey": {
               "methods": ["migrateKey", "migrateKeyCallable"]
             },
+            "RetrieveLegacySecretKey": {
+              "methods": ["retrieveLegacySecretKey", "retrieveLegacySecretKey", "retrieveLegacySecretKey", "retrieveLegacySecretKeyCallable"]
+            },
             "SearchRelatedAccountGroupMemberships": {
               "methods": ["searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMembershipsPagedCallable", "searchRelatedAccountGroupMembershipsCallable"]
             },

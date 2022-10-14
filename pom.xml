@@ -3,29 +3,21 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-java-parent</artifactId>
+  <artifactId>google-cloud-java</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version>
-  </parent>
-  <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-    <skipUnitTests>false</skipUnitTests>
-  </properties>
 
   <modules>
-    <module>CoverageAggregator</module>
-    <module>google-cloud-gapic-bom</module>
+    <module>gapic-libraries-bom</module>
+    <module>google-cloud-jar-parent</module>
+    <module>google-cloud-pom-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-aiplatform</module>
     <module>java-analytics-admin</module>
     <module>java-analytics-data</module>
+    <module>java-analyticshub</module>
     <module>java-api-gateway</module>
     <module>java-apigee-connect</module>
     <module>java-apigee-registry</module>
@@ -159,43 +151,26 @@
 
   </modules>
 
+  <!-- Do not deploy the aggregator POM -->
   <build>
     <plugins>
-      <!-- jacoco code coverage -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>test</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0</version>
         <configuration>
-          <skip>${skipUnitTests}</skip>
+          <skip>true</skip>
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.13</version>
         <configuration>
-          <forkCount>1C</forkCount>
-          <reuseForks>true</reuseForks>
+          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
 </project>

@@ -1,5 +1,55 @@
 # Changelog
 
+## [0.5.8](https://github.com/googleapis/java-video-live-stream/compare/v0.5.7...v0.5.8) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([66e0701](https://github.com/googleapis/java-video-live-stream/commit/66e070190c1407b4c9e6b4ffcad4b258008e1bf6))
+
+## [0.5.7](https://github.com/googleapis/java-video-live-stream/compare/v0.5.6...v0.5.7) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#132](https://github.com/googleapis/java-video-live-stream/issues/132)) ([d8aade9](https://github.com/googleapis/java-video-live-stream/commit/d8aade9a7beb74c31af59ea9234b1db50243b0e6))
+
+## [0.5.6](https://github.com/googleapis/java-video-live-stream/compare/v0.5.5...v0.5.6) (2022-10-02)
+
+
+### Dependencies
+
+* Update dependency gcp-releasetool to v1.8.9 ([#128](https://github.com/googleapis/java-video-live-stream/issues/128)) ([dda7310](https://github.com/googleapis/java-video-live-stream/commit/dda7310076da03224f16a52734f7e3ef630c5a87))
+* Update dependency importlib-metadata to v4.13.0 ([#126](https://github.com/googleapis/java-video-live-stream/issues/126)) ([eb41972](https://github.com/googleapis/java-video-live-stream/commit/eb4197272139cbdd34c8ad947cbcbe61d65bab8d))
+* Update dependency importlib-metadata to v5 ([#127](https://github.com/googleapis/java-video-live-stream/issues/127)) ([b38dd2b](https://github.com/googleapis/java-video-live-stream/commit/b38dd2be92ddd37e0ef7e87dfccf710f97f116da))
+
+## [0.5.5](https://github.com/googleapis/java-video-live-stream/compare/v0.5.4...v0.5.5) (2022-09-30)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#101](https://github.com/googleapis/java-video-live-stream/issues/101)) ([983e020](https://github.com/googleapis/java-video-live-stream/commit/983e0204e3e641f26a97f4e7cc291a5d87ed38ff))
+* Update dependency charset-normalizer to v2.1.1 ([#109](https://github.com/googleapis/java-video-live-stream/issues/109)) ([020e50c](https://github.com/googleapis/java-video-live-stream/commit/020e50c0d0d86e0cb080da6ed64affbb721d9338))
+* Update dependency click to v8.1.3 ([#110](https://github.com/googleapis/java-video-live-stream/issues/110)) ([b51c535](https://github.com/googleapis/java-video-live-stream/commit/b51c5358f69e206ccf11aac511d13788e4cb36f2))
+* Update dependency google-api-core to v2.10.1 ([#111](https://github.com/googleapis/java-video-live-stream/issues/111)) ([53403ae](https://github.com/googleapis/java-video-live-stream/commit/53403aebbdbbb47bf46fdd1d00a5f53d843593a2))
+* Update dependency google-auth to v2.12.0 ([#123](https://github.com/googleapis/java-video-live-stream/issues/123)) ([d4ca6d5](https://github.com/googleapis/java-video-live-stream/commit/d4ca6d5e2255d235a2e5d39d0da7e590268d8117))
+* Update dependency google-cloud-storage to v2.5.0 ([#112](https://github.com/googleapis/java-video-live-stream/issues/112)) ([c435766](https://github.com/googleapis/java-video-live-stream/commit/c435766b6ba5804dcfe5ada7073b26a92478afd2))
+* Update dependency google-crc32c to v1.5.0 ([#113](https://github.com/googleapis/java-video-live-stream/issues/113)) ([b05a166](https://github.com/googleapis/java-video-live-stream/commit/b05a16687d7054b0f935f844c735e17f5d85b886))
+* Update dependency google-resumable-media to v2.4.0 ([#119](https://github.com/googleapis/java-video-live-stream/issues/119)) ([b67218b](https://github.com/googleapis/java-video-live-stream/commit/b67218b9ae4da4332df9ea11cef496f11ef9da14))
+* Update dependency googleapis-common-protos to v1.56.4 ([#108](https://github.com/googleapis/java-video-live-stream/issues/108)) ([886fa87](https://github.com/googleapis/java-video-live-stream/commit/886fa874dfdd878203c27603026c3de6984d03b3))
+* Update dependency importlib-metadata to v4.12.0 ([#96](https://github.com/googleapis/java-video-live-stream/issues/96)) ([708bcd0](https://github.com/googleapis/java-video-live-stream/commit/708bcd047c201d29e632b9217825daf5c2e6ce83))
+* Update dependency jeepney to v0.8.0 ([#114](https://github.com/googleapis/java-video-live-stream/issues/114)) ([c9fde8a](https://github.com/googleapis/java-video-live-stream/commit/c9fde8aab6f22d77aae5cc1cee1fb1e0c1cea2f7))
+* Update dependency jinja2 to v3.1.2 ([#97](https://github.com/googleapis/java-video-live-stream/issues/97)) ([e2db139](https://github.com/googleapis/java-video-live-stream/commit/e2db139a707b58b284243132e1e9ef03ce6e16d5))
+* Update dependency keyring to v23.9.3 ([#115](https://github.com/googleapis/java-video-live-stream/issues/115)) ([0f1a525](https://github.com/googleapis/java-video-live-stream/commit/0f1a525b84d9c8c060b2d4b7dbf2b5fd7232aa9a))
+* Update dependency markupsafe to v2.1.1 ([#98](https://github.com/googleapis/java-video-live-stream/issues/98)) ([83b29a1](https://github.com/googleapis/java-video-live-stream/commit/83b29a191a8332137eced6b0745a2a6dfa5b6d99))
+* Update dependency protobuf to v3.20.2 ([#116](https://github.com/googleapis/java-video-live-stream/issues/116)) ([7771a9a](https://github.com/googleapis/java-video-live-stream/commit/7771a9a3c0d426ae9ab1124c2e21ace1ccac2b46))
+* Update dependency protobuf to v3.20.3 ([#120](https://github.com/googleapis/java-video-live-stream/issues/120)) ([443bcbf](https://github.com/googleapis/java-video-live-stream/commit/443bcbf367792421452ab81b0b83a3eb50c2b37a))
+* Update dependency protobuf to v4 ([#102](https://github.com/googleapis/java-video-live-stream/issues/102)) ([0f2e849](https://github.com/googleapis/java-video-live-stream/commit/0f2e8493b0433632e33104fab4e6d84f3c9dac15))
+* Update dependency pyjwt to v2.5.0 ([#117](https://github.com/googleapis/java-video-live-stream/issues/117)) ([7177910](https://github.com/googleapis/java-video-live-stream/commit/71779107f757effa340e2127416269c9b44f1d2d))
+* Update dependency requests to v2.28.1 ([#118](https://github.com/googleapis/java-video-live-stream/issues/118)) ([80394b3](https://github.com/googleapis/java-video-live-stream/commit/80394b38b37e46a1c524eaa6ebdc23d1ab9cc38e))
+* Update dependency typing-extensions to v4.3.0 ([#99](https://github.com/googleapis/java-video-live-stream/issues/99)) ([0b9293d](https://github.com/googleapis/java-video-live-stream/commit/0b9293dc4d09bd9eeda8fde61a0dfe0201db8c23))
+* Update dependency zipp to v3.8.1 ([#100](https://github.com/googleapis/java-video-live-stream/issues/100)) ([97fa2c8](https://github.com/googleapis/java-video-live-stream/commit/97fa2c8f7b98bbd7d69d0f39ceb4c2b0d1209f4d))
+
 ## [0.5.4](https://github.com/googleapis/java-video-live-stream/compare/v0.5.3...v0.5.4) (2022-09-15)
 
 

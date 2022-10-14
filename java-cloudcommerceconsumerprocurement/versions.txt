@@ -3,4 +3,4 @@
 
 google-cloud-cloudcommerceconsumerprocurement:0.1.5:0.1.6-SNAPSHOT
 proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1:0.1.5:0.1.6-SNAPSHOT
-grpc-google-cloud-cloudcommerceconsumerprocurement-v1alpha1:0.1.3:0.1.4-SNAPSHOT
+grpc-google-cloud-cloudcommerceconsumerprocurement-v1alpha1:0.1.5:0.1.6-SNAPSHOT

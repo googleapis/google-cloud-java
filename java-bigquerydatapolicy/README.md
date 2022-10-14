@@ -64,7 +64,7 @@ to add `google-cloud-bigquerydatapolicy` as a dependency in your code.
 ## About BigQuery DataPolicy API
 
 
-[BigQuery DataPolicy API][product-docs] 
+[BigQuery DataPolicy API][product-docs] Data Policy Service provides APIs for managing the label-policy bindings.
 
 See the [BigQuery DataPolicy API client library docs][javadocs] to learn how to
 use this BigQuery DataPolicy API Client Library.
@@ -163,7 +163,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/bigquery/docs/reference/datapolicy/
+[product-docs]: cloud.google.com/bigquery/docs/reference/datapolicy/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-bigquerydatapolicy/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquerydatapolicy/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquerydatapolicy/java7.html

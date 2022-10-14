@@ -3,13 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-bom</artifactId>
-  <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+  <version>4.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Cloud Dataproc BOM</name>
@@ -18,52 +19,22 @@
     BOM for Google Cloud Dataproc
   </description>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>chingor13</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google LLC</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/googleapis/java-dataproc.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-dataproc.git</developerConnection>
-    <url>https://github.com/googleapis/java-dataproc</url>
-  </scm>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>4.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
+        <version>4.0.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>4.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>4.0.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

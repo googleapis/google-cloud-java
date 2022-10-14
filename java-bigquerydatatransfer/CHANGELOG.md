@@ -1,5 +1,44 @@
 # Changelog
 
+## [2.3.17](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.16...v2.3.17) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.0 ([#1527](https://github.com/googleapis/java-bigquerydatatransfer/issues/1527)) ([9e0836d](https://github.com/googleapis/java-bigquerydatatransfer/commit/9e0836de68ca8e1d4f93fb444b81d95ff7c66a9c))
+* Update dependency com.google.cloud:google-cloud-pubsub to v1.120.20 ([#1526](https://github.com/googleapis/java-bigquerydatatransfer/issues/1526)) ([e81c12b](https://github.com/googleapis/java-bigquerydatatransfer/commit/e81c12bad5e1bf74eba5ad660267c1e201d41bed))
+
+## [2.3.16](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.15...v2.3.16) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2cf31ab](https://github.com/googleapis/java-bigquerydatatransfer/commit/2cf31abf50b2e4e6670a6fc0e8d8d97c6d047764))
+
+## [2.3.15](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.14...v2.3.15) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#1511](https://github.com/googleapis/java-bigquerydatatransfer/issues/1511)) ([74e11d8](https://github.com/googleapis/java-bigquerydatatransfer/commit/74e11d8adc4f60adfdf4a781f6b651c38e10868e))
+* Update dependency certifi to v2022.9.24 ([#1497](https://github.com/googleapis/java-bigquerydatatransfer/issues/1497)) ([8077141](https://github.com/googleapis/java-bigquerydatatransfer/commit/80771419cdbd948f9122ac97a57f0fc75b41ab3a))
+* Update dependency charset-normalizer to v2.1.1 ([#1501](https://github.com/googleapis/java-bigquerydatatransfer/issues/1501)) ([d15213f](https://github.com/googleapis/java-bigquerydatatransfer/commit/d15213f58fb171139d23250ca0d295a78369e4b3))
+* Update dependency click to v8.1.3 ([#1502](https://github.com/googleapis/java-bigquerydatatransfer/issues/1502)) ([51a0085](https://github.com/googleapis/java-bigquerydatatransfer/commit/51a0085e23d86d6ff6891181491b972e32c20317))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#1523](https://github.com/googleapis/java-bigquerydatatransfer/issues/1523)) ([4c3649f](https://github.com/googleapis/java-bigquerydatatransfer/commit/4c3649fe8a598277f0d87e0b06cc143a89ebc73e))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#1521](https://github.com/googleapis/java-bigquerydatatransfer/issues/1521)) ([1e1d220](https://github.com/googleapis/java-bigquerydatatransfer/commit/1e1d22060d100ba5de6bd296c286718ffc488e66))
+* Update dependency gcp-releasetool to v1.8.8 ([#1498](https://github.com/googleapis/java-bigquerydatatransfer/issues/1498)) ([163351f](https://github.com/googleapis/java-bigquerydatatransfer/commit/163351f5f9371f99139ca1d22a3e72503ca88e3b))
+* Update dependency google-cloud-core to v2.3.2 ([#1499](https://github.com/googleapis/java-bigquerydatatransfer/issues/1499)) ([6ad4415](https://github.com/googleapis/java-bigquerydatatransfer/commit/6ad4415f2bde807d405261ff6e49dfba21a88cc2))
+* Update dependency googleapis-common-protos to v1.56.4 ([#1500](https://github.com/googleapis/java-bigquerydatatransfer/issues/1500)) ([894db27](https://github.com/googleapis/java-bigquerydatatransfer/commit/894db273c4ba7b003feb767fea62cab9b44241e8))
+* Update dependency jinja2 to v3.1.2 ([#1503](https://github.com/googleapis/java-bigquerydatatransfer/issues/1503)) ([89c179d](https://github.com/googleapis/java-bigquerydatatransfer/commit/89c179ddd77d495355da27e2c4adf95803c04b87))
+* Update dependency keyring to v23.9.3 ([#1504](https://github.com/googleapis/java-bigquerydatatransfer/issues/1504)) ([96fa6c0](https://github.com/googleapis/java-bigquerydatatransfer/commit/96fa6c0cf9a2a574604824df28040dc9727a91ed))
+* Update dependency markupsafe to v2.1.1 ([#1505](https://github.com/googleapis/java-bigquerydatatransfer/issues/1505)) ([b19f6a7](https://github.com/googleapis/java-bigquerydatatransfer/commit/b19f6a7387edfdde90731ee197cfd2bddca69437))
+* Update dependency protobuf to v3.20.2 ([#1506](https://github.com/googleapis/java-bigquerydatatransfer/issues/1506)) ([27c9cc3](https://github.com/googleapis/java-bigquerydatatransfer/commit/27c9cc3ebb6f7faa4ebd0e06ae08288f8cc9bc21))
+* Update dependency protobuf to v4 ([#1512](https://github.com/googleapis/java-bigquerydatatransfer/issues/1512)) ([dfedde9](https://github.com/googleapis/java-bigquerydatatransfer/commit/dfedde9a7dada6f3f2ff10eec02cda7e273000c8))
+* Update dependency pyjwt to v2.5.0 ([#1507](https://github.com/googleapis/java-bigquerydatatransfer/issues/1507)) ([e122944](https://github.com/googleapis/java-bigquerydatatransfer/commit/e122944acbb26b76e5af85023520fbbb4f5fc7dc))
+* Update dependency requests to v2.28.1 ([#1508](https://github.com/googleapis/java-bigquerydatatransfer/issues/1508)) ([37c1415](https://github.com/googleapis/java-bigquerydatatransfer/commit/37c1415128809df123065615235260b94fe9f3d7))
+* Update dependency typing-extensions to v4.3.0 ([#1509](https://github.com/googleapis/java-bigquerydatatransfer/issues/1509)) ([bebf069](https://github.com/googleapis/java-bigquerydatatransfer/commit/bebf069100192ae291db92242024866052adfcd0))
+* Update dependency zipp to v3.8.1 ([#1510](https://github.com/googleapis/java-bigquerydatatransfer/issues/1510)) ([8f179df](https://github.com/googleapis/java-bigquerydatatransfer/commit/8f179dfd9bcdad6b1198a3e996e734e68bcdf20e))
+
 ## [2.3.14](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.13...v2.3.14) (2022-09-22)
 
 

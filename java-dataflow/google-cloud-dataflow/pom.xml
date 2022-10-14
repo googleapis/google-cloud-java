@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataflow</artifactId>
-  <version>0.7.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+  <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   <packaging>jar</packaging>
   <name>Google Dataflow</name>
   <url>https://github.com/googleapis/java-dataflow</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataflow-parent</artifactId>
-    <version>0.7.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+    <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataflow</site.installationModule>
@@ -72,7 +72,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
-      <version>4.13.2</version>
     </dependency>
 
     <dependency>

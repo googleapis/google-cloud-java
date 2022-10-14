@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.6.1](https://github.com/googleapis/java-speech/compare/v2.6.0...v2.6.1) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#971](https://github.com/googleapis/java-speech/issues/971)) ([0b1c6f2](https://github.com/googleapis/java-speech/commit/0b1c6f22d874f2770656bc0e44a628a9583c4ee3))
+
+## [2.6.0](https://github.com/googleapis/java-speech/compare/v2.5.9...v2.6.0) (2022-10-04)
+
+
+### Features
+
+* added Speech-to-Text V2 API proto ([7a00dfa](https://github.com/googleapis/java-speech/commit/7a00dfa3b624d75eb25953cb15b8bd9a6923c284))
+
+
+### Documentation
+
+* [owlbot-java] samples do not need deploy plugin and deps upgrade ([#1583](https://github.com/googleapis/java-speech/issues/1583)) ([#965](https://github.com/googleapis/java-speech/issues/965)) ([580861f](https://github.com/googleapis/java-speech/commit/580861f3a36157f144525213644809dfbe8d45e4))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#970](https://github.com/googleapis/java-speech/issues/970)) ([1ed2f89](https://github.com/googleapis/java-speech/commit/1ed2f892b1201e3f3e3ad48d5bbf36908484ade7))
+
 ## [2.5.9](https://github.com/googleapis/java-speech/compare/v2.5.8...v2.5.9) (2022-09-26)
 
 

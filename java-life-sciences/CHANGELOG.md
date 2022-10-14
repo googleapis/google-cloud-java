@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.5.7](https://github.com/googleapis/java-life-sciences/compare/v0.5.6...v0.5.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([1479321](https://github.com/googleapis/java-life-sciences/commit/1479321e19d58a59b28613911c810015d7e9d629))
+
+## [0.5.6](https://github.com/googleapis/java-life-sciences/compare/v0.5.5...v0.5.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#254](https://github.com/googleapis/java-life-sciences/issues/254)) ([287fdd7](https://github.com/googleapis/java-life-sciences/commit/287fdd7a46f3b6dae73e1db9b6bcfd56aca5c6eb))
+
 ## [0.5.5](https://github.com/googleapis/java-life-sciences/compare/v0.5.4...v0.5.5) (2022-09-28)
 
 

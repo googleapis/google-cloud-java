@@ -1,5 +1,42 @@
 # Changelog
 
+## [0.6.0](https://github.com/googleapis/java-certificate-manager/compare/v0.5.3...v0.6.0) (2022-10-03)
+
+
+### Features
+
+* Added support for Private Trust to Certificate Manager API ([#110](https://github.com/googleapis/java-certificate-manager/issues/110)) ([f5a2403](https://github.com/googleapis/java-certificate-manager/commit/f5a2403e24d53b2ae5eafd74437c20077e92be36))
+
+
+### Documentation
+
+* See https://cloud.google.com/certificate-manager/docs/deploy-google-managed-cas ([f5a2403](https://github.com/googleapis/java-certificate-manager/commit/f5a2403e24d53b2ae5eafd74437c20077e92be36))
+
+## [0.5.3](https://github.com/googleapis/java-certificate-manager/compare/v0.5.2...v0.5.3) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#86](https://github.com/googleapis/java-certificate-manager/issues/86)) ([7a5ee8f](https://github.com/googleapis/java-certificate-manager/commit/7a5ee8f517a680a8781b473263bbcc2fed53d0ea))
+* Update dependency charset-normalizer to v2.1.1 ([#90](https://github.com/googleapis/java-certificate-manager/issues/90)) ([df3f520](https://github.com/googleapis/java-certificate-manager/commit/df3f520289a0b8366c639ad418533ad8c3a248cf))
+* Update dependency click to v8.1.3 ([#91](https://github.com/googleapis/java-certificate-manager/issues/91)) ([09f603f](https://github.com/googleapis/java-certificate-manager/commit/09f603f93c945187dcf07a51a96396aa7deeb0fc))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#111](https://github.com/googleapis/java-certificate-manager/issues/111)) ([512f0f6](https://github.com/googleapis/java-certificate-manager/commit/512f0f6ca55c76d1bfddcbabd4ceb75f6efaba2c))
+* Update dependency gcp-releasetool to v1.8.8 ([#87](https://github.com/googleapis/java-certificate-manager/issues/87)) ([14e458c](https://github.com/googleapis/java-certificate-manager/commit/14e458cd623fcd3294151d811771e81b0cad0baf))
+* Update dependency google-api-core to v2.10.1 ([#92](https://github.com/googleapis/java-certificate-manager/issues/92)) ([7a640b8](https://github.com/googleapis/java-certificate-manager/commit/7a640b8505568f771db15e8bc098adb9f46e7e0b))
+* Update dependency google-auth to v2.12.0 ([#93](https://github.com/googleapis/java-certificate-manager/issues/93)) ([0a968d5](https://github.com/googleapis/java-certificate-manager/commit/0a968d5b0e28017ce5464874f272aa9e7ef4f98c))
+* Update dependency google-cloud-core to v2.3.2 ([#88](https://github.com/googleapis/java-certificate-manager/issues/88)) ([87a869f](https://github.com/googleapis/java-certificate-manager/commit/87a869fa203a7ba28004c39b053dbb18cacf9bd1))
+* Update dependency google-cloud-storage to v2.5.0 ([#94](https://github.com/googleapis/java-certificate-manager/issues/94)) ([2f60471](https://github.com/googleapis/java-certificate-manager/commit/2f60471d0a51ee8407a8a4473c6835b059c9290f))
+* Update dependency google-crc32c to v1.5.0 ([#95](https://github.com/googleapis/java-certificate-manager/issues/95)) ([5b00edb](https://github.com/googleapis/java-certificate-manager/commit/5b00edb5e92b1ea4ebf0bb8bfdc999fb097ab70d))
+* Update dependency googleapis-common-protos to v1.56.4 ([#89](https://github.com/googleapis/java-certificate-manager/issues/89)) ([7080c4b](https://github.com/googleapis/java-certificate-manager/commit/7080c4b2ebe28e3ac6991731da0e386bf65520f0))
+* Update dependency importlib-metadata to v4.12.0 ([#96](https://github.com/googleapis/java-certificate-manager/issues/96)) ([454fdb6](https://github.com/googleapis/java-certificate-manager/commit/454fdb6684f79658a5e1880393bc89a727d423c5))
+* Update dependency jeepney to v0.8.0 ([#97](https://github.com/googleapis/java-certificate-manager/issues/97)) ([262844e](https://github.com/googleapis/java-certificate-manager/commit/262844eba274fed09c45225fad38f74be25b2945))
+* Update dependency jinja2 to v3.1.2 ([#98](https://github.com/googleapis/java-certificate-manager/issues/98)) ([3b4aa19](https://github.com/googleapis/java-certificate-manager/commit/3b4aa19f96239f8c1113d3c103dc61e56e4469f2))
+* Update dependency keyring to v23.9.3 ([#99](https://github.com/googleapis/java-certificate-manager/issues/99)) ([c9ef96b](https://github.com/googleapis/java-certificate-manager/commit/c9ef96bb8a60489e1339069cde7e8a7cbdf79d4a))
+* Update dependency markupsafe to v2.1.1 ([#100](https://github.com/googleapis/java-certificate-manager/issues/100)) ([2353773](https://github.com/googleapis/java-certificate-manager/commit/235377317bafdc1af7d8ac5e6ae2c2a165462df5))
+* Update dependency protobuf to v3.20.2 ([#101](https://github.com/googleapis/java-certificate-manager/issues/101)) ([187e876](https://github.com/googleapis/java-certificate-manager/commit/187e876bf4f9988c3c43f8eeedef501420037c18))
+* Update dependency requests to v2.28.1 ([#103](https://github.com/googleapis/java-certificate-manager/issues/103)) ([9aebde4](https://github.com/googleapis/java-certificate-manager/commit/9aebde4d5daa58d7c7b9b57f70123a61e5e78326))
+* Update dependency typing-extensions to v4.3.0 ([#104](https://github.com/googleapis/java-certificate-manager/issues/104)) ([05789e0](https://github.com/googleapis/java-certificate-manager/commit/05789e0d64aeb73b20d0553353f495ca391e5f3c))
+
 ## [0.5.2](https://github.com/googleapis/java-certificate-manager/compare/v0.5.1...v0.5.2) (2022-09-15)
 
 

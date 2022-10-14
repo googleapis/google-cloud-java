@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-deploy</artifactId>
-  <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
+  <version>1.1.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
   <packaging>jar</packaging>
   <name>Google Google CLoud Deploy</name>
   <url>https://github.com/googleapis/java-deploy</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-deploy-parent</artifactId>
-    <version>1.1.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
+    <version>1.1.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-deploy</site.installationModule>
@@ -76,7 +76,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
-      <version>4.13.2</version>
     </dependency>
 
     <dependency>

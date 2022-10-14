@@ -171,7 +171,7 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -186,7 +186,7 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -201,7 +201,7 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -216,7 +216,8 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -230,7 +231,8 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -245,7 +247,8 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>

@@ -131,7 +131,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
    * <pre>
    * The unique stable hashed user identifier of the member. The identifier
    * corresponds to a `hashed_account_id` provided in a previous
-   * CreateAssessment or AnnotateAssessment call.
+   * `CreateAssessment` or `AnnotateAssessment` call.
    * </pre>
    *
    * <code>bytes hashed_account_id = 2;</code>
@@ -626,7 +626,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      * <pre>
      * The unique stable hashed user identifier of the member. The identifier
      * corresponds to a `hashed_account_id` provided in a previous
-     * CreateAssessment or AnnotateAssessment call.
+     * `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
      * <code>bytes hashed_account_id = 2;</code>
@@ -643,7 +643,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      * <pre>
      * The unique stable hashed user identifier of the member. The identifier
      * corresponds to a `hashed_account_id` provided in a previous
-     * CreateAssessment or AnnotateAssessment call.
+     * `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
      * <code>bytes hashed_account_id = 2;</code>
@@ -666,7 +666,7 @@ public final class RelatedAccountGroupMembership extends com.google.protobuf.Gen
      * <pre>
      * The unique stable hashed user identifier of the member. The identifier
      * corresponds to a `hashed_account_id` provided in a previous
-     * CreateAssessment or AnnotateAssessment call.
+     * `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
      * <code>bytes hashed_account_id = 2;</code>

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.8](https://github.com/googleapis/java-area120-tables/compare/v0.7.7...v0.7.8) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2b65bb0](https://github.com/googleapis/java-area120-tables/commit/2b65bb04d95c3777143054949e4c526424112bf3))
+
+## [0.7.7](https://github.com/googleapis/java-area120-tables/compare/v0.7.6...v0.7.7) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#433](https://github.com/googleapis/java-area120-tables/issues/433)) ([d475ec0](https://github.com/googleapis/java-area120-tables/commit/d475ec09ffa8b63e7d71e116f8f1f512d3c0bccd))
+
 ## [0.7.6](https://github.com/googleapis/java-area120-tables/compare/v0.7.5...v0.7.6) (2022-09-30)
 
 

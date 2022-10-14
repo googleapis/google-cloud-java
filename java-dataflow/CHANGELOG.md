@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.7.6](https://github.com/googleapis/java-dataflow/compare/v0.7.5...v0.7.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([63bfc0e](https://github.com/googleapis/java-dataflow/commit/63bfc0ec9f5349cb105cc5123024283000f98884))
+
+## [0.7.5](https://github.com/googleapis/java-dataflow/compare/v0.7.4...v0.7.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#243](https://github.com/googleapis/java-dataflow/issues/243)) ([b55c975](https://github.com/googleapis/java-dataflow/commit/b55c975758ff3c789417bb7aa7f2147cff73bf32))
+* Update dependency certifi to v2022.9.24 ([#222](https://github.com/googleapis/java-dataflow/issues/222)) ([7482df0](https://github.com/googleapis/java-dataflow/commit/7482df024a83d0dcaeab7d3b14d40dc642a77cc2))
+* Update dependency charset-normalizer to v2.1.1 ([#226](https://github.com/googleapis/java-dataflow/issues/226)) ([2ea7474](https://github.com/googleapis/java-dataflow/commit/2ea7474347e5595fa9cf1147767ba2dc26e44d1e))
+* Update dependency click to v8.1.3 ([#227](https://github.com/googleapis/java-dataflow/issues/227)) ([20f0fdc](https://github.com/googleapis/java-dataflow/commit/20f0fdc1a8f821c91cc9dd6d20fc761d78eff9e0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#247](https://github.com/googleapis/java-dataflow/issues/247)) ([7010c38](https://github.com/googleapis/java-dataflow/commit/7010c388fb545894b501b009cb06f67564d5711f))
+* Update dependency gcp-releasetool to v1.8.8 ([#223](https://github.com/googleapis/java-dataflow/issues/223)) ([3c11024](https://github.com/googleapis/java-dataflow/commit/3c1102439a275a97ffa1a138fc61a6afaa96b8ec))
+* Update dependency google-api-core to v2.10.1 ([#228](https://github.com/googleapis/java-dataflow/issues/228)) ([cd149f3](https://github.com/googleapis/java-dataflow/commit/cd149f392175f5d3231791ab74bb2c813fa68c50))
+* Update dependency google-auth to v2.12.0 ([#229](https://github.com/googleapis/java-dataflow/issues/229)) ([808298e](https://github.com/googleapis/java-dataflow/commit/808298e76a7814d576dded5d52cdeb359f8df49b))
+* Update dependency google-cloud-core to v2.3.2 ([#224](https://github.com/googleapis/java-dataflow/issues/224)) ([e9c50a8](https://github.com/googleapis/java-dataflow/commit/e9c50a80776cd81b02494a740c4f89014d36ec07))
+* Update dependency google-cloud-storage to v2.5.0 ([#230](https://github.com/googleapis/java-dataflow/issues/230)) ([55a25e9](https://github.com/googleapis/java-dataflow/commit/55a25e9786062f5644208d01ec2158bbc0f8f38a))
+* Update dependency googleapis-common-protos to v1.56.4 ([#225](https://github.com/googleapis/java-dataflow/issues/225)) ([2ccbec5](https://github.com/googleapis/java-dataflow/commit/2ccbec512035a29c9684592574eb4296e185d4bf))
+* Update dependency markupsafe to v2.1.1 ([#231](https://github.com/googleapis/java-dataflow/issues/231)) ([4c6e0a6](https://github.com/googleapis/java-dataflow/commit/4c6e0a67ac6af132387ff2f05caac1a9b82d0967))
+* Update dependency protobuf to v3.20.2 ([#232](https://github.com/googleapis/java-dataflow/issues/232)) ([75a739c](https://github.com/googleapis/java-dataflow/commit/75a739cbdf69e52cd9c16d9ba594ecf751b2b378))
+* Update dependency protobuf to v4 ([#244](https://github.com/googleapis/java-dataflow/issues/244)) ([b38c19f](https://github.com/googleapis/java-dataflow/commit/b38c19f7a02f69c0dd57cabab9afeae620507f31))
+* Update dependency pyjwt to v2.5.0 ([#233](https://github.com/googleapis/java-dataflow/issues/233)) ([7f4064b](https://github.com/googleapis/java-dataflow/commit/7f4064b7070c415b73fcf5bf73ad4d6226201de2))
+* Update dependency requests to v2.28.1 ([#234](https://github.com/googleapis/java-dataflow/issues/234)) ([41938f3](https://github.com/googleapis/java-dataflow/commit/41938f3df075e30a3edf806e808efdc94465755f))
+* Update dependency typing-extensions to v4.3.0 ([#235](https://github.com/googleapis/java-dataflow/issues/235)) ([8c42354](https://github.com/googleapis/java-dataflow/commit/8c42354f549cea967b3c307248622ac4d60f57f6))
+* Update dependency zipp to v3.8.1 ([#242](https://github.com/googleapis/java-dataflow/issues/242)) ([4b2ebd4](https://github.com/googleapis/java-dataflow/commit/4b2ebd48e56e2fdc6972b3fcffaf30187e33a7af))
+
 ## [0.7.4](https://github.com/googleapis/java-dataflow/compare/v0.7.3...v0.7.4) (2022-09-15)
 
 
