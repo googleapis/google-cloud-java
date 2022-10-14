@@ -1,14 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-java</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <modules>
+    <module>gapic-libraries-bom</module>
+    <module>google-cloud-jar-parent</module>
+    <module>google-cloud-pom-parent</module>
+    <module>java-accessapproval</module>
+    <module>java-accesscontextmanager</module>
+    <module>java-aiplatform</module>
+    <module>java-analytics-admin</module>
+    <module>java-analytics-data</module>
+    <module>java-analyticshub</module>
+    <module>java-api-gateway</module>
+    <module>java-apigee-connect</module>
+    <module>java-apigee-registry</module>
+    <module>java-apikeys</module>
+    <module>java-appengine-admin</module>
+    <module>java-area120-tables</module>
+    <module>java-artifact-registry</module>
+    <module>java-asset</module>
+    <module>java-assured-workloads</module>
+    <module>java-automl</module>
+    <module>java-bare-metal-solution</module>
+    <module>java-batch</module>
+    <module>java-beyondcorp-appconnections</module>
+    <module>java-beyondcorp-appconnectors</module>
+    <module>java-beyondcorp-appgateways</module>
+    <module>java-beyondcorp-clientconnectorservices</module>
+    <module>java-beyondcorp-clientgateways</module>
+    <module>java-bigqueryconnection</module>
+    <module>java-bigquery-data-exchange</module>
+    <module>java-bigquerydatapolicy</module>
+    <module>java-bigquerydatatransfer</module>
+    <module>java-bigquerymigration</module>
+    <module>java-bigqueryreservation</module>
+    <module>java-billingbudgets</module>
+    <module>java-billing</module>
+    <module>java-binary-authorization</module>
+    <module>java-certificate-manager</module>
+    <module>java-channel</module>
+    <module>java-cloudbuild</module>
+    <module>java-cloudcommerceconsumerprocurement</module>
+    <module>java-compute</module>
+    <module>java-contact-center-insights</module>
+    <module>java-containeranalysis</module>
+    <module>java-container</module>
+    <module>java-datacatalog</module>
+    <module>java-dataflow</module>
+    <module>java-dataform</module>
+    <module>java-data-fusion</module>
+    <module>java-datalabeling</module>
+    <module>java-dataplex</module>
+    <module>java-dataproc-metastore</module>
+    <module>java-dataproc</module>
+    <module>java-datastream</module>
+    <module>java-debugger-client</module>
+    <module>java-deploy</module>
+    <module>java-dialogflow-cx</module>
+    <module>java-dialogflow</module>
+    <module>java-distributedcloudedge</module>
+    <module>java-dlp</module>
+    <module>java-dms</module>
+    <module>java-dns</module>
+    <module>java-document-ai</module>
+    <module>java-domains</module>
+    <module>java-errorreporting</module>
+    <module>java-essential-contacts</module>
+    <module>java-eventarc</module>
+    <module>java-eventarc-publishing</module>
+    <module>java-filestore</module>
+    <module>java-functions</module>
+    <module>java-game-servers</module>
+    <module>java-gke-backup</module>
+    <module>java-gke-connect-gateway</module>
+    <module>java-gkehub</module>
+    <module>java-gke-multi-cloud</module>
+    <module>java-grafeas</module>
+    <module>java-gsuite-addons</module>
+    <module>java-iam-admin</module>
+    <module>java-iamcredentials</module>
+    <module>java-ids</module>
+    <module>java-iot</module>
+    <module>java-kms</module>
+    <module>java-language</module>
+    <module>java-life-sciences</module>
+    <module>java-managed-identities</module>
+    <module>java-mediatranslation</module>
+    <module>java-memcache</module>
+    <module>java-monitoring-dashboards</module>
+    <module>java-monitoring</module>
+    <module>java-networkconnectivity</module>
+    <module>java-network-management</module>
+    <module>java-network-security</module>
+    <module>java-notebooks</module>
+    <module>java-notification</module>
+    <module>java-optimization</module>
+    <module>java-orchestration-airflow</module>
+    <module>java-orgpolicy</module>
+    <module>java-os-config</module>
+    <module>java-os-login</module>
+    <module>java-phishingprotection</module>
+    <module>java-policy-troubleshooter</module>
+    <module>java-private-catalog</module>
+    <module>java-profiler</module>
+    <module>java-publicca</module>
+    <module>java-recaptchaenterprise</module>
+    <module>java-recommendations-ai</module>
+    <module>java-recommender</module>
+    <module>java-redis</module>
+    <module>java-resourcemanager</module>
+    <module>java-resource-settings</module>
+    <module>java-retail</module>
+    <module>java-run</module>
+    <module>java-scheduler</module>
+    <module>java-secretmanager</module>
+    <module>java-securitycenter</module>
+    <module>java-securitycenter-settings</module>
+    <module>java-security-private-ca</module>
+    <module>java-service-control</module>
+    <module>java-servicedirectory</module>
+    <module>java-service-management</module>
+    <module>java-service-usage</module>
+    <module>java-shell</module>
+    <module>java-speech</module>
+    <module>java-storage-transfer</module>
+    <module>java-talent</module>
+    <module>java-tasks</module>
+    <module>java-texttospeech</module>
+    <module>java-tpu</module>
+    <module>java-trace</module>
+    <module>java-translate</module>
+    <module>java-video-intelligence</module>
+    <module>java-video-live-stream</module>
+    <module>java-video-stitcher</module>
+    <module>java-video-transcoder</module>
+    <module>java-vision</module>
+    <module>java-vmmigration</module>
+    <module>java-vpcaccess</module>
+    <module>java-webrisk</module>
+    <module>java-websecurityscanner</module>
+    <module>java-workflow-executions</module>
+    <module>java-workflows</module>
   </modules>
 
   <!-- Do not deploy the aggregator POM -->
@@ -22,15 +161,49 @@
           <skip>true</skip>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.13</version>
-        <configuration>
-          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
-
+  <profiles>
+    <profile>
+      <!-- profile for nexus-staging:release invocation -->
+      <id>release-staging-repository</id>
+      <activation>
+        <property>
+          <!-- The root project not using nexus-staging-maven-plugin when signing -->
+          <name>!gpg.executable</name>
+        </property>
+      </activation>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>sonatype-nexus-staging</id>
+          <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <site>
+          <id>github-pages-site</id>
+          <name>Deployment through GitHub's site deployment plugin</name>
+          <url>site/google-cloud-bom</url>
+        </site>
+      </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- The root project runs nexus-staging:release task -->
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.13</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>sonatype-nexus-staging</serverId>
+              <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
