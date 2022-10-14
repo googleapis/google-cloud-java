@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gkehub-parent</artifactId>
-    <version>1.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+    <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   </parent>
   <dependencies>
     <dependency>

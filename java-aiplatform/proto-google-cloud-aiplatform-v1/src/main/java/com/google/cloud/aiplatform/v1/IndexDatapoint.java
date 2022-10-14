@@ -54,113 +54,6 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private IndexDatapoint(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              datapointId_ = s;
-              break;
-            }
-          case 21:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                featureVector_ = newFloatList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              featureVector_.addFloat(input.readFloat());
-              break;
-            }
-          case 18:
-            {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                featureVector_ = newFloatList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                featureVector_.addFloat(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                restricts_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              restricts_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.Builder subBuilder = null;
-              if (crowdingTag_ != null) {
-                subBuilder = crowdingTag_.toBuilder();
-              }
-              crowdingTag_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(crowdingTag_);
-                crowdingTag_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        featureVector_.makeImmutable(); // C
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        restricts_ = java.util.Collections.unmodifiableList(restricts_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.IndexProto
         .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_descriptor;
@@ -343,79 +236,6 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Restriction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                namespace_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  allowList_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                allowList_.add(s);
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  denyList_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                denyList_.add(s);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          allowList_ = allowList_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          denyList_ = denyList_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -627,7 +447,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < denyList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, denyList_.getRaw(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -655,7 +475,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getDenyListList().size();
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -674,7 +494,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (!getNamespace().equals(other.getNamespace())) return false;
       if (!getAllowListList().equals(other.getAllowListList())) return false;
       if (!getDenyListList().equals(other.getDenyListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -695,7 +515,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DENY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDenyListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -828,17 +648,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -965,7 +778,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -980,18 +793,51 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  namespace_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllowListIsMutable();
+                  allowList_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDenyListIsMutable();
+                  denyList_.add(s);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1472,7 +1318,19 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Restriction(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1565,52 +1423,6 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private CrowdingTag(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                crowdingAttribute_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.IndexProto
           .internal_static_google_cloud_aiplatform_v1_IndexDatapoint_CrowdingTag_descriptor;
@@ -1700,7 +1512,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crowdingAttribute_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, crowdingAttribute_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1712,7 +1524,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(crowdingAttribute_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, crowdingAttribute_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1729,7 +1541,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag) obj;
 
       if (!getCrowdingAttribute().equals(other.getCrowdingAttribute())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1742,7 +1554,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CROWDING_ATTRIBUTE_FIELD_NUMBER;
       hash = (53 * hash) + getCrowdingAttribute().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1876,17 +1688,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1978,7 +1783,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           crowdingAttribute_ = other.crowdingAttribute_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1993,18 +1798,37 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  crowdingAttribute_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1.IndexDatapoint.CrowdingTag) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2167,7 +1991,19 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CrowdingTag(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2473,7 +2309,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (crowdingTag_ != null) {
       output.writeMessage(5, getCrowdingTag());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2501,7 +2337,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (crowdingTag_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCrowdingTag());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2524,7 +2360,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (hasCrowdingTag()) {
       if (!getCrowdingTag().equals(other.getCrowdingTag())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2549,7 +2385,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CROWDING_TAG_FIELD_NUMBER;
       hash = (53 * hash) + getCrowdingTag().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2678,19 +2514,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1.IndexDatapoint.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getRestrictsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -2702,10 +2529,11 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       if (restrictsBuilder_ == null) {
         restricts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        restricts_ = null;
         restrictsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (crowdingTagBuilder_ == null) {
         crowdingTag_ = null;
       } else {
@@ -2853,7 +2681,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCrowdingTag()) {
         mergeCrowdingTag(other.getCrowdingTag());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2868,17 +2696,75 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1.IndexDatapoint parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                datapointId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 21:
+              {
+                float v = input.readFloat();
+                ensureFeatureVectorIsMutable();
+                featureVector_.addFloat(v);
+                break;
+              } // case 21
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFeatureVectorIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  featureVector_.addFloat(input.readFloat());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.IndexDatapoint.Restriction.parser(),
+                        extensionRegistry);
+                if (restrictsBuilder_ == null) {
+                  ensureRestrictsIsMutable();
+                  restricts_.add(m);
+                } else {
+                  restrictsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getCrowdingTagFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.aiplatform.v1.IndexDatapoint) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3826,7 +3712,18 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new IndexDatapoint(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

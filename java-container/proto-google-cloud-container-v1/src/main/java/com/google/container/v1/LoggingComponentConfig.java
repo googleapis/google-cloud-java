@@ -52,74 +52,6 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private LoggingComponentConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                enableComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              enableComponents_.add(rawValue);
-              break;
-            }
-          case 10:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  enableComponents_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                enableComponents_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        enableComponents_ = java.util.Collections.unmodifiableList(enableComponents_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_LoggingComponentConfig_descriptor;
@@ -419,7 +351,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     for (int i = 0; i < enableComponents_.size(); i++) {
       output.writeEnumNoTag(enableComponents_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -441,7 +373,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       }
       enableComponentsMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -458,7 +390,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
         (com.google.container.v1.LoggingComponentConfig) obj;
 
     if (!enableComponents_.equals(other.enableComponents_)) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -473,7 +405,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + ENABLE_COMPONENTS_FIELD_NUMBER;
       hash = (53 * hash) + enableComponents_.hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -602,17 +534,10 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.container.v1.LoggingComponentConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -712,7 +637,7 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -727,17 +652,50 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.LoggingComponentConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int tmpRaw = input.readEnum();
+                ensureEnableComponentsIsMutable();
+                enableComponents_.add(tmpRaw);
+                break;
+              } // case 8
+            case 10:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureEnableComponentsIsMutable();
+                  enableComponents_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.LoggingComponentConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1012,7 +970,18 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LoggingComponentConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

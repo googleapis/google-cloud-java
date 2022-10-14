@@ -3,13 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform-bom</artifactId>
-  <version>3.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+  <version>3.4.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Cloud Vertex AI BOM</name>
@@ -18,66 +19,36 @@
     BOM for Vertex AI.
   </description>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>chingor13</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google LLC</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/googleapis/java-aiplatform.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-aiplatform.git</developerConnection>
-    <url>https://github.com/googleapis/java-aiplatform</url>
-  </scm>
-
   <properties>
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform</artifactId>
-        <version>3.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+        <version>3.4.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1</artifactId>
-        <version>3.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
+        <version>3.4.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1beta1</artifactId>
-        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
+        <version>0.20.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1</artifactId>
-        <version>3.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
+        <version>3.4.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
-        <version>0.20.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
+        <version>0.20.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

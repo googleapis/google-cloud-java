@@ -46,11 +46,11 @@ jobs:
       run: git --no-pager diff --exit-code
 
   gapic-bom:
-    name: google-cloud-gapic-bom does not have diff from generated one
+    name: gapic-libraries-bom does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Generate google-cloud-gapic-bom/pom.xml
+    - name: Generate gapic-libraries-bom/pom.xml
       run: |
         bash generation/generate_gapic_bom.sh
     - name: Apply versions from versions.txt files
@@ -59,32 +59,6 @@ jobs:
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
-  coverage-aggregator:
-    name: CoverageAggregator does not have diff from generated one
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
-    - uses: actions/checkout@v3
-    - uses: actions/setup-java@v3
-      with:
-        distribution: zulu
-        java-version: 11
-    - run: java -version
-    - uses: actions/cache@v3
-      id: mvn-cache
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
-    - name: Generate CoverageAggregator/pom.xml
-      run: |
-        bash generation/generate_coverage_aggregator.sh
-    - name: Apply versions from versions.txt files
-      run: |
-        bash generation/apply_current_versions.sh
-    - name: Fail if there's any difference
-      run: git --no-pager diff --exit-code
   owlbot-py:
     name: applying templated owlbot.py config doesn't create a diff
     runs-on: ubuntu-latest
@@ -93,5 +67,39 @@ jobs:
       - name: Generate owlbot.py files
         run: |
           bash generation/update_owlbot_postprocessor_config.sh
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
+
+  gitignore_correctness:
+    name: Generated files should not match gitignore
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: checking any files matching gitignore
+      # By default, GitHub Actions's bash has '-e' option to fail immediately
+      # upon non-zero exit code. Not using it here to catch the exit code 1.
+      shell: /usr/bin/bash --noprofile --norc -o pipefail {0}
+      run: |
+        find . -type f -name '*.java' -not -path './.git/*' \
+            |git check-ignore --no-index --verbose --stdin
+        # https://git-scm.com/docs/git-check-ignore returns 1 when there's no
+        # matching files with the gitignore file.
+        # "--no-index" is needed to check against tracked files.
+        if [ "$?" == 1 ]; then
+          echo "No matching files. Good."
+          exit 0
+        else
+          echo "There are gitignore matching files. Please adjust .gitignore."
+          exit 1
+        fi
+
+  consolidate-config:
+    name: parent handles config for child modules
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Apply consolidate_config.sh
+        run: |
+          bash generation/consolidate_config.sh
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code

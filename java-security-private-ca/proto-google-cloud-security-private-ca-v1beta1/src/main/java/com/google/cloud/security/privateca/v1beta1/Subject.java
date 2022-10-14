@@ -59,94 +59,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Subject(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              countryCode_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              organization_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              organizationalUnit_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              locality_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              province_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              streetAddress_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              postalCode_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1beta1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1beta1_Subject_descriptor;
@@ -540,7 +452,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, postalCode_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -570,7 +482,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, postalCode_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -593,7 +505,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!getProvince().equals(other.getProvince())) return false;
     if (!getStreetAddress().equals(other.getStreetAddress())) return false;
     if (!getPostalCode().equals(other.getPostalCode())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -618,7 +530,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getStreetAddress().hashCode();
     hash = (37 * hash) + POSTAL_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getPostalCode().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -748,17 +660,10 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.security.privateca.v1beta1.Subject.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -890,7 +795,7 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         postalCode_ = other.postalCode_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -905,18 +810,73 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1beta1.Subject parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                countryCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                organization_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                organizationalUnit_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                locality_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                province_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                streetAddress_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                postalCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.security.privateca.v1beta1.Subject) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1694,7 +1654,18 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Subject(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

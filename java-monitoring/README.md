@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.1.2</version>
+      <version>26.1.3</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>3.4.5</version>
+  <version>3.4.6</version>
 </dependency>
 
 ```
@@ -50,20 +50,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.2')
+implementation platform('com.google.cloud:libraries-bom:26.1.3')
 
 implementation 'com.google.cloud:google-cloud-monitoring'
 ```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-monitoring:3.4.5'
+implementation 'com.google.cloud:google-cloud-monitoring:3.4.6'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "3.4.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "3.4.6"
 ```
 
 ## Authentication

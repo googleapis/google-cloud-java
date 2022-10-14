@@ -58,114 +58,6 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private SubjectAltNames(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dnsNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dnsNames_.add(s);
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                uris_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              uris_.add(s);
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                emailAddresses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              emailAddresses_.add(s);
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                ipAddresses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              ipAddresses_.add(s);
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                customSans_ =
-                    new java.util.ArrayList<com.google.cloud.security.privateca.v1.X509Extension>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              customSans_.add(
-                  input.readMessage(
-                      com.google.cloud.security.privateca.v1.X509Extension.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dnsNames_ = dnsNames_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        uris_ = uris_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        emailAddresses_ = emailAddresses_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        ipAddresses_ = ipAddresses_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        customSans_ = java.util.Collections.unmodifiableList(customSans_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
         .internal_static_google_cloud_security_privateca_v1_SubjectAltNames_descriptor;
@@ -534,7 +426,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < customSans_.size(); i++) {
       output.writeMessage(5, customSans_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -578,7 +470,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < customSans_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, customSans_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -599,7 +491,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     if (!getEmailAddressesList().equals(other.getEmailAddressesList())) return false;
     if (!getIpAddressesList().equals(other.getIpAddressesList())) return false;
     if (!getCustomSansList().equals(other.getCustomSansList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -630,7 +522,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + CUSTOM_SANS_FIELD_NUMBER;
       hash = (53 * hash) + getCustomSansList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -762,19 +654,10 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.security.privateca.v1.SubjectAltNames.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getCustomSansFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -790,10 +673,11 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000008);
       if (customSansBuilder_ == null) {
         customSans_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        customSans_ = null;
         customSansBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -968,7 +852,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -983,18 +867,73 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1.SubjectAltNames parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDnsNamesIsMutable();
+                dnsNames_.add(s);
+                break;
+              } // case 10
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUrisIsMutable();
+                uris_.add(s);
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureEmailAddressesIsMutable();
+                emailAddresses_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIpAddressesIsMutable();
+                ipAddresses_.add(s);
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.security.privateca.v1.X509Extension m =
+                    input.readMessage(
+                        com.google.cloud.security.privateca.v1.X509Extension.parser(),
+                        extensionRegistry);
+                if (customSansBuilder_ == null) {
+                  ensureCustomSansIsMutable();
+                  customSans_.add(m);
+                } else {
+                  customSansBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.security.privateca.v1.SubjectAltNames) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2099,7 +2038,18 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SubjectAltNames(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

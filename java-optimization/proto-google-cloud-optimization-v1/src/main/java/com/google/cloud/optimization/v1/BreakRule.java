@@ -61,80 +61,6 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private BreakRule(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                breakRequests_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.optimization.v1.BreakRule.BreakRequest>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              breakRequests_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.BreakRule.BreakRequest.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                frequencyConstraints_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              frequencyConstraints_.add(
-                  input.readMessage(
-                      com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        breakRequests_ = java.util.Collections.unmodifiableList(breakRequests_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        frequencyConstraints_ = java.util.Collections.unmodifiableList(frequencyConstraints_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.optimization.v1.FleetRoutingProto
         .internal_static_google_cloud_optimization_v1_BreakRule_descriptor;
@@ -309,90 +235,6 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private BreakRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (earliestStartTime_ != null) {
-                  subBuilder = earliestStartTime_.toBuilder();
-                }
-                earliestStartTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(earliestStartTime_);
-                  earliestStartTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (latestStartTime_ != null) {
-                  subBuilder = latestStartTime_.toBuilder();
-                }
-                latestStartTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(latestStartTime_);
-                  latestStartTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (minDuration_ != null) {
-                  subBuilder = minDuration_.toBuilder();
-                }
-                minDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(minDuration_);
-                  minDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -592,7 +434,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       if (minDuration_ != null) {
         output.writeMessage(3, getMinDuration());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -610,7 +452,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       if (minDuration_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMinDuration());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -638,7 +480,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       if (hasMinDuration()) {
         if (!getMinDuration().equals(other.getMinDuration())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -661,7 +503,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + MIN_DURATION_FIELD_NUMBER;
         hash = (53 * hash) + getMinDuration().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -797,17 +639,10 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.optimization.v1.BreakRule.BreakRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -934,7 +769,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         if (other.hasMinDuration()) {
           mergeMinDuration(other.getMinDuration());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -949,18 +784,51 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.optimization.v1.BreakRule.BreakRequest parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getEarliestStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getLatestStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getMinDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.optimization.v1.BreakRule.BreakRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1597,7 +1465,19 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new BreakRequest(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1774,75 +1654,6 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private FrequencyConstraint(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (minBreakDuration_ != null) {
-                  subBuilder = minBreakDuration_.toBuilder();
-                }
-                minBreakDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(minBreakDuration_);
-                  minBreakDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (maxInterBreakDuration_ != null) {
-                  subBuilder = maxInterBreakDuration_.toBuilder();
-                }
-                maxInterBreakDuration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(maxInterBreakDuration_);
-                  maxInterBreakDuration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.optimization.v1.FleetRoutingProto
           .internal_static_google_cloud_optimization_v1_BreakRule_FrequencyConstraint_descriptor;
@@ -1995,7 +1806,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       if (maxInterBreakDuration_ != null) {
         output.writeMessage(2, getMaxInterBreakDuration());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2011,7 +1822,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMaxInterBreakDuration());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2035,7 +1846,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       if (hasMaxInterBreakDuration()) {
         if (!getMaxInterBreakDuration().equals(other.getMaxInterBreakDuration())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2054,7 +1865,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + MAX_INTER_BREAK_DURATION_FIELD_NUMBER;
         hash = (53 * hash) + getMaxInterBreakDuration().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2216,17 +2027,10 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2342,7 +2146,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         if (other.hasMaxInterBreakDuration()) {
           mergeMaxInterBreakDuration(other.getMaxInterBreakDuration());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2357,19 +2161,45 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getMinBreakDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getMaxInterBreakDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2842,7 +2672,19 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new FrequencyConstraint(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3042,7 +2884,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < frequencyConstraints_.size(); i++) {
       output.writeMessage(2, frequencyConstraints_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3058,7 +2900,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, frequencyConstraints_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3076,7 +2918,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
 
     if (!getBreakRequestsList().equals(other.getBreakRequestsList())) return false;
     if (!getFrequencyConstraintsList().equals(other.getFrequencyConstraintsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3095,7 +2937,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FREQUENCY_CONSTRAINTS_FIELD_NUMBER;
       hash = (53 * hash) + getFrequencyConstraintsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3232,20 +3074,10 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.optimization.v1.BreakRule.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getBreakRequestsFieldBuilder();
-        getFrequencyConstraintsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3253,16 +3085,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (breakRequestsBuilder_ == null) {
         breakRequests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        breakRequests_ = null;
         breakRequestsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (frequencyConstraintsBuilder_ == null) {
         frequencyConstraints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        frequencyConstraints_ = null;
         frequencyConstraintsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -3412,7 +3246,7 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -3427,17 +3261,59 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.optimization.v1.BreakRule parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.optimization.v1.BreakRule.BreakRequest m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.BreakRule.BreakRequest.parser(),
+                        extensionRegistry);
+                if (breakRequestsBuilder_ == null) {
+                  ensureBreakRequestsIsMutable();
+                  breakRequests_.add(m);
+                } else {
+                  breakRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint m =
+                    input.readMessage(
+                        com.google.cloud.optimization.v1.BreakRule.FrequencyConstraint.parser(),
+                        extensionRegistry);
+                if (frequencyConstraintsBuilder_ == null) {
+                  ensureFrequencyConstraintsIsMutable();
+                  frequencyConstraints_.add(m);
+                } else {
+                  frequencyConstraintsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.optimization.v1.BreakRule) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4285,7 +4161,18 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BreakRule(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

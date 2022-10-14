@@ -50,100 +50,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private ObjectTrackingFrame(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder subBuilder = null;
-              if (boundedAreaCase_ == 1) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.BoundingPoly) boundedArea_).toBuilder();
-              }
-              boundedArea_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.BoundingPoly.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.BoundingPoly) boundedArea_);
-                boundedArea_ = subBuilder.buildPartial();
-              }
-              boundedAreaCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.Builder subBuilder =
-                  null;
-              if (boundedAreaCase_ == 2) {
-                subBuilder =
-                    ((com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly) boundedArea_)
-                        .toBuilder();
-              }
-              boundedArea_ =
-                  input.readMessage(
-                      com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly) boundedArea_);
-                boundedArea_ = subBuilder.buildPartial();
-              }
-              boundedAreaCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Duration.Builder subBuilder = null;
-              if (timeOffset_ != null) {
-                subBuilder = timeOffset_.toBuilder();
-              }
-              timeOffset_ =
-                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timeOffset_);
-                timeOffset_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.AnnotationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_ObjectTrackingFrame_descriptor;
@@ -344,7 +250,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     if (timeOffset_ != null) {
       output.writeMessage(3, getTimeOffset());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -366,7 +272,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     if (timeOffset_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTimeOffset());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -397,7 +303,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -424,7 +330,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -554,22 +460,21 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (boundingPolyBuilder_ != null) {
+        boundingPolyBuilder_.clear();
+      }
+      if (normalizedBoundingPolyBuilder_ != null) {
+        normalizedBoundingPolyBuilder_.clear();
+      }
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = null;
       } else {
@@ -694,7 +599,7 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -709,18 +614,50 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
+                boundedAreaCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getNormalizedBoundingPolyFieldBuilder().getBuilder(), extensionRegistry);
+                boundedAreaCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.datalabeling.v1beta1.ObjectTrackingFrame) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1269,7 +1206,18 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ObjectTrackingFrame(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

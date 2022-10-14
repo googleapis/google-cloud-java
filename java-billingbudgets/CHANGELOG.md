@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-billingbudgets/compare/v2.3.5...v2.3.6) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([eb2756b](https://github.com/googleapis/java-billingbudgets/commit/eb2756b0c3b5f03b7cbc18a733941bf3504185fc))
+
+## [2.3.5](https://github.com/googleapis/java-billingbudgets/compare/v2.3.4...v2.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#786](https://github.com/googleapis/java-billingbudgets/issues/786)) ([ea1acaf](https://github.com/googleapis/java-billingbudgets/commit/ea1acaf4ea5184675efe2e2bf17db2cc4afb11e3))
+* Update dependency google-api-core to v2.10.1 ([#772](https://github.com/googleapis/java-billingbudgets/issues/772)) ([de4745a](https://github.com/googleapis/java-billingbudgets/commit/de4745a9cef028dae10f7980ad745d77e9a9f9b4))
+* Update dependency google-auth to v2.12.0 ([#773](https://github.com/googleapis/java-billingbudgets/issues/773)) ([09703c3](https://github.com/googleapis/java-billingbudgets/commit/09703c34e7724874097f4ae9e628bea91c60b517))
+* Update dependency google-cloud-storage to v2.5.0 ([#774](https://github.com/googleapis/java-billingbudgets/issues/774)) ([870cf7e](https://github.com/googleapis/java-billingbudgets/commit/870cf7e2a2b01c071c4f5d60a36ac0bbf844b95a))
+* Update dependency google-crc32c to v1.5.0 ([#775](https://github.com/googleapis/java-billingbudgets/issues/775)) ([9bff54a](https://github.com/googleapis/java-billingbudgets/commit/9bff54a4bd9f3e3ff7daed257f4a9f2bda31da05))
+* Update dependency importlib-metadata to v4.12.0 ([#776](https://github.com/googleapis/java-billingbudgets/issues/776)) ([39eb45e](https://github.com/googleapis/java-billingbudgets/commit/39eb45e6722bd753a48e13514e4eff798fe27f77))
+* Update dependency jeepney to v0.8.0 ([#777](https://github.com/googleapis/java-billingbudgets/issues/777)) ([346ed4f](https://github.com/googleapis/java-billingbudgets/commit/346ed4faf9ff7a03f97165f031eac516b8c7b305))
+* Update dependency jinja2 to v3.1.2 ([#778](https://github.com/googleapis/java-billingbudgets/issues/778)) ([f7d1560](https://github.com/googleapis/java-billingbudgets/commit/f7d156088e8716435423dcd08f5ec5446078fafc))
+* Update dependency keyring to v23.9.3 ([#779](https://github.com/googleapis/java-billingbudgets/issues/779)) ([2ab79a0](https://github.com/googleapis/java-billingbudgets/commit/2ab79a000e5c5d009e505cc8faeb1dacf361fed9))
+* Update dependency markupsafe to v2.1.1 ([#780](https://github.com/googleapis/java-billingbudgets/issues/780)) ([c2f22f5](https://github.com/googleapis/java-billingbudgets/commit/c2f22f583ebfdef9475bc34498182675a036e4fe))
+* Update dependency protobuf to v3.20.2 ([#781](https://github.com/googleapis/java-billingbudgets/issues/781)) ([81f3473](https://github.com/googleapis/java-billingbudgets/commit/81f3473bc02513ac7d5111921b9482266db4a91f))
+* Update dependency protobuf to v4 ([#782](https://github.com/googleapis/java-billingbudgets/issues/782)) ([5baecba](https://github.com/googleapis/java-billingbudgets/commit/5baecba468637f645afb1f6daa495b210f33d8b3))
+
 ## [2.3.4](https://github.com/googleapis/java-billingbudgets/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 

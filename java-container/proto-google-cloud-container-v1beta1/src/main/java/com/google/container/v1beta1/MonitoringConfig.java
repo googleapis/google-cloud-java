@@ -50,79 +50,6 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private MonitoringConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.container.v1beta1.MonitoringComponentConfig.Builder subBuilder = null;
-              if (componentConfig_ != null) {
-                subBuilder = componentConfig_.toBuilder();
-              }
-              componentConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.MonitoringComponentConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(componentConfig_);
-                componentConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.container.v1beta1.ManagedPrometheusConfig.Builder subBuilder = null;
-              if (managedPrometheusConfig_ != null) {
-                subBuilder = managedPrometheusConfig_.toBuilder();
-              }
-              managedPrometheusConfig_ =
-                  input.readMessage(
-                      com.google.container.v1beta1.ManagedPrometheusConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(managedPrometheusConfig_);
-                managedPrometheusConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_MonitoringConfig_descriptor;
@@ -259,7 +186,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (managedPrometheusConfig_ != null) {
       output.writeMessage(2, getManagedPrometheusConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -275,7 +202,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getManagedPrometheusConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -299,7 +226,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     if (hasManagedPrometheusConfig()) {
       if (!getManagedPrometheusConfig().equals(other.getManagedPrometheusConfig())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -318,7 +245,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getManagedPrometheusConfig().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -447,17 +374,10 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.container.v1beta1.MonitoringConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -567,7 +487,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasManagedPrometheusConfig()) {
         mergeManagedPrometheusConfig(other.getManagedPrometheusConfig());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -582,17 +502,44 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1beta1.MonitoringConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getComponentConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getManagedPrometheusConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1beta1.MonitoringConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1018,7 +965,18 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MonitoringConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

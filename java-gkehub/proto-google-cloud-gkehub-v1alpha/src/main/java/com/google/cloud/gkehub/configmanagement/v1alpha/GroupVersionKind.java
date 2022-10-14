@@ -54,66 +54,6 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private GroupVersionKind(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              group_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              kind_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.configmanagement.v1alpha.ConfigManagementProto
         .internal_static_google_cloud_gkehub_configmanagement_v1alpha_GroupVersionKind_descriptor;
@@ -299,7 +239,7 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, kind_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -317,7 +257,7 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, kind_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -336,7 +276,7 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
     if (!getGroup().equals(other.getGroup())) return false;
     if (!getVersion().equals(other.getVersion())) return false;
     if (!getKind().equals(other.getKind())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -353,7 +293,7 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getVersion().hashCode();
     hash = (37 * hash) + KIND_FIELD_NUMBER;
     hash = (53 * hash) + getKind().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -485,17 +425,10 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
 
     // Construct using
     // com.google.cloud.gkehub.configmanagement.v1alpha.GroupVersionKind.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -602,7 +535,7 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
         kind_ = other.kind_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -617,19 +550,49 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.configmanagement.v1alpha.GroupVersionKind parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                group_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                version_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                kind_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkehub.configmanagement.v1alpha.GroupVersionKind)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -985,7 +948,18 @@ public final class GroupVersionKind extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GroupVersionKind(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

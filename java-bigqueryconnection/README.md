@@ -19,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigqueryconnection</artifactId>
-  <version>2.5.4</version>
+  <version>2.5.6</version>
 </dependency>
 
 ```
@@ -27,13 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigqueryconnection:2.5.4'
+implementation 'com.google.cloud:google-cloud-bigqueryconnection:2.5.6'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryconnection" % "2.5.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigqueryconnection" % "2.5.6"
 ```
 
 ## Authentication

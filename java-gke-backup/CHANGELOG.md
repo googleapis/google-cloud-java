@@ -1,5 +1,37 @@
 # Changelog
 
+## [0.2.6](https://github.com/googleapis/java-gke-backup/compare/v0.2.5...v0.2.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([1c41db9](https://github.com/googleapis/java-gke-backup/commit/1c41db94a6c9ea82101966675567d6792ee27c1c))
+
+## [0.2.5](https://github.com/googleapis/java-gke-backup/compare/v0.2.4...v0.2.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#60](https://github.com/googleapis/java-gke-backup/issues/60)) ([d79a770](https://github.com/googleapis/java-gke-backup/commit/d79a77023f6a2a6c073b95407dcf2fa95bcbe14c))
+* Update dependency charset-normalizer to v2.1.1 ([#64](https://github.com/googleapis/java-gke-backup/issues/64)) ([8c780d2](https://github.com/googleapis/java-gke-backup/commit/8c780d27996ea8e7177517b8e6cb7eeea61c5293))
+* Update dependency click to v8.1.3 ([#65](https://github.com/googleapis/java-gke-backup/issues/65)) ([f786495](https://github.com/googleapis/java-gke-backup/commit/f786495473570bbc0dd3b02578111ac9b30e10a4))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#85](https://github.com/googleapis/java-gke-backup/issues/85)) ([53fe37e](https://github.com/googleapis/java-gke-backup/commit/53fe37e4400bc8bdc6fb8d3afdc1d6cdc1f21cb2))
+* Update dependency gcp-releasetool to v1.8.8 ([#61](https://github.com/googleapis/java-gke-backup/issues/61)) ([0987d79](https://github.com/googleapis/java-gke-backup/commit/0987d79c91ef7df440bfa15e428dfa47a4bcec35))
+* Update dependency google-api-core to v2.10.1 ([#66](https://github.com/googleapis/java-gke-backup/issues/66)) ([8d7754b](https://github.com/googleapis/java-gke-backup/commit/8d7754bc2ac62c0deacde16c964b6fb56d159dd0))
+* Update dependency google-auth to v2.12.0 ([#67](https://github.com/googleapis/java-gke-backup/issues/67)) ([b9ccf07](https://github.com/googleapis/java-gke-backup/commit/b9ccf071c15fe967814c9a45f9d810de84455212))
+* Update dependency google-cloud-core to v2.3.2 ([#62](https://github.com/googleapis/java-gke-backup/issues/62)) ([ec34cd5](https://github.com/googleapis/java-gke-backup/commit/ec34cd50d61692c7cb2ef0d76e95f17167ff2e20))
+* Update dependency google-cloud-storage to v2.5.0 ([#68](https://github.com/googleapis/java-gke-backup/issues/68)) ([adfa35b](https://github.com/googleapis/java-gke-backup/commit/adfa35b253d6f688a772e49794d52aa1d2d7c6f8))
+* Update dependency google-crc32c to v1.5.0 ([#69](https://github.com/googleapis/java-gke-backup/issues/69)) ([81e49eb](https://github.com/googleapis/java-gke-backup/commit/81e49eb79e118a33fe18da7c78d9efb59c61ad6b))
+* Update dependency googleapis-common-protos to v1.56.4 ([#63](https://github.com/googleapis/java-gke-backup/issues/63)) ([36fa383](https://github.com/googleapis/java-gke-backup/commit/36fa383d31bfc7ccef6433d20a0ab777d144a003))
+* Update dependency importlib-metadata to v4.12.0 ([#78](https://github.com/googleapis/java-gke-backup/issues/78)) ([0bcdc52](https://github.com/googleapis/java-gke-backup/commit/0bcdc520fb8cd848cb3828d659a4af31e782ccfa))
+* Update dependency jeepney to v0.8.0 ([#79](https://github.com/googleapis/java-gke-backup/issues/79)) ([4603cfa](https://github.com/googleapis/java-gke-backup/commit/4603cfade1d1379f454001eb15b7bb65f2037f7d))
+* Update dependency jinja2 to v3.1.2 ([#80](https://github.com/googleapis/java-gke-backup/issues/80)) ([72c6583](https://github.com/googleapis/java-gke-backup/commit/72c65833911fcb595dda5ef24c1a728dce24da82))
+* Update dependency keyring to v23.9.3 ([#81](https://github.com/googleapis/java-gke-backup/issues/81)) ([ae629f5](https://github.com/googleapis/java-gke-backup/commit/ae629f5aab7e5e21c5c82f0c60ed42fbf3d7ff0b))
+* Update dependency markupsafe to v2.1.1 ([#70](https://github.com/googleapis/java-gke-backup/issues/70)) ([6b13319](https://github.com/googleapis/java-gke-backup/commit/6b1331954506fa028d1837a8649e746b57016ea1))
+* Update dependency protobuf to v3.20.2 ([#71](https://github.com/googleapis/java-gke-backup/issues/71)) ([4a99095](https://github.com/googleapis/java-gke-backup/commit/4a99095a88bbff8693635f80a3945abed8ee7906))
+* Update dependency pyjwt to v2.5.0 ([#72](https://github.com/googleapis/java-gke-backup/issues/72)) ([0de2606](https://github.com/googleapis/java-gke-backup/commit/0de2606b84f0c5be1024b1ea977456f61e2135e0))
+* Update dependency requests to v2.28.1 ([#73](https://github.com/googleapis/java-gke-backup/issues/73)) ([bf7d371](https://github.com/googleapis/java-gke-backup/commit/bf7d371e44a173b863e0261de5fd0e3d8fca9c8e))
+
 ## [0.2.4](https://github.com/googleapis/java-gke-backup/compare/v0.2.3...v0.2.4) (2022-09-15)
 
 

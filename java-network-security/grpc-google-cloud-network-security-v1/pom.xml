@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-network-security-v1</artifactId>
-  <version>0.6.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-security-v1:current} -->
+  <version>0.6.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-security-v1:current} -->
   <name>grpc-google-cloud-network-security-v1</name>
   <description>GRPC library for google-cloud-network-security</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-network-security-parent</artifactId>
-    <version>0.6.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
+    <version>0.6.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
   </parent>
   <dependencies>
     <dependency>

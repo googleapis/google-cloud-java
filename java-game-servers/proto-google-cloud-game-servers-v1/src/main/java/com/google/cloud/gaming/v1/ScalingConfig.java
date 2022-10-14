@@ -55,88 +55,6 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ScalingConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fleetAutoscalerSpec_ = s;
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectors_ = new java.util.ArrayList<com.google.cloud.gaming.v1.LabelSelector>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              selectors_.add(
-                  input.readMessage(
-                      com.google.cloud.gaming.v1.LabelSelector.parser(), extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                schedules_ = new java.util.ArrayList<com.google.cloud.gaming.v1.Schedule>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              schedules_.add(
-                  input.readMessage(
-                      com.google.cloud.gaming.v1.Schedule.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        selectors_ = java.util.Collections.unmodifiableList(selectors_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        schedules_ = java.util.Collections.unmodifiableList(schedules_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gaming.v1.GameServerConfigs
         .internal_static_google_cloud_gaming_v1_ScalingConfig_descriptor;
@@ -426,7 +344,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < schedules_.size(); i++) {
       output.writeMessage(5, schedules_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -447,7 +365,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < schedules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, schedules_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -466,7 +384,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getFleetAutoscalerSpec().equals(other.getFleetAutoscalerSpec())) return false;
     if (!getSelectorsList().equals(other.getSelectorsList())) return false;
     if (!getSchedulesList().equals(other.getSchedulesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -489,7 +407,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SCHEDULES_FIELD_NUMBER;
       hash = (53 * hash) + getSchedulesList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -618,20 +536,10 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gaming.v1.ScalingConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getSelectorsFieldBuilder();
-        getSchedulesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -643,16 +551,18 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
 
       if (selectorsBuilder_ == null) {
         selectors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        selectors_ = null;
         selectorsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (schedulesBuilder_ == null) {
         schedules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        schedules_ = null;
         schedulesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -812,7 +722,7 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -827,17 +737,69 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gaming.v1.ScalingConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                fleetAutoscalerSpec_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 34:
+              {
+                com.google.cloud.gaming.v1.LabelSelector m =
+                    input.readMessage(
+                        com.google.cloud.gaming.v1.LabelSelector.parser(), extensionRegistry);
+                if (selectorsBuilder_ == null) {
+                  ensureSelectorsIsMutable();
+                  selectors_.add(m);
+                } else {
+                  selectorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.gaming.v1.Schedule m =
+                    input.readMessage(
+                        com.google.cloud.gaming.v1.Schedule.parser(), extensionRegistry);
+                if (schedulesBuilder_ == null) {
+                  ensureSchedulesIsMutable();
+                  schedules_.add(m);
+                } else {
+                  schedulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gaming.v1.ScalingConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1825,7 +1787,18 @@ public final class ScalingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ScalingConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

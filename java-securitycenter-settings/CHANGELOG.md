@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.6.6](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.5...v0.6.6) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#566](https://github.com/googleapis/java-securitycenter-settings/issues/566)) ([7ccce8b](https://github.com/googleapis/java-securitycenter-settings/commit/7ccce8b09b048b87c5ebcfd0bc2c8dc1c7cc39e2))
+* Update dependency charset-normalizer to v2.1.1 ([#570](https://github.com/googleapis/java-securitycenter-settings/issues/570)) ([147ab90](https://github.com/googleapis/java-securitycenter-settings/commit/147ab90426ec82c4226c9bb6f1b5b84c9a506d29))
+* Update dependency click to v8.1.3 ([#571](https://github.com/googleapis/java-securitycenter-settings/issues/571)) ([90b3cef](https://github.com/googleapis/java-securitycenter-settings/commit/90b3cefd14f5dbbb12d2c2e9e2c2fdec448a74d9))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#577](https://github.com/googleapis/java-securitycenter-settings/issues/577)) ([a726c21](https://github.com/googleapis/java-securitycenter-settings/commit/a726c21b2fe3c53372ad765238e07c6fcfdc425b))
+* Update dependency gcp-releasetool to v1.8.8 ([#567](https://github.com/googleapis/java-securitycenter-settings/issues/567)) ([bf8dc2c](https://github.com/googleapis/java-securitycenter-settings/commit/bf8dc2cc6d25d045398091bc3fcfd14e60c03730))
+* Update dependency google-api-core to v2.10.1 ([#572](https://github.com/googleapis/java-securitycenter-settings/issues/572)) ([5346486](https://github.com/googleapis/java-securitycenter-settings/commit/5346486c9bbc141a0bdd9754339f1359146214ac))
+* Update dependency google-auth to v2.12.0 ([#573](https://github.com/googleapis/java-securitycenter-settings/issues/573)) ([abac765](https://github.com/googleapis/java-securitycenter-settings/commit/abac7652b98d8d9632ffcbd8089c73600524b442))
+* Update dependency google-cloud-core to v2.3.2 ([#568](https://github.com/googleapis/java-securitycenter-settings/issues/568)) ([afe1d1b](https://github.com/googleapis/java-securitycenter-settings/commit/afe1d1bf97cc00597cffd8d91270af0c07f97173))
+* Update dependency google-cloud-storage to v2.5.0 ([#574](https://github.com/googleapis/java-securitycenter-settings/issues/574)) ([5cad4fd](https://github.com/googleapis/java-securitycenter-settings/commit/5cad4fd873018b2d4406c3eb2f52d0d0ff02fd9f))
+* Update dependency googleapis-common-protos to v1.56.4 ([#569](https://github.com/googleapis/java-securitycenter-settings/issues/569)) ([147cc46](https://github.com/googleapis/java-securitycenter-settings/commit/147cc465a79d997d4afc62d2e33bba89cd1fd829))
+* Update dependency jinja2 to v3.1.2 ([#575](https://github.com/googleapis/java-securitycenter-settings/issues/575)) ([1a086c5](https://github.com/googleapis/java-securitycenter-settings/commit/1a086c53aa2ed5ed89fd08e8c37976ba68393db7))
+
 ## [0.6.5](https://github.com/googleapis/java-securitycenter-settings/compare/v0.6.4...v0.6.5) (2022-09-27)
 
 

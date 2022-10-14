@@ -55,143 +55,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private ServerTlsPolicy(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 48:
-            {
-              allowOpen_ = input.readBool();
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.networksecurity.v1.CertificateProvider.Builder subBuilder = null;
-              if (serverCertificate_ != null) {
-                subBuilder = serverCertificate_.toBuilder();
-              }
-              serverCertificate_ =
-                  input.readMessage(
-                      com.google.cloud.networksecurity.v1.CertificateProvider.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(serverCertificate_);
-                serverCertificate_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.Builder subBuilder =
-                  null;
-              if (mtlsPolicy_ != null) {
-                subBuilder = mtlsPolicy_.toBuilder();
-              }
-              mtlsPolicy_ =
-                  input.readMessage(
-                      com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mtlsPolicy_);
-                mtlsPolicy_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.networksecurity.v1.ServerTlsPolicyProto
         .internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_descriptor;
@@ -315,62 +178,6 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       return this.unknownFields;
     }
 
-    private MTLSPolicy(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  clientValidationCa_ =
-                      new java.util.ArrayList<com.google.cloud.networksecurity.v1.ValidationCA>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                clientValidationCa_.add(
-                    input.readMessage(
-                        com.google.cloud.networksecurity.v1.ValidationCA.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          clientValidationCa_ = java.util.Collections.unmodifiableList(clientValidationCa_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.networksecurity.v1.ServerTlsPolicyProto
           .internal_static_google_cloud_networksecurity_v1_ServerTlsPolicy_MTLSPolicy_descriptor;
@@ -479,7 +286,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       for (int i = 0; i < clientValidationCa_.size(); i++) {
         output.writeMessage(1, clientValidationCa_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -492,7 +299,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(1, clientValidationCa_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -509,7 +316,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
           (com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy) obj;
 
       if (!getClientValidationCaList().equals(other.getClientValidationCaList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -524,7 +331,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
         hash = (37 * hash) + CLIENT_VALIDATION_CA_FIELD_NUMBER;
         hash = (53 * hash) + getClientValidationCaList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -656,19 +463,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       }
 
       // Construct using com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getClientValidationCaFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -676,10 +474,11 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
         super.clear();
         if (clientValidationCaBuilder_ == null) {
           clientValidationCa_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          clientValidationCa_ = null;
           clientValidationCaBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -799,7 +598,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -814,19 +613,45 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.networksecurity.v1.ValidationCA m =
+                      input.readMessage(
+                          com.google.cloud.networksecurity.v1.ValidationCA.parser(),
+                          extensionRegistry);
+                  if (clientValidationCaBuilder_ == null) {
+                    ensureClientValidationCaIsMutable();
+                    clientValidationCa_.add(m);
+                  } else {
+                    clientValidationCaBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.networksecurity.v1.ServerTlsPolicy.MTLSPolicy)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1266,7 +1091,19 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new MTLSPolicy(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1760,7 +1597,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     if (mtlsPolicy_ != null) {
       output.writeMessage(8, getMtlsPolicy());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1800,7 +1637,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     if (mtlsPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMtlsPolicy());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1836,7 +1673,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     if (hasMtlsPolicy()) {
       if (!getMtlsPolicy().equals(other.getMtlsPolicy())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1873,7 +1710,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + MTLS_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getMtlsPolicy().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2024,17 +1861,10 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.networksecurity.v1.ServerTlsPolicy.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2198,7 +2028,7 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
       if (other.hasMtlsPolicy()) {
         mergeMtlsPolicy(other.getMtlsPolicy());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2213,18 +2043,85 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.networksecurity.v1.ServerTlsPolicy parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 42
+            case 48:
+              {
+                allowOpen_ = input.readBool();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                input.readMessage(
+                    getServerCertificateFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getMtlsPolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.networksecurity.v1.ServerTlsPolicy) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3546,7 +3443,18 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ServerTlsPolicy(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

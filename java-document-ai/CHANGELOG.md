@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.7.5](https://github.com/googleapis/java-document-ai/compare/v2.7.4...v2.7.5) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#914](https://github.com/googleapis/java-document-ai/issues/914)) ([0d654e3](https://github.com/googleapis/java-document-ai/commit/0d654e3ec9cbf76f1a220c1633a2c88482a79b3a))
+
+## [2.7.4](https://github.com/googleapis/java-document-ai/compare/v2.7.3...v2.7.4) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:grpc-google-common-protos to v2.9.4 ([#906](https://github.com/googleapis/java-document-ai/issues/906)) ([f9debec](https://github.com/googleapis/java-document-ai/commit/f9debec91b5d393772b90175620ac6e67d62b3b2))
+* Update dependency com.google.api.grpc:grpc-google-common-protos to v2.9.5 ([#908](https://github.com/googleapis/java-document-ai/issues/908)) ([7214f33](https://github.com/googleapis/java-document-ai/commit/7214f33e559dc35c99a9a53c3692ccd377b0fbe7))
+* Update dependency com.google.api.grpc:grpc-google-common-protos to v2.9.6 ([#909](https://github.com/googleapis/java-document-ai/issues/909)) ([e21f639](https://github.com/googleapis/java-document-ai/commit/e21f639ba62576c6e6ea950e788259351ffd863b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#910](https://github.com/googleapis/java-document-ai/issues/910)) ([5baf8a8](https://github.com/googleapis/java-document-ai/commit/5baf8a8aef281aaa9e441cd8b8333a595e05a369))
+
 ## [2.7.3](https://github.com/googleapis/java-document-ai/compare/v2.7.2...v2.7.3) (2022-09-27)
 
 

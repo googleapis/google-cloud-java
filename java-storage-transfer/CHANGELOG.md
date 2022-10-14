@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.3.2](https://github.com/googleapis/java-storage-transfer/compare/v1.3.1...v1.3.2) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([509c36f](https://github.com/googleapis/java-storage-transfer/commit/509c36f7460aaa18f6d954db15ca1dbca0607b09))
+
+## [1.3.1](https://github.com/googleapis/java-storage-transfer/compare/v1.3.0...v1.3.1) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#217](https://github.com/googleapis/java-storage-transfer/issues/217)) ([468669e](https://github.com/googleapis/java-storage-transfer/commit/468669e77e9e367c99689057894575c0997cf265))
+* Update dependency certifi to v2022.9.24 ([#197](https://github.com/googleapis/java-storage-transfer/issues/197)) ([9cdf490](https://github.com/googleapis/java-storage-transfer/commit/9cdf4907f8c4ed61ee5c4eb2a39da2f5766d617c))
+* Update dependency charset-normalizer to v2.1.1 ([#202](https://github.com/googleapis/java-storage-transfer/issues/202)) ([7bd1826](https://github.com/googleapis/java-storage-transfer/commit/7bd182679fbb62cf49d97780e7e3618bf43f40af))
+* Update dependency click to v8.1.3 ([#203](https://github.com/googleapis/java-storage-transfer/issues/203)) ([5f26fa8](https://github.com/googleapis/java-storage-transfer/commit/5f26fa887139c16f349c318de6973ca994d1595b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#220](https://github.com/googleapis/java-storage-transfer/issues/220)) ([d46b389](https://github.com/googleapis/java-storage-transfer/commit/d46b389eb395ba238b2603b0cb3c8836632c778d))
+* Update dependency gcp-releasetool to v1.8.8 ([#198](https://github.com/googleapis/java-storage-transfer/issues/198)) ([89f4a45](https://github.com/googleapis/java-storage-transfer/commit/89f4a455594f26a17ff61ed6dd302b6b8f24dbfc))
+* Update dependency google-api-core to v2.10.1 ([#204](https://github.com/googleapis/java-storage-transfer/issues/204)) ([f5f106d](https://github.com/googleapis/java-storage-transfer/commit/f5f106d710ec383a3cf31a0596c08ce012ac8121))
+* Update dependency google-auth to v2.11.1 ([#199](https://github.com/googleapis/java-storage-transfer/issues/199)) ([389aee2](https://github.com/googleapis/java-storage-transfer/commit/389aee24825758bd1d4d93788509adcdf273e00e))
+* Update dependency google-auth to v2.12.0 ([#214](https://github.com/googleapis/java-storage-transfer/issues/214)) ([27fdd0c](https://github.com/googleapis/java-storage-transfer/commit/27fdd0c6e8aa821a14bde9102faeaf5d2db98742))
+* Update dependency google-cloud-core to v2.3.2 ([#200](https://github.com/googleapis/java-storage-transfer/issues/200)) ([e43a938](https://github.com/googleapis/java-storage-transfer/commit/e43a9383e25c2e27a60a73f9955cf88e98d1faa3))
+* Update dependency googleapis-common-protos to v1.56.4 ([#201](https://github.com/googleapis/java-storage-transfer/issues/201)) ([e89f709](https://github.com/googleapis/java-storage-transfer/commit/e89f7090d72f783b613621355279c53cfe1047aa))
+* Update dependency importlib-metadata to v4.12.0 ([#215](https://github.com/googleapis/java-storage-transfer/issues/215)) ([db2d049](https://github.com/googleapis/java-storage-transfer/commit/db2d04976a2666fe1ac59e40cd0fdb55be9c0205))
+* Update dependency jeepney to v0.8.0 ([#216](https://github.com/googleapis/java-storage-transfer/issues/216)) ([88a29b8](https://github.com/googleapis/java-storage-transfer/commit/88a29b887215b147f90c4538737de77385df372e))
+* Update dependency protobuf to v4 ([#218](https://github.com/googleapis/java-storage-transfer/issues/218)) ([286b315](https://github.com/googleapis/java-storage-transfer/commit/286b31521b2acfc60ae2493ef561a4eba26d0b77))
+* Update dependency pyjwt to v2.5.0 ([#195](https://github.com/googleapis/java-storage-transfer/issues/195)) ([8b98290](https://github.com/googleapis/java-storage-transfer/commit/8b98290e59f3dd8926a930feb0a7977cf05072f8))
+* Update dependency requests to v2.28.1 ([#196](https://github.com/googleapis/java-storage-transfer/issues/196)) ([6c49493](https://github.com/googleapis/java-storage-transfer/commit/6c494937dcf1d7682b6b999c88728638480f31a1))
+
 ## [1.3.0](https://github.com/googleapis/java-storage-transfer/compare/v1.2.2...v1.3.0) (2022-09-15)
 
 

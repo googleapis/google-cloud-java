@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-language/compare/v2.4.0...v2.4.1) (2022-10-03)
+
+
+### Documentation
+
+* Update classification sample to use v2 model ([#899](https://github.com/googleapis/java-language/issues/899)) ([7b3a5f8](https://github.com/googleapis/java-language/commit/7b3a5f86b7de401198e74e76ba7af1f1599ae6cc))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#929](https://github.com/googleapis/java-language/issues/929)) ([805563b](https://github.com/googleapis/java-language/commit/805563b083bb04bfa59ef7fc4418c6950b3340db))
+* Update dependency google-api-core to v2.10.1 ([#921](https://github.com/googleapis/java-language/issues/921)) ([8b39a51](https://github.com/googleapis/java-language/commit/8b39a51acbc452afc2bb045f6d88bbdfc46b81ed))
+* Update dependency google-auth to v2.12.0 ([#922](https://github.com/googleapis/java-language/issues/922)) ([f273003](https://github.com/googleapis/java-language/commit/f273003a294fb2d116c78f25848bd22fa8f18fc8))
+* Update dependency google-cloud-storage to v2.5.0 ([#923](https://github.com/googleapis/java-language/issues/923)) ([c34885b](https://github.com/googleapis/java-language/commit/c34885ba6ad41c8eeeeda2ad9feb20f89f67e589))
+* Update dependency google-crc32c to v1.5.0 ([#924](https://github.com/googleapis/java-language/issues/924)) ([51baceb](https://github.com/googleapis/java-language/commit/51baceb6bf821f3da41569b27cd7cdf745bd1db8))
+* Update dependency importlib-metadata to v4.12.0 ([#925](https://github.com/googleapis/java-language/issues/925)) ([a246f0d](https://github.com/googleapis/java-language/commit/a246f0dcc43ce8faeefdf998011222df294d27fa))
+* Update dependency jeepney to v0.8.0 ([#926](https://github.com/googleapis/java-language/issues/926)) ([04a307a](https://github.com/googleapis/java-language/commit/04a307ad130c3adfb2471aac551ebfc674c0d060))
+
 ## [2.4.0](https://github.com/googleapis/java-language/compare/v2.3.4...v2.4.0) (2022-09-26)
 
 

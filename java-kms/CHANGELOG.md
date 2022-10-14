@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.6.8](https://github.com/googleapis/java-kms/compare/v2.6.7...v2.6.8) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#868](https://github.com/googleapis/java-kms/issues/868)) ([4ba607c](https://github.com/googleapis/java-kms/commit/4ba607c4188685890b56b4f159fd14cbc766f2b8))
+* Update dependency charset-normalizer to v2.1.1 ([#872](https://github.com/googleapis/java-kms/issues/872)) ([898f7db](https://github.com/googleapis/java-kms/commit/898f7db8733d671b27d817e983727890e0e0ff9e))
+* Update dependency click to v8.1.3 ([#873](https://github.com/googleapis/java-kms/issues/873)) ([1302bef](https://github.com/googleapis/java-kms/commit/1302bef64c85af73c1f97e60f34a45ec9dca4d82))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#894](https://github.com/googleapis/java-kms/issues/894)) ([0dc53f1](https://github.com/googleapis/java-kms/commit/0dc53f10f4b2b22f43ad84388610d4d2de0ce45b))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.7 ([#892](https://github.com/googleapis/java-kms/issues/892)) ([3f53fcd](https://github.com/googleapis/java-kms/commit/3f53fcd3660f7d5ba7d1909d97e3279454be47f5))
+* Update dependency gcp-releasetool to v1.8.8 ([#869](https://github.com/googleapis/java-kms/issues/869)) ([98a4642](https://github.com/googleapis/java-kms/commit/98a464210d36856872ef27b507c95d1d3356d815))
+* Update dependency google-api-core to v2.10.1 ([#874](https://github.com/googleapis/java-kms/issues/874)) ([f2872e7](https://github.com/googleapis/java-kms/commit/f2872e75f4b970d4ad079e7e26e1b5c4be6cbecd))
+* Update dependency google-cloud-core to v2.3.2 ([#870](https://github.com/googleapis/java-kms/issues/870)) ([41f0202](https://github.com/googleapis/java-kms/commit/41f02026f31017a31f510da33c49799f5eacd2b5))
+* Update dependency google-cloud-storage to v2.5.0 ([#876](https://github.com/googleapis/java-kms/issues/876)) ([e525b4a](https://github.com/googleapis/java-kms/commit/e525b4ab68418568d0c7b936cf0692f1b7a310d0))
+* Update dependency google-crc32c to v1.5.0 ([#877](https://github.com/googleapis/java-kms/issues/877)) ([ae1506d](https://github.com/googleapis/java-kms/commit/ae1506deb7ea58889911e5c0a586273ea42c47b5))
+* Update dependency googleapis-common-protos to v1.56.4 ([#871](https://github.com/googleapis/java-kms/issues/871)) ([fe36579](https://github.com/googleapis/java-kms/commit/fe3657952d3e9dabdfdc00ebc241bde0f8e652bd))
+* Update dependency importlib-metadata to v4.12.0 ([#886](https://github.com/googleapis/java-kms/issues/886)) ([19481aa](https://github.com/googleapis/java-kms/commit/19481aa75c1e38c1800431495e1ca5a46c208f84))
+* Update dependency jeepney to v0.8.0 ([#887](https://github.com/googleapis/java-kms/issues/887)) ([f7a2dca](https://github.com/googleapis/java-kms/commit/f7a2dcaacc76a93566a333286344f5ab9004b84e))
+* Update dependency jinja2 to v3.1.2 ([#888](https://github.com/googleapis/java-kms/issues/888)) ([2d2ee4c](https://github.com/googleapis/java-kms/commit/2d2ee4c19402765e4946827aca44b822ac22412a))
+* Update dependency keyring to v23.9.3 ([#889](https://github.com/googleapis/java-kms/issues/889)) ([e05b5f1](https://github.com/googleapis/java-kms/commit/e05b5f19f7b98099529e5609e945b5ee29b8b94e))
+* Update dependency pyjwt to v2.5.0 ([#880](https://github.com/googleapis/java-kms/issues/880)) ([569be10](https://github.com/googleapis/java-kms/commit/569be10265b6c74c505abe19e7817e482e6c00b9))
+* Update dependency requests to v2.28.1 ([#881](https://github.com/googleapis/java-kms/issues/881)) ([d9c64b5](https://github.com/googleapis/java-kms/commit/d9c64b529052c824a569cc286343728727333468))
+* Update dependency zipp to v3.8.1 ([#883](https://github.com/googleapis/java-kms/issues/883)) ([70a9122](https://github.com/googleapis/java-kms/commit/70a91222328c6e8e80543bdfb2c4ca91d6493a1a))
+
 ## [2.6.7](https://github.com/googleapis/java-kms/compare/v2.6.6...v2.6.7) (2022-09-20)
 
 

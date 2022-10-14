@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/java-trace/compare/v2.3.6...v2.3.7) (2022-10-04)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#894](https://github.com/googleapis/java-trace/issues/894)) ([a7ea182](https://github.com/googleapis/java-trace/commit/a7ea1829ff5d7e649f81853d4e9dbe02eddfe254))
+* Update dependency click to v8.1.3 ([#878](https://github.com/googleapis/java-trace/issues/878)) ([d102c3e](https://github.com/googleapis/java-trace/commit/d102c3e291d065cfb6a5c5ea4383996f5ff4a9bb))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#898](https://github.com/googleapis/java-trace/issues/898)) ([85b91f0](https://github.com/googleapis/java-trace/commit/85b91f0c83f362e725912368d2035b3d67d3625f))
+* Update dependency google-auth to v2.11.1 ([#876](https://github.com/googleapis/java-trace/issues/876)) ([c03e375](https://github.com/googleapis/java-trace/commit/c03e375804c3c85143a3e8843dc5e94c63060765))
+* Update dependency google-auth to v2.12.0 ([#885](https://github.com/googleapis/java-trace/issues/885)) ([2b5da19](https://github.com/googleapis/java-trace/commit/2b5da199d2a7ba7130ba28596c5122120ba9155b))
+* Update dependency google-crc32c to v1.5.0 ([#881](https://github.com/googleapis/java-trace/issues/881)) ([6cd86d7](https://github.com/googleapis/java-trace/commit/6cd86d7255330adab7ea2a0ae7bba5b99a6ee493))
+* Update dependency googleapis-common-protos to v1.56.4 ([#877](https://github.com/googleapis/java-trace/issues/877)) ([4ff033d](https://github.com/googleapis/java-trace/commit/4ff033dc508da0b0f17ebbb5a3a4bd6a949c9a7c))
+* Update dependency jeepney to v0.8.0 ([#883](https://github.com/googleapis/java-trace/issues/883)) ([245f1b5](https://github.com/googleapis/java-trace/commit/245f1b5dd564edfb8942de9baf672b9efa87f2bf))
+* Update dependency jinja2 to v3.1.2 ([#886](https://github.com/googleapis/java-trace/issues/886)) ([d8d8789](https://github.com/googleapis/java-trace/commit/d8d8789cd84479a2f983b0ec09ccef1fd83aba8d))
+* Update dependency keyring to v23.9.3 ([#887](https://github.com/googleapis/java-trace/issues/887)) ([e81987e](https://github.com/googleapis/java-trace/commit/e81987e62ec9c6283e9b13508ca30388ecfd7b11))
+* Update dependency markupsafe to v2.1.1 ([#888](https://github.com/googleapis/java-trace/issues/888)) ([fb148b8](https://github.com/googleapis/java-trace/commit/fb148b8840e6658c3c030f882ce8651fb6db47e0))
+* Update dependency protobuf to v3.20.2 ([#889](https://github.com/googleapis/java-trace/issues/889)) ([7d0c1ca](https://github.com/googleapis/java-trace/commit/7d0c1cae759d24a7ff3a5ea6eb6b4db770a32902))
+* Update dependency protobuf to v4 ([#895](https://github.com/googleapis/java-trace/issues/895)) ([ac267ff](https://github.com/googleapis/java-trace/commit/ac267ff9c37d204b01b3390a727792f5c3d4bfa5))
+* Update dependency pyjwt to v2.5.0 ([#890](https://github.com/googleapis/java-trace/issues/890)) ([e2274cd](https://github.com/googleapis/java-trace/commit/e2274cd7cf0ca02333a686dcdc3772ef3a1d91d8))
+* Update dependency requests to v2.28.1 ([#891](https://github.com/googleapis/java-trace/issues/891)) ([b447ac9](https://github.com/googleapis/java-trace/commit/b447ac9ae69b157d8e40a56ad1e9c05fd97805f7))
+* Update dependency typing-extensions to v4.3.0 ([#892](https://github.com/googleapis/java-trace/issues/892)) ([a856786](https://github.com/googleapis/java-trace/commit/a856786efdb06c3b71dea192d7ae535f1e401b54))
+* Update dependency zipp to v3.8.1 ([#893](https://github.com/googleapis/java-trace/issues/893)) ([cc8ea70](https://github.com/googleapis/java-trace/commit/cc8ea703d188e5a9aebdf7e0c947dd0b63a8ca25))
+
 ## [2.3.6](https://github.com/googleapis/java-trace/compare/v2.3.5...v2.3.6) (2022-09-27)
 
 

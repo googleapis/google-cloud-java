@@ -56,91 +56,6 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     return this.unknownFields;
   }
 
-  private PatchInterconnectAttachmentRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              requestId_ = s;
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1698730954:
-            {
-              com.google.cloud.compute.v1.InterconnectAttachment.Builder subBuilder = null;
-              if (interconnectAttachmentResource_ != null) {
-                subBuilder = interconnectAttachmentResource_.toBuilder();
-              }
-              interconnectAttachmentResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectAttachment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(interconnectAttachmentResource_);
-                interconnectAttachmentResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1829885022:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interconnectAttachment_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_PatchInterconnectAttachmentRequest_descriptor;
@@ -463,7 +378,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 308135284, interconnectAttachment_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -491,7 +406,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               308135284, interconnectAttachment_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -520,7 +435,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     if (hasRequestId()) {
       if (!getRequestId().equals(other.getRequestId())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -545,7 +460,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRequestId().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -675,17 +590,10 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     }
 
     // Construct using com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -819,7 +727,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         requestId_ = other.requestId_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -834,19 +742,63 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 296879706:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 296879706
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1111570338
+            case 1698730954:
+              {
+                input.readMessage(
+                    getInterconnectAttachmentResourceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 1698730954
+            case 1820481738:
+              {
+                project_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1820481738
+            case -1829885022:
+              {
+                interconnectAttachment_ = input.readStringRequireUtf8();
+
+                break;
+              } // case -1829885022
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1559,7 +1511,18 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PatchInterconnectAttachmentRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

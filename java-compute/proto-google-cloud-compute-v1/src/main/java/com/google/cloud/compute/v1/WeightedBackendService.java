@@ -52,75 +52,6 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
     return this.unknownFields;
   }
 
-  private WeightedBackendService(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case -2037771328:
-            {
-              bitField0_ |= 0x00000004;
-              weight_ = input.readUInt32();
-              break;
-            }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              backendService_ = s;
-              break;
-            }
-          case -1670348478:
-            {
-              com.google.cloud.compute.v1.HttpHeaderAction.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = headerAction_.toBuilder();
-              }
-              headerAction_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.HttpHeaderAction.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(headerAction_);
-                headerAction_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_WeightedBackendService_descriptor;
@@ -307,7 +238,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(328077352, getHeaderAction());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -326,7 +257,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(328077352, getHeaderAction());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -354,7 +285,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
     if (hasWeight()) {
       if (getWeight() != other.getWeight()) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -377,7 +308,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + WEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + getWeight();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -641,7 +572,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
       if (other.hasWeight()) {
         setWeight(other.getWeight());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -656,18 +587,49 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.WeightedBackendService parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case -2037771328:
+              {
+                weight_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -2037771328
+            case -1839398830:
+              {
+                backendService_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1839398830
+            case -1670348478:
+              {
+                input.readMessage(getHeaderActionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1670348478
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.WeightedBackendService) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1079,7 +1041,18 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WeightedBackendService(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

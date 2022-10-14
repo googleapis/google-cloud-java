@@ -53,102 +53,6 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Track(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.videointelligence.v1p3beta1.VideoSegment.Builder subBuilder = null;
-              if (segment_ != null) {
-                subBuilder = segment_.toBuilder();
-              }
-              segment_ =
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.VideoSegment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(segment_);
-                segment_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                timestampedObjects_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.TimestampedObject>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              timestampedObjects_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.TimestampedObject.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                attributes_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              attributes_.add(
-                  input.readMessage(
-                      com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 37:
-            {
-              confidence_ = input.readFloat();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        timestampedObjects_ = java.util.Collections.unmodifiableList(timestampedObjects_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        attributes_ = java.util.Collections.unmodifiableList(attributes_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p3beta1_Track_descriptor;
@@ -423,7 +327,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       output.writeFloat(4, confidence_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -445,7 +349,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -469,7 +373,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     if (!getAttributesList().equals(other.getAttributesList())) return false;
     if (java.lang.Float.floatToIntBits(getConfidence())
         != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -494,7 +398,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -623,20 +527,10 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.videointelligence.v1p3beta1.Track.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTimestampedObjectsFieldBuilder();
-        getAttributesFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -650,16 +544,18 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       }
       if (timestampedObjectsBuilder_ == null) {
         timestampedObjects_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        timestampedObjects_ = null;
         timestampedObjectsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (attributesBuilder_ == null) {
         attributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        attributes_ = null;
         attributesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
 
       return this;
@@ -824,7 +720,7 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
       if (other.getConfidence() != 0F) {
         setConfidence(other.getConfidence());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -839,18 +735,71 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1p3beta1.Track parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getSegmentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.TimestampedObject m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.TimestampedObject.parser(),
+                        extensionRegistry);
+                if (timestampedObjectsBuilder_ == null) {
+                  ensureTimestampedObjectsIsMutable();
+                  timestampedObjects_.add(m);
+                } else {
+                  timestampedObjectsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute m =
+                    input.readMessage(
+                        com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute.parser(),
+                        extensionRegistry);
+                if (attributesBuilder_ == null) {
+                  ensureAttributesIsMutable();
+                  attributes_.add(m);
+                } else {
+                  attributesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 37:
+              {
+                confidence_ = input.readFloat();
+
+                break;
+              } // case 37
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.videointelligence.v1p3beta1.Track) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1937,7 +1886,18 @@ public final class Track extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Track(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

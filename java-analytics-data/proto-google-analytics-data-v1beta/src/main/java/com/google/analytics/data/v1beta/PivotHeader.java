@@ -52,68 +52,6 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private PivotHeader(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                pivotDimensionHeaders_ =
-                    new java.util.ArrayList<
-                        com.google.analytics.data.v1beta.PivotDimensionHeader>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pivotDimensionHeaders_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.PivotDimensionHeader.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 16:
-            {
-              rowCount_ = input.readInt32();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        pivotDimensionHeaders_ = java.util.Collections.unmodifiableList(pivotDimensionHeaders_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_PivotHeader_descriptor;
@@ -251,7 +189,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     if (rowCount_ != 0) {
       output.writeInt32(2, rowCount_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -268,7 +206,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     if (rowCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rowCount_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -286,7 +224,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
 
     if (!getPivotDimensionHeadersList().equals(other.getPivotDimensionHeadersList())) return false;
     if (getRowCount() != other.getRowCount()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -303,7 +241,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getRowCount();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -432,19 +370,10 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.analytics.data.v1beta.PivotHeader.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getPivotDimensionHeadersFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -452,10 +381,11 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       if (pivotDimensionHeadersBuilder_ == null) {
         pivotDimensionHeaders_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        pivotDimensionHeaders_ = null;
         pivotDimensionHeadersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       rowCount_ = 0;
 
       return this;
@@ -575,7 +505,7 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
       if (other.getRowCount() != 0) {
         setRowCount(other.getRowCount());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -590,17 +520,51 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1beta.PivotHeader parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.analytics.data.v1beta.PivotDimensionHeader m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.PivotDimensionHeader.parser(),
+                        extensionRegistry);
+                if (pivotDimensionHeadersBuilder_ == null) {
+                  ensurePivotDimensionHeadersIsMutable();
+                  pivotDimensionHeaders_.add(m);
+                } else {
+                  pivotDimensionHeadersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 16:
+              {
+                rowCount_ = input.readInt32();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.analytics.data.v1beta.PivotHeader) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1116,7 +1080,18 @@ public final class PivotHeader extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PivotHeader(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

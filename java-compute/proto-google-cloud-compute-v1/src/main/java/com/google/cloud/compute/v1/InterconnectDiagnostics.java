@@ -54,87 +54,6 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     return this.unknownFields;
   }
 
-  private InterconnectDiagnostics(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 823819722:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                links_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              links_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -1634645982:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              macAddress_ = s;
-              break;
-            }
-          case -978233206:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                arpCaches_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              arpCaches_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        links_ = java.util.Collections.unmodifiableList(links_);
-      }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        arpCaches_ = java.util.Collections.unmodifiableList(arpCaches_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InterconnectDiagnostics_descriptor;
@@ -392,7 +311,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     for (int i = 0; i < arpCaches_.size(); i++) {
       output.writeMessage(414591761, arpCaches_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -411,7 +330,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(414591761, arpCaches_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -433,7 +352,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     if (hasMacAddress()) {
       if (!getMacAddress().equals(other.getMacAddress())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -456,7 +375,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       hash = (37 * hash) + MAC_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getMacAddress().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -585,20 +504,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.compute.v1.InterconnectDiagnostics.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getArpCachesFieldBuilder();
-        getLinksFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -606,16 +515,18 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       super.clear();
       if (arpCachesBuilder_ == null) {
         arpCaches_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        arpCaches_ = null;
         arpCachesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        links_ = null;
         linksBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       macAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
@@ -779,7 +690,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         macAddress_ = other.macAddress_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -794,18 +705,65 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.InterconnectDiagnostics parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 823819722:
+              {
+                com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.parser(),
+                        extensionRegistry);
+                if (linksBuilder_ == null) {
+                  ensureLinksIsMutable();
+                  links_.add(m);
+                } else {
+                  linksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 823819722
+            case -1634645982:
+              {
+                macAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1634645982
+            case -978233206:
+              {
+                com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.parser(),
+                        extensionRegistry);
+                if (arpCachesBuilder_ == null) {
+                  ensureArpCachesIsMutable();
+                  arpCaches_.add(m);
+                } else {
+                  arpCachesBuilder_.addMessage(m);
+                }
+                break;
+              } // case -978233206
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.InterconnectDiagnostics) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1748,7 +1706,18 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InterconnectDiagnostics(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

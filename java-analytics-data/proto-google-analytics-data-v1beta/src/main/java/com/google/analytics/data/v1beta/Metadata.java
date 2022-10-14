@@ -54,84 +54,6 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Metadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dimensions_ =
-                    new java.util.ArrayList<com.google.analytics.data.v1beta.DimensionMetadata>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dimensions_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.DimensionMetadata.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                metrics_ =
-                    new java.util.ArrayList<com.google.analytics.data.v1beta.MetricMetadata>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              metrics_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.MetricMetadata.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        metrics_ = java.util.Collections.unmodifiableList(metrics_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_Metadata_descriptor;
@@ -358,7 +280,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -376,7 +298,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -395,7 +317,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDimensionsList().equals(other.getDimensionsList())) return false;
     if (!getMetricsList().equals(other.getMetricsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -416,7 +338,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + METRICS_FIELD_NUMBER;
       hash = (53 * hash) + getMetricsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -545,20 +467,10 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.analytics.data.v1beta.Metadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDimensionsFieldBuilder();
-        getMetricsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -568,16 +480,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
 
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dimensions_ = null;
         dimensionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        metrics_ = null;
         metricsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -732,7 +646,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -747,17 +661,65 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1beta.Metadata parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.analytics.data.v1beta.DimensionMetadata m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.DimensionMetadata.parser(),
+                        extensionRegistry);
+                if (dimensionsBuilder_ == null) {
+                  ensureDimensionsIsMutable();
+                  dimensions_.add(m);
+                } else {
+                  dimensionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.analytics.data.v1beta.MetricMetadata m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.MetricMetadata.parser(),
+                        extensionRegistry);
+                if (metricsBuilder_ == null) {
+                  ensureMetricsIsMutable();
+                  metrics_.add(m);
+                } else {
+                  metricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.analytics.data.v1beta.Metadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1610,7 +1572,18 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Metadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

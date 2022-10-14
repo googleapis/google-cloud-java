@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.1.2</version>
+      <version>26.1.3</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -30,7 +30,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-securitycenter</artifactId>
-    <version>2.10.0</version>
+    <version>2.11.1</version>
   </dependency>
 
   <dependency>
@@ -52,7 +52,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter</artifactId>
-  <version>2.10.0</version>
+  <version>2.11.1</version>
 </dependency>
 
 ```
@@ -60,20 +60,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.2')
+implementation platform('com.google.cloud:libraries-bom:26.1.3')
 
 implementation 'com.google.cloud:google-cloud-securitycenter'
 ```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-securitycenter:2.10.0'
+implementation 'com.google.cloud:google-cloud-securitycenter:2.11.1'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.10.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.11.1"
 ```
 
 ## Authentication

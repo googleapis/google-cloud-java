@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-bigquerydatapolicy:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-bigquerydatapolicy-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-bigquerydatapolicy-v1beta1:0.0.0:0.0.1-SNAPSHOT

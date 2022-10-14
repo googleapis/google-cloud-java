@@ -55,92 +55,6 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ConsumerQuotaLimit(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unit_ = s;
-              break;
-            }
-          case 24:
-            {
-              isPrecise_ = input.readBool();
-              break;
-            }
-          case 56:
-            {
-              allowsAdminOverrides_ = input.readBool();
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              metric_ = s;
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                quotaBuckets_ =
-                    new java.util.ArrayList<com.google.api.serviceusage.v1beta1.QuotaBucket>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              quotaBuckets_.add(
-                  input.readMessage(
-                      com.google.api.serviceusage.v1beta1.QuotaBucket.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        quotaBuckets_ = java.util.Collections.unmodifiableList(quotaBuckets_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_ConsumerQuotaLimit_descriptor;
@@ -471,7 +385,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < quotaBuckets_.size(); i++) {
       output.writeMessage(9, quotaBuckets_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -498,7 +412,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < quotaBuckets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, quotaBuckets_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -520,7 +434,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     if (getIsPrecise() != other.getIsPrecise()) return false;
     if (getAllowsAdminOverrides() != other.getAllowsAdminOverrides()) return false;
     if (!getQuotaBucketsList().equals(other.getQuotaBucketsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -545,7 +459,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + QUOTA_BUCKETS_FIELD_NUMBER;
       hash = (53 * hash) + getQuotaBucketsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -675,19 +589,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getQuotaBucketsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -705,10 +610,11 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
 
       if (quotaBucketsBuilder_ == null) {
         quotaBuckets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        quotaBuckets_ = null;
         quotaBucketsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -846,7 +752,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -861,18 +767,75 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                unit_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 24:
+              {
+                isPrecise_ = input.readBool();
+
+                break;
+              } // case 24
+            case 56:
+              {
+                allowsAdminOverrides_ = input.readBool();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                metric_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.api.serviceusage.v1beta1.QuotaBucket m =
+                    input.readMessage(
+                        com.google.api.serviceusage.v1beta1.QuotaBucket.parser(),
+                        extensionRegistry);
+                if (quotaBucketsBuilder_ == null) {
+                  ensureQuotaBucketsIsMutable();
+                  quotaBuckets_.add(m);
+                } else {
+                  quotaBucketsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1774,7 +1737,18 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConsumerQuotaLimit(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

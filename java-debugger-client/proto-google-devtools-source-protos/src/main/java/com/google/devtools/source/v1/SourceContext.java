@@ -51,119 +51,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private SourceContext(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.devtools.source.v1.CloudRepoSourceContext.Builder subBuilder = null;
-              if (contextCase_ == 1) {
-                subBuilder =
-                    ((com.google.devtools.source.v1.CloudRepoSourceContext) context_).toBuilder();
-              }
-              context_ =
-                  input.readMessage(
-                      com.google.devtools.source.v1.CloudRepoSourceContext.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.devtools.source.v1.CloudRepoSourceContext) context_);
-                context_ = subBuilder.buildPartial();
-              }
-              contextCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.devtools.source.v1.CloudWorkspaceSourceContext.Builder subBuilder = null;
-              if (contextCase_ == 2) {
-                subBuilder =
-                    ((com.google.devtools.source.v1.CloudWorkspaceSourceContext) context_)
-                        .toBuilder();
-              }
-              context_ =
-                  input.readMessage(
-                      com.google.devtools.source.v1.CloudWorkspaceSourceContext.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.devtools.source.v1.CloudWorkspaceSourceContext) context_);
-                context_ = subBuilder.buildPartial();
-              }
-              contextCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.devtools.source.v1.GerritSourceContext.Builder subBuilder = null;
-              if (contextCase_ == 3) {
-                subBuilder =
-                    ((com.google.devtools.source.v1.GerritSourceContext) context_).toBuilder();
-              }
-              context_ =
-                  input.readMessage(
-                      com.google.devtools.source.v1.GerritSourceContext.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.devtools.source.v1.GerritSourceContext) context_);
-                context_ = subBuilder.buildPartial();
-              }
-              contextCase_ = 3;
-              break;
-            }
-          case 50:
-            {
-              com.google.devtools.source.v1.GitSourceContext.Builder subBuilder = null;
-              if (contextCase_ == 6) {
-                subBuilder =
-                    ((com.google.devtools.source.v1.GitSourceContext) context_).toBuilder();
-              }
-              context_ =
-                  input.readMessage(
-                      com.google.devtools.source.v1.GitSourceContext.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.devtools.source.v1.GitSourceContext) context_);
-                context_ = subBuilder.buildPartial();
-              }
-              contextCase_ = 6;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.source.v1.SourceContextProto
         .internal_static_google_devtools_source_v1_SourceContext_descriptor;
@@ -463,7 +350,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     if (contextCase_ == 6) {
       output.writeMessage(6, (com.google.devtools.source.v1.GitSourceContext) context_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -492,7 +379,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.devtools.source.v1.GitSourceContext) context_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -525,7 +412,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -556,7 +443,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -686,22 +573,27 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.devtools.source.v1.SourceContext.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (cloudRepoBuilder_ != null) {
+        cloudRepoBuilder_.clear();
+      }
+      if (cloudWorkspaceBuilder_ != null) {
+        cloudWorkspaceBuilder_.clear();
+      }
+      if (gerritBuilder_ != null) {
+        gerritBuilder_.clear();
+      }
+      if (gitBuilder_ != null) {
+        gitBuilder_.clear();
+      }
       contextCase_ = 0;
       context_ = null;
       return this;
@@ -835,7 +727,7 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -850,17 +742,55 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.devtools.source.v1.SourceContext parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getCloudRepoFieldBuilder().getBuilder(), extensionRegistry);
+                contextCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getCloudWorkspaceFieldBuilder().getBuilder(), extensionRegistry);
+                contextCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getGerritFieldBuilder().getBuilder(), extensionRegistry);
+                contextCase_ = 3;
+                break;
+              } // case 26
+            case 50:
+              {
+                input.readMessage(getGitFieldBuilder().getBuilder(), extensionRegistry);
+                contextCase_ = 6;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.source.v1.SourceContext) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1755,7 +1685,18 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SourceContext(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

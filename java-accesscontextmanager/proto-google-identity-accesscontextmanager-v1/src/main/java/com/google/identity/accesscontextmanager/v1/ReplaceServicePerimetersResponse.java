@@ -54,63 +54,6 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
     return this.unknownFields;
   }
 
-  private ReplaceServicePerimetersResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                servicePerimeters_ =
-                    new java.util.ArrayList<
-                        com.google.identity.accesscontextmanager.v1.ServicePerimeter>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              servicePerimeters_.add(
-                  input.readMessage(
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeter.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        servicePerimeters_ = java.util.Collections.unmodifiableList(servicePerimeters_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.identity.accesscontextmanager.v1.AccessContextManagerProto
         .internal_static_google_identity_accesscontextmanager_v1_ReplaceServicePerimetersResponse_descriptor;
@@ -233,7 +176,7 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
     for (int i = 0; i < servicePerimeters_.size(); i++) {
       output.writeMessage(1, servicePerimeters_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -246,7 +189,7 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, servicePerimeters_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -264,7 +207,7 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         (com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse) obj;
 
     if (!getServicePerimetersList().equals(other.getServicePerimetersList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -279,7 +222,7 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       hash = (37 * hash) + SERVICE_PERIMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getServicePerimetersList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -418,19 +361,10 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
 
     // Construct using
     // com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getServicePerimetersFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -438,10 +372,11 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
       super.clear();
       if (servicePerimetersBuilder_ == null) {
         servicePerimeters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        servicePerimeters_ = null;
         servicePerimetersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -564,7 +499,7 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -579,20 +514,45 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse parsedMessage =
-          null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.identity.accesscontextmanager.v1.ServicePerimeter m =
+                    input.readMessage(
+                        com.google.identity.accesscontextmanager.v1.ServicePerimeter.parser(),
+                        extensionRegistry);
+                if (servicePerimetersBuilder_ == null) {
+                  ensureServicePerimetersIsMutable();
+                  servicePerimeters_.add(m);
+                } else {
+                  servicePerimetersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1058,7 +1018,18 @@ public final class ReplaceServicePerimetersResponse extends com.google.protobuf.
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReplaceServicePerimetersResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

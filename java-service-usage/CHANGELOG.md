@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/java-service-usage/compare/v2.3.6...v2.3.7) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([2dd4413](https://github.com/googleapis/java-service-usage/commit/2dd44132fe599ae85ea7e9b8fe86a83db9136d41))
+
+## [2.3.6](https://github.com/googleapis/java-service-usage/compare/v2.3.5...v2.3.6) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#306](https://github.com/googleapis/java-service-usage/issues/306)) ([15310a0](https://github.com/googleapis/java-service-usage/commit/15310a0726b08597253d60c1f2d2dce70aa08b99))
+
 ## [2.3.5](https://github.com/googleapis/java-service-usage/compare/v2.3.4...v2.3.5) (2022-09-29)
 
 

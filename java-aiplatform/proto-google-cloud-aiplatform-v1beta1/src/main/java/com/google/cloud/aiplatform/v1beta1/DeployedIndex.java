@@ -56,190 +56,6 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private DeployedIndex(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              index_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints.Builder subBuilder = null;
-              if (privateEndpoints_ != null) {
-                subBuilder = privateEndpoints_.toBuilder();
-              }
-              privateEndpoints_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(privateEndpoints_);
-                privateEndpoints_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (indexSyncTime_ != null) {
-                subBuilder = indexSyncTime_.toBuilder();
-              }
-              indexSyncTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(indexSyncTime_);
-                indexSyncTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.aiplatform.v1beta1.AutomaticResources.Builder subBuilder = null;
-              if (automaticResources_ != null) {
-                subBuilder = automaticResources_.toBuilder();
-              }
-              automaticResources_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.AutomaticResources.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(automaticResources_);
-                automaticResources_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 64:
-            {
-              enableAccessLogging_ = input.readBool();
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.Builder subBuilder = null;
-              if (deployedIndexAuthConfig_ != null) {
-                subBuilder = deployedIndexAuthConfig_.toBuilder();
-              }
-              deployedIndexAuthConfig_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deployedIndexAuthConfig_);
-                deployedIndexAuthConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              reservedIpRanges_.add(s);
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deploymentGroup_ = s;
-              break;
-            }
-          case 130:
-            {
-              com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder subBuilder = null;
-              if (dedicatedResources_ != null) {
-                subBuilder = dedicatedResources_.toBuilder();
-              }
-              dedicatedResources_ =
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.DedicatedResources.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dedicatedResources_);
-                dedicatedResources_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.IndexEndpointProto
         .internal_static_google_cloud_aiplatform_v1beta1_DeployedIndex_descriptor;
@@ -1055,7 +871,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (dedicatedResources_ != null) {
       output.writeMessage(16, getDedicatedResources());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1106,7 +922,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     if (dedicatedResources_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDedicatedResources());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1152,7 +968,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getReservedIpRangesList().equals(other.getReservedIpRangesList())) return false;
     if (!getDeploymentGroup().equals(other.getDeploymentGroup())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1201,7 +1017,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DEPLOYMENT_GROUP_FIELD_NUMBER;
     hash = (53 * hash) + getDeploymentGroup().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1330,17 +1146,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.DeployedIndex.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1559,7 +1368,7 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         deploymentGroup_ = other.deploymentGroup_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1574,18 +1383,108 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.DeployedIndex parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                index_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getPrivateEndpointsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getIndexSyncTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAutomaticResourcesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 64:
+              {
+                enableAccessLogging_ = input.readBool();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    getDeployedIndexAuthConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReservedIpRangesIsMutable();
+                reservedIpRanges_.add(s);
+                break;
+              } // case 82
+            case 90:
+              {
+                deploymentGroup_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 130:
+              {
+                input.readMessage(
+                    getDedicatedResourcesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.DeployedIndex) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3934,7 +3833,18 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeployedIndex(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

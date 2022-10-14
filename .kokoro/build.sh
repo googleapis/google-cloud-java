@@ -57,7 +57,7 @@ case ${JOB_TYPE} in
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list},!CoverageAggregator" \
+        -pl "${module_list}" \
         -amd \
         -ntp \
         -Penable-integration-tests \
@@ -93,7 +93,7 @@ case ${JOB_TYPE} in
     ;;
   samples)
     mvn -B \
-      -pl "!CoverageAggregator,!google-cloud-gapic-bom" \
+      -pl "!gapic-libraries-bom" \
       -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \

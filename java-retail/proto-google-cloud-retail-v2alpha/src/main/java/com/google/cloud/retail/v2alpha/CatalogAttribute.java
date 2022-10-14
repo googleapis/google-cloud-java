@@ -58,92 +58,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private CatalogAttribute(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              key_ = s;
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              indexableOption_ = rawValue;
-              break;
-            }
-          case 48:
-            {
-              int rawValue = input.readEnum();
-
-              dynamicFacetableOption_ = rawValue;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              searchableOption_ = rawValue;
-              break;
-            }
-          case 64:
-            {
-              int rawValue = input.readEnum();
-
-              recommendationsFilteringOption_ = rawValue;
-              break;
-            }
-          case 72:
-            {
-              inUse_ = input.readBool();
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.CatalogProto
         .internal_static_google_cloud_retail_v2alpha_CatalogAttribute_descriptor;
@@ -1204,7 +1118,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         != com.google.cloud.retail.v2alpha.CatalogAttribute.AttributeType.UNKNOWN.getNumber()) {
       output.writeEnum(10, type_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1248,7 +1162,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         != com.google.cloud.retail.v2alpha.CatalogAttribute.AttributeType.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, type_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1271,7 +1185,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     if (dynamicFacetableOption_ != other.dynamicFacetableOption_) return false;
     if (searchableOption_ != other.searchableOption_) return false;
     if (recommendationsFilteringOption_ != other.recommendationsFilteringOption_) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1296,7 +1210,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + searchableOption_;
     hash = (37 * hash) + RECOMMENDATIONS_FILTERING_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + recommendationsFilteringOption_;
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1426,17 +1340,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.retail.v2alpha.CatalogAttribute.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1562,7 +1469,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (other.recommendationsFilteringOption_ != 0) {
         setRecommendationsFilteringOptionValue(other.getRecommendationsFilteringOptionValue());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1577,17 +1484,73 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.retail.v2alpha.CatalogAttribute parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                key_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 40:
+              {
+                indexableOption_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 48:
+              {
+                dynamicFacetableOption_ = input.readEnum();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                searchableOption_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                recommendationsFilteringOption_ = input.readEnum();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                inUse_ = input.readBool();
+
+                break;
+              } // case 72
+            case 80:
+              {
+                type_ = input.readEnum();
+
+                break;
+              } // case 80
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.retail.v2alpha.CatalogAttribute) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2491,7 +2454,18 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CatalogAttribute(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

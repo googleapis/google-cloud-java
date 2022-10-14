@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.3](https://github.com/googleapis/java-notebooks/compare/v1.1.2...v1.1.3) (2022-10-05)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#437](https://github.com/googleapis/java-notebooks/issues/437)) ([e99bc20](https://github.com/googleapis/java-notebooks/commit/e99bc2010818e13bad2a7d33d97d0e4181acae48))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#417](https://github.com/googleapis/java-notebooks/issues/417)) ([171bed9](https://github.com/googleapis/java-notebooks/commit/171bed914424b1c8c8a63e3f7aa460ae247dc32b))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.3 ([#420](https://github.com/googleapis/java-notebooks/issues/420)) ([60f5e95](https://github.com/googleapis/java-notebooks/commit/60f5e9535dfdf48432ac095809f262ed32889e96))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#446](https://github.com/googleapis/java-notebooks/issues/446)) ([578bc65](https://github.com/googleapis/java-notebooks/commit/578bc6576ad3f5f4916c7d32f1decb4e072f57f9))
+
 ## [1.1.2](https://github.com/googleapis/java-notebooks/compare/v1.1.1...v1.1.2) (2022-07-29)
 
 

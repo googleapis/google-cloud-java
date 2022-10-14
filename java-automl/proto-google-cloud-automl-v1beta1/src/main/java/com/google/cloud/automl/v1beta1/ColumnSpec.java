@@ -58,116 +58,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private ColumnSpec(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.automl.v1beta1.DataType.Builder subBuilder = null;
-              if (dataType_ != null) {
-                subBuilder = dataType_.toBuilder();
-              }
-              dataType_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.DataType.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dataType_);
-                dataType_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.automl.v1beta1.DataStats.Builder subBuilder = null;
-              if (dataStats_ != null) {
-                subBuilder = dataStats_.toBuilder();
-              }
-              dataStats_ =
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.DataStats.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dataStats_);
-                dataStats_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                topCorrelatedColumns_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              topCorrelatedColumns_.add(
-                  input.readMessage(
-                      com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              etag_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        topCorrelatedColumns_ = java.util.Collections.unmodifiableList(topCorrelatedColumns_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.ColumnSpecOuterClass
         .internal_static_google_cloud_automl_v1beta1_ColumnSpec_descriptor;
@@ -283,69 +173,6 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private CorrelatedColumn(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                columnSpecId_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.automl.v1beta1.CorrelationStats.Builder subBuilder = null;
-                if (correlationStats_ != null) {
-                  subBuilder = correlationStats_.toBuilder();
-                }
-                correlationStats_ =
-                    input.readMessage(
-                        com.google.cloud.automl.v1beta1.CorrelationStats.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(correlationStats_);
-                  correlationStats_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -483,7 +310,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       if (correlationStats_ != null) {
         output.writeMessage(2, getCorrelationStats());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -498,7 +325,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       if (correlationStats_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCorrelationStats());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -519,7 +346,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       if (hasCorrelationStats()) {
         if (!getCorrelationStats().equals(other.getCorrelationStats())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -536,7 +363,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CORRELATION_STATS_FIELD_NUMBER;
         hash = (53 * hash) + getCorrelationStats().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -669,17 +496,10 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -787,7 +607,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         if (other.hasCorrelationStats()) {
           mergeCorrelationStats(other.getCorrelationStats());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -802,19 +622,44 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  columnSpecId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getCorrelationStatsFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1150,7 +995,19 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CorrelatedColumn(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1549,7 +1406,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, etag_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1577,7 +1434,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, etag_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1605,7 +1462,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTopCorrelatedColumnsList().equals(other.getTopCorrelatedColumnsList())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1634,7 +1491,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1766,19 +1623,10 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.automl.v1beta1.ColumnSpec.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTopCorrelatedColumnsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1802,10 +1650,11 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (topCorrelatedColumnsBuilder_ == null) {
         topCorrelatedColumns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        topCorrelatedColumns_ = null;
         topCorrelatedColumnsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       etag_ = "";
 
       return this;
@@ -1952,7 +1801,7 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1967,17 +1816,75 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.automl.v1beta1.ColumnSpec parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getDataTypeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getDataStatsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn m =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.ColumnSpec.CorrelatedColumn.parser(),
+                        extensionRegistry);
+                if (topCorrelatedColumnsBuilder_ == null) {
+                  ensureTopCorrelatedColumnsIsMutable();
+                  topCorrelatedColumns_.add(m);
+                } else {
+                  topCorrelatedColumnsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.ColumnSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3167,7 +3074,18 @@ public final class ColumnSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ColumnSpec(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

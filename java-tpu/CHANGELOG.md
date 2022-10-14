@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-tpu/compare/v2.3.5...v2.4.0) (2022-10-03)
+
+
+### Features
+
+* Add Secure Boot support to TPU v2alpha1 API ([#240](https://github.com/googleapis/java-tpu/issues/240)) ([948996e](https://github.com/googleapis/java-tpu/commit/948996e287b751f6dd4d8a88a6d7b8bd74671666))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#245](https://github.com/googleapis/java-tpu/issues/245)) ([1332bb2](https://github.com/googleapis/java-tpu/commit/1332bb23e96cd5dbd097c1b6de4766a2bcbf1476))
+
 ## [2.3.5](https://github.com/googleapis/java-tpu/compare/v2.3.4...v2.3.5) (2022-09-15)
 
 

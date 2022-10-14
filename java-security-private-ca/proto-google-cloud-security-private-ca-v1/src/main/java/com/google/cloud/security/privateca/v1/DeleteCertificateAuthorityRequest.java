@@ -55,69 +55,6 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     return this.unknownFields;
   }
 
-  private DeleteCertificateAuthorityRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 32:
-            {
-              ignoreActiveCertificates_ = input.readBool();
-              break;
-            }
-          case 40:
-            {
-              skipGracePeriod_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.security.privateca.v1.PrivateCaProto
         .internal_static_google_cloud_security_privateca_v1_DeleteCertificateAuthorityRequest_descriptor;
@@ -322,7 +259,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     if (skipGracePeriod_ != false) {
       output.writeBool(5, skipGracePeriod_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -343,7 +280,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     if (skipGracePeriod_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, skipGracePeriod_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -364,7 +301,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (getIgnoreActiveCertificates() != other.getIgnoreActiveCertificates()) return false;
     if (getSkipGracePeriod() != other.getSkipGracePeriod()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -383,7 +320,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreActiveCertificates());
     hash = (37 * hash) + SKIP_GRACE_PERIOD_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipGracePeriod());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -517,17 +454,10 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
 
     // Construct using
     // com.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -643,7 +573,7 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
       if (other.getSkipGracePeriod() != false) {
         setSkipGracePeriod(other.getSkipGracePeriod());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -658,19 +588,55 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                requestId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 32:
+              {
+                ignoreActiveCertificates_ = input.readBool();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                skipGracePeriod_ = input.readBool();
+
+                break;
+              } // case 40
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1099,7 +1065,18 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteCertificateAuthorityRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

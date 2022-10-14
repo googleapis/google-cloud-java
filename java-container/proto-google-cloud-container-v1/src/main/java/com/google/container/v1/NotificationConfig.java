@@ -50,62 +50,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private NotificationConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.container.v1.NotificationConfig.PubSub.Builder subBuilder = null;
-              if (pubsub_ != null) {
-                subBuilder = pubsub_.toBuilder();
-              }
-              pubsub_ =
-                  input.readMessage(
-                      com.google.container.v1.NotificationConfig.PubSub.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pubsub_);
-                pubsub_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_NotificationConfig_descriptor;
@@ -421,74 +365,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       return this.unknownFields;
     }
 
-    private PubSub(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                enabled_ = input.readBool();
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                topic_ = s;
-                break;
-              }
-            case 26:
-              {
-                com.google.container.v1.NotificationConfig.Filter.Builder subBuilder = null;
-                if (filter_ != null) {
-                  subBuilder = filter_.toBuilder();
-                }
-                filter_ =
-                    input.readMessage(
-                        com.google.container.v1.NotificationConfig.Filter.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(filter_);
-                  filter_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1.ClusterServiceProto
           .internal_static_google_container_v1_NotificationConfig_PubSub_descriptor;
@@ -650,7 +526,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (filter_ != null) {
         output.writeMessage(3, getFilter());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -668,7 +544,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (filter_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFilter());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -690,7 +566,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (hasFilter()) {
         if (!getFilter().equals(other.getFilter())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -709,7 +585,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         hash = (37 * hash) + FILTER_FIELD_NUMBER;
         hash = (53 * hash) + getFilter().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -840,17 +716,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
 
       // Construct using com.google.container.v1.NotificationConfig.PubSub.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -962,7 +831,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         if (other.hasFilter()) {
           mergeFilter(other.getFilter());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -977,18 +846,49 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.container.v1.NotificationConfig.PubSub parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  topic_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.container.v1.NotificationConfig.PubSub) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1392,7 +1292,19 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new PubSub(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1514,74 +1426,6 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Filter(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  eventType_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                eventType_.add(rawValue);
-                break;
-              }
-            case 10:
-              {
-                int length = input.readRawVarint32();
-                int oldLimit = input.pushLimit(length);
-                while (input.getBytesUntilLimit() > 0) {
-                  int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    eventType_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  eventType_.add(rawValue);
-                }
-                input.popLimit(oldLimit);
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          eventType_ = java.util.Collections.unmodifiableList(eventType_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1720,7 +1564,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       for (int i = 0; i < eventType_.size(); i++) {
         output.writeEnumNoTag(eventType_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1741,7 +1585,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         }
         eventTypeMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1758,7 +1602,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           (com.google.container.v1.NotificationConfig.Filter) obj;
 
       if (!eventType_.equals(other.eventType_)) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1773,7 +1617,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + eventType_.hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1907,17 +1751,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       }
 
       // Construct using com.google.container.v1.NotificationConfig.Filter.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2020,7 +1857,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2035,18 +1872,50 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.container.v1.NotificationConfig.Filter parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureEventTypeIsMutable();
+                  eventType_.add(tmpRaw);
+                  break;
+                } // case 8
+              case 10:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureEventTypeIsMutable();
+                    eventType_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.container.v1.NotificationConfig.Filter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2309,7 +2178,19 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Filter(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2393,7 +2274,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     if (pubsub_ != null) {
       output.writeMessage(1, getPubsub());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2405,7 +2286,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     if (pubsub_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPubsub());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2425,7 +2306,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     if (hasPubsub()) {
       if (!getPubsub().equals(other.getPubsub())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2440,7 +2321,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + PUBSUB_FIELD_NUMBER;
       hash = (53 * hash) + getPubsub().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2569,17 +2450,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.container.v1.NotificationConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2675,7 +2549,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (other.hasPubsub()) {
         mergePubsub(other.getPubsub());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2690,17 +2564,37 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.NotificationConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getPubsubFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.NotificationConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2922,7 +2816,18 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NotificationConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

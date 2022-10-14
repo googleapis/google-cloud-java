@@ -37,6 +37,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RecaptchaEnterpriseServiceGrpc.RecaptchaEnterpriseServiceImplBase;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -158,6 +160,28 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
                   "Unrecognized response type %s for method ListKeys, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListKeysResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retrieveLegacySecretKey(
+      RetrieveLegacySecretKeyRequest request,
+      StreamObserver<RetrieveLegacySecretKeyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RetrieveLegacySecretKeyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RetrieveLegacySecretKeyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveLegacySecretKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RetrieveLegacySecretKeyResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

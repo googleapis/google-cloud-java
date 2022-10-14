@@ -58,214 +58,6 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private RunReportRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              property_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dimensions_ = new java.util.ArrayList<com.google.analytics.data.v1beta.Dimension>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dimensions_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.Dimension.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                metrics_ = new java.util.ArrayList<com.google.analytics.data.v1beta.Metric>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              metrics_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.Metric.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                dateRanges_ = new java.util.ArrayList<com.google.analytics.data.v1beta.DateRange>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              dateRanges_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.DateRange.parser(), extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              com.google.analytics.data.v1beta.FilterExpression.Builder subBuilder = null;
-              if (dimensionFilter_ != null) {
-                subBuilder = dimensionFilter_.toBuilder();
-              }
-              dimensionFilter_ =
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.FilterExpression.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dimensionFilter_);
-                dimensionFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.analytics.data.v1beta.FilterExpression.Builder subBuilder = null;
-              if (metricFilter_ != null) {
-                subBuilder = metricFilter_.toBuilder();
-              }
-              metricFilter_ =
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.FilterExpression.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metricFilter_);
-                metricFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 56:
-            {
-              offset_ = input.readInt64();
-              break;
-            }
-          case 64:
-            {
-              limit_ = input.readInt64();
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                metricAggregations_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              metricAggregations_.add(rawValue);
-              break;
-            }
-          case 74:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                  metricAggregations_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000008;
-                }
-                metricAggregations_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          case 82:
-            {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                orderBys_ = new java.util.ArrayList<com.google.analytics.data.v1beta.OrderBy>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              orderBys_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.OrderBy.parser(), extensionRegistry));
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currencyCode_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.analytics.data.v1beta.CohortSpec.Builder subBuilder = null;
-              if (cohortSpec_ != null) {
-                subBuilder = cohortSpec_.toBuilder();
-              }
-              cohortSpec_ =
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.CohortSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(cohortSpec_);
-                cohortSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 104:
-            {
-              keepEmptyRows_ = input.readBool();
-              break;
-            }
-          case 112:
-            {
-              returnPropertyQuota_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        metrics_ = java.util.Collections.unmodifiableList(metrics_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        dateRanges_ = java.util.Collections.unmodifiableList(dateRanges_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        metricAggregations_ = java.util.Collections.unmodifiableList(metricAggregations_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        orderBys_ = java.util.Collections.unmodifiableList(orderBys_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_RunReportRequest_descriptor;
@@ -632,8 +424,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
+   * The filter clause of metrics. Applied after aggregating the report's rows,
+   * similar to SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -648,8 +440,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
+   * The filter clause of metrics. Applied after aggregating the report's rows,
+   * similar to SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -666,8 +458,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter clause of metrics. Applied at post aggregation phase, similar to
-   * SQL having-clause. Dimensions cannot be used in this filter.
+   * The filter clause of metrics. Applied after aggregating the report's rows,
+   * similar to SQL having-clause. Dimensions cannot be used in this filter.
    * </pre>
    *
    * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -1104,7 +896,7 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     if (returnPropertyQuota_ != false) {
       output.writeBool(14, returnPropertyQuota_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1165,7 +957,7 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     if (returnPropertyQuota_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, returnPropertyQuota_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1204,7 +996,7 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     }
     if (getKeepEmptyRows() != other.getKeepEmptyRows()) return false;
     if (getReturnPropertyQuota() != other.getReturnPropertyQuota()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1259,7 +1051,7 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeepEmptyRows());
     hash = (37 * hash) + RETURN_PROPERTY_QUOTA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPropertyQuota());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1388,22 +1180,10 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.analytics.data.v1beta.RunReportRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDimensionsFieldBuilder();
-        getMetricsFieldBuilder();
-        getDateRangesFieldBuilder();
-        getOrderBysFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1413,22 +1193,25 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
 
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dimensions_ = null;
         dimensionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        metrics_ = null;
         metricsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (dateRangesBuilder_ == null) {
         dateRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        dateRanges_ = null;
         dateRangesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (dimensionFilterBuilder_ == null) {
         dimensionFilter_ = null;
       } else {
@@ -1449,10 +1232,11 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000008);
       if (orderBysBuilder_ == null) {
         orderBys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
+        orderBys_ = null;
         orderBysBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000010);
       currencyCode_ = "";
 
       if (cohortSpecBuilder_ == null) {
@@ -1752,7 +1536,7 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
       if (other.getReturnPropertyQuota() != false) {
         setReturnPropertyQuota(other.getReturnPropertyQuota());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1767,18 +1551,156 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1beta.RunReportRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                property_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.analytics.data.v1beta.Dimension m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.Dimension.parser(), extensionRegistry);
+                if (dimensionsBuilder_ == null) {
+                  ensureDimensionsIsMutable();
+                  dimensions_.add(m);
+                } else {
+                  dimensionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.analytics.data.v1beta.Metric m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.Metric.parser(), extensionRegistry);
+                if (metricsBuilder_ == null) {
+                  ensureMetricsIsMutable();
+                  metrics_.add(m);
+                } else {
+                  metricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.analytics.data.v1beta.DateRange m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.DateRange.parser(), extensionRegistry);
+                if (dateRangesBuilder_ == null) {
+                  ensureDateRangesIsMutable();
+                  dateRanges_.add(m);
+                } else {
+                  dateRangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getDimensionFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getMetricFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 56:
+              {
+                offset_ = input.readInt64();
+
+                break;
+              } // case 56
+            case 64:
+              {
+                limit_ = input.readInt64();
+
+                break;
+              } // case 64
+            case 72:
+              {
+                int tmpRaw = input.readEnum();
+                ensureMetricAggregationsIsMutable();
+                metricAggregations_.add(tmpRaw);
+                break;
+              } // case 72
+            case 74:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureMetricAggregationsIsMutable();
+                  metricAggregations_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.analytics.data.v1beta.OrderBy m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.OrderBy.parser(), extensionRegistry);
+                if (orderBysBuilder_ == null) {
+                  ensureOrderBysIsMutable();
+                  orderBys_.add(m);
+                } else {
+                  orderBysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 90:
+              {
+                currencyCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getCohortSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 104:
+              {
+                keepEmptyRows_ = input.readBool();
+
+                break;
+              } // case 104
+            case 112:
+              {
+                returnPropertyQuota_ = input.readBool();
+
+                break;
+              } // case 112
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.analytics.data.v1beta.RunReportRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3266,8 +3188,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3281,8 +3203,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3302,8 +3224,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3325,8 +3247,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3346,8 +3268,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3373,8 +3295,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3394,8 +3316,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3409,8 +3331,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -3428,8 +3350,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter clause of metrics. Applied at post aggregation phase, similar to
-     * SQL having-clause. Dimensions cannot be used in this filter.
+     * The filter clause of metrics. Applied after aggregating the report's rows,
+     * similar to SQL having-clause. Dimensions cannot be used in this filter.
      * </pre>
      *
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 6;</code>
@@ -4648,7 +4570,18 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RunReportRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

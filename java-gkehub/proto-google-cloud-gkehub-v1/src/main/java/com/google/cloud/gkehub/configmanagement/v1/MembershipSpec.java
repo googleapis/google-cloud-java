@@ -53,106 +53,6 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private MembershipSpec(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.gkehub.configmanagement.v1.ConfigSync.Builder subBuilder = null;
-              if (configSync_ != null) {
-                subBuilder = configSync_.toBuilder();
-              }
-              configSync_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1.ConfigSync.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configSync_);
-                configSync_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.gkehub.configmanagement.v1.PolicyController.Builder subBuilder =
-                  null;
-              if (policyController_ != null) {
-                subBuilder = policyController_.toBuilder();
-              }
-              policyController_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1.PolicyController.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(policyController_);
-                policyController_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig.Builder
-                  subBuilder = null;
-              if (hierarchyController_ != null) {
-                subBuilder = hierarchyController_.toBuilder();
-              }
-              hierarchyController_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hierarchyController_);
-                hierarchyController_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.configmanagement.v1.ConfigManagementProto
         .internal_static_google_cloud_gkehub_configmanagement_v1_MembershipSpec_descriptor;
@@ -397,7 +297,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -418,7 +318,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -447,7 +347,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       if (!getHierarchyController().equals(other.getHierarchyController())) return false;
     }
     if (!getVersion().equals(other.getVersion())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -472,7 +372,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -603,17 +503,10 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -745,7 +638,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         version_ = other.version_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -760,18 +653,57 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.configmanagement.v1.MembershipSpec parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getConfigSyncFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getPolicyControllerFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(
+                    getHierarchyControllerFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 82:
+              {
+                version_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkehub.configmanagement.v1.MembershipSpec) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1505,7 +1437,18 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MembershipSpec(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

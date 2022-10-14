@@ -52,80 +52,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Overlay(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.cloud.video.transcoder.v1.Overlay.Image.Builder subBuilder = null;
-              if (image_ != null) {
-                subBuilder = image_.toBuilder();
-              }
-              image_ =
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.Overlay.Image.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(image_);
-                image_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                animations_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.video.transcoder.v1.Overlay.Animation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              animations_.add(
-                  input.readMessage(
-                      com.google.cloud.video.transcoder.v1.Overlay.Animation.parser(),
-                      extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        animations_ = java.util.Collections.unmodifiableList(animations_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_Overlay_descriptor;
@@ -361,55 +287,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private NormalizedCoordinate(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 9:
-              {
-                x_ = input.readDouble();
-                break;
-              }
-            case 17:
-              {
-                y_ = input.readDouble();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_Overlay_NormalizedCoordinate_descriptor;
@@ -481,7 +358,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
         output.writeDouble(2, y_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -496,7 +373,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, y_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -516,7 +393,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           != java.lang.Double.doubleToLongBits(other.getX())) return false;
       if (java.lang.Double.doubleToLongBits(getY())
           != java.lang.Double.doubleToLongBits(other.getY())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -535,7 +412,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getY()));
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -669,17 +546,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -781,7 +651,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         if (other.getY() != 0D) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -796,19 +666,43 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  x_ = input.readDouble();
+
+                  break;
+                } // case 9
+              case 17:
+                {
+                  y_ = input.readDouble();
+
+                  break;
+                } // case 17
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -951,7 +845,19 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new NormalizedCoordinate(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -1094,75 +1000,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Image(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                uri_ = s;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.Builder
-                    subBuilder = null;
-                if (resolution_ != null) {
-                  subBuilder = resolution_.toBuilder();
-                }
-                resolution_ =
-                    input.readMessage(
-                        com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(resolution_);
-                  resolution_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 25:
-              {
-                alpha_ = input.readDouble();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1331,7 +1168,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(alpha_) != 0) {
         output.writeDouble(3, alpha_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1349,7 +1186,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Double.doubleToRawLongBits(alpha_) != 0) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, alpha_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1372,7 +1209,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       if (java.lang.Double.doubleToLongBits(getAlpha())
           != java.lang.Double.doubleToLongBits(other.getAlpha())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1394,7 +1231,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getAlpha()));
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1525,17 +1362,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.Overlay.Image.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1647,7 +1477,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         if (other.getAlpha() != 0D) {
           setAlpha(other.getAlpha());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1662,18 +1492,49 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.Overlay.Image parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getResolutionFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 25:
+                {
+                  alpha_ = input.readDouble();
+
+                  break;
+                } // case 25
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.Overlay.Image) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2097,7 +1958,19 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Image(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2233,78 +2106,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AnimationStatic(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.Builder
-                    subBuilder = null;
-                if (xy_ != null) {
-                  subBuilder = xy_.toBuilder();
-                }
-                xy_ =
-                    input.readMessage(
-                        com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(xy_);
-                  xy_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 18:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (startTimeOffset_ != null) {
-                  subBuilder = startTimeOffset_.toBuilder();
-                }
-                startTimeOffset_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(startTimeOffset_);
-                  startTimeOffset_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2451,7 +2252,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (startTimeOffset_ != null) {
         output.writeMessage(2, getStartTimeOffset());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2466,7 +2267,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (startTimeOffset_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStartTimeOffset());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2490,7 +2291,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (hasStartTimeOffset()) {
         if (!getStartTimeOffset().equals(other.getStartTimeOffset())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2509,7 +2310,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + START_TIME_OFFSET_FIELD_NUMBER;
         hash = (53 * hash) + getStartTimeOffset().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2641,17 +2442,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -2766,7 +2560,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         if (other.hasStartTimeOffset()) {
           mergeStartTimeOffset(other.getStartTimeOffset());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2781,19 +2575,44 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getXyFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getStartTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3246,7 +3065,19 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AnimationStatic(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3452,100 +3283,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private AnimationFade(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                fadeType_ = rawValue;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.Builder
-                    subBuilder = null;
-                if (xy_ != null) {
-                  subBuilder = xy_.toBuilder();
-                }
-                xy_ =
-                    input.readMessage(
-                        com.google.cloud.video.transcoder.v1.Overlay.NormalizedCoordinate.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(xy_);
-                  xy_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 26:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (startTimeOffset_ != null) {
-                  subBuilder = startTimeOffset_.toBuilder();
-                }
-                startTimeOffset_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(startTimeOffset_);
-                  startTimeOffset_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 34:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (endTimeOffset_ != null) {
-                  subBuilder = endTimeOffset_.toBuilder();
-                }
-                endTimeOffset_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(endTimeOffset_);
-                  endTimeOffset_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3793,7 +3530,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (endTimeOffset_ != null) {
         output.writeMessage(4, getEndTimeOffset());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -3816,7 +3553,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (endTimeOffset_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getEndTimeOffset());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -3845,7 +3582,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (hasEndTimeOffset()) {
         if (!getEndTimeOffset().equals(other.getEndTimeOffset())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -3870,7 +3607,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + END_TIME_OFFSET_FIELD_NUMBER;
         hash = (53 * hash) + getEndTimeOffset().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -4002,17 +3739,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -4147,7 +3877,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         if (other.hasEndTimeOffset()) {
           mergeEndTimeOffset(other.getEndTimeOffset());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -4162,18 +3892,56 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.Overlay.AnimationFade parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  fadeType_ = input.readEnum();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(getXyFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getStartTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getEndTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.Overlay.AnimationFade) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -4922,7 +4690,19 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AnimationFade(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5015,60 +4795,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private AnimationEnd(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (startTimeOffset_ != null) {
-                  subBuilder = startTimeOffset_.toBuilder();
-                }
-                startTimeOffset_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(startTimeOffset_);
-                  startTimeOffset_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_Overlay_AnimationEnd_descriptor;
@@ -5149,7 +4875,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (startTimeOffset_ != null) {
         output.writeMessage(1, getStartTimeOffset());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5161,7 +4887,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (startTimeOffset_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartTimeOffset());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5181,7 +4907,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (hasStartTimeOffset()) {
         if (!getStartTimeOffset().equals(other.getStartTimeOffset())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5196,7 +4922,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + START_TIME_OFFSET_FIELD_NUMBER;
         hash = (53 * hash) + getStartTimeOffset().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5330,17 +5056,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -5439,7 +5158,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         if (other.hasStartTimeOffset()) {
           mergeStartTimeOffset(other.getStartTimeOffset());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5454,18 +5173,38 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getStartTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -5687,7 +5426,19 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AnimationEnd(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -5850,109 +5601,6 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private Animation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.Builder subBuilder =
-                    null;
-                if (animationTypeCase_ == 1) {
-                  subBuilder =
-                      ((com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic)
-                              animationType_)
-                          .toBuilder();
-                }
-                animationType_ =
-                    input.readMessage(
-                        com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.video.transcoder.v1.Overlay.AnimationStatic)
-                          animationType_);
-                  animationType_ = subBuilder.buildPartial();
-                }
-                animationTypeCase_ = 1;
-                break;
-              }
-            case 18:
-              {
-                com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.Builder subBuilder =
-                    null;
-                if (animationTypeCase_ == 2) {
-                  subBuilder =
-                      ((com.google.cloud.video.transcoder.v1.Overlay.AnimationFade) animationType_)
-                          .toBuilder();
-                }
-                animationType_ =
-                    input.readMessage(
-                        com.google.cloud.video.transcoder.v1.Overlay.AnimationFade.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.video.transcoder.v1.Overlay.AnimationFade) animationType_);
-                  animationType_ = subBuilder.buildPartial();
-                }
-                animationTypeCase_ = 2;
-                break;
-              }
-            case 26:
-              {
-                com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.Builder subBuilder = null;
-                if (animationTypeCase_ == 3) {
-                  subBuilder =
-                      ((com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd) animationType_)
-                          .toBuilder();
-                }
-                animationType_ =
-                    input.readMessage(
-                        com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd) animationType_);
-                  animationType_ = subBuilder.buildPartial();
-                }
-                animationTypeCase_ = 3;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6202,7 +5850,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             3, (com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd) animationType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6226,7 +5874,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, (com.google.cloud.video.transcoder.v1.Overlay.AnimationEnd) animationType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6256,7 +5904,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6283,7 +5931,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6415,22 +6063,24 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.video.transcoder.v1.Overlay.Animation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (animationStaticBuilder_ != null) {
+          animationStaticBuilder_.clear();
+        }
+        if (animationFadeBuilder_ != null) {
+          animationFadeBuilder_.clear();
+        }
+        if (animationEndBuilder_ != null) {
+          animationEndBuilder_.clear();
+        }
         animationTypeCase_ = 0;
         animationType_ = null;
         return this;
@@ -6555,7 +6205,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -6570,18 +6220,50 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.video.transcoder.v1.Overlay.Animation parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getAnimationStaticFieldBuilder().getBuilder(), extensionRegistry);
+                  animationTypeCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getAnimationFadeFieldBuilder().getBuilder(), extensionRegistry);
+                  animationTypeCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getAnimationEndFieldBuilder().getBuilder(), extensionRegistry);
+                  animationTypeCase_ = 3;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.video.transcoder.v1.Overlay.Animation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7293,7 +6975,19 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Animation(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -7456,7 +7150,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < animations_.size(); i++) {
       output.writeMessage(2, animations_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -7471,7 +7165,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < animations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, animations_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -7492,7 +7186,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       if (!getImage().equals(other.getImage())) return false;
     }
     if (!getAnimationsList().equals(other.getAnimationsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -7511,7 +7205,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ANIMATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAnimationsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -7640,19 +7334,10 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.video.transcoder.v1.Overlay.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAnimationsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -7666,10 +7351,11 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
       }
       if (animationsBuilder_ == null) {
         animations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        animations_ = null;
         animationsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -7791,7 +7477,7 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -7806,17 +7492,51 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.video.transcoder.v1.Overlay parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.cloud.video.transcoder.v1.Overlay.Animation m =
+                    input.readMessage(
+                        com.google.cloud.video.transcoder.v1.Overlay.Animation.parser(),
+                        extensionRegistry);
+                if (animationsBuilder_ == null) {
+                  ensureAnimationsIsMutable();
+                  animations_.add(m);
+                } else {
+                  animationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.video.transcoder.v1.Overlay) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -8418,7 +8138,18 @@ public final class Overlay extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Overlay(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -3,13 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-backup-bom</artifactId>
-  <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+  <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Backup for GKE BOM</name>
@@ -18,65 +19,26 @@
     BOM for Backup for GKE
   </description>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>chingor13</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google LLC</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-    <developer>
-       <id>neenushaji</id>
-       <name>Neenu Shaji</name>
-       <email>neenushaji@google.com</email>
-       <organization>Google LLC</organization>
-       <roles>
-         <role>Developer</role>
-       </roles>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/googleapis/java-gke-backup.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-gke-backup.git</developerConnection>
-    <url>https://github.com/googleapis/java-gke-backup</url>
-  </scm>
-
   <properties>
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-backup</artifactId>
-        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+        <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gke-backup-v1</artifactId>
-        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-backup-v1:current} -->
+        <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-backup-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gke-backup-v1</artifactId>
-        <version>0.2.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
+        <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

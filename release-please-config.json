@@ -4,8 +4,16 @@
   "separate-pull-requests": false,
   "include-component-in-tag": true,
   "packages": {
-    "google-cloud-gapic-bom": {
-      "component": "google-cloud-gapic-bom",
+    "gapic-libraries-bom": {
+      "component": "gapic-libraries-bom",
+      "skip-github-release": true
+    },
+    "google-cloud-jar-parent": {
+      "component": "google-cloud-jar-parent",
+      "skip-github-release": true
+    },
+    "google-cloud-pom-parent": {
+      "component": "google-cloud-pom-parent",
       "skip-github-release": true
     },
     "java-accessapproval": {
@@ -28,6 +36,10 @@
       "component": "google-analytics-data",
       "skip-github-release": true
     },
+    "java-analyticshub": {
+      "component": "google-cloud-analyticshub",
+      "skip-github-release": true
+    },
     "java-api-gateway": {
       "component": "google-cloud-api-gateway",
       "skip-github-release": true
@@ -38,6 +50,10 @@
     },
     "java-apigee-registry": {
       "component": "google-cloud-apigee-registry",
+      "skip-github-release": true
+    },
+    "java-apikeys": {
+      "component": "google-cloud-apikeys",
       "skip-github-release": true
     },
     "java-appengine-admin": {
@@ -98,6 +114,10 @@
     },
     "java-bigquery-data-exchange": {
       "component": "google-cloud-bigquery-data-exchange",
+      "skip-github-release": true
+    },
+    "java-bigquerydatapolicy": {
+      "component": "google-cloud-bigquerydatapolicy",
       "skip-github-release": true
     },
     "java-bigquerydatatransfer": {
@@ -206,6 +226,10 @@
     },
     "java-dialogflow": {
       "component": "google-cloud-dialogflow",
+      "skip-github-release": true
+    },
+    "java-distributedcloudedge": {
+      "component": "google-cloud-distributedcloudedge",
       "skip-github-release": true
     },
     "java-dlp": {
@@ -382,6 +406,10 @@
     },
     "java-profiler": {
       "component": "google-cloud-profiler",
+      "skip-github-release": true
+    },
+    "java-publicca": {
+      "component": "google-cloud-publicca",
       "skip-github-release": true
     },
     "java-recaptchaenterprise": {

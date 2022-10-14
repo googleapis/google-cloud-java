@@ -52,148 +52,6 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     return this.unknownFields;
   }
 
-  private LaunchFlexTemplateParameter(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              jobName_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                parameters_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ParametersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
-                  input.readMessage(
-                      ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              parameters_.getMutableMap().put(parameters__.getKey(), parameters__.getValue());
-              break;
-            }
-          case 34:
-            {
-              com.google.dataflow.v1beta3.ContainerSpec.Builder subBuilder = null;
-              if (templateCase_ == 4) {
-                subBuilder = ((com.google.dataflow.v1beta3.ContainerSpec) template_).toBuilder();
-              }
-              template_ =
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.ContainerSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.dataflow.v1beta3.ContainerSpec) template_);
-                template_ = subBuilder.buildPartial();
-              }
-              templateCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              templateCase_ = 5;
-              template_ = s;
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                launchOptions_ =
-                    com.google.protobuf.MapField.newMapField(
-                        LaunchOptionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> launchOptions__ =
-                  input.readMessage(
-                      LaunchOptionsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              launchOptions_
-                  .getMutableMap()
-                  .put(launchOptions__.getKey(), launchOptions__.getValue());
-              break;
-            }
-          case 58:
-            {
-              com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.Builder subBuilder = null;
-              if (environment_ != null) {
-                subBuilder = environment_.toBuilder();
-              }
-              environment_ =
-                  input.readMessage(
-                      com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(environment_);
-                environment_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 64:
-            {
-              update_ = input.readBool();
-              break;
-            }
-          case 74:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                transformNameMappings_ =
-                    com.google.protobuf.MapField.newMapField(
-                        TransformNameMappingsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  transformNameMappings__ =
-                      input.readMessage(
-                          TransformNameMappingsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              transformNameMappings_
-                  .getMutableMap()
-                  .put(transformNameMappings__.getKey(), transformNameMappings__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.dataflow.v1beta3.TemplatesProto
         .internal_static_google_dataflow_v1beta3_LaunchFlexTemplateParameter_descriptor;
@@ -872,7 +730,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         internalGetTransformNameMappings(),
         TransformNameMappingsDefaultEntryHolder.defaultEntry,
         9);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -928,7 +786,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, transformNameMappings__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -965,7 +823,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1008,7 +866,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1166,17 +1024,10 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.dataflow.v1beta3.LaunchFlexTemplateParameter.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1184,6 +1035,9 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
       super.clear();
       jobName_ = "";
 
+      if (containerSpecBuilder_ != null) {
+        containerSpecBuilder_.clear();
+      }
       internalGetMutableParameters().clear();
       internalGetMutableLaunchOptions().clear();
       if (environmentBuilder_ == null) {
@@ -1330,7 +1184,7 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1345,18 +1199,96 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.dataflow.v1beta3.LaunchFlexTemplateParameter parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                jobName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
+                    input.readMessage(
+                        ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableParameters()
+                    .getMutableMap()
+                    .put(parameters__.getKey(), parameters__.getValue());
+                break;
+              } // case 18
+            case 34:
+              {
+                input.readMessage(getContainerSpecFieldBuilder().getBuilder(), extensionRegistry);
+                templateCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                templateCase_ = 5;
+                template_ = s;
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> launchOptions__ =
+                    input.readMessage(
+                        LaunchOptionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLaunchOptions()
+                    .getMutableMap()
+                    .put(launchOptions__.getKey(), launchOptions__.getValue());
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 64:
+              {
+                update_ = input.readBool();
+
+                break;
+              } // case 64
+            case 74:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    transformNameMappings__ =
+                        input.readMessage(
+                            TransformNameMappingsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableTransformNameMappings()
+                    .getMutableMap()
+                    .put(transformNameMappings__.getKey(), transformNameMappings__.getValue());
+                break;
+              } // case 74
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.dataflow.v1beta3.LaunchFlexTemplateParameter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2632,7 +2564,18 @@ public final class LaunchFlexTemplateParameter extends com.google.protobuf.Gener
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LaunchFlexTemplateParameter(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

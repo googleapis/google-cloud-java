@@ -3,13 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute-bom</artifactId>
-  <version>1.12.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-java-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../pom.xml</relativePath>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <name>Google Compute Engine BOM</name>
@@ -18,47 +19,17 @@
     BOM for Google Compute Engine
   </description>
 
-  <organization>
-    <name>Google LLC</name>
-  </organization>
-
-  <developers>
-    <developer>
-      <id>chingor13</id>
-      <name>Jeff Ching</name>
-      <email>chingor@google.com</email>
-      <organization>Google LLC</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/googleapis/java-compute.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-compute.git</developerConnection>
-    <url>https://github.com/googleapis/java-compute</url>
-  </scm>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>1.12.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-compute-v1</artifactId>
-        <version>1.12.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
+        <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

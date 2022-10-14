@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.5.4](https://github.com/googleapis/java-functions/compare/v2.5.3...v2.5.4) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([594ed65](https://github.com/googleapis/java-functions/commit/594ed65be45e827c0046808d462c961728a6ebc0))
+
+## [2.5.3](https://github.com/googleapis/java-functions/compare/v2.5.2...v2.5.3) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#472](https://github.com/googleapis/java-functions/issues/472)) ([85050a6](https://github.com/googleapis/java-functions/commit/85050a627f69983720725c7f8f5a7a8b259aad58))
+* Update dependency charset-normalizer to v2.1.1 ([#479](https://github.com/googleapis/java-functions/issues/479)) ([a6a30b6](https://github.com/googleapis/java-functions/commit/a6a30b604de5b11e34e73f875dc53779ebad50b7))
+* Update dependency click to v8.1.3 ([#480](https://github.com/googleapis/java-functions/issues/480)) ([962780a](https://github.com/googleapis/java-functions/commit/962780aaa7276ed4ee255eb4216b83080e34cf60))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#497](https://github.com/googleapis/java-functions/issues/497)) ([3047de4](https://github.com/googleapis/java-functions/commit/3047de4b7cfb6f96cd32fa90c8f4c07e3cdd1b58))
+* Update dependency gcp-releasetool to v1.8.8 ([#477](https://github.com/googleapis/java-functions/issues/477)) ([e938a63](https://github.com/googleapis/java-functions/commit/e938a63dda28a62fae3d0a6a2bbdaa2b7e190b05))
+* Update dependency google-api-core to v2.10.1 ([#481](https://github.com/googleapis/java-functions/issues/481)) ([d6cce42](https://github.com/googleapis/java-functions/commit/d6cce42a4bca905ffe99ed53ed68fb41bd005bd3))
+* Update dependency google-cloud-core to v2.3.2 ([#473](https://github.com/googleapis/java-functions/issues/473)) ([e380367](https://github.com/googleapis/java-functions/commit/e380367a1fa42ec85f2b5b687c823b79df17bfa7))
+* Update dependency importlib-metadata to v4.12.0 ([#482](https://github.com/googleapis/java-functions/issues/482)) ([09d2b5a](https://github.com/googleapis/java-functions/commit/09d2b5a4abdb0dc1353b82ea67031c47b9652bb2))
+* Update dependency jeepney to v0.8.0 ([#483](https://github.com/googleapis/java-functions/issues/483)) ([4e8d696](https://github.com/googleapis/java-functions/commit/4e8d696d576f62710f38cac0b51a39cae6d79413))
+* Update dependency keyring to v23.9.3 ([#485](https://github.com/googleapis/java-functions/issues/485)) ([5780bd4](https://github.com/googleapis/java-functions/commit/5780bd4f49f1c96cf58b2091dc9fa4a0679d0b70))
+* Update dependency markupsafe to v2.1.1 ([#486](https://github.com/googleapis/java-functions/issues/486)) ([998e640](https://github.com/googleapis/java-functions/commit/998e640b163943ad12daebd95737814a77db2444))
+* Update dependency protobuf to v3.20.2 ([#487](https://github.com/googleapis/java-functions/issues/487)) ([1b19f26](https://github.com/googleapis/java-functions/commit/1b19f264066e884a7854ffbfc5c0d32462c5ae93))
+* Update dependency typing-extensions to v4.3.0 ([#490](https://github.com/googleapis/java-functions/issues/490)) ([97d6541](https://github.com/googleapis/java-functions/commit/97d654139fede85a6b498d0add0081a48b13712b))
+
 ## [2.5.2](https://github.com/googleapis/java-functions/compare/v2.5.1...v2.5.2) (2022-09-16)
 
 

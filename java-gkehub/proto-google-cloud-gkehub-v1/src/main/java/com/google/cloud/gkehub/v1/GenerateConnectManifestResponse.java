@@ -54,61 +54,6 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private GenerateConnectManifestResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                manifest_ =
-                    new java.util.ArrayList<com.google.cloud.gkehub.v1.ConnectAgentResource>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              manifest_.add(
-                  input.readMessage(
-                      com.google.cloud.gkehub.v1.ConnectAgentResource.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        manifest_ = java.util.Collections.unmodifiableList(manifest_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1.ServiceProto
         .internal_static_google_cloud_gkehub_v1_GenerateConnectManifestResponse_descriptor;
@@ -215,7 +160,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     for (int i = 0; i < manifest_.size(); i++) {
       output.writeMessage(1, manifest_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -227,7 +172,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     for (int i = 0; i < manifest_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, manifest_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -244,7 +189,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         (com.google.cloud.gkehub.v1.GenerateConnectManifestResponse) obj;
 
     if (!getManifestList().equals(other.getManifestList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -259,7 +204,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       hash = (37 * hash) + MANIFEST_FIELD_NUMBER;
       hash = (53 * hash) + getManifestList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -390,19 +335,10 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     }
 
     // Construct using com.google.cloud.gkehub.v1.GenerateConnectManifestResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getManifestFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -410,10 +346,11 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       super.clear();
       if (manifestBuilder_ == null) {
         manifest_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        manifest_ = null;
         manifestBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -528,7 +465,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -543,18 +480,45 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.v1.GenerateConnectManifestResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.gkehub.v1.ConnectAgentResource m =
+                    input.readMessage(
+                        com.google.cloud.gkehub.v1.ConnectAgentResource.parser(),
+                        extensionRegistry);
+                if (manifestBuilder_ == null) {
+                  ensureManifestIsMutable();
+                  manifest_.add(m);
+                } else {
+                  manifestBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkehub.v1.GenerateConnectManifestResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -962,7 +926,18 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenerateConnectManifestResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

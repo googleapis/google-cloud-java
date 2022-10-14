@@ -50,72 +50,6 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     return this.unknownFields;
   }
 
-  private InstanceGroupManagerStatusStateful(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 883793792:
-            {
-              bitField0_ |= 0x00000001;
-              hasStatefulConfig_ = input.readBool();
-              break;
-            }
-          case -84847286:
-            {
-              com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
-                      .Builder
-                  subBuilder = null;
-              if (((bitField0_ & 0x00000002) != 0)) {
-                subBuilder = perInstanceConfigs_.toBuilder();
-              }
-              perInstanceConfigs_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1
-                          .InstanceGroupManagerStatusStatefulPerInstanceConfigs.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(perInstanceConfigs_);
-                perInstanceConfigs_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InstanceGroupManagerStatusStateful_descriptor;
@@ -246,7 +180,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(526265001, getPerInstanceConfigs());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -263,7 +197,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               526265001, getPerInstanceConfigs());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -287,7 +221,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     if (hasPerInstanceConfigs()) {
       if (!getPerInstanceConfigs().equals(other.getPerInstanceConfigs())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -306,7 +240,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       hash = (37 * hash) + PER_INSTANCE_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getPerInstanceConfigs().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -561,7 +495,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       if (other.hasPerInstanceConfigs()) {
         mergePerInstanceConfigs(other.getPerInstanceConfigs());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -576,19 +510,44 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 883793792:
+              {
+                hasStatefulConfig_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 883793792
+            case -84847286:
+              {
+                input.readMessage(
+                    getPerInstanceConfigsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -84847286
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -918,7 +877,18 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InstanceGroupManagerStatusStateful(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -52,136 +52,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Assessment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.recaptchaenterprise.v1.Event.Builder subBuilder = null;
-              if (event_ != null) {
-                subBuilder = event_.toBuilder();
-              }
-              event_ =
-                  input.readMessage(
-                      com.google.recaptchaenterprise.v1.Event.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(event_);
-                event_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.recaptchaenterprise.v1.RiskAnalysis.Builder subBuilder = null;
-              if (riskAnalysis_ != null) {
-                subBuilder = riskAnalysis_.toBuilder();
-              }
-              riskAnalysis_ =
-                  input.readMessage(
-                      com.google.recaptchaenterprise.v1.RiskAnalysis.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(riskAnalysis_);
-                riskAnalysis_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.recaptchaenterprise.v1.TokenProperties.Builder subBuilder = null;
-              if (tokenProperties_ != null) {
-                subBuilder = tokenProperties_.toBuilder();
-              }
-              tokenProperties_ =
-                  input.readMessage(
-                      com.google.recaptchaenterprise.v1.TokenProperties.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tokenProperties_);
-                tokenProperties_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder subBuilder = null;
-              if (accountDefenderAssessment_ != null) {
-                subBuilder = accountDefenderAssessment_.toBuilder();
-              }
-              accountDefenderAssessment_ =
-                  input.readMessage(
-                      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(accountDefenderAssessment_);
-                accountDefenderAssessment_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder subBuilder =
-                  null;
-              if (privatePasswordLeakVerification_ != null) {
-                subBuilder = privatePasswordLeakVerification_.toBuilder();
-              }
-              privatePasswordLeakVerification_ =
-                  input.readMessage(
-                      com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(privatePasswordLeakVerification_);
-                privatePasswordLeakVerification_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_Assessment_descriptor;
@@ -408,7 +278,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -426,7 +296,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -447,7 +317,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assessment returned by Account Defender when a hashed_account_id is
+   * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>
    *
@@ -468,7 +338,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -485,7 +356,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -505,7 +377,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Password leak verification info.
+   * The private password leak verification field contains the parameters that
+   * are used to to check for leaks privately without sharing user credentials.
    * </pre>
    *
    * <code>
@@ -550,7 +423,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (privatePasswordLeakVerification_ != null) {
       output.writeMessage(8, getPrivatePasswordLeakVerification());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -581,7 +454,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getPrivatePasswordLeakVerification());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -621,7 +494,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!getPrivatePasswordLeakVerification().equals(other.getPrivatePasswordLeakVerification()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -654,7 +527,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER;
       hash = (53 * hash) + getPrivatePasswordLeakVerification().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -783,17 +656,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.recaptchaenterprise.v1.Assessment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -952,7 +818,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPrivatePasswordLeakVerification()) {
         mergePrivatePasswordLeakVerification(other.getPrivatePasswordLeakVerification());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -967,17 +833,70 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.recaptchaenterprise.v1.Assessment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getEventFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getRiskAnalysisFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getTokenPropertiesFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    getAccountDefenderAssessmentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 66:
+              {
+                input.readMessage(
+                    getPrivatePasswordLeakVerificationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.recaptchaenterprise.v1.Assessment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1696,7 +1615,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1713,7 +1632,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1737,7 +1656,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1763,7 +1682,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1786,7 +1705,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1817,7 +1736,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1840,7 +1759,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1858,7 +1777,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1880,7 +1799,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assessment returned by Account Defender when a hashed_account_id is
+     * Assessment returned by account defender when a hashed_account_id is
      * provided.
      * </pre>
      *
@@ -1916,7 +1835,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1933,7 +1853,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1956,7 +1877,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -1981,7 +1903,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2003,7 +1926,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2033,7 +1957,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2055,7 +1980,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2072,7 +1998,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2093,7 +2020,8 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Password leak verification info.
+     * The private password leak verification field contains the parameters that
+     * are used to to check for leaks privately without sharing user credentials.
      * </pre>
      *
      * <code>
@@ -2149,7 +2077,18 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Assessment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

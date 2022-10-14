@@ -58,237 +58,6 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private HealthCheck(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26840:
-            {
-              bitField0_ |= 0x00000100;
-              id_ = input.readUInt64();
-              break;
-            }
-          case 26336418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              kind_ = s;
-              break;
-            }
-          case 26989658:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
-              name_ = s;
-              break;
-            }
-          case 28604882:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
-              type_ = s;
-              break;
-            }
-          case 90887890:
-            {
-              com.google.cloud.compute.v1.HTTP2HealthCheck.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) != 0)) {
-                subBuilder = http2HealthCheck_.toBuilder();
-              }
-              http2HealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.HTTP2HealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(http2HealthCheck_);
-                http2HealthCheck_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000020;
-              break;
-            }
-          case 244202930:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              creationTimestamp_ = s;
-              break;
-            }
-          case 639959960:
-            {
-              bitField0_ |= 0x00010000;
-              timeoutSec_ = input.readInt32();
-              break;
-            }
-          case 684236594:
-            {
-              com.google.cloud.compute.v1.GRPCHealthCheck.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) != 0)) {
-                subBuilder = grpcHealthCheck_.toBuilder();
-              }
-              grpcHealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.GRPCHealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(grpcHealthCheck_);
-                grpcHealthCheck_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000008;
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
-              region_ = s;
-              break;
-            }
-          case 1823667840:
-            {
-              bitField0_ |= 0x00040000;
-              unhealthyThreshold_ = input.readInt32();
-              break;
-            }
-          case -2054707774:
-            {
-              com.google.cloud.compute.v1.SSLHealthCheck.Builder subBuilder = null;
-              if (((bitField0_ & 0x00004000) != 0)) {
-                subBuilder = sslHealthCheck_.toBuilder();
-              }
-              sslHealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SSLHealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sslHealthCheck_);
-                sslHealthCheck_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00004000;
-              break;
-            }
-          case -1530479248:
-            {
-              bitField0_ |= 0x00000001;
-              checkIntervalSec_ = input.readInt32();
-              break;
-            }
-          case -1484569366:
-            {
-              com.google.cloud.compute.v1.HealthCheckLogConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000400) != 0)) {
-                subBuilder = logConfig_.toBuilder();
-              }
-              logConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.HealthCheckLogConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logConfig_);
-                logConfig_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000400;
-              break;
-            }
-          case -1069268408:
-            {
-              bitField0_ |= 0x00000010;
-              healthyThreshold_ = input.readInt32();
-              break;
-            }
-          case -994271774:
-            {
-              com.google.cloud.compute.v1.HTTPHealthCheck.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000040) != 0)) {
-                subBuilder = httpHealthCheck_.toBuilder();
-              }
-              httpHealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.HTTPHealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(httpHealthCheck_);
-                httpHealthCheck_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000040;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              description_ = s;
-              break;
-            }
-          case -806592054:
-            {
-              com.google.cloud.compute.v1.HTTPSHealthCheck.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000080) != 0)) {
-                subBuilder = httpsHealthCheck_.toBuilder();
-              }
-              httpsHealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.HTTPSHealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(httpsHealthCheck_);
-                httpsHealthCheck_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000080;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
-              selfLink_ = s;
-              break;
-            }
-          case -535123942:
-            {
-              com.google.cloud.compute.v1.TCPHealthCheck.Builder subBuilder = null;
-              if (((bitField0_ & 0x00008000) != 0)) {
-                subBuilder = tcpHealthCheck_.toBuilder();
-              }
-              tcpHealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.TCPHealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tcpHealthCheck_);
-                tcpHealthCheck_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00008000;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_HealthCheck_descriptor;
@@ -1385,7 +1154,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(469980419, getTcpHealthCheck());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1460,7 +1229,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(469980419, getTcpHealthCheck());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1551,7 +1320,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (hasUnhealthyThreshold()) {
       if (getUnhealthyThreshold() != other.getUnhealthyThreshold()) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1638,7 +1407,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UNHEALTHY_THRESHOLD_FIELD_NUMBER;
       hash = (53 * hash) + getUnhealthyThreshold();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2111,7 +1880,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUnhealthyThreshold()) {
         setUnhealthyThreshold(other.getUnhealthyThreshold());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2126,17 +1895,147 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.HealthCheck parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26840:
+              {
+                id_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 26840
+            case 26336418:
+              {
+                kind_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 26336418
+            case 26989658:
+              {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 26989658
+            case 28604882:
+              {
+                type_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 28604882
+            case 90887890:
+              {
+                input.readMessage(
+                    getHttp2HealthCheckFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 90887890
+            case 244202930:
+              {
+                creationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 244202930
+            case 639959960:
+              {
+                timeoutSec_ = input.readInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 639959960
+            case 684236594:
+              {
+                input.readMessage(getGrpcHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 684236594
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 1111570338
+            case 1823667840:
+              {
+                unhealthyThreshold_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 1823667840
+            case -2054707774:
+              {
+                input.readMessage(getSslHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -2054707774
+            case -1530479248:
+              {
+                checkIntervalSec_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1530479248
+            case -1484569366:
+              {
+                input.readMessage(getLogConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case -1484569366
+            case -1069268408:
+              {
+                healthyThreshold_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1069268408
+            case -994271774:
+              {
+                input.readMessage(getHttpHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -994271774
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -911466526
+            case -806592054:
+              {
+                input.readMessage(
+                    getHttpsHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case -806592054
+            case -645248918:
+              {
+                selfLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -645248918
+            case -535123942:
+              {
+                input.readMessage(getTcpHealthCheckFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case -535123942
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.HealthCheck) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4363,7 +4262,18 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HealthCheck(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

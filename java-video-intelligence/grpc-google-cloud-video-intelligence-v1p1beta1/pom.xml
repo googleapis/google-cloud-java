@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-video-intelligence-v1p1beta1</artifactId>
-  <version>0.92.13-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:current} -->
+  <version>0.92.14-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:current} -->
   <name>grpc-google-cloud-video-intelligence-v1p1beta1</name>
   <description>GRPC library for grpc-google-cloud-video-intelligence-v1p1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-intelligence-parent</artifactId>
-    <version>2.2.13-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <version>2.2.14-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   </parent>
   <dependencies>
     <dependency>

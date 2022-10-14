@@ -57,176 +57,6 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     return this.unknownFields;
   }
 
-  private RunPivotReportRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              property_ = s;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dimensions_ = new java.util.ArrayList<com.google.analytics.data.v1beta.Dimension>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dimensions_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.Dimension.parser(), extensionRegistry));
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                metrics_ = new java.util.ArrayList<com.google.analytics.data.v1beta.Metric>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              metrics_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.Metric.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                dateRanges_ = new java.util.ArrayList<com.google.analytics.data.v1beta.DateRange>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              dateRanges_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.DateRange.parser(), extensionRegistry));
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                pivots_ = new java.util.ArrayList<com.google.analytics.data.v1beta.Pivot>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              pivots_.add(
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.Pivot.parser(), extensionRegistry));
-              break;
-            }
-          case 50:
-            {
-              com.google.analytics.data.v1beta.FilterExpression.Builder subBuilder = null;
-              if (dimensionFilter_ != null) {
-                subBuilder = dimensionFilter_.toBuilder();
-              }
-              dimensionFilter_ =
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.FilterExpression.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dimensionFilter_);
-                dimensionFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.analytics.data.v1beta.FilterExpression.Builder subBuilder = null;
-              if (metricFilter_ != null) {
-                subBuilder = metricFilter_.toBuilder();
-              }
-              metricFilter_ =
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.FilterExpression.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(metricFilter_);
-                metricFilter_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currencyCode_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.analytics.data.v1beta.CohortSpec.Builder subBuilder = null;
-              if (cohortSpec_ != null) {
-                subBuilder = cohortSpec_.toBuilder();
-              }
-              cohortSpec_ =
-                  input.readMessage(
-                      com.google.analytics.data.v1beta.CohortSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(cohortSpec_);
-                cohortSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 80:
-            {
-              keepEmptyRows_ = input.readBool();
-              break;
-            }
-          case 88:
-            {
-              returnPropertyQuota_ = input.readBool();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        metrics_ = java.util.Collections.unmodifiableList(metrics_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        dateRanges_ = java.util.Collections.unmodifiableList(dateRanges_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        pivots_ = java.util.Collections.unmodifiableList(pivots_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_RunPivotReportRequest_descriptor;
@@ -922,7 +752,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     if (returnPropertyQuota_ != false) {
       output.writeBool(11, returnPropertyQuota_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -964,7 +794,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     if (returnPropertyQuota_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, returnPropertyQuota_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1000,7 +830,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     }
     if (getKeepEmptyRows() != other.getKeepEmptyRows()) return false;
     if (getReturnPropertyQuota() != other.getReturnPropertyQuota()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1047,7 +877,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeepEmptyRows());
     hash = (37 * hash) + RETURN_PROPERTY_QUOTA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPropertyQuota());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1177,22 +1007,10 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.analytics.data.v1beta.RunPivotReportRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getDimensionsFieldBuilder();
-        getMetricsFieldBuilder();
-        getDateRangesFieldBuilder();
-        getPivotsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1202,28 +1020,32 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
 
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        dimensions_ = null;
         dimensionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        metrics_ = null;
         metricsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (dateRangesBuilder_ == null) {
         dateRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
+        dateRanges_ = null;
         dateRangesBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (pivotsBuilder_ == null) {
         pivots_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
+        pivots_ = null;
         pivotsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (dimensionFilterBuilder_ == null) {
         dimensionFilter_ = null;
       } else {
@@ -1512,7 +1334,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
       if (other.getReturnPropertyQuota() != false) {
         setReturnPropertyQuota(other.getReturnPropertyQuota());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1527,18 +1349,125 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1beta.RunPivotReportRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                property_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                com.google.analytics.data.v1beta.Dimension m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.Dimension.parser(), extensionRegistry);
+                if (dimensionsBuilder_ == null) {
+                  ensureDimensionsIsMutable();
+                  dimensions_.add(m);
+                } else {
+                  dimensionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.analytics.data.v1beta.Metric m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.Metric.parser(), extensionRegistry);
+                if (metricsBuilder_ == null) {
+                  ensureMetricsIsMutable();
+                  metrics_.add(m);
+                } else {
+                  metricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.analytics.data.v1beta.DateRange m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.DateRange.parser(), extensionRegistry);
+                if (dateRangesBuilder_ == null) {
+                  ensureDateRangesIsMutable();
+                  dateRanges_.add(m);
+                } else {
+                  dateRangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.analytics.data.v1beta.Pivot m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.Pivot.parser(), extensionRegistry);
+                if (pivotsBuilder_ == null) {
+                  ensurePivotsIsMutable();
+                  pivots_.add(m);
+                } else {
+                  pivotsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getDimensionFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getMetricFilterFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                currencyCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(getCohortSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 80:
+              {
+                keepEmptyRows_ = input.readBool();
+
+                break;
+              } // case 80
+            case 88:
+              {
+                returnPropertyQuota_ = input.readBool();
+
+                break;
+              } // case 88
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.analytics.data.v1beta.RunPivotReportRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4109,7 +4038,18 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RunPivotReportRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

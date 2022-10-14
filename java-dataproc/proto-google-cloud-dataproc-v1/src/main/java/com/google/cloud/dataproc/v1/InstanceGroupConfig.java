@@ -58,144 +58,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private InstanceGroupConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              numInstances_ = input.readInt32();
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                instanceNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              instanceNames_.add(s);
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              imageUri_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              machineTypeUri_ = s;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.dataproc.v1.DiskConfig.Builder subBuilder = null;
-              if (diskConfig_ != null) {
-                subBuilder = diskConfig_.toBuilder();
-              }
-              diskConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.DiskConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(diskConfig_);
-                diskConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 48:
-            {
-              isPreemptible_ = input.readBool();
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.dataproc.v1.ManagedGroupConfig.Builder subBuilder = null;
-              if (managedGroupConfig_ != null) {
-                subBuilder = managedGroupConfig_.toBuilder();
-              }
-              managedGroupConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.ManagedGroupConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(managedGroupConfig_);
-                managedGroupConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                accelerators_ =
-                    new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              accelerators_.add(
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.AcceleratorConfig.parser(), extensionRegistry));
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minCpuPlatform_ = s;
-              break;
-            }
-          case 80:
-            {
-              int rawValue = input.readEnum();
-
-              preemptibility_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        instanceNames_ = instanceNames_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_InstanceGroupConfig_descriptor;
@@ -973,7 +835,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(10, preemptibility_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1020,7 +882,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, preemptibility_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1052,7 +914,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
     if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1091,7 +953,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getMinCpuPlatform().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1221,19 +1083,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.cloud.dataproc.v1.InstanceGroupConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getAcceleratorsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1265,10 +1118,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        accelerators_ = null;
         acceleratorsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       minCpuPlatform_ = "";
 
       return this;
@@ -1443,7 +1297,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         minCpuPlatform_ = other.minCpuPlatform_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1458,17 +1312,100 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.InstanceGroupConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                numInstances_ = input.readInt32();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInstanceNamesIsMutable();
+                instanceNames_.add(s);
+                break;
+              } // case 18
+            case 26:
+              {
+                imageUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                machineTypeUri_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getDiskConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 48:
+              {
+                isPreemptible_ = input.readBool();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                input.readMessage(
+                    getManagedGroupConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.cloud.dataproc.v1.AcceleratorConfig m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.AcceleratorConfig.parser(), extensionRegistry);
+                if (acceleratorsBuilder_ == null) {
+                  ensureAcceleratorsIsMutable();
+                  accelerators_.add(m);
+                } else {
+                  acceleratorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                minCpuPlatform_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 80:
+              {
+                preemptibility_ = input.readEnum();
+
+                break;
+              } // case 80
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1.InstanceGroupConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -3193,7 +3130,18 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InstanceGroupConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

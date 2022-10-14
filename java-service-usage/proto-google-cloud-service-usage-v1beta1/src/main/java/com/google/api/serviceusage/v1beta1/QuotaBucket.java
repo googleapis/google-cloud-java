@@ -50,122 +50,6 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private QuotaBucket(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              effectiveLimit_ = input.readInt64();
-              break;
-            }
-          case 16:
-            {
-              defaultLimit_ = input.readInt64();
-              break;
-            }
-          case 26:
-            {
-              com.google.api.serviceusage.v1beta1.QuotaOverride.Builder subBuilder = null;
-              if (producerOverride_ != null) {
-                subBuilder = producerOverride_.toBuilder();
-              }
-              producerOverride_ =
-                  input.readMessage(
-                      com.google.api.serviceusage.v1beta1.QuotaOverride.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(producerOverride_);
-                producerOverride_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.api.serviceusage.v1beta1.QuotaOverride.Builder subBuilder = null;
-              if (consumerOverride_ != null) {
-                subBuilder = consumerOverride_.toBuilder();
-              }
-              consumerOverride_ =
-                  input.readMessage(
-                      com.google.api.serviceusage.v1beta1.QuotaOverride.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(consumerOverride_);
-                consumerOverride_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.api.serviceusage.v1beta1.QuotaOverride.Builder subBuilder = null;
-              if (adminOverride_ != null) {
-                subBuilder = adminOverride_.toBuilder();
-              }
-              adminOverride_ =
-                  input.readMessage(
-                      com.google.api.serviceusage.v1beta1.QuotaOverride.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(adminOverride_);
-                adminOverride_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dimensions_ =
-                    com.google.protobuf.MapField.newMapField(
-                        DimensionsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> dimensions__ =
-                  input.readMessage(
-                      DimensionsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              dimensions_.getMutableMap().put(dimensions__.getKey(), dimensions__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_QuotaBucket_descriptor;
@@ -532,7 +416,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDimensions(), DimensionsDefaultEntryHolder.defaultEntry, 6);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -566,7 +450,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, dimensions__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -597,7 +481,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       if (!getAdminOverride().equals(other.getAdminOverride())) return false;
     }
     if (!internalGetDimensions().equals(other.internalGetDimensions())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -628,7 +512,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDimensions().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -777,17 +661,10 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.api.serviceusage.v1beta1.QuotaBucket.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -929,7 +806,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         mergeAdminOverride(other.getAdminOverride());
       }
       internalGetMutableDimensions().mergeFrom(other.internalGetDimensions());
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -944,17 +821,74 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.serviceusage.v1beta1.QuotaBucket parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                effectiveLimit_ = input.readInt64();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                defaultLimit_ = input.readInt64();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getProducerOverrideFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getConsumerOverrideFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getAdminOverrideFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> dimensions__ =
+                    input.readMessage(
+                        DimensionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableDimensions()
+                    .getMutableMap()
+                    .put(dimensions__.getKey(), dimensions__.getValue());
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.api.serviceusage.v1beta1.QuotaBucket) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1872,7 +1806,18 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QuotaBucket(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -7,7 +7,7 @@ set -e
 bom_lines=""
 # For modules that produce BOMs
 for bom_directory in $(find . -maxdepth 3 -name 'google-*-bom' | sort --dictionary-order); do
-  if [[ "${bom_directory}" = *google-cloud-gapic-bom ]]; then
+  if [[ "${bom_directory}" = *gapic-libraries-bom ]]; then
     continue
   fi
   repo_metadata="${bom_directory}/../.repo-metadata.json"
@@ -45,7 +45,7 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort --dictionary-
   if ls ${module}/*-bom 1> /dev/null 2>&1; then
     continue
   fi
-  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+  if ! test -f "${module}/.repo-metadata.json"; then
     continue
   fi
 
@@ -60,8 +60,8 @@ for module in $(find . -mindepth 2 -maxdepth 2 -name pom.xml |sort --dictionary-
       </dependency>\n"
 done
 
-mkdir -p google-cloud-gapic-bom
+mkdir -p gapic-libraries-bom
 
 GENERATION_DIR=$(dirname -- "$0");
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
-    "${GENERATION_DIR}/bom.pom.xml" > google-cloud-gapic-bom/pom.xml
+    "${GENERATION_DIR}/bom.pom.xml" > gapic-libraries-bom/pom.xml

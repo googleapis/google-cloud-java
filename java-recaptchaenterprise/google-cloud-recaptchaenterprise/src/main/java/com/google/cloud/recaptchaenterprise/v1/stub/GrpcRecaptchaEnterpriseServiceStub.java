@@ -47,6 +47,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
+import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
@@ -104,6 +106,20 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListKeys")
               .setRequestMarshaller(ProtoUtils.marshaller(ListKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListKeysResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeyMethodDescriptor =
+          MethodDescriptor
+              .<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/RetrieveLegacySecretKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RetrieveLegacySecretKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RetrieveLegacySecretKeyResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetKeyRequest, Key> getKeyMethodDescriptor =
@@ -207,6 +223,8 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<CreateKeyRequest, Key> createKeyCallable;
   private final UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable;
   private final UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable;
+  private final UnaryCallable<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeyCallable;
   private final UnaryCallable<GetKeyRequest, Key> getKeyCallable;
   private final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable;
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
@@ -320,6 +338,18 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+        retrieveLegacySecretKeyTransportSettings =
+            GrpcCallSettings
+                .<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>newBuilder()
+                .setMethodDescriptor(retrieveLegacySecretKeyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("key", String.valueOf(request.getKey()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         GrpcCallSettings.<GetKeyRequest, Key>newBuilder()
             .setMethodDescriptor(getKeyMethodDescriptor)
@@ -431,6 +461,11 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.listKeysPagedCallable =
         callableFactory.createPagedCallable(
             listKeysTransportSettings, settings.listKeysSettings(), clientContext);
+    this.retrieveLegacySecretKeyCallable =
+        callableFactory.createUnaryCallable(
+            retrieveLegacySecretKeyTransportSettings,
+            settings.retrieveLegacySecretKeySettings(),
+            clientContext);
     this.getKeyCallable =
         callableFactory.createUnaryCallable(
             getKeyTransportSettings, settings.getKeySettings(), clientContext);
@@ -509,6 +544,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable() {
     return listKeysPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveLegacySecretKeyRequest, RetrieveLegacySecretKeyResponse>
+      retrieveLegacySecretKeyCallable() {
+    return retrieveLegacySecretKeyCallable;
   }
 
   @Override

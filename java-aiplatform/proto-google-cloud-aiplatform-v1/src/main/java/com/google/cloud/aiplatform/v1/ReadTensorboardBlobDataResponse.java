@@ -53,60 +53,6 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private ReadTensorboardBlobDataResponse(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                blobs_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1.TensorboardBlob>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              blobs_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1.TensorboardBlob.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        blobs_ = java.util.Collections.unmodifiableList(blobs_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.TensorboardServiceProto
         .internal_static_google_cloud_aiplatform_v1_ReadTensorboardBlobDataResponse_descriptor;
@@ -208,7 +154,7 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
     for (int i = 0; i < blobs_.size(); i++) {
       output.writeMessage(1, blobs_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -220,7 +166,7 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
     for (int i = 0; i < blobs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, blobs_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -237,7 +183,7 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
         (com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse) obj;
 
     if (!getBlobsList().equals(other.getBlobsList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -252,7 +198,7 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
       hash = (37 * hash) + BLOBS_FIELD_NUMBER;
       hash = (53 * hash) + getBlobsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -382,19 +328,10 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
     }
 
     // Construct using com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getBlobsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -402,10 +339,11 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
       super.clear();
       if (blobsBuilder_ == null) {
         blobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        blobs_ = null;
         blobsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -522,7 +460,7 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
           }
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -537,19 +475,44 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.aiplatform.v1.TensorboardBlob m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.TensorboardBlob.parser(), extensionRegistry);
+                if (blobsBuilder_ == null) {
+                  ensureBlobsIsMutable();
+                  blobs_.add(m);
+                } else {
+                  blobsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -939,7 +902,18 @@ public final class ReadTensorboardBlobDataResponse extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReadTensorboardBlobDataResponse(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

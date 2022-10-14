@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-iot/compare/v2.3.5...v2.3.6) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([b88bcc6](https://github.com/googleapis/java-iot/commit/b88bcc67479f779ccff8b6e9dcbab574c8711ac4))
+
+## [2.3.5](https://github.com/googleapis/java-iot/compare/v2.3.4...v2.3.5) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency cachetools to v5 ([#796](https://github.com/googleapis/java-iot/issues/796)) ([13c40c0](https://github.com/googleapis/java-iot/commit/13c40c00900bf6ef7d0ec85ba12990399f2f0acb))
+* Update dependency certifi to v2022.9.24 ([#776](https://github.com/googleapis/java-iot/issues/776)) ([27d967b](https://github.com/googleapis/java-iot/commit/27d967bfc4c8d18ff5868f594ca9ce5f9ab819c9))
+* Update dependency charset-normalizer to v2.1.1 ([#780](https://github.com/googleapis/java-iot/issues/780)) ([31175a8](https://github.com/googleapis/java-iot/commit/31175a8ef23d32ca3e7466aefd5ca127513be3b2))
+* Update dependency click to v8.1.3 ([#782](https://github.com/googleapis/java-iot/issues/782)) ([b29aac4](https://github.com/googleapis/java-iot/commit/b29aac47bf782afa730201a2ee38e52269a57773))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#801](https://github.com/googleapis/java-iot/issues/801)) ([5aaca23](https://github.com/googleapis/java-iot/commit/5aaca23ead7950d90997a663ad19cfbe43e34b4a))
+* Update dependency gcp-releasetool to v1.8.8 ([#777](https://github.com/googleapis/java-iot/issues/777)) ([efd99d2](https://github.com/googleapis/java-iot/commit/efd99d2bbdaba94dd1153f9f542bf4f64b722909))
+* Update dependency google-api-core to v2.10.1 ([#783](https://github.com/googleapis/java-iot/issues/783)) ([6cf9827](https://github.com/googleapis/java-iot/commit/6cf982706d553957bc4a4b8e7310dd08bd6f14ed))
+* Update dependency google-auth to v2.12.0 ([#784](https://github.com/googleapis/java-iot/issues/784)) ([af599e9](https://github.com/googleapis/java-iot/commit/af599e98b6aa14246fffb77d424e600d054dee05))
+* Update dependency google-cloud-core to v2.3.2 ([#778](https://github.com/googleapis/java-iot/issues/778)) ([13fe93a](https://github.com/googleapis/java-iot/commit/13fe93a833d709663df7beede1a0c7d7134bf220))
+* Update dependency google-cloud-storage to v2.5.0 ([#785](https://github.com/googleapis/java-iot/issues/785)) ([6250d45](https://github.com/googleapis/java-iot/commit/6250d45704d6a1b5fe7c6cd5bc31918f2a55349e))
+* Update dependency google-crc32c to v1.5.0 ([#786](https://github.com/googleapis/java-iot/issues/786)) ([35a4c8b](https://github.com/googleapis/java-iot/commit/35a4c8ba0dea3234b6a7e29f41191ebbd0eede7f))
+* Update dependency googleapis-common-protos to v1.56.4 ([#779](https://github.com/googleapis/java-iot/issues/779)) ([9ebbbd9](https://github.com/googleapis/java-iot/commit/9ebbbd9f206205cb1b6cdf0b5fdafdc931e6a5ac))
+* Update dependency importlib-metadata to v4.12.0 ([#787](https://github.com/googleapis/java-iot/issues/787)) ([64f2a73](https://github.com/googleapis/java-iot/commit/64f2a73aaf15ff127d9bc20178e69db54f074bfa))
+* Update dependency jeepney to v0.8.0 ([#788](https://github.com/googleapis/java-iot/issues/788)) ([9e99be7](https://github.com/googleapis/java-iot/commit/9e99be7bb50c6591dbb077279e793655fa74548e))
+* Update dependency jinja2 to v3.1.2 ([#789](https://github.com/googleapis/java-iot/issues/789)) ([4638fff](https://github.com/googleapis/java-iot/commit/4638fffbf442b7d8fd73e12c8733d216a25b8b40))
+* Update dependency keyring to v23.9.3 ([#790](https://github.com/googleapis/java-iot/issues/790)) ([2c197aa](https://github.com/googleapis/java-iot/commit/2c197aa52a57afb49d82d4730b8627966558844a))
+* Update dependency markupsafe to v2.1.1 ([#781](https://github.com/googleapis/java-iot/issues/781)) ([664d31e](https://github.com/googleapis/java-iot/commit/664d31e93916f720716fe0a5ab34be245294f723))
+* Update dependency protobuf to v3.20.2 ([#791](https://github.com/googleapis/java-iot/issues/791)) ([3e9c38c](https://github.com/googleapis/java-iot/commit/3e9c38c2b039660e68d3fb43b1186665c479fac3))
+* Update dependency protobuf to v4 ([#797](https://github.com/googleapis/java-iot/issues/797)) ([acd00dd](https://github.com/googleapis/java-iot/commit/acd00dd0fd3f46b0f3cbbda26409ac0c8f4809c4))
+* Update dependency typing-extensions to v4.3.0 ([#794](https://github.com/googleapis/java-iot/issues/794)) ([5a80492](https://github.com/googleapis/java-iot/commit/5a8049249f7e8ad5dec08d00d8ecceda3bb17efc))
+* Update dependency zipp to v3.8.1 ([#795](https://github.com/googleapis/java-iot/issues/795)) ([e5ae448](https://github.com/googleapis/java-iot/commit/e5ae448ad2f5fb22ff6ac7047b642959a40f1795))
+
 ## [2.3.4](https://github.com/googleapis/java-iot/compare/v2.3.3...v2.3.4) (2022-09-15)
 
 

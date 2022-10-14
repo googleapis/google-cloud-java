@@ -33,7 +33,7 @@ analyticsRepoId=comgoogleanalytics-1052
 #-maxDepth 3 and 4 output same number of modules (more than 2 ofcourse) so 3 is covering all the modules
 for module in $(find . -mindepth 1 -maxdepth 3 -name pom.xml | sort | xargs dirname); do
 
-  if [[ "${module}" = *google-cloud-gapic-bom ]] || [[ "${module}" = *CoverageAggregator ]]; then
+  if [[ "${module}" = *gapic-libraries-bom ]]; then
     continue
   fi
 

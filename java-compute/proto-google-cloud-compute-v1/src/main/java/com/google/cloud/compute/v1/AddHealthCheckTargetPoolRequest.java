@@ -56,92 +56,6 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private AddHealthCheckTargetPoolRequest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              requestId_ = s;
-              break;
-            }
-          case 502370386:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetPool_ = s;
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -2138379998:
-            {
-              com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.Builder subBuilder =
-                  null;
-              if (targetPoolsAddHealthCheckRequestResource_ != null) {
-                subBuilder = targetPoolsAddHealthCheckRequestResource_.toBuilder();
-              }
-              targetPoolsAddHealthCheckRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetPoolsAddHealthCheckRequestResource_);
-                targetPoolsAddHealthCheckRequestResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_AddHealthCheckTargetPoolRequest_descriptor;
@@ -463,7 +377,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     if (targetPoolsAddHealthCheckRequestResource_ != null) {
       output.writeMessage(269573412, getTargetPoolsAddHealthCheckRequestResource());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -489,7 +403,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               269573412, getTargetPoolsAddHealthCheckRequestResource());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -518,7 +432,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       if (!getTargetPoolsAddHealthCheckRequestResource()
           .equals(other.getTargetPoolsAddHealthCheckRequestResource())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -543,7 +457,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
       hash = (37 * hash) + TARGET_POOLS_ADD_HEALTH_CHECK_REQUEST_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetPoolsAddHealthCheckRequestResource().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -673,17 +587,10 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
     }
 
     // Construct using com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -818,7 +725,7 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         mergeTargetPoolsAddHealthCheckRequestResource(
             other.getTargetPoolsAddHealthCheckRequestResource());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -833,18 +740,63 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 296879706:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 296879706
+            case 502370386:
+              {
+                targetPool_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 502370386
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1111570338
+            case 1820481738:
+              {
+                project_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1820481738
+            case -2138379998:
+              {
+                input.readMessage(
+                    getTargetPoolsAddHealthCheckRequestResourceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case -2138379998
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.AddHealthCheckTargetPoolRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1552,7 +1504,18 @@ public final class AddHealthCheckTargetPoolRequest extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddHealthCheckTargetPoolRequest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

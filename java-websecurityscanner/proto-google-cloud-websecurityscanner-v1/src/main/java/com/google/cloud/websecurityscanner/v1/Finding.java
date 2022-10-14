@@ -63,222 +63,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Finding(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              findingType_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              httpMethod_ = s;
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fuzzedUrl_ = s;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              body_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              reproductionUrl_ = s;
-              break;
-            }
-          case 66:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              frameUrl_ = s;
-              break;
-            }
-          case 74:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              finalUrl_ = s;
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              trackingId_ = s;
-              break;
-            }
-          case 90:
-            {
-              com.google.cloud.websecurityscanner.v1.OutdatedLibrary.Builder subBuilder = null;
-              if (outdatedLibrary_ != null) {
-                subBuilder = outdatedLibrary_.toBuilder();
-              }
-              outdatedLibrary_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.OutdatedLibrary.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(outdatedLibrary_);
-                outdatedLibrary_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.websecurityscanner.v1.ViolatingResource.Builder subBuilder = null;
-              if (violatingResource_ != null) {
-                subBuilder = violatingResource_.toBuilder();
-              }
-              violatingResource_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.ViolatingResource.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(violatingResource_);
-                violatingResource_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.websecurityscanner.v1.VulnerableParameters.Builder subBuilder = null;
-              if (vulnerableParameters_ != null) {
-                subBuilder = vulnerableParameters_.toBuilder();
-              }
-              vulnerableParameters_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.VulnerableParameters.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vulnerableParameters_);
-                vulnerableParameters_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.websecurityscanner.v1.Xss.Builder subBuilder = null;
-              if (xss_ != null) {
-                subBuilder = xss_.toBuilder();
-              }
-              xss_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.Xss.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(xss_);
-                xss_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 122:
-            {
-              com.google.cloud.websecurityscanner.v1.VulnerableHeaders.Builder subBuilder = null;
-              if (vulnerableHeaders_ != null) {
-                subBuilder = vulnerableHeaders_.toBuilder();
-              }
-              vulnerableHeaders_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.VulnerableHeaders.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(vulnerableHeaders_);
-                vulnerableHeaders_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 130:
-            {
-              com.google.cloud.websecurityscanner.v1.Form.Builder subBuilder = null;
-              if (form_ != null) {
-                subBuilder = form_.toBuilder();
-              }
-              form_ =
-                  input.readMessage(
-                      com.google.cloud.websecurityscanner.v1.Form.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(form_);
-                form_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 136:
-            {
-              int rawValue = input.readEnum();
-
-              severity_ = rawValue;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.websecurityscanner.v1.FindingProto
         .internal_static_google_cloud_websecurityscanner_v1_Finding_descriptor;
@@ -1345,6 +1129,58 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getXss();
   }
 
+  public static final int XXE_FIELD_NUMBER = 18;
+  private com.google.cloud.websecurityscanner.v1.Xxe xxe_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An addon containing information reported for an XXE, if any.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the xxe field is set.
+   */
+  @java.lang.Override
+  public boolean hasXxe() {
+    return xxe_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An addon containing information reported for an XXE, if any.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The xxe.
+   */
+  @java.lang.Override
+  public com.google.cloud.websecurityscanner.v1.Xxe getXxe() {
+    return xxe_ == null ? com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance() : xxe_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An addon containing information reported for an XXE, if any.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.websecurityscanner.v1.XxeOrBuilder getXxeOrBuilder() {
+    return getXxe();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1412,7 +1248,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(17, severity_);
     }
-    unknownFields.writeTo(output);
+    if (xxe_ != null) {
+      output.writeMessage(18, getXxe());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1475,7 +1314,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, severity_);
     }
-    size += unknownFields.getSerializedSize();
+    if (xxe_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getXxe());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1526,7 +1368,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasXss()) {
       if (!getXss().equals(other.getXss())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (hasXxe() != other.hasXxe()) return false;
+    if (hasXxe()) {
+      if (!getXxe().equals(other.getXxe())) return false;
+    }
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1583,7 +1429,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + XSS_FIELD_NUMBER;
       hash = (53 * hash) + getXss().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    if (hasXxe()) {
+      hash = (37 * hash) + XXE_FIELD_NUMBER;
+      hash = (53 * hash) + getXxe().hashCode();
+    }
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1713,17 +1563,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1.Finding.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1786,6 +1629,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         xss_ = null;
         xssBuilder_ = null;
+      }
+      if (xxeBuilder_ == null) {
+        xxe_ = null;
+      } else {
+        xxe_ = null;
+        xxeBuilder_ = null;
       }
       return this;
     }
@@ -1854,6 +1703,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.xss_ = xss_;
       } else {
         result.xss_ = xssBuilder_.build();
+      }
+      if (xxeBuilder_ == null) {
+        result.xxe_ = xxe_;
+      } else {
+        result.xxe_ = xxeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1965,7 +1819,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other.hasXss()) {
         mergeXss(other.getXss());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      if (other.hasXxe()) {
+        mergeXxe(other.getXxe());
+      }
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1980,17 +1837,142 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.websecurityscanner.v1.Finding parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                findingType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                httpMethod_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                fuzzedUrl_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
+            case 42:
+              {
+                body_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 58:
+              {
+                reproductionUrl_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                frameUrl_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                finalUrl_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                trackingId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getOutdatedLibraryFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getViolatingResourceFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getVulnerableParametersFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(getXssFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getVulnerableHeadersFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getFormFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
+            case 136:
+              {
+                severity_ = input.readEnum();
+
+                break;
+              } // case 136
+            case 146:
+              {
+                input.readMessage(getXxeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1.Finding) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4371,6 +4353,209 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return xssBuilder_;
     }
 
+    private com.google.cloud.websecurityscanner.v1.Xxe xxe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.websecurityscanner.v1.Xxe,
+            com.google.cloud.websecurityscanner.v1.Xxe.Builder,
+            com.google.cloud.websecurityscanner.v1.XxeOrBuilder>
+        xxeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the xxe field is set.
+     */
+    public boolean hasXxe() {
+      return xxeBuilder_ != null || xxe_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The xxe.
+     */
+    public com.google.cloud.websecurityscanner.v1.Xxe getXxe() {
+      if (xxeBuilder_ == null) {
+        return xxe_ == null
+            ? com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance()
+            : xxe_;
+      } else {
+        return xxeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setXxe(com.google.cloud.websecurityscanner.v1.Xxe value) {
+      if (xxeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        xxe_ = value;
+        onChanged();
+      } else {
+        xxeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setXxe(com.google.cloud.websecurityscanner.v1.Xxe.Builder builderForValue) {
+      if (xxeBuilder_ == null) {
+        xxe_ = builderForValue.build();
+        onChanged();
+      } else {
+        xxeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeXxe(com.google.cloud.websecurityscanner.v1.Xxe value) {
+      if (xxeBuilder_ == null) {
+        if (xxe_ != null) {
+          xxe_ =
+              com.google.cloud.websecurityscanner.v1.Xxe.newBuilder(xxe_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          xxe_ = value;
+        }
+        onChanged();
+      } else {
+        xxeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearXxe() {
+      if (xxeBuilder_ == null) {
+        xxe_ = null;
+        onChanged();
+      } else {
+        xxe_ = null;
+        xxeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.websecurityscanner.v1.Xxe.Builder getXxeBuilder() {
+
+      onChanged();
+      return getXxeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.websecurityscanner.v1.XxeOrBuilder getXxeOrBuilder() {
+      if (xxeBuilder_ != null) {
+        return xxeBuilder_.getMessageOrBuilder();
+      } else {
+        return xxe_ == null
+            ? com.google.cloud.websecurityscanner.v1.Xxe.getDefaultInstance()
+            : xxe_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An addon containing information reported for an XXE, if any.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.websecurityscanner.v1.Xxe xxe = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.websecurityscanner.v1.Xxe,
+            com.google.cloud.websecurityscanner.v1.Xxe.Builder,
+            com.google.cloud.websecurityscanner.v1.XxeOrBuilder>
+        getXxeFieldBuilder() {
+      if (xxeBuilder_ == null) {
+        xxeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1.Xxe,
+                com.google.cloud.websecurityscanner.v1.Xxe.Builder,
+                com.google.cloud.websecurityscanner.v1.XxeOrBuilder>(
+                getXxe(), getParentForChildren(), isClean());
+        xxe_ = null;
+      }
+      return xxeBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -4403,7 +4588,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Finding(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

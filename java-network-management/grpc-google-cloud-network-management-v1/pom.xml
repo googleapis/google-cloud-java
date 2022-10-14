@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-network-management-v1</artifactId>
-  <version>1.4.3-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-management-v1:current} -->
+  <version>1.4.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-management-v1:current} -->
   <name>grpc-google-cloud-network-management-v1</name>
   <description>GRPC library for google-cloud-network-management</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-network-management-parent</artifactId>
-    <version>1.4.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-management:current} -->
+    <version>1.4.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-management:current} -->
   </parent>
   <dependencies>
     <dependency>

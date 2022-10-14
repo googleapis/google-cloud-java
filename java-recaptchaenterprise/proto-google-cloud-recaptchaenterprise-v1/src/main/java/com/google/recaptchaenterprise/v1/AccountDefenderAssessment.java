@@ -22,7 +22,7 @@ package com.google.recaptchaenterprise.v1;
  *
  *
  * <pre>
- * Account Defender risk assessment.
+ * Account defender risk assessment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment}
@@ -52,74 +52,6 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     return this.unknownFields;
   }
 
-  private AccountDefenderAssessment(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              labels_.add(rawValue);
-              break;
-            }
-          case 10:
-            {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  labels_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                labels_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        labels_ = java.util.Collections.unmodifiableList(labels_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_descriptor;
@@ -139,7 +71,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels returned by Account Defender for this request.
+   * Labels returned by account defender for this request.
    * </pre>
    *
    * Protobuf enum {@code
@@ -170,8 +102,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The request is potentially a suspicious login event and should be further
-     * verified either via multi-factor authentication or another system.
+     * The request is potentially a suspicious login event and must be further
+     * verified either through multi-factor authentication or another system.
      * </pre>
      *
      * <code>SUSPICIOUS_LOGIN_ACTIVITY = 2;</code>
@@ -182,7 +114,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The request matched a profile that previously had suspicious account
-     * creation behavior. This could mean this is a fake account.
+     * creation behavior. This can mean that this is a fake account.
      * </pre>
      *
      * <code>SUSPICIOUS_ACCOUNT_CREATION = 3;</code>
@@ -193,8 +125,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The account in the request has a high number of related accounts. It does
-     * not necessarily imply that the account is bad but could require
-     * investigating.
+     * not necessarily imply that the account is bad but can require further
+     * investigation.
      * </pre>
      *
      * <code>RELATED_ACCOUNTS_NUMBER_HIGH = 4;</code>
@@ -227,8 +159,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The request is potentially a suspicious login event and should be further
-     * verified either via multi-factor authentication or another system.
+     * The request is potentially a suspicious login event and must be further
+     * verified either through multi-factor authentication or another system.
      * </pre>
      *
      * <code>SUSPICIOUS_LOGIN_ACTIVITY = 2;</code>
@@ -239,7 +171,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The request matched a profile that previously had suspicious account
-     * creation behavior. This could mean this is a fake account.
+     * creation behavior. This can mean that this is a fake account.
      * </pre>
      *
      * <code>SUSPICIOUS_ACCOUNT_CREATION = 3;</code>
@@ -250,8 +182,8 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      * <pre>
      * The account in the request has a high number of related accounts. It does
-     * not necessarily imply that the account is bad but could require
-     * investigating.
+     * not necessarily imply that the account is bad but can require further
+     * investigation.
      * </pre>
      *
      * <code>RELATED_ACCOUNTS_NUMBER_HIGH = 4;</code>
@@ -490,7 +422,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     for (int i = 0; i < labels_.size(); i++) {
       output.writeEnumNoTag(labels_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -511,7 +443,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       }
       labelsMemoizedSerializedSize = dataSize;
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -528,7 +460,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         (com.google.recaptchaenterprise.v1.AccountDefenderAssessment) obj;
 
     if (!labels_.equals(other.labels_)) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -543,7 +475,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + labels_.hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -648,7 +580,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Account Defender risk assessment.
+   * Account defender risk assessment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment}
@@ -673,17 +605,10 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.recaptchaenterprise.v1.AccountDefenderAssessment.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -784,7 +709,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -799,18 +724,50 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.recaptchaenterprise.v1.AccountDefenderAssessment parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int tmpRaw = input.readEnum();
+                ensureLabelsIsMutable();
+                labels_.add(tmpRaw);
+                break;
+              } // case 8
+            case 10:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureLabelsIsMutable();
+                  labels_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 10
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.recaptchaenterprise.v1.AccountDefenderAssessment) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1105,7 +1062,18 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AccountDefenderAssessment(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

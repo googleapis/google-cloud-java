@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.1.8](https://github.com/googleapis/java-dns/compare/v2.1.7...v2.1.8) (2022-10-06)
+
+
+### Dependencies
+
+* Update dependency charset-normalizer to v2.1.1 ([#719](https://github.com/googleapis/java-dns/issues/719)) ([3ed0f81](https://github.com/googleapis/java-dns/commit/3ed0f812b58d25faff36fdeb30ba5b17d71b55e2))
+* Update dependency com.google.apis:google-api-services-dns to v1-rev20220915-2.0.0 ([#713](https://github.com/googleapis/java-dns/issues/713)) ([b20712c](https://github.com/googleapis/java-dns/commit/b20712c4f7eece2da18137570ef90cb68ae3d152))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#737](https://github.com/googleapis/java-dns/issues/737)) ([ad22c03](https://github.com/googleapis/java-dns/commit/ad22c030392f5fe36aa84a41e9c8f935da86ed67))
+* Update dependency google-api-core to v2.10.1 ([#720](https://github.com/googleapis/java-dns/issues/720)) ([3d25321](https://github.com/googleapis/java-dns/commit/3d25321ef52ba5330137086ad72f46ef3f25e58d))
+* Update dependency google-cloud-core to v2.3.2 ([#718](https://github.com/googleapis/java-dns/issues/718)) ([9f77891](https://github.com/googleapis/java-dns/commit/9f778916b7fa5990d91bfb9983bda75d0c8ef03e))
+
 ## [2.1.7](https://github.com/googleapis/java-dns/compare/v2.1.6...v2.1.7) (2022-09-22)
 
 

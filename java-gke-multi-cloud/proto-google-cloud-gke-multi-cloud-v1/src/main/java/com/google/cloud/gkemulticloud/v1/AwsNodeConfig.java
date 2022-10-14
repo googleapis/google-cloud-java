@@ -56,203 +56,6 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private AwsNodeConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceType_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.Builder subBuilder = null;
-              if (rootVolume_ != null) {
-                subBuilder = rootVolume_.toBuilder();
-              }
-              rootVolume_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rootVolume_);
-                rootVolume_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                taints_ = new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.NodeTaint>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              taints_.add(
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.NodeTaint.parser(), extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                tags_ =
-                    com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
-                  input.readMessage(
-                      TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              tags_.getMutableMap().put(tags__.getKey(), tags__.getValue());
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              iamInstanceProfile_ = s;
-              break;
-            }
-          case 74:
-            {
-              com.google.cloud.gkemulticloud.v1.AwsSshConfig.Builder subBuilder = null;
-              if (sshConfig_ != null) {
-                subBuilder = sshConfig_.toBuilder();
-              }
-              sshConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AwsSshConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sshConfig_);
-                sshConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 82:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                securityGroupIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              securityGroupIds_.add(s);
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              imageType_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.cloud.gkemulticloud.v1.AwsProxyConfig.Builder subBuilder = null;
-              if (proxyConfig_ != null) {
-                subBuilder = proxyConfig_.toBuilder();
-              }
-              proxyConfig_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AwsProxyConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(proxyConfig_);
-                proxyConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 106:
-            {
-              com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.Builder subBuilder = null;
-              if (configEncryption_ != null) {
-                subBuilder = configEncryption_.toBuilder();
-              }
-              configEncryption_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configEncryption_);
-                configEncryption_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Builder subBuilder = null;
-              if (instancePlacement_ != null) {
-                subBuilder = instancePlacement_.toBuilder();
-              }
-              instancePlacement_ =
-                  input.readMessage(
-                      com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(instancePlacement_);
-                instancePlacement_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        taints_ = java.util.Collections.unmodifiableList(taints_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        securityGroupIds_ = securityGroupIds_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AwsNodeConfig_descriptor;
@@ -1132,7 +935,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (instancePlacement_ != null) {
       output.writeMessage(14, getInstancePlacement());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1196,7 +999,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (instancePlacement_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getInstancePlacement());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1239,7 +1042,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasInstancePlacement()) {
       if (!getInstancePlacement().equals(other.getInstancePlacement())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1292,7 +1095,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INSTANCE_PLACEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getInstancePlacement().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -1445,19 +1248,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.gkemulticloud.v1.AwsNodeConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getTaintsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -1473,10 +1267,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (taintsBuilder_ == null) {
         taints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        taints_ = null;
         taintsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableLabels().clear();
       internalGetMutableTags().clear();
       iamInstanceProfile_ = "";
@@ -1699,7 +1494,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasInstancePlacement()) {
         mergeInstancePlacement(other.getInstancePlacement());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1714,17 +1509,120 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkemulticloud.v1.AwsNodeConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                instanceType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRootVolumeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.gkemulticloud.v1.NodeTaint m =
+                    input.readMessage(
+                        com.google.cloud.gkemulticloud.v1.NodeTaint.parser(), extensionRegistry);
+                if (taintsBuilder_ == null) {
+                  ensureTaintsIsMutable();
+                  taints_.add(m);
+                } else {
+                  taintsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                break;
+              } // case 42
+            case 50:
+              {
+                iamInstanceProfile_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 74:
+              {
+                input.readMessage(getSshConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSecurityGroupIdsIsMutable();
+                securityGroupIds_.add(s);
+                break;
+              } // case 82
+            case 90:
+              {
+                imageType_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getProxyConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getConfigEncryptionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    getInstancePlacementFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.gkemulticloud.v1.AwsNodeConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4094,7 +3992,18 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AwsNodeConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

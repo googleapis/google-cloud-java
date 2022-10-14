@@ -54,118 +54,6 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private GmailAddOnManifest(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                contextualTriggers_ =
-                    new java.util.ArrayList<com.google.apps.script.type.gmail.ContextualTrigger>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              contextualTriggers_.add(
-                  input.readMessage(
-                      com.google.apps.script.type.gmail.ContextualTrigger.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                universalActions_ =
-                    new java.util.ArrayList<com.google.apps.script.type.gmail.UniversalAction>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              universalActions_.add(
-                  input.readMessage(
-                      com.google.apps.script.type.gmail.UniversalAction.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 58:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              authorizationCheckFunction_ = s;
-              break;
-            }
-          case 98:
-            {
-              com.google.apps.script.type.gmail.ComposeTrigger.Builder subBuilder = null;
-              if (composeTrigger_ != null) {
-                subBuilder = composeTrigger_.toBuilder();
-              }
-              composeTrigger_ =
-                  input.readMessage(
-                      com.google.apps.script.type.gmail.ComposeTrigger.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(composeTrigger_);
-                composeTrigger_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 114:
-            {
-              com.google.apps.script.type.HomepageExtensionPoint.Builder subBuilder = null;
-              if (homepageTrigger_ != null) {
-                subBuilder = homepageTrigger_.toBuilder();
-              }
-              homepageTrigger_ =
-                  input.readMessage(
-                      com.google.apps.script.type.HomepageExtensionPoint.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(homepageTrigger_);
-                homepageTrigger_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        contextualTriggers_ = java.util.Collections.unmodifiableList(contextualTriggers_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        universalActions_ = java.util.Collections.unmodifiableList(universalActions_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.apps.script.type.gmail.GmailAddOnManifestProto
         .internal_static_google_apps_script_type_gmail_GmailAddOnManifest_descriptor;
@@ -545,7 +433,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     if (homepageTrigger_ != null) {
       output.writeMessage(14, getHomepageTrigger());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -571,7 +459,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     if (homepageTrigger_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getHomepageTrigger());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -599,7 +487,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     }
     if (!getAuthorizationCheckFunction().equals(other.getAuthorizationCheckFunction()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -628,7 +516,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + AUTHORIZATION_CHECK_FUNCTION_FIELD_NUMBER;
     hash = (53 * hash) + getAuthorizationCheckFunction().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -757,20 +645,10 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.apps.script.type.gmail.GmailAddOnManifest.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getContextualTriggersFieldBuilder();
-        getUniversalActionsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -784,16 +662,18 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       if (contextualTriggersBuilder_ == null) {
         contextualTriggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        contextualTriggers_ = null;
         contextualTriggersBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (universalActionsBuilder_ == null) {
         universalActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
+        universalActions_ = null;
         universalActionsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (composeTriggerBuilder_ == null) {
         composeTrigger_ = null;
       } else {
@@ -973,7 +853,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         authorizationCheckFunction_ = other.authorizationCheckFunction_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -988,18 +868,77 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.apps.script.type.gmail.GmailAddOnManifest parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 26:
+              {
+                com.google.apps.script.type.gmail.ContextualTrigger m =
+                    input.readMessage(
+                        com.google.apps.script.type.gmail.ContextualTrigger.parser(),
+                        extensionRegistry);
+                if (contextualTriggersBuilder_ == null) {
+                  ensureContextualTriggersIsMutable();
+                  contextualTriggers_.add(m);
+                } else {
+                  contextualTriggersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.apps.script.type.gmail.UniversalAction m =
+                    input.readMessage(
+                        com.google.apps.script.type.gmail.UniversalAction.parser(),
+                        extensionRegistry);
+                if (universalActionsBuilder_ == null) {
+                  ensureUniversalActionsIsMutable();
+                  universalActions_.add(m);
+                } else {
+                  universalActionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 58:
+              {
+                authorizationCheckFunction_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 98:
+              {
+                input.readMessage(getComposeTriggerFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 114:
+              {
+                input.readMessage(getHomepageTriggerFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 114
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.apps.script.type.gmail.GmailAddOnManifest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2406,7 +2345,18 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GmailAddOnManifest(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin</artifactId>
-  <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+  <version>0.13.6-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Admin</name>
   <url>https://github.com/googleapis/java-analytics-admin</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
-    <version>0.13.5-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+    <version>0.13.6-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-admin</site.installationModule>

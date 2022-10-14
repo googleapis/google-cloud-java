@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.1.14](https://github.com/googleapis/java-optimization/compare/v1.1.13...v1.1.14) (2022-10-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.13.0 ([#128](https://github.com/googleapis/java-optimization/issues/128)) ([cbe306a](https://github.com/googleapis/java-optimization/commit/cbe306aafa93d1ae274a04a1b83f601e82256a7b))
+
+## [1.1.13](https://github.com/googleapis/java-optimization/compare/v1.1.12...v1.1.13) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([5a869dc](https://github.com/googleapis/java-optimization/commit/5a869dcf51284aa94d6202ef05db5f0c4059e20e))
+
+## [1.1.12](https://github.com/googleapis/java-optimization/compare/v1.1.11...v1.1.12) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#124](https://github.com/googleapis/java-optimization/issues/124)) ([6c0ea52](https://github.com/googleapis/java-optimization/commit/6c0ea526309e984e91c639ed319f66aadd0fa3c3))
+
 ## [1.1.11](https://github.com/googleapis/java-optimization/compare/v1.1.10...v1.1.11) (2022-09-20)
 
 

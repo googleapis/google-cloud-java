@@ -27,55 +27,88 @@ fi
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
-# install docuploader package
-python3 -m pip install gcp-docuploader
+python3 --version
 
+# install docuploader package
+python3 -m pip install --require-hashes -r .kokoro/requirements.txt
+
+# TODO: Change this to env_var
 doclet_name="java-docfx-doclet-1.7.0.jar"
 
-# Retrieve list of modules from aggregator pom
-modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+mvn -B -ntp \
+  -DtrimStackTrace=false \
+  -Dclirr.skip=true \
+  -Denforcer.skip=true \
+  -Dcheckstyle.skip=true \
+  -Dflatten.skip=true \
+  -Danimal.sniffer.skip=true \
+  -DskipTests=true \
+  -Djacoco.skip=true \
+  -T 1C \
+  install
 
-for module in $modules
-do
+if [[ -z "${module_list}" ]]; then
+  # Retrieve list of modules from aggregator pom
+  modules=($(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g'))
+else
+  modules=($(echo "${module_list}" | tr ',' ' '))
+fi
+excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
+failed_modules=()
+
+for module in "${modules[@]}"; do
   # Proceed if module is not excluded
   if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
     pushd $module
     # Extract Cloud RAD module name from `distribution_name` in .repo-metadata.json
     NAME=$(grep -o '"distribution_name": "[^"]*' .repo-metadata.json | grep -o '[^"]*$' | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
-    VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
+    VERSION=$(grep "^${NAME}:" versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
-    mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
+    mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name} -Dcheckstyle.skip=true
+    if [ "$?" -ne "0" ]; then
+      failed_modules+=("${module}")
+      continue
+    fi
     # include CHANGELOG if exists
     if [ -e CHANGELOG.md ]; then
       cp CHANGELOG.md target/docfx-yml/history.md
     fi
-
     pushd target/docfx-yml
 
+    echo "Creating metadata for ${module}..."
     # create metadata
     python3 -m docuploader create-metadata \
-     --name ${NAME} \
-     --version ${VERSION} \
-     --xrefs devsite://java/gax \
-     --xrefs devsite://java/google-cloud-core \
-     --xrefs devsite://java/api-common \
-     --xrefs devsite://java/proto-google-common-protos \
-     --xrefs devsite://java/google-api-client \
-     --xrefs devsite://java/google-http-client \
-     --xrefs devsite://java/protobuf \
-     --language java
+      --name ${NAME} \
+      --version ${VERSION} \
+      --xrefs devsite://java/gax \
+      --xrefs devsite://java/google-cloud-core \
+      --xrefs devsite://java/api-common \
+      --xrefs devsite://java/proto-google-common-protos \
+      --xrefs devsite://java/google-api-client \
+      --xrefs devsite://java/google-http-client \
+      --xrefs devsite://java/protobuf \
+      --language java
 
+    echo "Uploading tarball for ${module}..."
     # upload yml to production bucket
     python3 -m docuploader upload . \
-     --credentials ${CREDENTIALS} \
-     --staging-bucket ${STAGING_BUCKET_V2} \
-     --destination-prefix docfx
+      --credentials ${CREDENTIALS} \
+      --staging-bucket ${STAGING_BUCKET_V2} \
+      --destination-prefix docfx
+
+    echo "Uploaded tarball for ${module}"
 
     popd # out of target/docfx-yml
     popd # out of $module
   fi
 done
+
+if [ ${#failed_modules[@]} -eq 0 ]; then
+  echo "All modules uploaded to CloudRAD"
+else
+  echo "These modules failed: ${failed_modules[*]}"
+  exit 1
+fi

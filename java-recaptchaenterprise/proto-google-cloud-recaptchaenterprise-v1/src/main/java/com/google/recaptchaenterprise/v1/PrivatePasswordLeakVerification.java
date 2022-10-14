@@ -56,75 +56,6 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private PrivatePasswordLeakVerification(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              lookupHashPrefix_ = input.readBytes();
-              break;
-            }
-          case 18:
-            {
-              encryptedUserCredentialsHash_ = input.readBytes();
-              break;
-            }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                encryptedLeakMatchPrefixes_ =
-                    new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              encryptedLeakMatchPrefixes_.add(input.readBytes());
-              break;
-            }
-          case 34:
-            {
-              reencryptedUserCredentialsHash_ = input.readBytes();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        encryptedLeakMatchPrefixes_ =
-            java.util.Collections.unmodifiableList(encryptedLeakMatchPrefixes_); // C
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_PrivatePasswordLeakVerification_descriptor;
@@ -146,7 +77,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+   * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
    * is used to look up password leaks associated with that hash prefix.
    * </pre>
    *
@@ -165,7 +96,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Encrypted Scrypt hash of the canonicalized username+password. It is
+   * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
    * re-encrypted by the server and returned through
    * `reencrypted_user_credentials_hash`.
    * </pre>
@@ -186,8 +117,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They should be compared with the client-side decryption
+   * Output only. List of prefixes of the encrypted potential password leaks that matched the
+   * given parameters. They must be compared with the client-side decryption
    * prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
@@ -205,8 +136,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They should be compared with the client-side decryption
+   * Output only. List of prefixes of the encrypted potential password leaks that matched the
+   * given parameters. They must be compared with the client-side decryption
    * prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
@@ -223,8 +154,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They should be compared with the client-side decryption
+   * Output only. List of prefixes of the encrypted potential password leaks that matched the
+   * given parameters. They must be compared with the client-side decryption
    * prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
@@ -245,8 +176,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-   * field. Used to match potential password leaks within
+   * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+   * field. It is used to match potential password leaks within
    * `encrypted_leak_match_prefixes`.
    * </pre>
    *
@@ -286,7 +217,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
     if (!reencryptedUserCredentialsHash_.isEmpty()) {
       output.writeBytes(4, reencryptedUserCredentialsHash_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -317,7 +248,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               4, reencryptedUserCredentialsHash_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -340,7 +271,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
       return false;
     if (!getReencryptedUserCredentialsHash().equals(other.getReencryptedUserCredentialsHash()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -361,7 +292,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
     }
     hash = (37 * hash) + REENCRYPTED_USER_CREDENTIALS_HASH_FIELD_NUMBER;
     hash = (53 * hash) + getReencryptedUserCredentialsHash().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -493,17 +424,10 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
 
     // Construct using
     // com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -626,7 +550,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
       if (other.getReencryptedUserCredentialsHash() != com.google.protobuf.ByteString.EMPTY) {
         setReencryptedUserCredentialsHash(other.getReencryptedUserCredentialsHash());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -641,19 +565,56 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                lookupHashPrefix_ = input.readBytes();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                encryptedUserCredentialsHash_ = input.readBytes();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.protobuf.ByteString v = input.readBytes();
+                ensureEncryptedLeakMatchPrefixesIsMutable();
+                encryptedLeakMatchPrefixes_.add(v);
+                break;
+              } // case 26
+            case 34:
+              {
+                reencryptedUserCredentialsHash_ = input.readBytes();
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -664,7 +625,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+     * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
      * is used to look up password leaks associated with that hash prefix.
      * </pre>
      *
@@ -680,7 +641,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+     * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
      * is used to look up password leaks associated with that hash prefix.
      * </pre>
      *
@@ -702,7 +663,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
+     * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
      * is used to look up password leaks associated with that hash prefix.
      * </pre>
      *
@@ -723,7 +684,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Encrypted Scrypt hash of the canonicalized username+password. It is
+     * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
      * re-encrypted by the server and returned through
      * `reencrypted_user_credentials_hash`.
      * </pre>
@@ -741,7 +702,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Encrypted Scrypt hash of the canonicalized username+password. It is
+     * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
      * re-encrypted by the server and returned through
      * `reencrypted_user_credentials_hash`.
      * </pre>
@@ -765,7 +726,7 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Encrypted Scrypt hash of the canonicalized username+password. It is
+     * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
      * re-encrypted by the server and returned through
      * `reencrypted_user_credentials_hash`.
      * </pre>
@@ -796,8 +757,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -816,8 +777,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -834,8 +795,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -853,8 +814,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -879,8 +840,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -904,8 +865,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -927,8 +888,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of prefixes of the encrypted potential password leaks that matched the
-     * given parameters. They should be compared with the client-side decryption
+     * Output only. List of prefixes of the encrypted potential password leaks that matched the
+     * given parameters. They must be compared with the client-side decryption
      * prefix of `reencrypted_user_credentials_hash`
      * </pre>
      *
@@ -951,8 +912,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-     * field. Used to match potential password leaks within
+     * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+     * field. It is used to match potential password leaks within
      * `encrypted_leak_match_prefixes`.
      * </pre>
      *
@@ -970,8 +931,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-     * field. Used to match potential password leaks within
+     * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+     * field. It is used to match potential password leaks within
      * `encrypted_leak_match_prefixes`.
      * </pre>
      *
@@ -995,8 +956,8 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-     * field. Used to match potential password leaks within
+     * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
+     * field. It is used to match potential password leaks within
      * `encrypted_leak_match_prefixes`.
      * </pre>
      *
@@ -1047,7 +1008,18 @@ public final class PrivatePasswordLeakVerification extends com.google.protobuf.G
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PrivatePasswordLeakVerification(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

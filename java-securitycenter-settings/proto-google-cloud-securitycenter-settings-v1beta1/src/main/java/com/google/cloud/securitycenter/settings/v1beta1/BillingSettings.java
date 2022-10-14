@@ -53,89 +53,6 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private BillingSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              billingTier_ = rawValue;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              billingType_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (startTime_ != null) {
-                subBuilder = startTime_.toBuilder();
-              }
-              startTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(startTime_);
-                startTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expireTime_ != null) {
-                subBuilder = expireTime_.toBuilder();
-              }
-              expireTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expireTime_);
-                expireTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.BillingSettingsProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_BillingSettings_descriptor;
@@ -372,7 +289,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     if (expireTime_ != null) {
       output.writeMessage(4, getExpireTime());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -397,7 +314,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     if (expireTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getExpireTime());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -423,7 +340,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     if (hasExpireTime()) {
       if (!getExpireTime().equals(other.getExpireTime())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -446,7 +363,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -576,17 +493,10 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.securitycenter.settings.v1beta1.BillingSettings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -712,7 +622,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
       if (other.hasExpireTime()) {
         mergeExpireTime(other.getExpireTime());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -727,19 +637,55 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.securitycenter.settings.v1beta1.BillingSettings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                billingTier_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 16:
+              {
+                billingType_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.securitycenter.settings.v1beta1.BillingSettings)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1401,7 +1347,18 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BillingSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

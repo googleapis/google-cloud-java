@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-ids</artifactId>
-  <version>1.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
+  <version>1.2.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
   <packaging>jar</packaging>
   <name>Google Intrusion Detection System</name>
   <url>https://github.com/googleapis/java-ids</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-ids-parent</artifactId>
-    <version>1.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
+    <version>1.2.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-ids</site.installationModule>
@@ -72,7 +72,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
-      <version>4.13.2</version>
     </dependency>
 
     <dependency>

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.5](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/compare/v0.1.4...v0.1.5) (2022-10-04)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([81f9e97](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/commit/81f9e97fc7e6f405a673a0d5f7eb2cb0a306e87f))
+
+## [0.1.4](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/compare/v0.1.3...v0.1.4) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#49](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/issues/49)) ([48aeda7](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/commit/48aeda7906f94b32a278d2b0d0a41bb0fff1d9ae))
+
 ## [0.1.3](https://github.com/googleapis/java-cloudcommerceconsumerprocurement/compare/v0.1.2...v0.1.3) (2022-09-27)
 
 

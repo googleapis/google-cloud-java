@@ -59,200 +59,6 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     return this.unknownFields;
   }
 
-  private CloudSqlSettings(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              databaseVersion_ = rawValue;
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                userLabels_ =
-                    com.google.protobuf.MapField.newMapField(
-                        UserLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
-                  input.readMessage(
-                      UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              userLabels_.getMutableMap().put(userLabels__.getKey(), userLabels__.getValue());
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tier_ = s;
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (storageAutoResizeLimit_ != null) {
-                subBuilder = storageAutoResizeLimit_.toBuilder();
-              }
-              storageAutoResizeLimit_ =
-                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(storageAutoResizeLimit_);
-                storageAutoResizeLimit_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 40:
-            {
-              int rawValue = input.readEnum();
-
-              activationPolicy_ = rawValue;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.clouddms.v1.SqlIpConfig.Builder subBuilder = null;
-              if (ipConfig_ != null) {
-                subBuilder = ipConfig_.toBuilder();
-              }
-              ipConfig_ =
-                  input.readMessage(
-                      com.google.cloud.clouddms.v1.SqlIpConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ipConfig_);
-                ipConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (autoStorageIncrease_ != null) {
-                subBuilder = autoStorageIncrease_.toBuilder();
-              }
-              autoStorageIncrease_ =
-                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(autoStorageIncrease_);
-                autoStorageIncrease_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                databaseFlags_ =
-                    com.google.protobuf.MapField.newMapField(
-                        DatabaseFlagsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> databaseFlags__ =
-                  input.readMessage(
-                      DatabaseFlagsDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              databaseFlags_
-                  .getMutableMap()
-                  .put(databaseFlags__.getKey(), databaseFlags__.getValue());
-              break;
-            }
-          case 72:
-            {
-              int rawValue = input.readEnum();
-
-              dataDiskType_ = rawValue;
-              break;
-            }
-          case 82:
-            {
-              com.google.protobuf.Int64Value.Builder subBuilder = null;
-              if (dataDiskSizeGb_ != null) {
-                subBuilder = dataDiskSizeGb_.toBuilder();
-              }
-              dataDiskSizeGb_ =
-                  input.readMessage(com.google.protobuf.Int64Value.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dataDiskSizeGb_);
-                dataDiskSizeGb_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 90:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              zone_ = s;
-              break;
-            }
-          case 98:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceId_ = s;
-              break;
-            }
-          case 106:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rootPassword_ = s;
-              break;
-            }
-          case 112:
-            {
-              rootPasswordSet_ = input.readBool();
-              break;
-            }
-          case 122:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              collation_ = s;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
         .internal_static_google_cloud_clouddms_v1_CloudSqlSettings_descriptor;
@@ -1802,7 +1608,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, collation_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1880,7 +1686,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, collation_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1923,7 +1729,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     if (!getRootPassword().equals(other.getRootPassword())) return false;
     if (getRootPasswordSet() != other.getRootPasswordSet()) return false;
     if (!getCollation().equals(other.getCollation())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1976,7 +1782,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRootPasswordSet());
     hash = (37 * hash) + COLLATION_FIELD_NUMBER;
     hash = (53 * hash) + getCollation().hashCode();
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2129,17 +1935,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.clouddms.v1.CloudSqlSettings.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2345,7 +2144,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         collation_ = other.collation_;
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2360,17 +2159,133 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.clouddms.v1.CloudSqlSettings parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                databaseVersion_ = input.readEnum();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                    input.readMessage(
+                        UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserLabels()
+                    .getMutableMap()
+                    .put(userLabels__.getKey(), userLabels__.getValue());
+                break;
+              } // case 18
+            case 26:
+              {
+                tier_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getStorageAutoResizeLimitFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 40:
+              {
+                activationPolicy_ = input.readEnum();
+
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(getIpConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAutoStorageIncreaseFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> databaseFlags__ =
+                    input.readMessage(
+                        DatabaseFlagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableDatabaseFlags()
+                    .getMutableMap()
+                    .put(databaseFlags__.getKey(), databaseFlags__.getValue());
+                break;
+              } // case 66
+            case 72:
+              {
+                dataDiskType_ = input.readEnum();
+
+                break;
+              } // case 72
+            case 82:
+              {
+                input.readMessage(getDataDiskSizeGbFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                zone_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
+            case 98:
+              {
+                sourceId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
+            case 106:
+              {
+                rootPassword_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 106
+            case 112:
+              {
+                rootPasswordSet_ = input.readBool();
+
+                break;
+              } // case 112
+            case 122:
+              {
+                collation_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.clouddms.v1.CloudSqlSettings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4519,7 +4434,18 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CloudSqlSettings(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

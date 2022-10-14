@@ -52,162 +52,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     return this.unknownFields;
   }
 
-  private MembershipState(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterName_ = s;
-              break;
-            }
-          case 18:
-            {
-              com.google.cloud.gkehub.configmanagement.v1alpha.MembershipSpec.Builder subBuilder =
-                  null;
-              if (membershipSpec_ != null) {
-                subBuilder = membershipSpec_.toBuilder();
-              }
-              membershipSpec_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1alpha.MembershipSpec.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(membershipSpec_);
-                membershipSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState.Builder subBuilder =
-                  null;
-              if (operatorState_ != null) {
-                subBuilder = operatorState_.toBuilder();
-              }
-              operatorState_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(operatorState_);
-                operatorState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncState.Builder subBuilder =
-                  null;
-              if (configSyncState_ != null) {
-                subBuilder = configSyncState_.toBuilder();
-              }
-              configSyncState_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncState.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(configSyncState_);
-                configSyncState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerState.Builder
-                  subBuilder = null;
-              if (policyControllerState_ != null) {
-                subBuilder = policyControllerState_.toBuilder();
-              }
-              policyControllerState_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1alpha.PolicyControllerState
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(policyControllerState_);
-                policyControllerState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzState.Builder subBuilder =
-                  null;
-              if (binauthzState_ != null) {
-                subBuilder = binauthzState_.toBuilder();
-              }
-              binauthzState_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzState.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(binauthzState_);
-                binauthzState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.gkehub.configmanagement.v1alpha.HierarchyControllerState.Builder
-                  subBuilder = null;
-              if (hierarchyControllerState_ != null) {
-                subBuilder = hierarchyControllerState_.toBuilder();
-              }
-              hierarchyControllerState_ =
-                  input.readMessage(
-                      com.google.cloud.gkehub.configmanagement.v1alpha.HierarchyControllerState
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hierarchyControllerState_);
-                hierarchyControllerState_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.configmanagement.v1alpha.ConfigManagementProto
         .internal_static_google_cloud_gkehub_configmanagement_v1alpha_MembershipState_descriptor;
@@ -636,7 +480,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     if (hierarchyControllerState_ != null) {
       output.writeMessage(7, getHierarchyControllerState());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -669,7 +513,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, getHierarchyControllerState());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -710,7 +554,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     if (hasHierarchyControllerState()) {
       if (!getHierarchyControllerState().equals(other.getHierarchyControllerState())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -747,7 +591,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + HIERARCHY_CONTROLLER_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getHierarchyControllerState().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -877,17 +721,10 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using com.google.cloud.gkehub.configmanagement.v1alpha.MembershipState.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -1064,7 +901,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       if (other.hasHierarchyControllerState()) {
         mergeHierarchyControllerState(other.getHierarchyControllerState());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1079,19 +916,75 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.gkehub.configmanagement.v1alpha.MembershipState parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                clusterName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getMembershipSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getOperatorStateFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getConfigSyncStateFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getPolicyControllerStateFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getBinauthzStateFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getHierarchyControllerStateFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.gkehub.configmanagement.v1alpha.MembershipState)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2483,7 +2376,18 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MembershipState(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

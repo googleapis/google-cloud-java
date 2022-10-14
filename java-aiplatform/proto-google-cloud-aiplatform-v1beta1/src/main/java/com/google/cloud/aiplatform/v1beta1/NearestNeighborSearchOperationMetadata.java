@@ -54,70 +54,6 @@ public final class NearestNeighborSearchOperationMetadata
     return this.unknownFields;
   }
 
-  private NearestNeighborSearchOperationMetadata(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                contentValidationStats_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                            .ContentValidationStats>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              contentValidationStats_.add(
-                  input.readMessage(
-                      com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                          .ContentValidationStats.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 16:
-            {
-              dataBytesCount_ = input.readInt64();
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        contentValidationStats_ = java.util.Collections.unmodifiableList(contentValidationStats_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.IndexServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_NearestNeighborSearchOperationMetadata_descriptor;
@@ -305,80 +241,6 @@ public final class NearestNeighborSearchOperationMetadata
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private RecordError(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8:
-              {
-                int rawValue = input.readEnum();
-
-                errorType_ = rawValue;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                errorMessage_ = s;
-                break;
-              }
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                sourceGcsUri_ = s;
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                embeddingId_ = s;
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                rawRecord_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -948,7 +810,7 @@ public final class NearestNeighborSearchOperationMetadata
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawRecord_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rawRecord_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -975,7 +837,7 @@ public final class NearestNeighborSearchOperationMetadata
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawRecord_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rawRecord_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -999,7 +861,7 @@ public final class NearestNeighborSearchOperationMetadata
       if (!getSourceGcsUri().equals(other.getSourceGcsUri())) return false;
       if (!getEmbeddingId().equals(other.getEmbeddingId())) return false;
       if (!getRawRecord().equals(other.getRawRecord())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1020,7 +882,7 @@ public final class NearestNeighborSearchOperationMetadata
       hash = (53 * hash) + getEmbeddingId().hashCode();
       hash = (37 * hash) + RAW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + getRawRecord().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1170,17 +1032,10 @@ public final class NearestNeighborSearchOperationMetadata
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1315,7 +1170,7 @@ public final class NearestNeighborSearchOperationMetadata
           rawRecord_ = other.rawRecord_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1330,21 +1185,61 @@ public final class NearestNeighborSearchOperationMetadata
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  errorType_ = input.readEnum();
+
+                  break;
+                } // case 8
+              case 18:
+                {
+                  errorMessage_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  sourceGcsUri_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  embeddingId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  rawRecord_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                      .RecordError)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -1933,7 +1828,19 @@ public final class NearestNeighborSearchOperationMetadata
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new RecordError(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2116,82 +2023,6 @@ public final class NearestNeighborSearchOperationMetadata
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ContentValidationStats(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                sourceGcsUri_ = s;
-                break;
-              }
-            case 16:
-              {
-                validRecordCount_ = input.readInt64();
-                break;
-              }
-            case 24:
-              {
-                invalidRecordCount_ = input.readInt64();
-                break;
-              }
-            case 34:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  partialErrors_ =
-                      new java.util.ArrayList<
-                          com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                              .RecordError>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                partialErrors_.add(
-                    input.readMessage(
-                        com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                            .RecordError.parser(),
-                        extensionRegistry));
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2421,7 +2252,7 @@ public final class NearestNeighborSearchOperationMetadata
       for (int i = 0; i < partialErrors_.size(); i++) {
         output.writeMessage(4, partialErrors_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2442,7 +2273,7 @@ public final class NearestNeighborSearchOperationMetadata
       for (int i = 0; i < partialErrors_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, partialErrors_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2469,7 +2300,7 @@ public final class NearestNeighborSearchOperationMetadata
       if (getValidRecordCount() != other.getValidRecordCount()) return false;
       if (getInvalidRecordCount() != other.getInvalidRecordCount()) return false;
       if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2490,7 +2321,7 @@ public final class NearestNeighborSearchOperationMetadata
         hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
         hash = (53 * hash) + getPartialErrorsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2641,19 +2472,10 @@ public final class NearestNeighborSearchOperationMetadata
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-          getPartialErrorsFieldBuilder();
-        }
       }
 
       @java.lang.Override
@@ -2667,10 +2489,11 @@ public final class NearestNeighborSearchOperationMetadata
 
         if (partialErrorsBuilder_ == null) {
           partialErrors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          partialErrors_ = null;
           partialErrorsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -2822,7 +2645,7 @@ public final class NearestNeighborSearchOperationMetadata
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2837,22 +2660,66 @@ public final class NearestNeighborSearchOperationMetadata
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                .ContentValidationStats
-            parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  sourceGcsUri_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  validRecordCount_ = input.readInt64();
+
+                  break;
+                } // case 16
+              case 24:
+                {
+                  invalidRecordCount_ = input.readInt64();
+
+                  break;
+                } // case 24
+              case 34:
+                {
+                  com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
+                          .RecordError
+                      m =
+                          input.readMessage(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .NearestNeighborSearchOperationMetadata.RecordError.parser(),
+                              extensionRegistry);
+                  if (partialErrorsBuilder_ == null) {
+                    ensurePartialErrorsIsMutable();
+                    partialErrors_.add(m);
+                  } else {
+                    partialErrorsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
-                      .ContentValidationStats)
-                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -3588,7 +3455,19 @@ public final class NearestNeighborSearchOperationMetadata
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ContentValidationStats(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -3759,7 +3638,7 @@ public final class NearestNeighborSearchOperationMetadata
     if (dataBytesCount_ != 0L) {
       output.writeInt64(2, dataBytesCount_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -3776,7 +3655,7 @@ public final class NearestNeighborSearchOperationMetadata
     if (dataBytesCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, dataBytesCount_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -3796,7 +3675,7 @@ public final class NearestNeighborSearchOperationMetadata
     if (!getContentValidationStatsList().equals(other.getContentValidationStatsList()))
       return false;
     if (getDataBytesCount() != other.getDataBytesCount()) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -3813,7 +3692,7 @@ public final class NearestNeighborSearchOperationMetadata
     }
     hash = (37 * hash) + DATA_BYTES_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataBytesCount());
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -3951,19 +3830,10 @@ public final class NearestNeighborSearchOperationMetadata
 
     // Construct using
     // com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getContentValidationStatsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -3971,10 +3841,11 @@ public final class NearestNeighborSearchOperationMetadata
       super.clear();
       if (contentValidationStatsBuilder_ == null) {
         contentValidationStats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        contentValidationStats_ = null;
         contentValidationStatsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       dataBytesCount_ = 0L;
 
       return this;
@@ -4103,7 +3974,7 @@ public final class NearestNeighborSearchOperationMetadata
       if (other.getDataBytesCount() != 0L) {
         setDataBytesCount(other.getDataBytesCount());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -4118,20 +3989,55 @@ public final class NearestNeighborSearchOperationMetadata
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata parsedMessage =
-          null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
+                        .ContentValidationStats
+                    m =
+                        input.readMessage(
+                            com.google.cloud.aiplatform.v1beta1
+                                .NearestNeighborSearchOperationMetadata.ContentValidationStats
+                                .parser(),
+                            extensionRegistry);
+                if (contentValidationStatsBuilder_ == null) {
+                  ensureContentValidationStatsIsMutable();
+                  contentValidationStats_.add(m);
+                } else {
+                  contentValidationStatsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+            case 16:
+              {
+                dataBytesCount_ = input.readInt64();
+
+                break;
+              } // case 16
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata)
-                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4745,7 +4651,18 @@ public final class NearestNeighborSearchOperationMetadata
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NearestNeighborSearchOperationMetadata(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

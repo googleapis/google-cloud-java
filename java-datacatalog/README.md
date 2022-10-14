@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog</artifactId>
-  <version>1.9.4</version>
+  <version>1.9.5</version>
 </dependency>
 
 ```
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-datacatalog'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datacatalog:1.9.4'
+implementation 'com.google.cloud:google-cloud-datacatalog:1.9.5'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.9.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.9.5"
 ```
 
 ## Authentication

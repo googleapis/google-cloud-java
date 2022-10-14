@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 GENERATION_DIR=$(dirname -- "$0")
 
@@ -14,24 +14,17 @@ release_please_config_file="release-please-config.json"
 
 echo "{" > "${release_please_manifest_file}"
 
-# We are manually excluding the CoverageAggregator module -- TODO: Update this for any other exclusions
-num_modules=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | wc -l)
-num_modules=$((num_modules - 1))
-for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order | xargs dirname); do
-  if [[ "${path}" = *CoverageAggregator ]]; then
-    continue
-  fi
+module_list=$(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort --dictionary-order |xargs dirname)
+num_modules=$(echo "${module_list}"| wc -l)
+num_modules=$((num_modules))
+for path in $module_list; do
 
   # path starts with ./{module}, we need to exclude the first two chars
   module_name="${path:2}"
   version_file="${path}/versions.txt"
 
-  # Java-Grafeas is a special case
-  if [[ "${module_name}" = "java-grafeas" ]]; then
-    module_line=$(grep -E "^grafeas:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
-  else
-    module_line=$(grep -E "^google-.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
-  fi
+  module_line=$(grep -E "^((google-.*|grafeas|gapic\-libraries)).*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
+
   artifact_name=$(echo "${module_line}" | cut -d ":" -f1)
   module_released_version=$(echo "${module_line}" | cut -d ":" -f2)
   module_snapshot_version=$(echo "${module_line}" | cut -d ":" -f3)

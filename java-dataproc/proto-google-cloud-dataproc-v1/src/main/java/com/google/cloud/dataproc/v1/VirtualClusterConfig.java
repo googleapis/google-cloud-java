@@ -54,89 +54,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     return this.unknownFields;
   }
 
-  private VirtualClusterConfig(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              stagingBucket_ = s;
-              break;
-            }
-          case 50:
-            {
-              com.google.cloud.dataproc.v1.KubernetesClusterConfig.Builder subBuilder = null;
-              if (infrastructureConfigCase_ == 6) {
-                subBuilder =
-                    ((com.google.cloud.dataproc.v1.KubernetesClusterConfig) infrastructureConfig_)
-                        .toBuilder();
-              }
-              infrastructureConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.KubernetesClusterConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dataproc.v1.KubernetesClusterConfig) infrastructureConfig_);
-                infrastructureConfig_ = subBuilder.buildPartial();
-              }
-              infrastructureConfigCase_ = 6;
-              break;
-            }
-          case 58:
-            {
-              com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.Builder subBuilder = null;
-              if (auxiliaryServicesConfig_ != null) {
-                subBuilder = auxiliaryServicesConfig_.toBuilder();
-              }
-              auxiliaryServicesConfig_ =
-                  input.readMessage(
-                      com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(auxiliaryServicesConfig_);
-                auxiliaryServicesConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_VirtualClusterConfig_descriptor;
@@ -402,7 +319,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     if (auxiliaryServicesConfig_ != null) {
       output.writeMessage(7, getAuxiliaryServicesConfig());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -423,7 +340,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAuxiliaryServicesConfig());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -452,7 +369,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -477,7 +394,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -608,17 +525,10 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.dataproc.v1.VirtualClusterConfig.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -626,6 +536,9 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       super.clear();
       stagingBucket_ = "";
 
+      if (kubernetesClusterConfigBuilder_ != null) {
+        kubernetesClusterConfigBuilder_.clear();
+      }
       if (auxiliaryServicesConfigBuilder_ == null) {
         auxiliaryServicesConfig_ = null;
       } else {
@@ -743,7 +656,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -758,18 +671,51 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataproc.v1.VirtualClusterConfig parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                stagingBucket_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 50:
+              {
+                input.readMessage(
+                    getKubernetesClusterConfigFieldBuilder().getBuilder(), extensionRegistry);
+                infrastructureConfigCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAuxiliaryServicesConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.dataproc.v1.VirtualClusterConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -1418,7 +1364,18 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VirtualClusterConfig(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

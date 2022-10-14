@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.2.2](https://github.com/googleapis/java-datastream/compare/v1.2.1...v1.2.2) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([32275f1](https://github.com/googleapis/java-datastream/commit/32275f1e9a77c2cd448c42e3baf1308cd7b920db))
+
+## [1.2.1](https://github.com/googleapis/java-datastream/compare/v1.2.0...v1.2.1) (2022-10-03)
+
+
+### Dependencies
+
+* Update dependency certifi to v2022.9.24 ([#208](https://github.com/googleapis/java-datastream/issues/208)) ([a08a8ec](https://github.com/googleapis/java-datastream/commit/a08a8ec5ec44361f0482622a7acebe389773eb8d))
+* Update dependency charset-normalizer to v2.1.1 ([#213](https://github.com/googleapis/java-datastream/issues/213)) ([4d8c240](https://github.com/googleapis/java-datastream/commit/4d8c240bbacdf06142255127f0716b0ab08ef7fa))
+* Update dependency click to v8.1.3 ([#214](https://github.com/googleapis/java-datastream/issues/214)) ([c5bd531](https://github.com/googleapis/java-datastream/commit/c5bd53142cfa52b37f9bf8ddc8bcf8bb49dadf5d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#229](https://github.com/googleapis/java-datastream/issues/229)) ([e915398](https://github.com/googleapis/java-datastream/commit/e9153985dfd7256b7c0c3a1924b9afd05af2ba47))
+* Update dependency gcp-releasetool to v1.8.8 ([#209](https://github.com/googleapis/java-datastream/issues/209)) ([9f19942](https://github.com/googleapis/java-datastream/commit/9f1994238c9ba3072969454840c090c0adfc4461))
+* Update dependency google-api-core to v2.10.1 ([#216](https://github.com/googleapis/java-datastream/issues/216)) ([cb5a5be](https://github.com/googleapis/java-datastream/commit/cb5a5be3dee74db48f896531adfa7e9fc4a1b532))
+* Update dependency google-auth to v2.11.1 ([#210](https://github.com/googleapis/java-datastream/issues/210)) ([2132bd7](https://github.com/googleapis/java-datastream/commit/2132bd786e41e07cb220385d539b4492b3cdbdab))
+* Update dependency google-cloud-core to v2.3.2 ([#211](https://github.com/googleapis/java-datastream/issues/211)) ([5399de9](https://github.com/googleapis/java-datastream/commit/5399de928d89d2e23221e1e0b1d8c97bfc295f4f))
+* Update dependency google-cloud-storage to v2.5.0 ([#215](https://github.com/googleapis/java-datastream/issues/215)) ([e361fe4](https://github.com/googleapis/java-datastream/commit/e361fe49371b49a99f78b27f2440257ff450f788))
+* Update dependency google-crc32c to v1.5.0 ([#217](https://github.com/googleapis/java-datastream/issues/217)) ([262bab8](https://github.com/googleapis/java-datastream/commit/262bab8a5496b72cf58ae4ec26f477a730aa77e7))
+* Update dependency googleapis-common-protos to v1.56.4 ([#212](https://github.com/googleapis/java-datastream/issues/212)) ([8f829c0](https://github.com/googleapis/java-datastream/commit/8f829c0132fe5fc11be90f0072a1bb3a8afc121b))
+* Update dependency importlib-metadata to v4.12.0 ([#218](https://github.com/googleapis/java-datastream/issues/218)) ([cb04725](https://github.com/googleapis/java-datastream/commit/cb04725130d732225ce1ec5e7d14b299802c738f))
+* Update dependency jeepney to v0.8.0 ([#219](https://github.com/googleapis/java-datastream/issues/219)) ([386dae9](https://github.com/googleapis/java-datastream/commit/386dae93de15a7d538685a11a715bf04c7f66238))
+* Update dependency jinja2 to v3.1.2 ([#220](https://github.com/googleapis/java-datastream/issues/220)) ([357058d](https://github.com/googleapis/java-datastream/commit/357058da959b05cc24a7e46fa8607d86112487c7))
+* Update dependency keyring to v23.9.3 ([#221](https://github.com/googleapis/java-datastream/issues/221)) ([77d3f69](https://github.com/googleapis/java-datastream/commit/77d3f695e8562bb9e15035819393363bfc61e3b5))
+* Update dependency markupsafe to v2.1.1 ([#222](https://github.com/googleapis/java-datastream/issues/222)) ([effe38d](https://github.com/googleapis/java-datastream/commit/effe38da0d7225f43ba1dbe0ed454293a2ed5f58))
+* Update dependency protobuf to v3.20.2 ([#223](https://github.com/googleapis/java-datastream/issues/223)) ([bc26a08](https://github.com/googleapis/java-datastream/commit/bc26a0835874516f2e4e1e79c38a318ce5ba44c1))
+
 ## [1.2.0](https://github.com/googleapis/java-datastream/compare/v1.1.1...v1.2.0) (2022-09-15)
 
 

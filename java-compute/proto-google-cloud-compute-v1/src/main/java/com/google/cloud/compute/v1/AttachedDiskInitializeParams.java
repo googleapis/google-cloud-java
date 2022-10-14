@@ -60,198 +60,6 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     return this.unknownFields;
   }
 
-  private AttachedDiskInitializeParams(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 177763082:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
-                resourcePolicies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000400;
-              }
-              resourcePolicies_.add(s);
-              break;
-            }
-          case 403546554:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
-              sourceImage_ = s;
-              break;
-            }
-          case 742457194:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              diskName_ = s;
-              break;
-            }
-          case 744072418:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
-              diskType_ = s;
-              break;
-            }
-          case 1008495426:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
-              sourceSnapshot_ = s;
-              break;
-            }
-          case 1494152864:
-            {
-              bitField0_ |= 0x00000040;
-              provisionedIops_ = input.readInt64();
-              break;
-            }
-          case 1619615842:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              onUpdateAction_ = s;
-              break;
-            }
-          case -1872541030:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              architecture_ = s;
-              break;
-            }
-          case -1865532718:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000400) != 0)) {
-                subBuilder = sourceSnapshotEncryptionKey_.toBuilder();
-              }
-              sourceSnapshotEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceSnapshotEncryptionKey_);
-                sourceSnapshotEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000400;
-              break;
-            }
-          case -1764857416:
-            {
-              bitField0_ |= 0x00000008;
-              diskSizeGb_ = input.readInt64();
-              break;
-            }
-          case -1593826670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                licenses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              licenses_.add(s);
-              break;
-            }
-          case -1273597982:
-            {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                resourceManagerTags_ =
-                    com.google.protobuf.MapField.newMapField(
-                        ResourceManagerTagsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000200;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  resourceManagerTags__ =
-                      input.readMessage(
-                          ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              resourceManagerTags_
-                  .getMutableMap()
-                  .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
-              break;
-            }
-          case -1242938022:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) != 0)) {
-                subBuilder = sourceImageEncryptionKey_.toBuilder();
-              }
-              sourceImageEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceImageEncryptionKey_);
-                sourceImageEncryptionKey_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000100;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              description_ = s;
-              break;
-            }
-          case -293404678:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000040) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_AttachedDiskInitializeParams_descriptor;
@@ -1661,7 +1469,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -1745,7 +1553,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -1811,7 +1619,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (!getSourceSnapshotEncryptionKey().equals(other.getSourceSnapshotEncryptionKey()))
         return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -1882,7 +1690,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       hash = (37 * hash) + SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getSourceSnapshotEncryptionKey().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2306,7 +2114,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (other.hasSourceSnapshotEncryptionKey()) {
         mergeSourceSnapshotEncryptionKey(other.getSourceSnapshotEncryptionKey());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2321,18 +2129,136 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.AttachedDiskInitializeParams parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 177763082:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureResourcePoliciesIsMutable();
+                resourcePolicies_.add(s);
+                break;
+              } // case 177763082
+            case 403546554:
+              {
+                sourceImage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 403546554
+            case 742457194:
+              {
+                diskName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 742457194
+            case 744072418:
+              {
+                diskType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 744072418
+            case 1008495426:
+              {
+                sourceSnapshot_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1008495426
+            case 1494152864:
+              {
+                provisionedIops_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 1494152864
+            case 1619615842:
+              {
+                onUpdateAction_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1619615842
+            case -1872541030:
+              {
+                architecture_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1872541030
+            case -1865532718:
+              {
+                input.readMessage(
+                    getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case -1865532718
+            case -1764857416:
+              {
+                diskSizeGb_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1764857416
+            case -1593826670:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLicensesIsMutable();
+                licenses_.add(s);
+                break;
+              } // case -1593826670
+            case -1273597982:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    resourceManagerTags__ =
+                        input.readMessage(
+                            ResourceManagerTagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableResourceManagerTags()
+                    .getMutableMap()
+                    .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
+                break;
+              } // case -1273597982
+            case -1242938022:
+              {
+                input.readMessage(
+                    getSourceImageEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case -1242938022
+            case -911466526:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -911466526
+            case -293404678:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case -293404678
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.compute.v1.AttachedDiskInitializeParams) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -4437,7 +4363,18 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AttachedDiskInitializeParams(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

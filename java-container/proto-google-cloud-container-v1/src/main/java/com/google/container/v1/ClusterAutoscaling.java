@@ -57,102 +57,6 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     return this.unknownFields;
   }
 
-  private ClusterAutoscaling(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8:
-            {
-              enableNodeAutoprovisioning_ = input.readBool();
-              break;
-            }
-          case 18:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                resourceLimits_ = new java.util.ArrayList<com.google.container.v1.ResourceLimit>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              resourceLimits_.add(
-                  input.readMessage(
-                      com.google.container.v1.ResourceLimit.parser(), extensionRegistry));
-              break;
-            }
-          case 24:
-            {
-              int rawValue = input.readEnum();
-
-              autoscalingProfile_ = rawValue;
-              break;
-            }
-          case 34:
-            {
-              com.google.container.v1.AutoprovisioningNodePoolDefaults.Builder subBuilder = null;
-              if (autoprovisioningNodePoolDefaults_ != null) {
-                subBuilder = autoprovisioningNodePoolDefaults_.toBuilder();
-              }
-              autoprovisioningNodePoolDefaults_ =
-                  input.readMessage(
-                      com.google.container.v1.AutoprovisioningNodePoolDefaults.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(autoprovisioningNodePoolDefaults_);
-                autoprovisioningNodePoolDefaults_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                autoprovisioningLocations_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              autoprovisioningLocations_.add(s);
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        resourceLimits_ = java.util.Collections.unmodifiableList(resourceLimits_);
-      }
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        autoprovisioningLocations_ = autoprovisioningLocations_.getUnmodifiableView();
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1.ClusterServiceProto
         .internal_static_google_container_v1_ClusterAutoscaling_descriptor;
@@ -621,7 +525,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 5, autoprovisioningLocations_.getRaw(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -654,7 +558,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getAutoprovisioningLocationsList().size();
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -681,7 +585,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
     if (!getAutoprovisioningLocationsList().equals(other.getAutoprovisioningLocationsList()))
       return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -708,7 +612,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + AUTOPROVISIONING_LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoprovisioningLocationsList().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -840,19 +744,10 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.container.v1.ClusterAutoscaling.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getResourceLimitsFieldBuilder();
-      }
     }
 
     @java.lang.Override
@@ -862,10 +757,11 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
 
       if (resourceLimitsBuilder_ == null) {
         resourceLimits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        resourceLimits_ = null;
         resourceLimitsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       autoscalingProfile_ = 0;
 
       if (autoprovisioningNodePoolDefaultsBuilder_ == null) {
@@ -1020,7 +916,7 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         }
         onChanged();
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1035,17 +931,71 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.container.v1.ClusterAutoscaling parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                enableNodeAutoprovisioning_ = input.readBool();
+
+                break;
+              } // case 8
+            case 18:
+              {
+                com.google.container.v1.ResourceLimit m =
+                    input.readMessage(
+                        com.google.container.v1.ResourceLimit.parser(), extensionRegistry);
+                if (resourceLimitsBuilder_ == null) {
+                  ensureResourceLimitsIsMutable();
+                  resourceLimits_.add(m);
+                } else {
+                  resourceLimitsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 24:
+              {
+                autoscalingProfile_ = input.readEnum();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                input.readMessage(
+                    getAutoprovisioningNodePoolDefaultsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAutoprovisioningLocationsIsMutable();
+                autoprovisioningLocations_.add(s);
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.container.v1.ClusterAutoscaling) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2015,7 +1965,18 @@ public final class ClusterAutoscaling extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ClusterAutoscaling(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
