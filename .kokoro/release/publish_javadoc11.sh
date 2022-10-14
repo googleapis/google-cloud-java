@@ -32,8 +32,7 @@ python3 --version
 # install docuploader package
 python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
-# TODO: Change this to env_var
-doclet_name="java-docfx-doclet-1.7.0.jar"
+doclet_name="java-docfx-doclet-${DOCLET_VERSION}.jar"
 
 mvn -B -ntp \
   -DtrimStackTrace=false \
@@ -47,11 +46,11 @@ mvn -B -ntp \
   -T 1C \
   install
 
-if [[ -z "${module_list}" ]]; then
+if [[ -z "${MODULE_LIST}" ]]; then
   # Retrieve list of modules from aggregator pom
   modules=($(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g'))
 else
-  modules=($(echo "${module_list}" | tr ',' ' '))
+  modules=($(echo "${MODULE_LIST}" | tr ',' ' '))
 fi
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 failed_modules=()
