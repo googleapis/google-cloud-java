@@ -28,7 +28,7 @@ jobs:
       with:
         python-version: '3.7'
         architecture: 'x64'
-    - run: python3 -m pip install requests
+    - run: python3 -m pip install --require-hashes -r .github/requirements.txt
     - run: python3 generate-readme.py
     - uses: googleapis/code-suggester@v4
       env:
