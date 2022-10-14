@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-container:2.6.0:2.6.1-SNAPSHOT
-grpc-google-cloud-container-v1:2.6.0:2.6.1-SNAPSHOT
-grpc-google-cloud-container-v1beta1:2.6.0:2.6.1-SNAPSHOT
-proto-google-cloud-container-v1:2.6.0:2.6.1-SNAPSHOT
-proto-google-cloud-container-v1beta1:2.6.0:2.6.1-SNAPSHOT
+google-cloud-container:2.7.0:2.7.0
+grpc-google-cloud-container-v1:2.7.0:2.7.0
+grpc-google-cloud-container-v1beta1:2.7.0:2.7.0
+proto-google-cloud-container-v1:2.7.0:2.7.0
+proto-google-cloud-container-v1beta1:2.7.0:2.7.0
