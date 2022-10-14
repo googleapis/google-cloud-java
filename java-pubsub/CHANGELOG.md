@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.120.21](https://github.com/googleapis/java-pubsub/compare/v1.120.20...v1.120.21) (2022-10-14)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.0 ([#1334](https://github.com/googleapis/java-pubsub/issues/1334)) ([d2edb44](https://github.com/googleapis/java-pubsub/commit/d2edb4457a5a5fdee006b34b1de265b7e73a26e1))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.17.1 ([#1340](https://github.com/googleapis/java-pubsub/issues/1340)) ([2b9c2e8](https://github.com/googleapis/java-pubsub/commit/2b9c2e8af4f83dd8d51272a0539c7ade05041a68))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.21 ([#1341](https://github.com/googleapis/java-pubsub/issues/1341)) ([d219a56](https://github.com/googleapis/java-pubsub/commit/d219a56de3c5a3e5455c3ca063bf0e363a4c476a))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#1296](https://github.com/googleapis/java-pubsub/issues/1296)) ([00f61aa](https://github.com/googleapis/java-pubsub/commit/00f61aab905300986945bb67a8737779c3f72da6))
+
 ## [1.120.20](https://github.com/googleapis/java-pubsub/compare/v1.120.19...v1.120.20) (2022-10-05)
 
 
