@@ -133,11 +133,6 @@ case ${JOB_TYPE} in
       fi
     done
     ;;
-  lint)
-    mvn com.coveo:fmt-maven-plugin:check -B -ntp
-    mvn checkstyle:check@checkstyle -B -ntp
-    RETURN_CODE=$?
-    ;;
   *) ;;
 
 esac

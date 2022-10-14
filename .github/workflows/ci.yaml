@@ -83,9 +83,9 @@ jobs:
         distribution: zulu
         java-version: 11
     - run: java -version
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: lint
+    - run: mvn com.coveo:fmt-maven-plugin:check -B -ntp
+    - run: mvn checkstyle:check@checkstyle -B -ntp
+
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
 #    runs-on: ubuntu-latest
