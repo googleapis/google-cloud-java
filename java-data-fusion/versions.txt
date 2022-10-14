@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-data-fusion:1.3.5:1.3.6-SNAPSHOT
-grpc-google-cloud-data-fusion-v1beta1:0.7.5:0.7.6-SNAPSHOT
-grpc-google-cloud-data-fusion-v1:1.3.5:1.3.6-SNAPSHOT
-proto-google-cloud-data-fusion-v1beta1:0.7.5:0.7.6-SNAPSHOT
-proto-google-cloud-data-fusion-v1:1.3.5:1.3.6-SNAPSHOT
+google-cloud-data-fusion:1.4.0:1.4.0
+grpc-google-cloud-data-fusion-v1beta1:0.8.0:0.8.0
+grpc-google-cloud-data-fusion-v1:1.4.0:1.4.0
+proto-google-cloud-data-fusion-v1beta1:0.8.0:0.8.0
+proto-google-cloud-data-fusion-v1:1.4.0:1.4.0
