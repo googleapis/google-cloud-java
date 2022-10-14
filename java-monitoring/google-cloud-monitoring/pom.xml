@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>3.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+  <version>3.5.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Monitoring</name>
   <url>https://github.com/googleapis/java-monitoring</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring-parent</artifactId>
-    <version>3.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    <version>3.5.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-monitoring</site.installationModule>
