@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.126.14](https://github.com/googleapis/java-logging-logback/compare/v0.126.13...v0.126.14) (2022-10-15)
+
+
+### Dependencies
+
+* Update dependency org.easymock:easymock to v5 ([#882](https://github.com/googleapis/java-logging-logback/issues/882)) ([70e889f](https://github.com/googleapis/java-logging-logback/commit/70e889f4a2dfe03b9a336b65a8cc570f771d5e02))
+
 ## [0.126.13](https://github.com/googleapis/java-logging-logback/compare/v0.126.12...v0.126.13) (2022-10-13)
 
 
