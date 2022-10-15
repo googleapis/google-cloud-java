@@ -58,8 +58,7 @@ count=0
 missing_artifacts=()
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
-  # As of 9/21/22: BeyondCorp repos do not have artifacts released to maven central
-  if [[ "${path}" =~ gapic-libraries-bom ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
+  if [[ "${path}" =~ gapic-libraries-bom ]] || [[ "${path}" =~ .*samples.* ]]; then
     continue
   fi
 
@@ -95,6 +94,8 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       maven_latest_version=$(echo "${maven_metadata_version}" | cut -d "-" -f1)
       maven_latest_trailing=$(echo "${maven_metadata_version}" | cut -s -d "-" -f2-)
 
+      echo "${artifactId} has latest version: ${maven_latest_version}"
+
       major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
       minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
       patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
@@ -109,6 +110,8 @@ for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirnam
       else
         new_version="${artifactId}:${maven_metadata_version}:${maven_metadata_version}"
       fi
+
+      echo "Updating ${artifactId} from version ${maven_metadata_version} to ${new_version}"
 
       sed -i.bak "s/${line}/${new_version}/g" "${path}/versions.txt" && rm "${path}/versions.txt.bak"
     else
