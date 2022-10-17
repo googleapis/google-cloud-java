@@ -1,5 +1,5 @@
 # Format:
 # module:released-version:current-version
 
-gapic-libraries-bom:0.1.0:0.1.0
+gapic-libraries-bom:0.0.0:0.1.0-SNAPSHOT
 

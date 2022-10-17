@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-phishingprotection-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.35.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+  <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
   <name>Google Cloud Phishing Protection Parent</name>
   <url>https://github.com/googleapis/java-phishingprotection</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.35.0</version><!-- {x-version-update:proto-google-cloud-phishingprotection-v1beta1:current} -->
+        <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-phishingprotection-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-phishingprotection-v1beta1</artifactId>
-        <version>0.35.0</version><!-- {x-version-update:grpc-google-cloud-phishingprotection-v1beta1:current} -->
+        <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-phishingprotection-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-phishingprotection</artifactId>
-        <version>0.35.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+        <version>0.34.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

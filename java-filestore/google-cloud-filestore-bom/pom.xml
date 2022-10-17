@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-filestore-bom</artifactId>
-  <version>1.5.0</version><!-- {x-version-update:google-cloud-filestore:current} -->
+  <version>1.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-filestore:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -28,27 +28,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-filestore</artifactId>
-        <version>1.5.0</version><!-- {x-version-update:google-cloud-filestore:current} -->
+        <version>1.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-filestore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-filestore-v1beta1</artifactId>
-        <version>0.7.0</version><!-- {x-version-update:grpc-google-cloud-filestore-v1beta1:current} -->
+        <version>0.6.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-filestore-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-filestore-v1</artifactId>
-        <version>1.5.0</version><!-- {x-version-update:grpc-google-cloud-filestore-v1:current} -->
+        <version>1.4.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-filestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-filestore-v1</artifactId>
-        <version>1.5.0</version><!-- {x-version-update:proto-google-cloud-filestore-v1:current} -->
+        <version>1.4.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-filestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-filestore-v1beta1</artifactId>
-        <version>0.7.0</version><!-- {x-version-update:proto-google-cloud-filestore-v1beta1:current} -->
+        <version>0.6.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-filestore-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

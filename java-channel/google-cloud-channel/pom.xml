@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-channel</artifactId>
-  <version>3.8.0</version><!-- {x-version-update:google-cloud-channel:current} -->
+  <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
   <packaging>jar</packaging>
   <name>Google Channel Services</name>
   <url>https://github.com/googleapis/java-channel</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-channel-parent</artifactId>
-    <version>3.8.0</version><!-- {x-version-update:google-cloud-channel:current} -->
+    <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-channel</site.installationModule>

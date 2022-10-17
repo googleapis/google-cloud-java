@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-network-management:1.5.0:1.5.0
-grpc-google-cloud-network-management-v1beta1:0.7.0:0.7.0
-grpc-google-cloud-network-management-v1:1.5.0:1.5.0
-proto-google-cloud-network-management-v1beta1:0.7.0:0.7.0
-proto-google-cloud-network-management-v1:1.5.0:1.5.0
+google-cloud-network-management:1.4.4:1.4.5-SNAPSHOT
+grpc-google-cloud-network-management-v1beta1:0.6.4:0.6.5-SNAPSHOT
+grpc-google-cloud-network-management-v1:1.4.4:1.4.5-SNAPSHOT
+proto-google-cloud-network-management-v1beta1:0.6.4:0.6.5-SNAPSHOT
+proto-google-cloud-network-management-v1:1.4.4:1.4.5-SNAPSHOT

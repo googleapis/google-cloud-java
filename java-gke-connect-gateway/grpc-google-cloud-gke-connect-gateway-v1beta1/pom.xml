@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-gke-connect-gateway-v1beta1</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:grpc-google-cloud-gke-connect-gateway-v1beta1:current} -->
+  <version>0.4.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-connect-gateway-v1beta1:current} -->
   <name>grpc-google-cloud-gke-connect-gateway-v1beta1</name>
   <description>GRPC library for google-cloud-gke-connect-gateway</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gke-connect-gateway-parent</artifactId>
-    <version>0.5.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+    <version>0.4.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
   </parent>
   <dependencies>
     <dependency>

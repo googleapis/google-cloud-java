@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appengine-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+  <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
   <name>Google App Engine Admin API Parent</name>
   <url>https://github.com/googleapis/java-appengine-admin</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-appengine-admin</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-appengine-admin-v1</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-appengine-admin-v1:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-appengine-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-appengine-admin-v1</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-appengine-admin-v1:current} -->
+        <version>2.3.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-appengine-admin-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
