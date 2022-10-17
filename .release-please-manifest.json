@@ -90,7 +90,7 @@
   "java-network-management": "1.5.0",
   "java-network-security": "0.7.0",
   "java-notebooks": "1.2.0",
-  "java-notification": "0.123.19-beta",
+  "java-notification": "0.123.20-beta",
   "java-optimization": "1.2.0",
   "java-orchestration-airflow": "1.4.0",
   "java-orgpolicy": "2.4.0",
