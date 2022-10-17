@@ -1,5 +1,41 @@
 # Changelog
 
+## [3.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-speech-v2.6.1...google-cloud-speech-v3.0.0) (2022-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* [speech] temporarily removed language rules from Speech-to-Text V2 API BUILD.bazel file (#8437)
+
+### Features
+
+* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* [speech] added Speech-to-Text V2 API proto ([#8422](https://github.com/googleapis/google-cloud-java/issues/8422)) ([9e57987](https://github.com/googleapis/google-cloud-java/commit/9e57987788b4364e6592e3f799e10e0893799e40))
+* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* [speech] temporarily removed language rules from Speech-to-Text V2 API BUILD.bazel file ([#8437](https://github.com/googleapis/google-cloud-java/issues/8437)) ([9931ad2](https://github.com/googleapis/google-cloud-java/commit/9931ad24c9e0d6ac1c23b6d82bd8d46aa5984e6a))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-speech-v1 to v2.5.5 ([#8321](https://github.com/googleapis/google-cloud-java/issues/8321)) ([f87eb86](https://github.com/googleapis/google-cloud-java/commit/f87eb865509d1573f4377f056f9db26fdc29692d))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-speech-v1beta1 to v0.89.5 ([#8322](https://github.com/googleapis/google-cloud-java/issues/8322)) ([6cf153e](https://github.com/googleapis/google-cloud-java/commit/6cf153e50720f12ca25a1d94d23ece2e7f749333))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-speech-v1beta1 to v0.89.6 ([#8335](https://github.com/googleapis/google-cloud-java/issues/8335)) ([ec0366e](https://github.com/googleapis/google-cloud-java/commit/ec0366e64395bce9353cc8bf4b10115571d2384e))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
+
+### Documentation
+
+* regenerate java-gke-connect-gateway generated samples ([#8569](https://github.com/googleapis/google-cloud-java/issues/8569)) ([f6506b9](https://github.com/googleapis/google-cloud-java/commit/f6506b92183cc9f1851c9f06778736b38b58f47d))
+
 ## [2.6.1](https://github.com/googleapis/java-speech/compare/v2.6.0...v2.6.1) (2022-10-07)
 
 
