@@ -78,11 +78,11 @@ public class ReadOptionProtoPreparerTest {
 
   @Test
   public void shouldPrepareReadOptionsWithTransactionId() {
-    String dummyTransactionId = "transaction-id";
+    String transactionId = "transaction-id";
     Optional<ReadOptions> readOptions =
-        protoPreparer.prepare(singletonList(transactionId(dummyTransactionId)));
+        protoPreparer.prepare(singletonList(transactionId(transactionId)));
 
-    assertThat(readOptions.get().getTransaction().toStringUtf8()).isEqualTo(dummyTransactionId);
+    assertThat(readOptions.get().getTransaction().toStringUtf8()).isEqualTo(transactionId);
   }
 
   @Test

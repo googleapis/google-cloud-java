@@ -27,6 +27,8 @@ import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunAggregationQueryRequest;
+import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 import com.google.rpc.Code;
@@ -118,6 +120,15 @@ public class Datastore {
       return RunQueryResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("runQuery", exception);
+    }
+  }
+
+  public RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request)
+      throws DatastoreException {
+    try (InputStream is = remoteRpc.call("runAggregationQuery", request)) {
+      return RunAggregationQueryResponse.parseFrom(is);
+    } catch (IOException exception) {
+      throw invalidResponseException("runAggregationQuery", exception);
     }
   }
 }

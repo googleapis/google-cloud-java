@@ -30,6 +30,7 @@ import com.google.api.core.InternalApi;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.cloud.Timestamp;
+import com.google.cloud.datastore.Query.ResultType;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Preconditions;
@@ -1018,6 +1019,8 @@ public abstract class StructuredQuery<V> extends Query<V> implements RecordQuery
 
   public abstract Builder<V> toBuilder();
 
+  @InternalApi
+  @Override
   public ResultType<V> getType() {
     return resultType;
   }

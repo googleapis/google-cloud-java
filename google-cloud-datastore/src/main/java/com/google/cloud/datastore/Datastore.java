@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.Service;
 import com.google.datastore.v1.TransactionOptions;
 import java.util.Iterator;
@@ -461,4 +462,52 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   <T> QueryResults<T> run(Query<T> query, ReadOption... options);
+
+  /**
+   * Submits a {@link AggregationQuery} and returns {@link AggregationResults}. {@link ReadOption}s
+   * can be specified if desired.
+   *
+   * <p>Example of running an {@link AggregationQuery} to find the count of entities of one kind.
+   *
+   * <p>{@link StructuredQuery} example:
+   *
+   * <pre>{@code
+   * EntityQuery selectAllQuery = Query.newEntityQueryBuilder()
+   *    .setKind("Task")
+   *    .build();
+   * AggregationQuery aggregationQuery = Query.newAggregationQueryBuilder()
+   *    .addAggregation(count().as("total_count"))
+   *    .over(selectAllQuery)
+   *    .build();
+   * AggregationResults aggregationResults = datastore.runAggregation(aggregationQuery);
+   * for (AggregationResult aggregationResult : aggregationResults) {
+   *     System.out.println(aggregationResult.get("total_count"));
+   * }
+   * }</pre>
+   *
+   * <h4>{@link GqlQuery} example:</h4>
+   *
+   * <pre>{@code
+   * GqlQuery<?> selectAllGqlQuery = Query.newGqlQueryBuilder(
+   *         "AGGREGATE COUNT(*) AS total_count, COUNT_UP_TO(100) AS count_upto_100 OVER(SELECT * FROM Task)"
+   *     )
+   *     .setAllowLiteral(true)
+   *     .build();
+   * AggregationQuery aggregationQuery = Query.newAggregationQueryBuilder()
+   *     .over(selectAllGqlQuery)
+   *     .build();
+   * AggregationResults aggregationResults = datastore.runAggregation(aggregationQuery);
+   * for (AggregationResult aggregationResult : aggregationResults) {
+   *   System.out.println(aggregationResult.get("total_count"));
+   *   System.out.println(aggregationResult.get("count_upto_100"));
+   * }
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure
+   * @return {@link AggregationResults}
+   */
+  @BetaApi
+  default AggregationResults runAggregation(AggregationQuery query, ReadOption... options) {
+    throw new UnsupportedOperationException("Not implemented.");
+  }
 }

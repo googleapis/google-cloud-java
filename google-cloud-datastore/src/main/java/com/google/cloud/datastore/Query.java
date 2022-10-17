@@ -23,8 +23,8 @@ import java.io.Serializable;
 import java.util.Map;
 
 /**
- * A Google Cloud Datastore query. For usage examples see {@link GqlQuery} and {@link
- * StructuredQuery}.
+ * A Google Cloud Datastore query. For usage examples see {@link GqlQuery}, {@link StructuredQuery}
+ * and {@link AggregationQuery}.
  *
  * <p>Note that queries require proper indexing. See <a
  * href="https://cloud.google.com/datastore/docs/tools/indexconfig">Cloud Datastore Index
@@ -253,5 +253,43 @@ public abstract class Query<V> implements Serializable {
    */
   public static ProjectionEntityQuery.Builder newProjectionEntityQueryBuilder() {
     return new ProjectionEntityQuery.Builder();
+  }
+
+  /**
+   * Returns a new {@link AggregationQuery} builder.
+   *
+   * <p>Example of creating and running an {@link AggregationQuery}.
+   *
+   * <p>{@link StructuredQuery} example:
+   *
+   * <pre>{@code
+   * EntityQuery selectAllQuery = Query.newEntityQueryBuilder()
+   *    .setKind("Task")
+   *    .build();
+   * AggregationQuery aggregationQuery = Query.newAggregationQueryBuilder()
+   *    .addAggregation(count().as("total_count"))
+   *    .over(selectAllQuery)
+   *    .build();
+   * AggregationResults aggregationResults = datastore.runAggregation(aggregationQuery);
+   * // Use aggregationResults
+   * }</pre>
+   *
+   * <h4>{@link GqlQuery} example:</h4>
+   *
+   * <pre>{@code
+   * GqlQuery<?> selectAllGqlQuery = Query.newGqlQueryBuilder(
+   *         "AGGREGATE COUNT(*) AS total_count OVER(SELECT * FROM Task)"
+   *     )
+   *     .setAllowLiteral(true)
+   *     .build();
+   * AggregationQuery aggregationQuery = Query.newAggregationQueryBuilder()
+   *     .over(selectAllGqlQuery)
+   *     .build();
+   * AggregationResults aggregationResults = datastore.runAggregation(aggregationQuery);
+   * // Use aggregationResults
+   * }</pre>
+   */
+  public static AggregationQuery.Builder newAggregationQueryBuilder() {
+    return new AggregationQuery.Builder();
   }
 }

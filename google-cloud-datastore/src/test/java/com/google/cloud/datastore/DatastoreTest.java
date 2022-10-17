@@ -16,6 +16,11 @@
 
 package com.google.cloud.datastore;
 
+import static com.google.cloud.datastore.ProtoTestData.intValue;
+import static com.google.cloud.datastore.TestUtils.matches;
+import static com.google.cloud.datastore.aggregation.Aggregation.count;
+import static com.google.common.collect.Iterables.getOnlyElement;
+import static com.google.common.truth.Truth.assertThat;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
@@ -37,8 +42,10 @@ import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
+import com.google.datastore.v1.AggregationResultBatch;
 import com.google.datastore.v1.BeginTransactionRequest;
 import com.google.datastore.v1.BeginTransactionResponse;
 import com.google.datastore.v1.CommitRequest;
@@ -54,6 +61,8 @@ import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunAggregationQueryRequest;
+import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 import com.google.datastore.v1.TransactionOptions;
@@ -62,11 +71,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeoutException;
+import java.util.function.Predicate;
 import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -523,6 +535,27 @@ public class DatastoreTest {
       results.next();
     }
     assertEquals(count, 5);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testRunAggregationQuery() {
+    RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
+    EasyMock.expect(rpcMock.runAggregationQuery(matches(aggregationQueryWithAlias("total_count"))))
+        .andReturn(aggregationQueryResponse);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    EntityQuery selectAllQuery = Query.newEntityQueryBuilder().build();
+    AggregationQuery getCountQuery =
+        Query.newAggregationQueryBuilder()
+            .addAggregation(count().as("total_count"))
+            .over(selectAllQuery)
+            .build();
+    AggregationResult result = getOnlyElement(mockDatastore.runAggregation(getCountQuery));
+
+    assertThat(result.get("total_count")).isEqualTo(209L);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 
@@ -1310,5 +1343,29 @@ public class DatastoreTest {
     assertNotNull(cursor2);
     assertEquals(cursor2, cursor1);
     datastore.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
+  }
+
+  private RunAggregationQueryResponse placeholderAggregationQueryResponse() {
+    Map<String, com.google.datastore.v1.Value> result1 =
+        new HashMap<>(ImmutableMap.of("total_count", intValue(209)));
+
+    AggregationResultBatch resultBatch =
+        AggregationResultBatch.newBuilder()
+            .addAggregationResults(
+                com.google.datastore.v1.AggregationResult.newBuilder()
+                    .putAllAggregateProperties(result1)
+                    .build())
+            .build();
+    return RunAggregationQueryResponse.newBuilder().setBatch(resultBatch).build();
+  }
+
+  private Predicate<RunAggregationQueryRequest> aggregationQueryWithAlias(String alias) {
+    return runAggregationQueryRequest ->
+        alias.equals(
+            runAggregationQueryRequest
+                .getAggregationQuery()
+                .getAggregationsList()
+                .get(0)
+                .getAlias());
   }
 }

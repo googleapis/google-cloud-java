@@ -8,7 +8,8 @@
       {"name":"lookup","parameterTypes":["com.google.datastore.v1.LookupRequest"] },
       {"name":"reserveIds","parameterTypes":["com.google.datastore.v1.ReserveIdsRequest"] },
       {"name":"rollback","parameterTypes":["com.google.datastore.v1.RollbackRequest"] },
-      {"name":"runQuery","parameterTypes":["com.google.datastore.v1.RunQueryRequest"] }
+      {"name":"runQuery","parameterTypes":["com.google.datastore.v1.RunQueryRequest"] },
+      {"name":"runAggregationQuery","parameterTypes":["com.google.datastore.v1.RunAggregationQueryRequest"] }
     ]
   },
   {

@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import static com.google.cloud.datastore.ReadOption.transactionId;
+
 import com.google.common.collect.ImmutableList;
 import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.TransactionOptions;
@@ -82,8 +84,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   public Iterator<Entity> get(Key... keys) {
     validateActive();
     Optional<ReadOptions> readOptions =
-        this.readOptionProtoPreparer.prepare(
-            ImmutableList.of(ReadOption.transactionId(transactionId)));
+        this.readOptionProtoPreparer.prepare(ImmutableList.of(transactionId(transactionId)));
     return datastore.get(readOptions, keys);
   }
 
@@ -97,9 +98,13 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   public <T> QueryResults<T> run(Query<T> query) {
     validateActive();
     Optional<ReadOptions> readOptions =
-        this.readOptionProtoPreparer.prepare(
-            ImmutableList.of(ReadOption.transactionId(transactionId)));
+        this.readOptionProtoPreparer.prepare(ImmutableList.of(transactionId(transactionId)));
     return datastore.run(readOptions, query);
+  }
+
+  @Override
+  public AggregationResults runAggregation(AggregationQuery query) {
+    return datastore.runAggregation(query, transactionId(transactionId));
   }
 
   @Override

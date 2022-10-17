@@ -36,6 +36,8 @@ import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunAggregationQueryRequest;
+import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 import java.io.IOException;
@@ -196,6 +198,15 @@ public class HttpDatastoreRpc implements DatastoreRpc {
   public RunQueryResponse runQuery(RunQueryRequest request) {
     try {
       return client.runQuery(request);
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request) {
+    try {
+      return client.runAggregationQuery(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }

@@ -39,6 +39,8 @@ public class TraceUtil {
   static final String SPAN_NAME_RESERVEIDS = "CloudDatastoreOperation.reserveIds";
   static final String SPAN_NAME_ROLLBACK = "CloudDatastoreOperation.rollback";
   static final String SPAN_NAME_RUNQUERY = "CloudDatastoreOperation.runQuery";
+  static final String SPAN_NAME_RUN_AGGREGATION_QUERY =
+      "CloudDatastoreOperation.runAggregationQuery";
   static final EndSpanOptions END_SPAN_OPTIONS =
       EndSpanOptions.builder().setSampleToLocalSpanStore(true).build();
 

@@ -38,6 +38,8 @@ import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunAggregationQueryRequest;
+import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 import com.google.datastore.v1.client.testing.MockCredential;
@@ -334,6 +336,13 @@ public class DatastoreClientTest {
         .setEntityResultType(EntityResult.ResultType.FULL)
         .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED);
     expectRpc("runQuery", request.build(), response.build());
+  }
+
+  @Test
+  public void runAggregationQuery() throws Exception {
+    RunAggregationQueryRequest.Builder request = RunAggregationQueryRequest.newBuilder();
+    RunAggregationQueryResponse.Builder response = RunAggregationQueryResponse.newBuilder();
+    expectRpc("runAggregationQuery", request.build(), response.build());
   }
 
   private void expectRpc(String methodName, Message request, Message response) throws Exception {

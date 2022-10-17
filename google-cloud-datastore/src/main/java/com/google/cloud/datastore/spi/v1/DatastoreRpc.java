@@ -30,6 +30,8 @@ import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunAggregationQueryRequest;
+import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 
@@ -85,4 +87,13 @@ public interface DatastoreRpc extends ServiceRpc {
    * @throws DatastoreException upon failure
    */
   RunQueryResponse runQuery(RunQueryRequest request);
+
+  /**
+   * Sends a request to run an aggregation query.
+   *
+   * @throws DatastoreException upon failure
+   */
+  default RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request) {
+    throw new UnsupportedOperationException("Not implemented.");
+  }
 }

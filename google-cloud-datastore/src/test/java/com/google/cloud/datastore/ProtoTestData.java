@@ -17,6 +17,8 @@ package com.google.cloud.datastore;
 
 import static com.google.datastore.v1.PropertyOrder.Direction.ASCENDING;
 
+import com.google.datastore.v1.AggregationQuery.Aggregation;
+import com.google.datastore.v1.AggregationQuery.Aggregation.Count;
 import com.google.datastore.v1.Filter;
 import com.google.datastore.v1.GqlQueryParameter;
 import com.google.datastore.v1.KindExpression;
@@ -61,6 +63,10 @@ public class ProtoTestData {
 
   public static PropertyReference propertyReference(String value) {
     return PropertyReference.newBuilder().setName(value).build();
+  }
+
+  public static Aggregation countAggregation(String alias) {
+    return Aggregation.newBuilder().setAlias(alias).setCount(Count.newBuilder().build()).build();
   }
 
   public static PropertyOrder propertyOrder(String value) {

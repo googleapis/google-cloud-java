@@ -16,12 +16,14 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.BaseService;
 import com.google.cloud.ExceptionHandler;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.datastore.execution.AggregationQueryExecutor;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -59,13 +61,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private final TraceUtil traceUtil = TraceUtil.getInstance();
 
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
+  private final AggregationQueryExecutor aggregationQueryExecutor;
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.getDatastoreRpcV1();
     retrySettings =
         MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
+
     readOptionProtoPreparer = new ReadOptionProtoPreparer();
+    aggregationQueryExecutor =
+        new AggregationQueryExecutor(
+            new RetryAndTraceDatastoreRpcDecorator(datastoreRpc, traceUtil, retrySettings, options),
+            options);
   }
 
   @Override
@@ -84,6 +92,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   static class ReadWriteTransactionCallable<T> implements Callable<T> {
+
     private final Datastore datastore;
     private final TransactionCallable<T> callable;
     private volatile TransactionOptions options;
@@ -184,8 +193,20 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @SuppressWarnings("unchecked")
   <T> QueryResults<T> run(Optional<ReadOptions> readOptionsPb, Query<T> query) {
-    return new QueryResultsImpl<>(
+    return new QueryResultsImpl<T>(
         this, readOptionsPb, (RecordQuery<T>) query, query.getNamespace());
+  }
+
+  @Override
+  @BetaApi
+  public AggregationResults runAggregation(AggregationQuery query) {
+    return aggregationQueryExecutor.execute(query);
+  }
+
+  @Override
+  @BetaApi
+  public AggregationResults runAggregation(AggregationQuery query, ReadOption... options) {
+    return aggregationQueryExecutor.execute(query, options);
   }
 
   com.google.datastore.v1.RunQueryResponse runQuery(
