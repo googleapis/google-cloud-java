@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-functions-v2beta</artifactId>
-  <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-functions-v2beta:current} -->
+  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-functions-v2beta:current} -->
   <name>grpc-google-cloud-functions-v2beta</name>
   <description>GRPC library for google-cloud-functions</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-functions-parent</artifactId>
-    <version>2.6.0</version><!-- {x-version-update:google-cloud-functions:current} -->
+    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-functions:current} -->
   </parent>
   <dependencies>
     <dependency>
