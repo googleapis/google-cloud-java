@@ -58,11 +58,6 @@ count=0
 missing_artifacts=()
 
 for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
-  # As of 9/21/22: BeyondCorp repos do not have artifacts released to maven central
-  if [[ "${path}" =~ gapic-libraries-bom ]] || [[ "${path}" =~ .*samples.* ]] || [[ "${path}" =~ .*beyondcorp.* ]]; then
-    continue
-  fi
-
   versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt"))
 
   for line in "${versions_array[@]}"; do
