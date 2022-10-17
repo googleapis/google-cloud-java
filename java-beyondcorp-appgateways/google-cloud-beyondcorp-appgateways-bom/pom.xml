@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-appgateways-bom</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-beyondcorp-appgateways</artifactId>
-        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-beyondcorp-appgateways-v1</artifactId>
-        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-appgateways-v1:current} -->
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-appgateways-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-beyondcorp-appgateways-v1</artifactId>
-        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-appgateways-v1:current} -->
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-appgateways-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
