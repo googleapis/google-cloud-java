@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-scheduler-v1</artifactId>
-  <version>2.3.14-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
+  <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
   <name>grpc-google-cloud-scheduler-v1</name>
   <description>GRPC library for grpc-google-cloud-scheduler-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-scheduler-parent</artifactId>
-    <version>2.3.14-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+    <version>2.4.0</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   </parent>
   <dependencies>
     <dependency>
