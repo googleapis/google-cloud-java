@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tpu</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud TPU</name>
   <url>https://github.com/googleapis/java-tpu</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tpu-parent</artifactId>
-    <version>2.5.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-tpu</site.installationModule>
