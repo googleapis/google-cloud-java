@@ -68,4 +68,5 @@
     <module>proto-google-cloud-channel-v1</module>
     <module>google-cloud-channel-bom</module>
   </modules>
-</project>
+
+  </project>
