@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-beyondcorp-appconnections-v1</artifactId>
-  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-appconnections-v1:current} -->
+  <version>0.2.0</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-appconnections-v1:current} -->
   <name>grpc-google-cloud-beyondcorp-appconnections-v1</name>
   <description>GRPC library for google-cloud-beyondcorp-appconnections</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-appconnections-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-bigquery-data-exchange-v1beta1</artifactId>
-  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquery-data-exchange-v1beta1:current} -->
+  <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-bigquery-data-exchange-v1beta1:current} -->
   <name>proto-google-cloud-bigquery-data-exchange-v1beta1</name>
   <description>Proto library for google-cloud-bigquery-data-exchange</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-data-exchange-parent</artifactId>
-    <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+    <version>1.0.0</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   </parent>
   <dependencies>
     <dependency>
