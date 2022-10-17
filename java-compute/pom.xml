@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
   <name>Google Compute Engine Parent</name>
   <url>https://github.com/googleapis/java-compute</url>
   <description>
@@ -30,12 +30,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-compute-v1</artifactId>
-        <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
+        <version>1.14.0</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
