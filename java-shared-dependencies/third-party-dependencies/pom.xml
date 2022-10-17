@@ -63,7 +63,7 @@
     <opencensus.version>0.31.1</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
     <errorprone.version>2.15.0</errorprone.version>
-    <jackson.version>2.13.4</jackson.version>
+    <jackson.version>2.13.4.20221013</jackson.version>
     <codec.version>1.15</codec.version>
     <httpcomponents.httpcore.version>4.4.15</httpcomponents.httpcore.version>
     <httpcomponents.httpclient.version>4.5.13</httpcomponents.httpclient.version>
