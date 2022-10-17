@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-appengine-admin:2.4.0:2.4.0
-grpc-google-cloud-appengine-admin-v1:2.4.0:2.4.0
-proto-google-cloud-appengine-admin-v1:2.4.0:2.4.0
+google-cloud-appengine-admin:2.3.4:2.3.5-SNAPSHOT
+grpc-google-cloud-appengine-admin-v1:2.3.4:2.3.5-SNAPSHOT
+proto-google-cloud-appengine-admin-v1:2.3.4:2.3.5-SNAPSHOT
