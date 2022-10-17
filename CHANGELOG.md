@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.12.0](https://github.com/googleapis/java-datastore/compare/v2.11.5...v2.12.0) (2022-10-17)
+
+
+### Features
+
+* Count API  ([#823](https://github.com/googleapis/java-datastore/issues/823)) ([8c22e61](https://github.com/googleapis/java-datastore/commit/8c22e61f8a0307a59301259f83a16c8324fa1b6f))
+
+
+### Dependencies
+
+* Update dependency com.google.errorprone:error_prone_core to v2.16 ([#872](https://github.com/googleapis/java-datastore/issues/872)) ([b2a72ca](https://github.com/googleapis/java-datastore/commit/b2a72ca407b1fa168c18b136e73932c8716fbdf6))
+* Update dependency org.easymock:easymock to v5 ([#877](https://github.com/googleapis/java-datastore/issues/877)) ([ed816e2](https://github.com/googleapis/java-datastore/commit/ed816e20b605882a9cf2c637145597fdcd95f324))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.15 ([#878](https://github.com/googleapis/java-datastore/issues/878)) ([831a92b](https://github.com/googleapis/java-datastore/commit/831a92bdc1d3f81fb44ae8d17cad236a50234ea5))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.15 ([#879](https://github.com/googleapis/java-datastore/issues/879)) ([76a187a](https://github.com/googleapis/java-datastore/commit/76a187a48cdc8d40fa233123894a36e11c590ca9))
+
 ## [2.11.5](https://github.com/googleapis/java-datastore/compare/v2.11.4...v2.11.5) (2022-10-03)
 
 
