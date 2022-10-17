@@ -21,18 +21,20 @@ message ComplexRoot {
   optional int64 test_time_str = 15;
   repeated bytes test_numeric_repeated = 16;
   optional bytes test_numeric_str = 17;
-  optional bytes test_numeric_int = 18;
-  optional bytes test_numeric_long = 19;
-  optional bytes test_numeric_float = 20;
-  optional bytes test_numeric_double = 21;
-  optional bytes test_bignumeric = 22;
-  repeated bytes test_bignumeric_str = 23;
-  optional bytes test_bignumeric_int = 24;
-  optional bytes test_bignumeric_long = 25;
-  optional bytes test_bignumeric_float = 26;
-  optional bytes test_bignumeric_double = 27;
-  optional string test_interval = 28;
-  repeated string test_json = 29;
+  optional bytes test_numeric_short = 18;
+  optional bytes test_numeric_int = 19;
+  optional bytes test_numeric_long = 20;
+  optional bytes test_numeric_float = 21;
+  optional bytes test_numeric_double = 22;
+  optional bytes test_bignumeric = 23;
+  repeated bytes test_bignumeric_str = 24;
+  optional bytes test_bignumeric_short = 25;
+  optional bytes test_bignumeric_int = 26;
+  optional bytes test_bignumeric_long = 27;
+  optional bytes test_bignumeric_float = 28;
+  optional bytes test_bignumeric_double = 29;
+  optional string test_interval = 30;
+  repeated string test_json = 31;
 }
 
 message CasingComplex {
