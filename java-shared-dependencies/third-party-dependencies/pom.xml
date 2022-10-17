@@ -57,7 +57,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <site.installationModule>${project.artifactId}</site.installationModule>
 
-    <threeten.version>1.6.2</threeten.version>
+    <threeten.version>1.6.3</threeten.version>
     <javax.annotations.version>1.3.2</javax.annotations.version>
     <animal-sniffer.version>1.22</animal-sniffer.version>
     <opencensus.version>0.31.1</opencensus.version>
