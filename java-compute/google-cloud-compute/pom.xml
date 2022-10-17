@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>jar</packaging>
   <name>Google Compute Engine</name>
   <url>https://github.com/googleapis/java-compute</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-compute-parent</artifactId>
-    <version>1.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+    <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute</site.installationModule>

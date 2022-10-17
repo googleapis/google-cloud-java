@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-iam-admin-v1</artifactId>
-  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-admin-v1:current} -->
+  <version>2.0.0</version><!-- {x-version-update:grpc-google-iam-admin-v1:current} -->
   <name>grpc-google-iam-admin-v1</name>
   <description>GRPC library for google-iam-admin</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-iam-admin-parent</artifactId>
-    <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
+    <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
   </parent>
   <dependencies>
     <dependency>
