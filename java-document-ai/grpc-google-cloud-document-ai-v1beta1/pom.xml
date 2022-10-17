@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-document-ai-v1beta1</artifactId>
-  <version>0.19.6-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-document-ai-v1beta1:current} -->
+  <version>0.20.0</version> <!-- {x-version-update:grpc-google-cloud-document-ai-v1beta1:current} -->
   <name>grpc-google-cloud-document-ai-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-document-ai-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-document-ai-parent</artifactId>
-    <version>2.7.6-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+    <version>2.8.0</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
   </parent>
   <dependencies>
     <dependency>
