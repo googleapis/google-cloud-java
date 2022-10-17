@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-binary-authorization-bom</artifactId>
-  <version>1.3.0</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,27 +28,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-binary-authorization</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-binary-authorization-v1beta1</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1beta1:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-binary-authorization-v1</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1:current} -->
+        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-binary-authorization-v1beta1</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1beta1:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-binary-authorization-v1</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1:current} -->
+        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
