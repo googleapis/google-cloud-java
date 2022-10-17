@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
   <packaging>jar</packaging>
-  <version>1.6.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+  <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   <name>Google Cloud Resource Manager</name>
   <url>https://github.com/googleapis/java-resourcemanager</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-resourcemanager-parent</artifactId>
-    <version>1.6.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+    <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   </parent>
 
   <properties>
