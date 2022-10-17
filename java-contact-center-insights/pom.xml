@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contact-center-insights-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.3.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+  <version>2.4.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
   <name>Google CCAI Insights Parent</name>
   <url>https://github.com/googleapis/java-contact-center-insights</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-contact-center-insights</artifactId>
-        <version>2.3.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-contact-center-insights-v1</artifactId>
-        <version>2.3.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-contact-center-insights-v1:current} -->
+        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-contact-center-insights-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-contact-center-insights-v1</artifactId>
-        <version>2.3.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-contact-center-insights-v1:current} -->
+        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-contact-center-insights-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

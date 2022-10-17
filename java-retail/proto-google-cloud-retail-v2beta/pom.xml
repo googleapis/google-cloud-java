@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-retail-v2beta</artifactId>
-  <version>2.5.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2beta:current} -->
+  <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-retail-v2beta:current} -->
   <name>proto-google-cloud-retail-v2beta</name>
   <description>Proto library for google-cloud-retail</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-retail-parent</artifactId>
-    <version>2.5.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-retail:current} -->
+    <version>2.6.0</version><!-- {x-version-update:google-cloud-retail:current} -->
   </parent>
   <dependencies>
     <dependency>

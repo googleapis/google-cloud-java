@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-binary-authorization-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+  <version>1.3.0</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
   <name>Google Binary Authorization Parent</name>
   <url>https://github.com/googleapis/java-binary-authorization</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -30,33 +30,33 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-binary-authorization</artifactId>
-        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+        <version>1.3.0</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-binary-authorization-v1</artifactId>
-        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1:current} -->
+        <version>1.3.0</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-binary-authorization-v1</artifactId>
-        <version>1.2.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1:current} -->
+        <version>1.3.0</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-binary-authorization-v1beta1</artifactId>
-        <version>0.7.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1beta1:current} -->
+        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-binary-authorization-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-binary-authorization-v1beta1</artifactId>
-        <version>0.7.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1beta1:current} -->
+        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1beta1:current} -->
       </dependency>
 
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>2.4.8-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
+        <version>2.5.0</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataflow-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+  <version>0.8.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   <name>Google Dataflow Parent</name>
   <url>https://github.com/googleapis/java-dataflow</url>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataflow</artifactId>
-        <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+        <version>0.8.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataflow-v1beta3</artifactId>
-        <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataflow-v1beta3:current} -->
+        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-dataflow-v1beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataflow-v1beta3</artifactId>
-        <version>0.7.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataflow-v1beta3:current} -->
+        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-dataflow-v1beta3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

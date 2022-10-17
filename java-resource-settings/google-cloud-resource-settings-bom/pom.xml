@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resource-settings-bom</artifactId>
-  <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
+  <version>1.4.0</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resource-settings</artifactId>
-        <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-resource-settings-v1</artifactId>
-        <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-resource-settings-v1:current} -->
+        <version>1.4.0</version><!-- {x-version-update:grpc-google-cloud-resource-settings-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-resource-settings-v1</artifactId>
-        <version>1.3.6-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resource-settings-v1:current} -->
+        <version>1.4.0</version><!-- {x-version-update:proto-google-cloud-resource-settings-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
