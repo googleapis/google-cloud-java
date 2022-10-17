@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gsuite-addons</artifactId>
-  <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+  <version>2.4.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   <packaging>jar</packaging>
   <name>Google Google Workspace Add-ons API</name>
   <url>https://github.com/googleapis/java-gsuite-addons</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gsuite-addons-parent</artifactId>
-    <version>2.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+    <version>2.4.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gsuite-addons</site.installationModule>
