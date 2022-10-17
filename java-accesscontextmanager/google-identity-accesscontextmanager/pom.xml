@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-identity-accesscontextmanager</artifactId>
-  <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+  <version>1.5.0</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   <packaging>jar</packaging>
   <name>Google Identity Access Context Manager</name>
   <url>https://github.com/googleapis/java-accesscontextmanager</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-identity-accesscontextmanager-parent</artifactId>
-    <version>1.4.6-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+    <version>1.5.0</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-identity-accesscontextmanager</site.installationModule>

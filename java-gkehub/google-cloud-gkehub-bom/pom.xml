@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gkehub-bom</artifactId>
-  <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+  <version>1.4.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -28,57 +28,57 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gkehub</artifactId>
-        <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gkehub-v1beta1</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1beta1:current} -->
+        <version>0.10.0</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gkehub-v1</artifactId>
-        <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1:current} -->
+        <version>1.4.0</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gkehub-v1alpha</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1alpha:current} -->
+        <version>0.10.0</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gkehub-v1beta</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1beta:current} -->
+        <version>0.10.0</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gkehub-v1alpha2</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1alpha2:current} -->
+        <version>0.10.0</version><!-- {x-version-update:grpc-google-cloud-gkehub-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gkehub-v1beta1</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkehub-v1beta1:current} -->
+        <version>0.10.0</version><!-- {x-version-update:proto-google-cloud-gkehub-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gkehub-v1</artifactId>
-        <version>1.3.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkehub-v1:current} -->
+        <version>1.4.0</version><!-- {x-version-update:proto-google-cloud-gkehub-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gkehub-v1alpha</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkehub-v1alpha:current} -->
+        <version>0.10.0</version><!-- {x-version-update:proto-google-cloud-gkehub-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gkehub-v1alpha2</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkehub-v1alpha2:current} -->
+        <version>0.10.0</version><!-- {x-version-update:proto-google-cloud-gkehub-v1alpha2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gkehub-v1beta</artifactId>
-        <version>0.9.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkehub-v1beta:current} -->
+        <version>0.10.0</version><!-- {x-version-update:proto-google-cloud-gkehub-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

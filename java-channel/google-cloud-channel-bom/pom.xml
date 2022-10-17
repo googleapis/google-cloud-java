@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-channel-bom</artifactId>
-  <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
+  <version>3.8.0</version><!-- {x-version-update:google-cloud-channel:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -28,17 +28,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-channel</artifactId>
-        <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
+        <version>3.8.0</version><!-- {x-version-update:google-cloud-channel:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-channel-v1</artifactId>
-        <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-channel-v1:current} -->
+        <version>3.8.0</version><!-- {x-version-update:grpc-google-cloud-channel-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-channel-v1</artifactId>
-        <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-channel-v1:current} -->
+        <version>3.8.0</version><!-- {x-version-update:proto-google-cloud-channel-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
