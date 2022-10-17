@@ -1,564 +1,424 @@
 {
   "release-type": "java-yoshi",
-  "skip-github-release": true,
   "separate-pull-requests": false,
   "include-component-in-tag": true,
   "packages": {
     "gapic-libraries-bom": {
-      "component": "gapic-libraries-bom",
-      "skip-github-release": true
+      "component": "gapic-libraries-bom"
     },
     "google-cloud-jar-parent": {
-      "component": "google-cloud-jar-parent",
-      "skip-github-release": true
+      "component": "google-cloud-jar-parent"
     },
     "google-cloud-pom-parent": {
-      "component": "google-cloud-pom-parent",
-      "skip-github-release": true
+      "component": "google-cloud-pom-parent"
     },
     "java-accessapproval": {
-      "component": "google-cloud-accessapproval",
-      "skip-github-release": true
+      "component": "google-cloud-accessapproval"
     },
     "java-accesscontextmanager": {
-      "component": "google-identity-accesscontextmanager",
-      "skip-github-release": true
+      "component": "google-identity-accesscontextmanager"
     },
     "java-aiplatform": {
-      "component": "google-cloud-aiplatform",
-      "skip-github-release": true
+      "component": "google-cloud-aiplatform"
     },
     "java-analytics-admin": {
-      "component": "google-analytics-admin",
-      "skip-github-release": true
+      "component": "google-analytics-admin"
     },
     "java-analytics-data": {
-      "component": "google-analytics-data",
-      "skip-github-release": true
+      "component": "google-analytics-data"
     },
     "java-analyticshub": {
-      "component": "google-cloud-analyticshub",
-      "skip-github-release": true
+      "component": "google-cloud-analyticshub"
     },
     "java-api-gateway": {
-      "component": "google-cloud-api-gateway",
-      "skip-github-release": true
+      "component": "google-cloud-api-gateway"
     },
     "java-apigee-connect": {
-      "component": "google-cloud-apigee-connect",
-      "skip-github-release": true
+      "component": "google-cloud-apigee-connect"
     },
     "java-apigee-registry": {
-      "component": "google-cloud-apigee-registry",
-      "skip-github-release": true
+      "component": "google-cloud-apigee-registry"
     },
     "java-apikeys": {
-      "component": "google-cloud-apikeys",
-      "skip-github-release": true
+      "component": "google-cloud-apikeys"
     },
     "java-appengine-admin": {
-      "component": "google-cloud-appengine-admin",
-      "skip-github-release": true
+      "component": "google-cloud-appengine-admin"
     },
     "java-area120-tables": {
-      "component": "google-area120-tables",
-      "skip-github-release": true
+      "component": "google-area120-tables"
     },
     "java-artifact-registry": {
-      "component": "google-cloud-artifact-registry",
-      "skip-github-release": true
+      "component": "google-cloud-artifact-registry"
     },
     "java-asset": {
-      "component": "google-cloud-asset",
-      "skip-github-release": true
+      "component": "google-cloud-asset"
     },
     "java-assured-workloads": {
-      "component": "google-cloud-assured-workloads",
-      "skip-github-release": true
+      "component": "google-cloud-assured-workloads"
     },
     "java-automl": {
-      "component": "google-cloud-automl",
-      "skip-github-release": true
+      "component": "google-cloud-automl"
     },
     "java-bare-metal-solution": {
-      "component": "google-cloud-bare-metal-solution",
-      "skip-github-release": true
+      "component": "google-cloud-bare-metal-solution"
     },
     "java-batch": {
-      "component": "google-cloud-batch",
-      "skip-github-release": true
+      "component": "google-cloud-batch"
     },
     "java-beyondcorp-appconnections": {
-      "component": "google-cloud-beyondcorp-appconnections",
-      "skip-github-release": true
+      "component": "google-cloud-beyondcorp-appconnections"
     },
     "java-beyondcorp-appconnectors": {
-      "component": "google-cloud-beyondcorp-appconnectors",
-      "skip-github-release": true
+      "component": "google-cloud-beyondcorp-appconnectors"
     },
     "java-beyondcorp-appgateways": {
-      "component": "google-cloud-beyondcorp-appgateways",
-      "skip-github-release": true
+      "component": "google-cloud-beyondcorp-appgateways"
     },
     "java-beyondcorp-clientconnectorservices": {
-      "component": "google-cloud-beyondcorp-clientconnectorservices",
-      "skip-github-release": true
+      "component": "google-cloud-beyondcorp-clientconnectorservices"
     },
     "java-beyondcorp-clientgateways": {
-      "component": "google-cloud-beyondcorp-clientgateways",
-      "skip-github-release": true
+      "component": "google-cloud-beyondcorp-clientgateways"
     },
     "java-bigqueryconnection": {
-      "component": "google-cloud-bigqueryconnection",
-      "skip-github-release": true
+      "component": "google-cloud-bigqueryconnection"
     },
     "java-bigquery-data-exchange": {
-      "component": "google-cloud-bigquery-data-exchange",
-      "skip-github-release": true
+      "component": "google-cloud-bigquery-data-exchange"
     },
     "java-bigquerydatapolicy": {
-      "component": "google-cloud-bigquerydatapolicy",
-      "skip-github-release": true
+      "component": "google-cloud-bigquerydatapolicy"
     },
     "java-bigquerydatatransfer": {
-      "component": "google-cloud-bigquerydatatransfer",
-      "skip-github-release": true
+      "component": "google-cloud-bigquerydatatransfer"
     },
     "java-bigquerymigration": {
-      "component": "google-cloud-bigquerymigration",
-      "skip-github-release": true
+      "component": "google-cloud-bigquerymigration"
     },
     "java-bigqueryreservation": {
-      "component": "google-cloud-bigqueryreservation",
-      "skip-github-release": true
+      "component": "google-cloud-bigqueryreservation"
     },
     "java-billingbudgets": {
-      "component": "google-cloud-billingbudgets",
-      "skip-github-release": true
+      "component": "google-cloud-billingbudgets"
     },
     "java-billing": {
-      "component": "google-cloud-billing",
-      "skip-github-release": true
+      "component": "google-cloud-billing"
     },
     "java-binary-authorization": {
-      "component": "google-cloud-binary-authorization",
-      "skip-github-release": true
+      "component": "google-cloud-binary-authorization"
     },
     "java-certificate-manager": {
-      "component": "google-cloud-certificate-manager",
-      "skip-github-release": true
+      "component": "google-cloud-certificate-manager"
     },
     "java-channel": {
-      "component": "google-cloud-channel",
-      "skip-github-release": true
+      "component": "google-cloud-channel"
     },
     "java-cloudbuild": {
-      "component": "google-cloud-build",
-      "skip-github-release": true
+      "component": "google-cloud-build"
     },
     "java-cloudcommerceconsumerprocurement": {
-      "component": "google-cloud-cloudcommerceconsumerprocurement",
-      "skip-github-release": true
+      "component": "google-cloud-cloudcommerceconsumerprocurement"
     },
     "java-compute": {
-      "component": "google-cloud-compute",
-      "skip-github-release": true
+      "component": "google-cloud-compute"
     },
     "java-contact-center-insights": {
-      "component": "google-cloud-contact-center-insights",
-      "skip-github-release": true
+      "component": "google-cloud-contact-center-insights"
     },
     "java-containeranalysis": {
-      "component": "google-cloud-containeranalysis",
-      "skip-github-release": true
+      "component": "google-cloud-containeranalysis"
     },
     "java-container": {
-      "component": "google-cloud-container",
-      "skip-github-release": true
+      "component": "google-cloud-container"
     },
     "java-datacatalog": {
-      "component": "google-cloud-datacatalog",
-      "skip-github-release": true
+      "component": "google-cloud-datacatalog"
     },
     "java-dataflow": {
-      "component": "google-cloud-dataflow",
-      "skip-github-release": true
+      "component": "google-cloud-dataflow"
     },
     "java-dataform": {
-      "component": "google-cloud-dataform",
-      "skip-github-release": true
+      "component": "google-cloud-dataform"
     },
     "java-data-fusion": {
-      "component": "google-cloud-data-fusion",
-      "skip-github-release": true
+      "component": "google-cloud-data-fusion"
     },
     "java-datalabeling": {
-      "component": "google-cloud-datalabeling",
-      "skip-github-release": true
+      "component": "google-cloud-datalabeling"
     },
     "java-dataplex": {
-      "component": "google-cloud-dataplex",
-      "skip-github-release": true
+      "component": "google-cloud-dataplex"
     },
     "java-dataproc-metastore": {
-      "component": "google-cloud-dataproc-metastore",
-      "skip-github-release": true
+      "component": "google-cloud-dataproc-metastore"
     },
     "java-dataproc": {
-      "component": "google-cloud-dataproc",
-      "skip-github-release": true
+      "component": "google-cloud-dataproc"
     },
     "java-datastream": {
-      "component": "google-cloud-datastream",
-      "skip-github-release": true
+      "component": "google-cloud-datastream"
     },
     "java-debugger-client": {
-      "component": "google-cloud-debugger-client",
-      "skip-github-release": true
+      "component": "google-cloud-debugger-client"
     },
     "java-deploy": {
-      "component": "google-cloud-deploy",
-      "skip-github-release": true
+      "component": "google-cloud-deploy"
     },
     "java-dialogflow-cx": {
-      "component": "google-cloud-dialogflow-cx",
-      "skip-github-release": true
+      "component": "google-cloud-dialogflow-cx"
     },
     "java-dialogflow": {
-      "component": "google-cloud-dialogflow",
-      "skip-github-release": true
+      "component": "google-cloud-dialogflow"
     },
     "java-distributedcloudedge": {
-      "component": "google-cloud-distributedcloudedge",
-      "skip-github-release": true
+      "component": "google-cloud-distributedcloudedge"
     },
     "java-dlp": {
-      "component": "google-cloud-dlp",
-      "skip-github-release": true
+      "component": "google-cloud-dlp"
     },
     "java-dms": {
-      "component": "google-cloud-dms",
-      "skip-github-release": true
+      "component": "google-cloud-dms"
     },
     "java-dns": {
-      "component": "google-cloud-dns",
-      "skip-github-release": true
+      "component": "google-cloud-dns"
     },
     "java-document-ai": {
-      "component": "google-cloud-document-ai",
-      "skip-github-release": true
+      "component": "google-cloud-document-ai"
     },
     "java-domains": {
-      "component": "google-cloud-domains",
-      "skip-github-release": true
+      "component": "google-cloud-domains"
     },
     "java-errorreporting": {
-      "component": "google-cloud-errorreporting",
-      "skip-github-release": true
+      "component": "google-cloud-errorreporting"
     },
     "java-essential-contacts": {
-      "component": "google-cloud-essential-contacts",
-      "skip-github-release": true
+      "component": "google-cloud-essential-contacts"
     },
     "java-eventarc": {
-      "component": "google-cloud-eventarc",
-      "skip-github-release": true
+      "component": "google-cloud-eventarc"
     },
     "java-eventarc-publishing": {
-      "component": "google-cloud-eventarc-publishing",
-      "skip-github-release": true
+      "component": "google-cloud-eventarc-publishing"
     },
     "java-filestore": {
-      "component": "google-cloud-filestore",
-      "skip-github-release": true
+      "component": "google-cloud-filestore"
     },
     "java-functions": {
-      "component": "google-cloud-functions",
-      "skip-github-release": true
+      "component": "google-cloud-functions"
     },
     "java-game-servers": {
-      "component": "google-cloud-game-servers",
-      "skip-github-release": true
+      "component": "google-cloud-game-servers"
     },
     "java-gke-backup": {
-      "component": "google-cloud-gke-backup",
-      "skip-github-release": true
+      "component": "google-cloud-gke-backup"
     },
     "java-gke-connect-gateway": {
-      "component": "google-cloud-gke-connect-gateway",
-      "skip-github-release": true
+      "component": "google-cloud-gke-connect-gateway"
     },
     "java-gkehub": {
-      "component": "google-cloud-gkehub",
-      "skip-github-release": true
+      "component": "google-cloud-gkehub"
     },
     "java-gke-multi-cloud": {
-      "component": "google-cloud-gke-multi-cloud",
-      "skip-github-release": true
+      "component": "google-cloud-gke-multi-cloud"
     },
     "java-grafeas": {
-      "component": "grafeas",
-      "skip-github-release": true
+      "component": "grafeas"
     },
     "java-gsuite-addons": {
-      "component": "google-cloud-gsuite-addons",
-      "skip-github-release": true
+      "component": "google-cloud-gsuite-addons"
     },
     "java-iam-admin": {
-      "component": "google-iam-admin",
-      "skip-github-release": true
+      "component": "google-iam-admin"
     },
     "java-iamcredentials": {
-      "component": "google-cloud-iamcredentials",
-      "skip-github-release": true
+      "component": "google-cloud-iamcredentials"
     },
     "java-ids": {
-      "component": "google-cloud-ids",
-      "skip-github-release": true
+      "component": "google-cloud-ids"
     },
     "java-iot": {
-      "component": "google-cloud-iot",
-      "skip-github-release": true
+      "component": "google-cloud-iot"
     },
     "java-kms": {
-      "component": "google-cloud-kms",
-      "skip-github-release": true
+      "component": "google-cloud-kms"
     },
     "java-language": {
-      "component": "google-cloud-language",
-      "skip-github-release": true
+      "component": "google-cloud-language"
     },
     "java-life-sciences": {
-      "component": "google-cloud-life-sciences",
-      "skip-github-release": true
+      "component": "google-cloud-life-sciences"
     },
     "java-managed-identities": {
-      "component": "google-cloud-managed-identities",
-      "skip-github-release": true
+      "component": "google-cloud-managed-identities"
     },
     "java-mediatranslation": {
-      "component": "google-cloud-mediatranslation",
-      "skip-github-release": true
+      "component": "google-cloud-mediatranslation"
     },
     "java-memcache": {
-      "component": "google-cloud-memcache",
-      "skip-github-release": true
+      "component": "google-cloud-memcache"
     },
     "java-monitoring-dashboards": {
-      "component": "google-cloud-monitoring-dashboard",
-      "skip-github-release": true
+      "component": "google-cloud-monitoring-dashboard"
     },
     "java-monitoring": {
-      "component": "google-cloud-monitoring",
-      "skip-github-release": true
+      "component": "google-cloud-monitoring"
     },
     "java-networkconnectivity": {
-      "component": "google-cloud-networkconnectivity",
-      "skip-github-release": true
+      "component": "google-cloud-networkconnectivity"
     },
     "java-network-management": {
-      "component": "google-cloud-network-management",
-      "skip-github-release": true
+      "component": "google-cloud-network-management"
     },
     "java-network-security": {
-      "component": "google-cloud-network-security",
-      "skip-github-release": true
+      "component": "google-cloud-network-security"
     },
     "java-notebooks": {
-      "component": "google-cloud-notebooks",
-      "skip-github-release": true
+      "component": "google-cloud-notebooks"
     },
     "java-notification": {
-      "component": "google-cloud-notification",
-      "skip-github-release": true
+      "component": "google-cloud-notification"
     },
     "java-optimization": {
-      "component": "google-cloud-optimization",
-      "skip-github-release": true
+      "component": "google-cloud-optimization"
     },
     "java-orchestration-airflow": {
-      "component": "google-cloud-orchestration-airflow",
-      "skip-github-release": true
+      "component": "google-cloud-orchestration-airflow"
     },
     "java-orgpolicy": {
-      "component": "google-cloud-orgpolicy",
-      "skip-github-release": true
+      "component": "google-cloud-orgpolicy"
     },
     "java-os-config": {
-      "component": "google-cloud-os-config",
-      "skip-github-release": true
+      "component": "google-cloud-os-config"
     },
     "java-os-login": {
-      "component": "google-cloud-os-login",
-      "skip-github-release": true
+      "component": "google-cloud-os-login"
     },
     "java-phishingprotection": {
-      "component": "google-cloud-phishingprotection",
-      "skip-github-release": true
+      "component": "google-cloud-phishingprotection"
     },
     "java-policy-troubleshooter": {
-      "component": "google-cloud-policy-troubleshooter",
-      "skip-github-release": true
+      "component": "google-cloud-policy-troubleshooter"
     },
     "java-private-catalog": {
-      "component": "google-cloud-private-catalog",
-      "skip-github-release": true
+      "component": "google-cloud-private-catalog"
     },
     "java-profiler": {
-      "component": "google-cloud-profiler",
-      "skip-github-release": true
+      "component": "google-cloud-profiler"
     },
     "java-publicca": {
-      "component": "google-cloud-publicca",
-      "skip-github-release": true
+      "component": "google-cloud-publicca"
     },
     "java-recaptchaenterprise": {
-      "component": "google-cloud-recaptchaenterprise",
-      "skip-github-release": true
+      "component": "google-cloud-recaptchaenterprise"
     },
     "java-recommendations-ai": {
-      "component": "google-cloud-recommendations-ai",
-      "skip-github-release": true
+      "component": "google-cloud-recommendations-ai"
     },
     "java-recommender": {
-      "component": "google-cloud-recommender",
-      "skip-github-release": true
+      "component": "google-cloud-recommender"
     },
     "java-redis": {
-      "component": "google-cloud-redis",
-      "skip-github-release": true
+      "component": "google-cloud-redis"
     },
     "java-resourcemanager": {
-      "component": "google-cloud-resourcemanager",
-      "skip-github-release": true
+      "component": "google-cloud-resourcemanager"
     },
     "java-resource-settings": {
-      "component": "google-cloud-resource-settings",
-      "skip-github-release": true
+      "component": "google-cloud-resource-settings"
     },
     "java-retail": {
-      "component": "google-cloud-retail",
-      "skip-github-release": true
+      "component": "google-cloud-retail"
     },
     "java-run": {
-      "component": "google-cloud-run",
-      "skip-github-release": true
+      "component": "google-cloud-run"
     },
     "java-scheduler": {
-      "component": "google-cloud-scheduler",
-      "skip-github-release": true
+      "component": "google-cloud-scheduler"
     },
     "java-secretmanager": {
-      "component": "google-cloud-secretmanager",
-      "skip-github-release": true
+      "component": "google-cloud-secretmanager"
     },
     "java-securitycenter": {
-      "component": "google-cloud-securitycenter",
-      "skip-github-release": true
+      "component": "google-cloud-securitycenter"
     },
     "java-securitycenter-settings": {
-      "component": "google-cloud-securitycenter-settings",
-      "skip-github-release": true
+      "component": "google-cloud-securitycenter-settings"
     },
     "java-security-private-ca": {
-      "component": "google-cloud-security-private-ca",
-      "skip-github-release": true
+      "component": "google-cloud-security-private-ca"
     },
     "java-service-control": {
-      "component": "google-cloud-service-control",
-      "skip-github-release": true
+      "component": "google-cloud-service-control"
     },
     "java-servicedirectory": {
-      "component": "google-cloud-servicedirectory",
-      "skip-github-release": true
+      "component": "google-cloud-servicedirectory"
     },
     "java-service-management": {
-      "component": "google-cloud-service-management",
-      "skip-github-release": true
+      "component": "google-cloud-service-management"
     },
     "java-service-usage": {
-      "component": "google-cloud-service-usage",
-      "skip-github-release": true
+      "component": "google-cloud-service-usage"
     },
     "java-shell": {
-      "component": "google-cloud-shell",
-      "skip-github-release": true
+      "component": "google-cloud-shell"
     },
     "java-speech": {
-      "component": "google-cloud-speech",
-      "skip-github-release": true
+      "component": "google-cloud-speech"
     },
     "java-storage-transfer": {
-      "component": "google-cloud-storage-transfer",
-      "skip-github-release": true
+      "component": "google-cloud-storage-transfer"
     },
     "java-talent": {
-      "component": "google-cloud-talent",
-      "skip-github-release": true
+      "component": "google-cloud-talent"
     },
     "java-tasks": {
-      "component": "google-cloud-tasks",
-      "skip-github-release": true
+      "component": "google-cloud-tasks"
     },
     "java-texttospeech": {
-      "component": "google-cloud-texttospeech",
-      "skip-github-release": true
+      "component": "google-cloud-texttospeech"
     },
     "java-tpu": {
-      "component": "google-cloud-tpu",
-      "skip-github-release": true
+      "component": "google-cloud-tpu"
     },
     "java-trace": {
-      "component": "google-cloud-trace",
-      "skip-github-release": true
+      "component": "google-cloud-trace"
     },
     "java-translate": {
-      "component": "google-cloud-translate",
-      "skip-github-release": true
+      "component": "google-cloud-translate"
     },
     "java-video-intelligence": {
-      "component": "google-cloud-video-intelligence",
-      "skip-github-release": true
+      "component": "google-cloud-video-intelligence"
     },
     "java-video-live-stream": {
-      "component": "google-cloud-live-stream",
-      "skip-github-release": true
+      "component": "google-cloud-live-stream"
     },
     "java-video-stitcher": {
-      "component": "google-cloud-video-stitcher",
-      "skip-github-release": true
+      "component": "google-cloud-video-stitcher"
     },
     "java-video-transcoder": {
-      "component": "google-cloud-video-transcoder",
-      "skip-github-release": true
+      "component": "google-cloud-video-transcoder"
     },
     "java-vision": {
-      "component": "google-cloud-vision",
-      "skip-github-release": true
+      "component": "google-cloud-vision"
     },
     "java-vmmigration": {
-      "component": "google-cloud-vmmigration",
-      "skip-github-release": true
+      "component": "google-cloud-vmmigration"
     },
     "java-vpcaccess": {
-      "component": "google-cloud-vpcaccess",
-      "skip-github-release": true
+      "component": "google-cloud-vpcaccess"
     },
     "java-webrisk": {
-      "component": "google-cloud-webrisk",
-      "skip-github-release": true
+      "component": "google-cloud-webrisk"
     },
     "java-websecurityscanner": {
-      "component": "google-cloud-websecurityscanner",
-      "skip-github-release": true
+      "component": "google-cloud-websecurityscanner"
     },
     "java-workflow-executions": {
-      "component": "google-cloud-workflow-executions",
-      "skip-github-release": true
+      "component": "google-cloud-workflow-executions"
     },
     "java-workflows": {
-      "component": "google-cloud-workflows",
-      "skip-github-release": true
+      "component": "google-cloud-workflows"
     }
   },
   "plugins": [

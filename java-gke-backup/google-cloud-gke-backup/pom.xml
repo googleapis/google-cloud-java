@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-backup</artifactId>
-  <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
   <packaging>jar</packaging>
   <name>Google Backup for GKE</name>
   <url>https://github.com/googleapis/java-gke-backup</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gke-backup-parent</artifactId>
-    <version>0.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gke-backup</site.installationModule>

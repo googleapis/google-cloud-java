@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-dlp-v2</artifactId>
-  <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
+  <version>3.8.0</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
   <name>proto-google-cloud-dlp-v2</name>
   <description>PROTO library for proto-google-cloud-dlp-v2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dlp-parent</artifactId>
-    <version>3.7.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
+    <version>3.8.0</version><!-- {x-version-update:google-cloud-dlp:current} -->
   </parent>
   <dependencies>
     <dependency>
