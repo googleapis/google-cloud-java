@@ -1,6 +1,6 @@
 {
   "release-type": "java-yoshi",
-  "skip-github-release": true,
+  "skip-github-release": false,
   "separate-pull-requests": false,
   "include-component-in-tag": true,
   "packages": {
