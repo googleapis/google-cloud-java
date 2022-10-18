@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.120.22](https://github.com/googleapis/java-pubsub/compare/v1.120.21...v1.120.22) (2022-10-18)
+
+
+### Dependencies
+
+* Update dependency org.easymock:easymock to v5 ([#1350](https://github.com/googleapis/java-pubsub/issues/1350)) ([1e88543](https://github.com/googleapis/java-pubsub/commit/1e88543393ac16a79288c80d3561f7e5c50f11af))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.15 ([#1351](https://github.com/googleapis/java-pubsub/issues/1351)) ([2af7579](https://github.com/googleapis/java-pubsub/commit/2af757971fd54855936ad95e0cd3f6ab13d50edc))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.15 ([#1352](https://github.com/googleapis/java-pubsub/issues/1352)) ([379e39b](https://github.com/googleapis/java-pubsub/commit/379e39bdb6ed3cd50c5f034fb5ecd40905b43bda))
+
 ## [1.120.21](https://github.com/googleapis/java-pubsub/compare/v1.120.20...v1.120.21) (2022-10-14)
 
 
