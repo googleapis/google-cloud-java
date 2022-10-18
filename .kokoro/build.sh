@@ -49,7 +49,9 @@ case ${JOB_TYPE} in
       -Danimal.sniffer.skip=true \
       -T 1C \
       test
-      ;;
+    RETURN_CODE=$?
+    echo "Finished running unit tests"
+    ;;
   integration)
     generate_modified_modules_list
     if [[ ${#modified_module_list[@]} -gt 0 ]]; then
