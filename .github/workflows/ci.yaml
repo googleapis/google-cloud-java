@@ -74,6 +74,18 @@ jobs:
       shell: bash
       env:
         JOB_TYPE: test
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: 11
+    - run: java -version
+    - run: mvn com.coveo:fmt-maven-plugin:check -B -ntp
+    - run: mvn checkstyle:check@checkstyle -B -ntp
+
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
 #    runs-on: ubuntu-latest
@@ -88,18 +100,6 @@ jobs:
 #        java-version: ${{matrix.java}}
 #    - run: java -version
 #    - run: .kokoro/dependencies.sh
-#  lint:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: 11
-#    - run: java -version
-#    - run: .kokoro/build.sh
-#      env:
-#        JOB_TYPE: lint
 #  clirr:
 #    runs-on: ubuntu-latest
 #    steps:
