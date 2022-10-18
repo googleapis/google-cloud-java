@@ -23,15 +23,17 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
 cd ${scriptDir}/..
 
-job=$(basename ${KOKORO_JOB_NAME})
+if [ -z "${KOKORO_JOB_NAME}" ]; then
+  job=$(basename ${KOKORO_JOB_NAME})
 
-echo "coercing sponge logs..."
-for xml in `find . -name *-sponge_log.xml`
-do
-  class=$(basename ${xml} | cut -d- -f2)
-  dir=$(dirname ${xml})/${job}/${class}
-  text=$(dirname ${xml})/${class}-sponge_log.txt
-  mkdir -p ${dir}
-  mv ${xml} ${dir}/sponge_log.xml
-  mv ${text} ${dir}/sponge_log.txt
-done
+  echo "coercing sponge logs..."
+  for xml in `find . -name *-sponge_log.xml`
+  do
+    class=$(basename ${xml} | cut -d- -f2)
+    dir=$(dirname ${xml})/${job}/${class}
+    text=$(dirname ${xml})/${class}-sponge_log.txt
+    mkdir -p ${dir}
+    mv ${xml} ${dir}/sponge_log.xml
+    mv ${text} ${dir}/sponge_log.txt
+  done
+fi
