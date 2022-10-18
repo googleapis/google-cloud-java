@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.2.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   <name>Google BeyondCorp AppGateways Parent</name>
-  <url>https://github.com/googleapis/java-beyondcorp-appgateways</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

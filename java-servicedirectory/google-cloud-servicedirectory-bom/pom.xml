@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Service Directory BOM</name>
-  <url>https://github.com/googleapis/java-servicedirectory</url>
   <description>
     BOM for Google Cloud Service Directory
   </description>

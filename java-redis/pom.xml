@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.7.0</version><!-- {x-version-update:google-cloud-redis:current} -->
   <name>Google Cloud Redis Parent</name>
-  <url>https://github.com/googleapis/java-redis</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

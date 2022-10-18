@@ -6,7 +6,6 @@
   <version>1.4.0</version><!-- {x-version-update:google-cloud-eventarc:current} -->
   <packaging>jar</packaging>
   <name>Google Eventarc</name>
-  <url>https://github.com/googleapis/java-eventarc</url>
   <description>Eventarc lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

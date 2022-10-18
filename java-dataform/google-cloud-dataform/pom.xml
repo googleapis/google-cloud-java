@@ -6,7 +6,6 @@
   <version>0.3.0</version><!-- {x-version-update:google-cloud-dataform:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Dataform</name>
-  <url>https://github.com/googleapis/java-dataform</url>
   <description>Cloud Dataform Help analytics teams manage data inside BigQuery using SQL.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

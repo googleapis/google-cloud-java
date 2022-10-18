@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.1.0</version><!-- {x-version-update:gapic-libraries-bom:current} -->
   <name>Google Cloud Java BOM</name>
-  <url>https://github.com/googleapis/java-cloud-bom</url>
   <description>
     BOM for the libraries in google-cloud-java repository. Users should not
     depend on this artifact explicitly because this BOM is an implementation

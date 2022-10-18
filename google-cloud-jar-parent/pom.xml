@@ -7,6 +7,10 @@
   <groupId>com.google.cloud</groupId>
   <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
   <packaging>pom</packaging>
+  <name>Google Cloud JAR Parent</name>
+  <description>
+    The parent for all client library JAR modules in the repository.
+  </description>
 
   <parent>
     <groupId>com.google.cloud</groupId>
