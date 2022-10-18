@@ -35,7 +35,6 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore("Address insertion is flaky. https://github.com/googleapis/google-cloud-java/issues/8552")
 public class ITAddressesTest extends BaseTest {
 
   private static List<Address> addresses;
@@ -58,7 +57,7 @@ public class ITAddressesTest extends BaseTest {
   @AfterClass
   public static void tearDown() throws ExecutionException, InterruptedException {
     for (Address address : addresses) {
-      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName());
+      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName()).get();
     }
     addressesClient.close();
   }
@@ -124,7 +123,7 @@ public class ITAddressesTest extends BaseTest {
           .insertAsync(DEFAULT_PROJECT, DEFAULT_REGION, address)
           .get(60, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      fail("Insert operation failed.");
+      fail("Insert operation failed: " + e.getMessage());
     }
     addresses.add(address);
   }

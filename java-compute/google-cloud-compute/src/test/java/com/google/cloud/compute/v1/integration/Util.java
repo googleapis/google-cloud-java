@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.google.cloud.compute.v1.integration;
 
 import com.google.cloud.compute.v1.Address;
@@ -30,9 +29,9 @@ import java.time.temporal.ChronoUnit;
 public class Util {
 
   // Cleans existing test resources if any.
-  private static final int DELETION_THRESHOLD_TIME_HOURS = 2;
+  private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
-  /** Bring down any instances that are older than 2 hours */
+  /** Bring down any instances that are older than 24 hours */
   public static void cleanUpComputeInstances(
       InstancesClient instancesClient, String project, String zone, String prefix) {
     ListPagedResponse listPagedResponse = instancesClient.list(project, zone);
@@ -50,7 +49,7 @@ public class Util {
     }
   }
 
-  /** Bring down any addresses that are older than 2 hours */
+  /** Bring down any addresses that are older than 24 hours */
   public static void cleanUpComputeAddresses(
       AddressesClient addressesClient, String project, String region, String prefix) {
     AddressesClient.ListPagedResponse listPagedResponse = addressesClient.list(project, region);

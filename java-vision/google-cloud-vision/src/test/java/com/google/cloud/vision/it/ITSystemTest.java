@@ -99,8 +99,8 @@ public class ITSystemTest {
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   // GraalVM native-image test uses the project root as working directory, not google-cloud-vision
   private static final String RESOURCES =
-      Files.exists(Paths.get("java-vision", "google-cloud-vision", "src", "test", "resources"))
-          ? "java-vision/google-cloud-vision/src/test/resources/"
+      Files.exists(Paths.get("google-cloud-vision", "src", "test", "resources"))
+          ? "google-cloud-vision/src/test/resources/"
           : "src/test/resources/";
 
   private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_VISION_BUCKET";
