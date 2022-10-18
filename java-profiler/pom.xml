@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-profiler-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-profiler:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-profiler:current} -->
   <name>Google Cloud Profiler Parent</name>
   <url>https://github.com/googleapis/java-profiler</url>
   <description>
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-profiler</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-profiler:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-profiler:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-profiler-v2</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-profiler-v2:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-profiler-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-profiler-v2</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-profiler-v2:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-profiler-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

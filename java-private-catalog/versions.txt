@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-private-catalog:0.6.0:0.6.0
-grpc-google-cloud-private-catalog-v1beta1:0.6.0:0.6.0
-proto-google-cloud-private-catalog-v1beta1:0.6.0:0.6.0
+google-cloud-private-catalog:0.6.0:0.6.1-SNAPSHOT
+grpc-google-cloud-private-catalog-v1beta1:0.6.0:0.6.1-SNAPSHOT
+proto-google-cloud-private-catalog-v1beta1:0.6.0:0.6.1-SNAPSHOT

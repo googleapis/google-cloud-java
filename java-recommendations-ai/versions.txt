@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-recommendations-ai:0.11.0:0.11.0
-grpc-google-cloud-recommendations-ai-v1beta1:0.11.0:0.11.0
-proto-google-cloud-recommendations-ai-v1beta1:0.11.0:0.11.0
+google-cloud-recommendations-ai:0.11.0:0.11.1-SNAPSHOT
+grpc-google-cloud-recommendations-ai-v1beta1:0.11.0:0.11.1-SNAPSHOT
+proto-google-cloud-recommendations-ai-v1beta1:0.11.0:0.11.1-SNAPSHOT
