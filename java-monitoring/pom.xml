@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.5.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+  <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
   <name>Google Cloud Monitoring Parent</name>
   <url>https://github.com/googleapis/java-monitoring</url>
   <description>
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
+        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
+        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
