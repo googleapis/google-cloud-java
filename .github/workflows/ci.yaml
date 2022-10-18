@@ -44,6 +44,7 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
+        JOB_NAME: units-${{matrix.java}}
   windows:
     runs-on: windows-latest
     steps:
@@ -59,6 +60,7 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
+        JOB_NAME: windows-units-${{matrix.java}}
   lint:
     runs-on: ubuntu-latest
     steps:
