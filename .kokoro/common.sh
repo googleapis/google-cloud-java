@@ -142,17 +142,36 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  mvn -B -pl "${module_list}" \
-    -amd \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  # Run everything if `module_list` is empty
+  if [ -z "${module_list}" ]; then
+    retry_with_backoff 3 10 \
+      mvn -B \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -DskipTests=true \
+        -Djacoco.skip=true \
+        -T 1C \
+        install
+  else
+    retry_with_backoff 3 10 \
+      mvn -B -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -DskipTests=true \
+        -Djacoco.skip=true \
+        -T 1C \
+        install
+  fi
 }

@@ -39,6 +39,17 @@ fi
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
+  test)
+    install_modules
+    mvn -B -ntp \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -T 1C \
+      test
+      ;;
   integration)
     generate_modified_modules_list
     if [[ ${#modified_module_list[@]} -gt 0 ]]; then
@@ -72,30 +83,19 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm)
+    # Generate the `-pl` list to split into sub-jobs
     generate_graalvm_modules_list
     install_modules
     run_graalvm_tests
     ;;
   graalvm17)
+    # Generate the `-pl` list to split into sub-jobs
     generate_graalvm_modules_list
     install_modules
     run_graalvm_tests
     ;;
   samples)
-    mvn -B \
-      -pl "!gapic-libraries-bom" \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -DskipTests=true \
-      -Djacoco.skip=true \
-      -T 1C \
-      install
-
+    install_modules
     for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
       [[ -f "${FILE}" ]] || continue
       source "${FILE}"

@@ -41,15 +41,9 @@ jobs:
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
-    - run: |
-        mvn -B -ntp \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -T 1C \
-            test
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
   windows:
     runs-on: windows-latest
     steps:
@@ -62,16 +56,7 @@ jobs:
         java-version: 11
         cache: 'maven'
     - run: java -version
-    - run: |
-        mvn -B -ntp \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -T 1C \
-            test
-      shell: bash
+    - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
   lint:
