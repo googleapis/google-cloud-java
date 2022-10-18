@@ -392,6 +392,21 @@ public class ConnectionWorkerPool {
     }
   }
 
+  /** Fetch the wait seconds from corresponding worker. */
+  public long getInflightWaitSeconds(StreamWriter streamWriter) {
+    lock.lock();
+    try {
+      ConnectionWorker connectionWorker = streamWriterToConnection.get(streamWriter);
+      if (connectionWorker == null) {
+        return 0;
+      } else {
+        return connectionWorker.getInflightWaitSeconds();
+      }
+    } finally {
+      lock.unlock();
+    }
+  }
+
   /** Enable Test related logic. */
   public static void enableTestingLogic() {
     enableTesting = true;

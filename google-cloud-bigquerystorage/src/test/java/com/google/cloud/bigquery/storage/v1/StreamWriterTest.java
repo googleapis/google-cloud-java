@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.StorageError.StorageErrorCode;
 import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.base.Strings;
@@ -60,7 +61,8 @@ import org.threeten.bp.Duration;
 @RunWith(JUnit4.class)
 public class StreamWriterTest {
   private static final Logger log = Logger.getLogger(StreamWriterTest.class.getName());
-  private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
+  private static final String TEST_STREAM_1 = "projects/p/datasets/d/tables/t/streams/s";
+  private static final String TEST_STREAM_2 = "projects/p/datasets/d/tables/t/streams/s";
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
@@ -94,7 +96,7 @@ public class StreamWriterTest {
   }
 
   private StreamWriter getMultiplexingTestStreamWriter() throws IOException {
-    return StreamWriter.newBuilder(TEST_STREAM, client)
+    return StreamWriter.newBuilder(TEST_STREAM_1, client)
         .setWriterSchema(createProtoSchema())
         .setTraceId(TEST_TRACE_ID)
         .setLocation("US")
@@ -103,7 +105,7 @@ public class StreamWriterTest {
   }
 
   private StreamWriter getTestStreamWriter() throws IOException {
-    return StreamWriter.newBuilder(TEST_STREAM, client)
+    return StreamWriter.newBuilder(TEST_STREAM_1, client)
         .setWriterSchema(createProtoSchema())
         .setTraceId(TEST_TRACE_ID)
         .build();
@@ -197,7 +199,7 @@ public class StreamWriterTest {
       if (i == 0) {
         // First request received by server should have schema and stream name.
         assertTrue(serverRequest.getProtoRows().hasWriterSchema());
-        assertEquals(serverRequest.getWriteStream(), TEST_STREAM);
+        assertEquals(serverRequest.getWriteStream(), TEST_STREAM_1);
         assertEquals(serverRequest.getTraceId(), TEST_TRACE_ID);
       } else {
         // Following request should not have schema and stream name.
@@ -210,7 +212,7 @@ public class StreamWriterTest {
 
   public void testBuildBigQueryWriteClientInWriter() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM)
+        StreamWriter.newBuilder(TEST_STREAM_1)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setChannelProvider(serviceHelper.createChannelProvider())
             .setWriterSchema(createProtoSchema())
@@ -253,7 +255,7 @@ public class StreamWriterTest {
             new ThrowingRunnable() {
               @Override
               public void run() throws Throwable {
-                StreamWriter.newBuilder(TEST_STREAM, client).build();
+                StreamWriter.newBuilder(TEST_STREAM_1, client).build();
               }
             });
     assertEquals(ex.getStatus().getCode(), Status.INVALID_ARGUMENT.getCode());
@@ -267,7 +269,7 @@ public class StreamWriterTest {
         new ThrowingRunnable() {
           @Override
           public void run() throws Throwable {
-            StreamWriter.newBuilder(TEST_STREAM).setTraceId("abc");
+            StreamWriter.newBuilder(TEST_STREAM_1).setTraceId("abc");
           }
         });
     assertThrows(
@@ -275,7 +277,7 @@ public class StreamWriterTest {
         new ThrowingRunnable() {
           @Override
           public void run() throws Throwable {
-            StreamWriter.newBuilder(TEST_STREAM).setTraceId("abc:");
+            StreamWriter.newBuilder(TEST_STREAM_1).setTraceId("abc:");
           }
         });
     assertThrows(
@@ -283,7 +285,7 @@ public class StreamWriterTest {
         new ThrowingRunnable() {
           @Override
           public void run() throws Throwable {
-            StreamWriter.newBuilder(TEST_STREAM).setTraceId(":abc");
+            StreamWriter.newBuilder(TEST_STREAM_1).setTraceId(":abc");
           }
         });
   }
@@ -487,7 +489,7 @@ public class StreamWriterTest {
   @Test
   public void testZeroMaxInflightRequests() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM, client)
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
             .setWriterSchema(createProtoSchema())
             .setMaxInflightRequests(0)
             .build();
@@ -499,7 +501,7 @@ public class StreamWriterTest {
   @Test
   public void testZeroMaxInflightBytes() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM, client)
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
             .setWriterSchema(createProtoSchema())
             .setMaxInflightBytes(0)
             .build();
@@ -511,7 +513,7 @@ public class StreamWriterTest {
   @Test
   public void testOneMaxInflightRequests() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM, client)
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
             .setWriterSchema(createProtoSchema())
             .setMaxInflightRequests(1)
             .build();
@@ -526,9 +528,44 @@ public class StreamWriterTest {
   }
 
   @Test
+  public void testOneMaxInflightRequests_MultiplexingCase() throws Exception {
+    ConnectionWorkerPool.setOptions(Settings.builder().setMaxConnectionsPerRegion(2).build());
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(createProtoSchema())
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2, client)
+            .setWriterSchema(createProtoSchema())
+            .setMaxInflightRequests(1)
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .setLocation("US")
+            .build();
+
+    // Server will sleep 1 second before every response.
+    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer1, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer2, new String[] {"A"});
+
+    assertTrue(writer1.getInflightWaitSeconds() >= 1);
+    assertTrue(writer2.getInflightWaitSeconds() >= 1);
+    assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
   public void testAppendsWithTinyMaxInflightBytes() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM, client)
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
             .setWriterSchema(createProtoSchema())
             .setMaxInflightBytes(1)
             .build();
@@ -560,7 +597,7 @@ public class StreamWriterTest {
   @Test
   public void testAppendsWithTinyMaxInflightBytesThrow() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM, client)
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
             .setWriterSchema(createProtoSchema())
             .setMaxInflightBytes(1)
             .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
@@ -595,7 +632,7 @@ public class StreamWriterTest {
               @Override
               public void run() throws Throwable {
                 StreamWriter writer =
-                    StreamWriter.newBuilder(TEST_STREAM, client)
+                    StreamWriter.newBuilder(TEST_STREAM_1, client)
                         .setWriterSchema(createProtoSchema())
                         .setMaxInflightBytes(1)
                         .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Ignore)
@@ -745,7 +782,7 @@ public class StreamWriterTest {
   @Test(timeout = 10000)
   public void testCloseDisconnectedStream() throws Exception {
     StreamWriter writer =
-        StreamWriter.newBuilder(TEST_STREAM)
+        StreamWriter.newBuilder(TEST_STREAM_1)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setChannelProvider(serviceHelper.createChannelProvider())
             .setWriterSchema(createProtoSchema())

@@ -141,10 +141,9 @@ public class StreamWriter implements AutoCloseable {
       }
     }
 
-    long getInflightWaitSeconds() {
+    long getInflightWaitSeconds(StreamWriter streamWriter) {
       if (getKind() == Kind.CONNECTION_WORKER_POOL) {
-        throw new IllegalStateException(
-            "getInflightWaitSeconds is not supported in multiplexing mode.");
+        return connectionWorkerPool().getInflightWaitSeconds(streamWriter);
       }
       return connectionWorker().getInflightWaitSeconds();
     }
@@ -363,7 +362,7 @@ public class StreamWriter implements AutoCloseable {
    * stream case.
    */
   public long getInflightWaitSeconds() {
-    return singleConnectionOrConnectionPool.getInflightWaitSeconds();
+    return singleConnectionOrConnectionPool.getInflightWaitSeconds(this);
   }
 
   /** @return a unique Id for the writer. */
