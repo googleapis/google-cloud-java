@@ -40,15 +40,15 @@ RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
-    install_modules
-    mvn -B -ntp \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -T 1C \
-      test
+    retry_with_backoff 3 10 \
+      mvn -B -ntp \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -T 1C \
+        test
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
