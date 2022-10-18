@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   <name>Google BigQuery DataPolicy API Parent</name>
   <url>https://github.com/googleapis/java-bigquerydatapolicy</url>
   <description>
@@ -30,17 +30,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerydatapolicy-v1beta1</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-bigquerydatapolicy-v1beta1:current} -->
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatapolicy-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatapolicy-v1beta1</artifactId>
-        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-bigquerydatapolicy-v1beta1:current} -->
+        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatapolicy-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
