@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-control-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
   <name>Google Service Control API Parent</name>
   <url>https://github.com/googleapis/java-service-control</url>
   <description>
@@ -30,27 +30,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-control</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-control-v2</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-control-v2</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:grpc-google-cloud-service-control-v2:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-control-v1</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:grpc-google-cloud-service-control-v1:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-control-v1</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:proto-google-cloud-service-control-v1:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

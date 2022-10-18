@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-servicedirectory-bom</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -24,27 +24,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-servicedirectory</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-servicedirectory-v1beta1</artifactId>
-        <version>0.13.0</version><!-- {x-version-update:grpc-google-cloud-servicedirectory-v1beta1:current} -->
+        <version>0.13.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-servicedirectory-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-servicedirectory-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-servicedirectory-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-servicedirectory-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-servicedirectory-v1beta1</artifactId>
-        <version>0.13.0</version><!-- {x-version-update:proto-google-cloud-servicedirectory-v1beta1:current} -->
+        <version>0.13.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-servicedirectory-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-servicedirectory-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-servicedirectory-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-servicedirectory-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
