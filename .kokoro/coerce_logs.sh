@@ -24,9 +24,9 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/..
 
 if [ -z "${KOKORO_JOB_NAME}" ]; then
-  job=$(basename ${KOKORO_JOB_NAME})
-else
   job="${JOB_NAME}"
+else
+  job=$(basename ${KOKORO_JOB_NAME})
 fi
 
 echo "coercing sponge logs..."
