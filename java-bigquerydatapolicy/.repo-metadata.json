@@ -1,8 +1,8 @@
 {
   "api_shortname": "bigquerydatapolicy",
   "name_pretty": "BigQuery DataPolicy API",
-  "product_documentation": "https://cloud.google.com/bigquery/docs/reference/datapolicy/",
-  "api_description": "",
+  "product_documentation": "cloud.google.com/bigquery/docs/reference/datapolicy/",
+  "api_description": "Data Policy Service provides APIs for managing the label-policy bindings.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigquerydatapolicy/latest/overview",
   "release_level": "preview",
   "transport": "grpc",

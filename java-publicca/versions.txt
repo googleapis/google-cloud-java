@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-publicca:0.1.0:0.1.0
-proto-google-cloud-publicca-v1beta1:0.1.0:0.1.0
-grpc-google-cloud-publicca-v1beta1:0.1.0:0.1.0

@@ -75,15 +75,26 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates(excludes=[
-    ".github/*",
-    ".kokoro/*",
-    "samples/*",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE",
-    "SECURITY.md",
-    "java.header",
-    "license-checks.xml",
-    "renovate.json"
-])
+java.common_templates(excludes=['.github/auto-label.yaml'])
+
+# --------------------------------------------------------------------------
+# Modify test configs
+# --------------------------------------------------------------------------
+
+# add shared environment variables to test configs
+s.move(
+    ".kokoro/common_env_vars.cfg",
+    ".kokoro/common.cfg",
+    merge=lambda src, dst, _, : f"{dst}\n{src}",
+)
+tracked_subdirs = ["continuous", "presubmit", "release", "nightly"]
+for subdir in tracked_subdirs:
+    for path, subdirs, files in os.walk(f".kokoro/{subdir}"):
+        for name in files:
+            if name == "common.cfg":
+                file_path = os.path.join(path, name)
+                s.move(
+                    ".kokoro/common_env_vars.cfg",
+                    file_path,
+                    merge=lambda src, dst, _, : f"{dst}\n{src}",
+                )

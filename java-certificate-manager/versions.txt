@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-certificate-manager:0.7.0:0.7.0
-proto-google-cloud-certificate-manager-v1:0.7.0:0.7.0
-grpc-google-cloud-certificate-manager-v1:0.7.0:0.7.0
+google-cloud-certificate-manager:0.6.0:0.6.0
+proto-google-cloud-certificate-manager-v1:0.6.0:0.6.0
+grpc-google-cloud-certificate-manager-v1:0.6.0:0.6.0

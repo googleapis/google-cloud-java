@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-analyticshub:0.1.0:0.1.0
-proto-google-cloud-analyticshub-v1:0.1.0:0.1.0
-grpc-google-cloud-analyticshub-v1:0.1.0:0.1.0

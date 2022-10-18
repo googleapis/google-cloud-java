@@ -3,14 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data-bom</artifactId>
-  <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+  <version>0.14.10-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   <packaging>pom</packaging>
-
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
-    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.3</version>
   </parent>
 
   <name>Google Analytics Data BOM</name>
@@ -19,36 +17,66 @@
     BOM for Analytics Data
   </description>
 
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>chingor13</id>
+      <name>Jeff Ching</name>
+      <email>chingor@google.com</email>
+      <organization>Google LLC</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/googleapis/java-analytics-data.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-analytics-data.git</developerConnection>
+    <url>https://github.com/googleapis/java-analytics-data</url>
+  </scm>
+
   <properties>
     <maven.antrun.skip>true</maven.antrun.skip>
   </properties>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-data</artifactId>
-        <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+        <version>0.14.10-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-data-v1beta</artifactId>
-        <version>0.15.0</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
+        <version>0.14.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-data-v1alpha</artifactId>
-        <version>0.15.0</version><!-- {x-version-update:grpc-google-analytics-data-v1alpha:current} -->
+        <version>0.14.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-data-v1beta</artifactId>
-        <version>0.15.0</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
+        <version>0.14.10-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-data-v1alpha</artifactId>
-        <version>0.15.0</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
+        <version>0.14.10-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

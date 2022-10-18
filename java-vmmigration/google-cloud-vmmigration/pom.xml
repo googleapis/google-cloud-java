@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vmmigration</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
+  <version>1.3.5</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
   <packaging>jar</packaging>
   <name>Google VM Migration</name>
   <url>https://github.com/googleapis/java-vmmigration</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vmmigration-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
+    <version>1.3.5</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vmmigration</site.installationModule>
@@ -72,6 +72,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+      <version>4.13.2</version>
     </dependency>
 
     <dependency>

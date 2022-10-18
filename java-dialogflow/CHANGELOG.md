@@ -1,31 +1,5 @@
 # Changelog
 
-## [4.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-v4.9.1...google-cloud-dialogflow-v4.10.0) (2022-10-17)
-
-
-### Features
-
-* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
-* [dialogflow] Add Agent Assist Summarization API (https://cloud.google.com/agent-assist/docs/summarization) ([#8481](https://github.com/googleapis/google-cloud-java/issues/8481)) ([cda60cf](https://github.com/googleapis/google-cloud-java/commit/cda60cf0ba76057ad7c6368bbc70dc8958d55e75))
-* [dialogflow] include conversation dataset name to be created with dataset creation metadata ([#8507](https://github.com/googleapis/google-cloud-java/issues/8507)) ([116e144](https://github.com/googleapis/google-cloud-java/commit/116e1444c3eb13d0140806210e0b2fe6d2473988))
-* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
-* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
-
-
-### Bug Fixes
-
-* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-dialogflow-v2 to v4.8.1 ([#8311](https://github.com/googleapis/google-cloud-java/issues/8311)) ([8409913](https://github.com/googleapis/google-cloud-java/commit/8409913de92d9e6af50924fa1ec128a8812dcad0))
-* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-dialogflow-v2beta1 to v0.106.1 ([#8312](https://github.com/googleapis/google-cloud-java/issues/8312)) ([eb3260b](https://github.com/googleapis/google-cloud-java/commit/eb3260bc1cb5fbaeb8af414521124c46cc6726d5))
-* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
-* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
-* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
-* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
-
-
-### Dependencies
-
-* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
-
 ## [4.9.1](https://github.com/googleapis/java-dialogflow/compare/v4.9.0...v4.9.1) (2022-10-07)
 
 

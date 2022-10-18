@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastream</artifactId>
-  <version>1.3.0</version><!-- {x-version-update:google-cloud-datastream:current} -->
+  <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
   <packaging>jar</packaging>
   <name>Google Datastream</name>
   <url>https://github.com/googleapis/java-datastream</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastream-parent</artifactId>
-    <version>1.3.0</version><!-- {x-version-update:google-cloud-datastream:current} -->
+    <version>1.2.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datastream</site.installationModule>
@@ -79,6 +79,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+      <version>4.13.2</version>
     </dependency>
 
     <dependency>

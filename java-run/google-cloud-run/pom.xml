@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-run</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:google-cloud-run:current} -->
+  <version>0.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-run:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Run</name>
   <url>https://github.com/googleapis/java-run</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-run-parent</artifactId>
-    <version>0.4.0</version><!-- {x-version-update:google-cloud-run:current} -->
+    <version>0.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-run:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-run</site.installationModule>
@@ -76,6 +76,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+      <version>4.13.2</version>
     </dependency>
 
     <dependency>

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-eventarc-publishing</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+  <version>0.3.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
   <packaging>jar</packaging>
   <name>Google Eventarc Publishing</name>
   <url>https://github.com/googleapis/java-eventarc-publishing</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-eventarc-publishing-parent</artifactId>
-    <version>0.4.0</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+    <version>0.3.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-eventarc-publishing</site.installationModule>
@@ -72,6 +72,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+      <version>4.13.2</version>
     </dependency>
 
     <dependency>

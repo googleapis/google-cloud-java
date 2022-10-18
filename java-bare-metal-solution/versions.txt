@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-bare-metal-solution:0.4.0:0.4.0
-proto-google-cloud-bare-metal-solution-v2:0.4.0:0.4.0
-grpc-google-cloud-bare-metal-solution-v2:0.4.0:0.4.0
+google-cloud-bare-metal-solution:0.3.8:0.3.8
+proto-google-cloud-bare-metal-solution-v2:0.3.8:0.3.8
+grpc-google-cloud-bare-metal-solution-v2:0.3.8:0.3.8

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-mediatranslation</artifactId>
-  <version>0.10.0</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
+  <version>0.9.6</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
   <packaging>jar</packaging>
   <name>Google Media Translation API</name>
   <url>https://github.com/googleapis/java-mediatranslation</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-mediatranslation-parent</artifactId>
-    <version>0.10.0</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
+    <version>0.9.6</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-mediatranslation</site.installationModule>

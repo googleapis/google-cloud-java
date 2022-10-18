@@ -1,32 +1,5 @@
 # Changelog
 
-## [1.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datacatalog-v1.9.5...google-cloud-datacatalog-v1.10.0) (2022-10-17)
-
-
-### Features
-
-* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
-* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
-
-
-### Bug Fixes
-
-* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-datacatalog-v1 to v1.9.3 ([#8274](https://github.com/googleapis/google-cloud-java/issues/8274)) ([e8afd6c](https://github.com/googleapis/google-cloud-java/commit/e8afd6c1a4f4ea99f22fc2e6d2428ff115a84b8a))
-* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-datacatalog-v1beta1 to v0.46.3 ([#8275](https://github.com/googleapis/google-cloud-java/issues/8275)) ([1ae8ceb](https://github.com/googleapis/google-cloud-java/commit/1ae8ceb37545a1db74dc7ebcc61fcec552e2c2ff))
-* **deps:** update dependency com.google.api.grpc:proto-google-cloud-datacatalog-v1 to v1.9.3 ([#8281](https://github.com/googleapis/google-cloud-java/issues/8281)) ([1fd10eb](https://github.com/googleapis/google-cloud-java/commit/1fd10ebb0e26be34bf285e31ab32e1d873c9acfc))
-* **deps:** update dependency com.google.api.grpc:proto-google-cloud-datacatalog-v1beta1 to v0.46.3 ([#8282](https://github.com/googleapis/google-cloud-java/issues/8282)) ([9a38b12](https://github.com/googleapis/google-cloud-java/commit/9a38b12cc3470e45c6a3f092f9137c1757d919fc))
-* **deps:** update dependency com.google.cloud:google-cloud-datacatalog-parent to v1.9.3 ([#8289](https://github.com/googleapis/google-cloud-java/issues/8289)) ([d8499f6](https://github.com/googleapis/google-cloud-java/commit/d8499f603204bc26238b94dac6cf9a55a5894a75))
-* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
-* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
-* **deps:** update dependency com.google.cloud:libraries-bom to v26.1.1 ([#8254](https://github.com/googleapis/google-cloud-java/issues/8254)) ([e4760da](https://github.com/googleapis/google-cloud-java/commit/e4760da4ac8fa6fa91bc82b90b83d0518eca2692))
-* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
-* revert reverting [Many APIs] Update WORKSPACE files for rules_gapic, gax_java, generator_java versions ([#8340](https://github.com/googleapis/google-cloud-java/issues/8340)) ([dedef71](https://github.com/googleapis/google-cloud-java/commit/dedef71f600e85b1c38e7110f5ffd44bf2ba32b4))
-
-
-### Dependencies
-
-* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
-
 ## [1.9.5](https://github.com/googleapis/java-datacatalog/compare/v1.9.4...v1.9.5) (2022-10-05)
 
 

@@ -1,17 +1,17 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   <packaging>jar</packaging>
   <name>Google BigQuery DataPolicy API</name>
   <url>https://github.com/googleapis/java-bigquerydatapolicy</url>
-  <description>BigQuery DataPolicy API </description>
+  <description>BigQuery DataPolicy API Data Policy Service provides APIs for managing the label-policy bindings.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerydatapolicy-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerydatapolicy</site.installationModule>
@@ -64,15 +64,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-common-protos</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
@@ -84,6 +76,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
+      <version>4.13.2</version>
     </dependency>
 
     <dependency>
