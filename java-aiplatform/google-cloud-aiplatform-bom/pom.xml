@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform-bom</artifactId>
-  <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+  <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -28,27 +28,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
+        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1beta1</artifactId>
-        <version>0.21.0</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
+        <version>0.21.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
+        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
-        <version>0.21.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
+        <version>0.21.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

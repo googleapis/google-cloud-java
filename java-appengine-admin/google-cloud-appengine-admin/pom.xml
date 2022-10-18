@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appengine-admin</artifactId>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
   <packaging>jar</packaging>
   <name>Google App Engine Admin API</name>
   <url>https://github.com/googleapis/java-appengine-admin</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-appengine-admin-parent</artifactId>
-    <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+    <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-appengine-admin</site.installationModule>
