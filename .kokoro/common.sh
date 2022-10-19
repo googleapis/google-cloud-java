@@ -69,8 +69,8 @@ function generate_modified_modules_list() {
 
   modified_module_list=()
   # If jar-parent pom.xml is touched, run ITs on all the modules
-  jar_parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
-  if [[ ( -n $jar_parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
+  parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
+  if [[ ( -n $parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
       if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
