@@ -92,34 +92,6 @@
       <activation>
         <jdk>[1.8,)</jdk>
       </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <dependencies>
-            </dependencies>
-            <executions>
-              <execution>
-                <id>checkstyle</id>
-                <phase>validate</phase>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-                <configuration>
-                  <headerLocation>grafeas.header</headerLocation>
-                  <configLocation>license-checks.xml</configLocation>
-                  <consoleOutput>true</consoleOutput>
-                  <failOnViolation>true</failOnViolation>
-                  <violationSeverity>error</violationSeverity>
-                  <failsOnError>true</failsOnError>
-                  <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
   </profiles>
 
