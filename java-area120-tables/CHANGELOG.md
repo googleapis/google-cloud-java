@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.0](https://github.com/googleapis/google-cloud-java/compare/google-area120-tables-v0.7.8...google-area120-tables-v0.8.0) (2022-10-14)
+## [0.8.0](https://github.com/googleapis/google-cloud-java/compare/google-area120-tables-v0.7.8...google-area120-tables-v0.8.0) (2022-10-17)
 
 
 ### Features

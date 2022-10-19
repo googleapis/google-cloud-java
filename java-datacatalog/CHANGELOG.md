@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datacatalog-v1.9.5...google-cloud-datacatalog-v1.10.0) (2022-10-14)
+## [1.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datacatalog-v1.9.5...google-cloud-datacatalog-v1.10.0) (2022-10-17)
 
 
 ### Features

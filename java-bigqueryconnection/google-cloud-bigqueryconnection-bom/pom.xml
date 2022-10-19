@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud BigQuery Connections BOM</name>
-  <url>https://github.com/googleapis/java-bigqueryconnection</url>
   <description>
     BOM for Cloud BigQuery Connections
   </description>

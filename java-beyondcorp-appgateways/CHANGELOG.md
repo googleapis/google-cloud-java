@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (2022-10-14)
+## [0.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-beyondcorp-appgateways-v0.1.0...google-cloud-beyondcorp-appgateways-v0.2.0) (2022-10-17)
 
 
 ### Features

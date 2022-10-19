@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-gke-backup-v0.2.6...google-cloud-gke-backup-v0.3.0) (2022-10-14)
+## [0.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-gke-backup-v0.2.6...google-cloud-gke-backup-v0.3.0) (2022-10-17)
 
 
 ### Features

@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-beyondcorp-clientconnectorservices-v0.1.2...google-cloud-beyondcorp-clientconnectorservices-v0.2.0) (2022-10-14)
+## [0.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-beyondcorp-clientconnectorservices-v0.1.3...google-cloud-beyondcorp-clientconnectorservices-v0.2.0) (2022-10-17)
 
 
 ### Features

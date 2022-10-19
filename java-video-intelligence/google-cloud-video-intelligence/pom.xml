@@ -6,7 +6,6 @@
   <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Video Intelligence</name>
-  <url>https://github.com/googleapis/java-video-intelligence</url>
   <description>Java idiomatic client for Google Cloud Video Intelligence</description>
   <parent>
     <groupId>com.google.cloud</groupId>

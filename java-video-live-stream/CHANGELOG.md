@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-live-stream-v0.5.8...google-cloud-live-stream-v0.6.0) (2022-10-14)
+## [0.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-live-stream-v0.5.8...google-cloud-live-stream-v0.6.0) (2022-10-17)
 
 
 ### Features

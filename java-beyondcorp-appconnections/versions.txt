@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-beyondcorp-appconnections:0.1.0:0.1.0
-proto-google-cloud-beyondcorp-appconnections-v1:0.1.0:0.1.0
-grpc-google-cloud-beyondcorp-appconnections-v1:0.1.0:0.1.0
+google-cloud-beyondcorp-appconnections:0.2.0:0.2.0
+proto-google-cloud-beyondcorp-appconnections-v1:0.2.0:0.2.0
+grpc-google-cloud-beyondcorp-appconnections-v1:0.2.0:0.2.0

@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-gke-connect-gateway-v0.4.6...google-cloud-gke-connect-gateway-v0.5.0) (2022-10-14)
+## [0.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-gke-connect-gateway-v0.4.6...google-cloud-gke-connect-gateway-v0.5.0) (2022-10-17)
 
 
 ### Features

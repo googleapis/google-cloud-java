@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   <name>Google Google Workspace Add-ons API Parent</name>
-  <url>https://github.com/googleapis/java-gsuite-addons</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

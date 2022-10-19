@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-container-v2.6.0...google-cloud-container-v2.7.0) (2022-10-14)
+## [2.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-container-v2.6.0...google-cloud-container-v2.7.0) (2022-10-17)
 
 
 ### Features

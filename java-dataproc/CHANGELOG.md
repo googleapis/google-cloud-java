@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataproc-v4.0.8...google-cloud-dataproc-v4.1.0) (2022-10-14)
+## [4.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataproc-v4.0.8...google-cloud-dataproc-v4.1.0) (2022-10-17)
 
 
 ### Features

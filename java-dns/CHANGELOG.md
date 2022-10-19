@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dns-v2.1.8...google-cloud-dns-v2.2.0) (2022-10-14)
+## [2.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dns-v2.1.8...google-cloud-dns-v2.2.0) (2022-10-17)
 
 
 ### Features

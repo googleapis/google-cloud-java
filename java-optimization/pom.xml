@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.2.0</version><!-- {x-version-update:google-cloud-optimization:current} -->
   <name>Google Cloud Fleet Routing Parent</name>
-  <url>https://github.com/googleapis/java-optimization</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

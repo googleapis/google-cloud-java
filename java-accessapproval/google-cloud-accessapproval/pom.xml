@@ -6,7 +6,6 @@
   <version>2.5.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Access Approval</name>
-  <url>https://github.com/googleapis/java-accessapproval</url>
   <description>Java idiomatic client for Google Cloud accessapproval</description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-eventarc-v1.3.8...google-cloud-eventarc-v1.4.0) (2022-10-14)
+## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-eventarc-v1.3.8...google-cloud-eventarc-v1.4.0) (2022-10-17)
 
 
 ### Features

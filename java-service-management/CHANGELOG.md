@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-service-management-v3.1.7...google-cloud-service-management-v3.2.0) (2022-10-14)
+## [3.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-service-management-v3.1.7...google-cloud-service-management-v3.2.0) (2022-10-17)
 
 
 ### Features

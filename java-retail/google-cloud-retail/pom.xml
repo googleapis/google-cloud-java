@@ -6,7 +6,6 @@
   <version>2.6.0</version><!-- {x-version-update:google-cloud-retail:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Retail</name>
-  <url>https://github.com/googleapis/java-retail</url>
   <description>Retail solutions API.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

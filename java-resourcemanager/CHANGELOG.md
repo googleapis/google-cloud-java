@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-resourcemanager-v1.5.6...google-cloud-resourcemanager-v1.6.0) (2022-10-14)
+## [1.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-resourcemanager-v1.5.6...google-cloud-resourcemanager-v1.6.0) (2022-10-17)
 
 
 ### Features

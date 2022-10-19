@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.6.0</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
   <name>Google Cloud Monitoring Dashboard Parent</name>
-  <url>https://github.com/googleapis/java-monitoring-dashboards</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Area 120 Tables BOM</name>
-  <url>https://github.com/googleapis/java-area120-tables</url>
   <description>
     BOM for Area 120 Tables
   </description>

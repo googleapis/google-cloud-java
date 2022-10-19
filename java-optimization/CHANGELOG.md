@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-optimization-v1.1.14...google-cloud-optimization-v1.2.0) (2022-10-14)
+## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-optimization-v1.1.14...google-cloud-optimization-v1.2.0) (2022-10-17)
 
 
 ### Features

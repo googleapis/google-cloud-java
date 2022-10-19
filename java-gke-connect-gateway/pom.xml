@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.5.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
   <name>Google Connect Gateway API Parent</name>
-  <url>https://github.com/googleapis/java-gke-connect-gateway</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

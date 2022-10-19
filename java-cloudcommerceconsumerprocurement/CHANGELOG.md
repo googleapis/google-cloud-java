@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-cloudcommerceconsumerprocurement-v0.1.5...google-cloud-cloudcommerceconsumerprocurement-v0.2.0) (2022-10-14)
+## [0.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-cloudcommerceconsumerprocurement-v0.1.5...google-cloud-cloudcommerceconsumerprocurement-v0.2.0) (2022-10-17)
 
 
 ### Features

@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-notebooks-v1.1.3...google-cloud-notebooks-v1.2.0) (2022-10-14)
+## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-notebooks-v1.1.3...google-cloud-notebooks-v1.2.0) (2022-10-17)
 
 
 ### Features

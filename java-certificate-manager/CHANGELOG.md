@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-certificate-manager-v0.6.0...google-cloud-certificate-manager-v0.7.0) (2022-10-14)
+## [0.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-certificate-manager-v0.6.0...google-cloud-certificate-manager-v0.7.0) (2022-10-17)
 
 
 ### Features

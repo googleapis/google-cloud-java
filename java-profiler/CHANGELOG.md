@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-profiler-v2.3.5...google-cloud-profiler-v2.4.0) (2022-10-14)
+## [2.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-profiler-v2.3.5...google-cloud-profiler-v2.4.0) (2022-10-17)
 
 
 ### Features

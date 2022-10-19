@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recommender-v2.5.7...google-cloud-recommender-v2.6.0) (2022-10-14)
+## [2.6.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recommender-v2.5.7...google-cloud-recommender-v2.6.0) (2022-10-17)
 
 
 ### Features

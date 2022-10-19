@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.124.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datalabeling-v0.123.7...google-cloud-datalabeling-v0.124.0) (2022-10-14)
+## [0.124.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-datalabeling-v0.123.7...google-cloud-datalabeling-v0.124.0) (2022-10-17)
 
 
 ### Features

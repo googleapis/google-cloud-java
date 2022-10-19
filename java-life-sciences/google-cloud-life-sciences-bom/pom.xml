@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Life Sciences BOM</name>
-  <url>https://github.com/googleapis/java-life-sciences</url>
   <description>
     BOM for Cloud Life Sciences
   </description>

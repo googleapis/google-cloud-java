@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.4.0</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
   <name>Google VM Migration Parent</name>
-  <url>https://github.com/googleapis/java-vmmigration</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

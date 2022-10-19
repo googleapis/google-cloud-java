@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.4.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
   <name>Google Cloud Debugger Parent</name>
-  <url>https://github.com/googleapis/java-debugger-client</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

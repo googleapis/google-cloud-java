@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-accessapproval-v2.4.10...google-cloud-accessapproval-v2.5.0) (2022-10-14)
+## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-accessapproval-v2.4.10...google-cloud-accessapproval-v2.5.0) (2022-10-17)
 
 
 ### Features

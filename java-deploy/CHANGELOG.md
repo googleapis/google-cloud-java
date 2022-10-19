@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-deploy-v1.1.8...google-cloud-deploy-v1.2.0) (2022-10-14)
+## [1.2.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-deploy-v1.1.8...google-cloud-deploy-v1.2.0) (2022-10-17)
 
 
 ### Features

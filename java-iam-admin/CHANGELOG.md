@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://github.com/googleapis/google-cloud-java/compare/google-iam-admin-v1.3.0...google-iam-admin-v2.0.0) (2022-10-14)
+## [2.0.0](https://github.com/googleapis/google-cloud-java/compare/google-iam-admin-v1.3.0...google-iam-admin-v2.0.0) (2022-10-17)
 
 
 ### ⚠ BREAKING CHANGES

@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-data-v0.14.9...google-analytics-data-v0.15.0) (2022-10-14)
+## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-data-v0.14.9...google-analytics-data-v0.15.0) (2022-10-17)
 
 
 ### Features

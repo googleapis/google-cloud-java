@@ -6,7 +6,6 @@
   <version>2.4.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud IAM Service Account Credentials</name>
-  <url>https://github.com/googleapis/java-iamcredentials</url>
   <description>Java idiomatic client for Google Cloud IAM Service Account Credentials</description>
   <parent>
     <groupId>com.google.cloud</groupId>

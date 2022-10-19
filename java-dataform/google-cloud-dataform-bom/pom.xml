@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Dataform BOM</name>
-  <url>https://github.com/googleapis/java-dataform</url>
   <description>
     BOM for Cloud Dataform
   </description>

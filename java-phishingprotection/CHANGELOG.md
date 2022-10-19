@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.35.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-phishingprotection-v0.34.6...google-cloud-phishingprotection-v0.35.0) (2022-10-14)
+## [0.35.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-phishingprotection-v0.34.6...google-cloud-phishingprotection-v0.35.0) (2022-10-17)
 
 
 ### Features

@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <name>Google Cloud Vertex AI Parent</name>
-  <url>https://github.com/googleapis/java-</url>
   <description>
     Java client for Google Cloud Vertex AI services.
   </description>

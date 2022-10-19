@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-apigee-registry-v0.3.1...google-cloud-apigee-registry-v0.4.0) (2022-10-14)
+## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-apigee-registry-v0.3.1...google-cloud-apigee-registry-v0.4.0) (2022-10-17)
 
 
 ### Features

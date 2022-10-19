@@ -6,7 +6,6 @@
   <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
   <packaging>jar</packaging>
   <name>Google IAM Admin API</name>
-  <url>https://github.com/googleapis/java-iam-admin</url>
   <description>IAM Admin API you to manage your Service Accounts and IAM bindings.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -12,24 +12,22 @@ for bom_directory in $(find . -maxdepth 3 -name 'google-*-bom' | sort --dictiona
   fi
   repo_metadata="${bom_directory}/../.repo-metadata.json"
 
+  pom_file="${bom_directory}/pom.xml"
+  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
+  artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+  version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+
   if ! grep --quiet '"release_level": "stable"' "${repo_metadata}"; then
     # Not including non-GA libraries, except those that happened to be included
     # already in google-cloud-bom.
     if [[ $artifactId_line != *"google-cloud-datalabeling"* ]] \
         && [[ $artifactId_line != *"google-cloud-errorreporting"* ]] \
-        && [[ $artifactId_line != *"google-cloud-logging-logback"* ]] \
         && [[ $artifactId_line != *"google-cloud-mediatranslation"* ]] \
-        && [[ $artifactId_line != *"google-cloud-nio"* ]] \
-        && [[ $artifactId_line != *"google-cloud-notification"* ]] \
         && [[ $artifactId_line != *"google-cloud-phishingprotection"* ]]; then
       echo "Not adding ${pom_file} to the BOM because it's not stable."
       continue
     fi
   fi
-  pom_file="${bom_directory}/pom.xml"
-  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
-  artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
-  version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
 
   bom_lines+="      <dependency>\n\
       ${groupId_line}\n\

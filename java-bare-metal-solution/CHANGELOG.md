@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bare-metal-solution-v0.3.8...google-cloud-bare-metal-solution-v0.4.0) (2022-10-14)
+## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bare-metal-solution-v0.3.8...google-cloud-bare-metal-solution-v0.4.0) (2022-10-17)
 
 
 ### Features
