@@ -127,12 +127,15 @@ function run_graalvm_tests() {
 function generate_graalvm_modules_list() {
   generate_modified_modules_list
   if [[ "${TEST_ALL_MODULES}" == "true" ]]; then
-    # This will get a list of all modules
+    # Will assign the modules to modules_assigned_list (based on num jobs)
     assign_modules_to_job
   else
+    # ENV_VAR from Kokoro is expecting comma delimited (similar to mvn -pl)
+    # Put all the elements into an array
     modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
     modules_assigned_list=()
     for module in "${modules_list[@]}"; do
+      # Check that the modified_module_list contains the module
       if [[ "${modified_module_list[*]}" =~ "${module}" ]]; then
         modules_assigned_list+=("${module}")
       fi

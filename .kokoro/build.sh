@@ -78,8 +78,7 @@ case ${JOB_TYPE} in
       install_modules
       run_graalvm_tests
     else
-      echo "Not running GraalVM checks..."
-      printf "No matching changes in:\n%s\n" "${module_list}"
+      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
     fi
     ;;
   graalvm17)
@@ -89,8 +88,7 @@ case ${JOB_TYPE} in
       install_modules
       run_graalvm_tests
     else
-      echo "Not running GraalVM 17 checks..."
-      printf "No matching changes in:\n%s\n" "${module_list}"
+      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
     fi
     ;;
   samples)
