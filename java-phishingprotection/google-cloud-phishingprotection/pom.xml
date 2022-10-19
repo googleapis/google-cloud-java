@@ -6,7 +6,6 @@
   <version>0.35.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Phishing Protection</name>
-  <url>https://github.com/googleapis/java-phishingprotection</url>
   <description>Java idiomatic client for Google Cloud Phishing Protection</description>
   <parent>
     <groupId>com.google.cloud</groupId>

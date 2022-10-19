@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Serverless VPC Access BOM</name>
-  <url>https://github.com/googleapis/java-vpcaccess</url>
   <description>
     BOM for Serverless VPC Access
   </description>

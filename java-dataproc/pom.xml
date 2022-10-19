@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>4.1.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <name>Google Cloud Dataproc Parent</name>
-  <url>https://github.com/googleapis/java-dataproc</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

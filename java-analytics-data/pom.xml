@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
   <name>Google Analytics Data Parent</name>
-  <url>https://github.com/googleapis/java-analytics-data</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

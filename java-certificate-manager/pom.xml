@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.7.0</version><!-- {x-version-update:google-cloud-certificate-manager:current} -->
   <name>Google Certificate Manager Parent</name>
-  <url>https://github.com/googleapis/java-certificate-manager</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud video-intelligence BOM</name>
-  <url>https://github.com/googleapis/java-video-intelligence</url>
   <description>
     BOM for Google Cloud Video Intelligence
   </description>

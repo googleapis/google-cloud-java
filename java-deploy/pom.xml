@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.2.0</version><!-- {x-version-update:google-cloud-deploy:current} -->
   <name>Google Google CLoud Deploy Parent</name>
-  <url>https://github.com/googleapis/java-deploy</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud iamcredentials BOM</name>
-  <url>https://github.com/googleapis/java-iamcredentials</url>
   <description>
     BOM for Google Cloud IAM Service Account Credentials
   </description>

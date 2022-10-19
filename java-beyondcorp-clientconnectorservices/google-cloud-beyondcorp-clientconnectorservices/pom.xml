@@ -6,7 +6,6 @@
   <version>0.2.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
   <packaging>jar</packaging>
   <name>Google BeyondCorp ClientConnectorServices</name>
-  <url>https://github.com/googleapis/java-beyondcorp-clientconnectorservices</url>
   <description>BeyondCorp ClientConnectorServices A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Build BOM</name>
-  <url>https://github.com/googleapis/java-cloudbuild</url>
   <description>
     BOM for Google CloudBuild
   </description>

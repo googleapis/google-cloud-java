@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Artifact Registry BOM</name>
-  <url>https://github.com/googleapis/java-artifact-registry</url>
   <description>
     BOM for Artifact Registry
   </description>

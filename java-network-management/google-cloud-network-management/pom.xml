@@ -6,7 +6,6 @@
   <version>1.5.0</version><!-- {x-version-update:google-cloud-network-management:current} -->
   <packaging>jar</packaging>
   <name>Google Network Management API</name>
-  <url>https://github.com/googleapis/java-network-management</url>
   <description>Network Management API provides a collection of network performance monitoring and diagnostic capabilities.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

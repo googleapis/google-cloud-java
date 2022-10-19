@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Dataproc BOM</name>
-  <url>https://github.com/googleapis/java-dataproc</url>
   <description>
     BOM for Google Cloud Dataproc
   </description>

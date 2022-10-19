@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   <name>Google Cloud Data Labeling Parent</name>
-  <url>https://github.com/googleapis/java-datalabeling</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

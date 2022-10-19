@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Google Distributed Cloud Edge BOM</name>
-  <url>https://github.com/googleapis/java-distributedcloudedge</url>
   <description>
     BOM for Google Distributed Cloud Edge
   </description>

@@ -6,7 +6,6 @@
   <version>2.5.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud TPU</name>
-  <url>https://github.com/googleapis/java-tpu</url>
   <description>Cloud TPU are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

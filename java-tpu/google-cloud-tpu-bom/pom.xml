@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud TPU BOM</name>
-  <url>https://github.com/googleapis/java-tpu</url>
   <description>
     BOM for Cloud TPU
   </description>

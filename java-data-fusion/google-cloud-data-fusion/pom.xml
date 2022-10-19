@@ -6,7 +6,6 @@
   <version>1.4.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Fusion</name>
-  <url>https://github.com/googleapis/java-data-fusion</url>
   <description>Cloud Data Fusion is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

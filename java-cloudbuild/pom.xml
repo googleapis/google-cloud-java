@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>3.6.0</version><!-- {x-version-update:google-cloud-build:current} -->
   <name>Google Cloud Build Parent</name>
-  <url>https://github.com/googleapis/java-cloudbuild</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

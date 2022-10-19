@@ -6,7 +6,6 @@
   <version>0.7.0</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   <packaging>jar</packaging>
   <name>Google Security Command Center Settings API</name>
-  <url>https://github.com/googleapis/java-securitycenter-settings</url>
   <description>is the canonical security and data risk database for Google Cloud. Security Command Center enables you to understand your security and data attack surface by providing asset inventory, discovery, search, and management.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <name>Google Cloud IAM Service Account Credentials Parent</name>
-  <url>https://github.com/googleapis/java-iamcredentials</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>3.8.0</version><!-- {x-version-update:google-cloud-asset:current} -->
   <name>Google Cloud Asset Parent</name>
-  <url>https://github.com/googleapis/java-asset</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

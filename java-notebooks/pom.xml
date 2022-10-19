@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.2.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
   <name>Google AI Platform Notebooks Parent</name>
-  <url>https://github.com/googleapis/java-notebooks</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

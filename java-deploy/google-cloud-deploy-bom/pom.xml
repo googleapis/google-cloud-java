@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Google CLoud Deploy BOM</name>
-  <url>https://github.com/googleapis/java-deploy</url>
   <description>
     BOM for Google CLoud Deploy
   </description>

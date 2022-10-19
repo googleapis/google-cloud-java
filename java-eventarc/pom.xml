@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>1.4.0</version><!-- {x-version-update:google-cloud-eventarc:current} -->
   <name>Google Eventarc Parent</name>
-  <url>https://github.com/googleapis/java-eventarc</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

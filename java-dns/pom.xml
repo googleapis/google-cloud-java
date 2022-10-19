@@ -6,7 +6,6 @@
   <packaging>jar</packaging>
   <version>2.2.0</version><!-- {x-version-update:google-cloud-dns:current} -->
   <name>Google Cloud DNS Parent</name>
-  <url>https://github.com/googleapis/java-dns</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

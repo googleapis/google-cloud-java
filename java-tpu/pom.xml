@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.5.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
   <name>Google Cloud TPU Parent</name>
-  <url>https://github.com/googleapis/java-tpu</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

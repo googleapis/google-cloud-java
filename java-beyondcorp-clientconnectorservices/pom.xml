@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.2.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
   <name>Google BeyondCorp ClientConnectorServices Parent</name>
-  <url>https://github.com/googleapis/java-beyondcorp-clientconnectorservices</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>3.1.0</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
   <name>reCAPTCHA Enterprise Parent</name>
-  <url>https://github.com/googleapis/java-recaptchaenterprise</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

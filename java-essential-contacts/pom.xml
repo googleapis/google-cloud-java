@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
   <name>Google Essential Contacts API Parent</name>
-  <url>https://github.com/googleapis/java-essential-contacts</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

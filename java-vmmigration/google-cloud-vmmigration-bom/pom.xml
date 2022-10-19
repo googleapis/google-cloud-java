@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google VM Migration BOM</name>
-  <url>https://github.com/googleapis/java-vmmigration</url>
   <description>
     BOM for VM Migration
   </description>

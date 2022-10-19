@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.3.0</version><!-- {x-version-update:google-cloud-dataform:current} -->
   <name>Google Cloud Dataform Parent</name>
-  <url>https://github.com/googleapis/java-dataform</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Certificate Authority Service BOM</name>
-  <url>https://github.com/googleapis/java-security-private-ca</url>
   <description>
     BOM for Certificate Authority Service
   </description>

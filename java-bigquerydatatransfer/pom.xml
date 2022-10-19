@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   <name>BigQuery DataTransfer Parent</name>
-  <url>https://github.com/googleapis/java-bigquerydatatransfer</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud reCAPTCHA Enterprise BOM</name>
-  <url>https://github.com/googleapis/java-recaptchaenterprise</url>
   <description>
     BOM for reCAPTCHA Enterprise
   </description>

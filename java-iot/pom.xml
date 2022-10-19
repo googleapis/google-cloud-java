@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-iot:current} -->
   <name>Google Cloud IoT Core Parent</name>
-  <url>https://github.com/googleapis/java-iot</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

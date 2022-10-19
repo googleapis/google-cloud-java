@@ -6,7 +6,6 @@
   <version>2.4.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
   <packaging>jar</packaging>
   <name>Google Essential Contacts API</name>
-  <url>https://github.com/googleapis/java-essential-contacts</url>
   <description>Essential Contacts API helps you customize who receives notifications by providing your own list of contacts in many Google Cloud services.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

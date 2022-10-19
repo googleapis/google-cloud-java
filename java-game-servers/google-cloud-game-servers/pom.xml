@@ -6,7 +6,6 @@
   <version>2.4.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Game Services</name>
-  <url>https://github.com/googleapis/java-game-servers</url>
   <description>Java idiomatic client for Google Cloud Game Services</description>
   <parent>
     <groupId>com.google.cloud</groupId>

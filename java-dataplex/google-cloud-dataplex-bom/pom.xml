@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Dataplex BOM</name>
-  <url>https://github.com/googleapis/java-dataplex</url>
   <description>
     BOM for Cloud Dataplex
   </description>

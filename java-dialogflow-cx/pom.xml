@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.15.0</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   <name>Google Dialogflow CX Parent</name>
-  <url>https://github.com/googleapis/java-dialogflow-cx</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
