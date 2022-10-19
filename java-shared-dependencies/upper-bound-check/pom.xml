@@ -17,7 +17,7 @@
     <groupId>com.google.cloud</groupId>
     <!-- The shared config has RequireUpperBoundDeps enforcer rule -->
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.3</version>
+    <version>1.5.4</version>
   </parent>
 
   <organization>
