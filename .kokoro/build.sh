@@ -74,15 +74,23 @@ case ${JOB_TYPE} in
   graalvm)
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
       install_modules
       run_graalvm_tests
+    else
+      echo "Not running GraalVM checks..."
+      printf "No matching changes in:\n%s\n" "${module_list}"
     fi
     ;;
   graalvm17)
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
       install_modules
       run_graalvm_tests
+    else
+      echo "Not running GraalVM 17 checks..."
+      printf "No matching changes in:\n%s\n" "${module_list}"
     fi
     ;;
   samples)
