@@ -64,7 +64,7 @@ function generate_modified_modules_list() {
   # Filter for java modules and get all the unique elements
   # grep returns 1 (error code) and exits the pipeline if there is no match
   # If there is no match, it will return true so the rest of the commands can run
-  modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
+  modified_files=$(git diff --name-only "$KOKORO_GITHUB_PULL_REQUEST_COMMIT...$KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH")
   printf "Modified files:\n%s\n" "${modified_files}"
 
   modified_module_list=()
