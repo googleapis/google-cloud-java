@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" child.project.url.inherit.append.path="false">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
@@ -16,6 +16,7 @@
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
     <version>1.5.3</version>
+    <relativePath/>
   </parent>
 
   <properties>
@@ -36,7 +37,8 @@
   <organization>
     <name>Google LLC</name>
   </organization>
-  <scm>
+  <scm child.scm.connection.inherit.append.path="false"  child.scm.developerConnection.inherit.append.path="false"
+       child.scm.url.inherit.append.path="false">
     <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
     <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
     <url>https://github.com/googleapis/google-cloud-java</url>
