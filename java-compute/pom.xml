@@ -62,4 +62,5 @@
     <module>proto-google-cloud-compute-v1</module>
     <module>google-cloud-compute-bom</module>
   </modules>
-</project>
+
+  </project>
