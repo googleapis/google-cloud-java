@@ -60,7 +60,7 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
-        JOB_NAME: windows-units-${{matrix.java}}
+        JOB_NAME: windows-units
   lint:
     runs-on: ubuntu-latest
     steps:
