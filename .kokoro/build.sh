@@ -55,11 +55,7 @@ case ${JOB_TYPE} in
   integration)
     generate_modified_modules_list
     if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      # Combine each entry with a comma
-      module_list=$(
-        IFS=,
-        echo "${modified_module_list[*]}"
-      )
+      generate_maven_pl_list
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -97,43 +93,46 @@ case ${JOB_TYPE} in
     run_graalvm_tests
     ;;
   samples)
-    install_modules
-    for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-      [[ -f "${FILE}" ]] || continue
-      source "${FILE}"
-    done
+    generate_modified_modules_list
+    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
+      generate_maven_pl_list
+      install_modules
+      for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+        [[ -f "${FILE}" ]] || continue
+        source "${FILE}"
+      done
 
-    modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-    for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-        printf "Running now for %s\n" "${module}"
-        pushd $module
-        SAMPLES_DIR=samples
-        # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
-        if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
-          SAMPLES_DIR=samples/snapshot
-        fi
+      for module in "${modified_module_list[@]}"; do
+        if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+          printf "Running now for %s\n" "${module}"
+          pushd $module
+          SAMPLES_DIR=samples
+          # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
+          if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
+            SAMPLES_DIR=samples/snapshot
+          fi
 
-        if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-          pushd ${SAMPLES_DIR}
-          mvn -B \
-            -ntp \
-            -DtrimStackTrace=false \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -fae \
-            verify
-          RETURN_CODE=$?
+          if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
+            pushd ${SAMPLES_DIR}
+            mvn -B \
+              -ntp \
+              -DtrimStackTrace=false \
+              -Dclirr.skip=true \
+              -Denforcer.skip=true \
+              -Dcheckstyle.skip=true \
+              -Dflatten.skip=true \
+              -Danimal.sniffer.skip=true \
+              -fae \
+              verify
+            RETURN_CODE=$?
+            popd
+          else
+            echo "no sample pom.xml found - skipping sample tests"
+          fi
           popd
-        else
-          echo "no sample pom.xml found - skipping sample tests"
         fi
-        popd
-      fi
-    done
+      done
+    fi
     ;;
   *) ;;
 

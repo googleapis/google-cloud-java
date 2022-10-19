@@ -124,16 +124,20 @@ function run_graalvm_tests() {
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "${module_list}"
 }
 
+function generate_maven_pl_list() {
+  # Combine each entry with a comma
+  module_list=$(
+    IFS=,
+    echo "${modified_module_list[*]}"
+  )
+}
+
 function generate_graalvm_modules_list() {
   if [[ "${TEST_ALL_MODULES}" == "true" ]]; then
     # This will get a list of all modules
     generate_modified_modules_list
     assign_modules_to_job
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modules_assigned_list[*]}"
-    )
+    generate_maven_pl_list
     printf "Module list is:\n%s\n" "${module_list}"
   else
     module_list="${MAVEN_MODULES}"
@@ -142,36 +146,18 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  # Run everything if `module_list` is empty
-  if [ -z "${module_list}" ]; then
-    retry_with_backoff 3 10 \
-      mvn -B \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -DskipTests=true \
-        -Djacoco.skip=true \
-        -T 1C \
-        install
-  else
-    retry_with_backoff 3 10 \
-      mvn -B -pl "${module_list}" \
-        -amd \
-        -ntp \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -DskipTests=true \
-        -Djacoco.skip=true \
-        -T 1C \
-        install
-  fi
+  retry_with_backoff 3 10 \
+    mvn -B -pl "${module_list}" \
+      -amd \
+      -ntp \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -DskipTests=true \
+      -Djacoco.skip=true \
+      -T 1C \
+      install
 }
