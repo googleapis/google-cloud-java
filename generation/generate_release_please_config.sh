@@ -26,7 +26,6 @@ for path in $module_list; do
   module_line=$(grep -E "^((google-.*|grafeas|gapic\-libraries)).*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${version_file}")
 
   artifact_name=$(echo "${module_line}" | cut -d ":" -f1)
-  module_released_version=$(echo "${module_line}" | cut -d ":" -f2)
   module_snapshot_version=$(echo "${module_line}" | cut -d ":" -f3)
 
   # concatenating module name and module version
