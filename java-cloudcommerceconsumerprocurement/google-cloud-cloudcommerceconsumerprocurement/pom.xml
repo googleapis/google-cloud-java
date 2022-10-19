@@ -6,7 +6,6 @@
   <version>0.2.0</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Commerce Consumer Procurement</name>
-  <url>https://github.com/googleapis/java-cloudcommerceconsumerprocurement</url>
   <description>Cloud Commerce Consumer Procurement Find top solutions integrated with Google Cloud to accelerate your digital transformation. Scale and simplify procurement for your organization with online discovery, flexible purchasing, and fulfillment of enterprise-grade cloud solutions.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

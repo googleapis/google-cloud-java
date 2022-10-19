@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.6.0</version><!-- {x-version-update:google-cloud-functions:current} -->
   <name>Google Cloud Functions Parent</name>
-  <url>https://github.com/googleapis/java-functions</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.1.0</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
   <name>Google Analytics Hub API Parent</name>
-  <url>https://github.com/googleapis/java-analyticshub</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

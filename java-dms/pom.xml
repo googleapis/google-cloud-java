@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.3.0</version><!-- {x-version-update:google-cloud-dms:current} -->
   <name>Google Database Migration Service Parent</name>
-  <url>https://github.com/googleapis/java-dms</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

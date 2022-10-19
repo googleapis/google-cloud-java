@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google BeyondCorp AppGateways BOM</name>
-  <url>https://github.com/googleapis/java-beyondcorp-appgateways</url>
   <description>
     BOM for BeyondCorp AppGateways
   </description>

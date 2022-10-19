@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Security Command Center BOM</name>
-  <url>https://github.com/googleapis/java-securitycenter</url>
   <description>
     BOM for Google Cloud Security Command Center
   </description>

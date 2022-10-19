@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.7.0</version><!-- {x-version-update:google-cloud-network-security:current} -->
   <name>Google Network Security API Parent</name>
-  <url>https://github.com/googleapis/java-network-security</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -6,7 +6,6 @@
   <version>0.6.0</version><!-- {x-version-update:google-cloud-private-catalog:current} -->
   <packaging>jar</packaging>
   <name>Google Private Catalog</name>
-  <url>https://github.com/googleapis/java-private-catalog</url>
   <description>Private Catalog allows developers and cloud admins to make their solutions discoverable to their internal enterprise users. Cloud admins can manage their solutions and ensure their users are always launching the latest versions.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

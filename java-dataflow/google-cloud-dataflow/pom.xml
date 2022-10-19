@@ -6,7 +6,6 @@
   <version>0.8.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   <packaging>jar</packaging>
   <name>Google Dataflow</name>
-  <url>https://github.com/googleapis/java-dataflow</url>
   <description>Dataflow is a managed service for executing a wide variety of data processing patterns.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

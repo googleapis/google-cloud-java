@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>3.0.0</version><!-- {x-version-update:google-cloud-speech:current} -->
   <name>Google Cloud speech Parent</name>
-  <url>https://github.com/googleapis/java-speech</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

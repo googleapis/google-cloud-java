@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Video Stitcher API BOM</name>
-  <url>https://github.com/googleapis/java-video-stitcher</url>
   <description>
     BOM for Video Stitcher API
   </description>

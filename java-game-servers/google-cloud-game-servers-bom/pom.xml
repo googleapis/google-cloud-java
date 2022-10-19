@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Game Services BOM</name>
-  <url>https://github.com/googleapis/java-game-servers</url>
   <description>
     BOM for Google Cloud Game Services
   </description>

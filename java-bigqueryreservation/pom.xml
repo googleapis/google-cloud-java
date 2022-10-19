@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.5.0</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
   <name>Google Cloud BigQuery Reservations Parent</name>
-  <url>https://github.com/googleapis/java-bigqueryreservation</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

@@ -6,7 +6,6 @@
   <version>0.1.0</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
   <packaging>jar</packaging>
   <name>Google Google Distributed Cloud Edge</name>
-  <url>https://github.com/googleapis/java-distributedcloudedge</url>
   <description>Google Distributed Cloud Edge Google Distributed Cloud Edge allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.</description>
   <parent>
     <groupId>com.google.cloud</groupId>

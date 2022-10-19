@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.10.0</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
   <name>Google Media Translation API Parent</name>
-  <url>https://github.com/googleapis/java-mediatranslation</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

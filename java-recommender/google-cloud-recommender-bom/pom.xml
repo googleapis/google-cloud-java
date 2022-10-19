@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud Recommender BOM</name>
-  <url>https://github.com/googleapis/java-recommender</url>
   <description>
     BOM for Google Cloud Recommender
   </description>

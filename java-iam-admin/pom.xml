@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
   <name>Google IAM Admin API Parent</name>
-  <url>https://github.com/googleapis/java-iam-admin</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

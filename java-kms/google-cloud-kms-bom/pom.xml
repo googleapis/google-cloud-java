@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud kms BOM</name>
-  <url>https://github.com/googleapis/java-kms</url>
   <description>
     BOM for Google Cloud KMS
   </description>
