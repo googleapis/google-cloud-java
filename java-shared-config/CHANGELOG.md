@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.5.4](https://github.com/googleapis/java-shared-config/compare/v1.5.3...v1.5.4) (2022-10-19)
+
+
+### Dependencies
+
+* Update auto-value-annotation.version to v1.10 ([#521](https://github.com/googleapis/java-shared-config/issues/521)) ([601235c](https://github.com/googleapis/java-shared-config/commit/601235c32b6f1233d81a27788f6691cda05787af))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.3.2 ([#501](https://github.com/googleapis/java-shared-config/issues/501)) ([2b2c611](https://github.com/googleapis/java-shared-config/commit/2b2c611815cafd1809e27c769577ae55d481a170))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.3.3 ([#510](https://github.com/googleapis/java-shared-config/issues/510)) ([8d7f75d](https://github.com/googleapis/java-shared-config/commit/8d7f75de442cb3a274004faae430e9edf60730f3))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.3.4 ([#517](https://github.com/googleapis/java-shared-config/issues/517)) ([1119ba2](https://github.com/googleapis/java-shared-config/commit/1119ba29e4fe3a74a58c18961c3431570186cc27))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.14 ([#515](https://github.com/googleapis/java-shared-config/issues/515)) ([779a239](https://github.com/googleapis/java-shared-config/commit/779a2398f1310a2f23555dc5c861a5203364d7a1))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.15 ([#522](https://github.com/googleapis/java-shared-config/issues/522)) ([5dd225d](https://github.com/googleapis/java-shared-config/commit/5dd225dc5a66562c8496366986ef9dc401d9be92))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.14 ([#516](https://github.com/googleapis/java-shared-config/issues/516)) ([5605094](https://github.com/googleapis/java-shared-config/commit/56050943045d5e3d94c8598791c695d3fefcfef0))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.15 ([#523](https://github.com/googleapis/java-shared-config/issues/523)) ([45752ad](https://github.com/googleapis/java-shared-config/commit/45752ad7083f07d2ce81a23ea930aa9737473940))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.1 ([#514](https://github.com/googleapis/java-shared-config/issues/514)) ([60c000c](https://github.com/googleapis/java-shared-config/commit/60c000c3736288b98382aae79eb21a5cb15258fb))
+
 ## [1.5.3](https://github.com/googleapis/java-shared-config/compare/v1.5.2...v1.5.3) (2022-07-27)
 
 
