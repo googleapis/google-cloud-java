@@ -68,7 +68,7 @@ function generate_modified_modules_list() {
   printf "Modified files:\n%s\n" "${modified_files}"
 
   modified_module_list=()
-  # If jar-parent pom.xml is touched, run ITs on all the modules
+  # If either parent pom.xml is touched, run ITs on all the modules
   parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
   if [[ ( -n $parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
@@ -125,20 +125,24 @@ function run_graalvm_tests() {
 }
 
 function generate_graalvm_modules_list() {
+  generate_modified_modules_list
   if [[ "${TEST_ALL_MODULES}" == "true" ]]; then
     # This will get a list of all modules
-    generate_modified_modules_list
     assign_modules_to_job
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modules_assigned_list[*]}"
-    )
-    printf "Module list is:\n%s\n" "${module_list}"
   else
-    module_list="${MAVEN_MODULES}"
-    printf "Running the GraalVM test on pre-selected maven modules: %s\n" "${MAVEN_MODULES}"
+    modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
+    modules_assigned_list=()
+    for module in "${modules_list[@]}"; do
+      if [[ "${modified_module_list[*]}" =~ "${module}" ]]; then
+        modules_assigned_list+=("${module}")
+      fi
+    done
   fi
+  module_list=$(
+    IFS=,
+    echo "${modules_assigned_list[*]}"
+  )
+  printf "Module list is:\n%s\n" "${module_list}"
 }
 
 function install_modules() {

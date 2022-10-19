@@ -73,13 +73,17 @@ case ${JOB_TYPE} in
     ;;
   graalvm)
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      install_modules
+      run_graalvm_tests
+    fi
     ;;
   graalvm17)
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      install_modules
+      run_graalvm_tests
+    fi
     ;;
   samples)
     mvn -B \
