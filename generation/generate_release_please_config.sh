@@ -30,7 +30,7 @@ for path in $module_list; do
   module_snapshot_version=$(echo "${module_line}" | cut -d ":" -f3)
 
   # concatenating module name and module version
-  rp_manifest_line="${tab}\"${module_name}\": \"${module_released_version}\""
+  rp_manifest_line="${tab}\"${module_name}\": \"${module_snapshot_version}\""
   # Generate the JSON block with formatting
   rp_config_line+="${tab}${tab}\"${module_name}\": {\n${tab}${tab}${tab}\"component\": \"${artifact_name}\"\n${tab}${tab}}"
 
