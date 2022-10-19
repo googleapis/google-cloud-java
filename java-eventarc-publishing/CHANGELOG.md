@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-eventarc-publishing-v0.3.7...google-cloud-eventarc-publishing-v0.4.0) (2022-10-14)
+## [0.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-eventarc-publishing-v0.3.7...google-cloud-eventarc-publishing-v0.4.0) (2022-10-17)
 
 
 ### Features

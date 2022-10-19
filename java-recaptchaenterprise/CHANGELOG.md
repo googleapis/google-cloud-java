@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recaptchaenterprise-v3.0.12...google-cloud-recaptchaenterprise-v3.1.0) (2022-10-14)
+## [3.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-recaptchaenterprise-v3.0.12...google-cloud-recaptchaenterprise-v3.1.0) (2022-10-17)
 
 
 ### Features

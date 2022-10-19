@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Bare Metal SOlution BOM</name>
-  <url>https://github.com/googleapis/java-bare-metal-solution</url>
   <description>
     BOM for Bare Metal SOlution
   </description>

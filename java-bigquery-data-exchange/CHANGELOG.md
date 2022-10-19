@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigquery-data-exchange-v0.4.0...google-cloud-bigquery-data-exchange-v1.0.0) (2022-10-14)
+## [1.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-bigquery-data-exchange-v0.4.0...google-cloud-bigquery-data-exchange-v1.0.0) (2022-10-17)
 
 
 ### ⚠ BREAKING CHANGES

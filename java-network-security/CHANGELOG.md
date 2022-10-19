@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-network-security-v0.6.4...google-cloud-network-security-v0.7.0) (2022-10-14)
+## [0.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-network-security-v0.6.4...google-cloud-network-security-v0.7.0) (2022-10-17)
 
 
 ### Features

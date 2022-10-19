@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Service Usage BOM</name>
-  <url>https://github.com/googleapis/java-service-usage</url>
   <description>
     BOM for Service Usage
   </description>

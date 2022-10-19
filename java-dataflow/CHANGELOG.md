@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataflow-v0.7.6...google-cloud-dataflow-v0.8.0) (2022-10-14)
+## [0.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dataflow-v0.7.6...google-cloud-dataflow-v0.8.0) (2022-10-17)
 
 
 ### Features

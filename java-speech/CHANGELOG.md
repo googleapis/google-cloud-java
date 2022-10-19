@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-speech-v2.6.1...google-cloud-speech-v3.0.0) (2022-10-14)
+## [3.0.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-speech-v2.6.1...google-cloud-speech-v3.0.0) (2022-10-17)
 
 
 ### ⚠ BREAKING CHANGES

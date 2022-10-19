@@ -6,7 +6,6 @@
   <version>1.5.0</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
   <packaging>jar</packaging>
   <name>Google Identity Access Context Manager</name>
-  <url>https://github.com/googleapis/java-accesscontextmanager</url>
   <description>Identity Access Context Manager n/a</description>
   <parent>
     <groupId>com.google.cloud</groupId>

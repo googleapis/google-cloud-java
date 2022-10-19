@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.14.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-admin-v0.13.5...google-analytics-admin-v0.14.0) (2022-10-14)
+## [0.14.0](https://github.com/googleapis/google-cloud-java/compare/google-analytics-admin-v0.13.5...google-analytics-admin-v0.14.0) (2022-10-17)
 
 
 ### Features

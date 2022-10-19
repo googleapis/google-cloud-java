@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>0.1.0</version><!-- {x-version-update:gapic-libraries-bom:current} -->
   <name>Google Cloud Java BOM</name>
-  <url>https://github.com/googleapis/java-cloud-bom</url>
   <description>
     BOM for the libraries in google-cloud-java repository. Users should not
     depend on this artifact explicitly because this BOM is an implementation
@@ -192,6 +191,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datalabeling-bom</artifactId>
+        <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataplex-bom</artifactId>
         <version>1.2.0</version><!-- {x-version-update:google-cloud-dataplex:current} -->
         <type>pom</type>
@@ -264,6 +270,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-domains-bom</artifactId>
         <version>1.1.0</version><!-- {x-version-update:google-cloud-domains:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-errorreporting-bom</artifactId>
+        <version>0.125.0-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -367,6 +380,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-mediatranslation-bom</artifactId>
+        <version>0.10.0</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-memcache-bom</artifactId>
         <version>2.4.0</version><!-- {x-version-update:google-cloud-memcache:current} -->
         <type>pom</type>
@@ -439,6 +459,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-login-bom</artifactId>
         <version>2.3.0</version><!-- {x-version-update:google-cloud-os-login:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-phishingprotection-bom</artifactId>
+        <version>0.35.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

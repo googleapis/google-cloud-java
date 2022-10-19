@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Binary Authorization BOM</name>
-  <url>https://github.com/googleapis/java-binary-authorization</url>
   <description>
     BOM for Binary Authorization
   </description>

@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-domains-v1.0.6...google-cloud-domains-v1.1.0) (2022-10-14)
+## [1.1.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-domains-v1.0.6...google-cloud-domains-v1.1.0) (2022-10-17)
 
 
 ### Features

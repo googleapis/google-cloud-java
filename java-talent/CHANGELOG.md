@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-talent-v2.4.6...google-cloud-talent-v2.5.0) (2022-10-14)
+## [2.5.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-talent-v2.4.6...google-cloud-talent-v2.5.0) (2022-10-17)
 
 
 ### Features

@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.125.0-beta](https://github.com/googleapis/google-cloud-java/compare/google-cloud-errorreporting-v0.124.15-beta...google-cloud-errorreporting-v0.125.0-beta) (2022-10-14)
+## [0.125.0-beta](https://github.com/googleapis/google-cloud-java/compare/google-cloud-errorreporting-v0.124.15-beta...google-cloud-errorreporting-v0.125.0-beta) (2022-10-17)
 
 
 ### Features

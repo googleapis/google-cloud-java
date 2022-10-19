@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.12.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-securitycenter-v2.11.1...google-cloud-securitycenter-v2.12.0) (2022-10-14)
+## [2.12.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-securitycenter-v2.11.1...google-cloud-securitycenter-v2.12.0) (2022-10-17)
 
 
 ### Features

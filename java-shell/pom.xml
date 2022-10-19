@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.3.0</version><!-- {x-version-update:google-cloud-shell:current} -->
   <name>Google Cloud Shell Parent</name>
-  <url>https://github.com/googleapis/java-shell</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

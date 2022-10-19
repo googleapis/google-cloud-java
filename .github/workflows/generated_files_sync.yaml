@@ -18,10 +18,10 @@ on:
     branches:
     - main
   pull_request:
-name: Generated Files Sync
+name: generation diff
 jobs:
   root-pom:
-    name: root pom.xml does not have diff from generated one
+    # root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
       run: git --no-pager diff --exit-code
 
   release-please-config:
-    name: Release Please config files do not have diff from generated ones
+    # Release Please config files do not have diff from generated ones
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -46,7 +46,7 @@ jobs:
       run: git --no-pager diff --exit-code
 
   gapic-bom:
-    name: gapic-libraries-bom does not have diff from generated one
+    # gapic-libraries-bom does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -60,7 +60,7 @@ jobs:
       run: git --no-pager diff --exit-code
 
   owlbot-py:
-    name: applying templated owlbot.py config doesn't create a diff
+    # applying templated owlbot.py config doesn't create a diff
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -71,7 +71,7 @@ jobs:
         run: git --no-pager diff --exit-code
 
   gitignore_correctness:
-    name: Generated files should not match gitignore
+    # Generated files should not match .gitignore
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -94,7 +94,7 @@ jobs:
         fi
 
   consolidate-config:
-    name: parent handles config for child modules
+    # Parent handles config for child modules
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

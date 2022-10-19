@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-webrisk-v2.2.6...google-cloud-webrisk-v2.3.0) (2022-10-14)
+## [2.3.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-webrisk-v2.2.6...google-cloud-webrisk-v2.3.0) (2022-10-17)
 
 
 ### Features

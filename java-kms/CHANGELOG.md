@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-kms-v2.6.8...google-cloud-kms-v2.7.0) (2022-10-14)
+## [2.7.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-kms-v2.6.8...google-cloud-kms-v2.7.0) (2022-10-17)
 
 
 ### Features

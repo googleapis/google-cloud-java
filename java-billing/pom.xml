@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-billing:current} -->
   <name>Google Cloud Billing Parent</name>
-  <url>https://github.com/googleapis/java-billing</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>

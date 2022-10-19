@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-document-ai-v2.7.5...google-cloud-document-ai-v2.8.0) (2022-10-14)
+## [2.8.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-document-ai-v2.7.5...google-cloud-document-ai-v2.8.0) (2022-10-17)
 
 
 ### Features

@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-v4.9.1...google-cloud-dialogflow-v4.10.0) (2022-10-14)
+## [4.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-v4.9.1...google-cloud-dialogflow-v4.10.0) (2022-10-17)
 
 
 ### Features

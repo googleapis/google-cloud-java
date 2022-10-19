@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-mediatranslation-v0.9.6...google-cloud-mediatranslation-v0.10.0) (2022-10-14)
+## [0.10.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-mediatranslation-v0.9.6...google-cloud-mediatranslation-v0.10.0) (2022-10-17)
 
 
 ### Features

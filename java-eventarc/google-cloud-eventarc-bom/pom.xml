@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Eventarc BOM</name>
-  <url>https://github.com/googleapis/java-eventarc</url>
   <description>
     BOM for Eventarc
   </description>

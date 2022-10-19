@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-vmmigration-v1.3.5...google-cloud-vmmigration-v1.4.0) (2022-10-14)
+## [1.4.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-vmmigration-v1.3.5...google-cloud-vmmigration-v1.4.0) (2022-10-17)
 
 
 ### Features

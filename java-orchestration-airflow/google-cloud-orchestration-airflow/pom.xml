@@ -6,7 +6,6 @@
   <version>1.4.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Composer</name>
-  <url>https://github.com/googleapis/java-orchestration-airflow</url>
   <description>Cloud Composer is a managed Apache Airflow service that helps you create, schedule, monitor and manage workflows. Cloud Composer automation helps you create Airflow environments quickly and use Airflow-native tools, such as the powerful Airflow web interface and command line tools, so you can focus on your workflows and not your infrastructure.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
