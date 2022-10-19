@@ -62,7 +62,7 @@
       <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
       <id>checkstyle-tests</id>
       <activation>
-        <jdk>[1.11,)</jdk>
+        <jdk>[11,)</jdk>
       </activation>
       <build>
         <plugins>
