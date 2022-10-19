@@ -22,6 +22,7 @@
   </parent>
   <properties>
     <site.installationModule>grafeas</site.installationModule>
+    <checkstyle.header.file>grafeas.header</checkstyle.header.file>
   </properties>
 
   <dependencyManagement>
@@ -84,14 +85,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <!-- Only run checkstyle plugin on Java 8+ (checkstyle artifact only supports Java 8+) -->
-      <id>checkstyle-tests</id>
-      <activation>
-        <jdk>[1.8,)</jdk>
-      </activation>
-    </profile>
-  </profiles>
 </project>

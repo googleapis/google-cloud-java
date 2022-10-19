@@ -53,13 +53,4 @@
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>google-cloud-bigquerydatatransfer-bom</module>
   </modules>
-
-  <profiles>
-    <profile>
-      <id>include-samples</id>
-      <modules>
-        <module>samples</module>
-      </modules>
-    </profile>
-  </profiles>
 </project>

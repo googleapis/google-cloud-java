@@ -51,13 +51,4 @@
     <module>proto-google-cloud-monitoring-v3</module>
     <module>google-cloud-monitoring-bom</module>
   </modules>
-
-  <profiles>
-    <profile>
-      <id>include-samples</id>
-      <modules>
-        <module>samples</module>
-      </modules>
-    </profile>
-  </profiles>
 </project>
