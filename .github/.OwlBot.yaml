@@ -13,4 +13,4 @@
 # limitations under the License.
 
 docker:
-  image: gcr.io/cloud-devrel-public-resources/owlbot-java:latest
+  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
