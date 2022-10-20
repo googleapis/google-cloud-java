@@ -12,8 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-deep-preserve-regex:
-  - /.github/google-.*/src/main/resources/META-INF/native-image/*
-  - /.github/google-.*/src/test/resources/META-INF/native-image/*
 docker:
   image: gcr.io/cloud-devrel-public-resources/owlbot-java:latest
