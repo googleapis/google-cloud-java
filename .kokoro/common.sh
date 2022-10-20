@@ -94,21 +94,6 @@ function generate_modified_modules_list() {
   fi
 }
 
-function assign_modules_to_job() {
-  modules_assigned_list=()
-  num=0
-  for module in "${modified_module_list[@]}"; do
-    # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
-    mod_num=$((num % NUM_JOBS + 1))
-    # Spaces are intentionally added -- Query is regex and array elements are space separated
-    # It tries to match the *exact* `module` text
-    if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
-      modules_assigned_list+=("${module}")
-    fi
-    num=$((num + 1))
-  done
-}
-
 function run_graalvm_tests() {
   printf "Running GraalVM ITs on:\n%s\n" "${module_list[*]}"
   mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -129,15 +114,25 @@ function run_graalvm_tests() {
 }
 
 function generate_graalvm_modules_list() {
+  modules_assigned_list=()
   generate_modified_modules_list
   if [[ "${TEST_ALL_MODULES}" == "true" ]]; then
-    # Will assign the modules to modules_assigned_list (based on num jobs)
-    assign_modules_to_job
-  else
+    # Assign the modules to modules_assigned_list (based on num jobs)
+    num=0
+    for module in "${modified_module_list[@]}"; do
+      # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
+      mod_num=$((num % NUM_JOBS + 1))
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `module` text
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
+        modules_assigned_list+=("${module}")
+      fi
+      num=$((num + 1))
+    done
+  elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
     # MAVEN_MODULES ENV_VAR is expecting comma delimited string (similar to mvn -pl)
     # This will get all the modules and put all the elements into an array
     maven_modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
-    modules_assigned_list=()
     for maven_module in "${maven_modules_list[@]}"; do
       # Check that the modified_module_list contains a module from MAVEN_MODULES
       # Spaces are intentionally added -- Query is regex and array elements are space separated
