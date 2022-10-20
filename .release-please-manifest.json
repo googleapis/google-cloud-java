@@ -90,7 +90,7 @@
   "java-network-management": "1.5.1-SNAPSHOT",
   "java-network-security": "0.7.1-SNAPSHOT",
   "java-notebooks": "1.2.1-SNAPSHOT",
-  "java-notification": "0.123.20-beta",
+  "java-notification": "0.123.21-beta-SNAPSHOT",
   "java-optimization": "1.2.1-SNAPSHOT",
   "java-orchestration-airflow": "1.4.1-SNAPSHOT",
   "java-orgpolicy": "2.4.1-SNAPSHOT",
