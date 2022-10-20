@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.11.9](https://github.com/googleapis/java-logging/compare/v3.11.8...v3.11.9) (2022-10-17)
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.15 ([#1145](https://github.com/googleapis/java-logging/issues/1145)) ([5bd000c](https://github.com/googleapis/java-logging/commit/5bd000c55e24d53667eca0bcb22ee3cbb9f13fe0))
+
 ## [3.11.8](https://github.com/googleapis/java-logging/compare/v3.11.7...v3.11.8) (2022-10-15)
 
 
