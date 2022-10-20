@@ -98,7 +98,7 @@ function assign_modules_to_job() {
   for module in "${modified_module_list[@]}"; do
     # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
     mod_num=$((num % NUM_JOBS + 1))
-    if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
+    if [[ ! "${excluded_modules[*]}" =~ "${module}" ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
       modules_assigned_list+=("${module}")
     fi
     num=$((num + 1))
@@ -132,11 +132,11 @@ function generate_graalvm_modules_list() {
   else
     # MAVEN_MODULES ENV_VAR is expecting comma delimited string (similar to mvn -pl)
     # This will get all the modules and put all the elements into an array
-    modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
+    maven_modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
     modules_assigned_list=()
-    for module in "${modules_list[@]}"; do
+    for maven_module in "${maven_modules_list[@]}"; do
       # Check that the modified_module_list contains a module from MAVEN_MODULES
-      if [[ "${modified_module_list[*]}" =~ "${module}" ]]; then
+      if [[ "${modified_module_list[*]}" =~ "${maven_module}" ]]; then
         modules_assigned_list+=("${module}")
       fi
     done
