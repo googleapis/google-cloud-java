@@ -39,27 +39,10 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>com.google.api:gax-grpc</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <modules>
     <module>google-cloud-compute</module>
     <module>proto-google-cloud-compute-v1</module>
     <module>google-cloud-compute-bom</module>
   </modules>
-</project>
+
+  </project>

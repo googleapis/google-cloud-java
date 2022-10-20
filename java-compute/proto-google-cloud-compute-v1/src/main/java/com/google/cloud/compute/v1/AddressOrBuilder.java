@@ -243,6 +243,46 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * Check the Ipv6EndpointType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_endpoint_type = 97501004;</code>
+   *
+   * @return Whether the ipv6EndpointType field is set.
+   */
+  boolean hasIpv6EndpointType();
+  /**
+   *
+   *
+   * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * Check the Ipv6EndpointType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_endpoint_type = 97501004;</code>
+   *
+   * @return The ipv6EndpointType.
+   */
+  java.lang.String getIpv6EndpointType();
+  /**
+   *
+   *
+   * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * Check the Ipv6EndpointType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_endpoint_type = 97501004;</code>
+   *
+   * @return The bytes for ipv6EndpointType.
+   */
+  com.google.protobuf.ByteString getIpv6EndpointTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Type of the resource. Always compute#address for addresses.
    * </pre>
    *

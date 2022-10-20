@@ -74,25 +74,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>com.google.api.grpc:proto-google-cloud-speech-v1beta1</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>com.google.api.grpc:grpc-google-cloud-speech-v1beta1</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <modules>
     <module>google-cloud-speech</module>
     <module>grpc-google-cloud-speech-v1</module>

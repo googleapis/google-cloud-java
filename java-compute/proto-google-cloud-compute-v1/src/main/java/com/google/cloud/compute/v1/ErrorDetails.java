@@ -153,6 +153,36 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         : localizedMessage_;
   }
 
+  public static final int QUOTA_INFO_FIELD_NUMBER = 93923861;
+  private com.google.cloud.compute.v1.QuotaExceededInfo quotaInfo_;
+  /**
+   * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+   *
+   * @return Whether the quotaInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasQuotaInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+   *
+   * @return The quotaInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.QuotaExceededInfo getQuotaInfo() {
+    return quotaInfo_ == null
+        ? com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()
+        : quotaInfo_;
+  }
+  /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder getQuotaInfoOrBuilder() {
+    return quotaInfo_ == null
+        ? com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()
+        : quotaInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -173,6 +203,9 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(25251973, getErrorInfo());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(93923861, getQuotaInfo());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(404537155, getLocalizedMessage());
     }
@@ -190,6 +223,9 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25251973, getErrorInfo());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(93923861, getQuotaInfo());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -223,6 +259,10 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     if (hasLocalizedMessage()) {
       if (!getLocalizedMessage().equals(other.getLocalizedMessage())) return false;
     }
+    if (hasQuotaInfo() != other.hasQuotaInfo()) return false;
+    if (hasQuotaInfo()) {
+      if (!getQuotaInfo().equals(other.getQuotaInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -245,6 +285,10 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
     if (hasLocalizedMessage()) {
       hash = (37 * hash) + LOCALIZED_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getLocalizedMessage().hashCode();
+    }
+    if (hasQuotaInfo()) {
+      hash = (37 * hash) + QUOTA_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getQuotaInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -388,6 +432,7 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         getErrorInfoFieldBuilder();
         getHelpFieldBuilder();
         getLocalizedMessageFieldBuilder();
+        getQuotaInfoFieldBuilder();
       }
     }
 
@@ -412,6 +457,12 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         localizedMessageBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (quotaInfoBuilder_ == null) {
+        quotaInfo_ = null;
+      } else {
+        quotaInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -464,6 +515,14 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
           result.localizedMessage_ = localizedMessageBuilder_.build();
         }
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (quotaInfoBuilder_ == null) {
+          result.quotaInfo_ = quotaInfo_;
+        } else {
+          result.quotaInfo_ = quotaInfoBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -524,6 +583,9 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLocalizedMessage()) {
         mergeLocalizedMessage(other.getLocalizedMessage());
       }
+      if (other.hasQuotaInfo()) {
+        mergeQuotaInfo(other.getQuotaInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -562,6 +624,12 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 202015786
+            case 751390890:
+              {
+                input.readMessage(getQuotaInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 751390890
             case -1058670054:
               {
                 input.readMessage(
@@ -959,6 +1027,125 @@ public final class ErrorDetails extends com.google.protobuf.GeneratedMessageV3
         localizedMessage_ = null;
       }
       return localizedMessageBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.QuotaExceededInfo quotaInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.QuotaExceededInfo,
+            com.google.cloud.compute.v1.QuotaExceededInfo.Builder,
+            com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder>
+        quotaInfoBuilder_;
+    /**
+     * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+     *
+     * @return Whether the quotaInfo field is set.
+     */
+    public boolean hasQuotaInfo() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+     *
+     * @return The quotaInfo.
+     */
+    public com.google.cloud.compute.v1.QuotaExceededInfo getQuotaInfo() {
+      if (quotaInfoBuilder_ == null) {
+        return quotaInfo_ == null
+            ? com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()
+            : quotaInfo_;
+      } else {
+        return quotaInfoBuilder_.getMessage();
+      }
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    public Builder setQuotaInfo(com.google.cloud.compute.v1.QuotaExceededInfo value) {
+      if (quotaInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        quotaInfo_ = value;
+        onChanged();
+      } else {
+        quotaInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    public Builder setQuotaInfo(
+        com.google.cloud.compute.v1.QuotaExceededInfo.Builder builderForValue) {
+      if (quotaInfoBuilder_ == null) {
+        quotaInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        quotaInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    public Builder mergeQuotaInfo(com.google.cloud.compute.v1.QuotaExceededInfo value) {
+      if (quotaInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && quotaInfo_ != null
+            && quotaInfo_ != com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()) {
+          quotaInfo_ =
+              com.google.cloud.compute.v1.QuotaExceededInfo.newBuilder(quotaInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          quotaInfo_ = value;
+        }
+        onChanged();
+      } else {
+        quotaInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    public Builder clearQuotaInfo() {
+      if (quotaInfoBuilder_ == null) {
+        quotaInfo_ = null;
+        onChanged();
+      } else {
+        quotaInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
+      return this;
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    public com.google.cloud.compute.v1.QuotaExceededInfo.Builder getQuotaInfoBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getQuotaInfoFieldBuilder().getBuilder();
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    public com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder getQuotaInfoOrBuilder() {
+      if (quotaInfoBuilder_ != null) {
+        return quotaInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return quotaInfo_ == null
+            ? com.google.cloud.compute.v1.QuotaExceededInfo.getDefaultInstance()
+            : quotaInfo_;
+      }
+    }
+    /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.QuotaExceededInfo,
+            com.google.cloud.compute.v1.QuotaExceededInfo.Builder,
+            com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder>
+        getQuotaInfoFieldBuilder() {
+      if (quotaInfoBuilder_ == null) {
+        quotaInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.QuotaExceededInfo,
+                com.google.cloud.compute.v1.QuotaExceededInfo.Builder,
+                com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder>(
+                getQuotaInfo(), getParentForChildren(), isClean());
+        quotaInfo_ = null;
+      }
+      return quotaInfoBuilder_;
     }
 
     @java.lang.Override

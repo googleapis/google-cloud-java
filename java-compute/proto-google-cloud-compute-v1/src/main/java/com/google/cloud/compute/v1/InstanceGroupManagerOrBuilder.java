@@ -457,6 +457,46 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
+   * Pagination behavior of the listManagedInstances API method for this managed instance group.
+   * Check the ListManagedInstancesResults enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string list_managed_instances_results = 296047156;</code>
+   *
+   * @return Whether the listManagedInstancesResults field is set.
+   */
+  boolean hasListManagedInstancesResults();
+  /**
+   *
+   *
+   * <pre>
+   * Pagination behavior of the listManagedInstances API method for this managed instance group.
+   * Check the ListManagedInstancesResults enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string list_managed_instances_results = 296047156;</code>
+   *
+   * @return The listManagedInstancesResults.
+   */
+  java.lang.String getListManagedInstancesResults();
+  /**
+   *
+   *
+   * <pre>
+   * Pagination behavior of the listManagedInstances API method for this managed instance group.
+   * Check the ListManagedInstancesResults enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string list_managed_instances_results = 296047156;</code>
+   *
+   * @return The bytes for listManagedInstancesResults.
+   */
+  com.google.protobuf.ByteString getListManagedInstancesResultsBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *

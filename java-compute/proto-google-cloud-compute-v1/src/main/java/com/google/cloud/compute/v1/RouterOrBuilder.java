@@ -327,6 +327,70 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
+      getMd5AuthenticationKeysList();
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterMd5AuthenticationKey getMd5AuthenticationKeys(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  int getMd5AuthenticationKeysCount();
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>
+      getMd5AuthenticationKeysOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder getMd5AuthenticationKeysOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *

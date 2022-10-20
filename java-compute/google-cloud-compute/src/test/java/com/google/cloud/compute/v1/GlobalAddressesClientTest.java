@@ -156,6 +156,7 @@ public class GlobalAddressesClientTest {
             .setDescription("description-1724546052")
             .setId(3355)
             .setIpVersion("ipVersion-1161634383")
+            .setIpv6EndpointType("ipv6EndpointType399011318")
             .setKind("kind3292052")
             .setName("name3373707")
             .setNetwork("network1843485230")

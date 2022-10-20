@@ -27,7 +27,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The value of the host header in the HTTP health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
+   * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -39,7 +39,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The value of the host header in the HTTP health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
+   * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -51,7 +51,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The value of the host header in the HTTP health check request. If left empty (default value), the IP on behalf of which this health check is performed will be used.
+   * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -64,7 +64,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The TCP port number for the health check request. The default value is 80. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -76,7 +76,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The TCP port number for the health check request. The default value is 80. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -89,7 +89,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * Not supported.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -101,7 +101,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * Not supported.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -113,7 +113,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * Not supported.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -126,7 +126,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
+   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for pass-through load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -139,7 +139,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
+   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for pass-through load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -152,7 +152,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
+   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for pass-through load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -243,7 +243,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
+   * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -255,7 +255,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
+   * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -267,7 +267,7 @@ public interface HTTPHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the default value), the status code determines health. The response data can only be ASCII.
+   * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
    * </pre>
    *
    * <code>optional string response = 196547649;</code>

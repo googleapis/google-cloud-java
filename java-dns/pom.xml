@@ -92,25 +92,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>
