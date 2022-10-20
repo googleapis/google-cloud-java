@@ -55,6 +55,7 @@
   "java-deploy": "1.2.0",
   "java-dialogflow-cx": "0.15.0",
   "java-dialogflow": "4.10.0",
+  "java-discoveryengine": "0.0.1-SNAPSHOT",
   "java-distributedcloudedge": "0.1.0",
   "java-dlp": "3.8.0",
   "java-dms": "2.3.0",
