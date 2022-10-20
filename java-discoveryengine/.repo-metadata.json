@@ -1,0 +1,16 @@
+{
+  "api_shortname": "discoveryengine",
+  "name_pretty": "Discovery Engine API",
+  "product_documentation": "https://cloud.google.com/discovery-engine/docs/introduction",
+  "api_description": "A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.). Built by Cloud Retail API team using similar technologies, but an expansion to more generic verticals using JSON schema as polymorphic data representation.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-discoveryengine/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-discoveryengine",
+  "repo_short": "java-discoveryengine",
+  "distribution_name": "com.google.cloud:google-cloud-discoveryengine",
+  "api_id": "discoveryengine.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
