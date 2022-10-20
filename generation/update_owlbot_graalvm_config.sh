@@ -35,7 +35,7 @@ test_config="/${module_name}/google-.*/src/test/resources/META-INF/native-image/
 
 yq_query=".\"deep-preserve-regex\" += [\"${main_config}\",\"${test_config}\"]"
 
-new_config=$(cat "${OWLBOT_FILE}" | yq -y "${yq_query}" --sort-keys)
+new_config=$(cat "${OWLBOT_FILE}" | yq -y -P "${yq_query}" --sort-keys)
 
 mv "${OWLBOT_FILE}" "${dir_name}/temp.yaml"
 touch "${OWLBOT_FILE}"
