@@ -32,7 +32,15 @@ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer 
 | bash
 ```
 
-Follow the instruction in the output above to append lines in `$HOME/.bashrc`.
+Append the following lines to `$HOME/.bashrc`.
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
 Logout the shell and login again.
 
 Confirm pyenv installation succeeded:
@@ -125,7 +133,7 @@ $ python3.9 new-client.py generate \
   --proto-path=google/api/apikeys \
   --name-pretty="API Keys API" \
   --product-docs="https://cloud.google.com/api-keys/" \
-  --api-description="API Keys lets you create and manage your API keys for your projects." \
+  --api-description="API Keys lets you create and manage your API keys for your projects."
 ```
 
 The command creates `workspace` directory in which it prepares the changes for
@@ -136,8 +144,14 @@ create a pull request in the monorepo:
 ...
 Prepared new library in workspace/monorepo/java-apikeys
 Please create a pull request from that directory:
-  $ cd /usr/local/google/home/suztomo/google-cloud-java/generation/new_client/workspace/monorepo
-  $ gh pr create --title 'feat: [apikeys] new module for apikeys'
+  $ cd /usr/local/google/home/${USER}/google-cloud-java/generation/new_client/workspace/monorepo
+  $ gh pr create --title 'feat: [${API_SHORT_NAME}] new module for apikeys'
+```
+
+Install the Github CLI and login, if needed:
+```
+$ sudo apt-get install gh
+$ gh auth login
 ```
 
 Create a pull request from the change.
