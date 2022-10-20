@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.8.22](https://github.com/googleapis/java-core/compare/v2.8.21...v2.8.22) (2022-10-19)
+
+
+### Dependencies
+
+* Update dependency com.google.api:gax-bom to v2.19.4 ([#987](https://github.com/googleapis/java-core/issues/987)) ([70a959b](https://github.com/googleapis/java-core/commit/70a959bd01884ec4e9ec4705a25442bf06e9bb73))
+* Update dependency com.google.api.grpc:proto-google-iam-v1 to v1.6.4 ([#976](https://github.com/googleapis/java-core/issues/976)) ([ddf887f](https://github.com/googleapis/java-core/commit/ddf887fa35872299c1b65cd03934595a89c2ab4c))
+* Update dependency com.google.auth:google-auth-library-bom to v1.12.0 ([#981](https://github.com/googleapis/java-core/issues/981)) ([87c5616](https://github.com/googleapis/java-core/commit/87c5616ff8a5c4e96ff761b25cf1423505bdc4e2))
+* Update dependency com.google.auth:google-auth-library-bom to v1.12.1 ([#983](https://github.com/googleapis/java-core/issues/983)) ([ddf787a](https://github.com/googleapis/java-core/commit/ddf787a470a8f4b8416b09bf3bb656f249b1caf5))
+* Update dependency com.google.errorprone:error_prone_annotations to v2.16 ([#977](https://github.com/googleapis/java-core/issues/977)) ([6f9f78e](https://github.com/googleapis/java-core/commit/6f9f78ef38d586e1cded056451658b77c5a093b7))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.8 ([#984](https://github.com/googleapis/java-core/issues/984)) ([234c9a7](https://github.com/googleapis/java-core/commit/234c9a7788c32692b1e7f9686a6b7329d758acb9))
+* Update dependency io.grpc:grpc-bom to v1.50.0 ([#978](https://github.com/googleapis/java-core/issues/978)) ([024fb77](https://github.com/googleapis/java-core/commit/024fb77b67b4a0f9d8dfcd8315376a0b4937a0da))
+* Update dependency io.grpc:grpc-bom to v1.50.1 ([#985](https://github.com/googleapis/java-core/issues/985)) ([8b71163](https://github.com/googleapis/java-core/commit/8b71163725178ffcbbaae21c6d1fc530be77b9b4))
+* Update dependency org.threeten:threetenbp to v1.6.3 ([#979](https://github.com/googleapis/java-core/issues/979)) ([f51ea92](https://github.com/googleapis/java-core/commit/f51ea92c8bd1ebe0c7a2796d435cceafd037ce06))
+
 ## [2.8.21](https://github.com/googleapis/java-core/compare/v2.8.20...v2.8.21) (2022-10-10)
 
 
