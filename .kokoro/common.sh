@@ -64,16 +64,18 @@ function generate_modified_modules_list() {
   # Filter for java modules and get all the unique elements
   # grep returns 1 (error code) and exits the pipeline if there is no match
   # If there is no match, it will return true so the rest of the commands can run
-  modified_files=$(git diff --name-only $KOKORO_GITHUB_PULL_REQUEST_COMMIT $KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH)
+  modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_COMMIT}...${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}")
   printf "Modified files:\n%s\n" "${modified_files}"
 
   modified_module_list=()
-  # If root pom.xml is touched, run ITs on all the modules
-  root_pom_modified=$(echo "${modified_files}" | grep -e '^pom.xml$' || true)
-  if [[ ( -n $root_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
+  # If either parent pom.xml is touched, run ITs on all the modules
+  parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
+  if [[ ( -n $parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `module` text
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
         modified_module_list+=("${module}")
       fi
     done
@@ -90,19 +92,6 @@ function generate_modified_modules_list() {
       echo "Found no changes in the java modules"
     fi
   fi
-}
-
-function assign_modules_to_job() {
-  modules_assigned_list=()
-  num=0
-  for module in "${modified_module_list[@]}"; do
-    # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
-    mod_num=$((num % NUM_JOBS + 1))
-    if [[ ! "${excluded_modules[*]}" =~ $module ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
-      modules_assigned_list+=("${module}")
-    fi
-    num=$((num + 1))
-  done
 }
 
 function run_graalvm_tests() {
@@ -125,20 +114,38 @@ function run_graalvm_tests() {
 }
 
 function generate_graalvm_modules_list() {
+  modules_assigned_list=()
+  generate_modified_modules_list
   if [[ "${TEST_ALL_MODULES}" == "true" ]]; then
-    # This will get a list of all modules
-    generate_modified_modules_list
-    assign_modules_to_job
-    # Combine each entry with a comma
-    module_list=$(
-      IFS=,
-      echo "${modules_assigned_list[*]}"
-    )
-    printf "Module list is:\n%s\n" "${module_list}"
-  else
-    module_list="${MAVEN_MODULES}"
-    printf "Running the GraalVM test on pre-selected maven modules: %s\n" "${MAVEN_MODULES}"
+    # Assign the modules to modules_assigned_list (based on num jobs)
+    num=0
+    for module in "${modified_module_list[@]}"; do
+      # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
+      mod_num=$((num % NUM_JOBS + 1))
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `module` text
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
+        modules_assigned_list+=("${module}")
+      fi
+      num=$((num + 1))
+    done
+  elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
+    # MAVEN_MODULES ENV_VAR is expecting comma delimited string (similar to mvn -pl)
+    # This will get all the modules and put all the elements into an array
+    maven_modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
+    for maven_module in "${maven_modules_list[@]}"; do
+      # Check that the modified_module_list contains a module from MAVEN_MODULES
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `maven_module` text
+      if [[ " ${modified_module_list[*]} " =~ " ${maven_module} " ]]; then
+        modules_assigned_list+=("${module}")
+      fi
+    done
   fi
+  module_list=$(
+    IFS=,
+    echo "${modules_assigned_list[*]}"
+  )
 }
 
 function install_modules() {
