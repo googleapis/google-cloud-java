@@ -51,7 +51,7 @@ printf "# Copyright 2022 Google LLC\n\
 # distributed under the License is distributed on an \"AS IS\" BASIS,\n\
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n\
 # See the License for the specific language governing permissions and\n\
-# limitations under the License." >> "${OWLBOT_FILE}"
+# limitations under the License.\n" >> "${OWLBOT_FILE}"
 
 printf "\n" >> "${OWLBOT_FILE}"
 
