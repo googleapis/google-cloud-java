@@ -43,6 +43,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     interfaces_ = java.util.Collections.emptyList();
     kind_ = "";
+    md5AuthenticationKeys_ = java.util.Collections.emptyList();
     name_ = "";
     nats_ = java.util.Collections.emptyList();
     network_ = "";
@@ -519,6 +520,89 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MD5_AUTHENTICATION_KEYS_FIELD_NUMBER = 71063322;
+  private java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
+      md5AuthenticationKeys_;
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
+      getMd5AuthenticationKeysList() {
+    return md5AuthenticationKeys_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>
+      getMd5AuthenticationKeysOrBuilderList() {
+    return md5AuthenticationKeys_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  @java.lang.Override
+  public int getMd5AuthenticationKeysCount() {
+    return md5AuthenticationKeys_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RouterMd5AuthenticationKey getMd5AuthenticationKeys(
+      int index) {
+    return md5AuthenticationKeys_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Keys used for MD5 authentication.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder
+      getMd5AuthenticationKeysOrBuilder(int index) {
+    return md5AuthenticationKeys_.get(index);
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
   /**
@@ -879,6 +963,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    for (int i = 0; i < md5AuthenticationKeys_.size(); i++) {
+      output.writeMessage(71063322, md5AuthenticationKeys_.get(i));
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
@@ -928,6 +1015,11 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    for (int i = 0; i < md5AuthenticationKeys_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              71063322, md5AuthenticationKeys_.get(i));
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -990,6 +1082,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
     }
+    if (!getMd5AuthenticationKeysList().equals(other.getMd5AuthenticationKeysList())) return false;
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
@@ -1050,6 +1143,10 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
+    }
+    if (getMd5AuthenticationKeysCount() > 0) {
+      hash = (37 * hash) + MD5_AUTHENTICATION_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getMd5AuthenticationKeysList().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1213,6 +1310,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         getBgpFieldBuilder();
         getBgpPeersFieldBuilder();
         getInterfacesFieldBuilder();
+        getMd5AuthenticationKeysFieldBuilder();
         getNatsFieldBuilder();
       }
     }
@@ -1250,21 +1348,28 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      name_ = "";
+      if (md5AuthenticationKeysBuilder_ == null) {
+        md5AuthenticationKeys_ = java.util.Collections.emptyList();
+      } else {
+        md5AuthenticationKeys_ = null;
+        md5AuthenticationKeysBuilder_.clear();
+      }
       bitField0_ = (bitField0_ & ~0x00000100);
+      name_ = "";
+      bitField0_ = (bitField0_ & ~0x00000200);
       if (natsBuilder_ == null) {
         nats_ = java.util.Collections.emptyList();
       } else {
         nats_ = null;
         natsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
-      network_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      region_ = "";
+      network_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
+      selfLink_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1339,28 +1444,37 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000020;
       }
       result.kind_ = kind_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          md5AuthenticationKeys_ = java.util.Collections.unmodifiableList(md5AuthenticationKeys_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.md5AuthenticationKeys_ = md5AuthenticationKeys_;
+      } else {
+        result.md5AuthenticationKeys_ = md5AuthenticationKeysBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
       result.name_ = name_;
       if (natsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           nats_ = java.util.Collections.unmodifiableList(nats_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.nats_ = nats_;
       } else {
         result.nats_ = natsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
       result.network_ = network_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
       result.region_ = region_;
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
       result.selfLink_ = selfLink_;
@@ -1492,8 +1606,35 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         kind_ = other.kind_;
         onChanged();
       }
+      if (md5AuthenticationKeysBuilder_ == null) {
+        if (!other.md5AuthenticationKeys_.isEmpty()) {
+          if (md5AuthenticationKeys_.isEmpty()) {
+            md5AuthenticationKeys_ = other.md5AuthenticationKeys_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureMd5AuthenticationKeysIsMutable();
+            md5AuthenticationKeys_.addAll(other.md5AuthenticationKeys_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.md5AuthenticationKeys_.isEmpty()) {
+          if (md5AuthenticationKeysBuilder_.isEmpty()) {
+            md5AuthenticationKeysBuilder_.dispose();
+            md5AuthenticationKeysBuilder_ = null;
+            md5AuthenticationKeys_ = other.md5AuthenticationKeys_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            md5AuthenticationKeysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMd5AuthenticationKeysFieldBuilder()
+                    : null;
+          } else {
+            md5AuthenticationKeysBuilder_.addAllMessages(other.md5AuthenticationKeys_);
+          }
+        }
+      }
       if (other.hasName()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         name_ = other.name_;
         onChanged();
       }
@@ -1501,7 +1642,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         if (!other.nats_.isEmpty()) {
           if (nats_.isEmpty()) {
             nats_ = other.nats_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureNatsIsMutable();
             nats_.addAll(other.nats_);
@@ -1514,7 +1655,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
             natsBuilder_.dispose();
             natsBuilder_ = null;
             nats_ = other.nats_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             natsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNatsFieldBuilder()
@@ -1525,17 +1666,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         network_ = other.network_;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -1586,7 +1727,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26989658
             case 26991506:
@@ -1621,16 +1762,30 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 244202930
+            case 568506578:
+              {
+                com.google.cloud.compute.v1.RouterMd5AuthenticationKey m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterMd5AuthenticationKey.parser(),
+                        extensionRegistry);
+                if (md5AuthenticationKeysBuilder_ == null) {
+                  ensureMd5AuthenticationKeysIsMutable();
+                  md5AuthenticationKeys_.add(m);
+                } else {
+                  md5AuthenticationKeysBuilder_.addMessage(m);
+                }
+                break;
+              } // case 568506578
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1111570338
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1862979954
             case -1910994696:
@@ -1661,7 +1816,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -645248918
             default:
@@ -3059,6 +3214,408 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
+        md5AuthenticationKeys_ = java.util.Collections.emptyList();
+
+    private void ensureMd5AuthenticationKeysIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        md5AuthenticationKeys_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>(
+                md5AuthenticationKeys_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.RouterMd5AuthenticationKey,
+            com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder,
+            com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>
+        md5AuthenticationKeysBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
+        getMd5AuthenticationKeysList() {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(md5AuthenticationKeys_);
+      } else {
+        return md5AuthenticationKeysBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public int getMd5AuthenticationKeysCount() {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        return md5AuthenticationKeys_.size();
+      } else {
+        return md5AuthenticationKeysBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterMd5AuthenticationKey getMd5AuthenticationKeys(
+        int index) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        return md5AuthenticationKeys_.get(index);
+      } else {
+        return md5AuthenticationKeysBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder setMd5AuthenticationKeys(
+        int index, com.google.cloud.compute.v1.RouterMd5AuthenticationKey value) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.set(index, value);
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder setMd5AuthenticationKeys(
+        int index, com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder builderForValue) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder addMd5AuthenticationKeys(
+        com.google.cloud.compute.v1.RouterMd5AuthenticationKey value) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.add(value);
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder addMd5AuthenticationKeys(
+        int index, com.google.cloud.compute.v1.RouterMd5AuthenticationKey value) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.add(index, value);
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder addMd5AuthenticationKeys(
+        com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder builderForValue) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.add(builderForValue.build());
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder addMd5AuthenticationKeys(
+        int index, com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder builderForValue) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder addAllMd5AuthenticationKeys(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.RouterMd5AuthenticationKey>
+            values) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        ensureMd5AuthenticationKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, md5AuthenticationKeys_);
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder clearMd5AuthenticationKeys() {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        md5AuthenticationKeys_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public Builder removeMd5AuthenticationKeys(int index) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        ensureMd5AuthenticationKeysIsMutable();
+        md5AuthenticationKeys_.remove(index);
+        onChanged();
+      } else {
+        md5AuthenticationKeysBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder
+        getMd5AuthenticationKeysBuilder(int index) {
+      return getMd5AuthenticationKeysFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder
+        getMd5AuthenticationKeysOrBuilder(int index) {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        return md5AuthenticationKeys_.get(index);
+      } else {
+        return md5AuthenticationKeysBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>
+        getMd5AuthenticationKeysOrBuilderList() {
+      if (md5AuthenticationKeysBuilder_ != null) {
+        return md5AuthenticationKeysBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(md5AuthenticationKeys_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder
+        addMd5AuthenticationKeysBuilder() {
+      return getMd5AuthenticationKeysFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.RouterMd5AuthenticationKey.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder
+        addMd5AuthenticationKeysBuilder(int index) {
+      return getMd5AuthenticationKeysFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.compute.v1.RouterMd5AuthenticationKey.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Keys used for MD5 authentication.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterMd5AuthenticationKey md5_authentication_keys = 71063322;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder>
+        getMd5AuthenticationKeysBuilderList() {
+      return getMd5AuthenticationKeysFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.RouterMd5AuthenticationKey,
+            com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder,
+            com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>
+        getMd5AuthenticationKeysFieldBuilder() {
+      if (md5AuthenticationKeysBuilder_ == null) {
+        md5AuthenticationKeysBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.RouterMd5AuthenticationKey,
+                com.google.cloud.compute.v1.RouterMd5AuthenticationKey.Builder,
+                com.google.cloud.compute.v1.RouterMd5AuthenticationKeyOrBuilder>(
+                md5AuthenticationKeys_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        md5AuthenticationKeys_ = null;
+      }
+      return md5AuthenticationKeysBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -3072,7 +3629,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3134,7 +3691,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       name_ = value;
       onChanged();
       return this;
@@ -3151,7 +3708,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -3173,7 +3730,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       name_ = value;
       onChanged();
       return this;
@@ -3183,9 +3740,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNatsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         nats_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouterNat>(nats_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -3400,7 +3957,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNats() {
       if (natsBuilder_ == null) {
         nats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         natsBuilder_.clear();
@@ -3521,7 +4078,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterNat,
                 com.google.cloud.compute.v1.RouterNat.Builder,
                 com.google.cloud.compute.v1.RouterNatOrBuilder>(
-                nats_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                nats_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         nats_ = null;
       }
       return natsBuilder_;
@@ -3540,7 +4097,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3602,7 +4159,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       network_ = value;
       onChanged();
       return this;
@@ -3619,7 +4176,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -3641,7 +4198,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       network_ = value;
       onChanged();
       return this;
@@ -3660,7 +4217,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3722,7 +4279,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       region_ = value;
       onChanged();
       return this;
@@ -3739,7 +4296,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -3761,7 +4318,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       region_ = value;
       onChanged();
       return this;
@@ -3780,7 +4337,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3842,7 +4399,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3859,7 +4416,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3881,7 +4438,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       selfLink_ = value;
       onChanged();
       return this;

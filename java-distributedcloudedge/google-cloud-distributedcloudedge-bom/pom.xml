@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Google Distributed Cloud Edge BOM</name>
-  <url>https://github.com/googleapis/java-distributedcloudedge</url>
   <description>
     BOM for Google Distributed Cloud Edge
   </description>
@@ -42,16 +41,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

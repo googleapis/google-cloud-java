@@ -56,6 +56,12 @@ function removeElement {
   runRegexOnPoms "$perl_command" "<${element}>"
 }
 
+function setGrafeasCheckstyleHeaderConfig {
+  perl_command="s/(\s*<properties>\s*.*?)(\s*<checkstyle.header.file>grafeas.header<\/checkstyle.header.file>)?(\s*<\/properties>)/\$1\n    <checkstyle.header.file>grafeas.header<\/checkstyle.header.file>\$3/s"
+  runRegexOnPoms "$perl_command" ">Grafeas Client<"
+}
+
+setGrafeasCheckstyleHeaderConfig
 removeManagedDependency 'google-cloud-shared-dependencies'
 removeManagedDependency 'junit'
 removeManagedDependency 'joda-time'
@@ -72,7 +78,10 @@ removeElement 'organization'
 removeElement 'scm'
 removeElement 'issueManagement'
 removeElement 'licenses'
+removeElement 'profiles'
 removeElement 'junit.version'
+removeElement 'build'
+removeElement 'url'
 removeArtifact 'plugin' 'nexus-staging-maven-plugin' 'plugins'
 removeArtifact 'dependency' 'checkstyle' 'plugins'
 removeArtifactVersion 'dependency' 'junit'

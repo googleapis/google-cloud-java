@@ -6,7 +6,6 @@
   <packaging>jar</packaging>
   <version>2.2.0</version><!-- {x-version-update:google-cloud-dns:current} -->
   <name>Google Cloud DNS Parent</name>
-  <url>https://github.com/googleapis/java-dns</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -93,25 +92,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

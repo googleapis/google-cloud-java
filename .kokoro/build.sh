@@ -55,7 +55,10 @@ case ${JOB_TYPE} in
   integration)
     generate_modified_modules_list
     if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      generate_maven_pl_list
+      module_list=$(
+        IFS=,
+        echo "${modified_module_list[*]}"
+      )
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -83,19 +86,32 @@ case ${JOB_TYPE} in
   graalvm)
     # Generate the `-pl` list to split into sub-jobs
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM checks -- No changes in relevant modules"
+    fi
     ;;
   graalvm17)
     # Generate the `-pl` list to split into sub-jobs
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
+    fi
     ;;
   samples)
     generate_modified_modules_list
     if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      generate_maven_pl_list
+      module_list=$(
+        IFS=,
+        echo "${modified_module_list[*]}"
+      )
       install_modules
       for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
         [[ -f "${FILE}" ]] || continue

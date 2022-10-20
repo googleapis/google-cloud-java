@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.6.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
   <name>Google Cloud recommender Parent</name>
-  <url>https://github.com/googleapis/java-recommender</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -54,23 +53,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-recommender</module>

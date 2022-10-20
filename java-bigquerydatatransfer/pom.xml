@@ -6,7 +6,6 @@
   <packaging>pom</packaging>
   <version>2.4.0</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   <name>BigQuery DataTransfer Parent</name>
-  <url>https://github.com/googleapis/java-bigquerydatatransfer</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -47,33 +46,10 @@
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <modules>
     <module>google-cloud-bigquerydatatransfer</module>
     <module>grpc-google-cloud-bigquerydatatransfer-v1</module>
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>google-cloud-bigquerydatatransfer-bom</module>
   </modules>
-
-  <profiles>
-    <profile>
-      <id>include-samples</id>
-      <modules>
-        <module>samples</module>
-      </modules>
-    </profile>
-  </profiles>
 </project>

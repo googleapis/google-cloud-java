@@ -476,6 +476,23 @@ public interface NetworkEndpointGroupOrBuilder
   com.google.protobuf.ByteString getNetworkEndpointTypeBytes();
 
   /**
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;</code>
+   *
+   * @return Whether the pscData field is set.
+   */
+  boolean hasPscData();
+  /**
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;</code>
+   *
+   * @return The pscData.
+   */
+  com.google.cloud.compute.v1.NetworkEndpointGroupPscData getPscData();
+  /**
+   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroupPscData psc_data = 71937481;</code>
+   */
+  com.google.cloud.compute.v1.NetworkEndpointGroupPscDataOrBuilder getPscDataOrBuilder();
+
+  /**
    *
    *
    * <pre>

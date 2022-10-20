@@ -6,7 +6,6 @@
   <version>2.4.0</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   <packaging>jar</packaging>
   <name>BigQuery DataTransfer</name>
-  <url>https://github.com/googleapis/java-bigquerydatatransfer</url>
   <description>BigQuery DataTransfer</description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -98,13 +97,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

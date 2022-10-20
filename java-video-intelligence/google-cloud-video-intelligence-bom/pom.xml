@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud video-intelligence BOM</name>
-  <url>https://github.com/googleapis/java-video-intelligence</url>
   <description>
     BOM for Google Cloud Video Intelligence
   </description>
@@ -78,16 +77,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

@@ -6,7 +6,6 @@
   <packaging>jar</packaging>
   <version>1.6.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   <name>Google Cloud Resource Manager</name>
-  <url>https://github.com/googleapis/java-resourcemanager</url>
   <description>
     Java idiomatic client for Google Cloud Resource Manager
   </description>
@@ -167,18 +166,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>org.objenesis:objenesis</ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 </project>

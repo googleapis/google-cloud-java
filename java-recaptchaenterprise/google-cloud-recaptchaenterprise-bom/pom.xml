@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Cloud reCAPTCHA Enterprise BOM</name>
-  <url>https://github.com/googleapis/java-recaptchaenterprise</url>
   <description>
     BOM for reCAPTCHA Enterprise
   </description>
@@ -48,16 +47,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

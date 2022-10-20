@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Area 120 Tables BOM</name>
-  <url>https://github.com/googleapis/java-area120-tables</url>
   <description>
     BOM for Area 120 Tables
   </description>
@@ -42,16 +41,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

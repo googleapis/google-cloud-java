@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Eventarc BOM</name>
-  <url>https://github.com/googleapis/java-eventarc</url>
   <description>
     BOM for Eventarc
   </description>
@@ -42,16 +41,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

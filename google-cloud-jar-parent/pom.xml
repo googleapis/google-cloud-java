@@ -7,6 +7,10 @@
   <groupId>com.google.cloud</groupId>
   <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
   <packaging>pom</packaging>
+  <name>Google Cloud JAR Parent</name>
+  <description>
+    The parent for all client library JAR modules in the repository.
+  </description>
 
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -117,6 +121,23 @@
     </dependencies>
   </dependencyManagement>
 
+  <profiles>
+    <profile>
+      <id>java9</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <dependencies>
+        <!-- needed for @Generated annotation at compile-time -->
+        <dependency>
+          <groupId>javax.annotation</groupId>
+          <artifactId>javax.annotation-api</artifactId>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
   <build>
     <plugins>
       <!-- jacoco code coverage -->
@@ -153,6 +174,10 @@
           <forkCount>1C</forkCount>
           <reuseForks>true</reuseForks>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

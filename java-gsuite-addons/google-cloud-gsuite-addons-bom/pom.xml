@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Google Workspace Add-ons API BOM</name>
-  <url>https://github.com/googleapis/java-gsuite-addons</url>
   <description>
     BOM for Google Workspace Add-ons API
   </description>
@@ -47,16 +46,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

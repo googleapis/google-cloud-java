@@ -6,7 +6,6 @@
   <version>3.8.0</version><!-- {x-version-update:google-cloud-channel:current} -->
   <packaging>jar</packaging>
   <name>Google Channel Services</name>
-  <url>https://github.com/googleapis/java-channel</url>
   <description>With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -99,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

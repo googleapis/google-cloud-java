@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Managed Service for Microsoft Active Directory BOM</name>
-  <url>https://github.com/googleapis/java-managed-identities</url>
   <description>
     BOM for Managed Service for Microsoft Active Directory
   </description>
@@ -42,16 +41,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

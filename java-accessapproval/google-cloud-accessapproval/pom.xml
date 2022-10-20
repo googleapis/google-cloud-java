@@ -6,7 +6,6 @@
   <version>2.5.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Access Approval</name>
-  <url>https://github.com/googleapis/java-accessapproval</url>
   <description>Java idiomatic client for Google Cloud accessapproval</description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -97,28 +96,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

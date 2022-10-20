@@ -6,7 +6,6 @@
   <version>2.4.0</version><!-- {x-version-update:google-cloud-api-gateway:current} -->
   <packaging>jar</packaging>
   <name>Google API Gateway</name>
-  <url>https://github.com/googleapis/java-api-gateway</url>
   <description>API Gateway enables you to provide secure access to your backend services through a well-defined REST API that is consistent across all of your services, regardless of the service implementation. Clients consume your REST APIS to implement standalone apps for a mobile device or tablet, through apps running in a browser, or through any other type of app that can make a request to an HTTP endpoint.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -99,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

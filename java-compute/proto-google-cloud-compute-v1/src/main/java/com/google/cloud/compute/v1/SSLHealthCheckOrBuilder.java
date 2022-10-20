@@ -27,7 +27,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -39,7 +39,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The TCP port number for the health check request. The default value is 443. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The default value is 443. Valid values are 1 through 65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -52,7 +52,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * Not supported.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -64,7 +64,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * Not supported.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -76,7 +76,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
+   * Not supported.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -89,7 +89,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for pass-through load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -102,7 +102,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for pass-through load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, SSL health check follows behavior specified in port and portName fields.
+   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for pass-through load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -169,7 +169,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
+   * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection and SSL handshake.
    * </pre>
    *
    * <code>optional string request = 21951119;</code>
@@ -181,7 +181,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
+   * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection and SSL handshake.
    * </pre>
    *
    * <code>optional string request = 21951119;</code>
@@ -193,7 +193,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The application data to send once the SSL connection has been established (default value is empty). If both request and response are empty, the connection establishment alone will indicate health. The request data can only be ASCII.
+   * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection and SSL handshake.
    * </pre>
    *
    * <code>optional string request = 21951119;</code>
@@ -206,7 +206,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
+   * Creates a content-based SSL health check. In addition to establishing a TCP connection and the TLS handshake, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -218,7 +218,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
+   * Creates a content-based SSL health check. In addition to establishing a TCP connection and the TLS handshake, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -230,7 +230,7 @@ public interface SSLHealthCheckOrBuilder
    *
    *
    * <pre>
-   * The bytes to match against the beginning of the response data. If left empty (the default value), any response will indicate health. The response data can only be ASCII.
+   * Creates a content-based SSL health check. In addition to establishing a TCP connection and the TLS handshake, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
    * </pre>
    *
    * <code>optional string response = 196547649;</code>

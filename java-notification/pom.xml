@@ -7,7 +7,6 @@
   <version>0.123.20-beta</version><!-- {x-version-update:google-cloud-notification:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Pub/Sub Notifications for GCS</name>
-  <url>https://github.com/googleapis/java-notification</url>
   <description>
     Java idiomatic client for Google Cloud Notification for GCS.
   </description>
@@ -67,13 +66,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

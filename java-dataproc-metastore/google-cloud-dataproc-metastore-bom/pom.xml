@@ -14,7 +14,6 @@
   </parent>
 
   <name>Google Dataproc Metastore BOM</name>
-  <url>https://github.com/googleapis/java-dataproc-metastore</url>
   <description>
     BOM for Dataproc Metastore
   </description>
@@ -62,16 +61,4 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
