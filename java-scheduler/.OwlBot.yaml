@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-scheduler/samples/snippets/generated"
-- "/java-scheduler/grpc-google-.*/src"
-- "/java-scheduler/proto-google-.*/src"
-- "/java-scheduler/google-.*/src"
-
-deep-preserve-regex:
-- "/java-scheduler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-scheduler/proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java"
-- "/java-scheduler/proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java"
-
-deep-copy-regex:
-- source: "/google/cloud/scheduler/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-scheduler/$1/proto-google-cloud-scheduler-$1/src"
-- source: "/google/cloud/scheduler/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-scheduler/$1/grpc-google-cloud-scheduler-$1/src"
-- source: "/google/cloud/scheduler/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-scheduler/$1/google-cloud-scheduler/src"
-- source: "/google/cloud/scheduler/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-scheduler/$1/samples/snippets/generated"
-
 api-name: cloudscheduler
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-scheduler/$1/proto-google-cloud-scheduler-$1/src
+    source: /google/cloud/scheduler/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-scheduler/$1/grpc-google-cloud-scheduler-$1/src
+    source: /google/cloud/scheduler/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-scheduler/$1/google-cloud-scheduler/src
+    source: /google/cloud/scheduler/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-scheduler/$1/samples/snippets/generated
+    source: /google/cloud/scheduler/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-scheduler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-scheduler/proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java
+  - /java-scheduler/proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java
+  - /java-scheduler/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-scheduler/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-scheduler/samples/snippets/generated
+  - /java-scheduler/grpc-google-.*/src
+  - /java-scheduler/proto-google-.*/src
+  - /java-scheduler/google-.*/src

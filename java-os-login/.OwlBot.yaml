@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,27 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-os-login/grpc-google-.*/src"
-- "/java-os-login/proto-google-.*/src"
-- "/java-os-login/google-.*/src"
-
-deep-preserve-regex:
-- "/java-os-login/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java"
-- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java"
-- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java"
-- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/PosixAccountName.java"
-- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java"
-- "/java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java"
-
-deep-copy-regex:
-- source: "/google/cloud/oslogin/(v\\d)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-os-login/$1/proto-google-cloud-os-login-$1/src"
-- source: "/google/cloud/oslogin/(v\\d)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-os-login/$1/grpc-google-cloud-os-login-$1/src"
-- source: "/google/cloud/oslogin/(v\\d)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-os-login/$1/google-cloud-os-login/src"
-
 api-name: oslogin
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-os-login/$1/proto-google-cloud-os-login-$1/src
+    source: /google/cloud/oslogin/(v\d)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-os-login/$1/grpc-google-cloud-os-login-$1/src
+    source: /google/cloud/oslogin/(v\d)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-os-login/$1/google-cloud-os-login/src
+    source: /google/cloud/oslogin/(v\d)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-os-login/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/FingerprintName.java
+  - /java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/ProjectName.java
+  - /java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/FingerprintName.java
+  - /java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/PosixAccountName.java
+  - /java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java
+  - /java-os-login/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java
+  - /java-os-login/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-os-login/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-os-login/grpc-google-.*/src
+  - /java-os-login/proto-google-.*/src
+  - /java-os-login/google-.*/src

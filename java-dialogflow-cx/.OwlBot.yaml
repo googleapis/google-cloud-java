@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-dialogflow-cx/grpc-google-.*/src"
-- "/java-dialogflow-cx/proto-google-.*/src"
-- "/java-dialogflow-cx/google-.*/src"
-
-deep-preserve-regex:
-- "/java-dialogflow-cx/google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"
-
-deep-copy-regex:
-- source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-dialogflow-cx/$1/proto-google-cloud-dialogflow-cx-$1/src"
-- source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-dialogflow-cx/$1/grpc-google-cloud-dialogflow-cx-$1/src"
-- source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-dialogflow-cx/$1/google-cloud-dialogflow-cx/src"
-
 api-name: dialogflow-cx
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-dialogflow-cx/$1/proto-google-cloud-dialogflow-cx-$1/src
+    source: /google/cloud/dialogflow/cx/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-dialogflow-cx/$1/grpc-google-cloud-dialogflow-cx-$1/src
+    source: /google/cloud/dialogflow/cx/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-dialogflow-cx/$1/google-cloud-dialogflow-cx/src
+    source: /google/cloud/dialogflow/cx/(v.*)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-dialogflow-cx/google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java
+  - /java-dialogflow-cx/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-dialogflow-cx/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-dialogflow-cx/grpc-google-.*/src
+  - /java-dialogflow-cx/proto-google-.*/src
+  - /java-dialogflow-cx/google-.*/src

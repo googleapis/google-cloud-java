@@ -12,19 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-bigquerydatapolicy/grpc-google-.*/src"
-- "/java-bigquerydatapolicy/proto-google-.*/src"
-- "/java-bigquerydatapolicy/google-.*/src"
-
-deep-preserve-regex:
-- "/java-bigquerydatapolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
 deep-copy-regex:
-- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/proto-google-cloud-bigquerydatapolicy-$1/src"
-- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/grpc-google-cloud-bigquerydatapolicy-$1/src"
-- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/google-cloud-bigquerydatapolicy/src"
+  - dest: /owl-bot-staging/java-bigquerydatapolicy/$1/proto-google-cloud-bigquerydatapolicy-$1/src
+    source: /google/cloud/bigquery/datapolicies/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-bigquerydatapolicy/$1/grpc-google-cloud-bigquerydatapolicy-$1/src
+    source: /google/cloud/bigquery/datapolicies/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-bigquerydatapolicy/$1/google-cloud-bigquerydatapolicy/src
+    source: /google/cloud/bigquery/datapolicies/(v.*)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-bigquerydatapolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-bigquerydatapolicy/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-bigquerydatapolicy/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-bigquerydatapolicy/grpc-google-.*/src
+  - /java-bigquerydatapolicy/proto-google-.*/src
+  - /java-bigquerydatapolicy/google-.*/src

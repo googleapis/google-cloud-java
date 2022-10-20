@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,24 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-data-fusion/samples/snippets/generated"
-- "/java-data-fusion/grpc-google-.*/src"
-- "/java-data-fusion/proto-google-.*/src"
-- "/java-data-fusion/google-.*/src"
-
-deep-preserve-regex:
-- "/java-data-fusion/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/cloud/datafusion/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-data-fusion/$1/proto-google-cloud-data-fusion-$1/src"
-- source: "/google/cloud/datafusion/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-data-fusion/$1/grpc-google-cloud-data-fusion-$1/src"
-- source: "/google/cloud/datafusion/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-data-fusion/$1/google-cloud-data-fusion/src"
-- source: "/google/cloud/datafusion/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-data-fusion/$1/samples/snippets/generated"
-
 api-name: datafusion
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-data-fusion/$1/proto-google-cloud-data-fusion-$1/src
+    source: /google/cloud/datafusion/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-data-fusion/$1/grpc-google-cloud-data-fusion-$1/src
+    source: /google/cloud/datafusion/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-data-fusion/$1/google-cloud-data-fusion/src
+    source: /google/cloud/datafusion/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-data-fusion/$1/samples/snippets/generated
+    source: /google/cloud/datafusion/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-data-fusion/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-data-fusion/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-data-fusion/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-data-fusion/samples/snippets/generated
+  - /java-data-fusion/grpc-google-.*/src
+  - /java-data-fusion/proto-google-.*/src
+  - /java-data-fusion/google-.*/src

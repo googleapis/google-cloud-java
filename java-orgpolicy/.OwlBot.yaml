@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,24 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-orgpolicy/samples/snippets/generated"
-- "/java-orgpolicy/grpc-google-.*/src"
-- "/java-orgpolicy/proto-google-.*/src"
-- "/java-orgpolicy/google-.*/src"
-
-deep-preserve-regex:
-- "/java-orgpolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/cloud/orgpolicy/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-orgpolicy/$1/proto-google-cloud-orgpolicy-$1/src"
-- source: "/google/cloud/orgpolicy/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-orgpolicy/$1/grpc-google-cloud-orgpolicy-$1/src"
-- source: "/google/cloud/orgpolicy/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-orgpolicy/$1/google-cloud-orgpolicy/src"
-- source: "/google/cloud/orgpolicy/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-orgpolicy/$1/samples/snippets/generated"
-
 api-name: orgpolicy
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-orgpolicy/$1/proto-google-cloud-orgpolicy-$1/src
+    source: /google/cloud/orgpolicy/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-orgpolicy/$1/grpc-google-cloud-orgpolicy-$1/src
+    source: /google/cloud/orgpolicy/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-orgpolicy/$1/google-cloud-orgpolicy/src
+    source: /google/cloud/orgpolicy/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-orgpolicy/$1/samples/snippets/generated
+    source: /google/cloud/orgpolicy/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-orgpolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-orgpolicy/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-orgpolicy/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-orgpolicy/samples/snippets/generated
+  - /java-orgpolicy/grpc-google-.*/src
+  - /java-orgpolicy/proto-google-.*/src
+  - /java-orgpolicy/google-.*/src

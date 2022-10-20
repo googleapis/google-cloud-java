@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-essential-contacts/samples/snippets/generated"
-- "/java-essential-contacts/grpc-google-.*/src"
-- "/java-essential-contacts/proto-google-.*/src"
-- "/java-essential-contacts/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/cloud/essentialcontacts/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-essential-contacts/$1/proto-google-cloud-essential-contacts-$1/src"
-- source: "/google/cloud/essentialcontacts/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-essential-contacts/$1/grpc-google-cloud-essential-contacts-$1/src"
-- source: "/google/cloud/essentialcontacts/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-essential-contacts/$1/google-cloud-essential-contacts/src"
-- source: "/google/cloud/essentialcontacts/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-essential-contacts/$1/samples/snippets/generated"
-
 api-name: essentialcontacts
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-essential-contacts/$1/proto-google-cloud-essential-contacts-$1/src
+    source: /google/cloud/essentialcontacts/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-essential-contacts/$1/grpc-google-cloud-essential-contacts-$1/src
+    source: /google/cloud/essentialcontacts/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-essential-contacts/$1/google-cloud-essential-contacts/src
+    source: /google/cloud/essentialcontacts/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-essential-contacts/$1/samples/snippets/generated
+    source: /google/cloud/essentialcontacts/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-essential-contacts/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-essential-contacts/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-essential-contacts/samples/snippets/generated
+  - /java-essential-contacts/grpc-google-.*/src
+  - /java-essential-contacts/proto-google-.*/src
+  - /java-essential-contacts/google-.*/src

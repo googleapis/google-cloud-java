@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,18 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-analytics-admin/grpc-google-.*/src"
-- "/java-analytics-admin/proto-google-.*/src"
-- "/java-analytics-admin/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/analytics/admin/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-analytics-admin/$1/proto-google-analytics-admin-$1/src"
-- source: "/google/analytics/admin/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-analytics-admin/$1/grpc-google-analytics-admin-$1/src"
-- source: "/google/analytics/admin/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-analytics-admin/$1/google-analytics-admin/src"
-
 api-name: analyticsadmin
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-analytics-admin/$1/proto-google-analytics-admin-$1/src
+    source: /google/analytics/admin/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-analytics-admin/$1/grpc-google-analytics-admin-$1/src
+    source: /google/analytics/admin/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-analytics-admin/$1/google-analytics-admin/src
+    source: /google/analytics/admin/(v.*)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-analytics-admin/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-analytics-admin/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-analytics-admin/grpc-google-.*/src
+  - /java-analytics-admin/proto-google-.*/src
+  - /java-analytics-admin/google-.*/src

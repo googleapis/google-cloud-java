@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-life-sciences/samples/snippets/generated"
-- "/java-life-sciences/grpc-google-.*/src"
-- "/java-life-sciences/proto-google-.*/src"
-- "/java-life-sciences/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/cloud/lifesciences/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-life-sciences/$1/proto-google-cloud-life-sciences-$1/src"
-- source: "/google/cloud/lifesciences/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-life-sciences/$1/grpc-google-cloud-life-sciences-$1/src"
-- source: "/google/cloud/lifesciences/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-life-sciences/$1/google-cloud-life-sciences/src"
-- source: "/google/cloud/lifesciences/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-life-sciences/$1/samples/snippets/generated"
-
 api-name: lifesciences
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-life-sciences/$1/proto-google-cloud-life-sciences-$1/src
+    source: /google/cloud/lifesciences/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-life-sciences/$1/grpc-google-cloud-life-sciences-$1/src
+    source: /google/cloud/lifesciences/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-life-sciences/$1/google-cloud-life-sciences/src
+    source: /google/cloud/lifesciences/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-life-sciences/$1/samples/snippets/generated
+    source: /google/cloud/lifesciences/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-life-sciences/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-life-sciences/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-life-sciences/samples/snippets/generated
+  - /java-life-sciences/grpc-google-.*/src
+  - /java-life-sciences/proto-google-.*/src
+  - /java-life-sciences/google-.*/src

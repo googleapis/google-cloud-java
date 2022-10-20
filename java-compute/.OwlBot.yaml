@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-compute/proto-google-.*/src"
-- "/java-compute/google-.*/src"
-
-deep-preserve-regex:
-- "/java-compute/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-compute/google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration"
-
-deep-copy-regex:
-- source: "/google/cloud/compute/(v\\d)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-compute/$1/proto-google-cloud-compute-$1/src"
-- source: "/google/cloud/compute/(v\\d)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-compute/$1/google-cloud-compute/src"
-
 api-name: compute
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-compute/$1/proto-google-cloud-compute-$1/src
+    source: /google/cloud/compute/(v\d)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-compute/$1/google-cloud-compute/src
+    source: /google/cloud/compute/(v\d)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-compute/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-compute/google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration
+  - /java-compute/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-compute/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-compute/proto-google-.*/src
+  - /java-compute/google-.*/src

@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,24 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-iot/samples/snippets/generated"
-- "/java-iot/grpc-google-.*/src"
-- "/java-iot/proto-google-.*/src"
-- "/java-iot/google-.*/src"
-
-deep-preserve-regex:
-- "/java-iot/google-cloud-iot/src/test/java/com/google/cloud/iot/v1/it/ITSystemTest.java"
-
-deep-copy-regex:
-- source: "/google/cloud/iot/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-iot/$1/proto-google-cloud-iot-$1/src"
-- source: "/google/cloud/iot/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-iot/$1/grpc-google-cloud-iot-$1/src"
-- source: "/google/cloud/iot/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-iot/$1/google-cloud-iot/src"
-- source: "/google/cloud/iot/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-iot/$1/samples/snippets/generated"
-
 api-name: cloudiot
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-iot/$1/proto-google-cloud-iot-$1/src
+    source: /google/cloud/iot/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-iot/$1/grpc-google-cloud-iot-$1/src
+    source: /google/cloud/iot/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-iot/$1/google-cloud-iot/src
+    source: /google/cloud/iot/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-iot/$1/samples/snippets/generated
+    source: /google/cloud/iot/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-iot/google-cloud-iot/src/test/java/com/google/cloud/iot/v1/it/ITSystemTest.java
+  - /java-iot/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-iot/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-iot/samples/snippets/generated
+  - /java-iot/grpc-google-.*/src
+  - /java-iot/proto-google-.*/src
+  - /java-iot/google-.*/src

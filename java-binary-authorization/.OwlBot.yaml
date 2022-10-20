@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-binary-authorization/samples/snippets/generated"
-- "/java-binary-authorization/grpc-google-.*/src"
-- "/java-binary-authorization/proto-google-.*/src"
-- "/java-binary-authorization/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-binary-authorization/$1/proto-google-cloud-binary-authorization-$1/src"
-- source: "/google/cloud/binaryauthorization/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-binary-authorization/$1/grpc-google-cloud-binary-authorization-$1/src"
-- source: "/google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src"
-- source: "/google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated"
-
 api-name: binaryauthorization
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-binary-authorization/$1/proto-google-cloud-binary-authorization-$1/src
+    source: /google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-binary-authorization/$1/grpc-google-cloud-binary-authorization-$1/src
+    source: /google/cloud/binaryauthorization/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src
+    source: /google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated
+    source: /google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-binary-authorization/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-binary-authorization/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-binary-authorization/samples/snippets/generated
+  - /java-binary-authorization/grpc-google-.*/src
+  - /java-binary-authorization/proto-google-.*/src
+  - /java-binary-authorization/google-.*/src

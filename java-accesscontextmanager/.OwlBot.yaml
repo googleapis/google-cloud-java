@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-accesscontextmanager/proto-google-.*/src"
-
-deep-preserve-regex:
-- "/java-accesscontextmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-accesscontextmanager/$1/proto-google-identity-accesscontextmanager-$1/src"
-- source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-accesscontextmanager/$1/grpc-google-identity-accesscontextmanager-$1/src"
-- source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-accesscontextmanager/$1/google-identity-accesscontextmanager/src"
-- source: "/google/identity/accesscontextmanager/type/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-accesscontextmanager/type/proto-google-identity-accesscontextmanager-type/src"
-
 api-name: accesscontextmanager
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-accesscontextmanager/$1/proto-google-identity-accesscontextmanager-$1/src
+    source: /google/identity/accesscontextmanager/(v\d)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-accesscontextmanager/$1/grpc-google-identity-accesscontextmanager-$1/src
+    source: /google/identity/accesscontextmanager/(v\d)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-accesscontextmanager/$1/google-identity-accesscontextmanager/src
+    source: /google/identity/accesscontextmanager/(v\d)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-accesscontextmanager/type/proto-google-identity-accesscontextmanager-type/src
+    source: /google/identity/accesscontextmanager/type/.*-java/proto-google-.*/src
+deep-preserve-regex:
+  - /java-accesscontextmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-accesscontextmanager/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-accesscontextmanager/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-accesscontextmanager/proto-google-.*/src

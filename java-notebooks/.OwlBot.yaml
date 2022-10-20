@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,35 +12,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-notebooks/samples/snippets/generated"
-- "/java-notebooks/grpc-google-.*/src"
-- "/java-notebooks/proto-google-.*/src"
-- "/java-notebooks/google-.*/src"
-
-deep-preserve-regex:
-- "/java-notebooks/google-.*/src/test/java/com/google/cloud/.*/v.*/it/.*.java"
-
-deep-copy-regex:
-- source: "/google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/"
-  dest: "/owl-bot-staging/java-notebooks/v1/proto-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
-
-- source: "/google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/proto/google/cloud/notebooks/v1/"
-  dest: "/owl-bot-staging/java-notebooks/v1/proto-google-cloud-notebooks-v1/src/main/proto/google/cloud/notebooks/v1/"
-
-- source: "/google/cloud/notebooks/v1beta1/.*-java/proto-google-cloud-notebooks-v1beta1-java/src"
-  dest: "/owl-bot-staging/java-notebooks/v1beta1/proto-google-cloud-notebooks-v1beta1/src"
-
-- source: "/google/cloud/notebooks/v1/.*-java/grpc-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/"
-  dest: "/owl-bot-staging/java-notebooks/v1/grpc-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/"
-
-- source: "/google/cloud/notebooks/v1beta1/.*-java/grpc-google-cloud-notebooks-v1beta1-java/src"
-  dest: "/owl-bot-staging/java-notebooks/v1beta1/grpc-google-cloud-notebooks-v1beta1/src"
-
-- source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-notebooks/$1/google-cloud-notebooks/src"
-- source: "/google/cloud/notebooks/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-notebooks/$1/samples/snippets/generated"
-
 api-name: notebooks
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-notebooks/v1/proto-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/
+    source: /google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/
+  - dest: /owl-bot-staging/java-notebooks/v1/proto-google-cloud-notebooks-v1/src/main/proto/google/cloud/notebooks/v1/
+    source: /google/cloud/notebooks/v1/.*-java/proto-google-cloud-notebooks-v1-java/src/main/proto/google/cloud/notebooks/v1/
+  - dest: /owl-bot-staging/java-notebooks/v1beta1/proto-google-cloud-notebooks-v1beta1/src
+    source: /google/cloud/notebooks/v1beta1/.*-java/proto-google-cloud-notebooks-v1beta1-java/src
+  - dest: /owl-bot-staging/java-notebooks/v1/grpc-google-cloud-notebooks-v1/src/main/java/com/google/cloud/notebooks/v1/
+    source: /google/cloud/notebooks/v1/.*-java/grpc-google-cloud-notebooks-v1-java/src/main/java/com/google/cloud/notebooks/v1/
+  - dest: /owl-bot-staging/java-notebooks/v1beta1/grpc-google-cloud-notebooks-v1beta1/src
+    source: /google/cloud/notebooks/v1beta1/.*-java/grpc-google-cloud-notebooks-v1beta1-java/src
+  - dest: /owl-bot-staging/java-notebooks/$1/google-cloud-notebooks/src
+    source: /google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-notebooks/$1/samples/snippets/generated
+    source: /google/cloud/notebooks/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-notebooks/google-.*/src/test/java/com/google/cloud/.*/v.*/it/.*.java
+  - /java-notebooks/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-notebooks/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-notebooks/samples/snippets/generated
+  - /java-notebooks/grpc-google-.*/src
+  - /java-notebooks/proto-google-.*/src
+  - /java-notebooks/google-.*/src

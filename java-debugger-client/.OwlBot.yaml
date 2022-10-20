@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,22 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-debugger-client/grpc-google-.*/src"
-- "/java-debugger-client/proto-google-cloud.*/src"
-- "/java-debugger-client/google-.*/src"
-
-deep-preserve-regex:
-- "/java-debugger-client/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/devtools/clouddebugger/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-debugger-client/$1/proto-google-cloud-debugger-client-$1/src"
-- source: "/google/devtools/clouddebugger/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-debugger-client/$1/grpc-google-cloud-debugger-client-$1/src"
-- source: "/google/devtools/clouddebugger/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-debugger-client/$1/google-cloud-debugger-client/src"
-- source: "/google/devtools/source/v1/google-devtools-source-v1-java/proto-google-devtools-source-v1-java/src"
-  dest: "/owl-bot-staging/java-debugger-client/v1/proto-google-devtools-source-protos/src"
 api-name: clouddebugger
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-debugger-client/$1/proto-google-cloud-debugger-client-$1/src
+    source: /google/devtools/clouddebugger/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-debugger-client/$1/grpc-google-cloud-debugger-client-$1/src
+    source: /google/devtools/clouddebugger/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-debugger-client/$1/google-cloud-debugger-client/src
+    source: /google/devtools/clouddebugger/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-debugger-client/v1/proto-google-devtools-source-protos/src
+    source: /google/devtools/source/v1/google-devtools-source-v1-java/proto-google-devtools-source-v1-java/src
+deep-preserve-regex:
+  - /java-debugger-client/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-debugger-client/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-debugger-client/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-debugger-client/grpc-google-.*/src
+  - /java-debugger-client/proto-google-cloud.*/src
+  - /java-debugger-client/google-.*/src

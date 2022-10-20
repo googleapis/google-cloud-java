@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,26 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-monitoring/grpc-google-.*/src"
-- "/java-monitoring/proto-google-.*/src"
-- "/java-monitoring/google-.*/src"
-
-deep-preserve-regex:
-- "/java-monitoring/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-monitoring/google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
-- "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyConditionName.java"
-- "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOuterClass.java"
-- "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/google/monitoring/v3/DroppedLabelsOuterClass.java"
-
-
-deep-copy-regex:
-- source: "/google/monitoring/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-monitoring/$1/proto-google-cloud-monitoring-$1/src"
-- source: "/google/monitoring/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-monitoring/$1/grpc-google-cloud-monitoring-$1/src"
-- source: "/google/monitoring/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-monitoring/$1/google-cloud-monitoring/src"
-
 api-name: monitoring
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-monitoring/$1/proto-google-cloud-monitoring-$1/src
+    source: /google/monitoring/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-monitoring/$1/grpc-google-cloud-monitoring-$1/src
+    source: /google/monitoring/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-monitoring/$1/google-cloud-monitoring/src
+    source: /google/monitoring/(v.*)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-monitoring/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-monitoring/google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java
+  - /java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyConditionName.java
+  - /java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOuterClass.java
+  - /java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/google/monitoring/v3/DroppedLabelsOuterClass.java
+  - /java-monitoring/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-monitoring/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-monitoring/grpc-google-.*/src
+  - /java-monitoring/proto-google-.*/src
+  - /java-monitoring/google-.*/src

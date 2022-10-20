@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,17 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-service-usage/grpc-google-.*/src"
-- "/java-service-usage/proto-google-.*/src"
-- "/java-service-usage/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/api/serviceusage/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-service-usage/$1/proto-google-cloud-service-usage-$1/src"
-- source: "/google/api/serviceusage/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-service-usage/$1/grpc-google-cloud-service-usage-$1/src"
-- source: "/google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src"
 api-name: serviceusage
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-service-usage/$1/proto-google-cloud-service-usage-$1/src
+    source: /google/api/serviceusage/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-service-usage/$1/grpc-google-cloud-service-usage-$1/src
+    source: /google/api/serviceusage/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src
+    source: /google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-service-usage/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-service-usage/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-service-usage/grpc-google-.*/src
+  - /java-service-usage/proto-google-.*/src
+  - /java-service-usage/google-.*/src

@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,24 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-networkconnectivity/samples/snippets/generated"
-- "/java-networkconnectivity/grpc-google-.*/src"
-- "/java-networkconnectivity/proto-google-.*/src"
-- "/java-networkconnectivity/google-.*/src"
-
-deep-preserve-regex:
-- "/java-networkconnectivity/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/cloud/networkconnectivity/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-networkconnectivity/$1/proto-google-cloud-networkconnectivity-$1/src"
-- source: "/google/cloud/networkconnectivity/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-networkconnectivity/$1/grpc-google-cloud-networkconnectivity-$1/src"
-- source: "/google/cloud/networkconnectivity/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-networkconnectivity/$1/google-cloud-networkconnectivity/src"
-- source: "/google/cloud/networkconnectivity/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-networkconnectivity/$1/samples/snippets/generated"
-
 api-name: networkconnectivity
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-networkconnectivity/$1/proto-google-cloud-networkconnectivity-$1/src
+    source: /google/cloud/networkconnectivity/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-networkconnectivity/$1/grpc-google-cloud-networkconnectivity-$1/src
+    source: /google/cloud/networkconnectivity/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-networkconnectivity/$1/google-cloud-networkconnectivity/src
+    source: /google/cloud/networkconnectivity/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-networkconnectivity/$1/samples/snippets/generated
+    source: /google/cloud/networkconnectivity/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-networkconnectivity/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-networkconnectivity/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-networkconnectivity/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-networkconnectivity/samples/snippets/generated
+  - /java-networkconnectivity/grpc-google-.*/src
+  - /java-networkconnectivity/proto-google-.*/src
+  - /java-networkconnectivity/google-.*/src

@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,24 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-orchestration-airflow/samples/snippets/generated"
-- "/java-orchestration-airflow/grpc-google-.*/src"
-- "/java-orchestration-airflow/proto-google-.*/src"
-- "/java-orchestration-airflow/google-.*/src"
-
-deep-preserve-regex:
-- "/java-orchestration-airflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-orchestration-airflow/$1/proto-google-cloud-orchestration-airflow-$1/src"
-- source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-orchestration-airflow/$1/grpc-google-cloud-orchestration-airflow-$1/src"
-- source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-orchestration-airflow/$1/google-cloud-orchestration-airflow/src"
-- source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-orchestration-airflow/$1/samples/snippets/generated"
-
 api-name: orchestration-airflow
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-orchestration-airflow/$1/proto-google-cloud-orchestration-airflow-$1/src
+    source: /google/cloud/orchestration/airflow/service/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-orchestration-airflow/$1/grpc-google-cloud-orchestration-airflow-$1/src
+    source: /google/cloud/orchestration/airflow/service/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-orchestration-airflow/$1/google-cloud-orchestration-airflow/src
+    source: /google/cloud/orchestration/airflow/service/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-orchestration-airflow/$1/samples/snippets/generated
+    source: /google/cloud/orchestration/airflow/service/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-orchestration-airflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-orchestration-airflow/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-orchestration-airflow/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-orchestration-airflow/samples/snippets/generated
+  - /java-orchestration-airflow/grpc-google-.*/src
+  - /java-orchestration-airflow/proto-google-.*/src
+  - /java-orchestration-airflow/google-.*/src

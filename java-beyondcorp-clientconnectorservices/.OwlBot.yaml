@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-beyondcorp-clientconnectorservices/grpc-google-.*/src"
-- "/java-beyondcorp-clientconnectorservices/proto-google-.*/src"
-- "/java-beyondcorp-clientconnectorservices/google-.*/src"
-
-deep-preserve-regex:
-- "/java-beyondcorp-clientconnectorservices/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-
-deep-copy-regex:
-- source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/proto-google-cloud-beyondcorp-clientconnectorservices-$1/src"
-- source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/grpc-google-cloud-beyondcorp-clientconnectorservices-$1/src"
-- source: "/google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/google-cloud-beyondcorp-clientconnectorservices/src"
-
 api-name: beyondcorp-clientconnectorservices
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/proto-google-cloud-beyondcorp-clientconnectorservices-$1/src
+    source: /google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/grpc-google-cloud-beyondcorp-clientconnectorservices-$1/src
+    source: /google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-beyondcorp-clientconnectorservices/$1/google-cloud-beyondcorp-clientconnectorservices/src
+    source: /google/cloud/beyondcorp/clientconnectorservices/(v.*)/.*-java/gapic-google-.*/src
+deep-preserve-regex:
+  - /java-beyondcorp-clientconnectorservices/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+  - /java-beyondcorp-clientconnectorservices/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-beyondcorp-clientconnectorservices/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-beyondcorp-clientconnectorservices/grpc-google-.*/src
+  - /java-beyondcorp-clientconnectorservices/proto-google-.*/src
+  - /java-beyondcorp-clientconnectorservices/google-.*/src

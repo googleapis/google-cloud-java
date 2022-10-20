@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,44 +12,41 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-gkehub/samples/snippets/generated"
-- "/java-gkehub/grpc-google-.*/src"
-- "/java-gkehub/proto-google-.*/src"
-- "/java-gkehub/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/cloud/gkehub/v1/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/v1/proto-google-cloud-gkehub-v1/src"
-- source: "/google/cloud/gkehub/v1alpha/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha/proto-google-cloud-gkehub-v1alpha/src"
-- source: "/google/cloud/gkehub/v1beta/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/v1beta/proto-google-cloud-gkehub-v1beta/src"
-- source: "/google/cloud/gkehub/v1beta1/.*-java/proto-google-.*/src/main/java/com/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1beta1/proto-google-cloud-gkehub-v1beta1/src/main/java/com/google/cloud/gkehub"
-- source: "/google/cloud/gkehub/v1alpha2/.*-java/proto-google-.*/src/main/java/com/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha2/proto-google-cloud-gkehub-v1alpha2/src/main/java/com/google/cloud/gkehub"
-
-- source: "/google/cloud/gkehub/v1beta1/.*-java/proto-google-.*/src/main/proto/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1beta1/proto-google-cloud-gkehub-v1beta1/src/main/proto/google/cloud/gkehub"
-- source: "/google/cloud/gkehub/v1alpha2/.*-java/proto-google-.*/src/main/proto/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha2/proto-google-cloud-gkehub-v1alpha2/src/main/proto/google/cloud/gkehub"
-
-- source: "/google/cloud/gkehub/v1/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/v1/grpc-google-cloud-gkehub-v1/src"
-- source: "/google/cloud/gkehub/v1alpha/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha/grpc-google-cloud-gkehub-v1alpha/src"
-- source: "/google/cloud/gkehub/v1beta/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/v1beta/grpc-google-cloud-gkehub-v1beta/src"
-- source: "/google/cloud/gkehub/v1beta1/.*-java/grpc-google-.*/src/main/java/com/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1beta1/grpc-google-cloud-gkehub-v1beta1/src/main/java/com/google/cloud/gkehub"
-- source: "/google/cloud/gkehub/v1alpha2/.*-java/grpc-google-.*/src/main/java/com/google/cloud/gkehub"
-  dest: "/owl-bot-staging/java-gkehub/v1alpha2/grpc-google-cloud-gkehub-v1alpha2/src/main/java/com/google/cloud/gkehub"
-
-- source: "/google/cloud/gkehub/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-gkehub/$1/google-cloud-gkehub/src"
-- source: "/google/cloud/gkehub/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-gkehub/$1/samples/snippets/generated"
-
 api-name: gkehub
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-gkehub/v1/proto-google-cloud-gkehub-v1/src
+    source: /google/cloud/gkehub/v1/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/v1alpha/proto-google-cloud-gkehub-v1alpha/src
+    source: /google/cloud/gkehub/v1alpha/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/v1beta/proto-google-cloud-gkehub-v1beta/src
+    source: /google/cloud/gkehub/v1beta/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/v1beta1/proto-google-cloud-gkehub-v1beta1/src/main/java/com/google/cloud/gkehub
+    source: /google/cloud/gkehub/v1beta1/.*-java/proto-google-.*/src/main/java/com/google/cloud/gkehub
+  - dest: /owl-bot-staging/java-gkehub/v1alpha2/proto-google-cloud-gkehub-v1alpha2/src/main/java/com/google/cloud/gkehub
+    source: /google/cloud/gkehub/v1alpha2/.*-java/proto-google-.*/src/main/java/com/google/cloud/gkehub
+  - dest: /owl-bot-staging/java-gkehub/v1beta1/proto-google-cloud-gkehub-v1beta1/src/main/proto/google/cloud/gkehub
+    source: /google/cloud/gkehub/v1beta1/.*-java/proto-google-.*/src/main/proto/google/cloud/gkehub
+  - dest: /owl-bot-staging/java-gkehub/v1alpha2/proto-google-cloud-gkehub-v1alpha2/src/main/proto/google/cloud/gkehub
+    source: /google/cloud/gkehub/v1alpha2/.*-java/proto-google-.*/src/main/proto/google/cloud/gkehub
+  - dest: /owl-bot-staging/java-gkehub/v1/grpc-google-cloud-gkehub-v1/src
+    source: /google/cloud/gkehub/v1/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/v1alpha/grpc-google-cloud-gkehub-v1alpha/src
+    source: /google/cloud/gkehub/v1alpha/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/v1beta/grpc-google-cloud-gkehub-v1beta/src
+    source: /google/cloud/gkehub/v1beta/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/v1beta1/grpc-google-cloud-gkehub-v1beta1/src/main/java/com/google/cloud/gkehub
+    source: /google/cloud/gkehub/v1beta1/.*-java/grpc-google-.*/src/main/java/com/google/cloud/gkehub
+  - dest: /owl-bot-staging/java-gkehub/v1alpha2/grpc-google-cloud-gkehub-v1alpha2/src/main/java/com/google/cloud/gkehub
+    source: /google/cloud/gkehub/v1alpha2/.*-java/grpc-google-.*/src/main/java/com/google/cloud/gkehub
+  - dest: /owl-bot-staging/java-gkehub/$1/google-cloud-gkehub/src
+    source: /google/cloud/gkehub/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-gkehub/$1/samples/snippets/generated
+    source: /google/cloud/gkehub/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-gkehub/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-gkehub/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-gkehub/samples/snippets/generated
+  - /java-gkehub/grpc-google-.*/src
+  - /java-gkehub/proto-google-.*/src
+  - /java-gkehub/google-.*/src

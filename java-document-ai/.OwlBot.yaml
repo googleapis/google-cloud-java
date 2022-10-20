@@ -1,4 +1,4 @@
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-deep-remove-regex:
-- "/java-document-ai/samples/snippets/generated"
-- "/java-document-ai/grpc-google-.*/src"
-- "/java-document-ai/proto-google-.*/src"
-- "/java-document-ai/google-.*/src"
-
-deep-copy-regex:
-- source: "/google/cloud/documentai/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-document-ai/$1/proto-google-cloud-document-ai-$1/src"
-- source: "/google/cloud/documentai/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-document-ai/$1/grpc-google-cloud-document-ai-$1/src"
-- source: "/google/cloud/documentai/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-document-ai/$1/google-cloud-document-ai/src"
-- source: "/google/cloud/documentai/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-document-ai/$1/samples/snippets/generated"
-
 api-name: documentai
+deep-copy-regex:
+  - dest: /owl-bot-staging/java-document-ai/$1/proto-google-cloud-document-ai-$1/src
+    source: /google/cloud/documentai/(v.*)/.*-java/proto-google-.*/src
+  - dest: /owl-bot-staging/java-document-ai/$1/grpc-google-cloud-document-ai-$1/src
+    source: /google/cloud/documentai/(v.*)/.*-java/grpc-google-.*/src
+  - dest: /owl-bot-staging/java-document-ai/$1/google-cloud-document-ai/src
+    source: /google/cloud/documentai/(v.*)/.*-java/gapic-google-.*/src
+  - dest: /owl-bot-staging/java-document-ai/$1/samples/snippets/generated
+    source: /google/cloud/documentai/(v.*)/.*-java/samples/snippets/generated
+deep-preserve-regex:
+  - /java-document-ai/google-.*/src/main/resources/META-INF/native-image/*
+  - /java-document-ai/google-.*/src/test/resources/META-INF/native-image/*
+deep-remove-regex:
+  - /java-document-ai/samples/snippets/generated
+  - /java-document-ai/grpc-google-.*/src
+  - /java-document-ai/proto-google-.*/src
+  - /java-document-ai/google-.*/src
