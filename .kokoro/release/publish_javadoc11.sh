@@ -57,7 +57,9 @@ failed_modules=()
 
 for module in "${modules[@]}"; do
   # Proceed if module is not excluded
-  if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+  # Spaces are intentionally added -- Query is regex and array elements are space separated
+  # It tries to match the *exact* `module` text
+  if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
     pushd $module
     # Extract Cloud RAD module name from `distribution_name` in .repo-metadata.json
     NAME=$(grep -o '"distribution_name": "[^"]*' .repo-metadata.json | grep -o '[^"]*$' | cut -d ':' -f 2)

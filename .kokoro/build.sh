@@ -113,7 +113,9 @@ case ${JOB_TYPE} in
 
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `module` text
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
         printf "Running now for %s\n" "${module}"
         pushd $module
         SAMPLES_DIR=samples

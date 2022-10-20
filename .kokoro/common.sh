@@ -73,7 +73,9 @@ function generate_modified_modules_list() {
   if [[ ( -n $parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `module` text
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
         modified_module_list+=("${module}")
       fi
     done
@@ -98,7 +100,9 @@ function assign_modules_to_job() {
   for module in "${modified_module_list[@]}"; do
     # Add 1 as JOB_NUMBER is 1-indexed instead of 0-indexed
     mod_num=$((num % NUM_JOBS + 1))
-    if [[ ! "${excluded_modules[*]}" =~ "${module}" ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
+    # Spaces are intentionally added -- Query is regex and array elements are space separated
+    # It tries to match the *exact* `module` text
+    if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]] && [[ $mod_num -eq $JOB_NUMBER ]]; then
       modules_assigned_list+=("${module}")
     fi
     num=$((num + 1))
@@ -136,7 +140,9 @@ function generate_graalvm_modules_list() {
     modules_assigned_list=()
     for maven_module in "${maven_modules_list[@]}"; do
       # Check that the modified_module_list contains a module from MAVEN_MODULES
-      if [[ "${modified_module_list[*]}" =~ "${maven_module}" ]]; then
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `maven_module` text
+      if [[ " ${modified_module_list[*]} " =~ " ${maven_module} " ]]; then
         modules_assigned_list+=("${module}")
       fi
     done
