@@ -17,12 +17,10 @@ deep-remove-regex:
 - "/{{ module_name }}/grpc-google-.*/src"
 - "/{{ module_name }}/proto-google-.*/src"
 - "/{{ module_name }}/google-.*/src"
-
 deep-preserve-regex:
 - "/{{ module_name }}/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/{{ module_name }}/google-.*/src/main/resources/META-INF/native-image/*"
 - "/{{ module_name }}/google-.*/src/test/resources/META-INF/native-image/*"
-
 deep-copy-regex:
 - source: "/{{ proto_path }}/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/{{ module_name }}/$1/proto-{{ artifact_name }}-$1/src"
