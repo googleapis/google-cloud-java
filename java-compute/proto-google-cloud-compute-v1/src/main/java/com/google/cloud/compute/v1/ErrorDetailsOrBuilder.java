@@ -69,4 +69,19 @@ public interface ErrorDetailsOrBuilder
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    */
   com.google.cloud.compute.v1.LocalizedMessageOrBuilder getLocalizedMessageOrBuilder();
+
+  /**
+   * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+   *
+   * @return Whether the quotaInfo field is set.
+   */
+  boolean hasQuotaInfo();
+  /**
+   * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+   *
+   * @return The quotaInfo.
+   */
+  com.google.cloud.compute.v1.QuotaExceededInfo getQuotaInfo();
+  /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+  com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder getQuotaInfoOrBuilder();
 }

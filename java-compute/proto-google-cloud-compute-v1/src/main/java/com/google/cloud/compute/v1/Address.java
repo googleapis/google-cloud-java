@@ -43,6 +43,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     creationTimestamp_ = "";
     description_ = "";
     ipVersion_ = "";
+    ipv6EndpointType_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
@@ -379,6 +380,165 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Address.Ipv6EndpointType}
+   */
+  public enum Ipv6EndpointType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ENDPOINT_TYPE = 0;</code>
+     */
+    UNDEFINED_IPV6_ENDPOINT_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Reserved IPv6 address can be used on network load balancer.
+     * </pre>
+     *
+     * <code>NETLB = 74173363;</code>
+     */
+    NETLB(74173363),
+    /**
+     *
+     *
+     * <pre>
+     * Reserved IPv6 address can be used on VM.
+     * </pre>
+     *
+     * <code>VM = 2743;</code>
+     */
+    VM(2743),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ENDPOINT_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_IPV6_ENDPOINT_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Reserved IPv6 address can be used on network load balancer.
+     * </pre>
+     *
+     * <code>NETLB = 74173363;</code>
+     */
+    public static final int NETLB_VALUE = 74173363;
+    /**
+     *
+     *
+     * <pre>
+     * Reserved IPv6 address can be used on VM.
+     * </pre>
+     *
+     * <code>VM = 2743;</code>
+     */
+    public static final int VM_VALUE = 2743;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Ipv6EndpointType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Ipv6EndpointType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IPV6_ENDPOINT_TYPE;
+        case 74173363:
+          return NETLB;
+        case 2743:
+          return VM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Ipv6EndpointType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Ipv6EndpointType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Ipv6EndpointType>() {
+              public Ipv6EndpointType findValueByNumber(int number) {
+                return Ipv6EndpointType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Ipv6EndpointType[] VALUES = values();
+
+    public static Ipv6EndpointType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Ipv6EndpointType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Address.Ipv6EndpointType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
@@ -552,7 +712,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final NetworkTier[] VALUES = values();
@@ -841,7 +1001,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(3);
+      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final Purpose[] VALUES = values();
@@ -1020,7 +1180,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(4);
+      return com.google.cloud.compute.v1.Address.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final Status[] VALUES = values();
@@ -1404,6 +1564,73 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IPV6_ENDPOINT_TYPE_FIELD_NUMBER = 97501004;
+  private volatile java.lang.Object ipv6EndpointType_;
+  /**
+   *
+   *
+   * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * Check the Ipv6EndpointType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_endpoint_type = 97501004;</code>
+   *
+   * @return Whether the ipv6EndpointType field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6EndpointType() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * Check the Ipv6EndpointType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_endpoint_type = 97501004;</code>
+   *
+   * @return The ipv6EndpointType.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6EndpointType() {
+    java.lang.Object ref = ipv6EndpointType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6EndpointType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+   * Check the Ipv6EndpointType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_endpoint_type = 97501004;</code>
+   *
+   * @return The bytes for ipv6EndpointType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6EndpointTypeBytes() {
+    java.lang.Object ref = ipv6EndpointType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6EndpointType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
   /**
@@ -1419,7 +1646,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1483,7 +1710,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1547,7 +1774,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1612,7 +1839,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNetworkTier() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1678,7 +1905,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPrefixLength() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1712,7 +1939,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPurpose() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1778,7 +2005,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1842,7 +2069,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1907,7 +2134,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1973,7 +2200,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -2100,25 +2327,28 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 97501004, ipv6EndpointType_);
+    }
     for (int i = 0; i < users_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 111578632, users_.getRaw(i));
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -2127,25 +2357,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 316407070, purpose_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt32(453565747, prefixLength_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
     getUnknownFields().writeTo(output);
@@ -2160,15 +2390,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(97501004, ipv6EndpointType_);
     }
     {
       int dataSize = 0;
@@ -2178,13 +2411,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getUsersList().size();
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -2193,25 +2426,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(294959552, ipVersion_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316407070, purpose_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(453565747, prefixLength_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -2252,6 +2485,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (hasIpVersion() != other.hasIpVersion()) return false;
     if (hasIpVersion()) {
       if (!getIpVersion().equals(other.getIpVersion())) return false;
+    }
+    if (hasIpv6EndpointType() != other.hasIpv6EndpointType()) return false;
+    if (hasIpv6EndpointType()) {
+      if (!getIpv6EndpointType().equals(other.getIpv6EndpointType())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -2328,6 +2565,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (hasIpVersion()) {
       hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getIpVersion().hashCode();
+    }
+    if (hasIpv6EndpointType()) {
+      hash = (37 * hash) + IPV6_ENDPOINT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6EndpointType().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -2522,28 +2763,30 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000010);
       ipVersion_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      kind_ = "";
+      ipv6EndpointType_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      name_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      network_ = "";
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      networkTier_ = "";
+      network_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      prefixLength_ = 0;
+      networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      purpose_ = "";
+      prefixLength_ = 0;
       bitField0_ = (bitField0_ & ~0x00000800);
-      region_ = "";
+      purpose_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = "";
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      subnetwork_ = "";
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subnetwork_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
+      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -2599,46 +2842,50 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
-      result.kind_ = kind_;
+      result.ipv6EndpointType_ = ipv6EndpointType_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.name_ = name_;
+      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
-      result.network_ = network_;
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
-      result.networkTier_ = networkTier_;
+      result.network_ = network_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.prefixLength_ = prefixLength_;
         to_bitField0_ |= 0x00000400;
       }
+      result.networkTier_ = networkTier_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.prefixLength_ = prefixLength_;
         to_bitField0_ |= 0x00000800;
       }
-      result.purpose_ = purpose_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
-      result.region_ = region_;
+      result.purpose_ = purpose_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00002000;
       }
-      result.selfLink_ = selfLink_;
+      result.region_ = region_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         to_bitField0_ |= 0x00004000;
       }
-      result.status_ = status_;
+      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
         to_bitField0_ |= 0x00008000;
       }
+      result.status_ = status_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00010000;
+      }
       result.subnetwork_ = subnetwork_;
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         users_ = users_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
       }
       result.users_ = users_;
       result.bitField0_ = to_bitField0_;
@@ -2719,23 +2966,28 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         ipVersion_ = other.ipVersion_;
         onChanged();
       }
-      if (other.hasKind()) {
+      if (other.hasIpv6EndpointType()) {
         bitField0_ |= 0x00000040;
+        ipv6EndpointType_ = other.ipv6EndpointType_;
+        onChanged();
+      }
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000080;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         network_ = other.network_;
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         networkTier_ = other.networkTier_;
         onChanged();
       }
@@ -2743,34 +2995,34 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         setPrefixLength(other.getPrefixLength());
       }
       if (other.hasPurpose()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         purpose_ = other.purpose_;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasStatus()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         status_ = other.status_;
         onChanged();
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -2812,13 +3064,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26989658
             case 244202930:
@@ -2827,6 +3079,12 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 244202930
+            case 780008034:
+              {
+                ipv6EndpointType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 780008034
             case 892629058:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2837,19 +3095,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1111570338
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1450082194
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1862979954
             case 2114463018:
@@ -2867,13 +3125,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1832345742
             case -1763710734:
               {
                 purpose_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -1763710734
             case -911466526:
@@ -2885,13 +3143,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             case -666441320:
               {
                 prefixLength_ = input.readInt32();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -666441320
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -645248918
             case -591601758:
@@ -2903,7 +3161,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             case -155784550:
               {
                 networkTier_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -155784550
             default:
@@ -3604,6 +3862,132 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object ipv6EndpointType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+     * Check the Ipv6EndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_endpoint_type = 97501004;</code>
+     *
+     * @return Whether the ipv6EndpointType field is set.
+     */
+    public boolean hasIpv6EndpointType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+     * Check the Ipv6EndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_endpoint_type = 97501004;</code>
+     *
+     * @return The ipv6EndpointType.
+     */
+    public java.lang.String getIpv6EndpointType() {
+      java.lang.Object ref = ipv6EndpointType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6EndpointType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+     * Check the Ipv6EndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_endpoint_type = 97501004;</code>
+     *
+     * @return The bytes for ipv6EndpointType.
+     */
+    public com.google.protobuf.ByteString getIpv6EndpointTypeBytes() {
+      java.lang.Object ref = ipv6EndpointType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6EndpointType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+     * Check the Ipv6EndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_endpoint_type = 97501004;</code>
+     *
+     * @param value The ipv6EndpointType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6EndpointType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      ipv6EndpointType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+     * Check the Ipv6EndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_endpoint_type = 97501004;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6EndpointType() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ipv6EndpointType_ = getDefaultInstance().getIpv6EndpointType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The endpoint type of this address, which should be VM or NETLB. This is used for deciding which type of endpoint this address can be used after the external IPv6 address reservation.
+     * Check the Ipv6EndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_endpoint_type = 97501004;</code>
+     *
+     * @param value The bytes for ipv6EndpointType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6EndpointTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000040;
+      ipv6EndpointType_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kind_ = "";
     /**
      *
@@ -3617,7 +4001,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3679,7 +4063,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -3696,7 +4080,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3718,7 +4102,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       kind_ = value;
       onChanged();
       return this;
@@ -3737,7 +4121,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3799,7 +4183,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -3816,7 +4200,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -3838,7 +4222,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -3857,7 +4241,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3919,7 +4303,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       network_ = value;
       onChanged();
       return this;
@@ -3936,7 +4320,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -3958,7 +4342,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       network_ = value;
       onChanged();
       return this;
@@ -3978,7 +4362,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkTier field is set.
      */
     public boolean hasNetworkTier() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4043,7 +4427,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       networkTier_ = value;
       onChanged();
       return this;
@@ -4061,7 +4445,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       networkTier_ = getDefaultInstance().getNetworkTier();
       onChanged();
       return this;
@@ -4084,7 +4468,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       networkTier_ = value;
       onChanged();
       return this;
@@ -4104,7 +4488,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPrefixLength() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4134,7 +4518,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrefixLength(int value) {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       prefixLength_ = value;
       onChanged();
       return this;
@@ -4151,7 +4535,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrefixLength() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       prefixLength_ = 0;
       onChanged();
       return this;
@@ -4171,7 +4555,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the purpose field is set.
      */
     public boolean hasPurpose() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4236,7 +4620,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       purpose_ = value;
       onChanged();
       return this;
@@ -4254,7 +4638,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPurpose() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       purpose_ = getDefaultInstance().getPurpose();
       onChanged();
       return this;
@@ -4277,7 +4661,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       purpose_ = value;
       onChanged();
       return this;
@@ -4296,7 +4680,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4358,7 +4742,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       region_ = value;
       onChanged();
       return this;
@@ -4375,7 +4759,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -4397,7 +4781,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       region_ = value;
       onChanged();
       return this;
@@ -4416,7 +4800,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4478,7 +4862,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4495,7 +4879,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -4517,7 +4901,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -4537,7 +4921,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4602,7 +4986,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       status_ = value;
       onChanged();
       return this;
@@ -4620,7 +5004,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
@@ -4643,7 +5027,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       status_ = value;
       onChanged();
       return this;
@@ -4662,7 +5046,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4724,7 +5108,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -4741,7 +5125,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -4763,7 +5147,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -4773,9 +5157,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUsersIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
       }
     }
     /**
@@ -4910,7 +5294,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUsers() {
       users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }

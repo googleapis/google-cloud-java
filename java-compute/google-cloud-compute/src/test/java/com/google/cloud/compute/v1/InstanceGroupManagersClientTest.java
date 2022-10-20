@@ -662,6 +662,7 @@ public class InstanceGroupManagersClientTest {
             .setInstanceGroup("instanceGroup-1404696854")
             .setInstanceTemplate("instanceTemplate1009541167")
             .setKind("kind3292052")
+            .setListManagedInstancesResults("listManagedInstancesResults1836889817")
             .setName("name3373707")
             .addAllNamedPorts(new ArrayList<NamedPort>())
             .setRegion("region-934795532")

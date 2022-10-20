@@ -2781,6 +2781,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   public static final int TARGET_FIELD_NUMBER = 192835985;
   private volatile java.lang.Object target_;
   /**
+   *
+   *
+   * <pre>
+   * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+   * </pre>
+   *
    * <code>optional string target = 192835985;</code>
    *
    * @return Whether the target field is set.
@@ -2790,6 +2796,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x04000000) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+   * </pre>
+   *
    * <code>optional string target = 192835985;</code>
    *
    * @return The target.
@@ -2807,6 +2819,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+   * </pre>
+   *
    * <code>optional string target = 192835985;</code>
    *
    * @return The bytes for target.
@@ -8133,6 +8151,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object target_ = "";
     /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+     * </pre>
+     *
      * <code>optional string target = 192835985;</code>
      *
      * @return Whether the target field is set.
@@ -8141,6 +8165,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x40000000) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+     * </pre>
+     *
      * <code>optional string target = 192835985;</code>
      *
      * @return The target.
@@ -8157,6 +8187,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+     * </pre>
+     *
      * <code>optional string target = 192835985;</code>
      *
      * @return The bytes for target.
@@ -8173,6 +8209,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+     * </pre>
+     *
      * <code>optional string target = 192835985;</code>
      *
      * @param value The target to set.
@@ -8188,6 +8230,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+     * </pre>
+     *
      * <code>optional string target = 192835985;</code>
      *
      * @return This builder for chaining.
@@ -8199,6 +8247,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle: - vpc-sc - APIs that support VPC Service Controls. - all-apis - All supported Google APIs.
+     * </pre>
+     *
      * <code>optional string target = 192835985;</code>
      *
      * @param value The bytes for target to set.

@@ -693,6 +693,7 @@ public class InstancesClientTest {
             .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
             .addAllResourcePolicies(new ArrayList<String>())
+            .setResourceStatus(ResourceStatus.newBuilder().build())
             .setSatisfiesPzs(true)
             .setScheduling(Scheduling.newBuilder().build())
             .setSelfLink("selfLink1191800166")
