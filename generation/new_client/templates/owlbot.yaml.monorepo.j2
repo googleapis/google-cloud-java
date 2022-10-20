@@ -20,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/{{ module_name }}/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/{{ module_name }}/google-.*/src/main/resources/META-INF/native-image/*"
+- "/{{ module_name }}/google-.*/src/test/resources/META-INF/native-image/*"
 
 deep-copy-regex:
 - source: "/{{ proto_path }}/(v.*)/.*-java/proto-google-.*/src"
