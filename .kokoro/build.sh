@@ -84,7 +84,6 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm)
-    # Generate the `-pl` list to split into sub-jobs
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
@@ -95,7 +94,6 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm17)
-    # Generate the `-pl` list to split into sub-jobs
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
       printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
@@ -113,6 +111,7 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
       install_modules
+
       for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
         [[ -f "${FILE}" ]] || continue
         source "${FILE}"
@@ -140,7 +139,8 @@ case ${JOB_TYPE} in
               -Danimal.sniffer.skip=true \
               -fae \
               verify
-            RETURN_CODE=$?
+            # RETURN_CODE should return 1 if any module's sample fails
+            RETURN_CODE=$(($? | RETURN_CODE))
             popd
           else
             echo "no sample pom.xml found - skipping sample tests"
