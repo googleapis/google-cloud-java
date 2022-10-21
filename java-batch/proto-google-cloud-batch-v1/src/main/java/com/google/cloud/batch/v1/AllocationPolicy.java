@@ -2866,7 +2866,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Device name that the guest operating system will see.
-     * If not specified, this is default to the disk name.
+     * It is used by Runnable.volumes field to mount disks. So please specify
+     * the device_name if you want Batch to help mount the disk, and it should
+     * match the device_name field in volumes.
      * </pre>
      *
      * <code>string device_name = 3;</code>
@@ -2879,7 +2881,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Device name that the guest operating system will see.
-     * If not specified, this is default to the disk name.
+     * It is used by Runnable.volumes field to mount disks. So please specify
+     * the device_name if you want Batch to help mount the disk, and it should
+     * match the device_name field in volumes.
      * </pre>
      *
      * <code>string device_name = 3;</code>
@@ -3095,7 +3099,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Device name that the guest operating system will see.
-     * If not specified, this is default to the disk name.
+     * It is used by Runnable.volumes field to mount disks. So please specify
+     * the device_name if you want Batch to help mount the disk, and it should
+     * match the device_name field in volumes.
      * </pre>
      *
      * <code>string device_name = 3;</code>
@@ -3119,7 +3125,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Device name that the guest operating system will see.
-     * If not specified, this is default to the disk name.
+     * It is used by Runnable.volumes field to mount disks. So please specify
+     * the device_name if you want Batch to help mount the disk, and it should
+     * match the device_name field in volumes.
      * </pre>
      *
      * <code>string device_name = 3;</code>
@@ -3856,7 +3864,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Device name that the guest operating system will see.
-       * If not specified, this is default to the disk name.
+       * It is used by Runnable.volumes field to mount disks. So please specify
+       * the device_name if you want Batch to help mount the disk, and it should
+       * match the device_name field in volumes.
        * </pre>
        *
        * <code>string device_name = 3;</code>
@@ -3879,7 +3889,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Device name that the guest operating system will see.
-       * If not specified, this is default to the disk name.
+       * It is used by Runnable.volumes field to mount disks. So please specify
+       * the device_name if you want Batch to help mount the disk, and it should
+       * match the device_name field in volumes.
        * </pre>
        *
        * <code>string device_name = 3;</code>
@@ -3902,7 +3914,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Device name that the guest operating system will see.
-       * If not specified, this is default to the disk name.
+       * It is used by Runnable.volumes field to mount disks. So please specify
+       * the device_name if you want Batch to help mount the disk, and it should
+       * match the device_name field in volumes.
        * </pre>
        *
        * <code>string device_name = 3;</code>
@@ -3924,7 +3938,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Device name that the guest operating system will see.
-       * If not specified, this is default to the disk name.
+       * It is used by Runnable.volumes field to mount disks. So please specify
+       * the device_name if you want Batch to help mount the disk, and it should
+       * match the device_name field in volumes.
        * </pre>
        *
        * <code>string device_name = 3;</code>
@@ -3942,7 +3958,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Device name that the guest operating system will see.
-       * If not specified, this is default to the disk name.
+       * It is used by Runnable.volumes field to mount disks. So please specify
+       * the device_name if you want Batch to help mount the disk, and it should
+       * match the device_name field in volumes.
        * </pre>
        *
        * <code>string device_name = 3;</code>
@@ -4071,10 +4089,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     long getCount();
 
     /**
+     *
+     *
+     * <pre>
+     * Deprecated: please use instances[0].install_gpu_drivers instead.
+     * </pre>
+     *
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=289
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=292
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4201,10 +4225,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
     private boolean installGpuDrivers_;
     /**
+     *
+     *
+     * <pre>
+     * Deprecated: please use instances[0].install_gpu_drivers instead.
+     * </pre>
+     *
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=289
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=292
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -4755,10 +4785,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       private boolean installGpuDrivers_;
       /**
+       *
+       *
+       * <pre>
+       * Deprecated: please use instances[0].install_gpu_drivers instead.
+       * </pre>
+       *
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=289
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=292
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -4767,10 +4803,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return installGpuDrivers_;
       }
       /**
+       *
+       *
+       * <pre>
+       * Deprecated: please use instances[0].install_gpu_drivers instead.
+       * </pre>
+       *
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=289
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=292
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -4782,10 +4824,16 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Deprecated: please use instances[0].install_gpu_drivers instead.
+       * </pre>
+       *
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=289
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=292
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -7180,6 +7228,22 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getInstanceTemplateBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Set this field true if users want Batch to help fetch drivers from a
+     * third party location and install them for GPUs specified in
+     * policy.accelerators or instance_template on their behalf. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool install_gpu_drivers = 3;</code>
+     *
+     * @return The installGpuDrivers.
+     */
+    boolean getInstallGpuDrivers();
+
     public com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate.PolicyTemplateCase
         getPolicyTemplateCase();
   }
@@ -7404,6 +7468,27 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int INSTALL_GPU_DRIVERS_FIELD_NUMBER = 3;
+    private boolean installGpuDrivers_;
+    /**
+     *
+     *
+     * <pre>
+     * Set this field true if users want Batch to help fetch drivers from a
+     * third party location and install them for GPUs specified in
+     * policy.accelerators or instance_template on their behalf. Default is
+     * false.
+     * </pre>
+     *
+     * <code>bool install_gpu_drivers = 3;</code>
+     *
+     * @return The installGpuDrivers.
+     */
+    @java.lang.Override
+    public boolean getInstallGpuDrivers() {
+      return installGpuDrivers_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7425,6 +7510,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (policyTemplateCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, policyTemplate_);
       }
+      if (installGpuDrivers_ != false) {
+        output.writeBool(3, installGpuDrivers_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7442,6 +7530,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (policyTemplateCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, policyTemplate_);
       }
+      if (installGpuDrivers_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, installGpuDrivers_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7458,6 +7549,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate other =
           (com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate) obj;
 
+      if (getInstallGpuDrivers() != other.getInstallGpuDrivers()) return false;
       if (!getPolicyTemplateCase().equals(other.getPolicyTemplateCase())) return false;
       switch (policyTemplateCase_) {
         case 1:
@@ -7480,6 +7572,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INSTALL_GPU_DRIVERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInstallGpuDrivers());
       switch (policyTemplateCase_) {
         case 1:
           hash = (37 * hash) + POLICY_FIELD_NUMBER;
@@ -7638,6 +7732,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (policyBuilder_ != null) {
           policyBuilder_.clear();
         }
+        installGpuDrivers_ = false;
+
         policyTemplateCase_ = 0;
         policyTemplate_ = null;
         return this;
@@ -7679,6 +7775,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (policyTemplateCase_ == 2) {
           result.policyTemplate_ = policyTemplate_;
         }
+        result.installGpuDrivers_ = installGpuDrivers_;
         result.policyTemplateCase_ = policyTemplateCase_;
         onBuilt();
         return result;
@@ -7735,6 +7832,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (other
             == com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate
                 .getDefaultInstance()) return this;
+        if (other.getInstallGpuDrivers() != false) {
+          setInstallGpuDrivers(other.getInstallGpuDrivers());
+        }
         switch (other.getPolicyTemplateCase()) {
           case POLICY:
             {
@@ -7792,6 +7892,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   policyTemplate_ = s;
                   break;
                 } // case 18
+              case 24:
+                {
+                  installGpuDrivers_ = input.readBool();
+
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8179,6 +8285,67 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         policyTemplateCase_ = 2;
         policyTemplate_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean installGpuDrivers_;
+      /**
+       *
+       *
+       * <pre>
+       * Set this field true if users want Batch to help fetch drivers from a
+       * third party location and install them for GPUs specified in
+       * policy.accelerators or instance_template on their behalf. Default is
+       * false.
+       * </pre>
+       *
+       * <code>bool install_gpu_drivers = 3;</code>
+       *
+       * @return The installGpuDrivers.
+       */
+      @java.lang.Override
+      public boolean getInstallGpuDrivers() {
+        return installGpuDrivers_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field true if users want Batch to help fetch drivers from a
+       * third party location and install them for GPUs specified in
+       * policy.accelerators or instance_template on their behalf. Default is
+       * false.
+       * </pre>
+       *
+       * <code>bool install_gpu_drivers = 3;</code>
+       *
+       * @param value The installGpuDrivers to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstallGpuDrivers(boolean value) {
+
+        installGpuDrivers_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set this field true if users want Batch to help fetch drivers from a
+       * third party location and install them for GPUs specified in
+       * policy.accelerators or instance_template on their behalf. Default is
+       * false.
+       * </pre>
+       *
+       * <code>bool install_gpu_drivers = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInstallGpuDrivers() {
+
+        installGpuDrivers_ = false;
         onChanged();
         return this;
       }
@@ -10413,6 +10580,54 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     return instances_.get(index);
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 9;
+  private com.google.cloud.batch.v1.ServiceAccount serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * Service account that VMs will run as.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceAccount() {
+    return serviceAccount_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Service account that VMs will run as.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.ServiceAccount getServiceAccount() {
+    return serviceAccount_ == null
+        ? com.google.cloud.batch.v1.ServiceAccount.getDefaultInstance()
+        : serviceAccount_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Service account that VMs will run as.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
+    return getServiceAccount();
+  }
+
   public static final int LABELS_FIELD_NUMBER = 6;
 
   private static final class LabelsDefaultEntryHolder {
@@ -10608,6 +10823,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < instances_.size(); i++) {
       output.writeMessage(8, instances_.get(i));
     }
+    if (serviceAccount_ != null) {
+      output.writeMessage(9, getServiceAccount());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -10636,6 +10854,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < instances_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, instances_.get(i));
     }
+    if (serviceAccount_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getServiceAccount());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10657,6 +10878,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!getLocation().equals(other.getLocation())) return false;
     }
     if (!getInstancesList().equals(other.getInstancesList())) return false;
+    if (hasServiceAccount() != other.hasServiceAccount()) return false;
+    if (hasServiceAccount()) {
+      if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasNetwork() != other.hasNetwork()) return false;
     if (hasNetwork()) {
@@ -10680,6 +10905,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     if (getInstancesCount() > 0) {
       hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getInstancesList().hashCode();
+    }
+    if (hasServiceAccount()) {
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -10861,6 +11090,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         instancesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (serviceAccountBuilder_ == null) {
+        serviceAccount_ = null;
+      } else {
+        serviceAccount_ = null;
+        serviceAccountBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       if (networkBuilder_ == null) {
         network_ = null;
@@ -10909,6 +11144,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         result.instances_ = instances_;
       } else {
         result.instances_ = instancesBuilder_.build();
+      }
+      if (serviceAccountBuilder_ == null) {
+        result.serviceAccount_ = serviceAccount_;
+      } else {
+        result.serviceAccount_ = serviceAccountBuilder_.build();
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
@@ -10996,6 +11236,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasServiceAccount()) {
+        mergeServiceAccount(other.getServiceAccount());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasNetwork()) {
         mergeNetwork(other.getNetwork());
@@ -11064,6 +11307,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(getServiceAccountFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11697,6 +11946,192 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         instances_ = null;
       }
       return instancesBuilder_;
+    }
+
+    private com.google.cloud.batch.v1.ServiceAccount serviceAccount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1.ServiceAccount,
+            com.google.cloud.batch.v1.ServiceAccount.Builder,
+            com.google.cloud.batch.v1.ServiceAccountOrBuilder>
+        serviceAccountBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     *
+     * @return Whether the serviceAccount field is set.
+     */
+    public boolean hasServiceAccount() {
+      return serviceAccountBuilder_ != null || serviceAccount_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     *
+     * @return The serviceAccount.
+     */
+    public com.google.cloud.batch.v1.ServiceAccount getServiceAccount() {
+      if (serviceAccountBuilder_ == null) {
+        return serviceAccount_ == null
+            ? com.google.cloud.batch.v1.ServiceAccount.getDefaultInstance()
+            : serviceAccount_;
+      } else {
+        return serviceAccountBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    public Builder setServiceAccount(com.google.cloud.batch.v1.ServiceAccount value) {
+      if (serviceAccountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAccount_ = value;
+        onChanged();
+      } else {
+        serviceAccountBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    public Builder setServiceAccount(
+        com.google.cloud.batch.v1.ServiceAccount.Builder builderForValue) {
+      if (serviceAccountBuilder_ == null) {
+        serviceAccount_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceAccountBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    public Builder mergeServiceAccount(com.google.cloud.batch.v1.ServiceAccount value) {
+      if (serviceAccountBuilder_ == null) {
+        if (serviceAccount_ != null) {
+          serviceAccount_ =
+              com.google.cloud.batch.v1.ServiceAccount.newBuilder(serviceAccount_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          serviceAccount_ = value;
+        }
+        onChanged();
+      } else {
+        serviceAccountBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    public Builder clearServiceAccount() {
+      if (serviceAccountBuilder_ == null) {
+        serviceAccount_ = null;
+        onChanged();
+      } else {
+        serviceAccount_ = null;
+        serviceAccountBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    public com.google.cloud.batch.v1.ServiceAccount.Builder getServiceAccountBuilder() {
+
+      onChanged();
+      return getServiceAccountFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    public com.google.cloud.batch.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
+      if (serviceAccountBuilder_ != null) {
+        return serviceAccountBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceAccount_ == null
+            ? com.google.cloud.batch.v1.ServiceAccount.getDefaultInstance()
+            : serviceAccount_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Service account that VMs will run as.
+     * </pre>
+     *
+     * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1.ServiceAccount,
+            com.google.cloud.batch.v1.ServiceAccount.Builder,
+            com.google.cloud.batch.v1.ServiceAccountOrBuilder>
+        getServiceAccountFieldBuilder() {
+      if (serviceAccountBuilder_ == null) {
+        serviceAccountBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.batch.v1.ServiceAccount,
+                com.google.cloud.batch.v1.ServiceAccount.Builder,
+                com.google.cloud.batch.v1.ServiceAccountOrBuilder>(
+                getServiceAccount(), getParentForChildren(), isClean());
+        serviceAccount_ = null;
+      }
+      return serviceAccountBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
