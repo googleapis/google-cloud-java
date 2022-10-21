@@ -29,6 +29,8 @@ public interface SearchHashesRequestOrBuilder
    * <pre>
    * A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
    * hash. For JSON requests, this field is base64-encoded.
+   * Note that if this parameter is provided by a URI, it must be encoded using
+   * the web safe base64 variant (RFC 4648).
    * </pre>
    *
    * <code>bytes hash_prefix = 1;</code>

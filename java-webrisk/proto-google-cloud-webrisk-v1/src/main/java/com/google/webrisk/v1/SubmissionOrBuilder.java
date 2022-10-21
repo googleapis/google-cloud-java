@@ -27,7 +27,7 @@ public interface SubmissionOrBuilder
    *
    *
    * <pre>
-   * Required. The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for malicious content to be analyzed.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +39,7 @@ public interface SubmissionOrBuilder
    *
    *
    * <pre>
-   * Required. The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for malicious content to be analyzed.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
