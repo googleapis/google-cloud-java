@@ -23,6 +23,7 @@ import com.google.cloud.compute.v1.AttachedDisk;
 import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.Firewall;
 import com.google.cloud.compute.v1.FirewallsClient;
+import com.google.cloud.compute.v1.FirewallsSettings;
 import com.google.cloud.compute.v1.GetInstanceRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceGroupManager;
@@ -233,7 +234,20 @@ public class ITSmokeInstancesTest extends BaseTest {
       throws IOException, ExecutionException, InterruptedException {
     // we want to test a field like "IPProtocol"
     String name = generateRandomName("fw-rule");
-    FirewallsClient firewallsClient = FirewallsClient.create();
+    FirewallsSettings.Builder firewallsSettingsBuilder = FirewallsSettings.newBuilder();
+    firewallsSettingsBuilder
+        .getSettings()
+        .setRetrySettings(
+            firewallsSettingsBuilder
+                .getSettings()
+                .getRetrySettings()
+                .toBuilder()
+                .setMaxAttempts(5)
+                .setInitialRetryDelay(org.threeten.bp.Duration.ofSeconds(5))
+                .setRetryDelayMultiplier(1.0)
+                .build());
+    FirewallsSettings firewallsSettings = firewallsSettingsBuilder.build();
+    FirewallsClient firewallsClient = FirewallsClient.create(firewallsSettings);
     Firewall firewall =
         Firewall.newBuilder()
             .setName(name)
