@@ -50,4 +50,5 @@
     <module>proto-google-cloud-enterpriseknowledgegraph-v1</module>
     <module>google-cloud-enterpriseknowledgegraph-bom</module>
   </modules>
-</project>
+
+  </project>
