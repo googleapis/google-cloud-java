@@ -29,29 +29,6 @@ import templates
 def main(ctx):
     pass
 
-def add_module_to_root_pom(pom_path: Path, new_module: str):
-    with open(pom_path, "r") as fp:
-        content = fp.read()
-
-    matches = re.findall(r'<module>([\w\-]+?)</module>', content)
-    matches.append(new_module)
-
-    # Make normal modules first and BOM at the end
-    matches.sort(key=lambda m: f"0{m}" if m.startswith('java-') else m)
-    modules_lines = []
-    for match in matches:
-        modules_lines.append(f"<module>{match}</module>")
-
-    modules_line = "\n    ".join(modules_lines)
-    ordered_content = re.sub(r"<modules>.+</modules>",
-                             f"<modules>\n    {modules_line}\n  </modules>",
-                             content,
-                             flags=re.MULTILINE | re.DOTALL)
-
-    with open(pom_path, "w") as fp:
-        fp.truncate(0)
-        fp.write(ordered_content)
-
 @main.command()
 @click.option("--api_shortname", required=True, type=str, prompt="Service name? (e.g. automl)")
 @click.option(
@@ -91,7 +68,6 @@ def add_module_to_root_pom(pom_path: Path, new_module: str):
     "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
 )
 @click.option("--library-type", type=str)
-@click.option("--monorepo-url", type=str, default="https://github.com/googleapis/google-cloud-java")
 def generate(
     api_shortname,
     name_pretty,
@@ -109,7 +85,6 @@ def generate(
     group_id,
     owlbot_image,
     library_type,
-    monorepo_url,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -157,19 +132,9 @@ def generate(
         repo_metadata["requires_billing"] = True
 
     # Initialize workdir
-    print("Creating a new module in monorepo " + monorepo_url)
-    subprocess.check_call(["mkdir", "-p", "workspace"])
-    subprocess.check_call(["rm", "-fr", "monorepo"], cwd="workspace")
-    subprocess.check_call(["git", "clone", monorepo_url, "monorepo"],
-                          cwd="workspace")
-    workdir = Path(f"workspace/monorepo/java-{output_name}")
+    workdir = Path(f"{sys.path[0]}/../../java-{output_name}")
+    print(f"Creating a new module {workdir}")
     os.makedirs(workdir, exist_ok=True)
-    subprocess.check_call(["git", "checkout", "-b",
-                           f"new_module_java-{output_name}"],
-                          cwd=workdir)
-    add_module_to_root_pom(workdir / ".." / "pom.xml",
-                           f"java-{output_name}")
-    subprocess.check_call(["git", "add", "."], cwd=workdir / "..")
     # write .repo-metadata.json file
     with open(workdir / ".repo-metadata.json", "w") as fp:
         json.dump(repo_metadata, fp, indent=2)
@@ -264,12 +229,7 @@ def generate(
         ],
         cwd=monorepo_root,
     )
-    # In monorpeo, .github and .kokoro under the module is unused
-    print("Removing unnecessary files")
-    subprocess.check_call(["rm", "-fr", ".github"],
-                          cwd=workdir)
-    subprocess.check_call(["rm", "-fr", ".kokoro"],
-                          cwd=workdir)
+
     subprocess.check_call(["rm", "-f", ".gitignore"],
                           cwd=workdir)
 
@@ -281,11 +241,6 @@ def generate(
     subprocess.check_call(
         ["bash", "generation/delete_non_generated_samples.sh"],
         cwd=monorepo_root
-    )
-
-    subprocess.check_call(["git", "add", "."], cwd=workdir)
-    subprocess.check_call(
-        ["git", "commit", "-m", f"feat: initial generation of {api_shortname}"], cwd=workdir
     )
 
     print("Regenerating the BOM")
@@ -300,14 +255,6 @@ def generate(
 
     # This script takes care of updating the root pom.xml
     os.system(f"cd {monorepo_root} && generation/print_root_pom.sh > pom.xml")
-
-    # This script updates every module's pom sets the root as parent
-    subprocess.check_call(
-        [
-            "bash", "generation/set_parent_pom.sh"
-        ],
-        cwd=monorepo_root,
-    )
 
     print("Regenerating Release Please config files")
     subprocess.check_call(
@@ -339,30 +286,11 @@ def generate(
         cwd=monorepo_root,
     )
 
-    # Add the files to commit
-    subprocess.check_call([
-        "git", "add", "pom.xml", "gapic-libraries-bom/pom.xml",
-        "release-please-config.json", ".release-please-manifest.json"],
-        cwd=monorepo_root)
-
-    subprocess.check_call(
-        ["git", "commit", "-m",
-         f"build: add the {api_shortname} module to monorepo"],
-        cwd=monorepo_root
-    )
-
-    # Remove irrelevant changes in other modules
-    subprocess.check_call(
-        ["git", "checkout", "--", "."],
-        cwd=monorepo_root
-    )
-
-    # It seems generate_release_please_config.sh is not ready to run as
-    # part of client library generation process.
-
     print(f"Prepared new library in {workdir}")
-    print(f"Please create a pull request from that directory:\n"
-          f"  $ cd {monorepo_root}\n"
+    print(f"Please create a pull request:\n"
+          f"  $ git checkout -b new_module_java-{output_name}\n"
+          f"  $ git add .\n"
+          f"  $ git commit -m 'feat: [{api_shortname}] new module for {api_shortname}'"
           f"  $ gh pr create --title 'feat: [{api_shortname}] new module for {api_shortname}'")
 
 if __name__ == "__main__":
