@@ -1497,8 +1497,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <ul>
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
-   *       token. &#42; The supplied auth token is invalid. &#42; The reseller account making the
-   *       request is different from the reseller account in the query.
+   *       token. &#42; The customer provided incorrect reseller information when generating auth
+   *       token. &#42; The reseller account making the request is different from the reseller
+   *       account in the query.
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1549,8 +1550,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <ul>
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
-   *       token. &#42; The supplied auth token is invalid. &#42; The reseller account making the
-   *       request is different from the reseller account in the query.
+   *       token. &#42; The customer provided incorrect reseller information when generating auth
+   *       token. &#42; The reseller account making the request is different from the reseller
+   *       account in the query.
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1600,8 +1602,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <ul>
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
-   *       token. &#42; The supplied auth token is invalid. &#42; The reseller account making the
-   *       request is different from the reseller account in the query.
+   *       token. &#42; The customer provided incorrect reseller information when generating auth
+   *       token. &#42; The reseller account making the request is different from the reseller
+   *       account in the query.
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *

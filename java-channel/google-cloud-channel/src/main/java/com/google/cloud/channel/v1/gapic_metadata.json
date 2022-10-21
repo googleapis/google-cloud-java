@@ -5,6 +5,24 @@
   "protoPackage": "google.cloud.channel.v1",
   "libraryPackage": "com.google.cloud.channel.v1",
   "services": {
+    "CloudChannelReportsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudChannelReportsServiceClient",
+          "rpcs": {
+            "FetchReportResults": {
+              "methods": ["fetchReportResults", "fetchReportResults", "fetchReportResults", "fetchReportResultsPagedCallable", "fetchReportResultsCallable"]
+            },
+            "ListReports": {
+              "methods": ["listReports", "listReports", "listReportsPagedCallable", "listReportsCallable"]
+            },
+            "RunReportJob": {
+              "methods": ["runReportJobAsync", "runReportJobOperationCallable", "runReportJobCallable"]
+            }
+          }
+        }
+      }
+    },
     "CloudChannelService": {
       "clients": {
         "grpc": {
