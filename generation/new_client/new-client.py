@@ -69,23 +69,22 @@ def main(ctx):
 )
 @click.option("--library-type", type=str)
 def generate(
-    api_shortname,
-    name_pretty,
-    product_docs,
-    api_description,
-    release_level,
-    distribution_name,
-    api_id,
-    requires_billing,
-    transport,
-    language,
-    destination_name,
-    proto_path,
-    cloud_api,
-    group_id,
-    owlbot_image,
-    library_type,
-    monorepo_url,
+        api_shortname,
+        name_pretty,
+        product_docs,
+        api_description,
+        release_level,
+        distribution_name,
+        api_id,
+        requires_billing,
+        transport,
+        language,
+        destination_name,
+        proto_path,
+        cloud_api,
+        group_id,
+        owlbot_image,
+        library_type,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -297,4 +296,3 @@ def generate(
 
 if __name__ == "__main__":
     main()
-
