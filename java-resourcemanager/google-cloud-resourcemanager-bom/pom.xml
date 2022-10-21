@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager-bom</artifactId>
-  <version>1.6.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+  <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-resourcemanager-v3</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
+        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-resourcemanager-v3</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
+        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

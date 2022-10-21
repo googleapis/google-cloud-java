@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-datacatalog:1.10.0:1.10.0
-grpc-google-cloud-datacatalog-v1:1.10.0:1.10.0
-grpc-google-cloud-datacatalog-v1beta1:0.47.0:0.47.0
-proto-google-cloud-datacatalog-v1:1.10.0:1.10.0
-proto-google-cloud-datacatalog-v1beta1:0.47.0:0.47.0
+google-cloud-datacatalog:1.10.0:1.10.1-SNAPSHOT
+grpc-google-cloud-datacatalog-v1:1.10.0:1.10.1-SNAPSHOT
+grpc-google-cloud-datacatalog-v1beta1:0.47.0:0.47.1-SNAPSHOT
+proto-google-cloud-datacatalog-v1:1.10.0:1.10.1-SNAPSHOT
+proto-google-cloud-datacatalog-v1beta1:0.47.0:0.47.1-SNAPSHOT

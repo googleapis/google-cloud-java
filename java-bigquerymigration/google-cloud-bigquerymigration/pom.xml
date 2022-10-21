@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerymigration</artifactId>
-  <version>0.7.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+  <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
   <packaging>jar</packaging>
   <name>Google BigQuery Migration</name>
   <description>BigQuery Migration BigQuery Migration API</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerymigration-parent</artifactId>
-    <version>0.7.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+    <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerymigration</site.installationModule>

@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-admin-bom</artifactId>
-  <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
+  <version>2.0.1-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-admin</artifactId>
-        <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
+        <version>2.0.1-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-admin-v1</artifactId>
-        <version>2.0.0</version><!-- {x-version-update:grpc-google-iam-admin-v1:current} -->
+        <version>2.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-admin-v1</artifactId>
-        <version>2.0.0</version><!-- {x-version-update:proto-google-iam-admin-v1:current} -->
+        <version>2.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-admin-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dms</artifactId>
-  <version>2.3.0</version><!-- {x-version-update:google-cloud-dms:current} -->
+  <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dms:current} -->
   <packaging>jar</packaging>
   <name>Google Database Migration Service</name>
   <description>Database Migration Service makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dms-parent</artifactId>
-    <version>2.3.0</version><!-- {x-version-update:google-cloud-dms:current} -->
+    <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dms:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dms</site.installationModule>

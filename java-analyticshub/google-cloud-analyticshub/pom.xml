@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-analyticshub</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
+  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Hub API</name>
   <description>Analytics Hub API TBD</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-analyticshub-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-analyticshub:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-analyticshub</site.installationModule>
