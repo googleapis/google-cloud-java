@@ -149,17 +149,18 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
-  mvn -B -pl "${module_list}" \
-    -amd \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  retry_with_backoff 3 10 \
+    mvn -B -pl "${module_list}" \
+      -amd \
+      -ntp \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -DskipTests=true \
+      -Djacoco.skip=true \
+      -T 1C \
+      install
 }
