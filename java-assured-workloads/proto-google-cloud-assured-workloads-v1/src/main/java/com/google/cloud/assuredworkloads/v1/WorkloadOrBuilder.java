@@ -413,7 +413,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
+   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=484
    * @return Whether the kmsSettings field is set.
    */
   @java.lang.Deprecated
@@ -434,7 +434,7 @@ public interface WorkloadOrBuilder
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
+   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=484
    * @return The kmsSettings.
    */
   @java.lang.Deprecated

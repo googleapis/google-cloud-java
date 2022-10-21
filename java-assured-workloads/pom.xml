@@ -62,4 +62,5 @@
     <module>proto-google-cloud-assured-workloads-v1</module>
     <module>google-cloud-assured-workloads-bom</module>
   </modules>
-</project>
+
+  </project>

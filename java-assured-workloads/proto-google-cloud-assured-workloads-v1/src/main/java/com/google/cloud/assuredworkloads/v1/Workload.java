@@ -22,7 +22,7 @@ package com.google.cloud.assuredworkloads.v1;
  *
  *
  * <pre>
- * An Workload object for managing highly regulated workloads of cloud
+ * A Workload object for managing highly regulated workloads of cloud
  * customers.
  * </pre>
  *
@@ -213,7 +213,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assured Workloads for Partners;
+     * Assured Workloads for Australia Regions and Support controls
+     * Available for public preview consumption.
+     * Don't create production workloads.
+     * </pre>
+     *
+     * <code>AU_REGIONS_AND_US_SUPPORT = 11;</code>
+     */
+    AU_REGIONS_AND_US_SUPPORT(11),
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads for Partners
      * </pre>
      *
      * <code>ASSURED_WORKLOADS_FOR_PARTNERS = 12;</code>
@@ -336,7 +348,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assured Workloads for Partners;
+     * Assured Workloads for Australia Regions and Support controls
+     * Available for public preview consumption.
+     * Don't create production workloads.
+     * </pre>
+     *
+     * <code>AU_REGIONS_AND_US_SUPPORT = 11;</code>
+     */
+    public static final int AU_REGIONS_AND_US_SUPPORT_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads for Partners
      * </pre>
      *
      * <code>ASSURED_WORKLOADS_FOR_PARTNERS = 12;</code>
@@ -389,6 +413,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return CA_REGIONS_AND_SUPPORT;
         case 10:
           return ITAR;
+        case 11:
+          return AU_REGIONS_AND_US_SUPPORT;
         case 12:
           return ASSURED_WORKLOADS_FOR_PARTNERS;
         default:
@@ -620,7 +646,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unknown compliance regime.
+     * Unknown partner regime/controls.
      * </pre>
      *
      * <code>PARTNER_UNSPECIFIED = 0;</code>
@@ -630,7 +656,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * S3NS regime
+     * S3NS regime/controls.
      * </pre>
      *
      * <code>LOCAL_CONTROLS_BY_S3NS = 1;</code>
@@ -643,7 +669,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unknown compliance regime.
+     * Unknown partner regime/controls.
      * </pre>
      *
      * <code>PARTNER_UNSPECIFIED = 0;</code>
@@ -653,7 +679,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * S3NS regime
+     * S3NS regime/controls.
      * </pre>
      *
      * <code>LOCAL_CONTROLS_BY_S3NS = 1;</code>
@@ -1800,6 +1826,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Settings specific to the Key Management Service.
+   * This message is deprecated.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1.Workload.KMSSettings}
@@ -2145,6 +2174,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings specific to the Key Management Service.
+     * This message is deprecated.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * Protobuf type {@code google.cloud.assuredworkloads.v1.Workload.KMSSettings}
@@ -2883,7 +2915,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the type of resource. This field should be specified to
-     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * correspond the id to the right resource type (CONSUMER_FOLDER or
      * ENCRYPTION_KEYS_PROJECT)
      * </pre>
      *
@@ -2898,7 +2930,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the type of resource. This field should be specified to
-     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * correspond the id to the right resource type (CONSUMER_FOLDER or
      * ENCRYPTION_KEYS_PROJECT)
      * </pre>
      *
@@ -3053,7 +3085,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the type of resource. This field should be specified to
-     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * correspond the id to the right resource type (CONSUMER_FOLDER or
      * ENCRYPTION_KEYS_PROJECT)
      * </pre>
      *
@@ -3071,7 +3103,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates the type of resource. This field should be specified to
-     * correspond the id to the right project type (CONSUMER_PROJECT or
+     * correspond the id to the right resource type (CONSUMER_FOLDER or
      * ENCRYPTION_KEYS_PROJECT)
      * </pre>
      *
@@ -3664,7 +3696,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates the type of resource. This field should be specified to
-       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * correspond the id to the right resource type (CONSUMER_FOLDER or
        * ENCRYPTION_KEYS_PROJECT)
        * </pre>
        *
@@ -3683,7 +3715,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates the type of resource. This field should be specified to
-       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * correspond the id to the right resource type (CONSUMER_FOLDER or
        * ENCRYPTION_KEYS_PROJECT)
        * </pre>
        *
@@ -3705,7 +3737,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates the type of resource. This field should be specified to
-       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * correspond the id to the right resource type (CONSUMER_FOLDER or
        * ENCRYPTION_KEYS_PROJECT)
        * </pre>
        *
@@ -3731,7 +3763,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates the type of resource. This field should be specified to
-       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * correspond the id to the right resource type (CONSUMER_FOLDER or
        * ENCRYPTION_KEYS_PROJECT)
        * </pre>
        *
@@ -3757,7 +3789,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates the type of resource. This field should be specified to
-       * correspond the id to the right project type (CONSUMER_PROJECT or
+       * correspond the id to the right resource type (CONSUMER_FOLDER or
        * ENCRYPTION_KEYS_PROJECT)
        * </pre>
        *
@@ -6139,7 +6171,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
+   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=484
    * @return Whether the kmsSettings field is set.
    */
   @java.lang.Override
@@ -6163,7 +6195,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
+   *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=484
    * @return The kmsSettings.
    */
   @java.lang.Override
@@ -6889,7 +6921,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An Workload object for managing highly regulated workloads of cloud
+   * A Workload object for managing highly regulated workloads of cloud
    * customers.
    * </pre>
    *
@@ -8969,7 +9001,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
+     *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=484
      * @return Whether the kmsSettings field is set.
      */
     @java.lang.Deprecated
@@ -8992,7 +9024,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1.Workload.kms_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=476
+     *     google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=484
      * @return The kmsSettings.
      */
     @java.lang.Deprecated
