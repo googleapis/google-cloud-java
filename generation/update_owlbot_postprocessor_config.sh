@@ -12,7 +12,7 @@ for dir in $(find . -mindepth 2 -maxdepth 2 -name owlbot.py | sort | xargs dirna
   # form a perl command to replace java.common_templates() invocation
   perl_command='s/java\.common_templates\(.*\)/java.common_templates(excludes=['
   comma=""
-  for exclusion in '.github/*' '.kokoro/*' 'samples/*' 'CODE_OF_CONDUCT.md' 'CONTRIBUTING.md' 'LICENSE' 'SECURITY.md' 'java.header' 'license-checks.xml' 'renovate.json'; do
+  for exclusion in '.github/*' '.kokoro/*' 'samples/*' 'CODE_OF_CONDUCT.md' 'CONTRIBUTING.md' 'LICENSE' 'SECURITY.md' 'java.header' 'license-checks.xml' 'renovate.json' '.gitignore'; do
     perl_command+="${comma}\n    $(echo "\"${exclusion}\"" | sed 's/\//\\\//g')"
     comma=","
 
