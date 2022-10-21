@@ -19,8 +19,14 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListEkmConnections": {
               "methods": ["listEkmConnections", "listEkmConnections", "listEkmConnections", "listEkmConnectionsPagedCallable", "listEkmConnectionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -85,6 +91,9 @@
             "GetKeyRing": {
               "methods": ["getKeyRing", "getKeyRing", "getKeyRing", "getKeyRingCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetPublicKey": {
               "methods": ["getPublicKey", "getPublicKey", "getPublicKey", "getPublicKeyCallable"]
             },
@@ -102,6 +111,9 @@
             },
             "ListKeyRings": {
               "methods": ["listKeyRings", "listKeyRings", "listKeyRings", "listKeyRingsPagedCallable", "listKeyRingsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "MacSign": {
               "methods": ["macSign", "macSign", "macSign", "macSignCallable"]

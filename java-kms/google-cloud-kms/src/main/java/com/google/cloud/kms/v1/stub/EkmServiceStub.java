@@ -17,6 +17,7 @@
 package com.google.cloud.kms.v1.stub;
 
 import static com.google.cloud.kms.v1.EkmServiceClient.ListEkmConnectionsPagedResponse;
+import static com.google.cloud.kms.v1.EkmServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -26,6 +27,10 @@ import com.google.cloud.kms.v1.GetEkmConnectionRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -62,6 +67,19 @@ public abstract class EkmServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateEkmConnectionRequest, EkmConnection> updateEkmConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEkmConnectionCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
