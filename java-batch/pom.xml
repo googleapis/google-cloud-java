@@ -62,4 +62,5 @@
     <module>proto-google-cloud-batch-v1alpha</module>
     <module>google-cloud-batch-bom</module>
   </modules>
-</project>
+
+  </project>
