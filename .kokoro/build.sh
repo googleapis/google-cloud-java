@@ -103,53 +103,6 @@ case ${JOB_TYPE} in
       echo "Not running GraalVM 17 checks -- No changes in relevant modules"
     fi
     ;;
-  samples)
-    generate_modified_modules_list
-    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      module_list=$(
-        IFS=,
-        echo "${modified_module_list[*]}"
-      )
-      install_modules
-
-      for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-        [[ -f "${FILE}" ]] || continue
-        source "${FILE}"
-      done
-
-      for module in "${modified_module_list[@]}"; do
-        if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-          printf "Running now for %s\n" "${module}"
-          pushd $module
-          SAMPLES_DIR=samples
-          # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
-          if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
-            SAMPLES_DIR=samples/snapshot
-          fi
-
-          if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-            pushd ${SAMPLES_DIR}
-            mvn -B \
-              -ntp \
-              -DtrimStackTrace=false \
-              -Dclirr.skip=true \
-              -Denforcer.skip=true \
-              -Dcheckstyle.skip=true \
-              -Dflatten.skip=true \
-              -Danimal.sniffer.skip=true \
-              -fae \
-              verify
-            # RETURN_CODE should return 1 if any module's sample fails
-            RETURN_CODE=$(($? | RETURN_CODE))
-            popd
-          else
-            echo "no sample pom.xml found - skipping sample tests"
-          fi
-          popd
-        fi
-      done
-    fi
-    ;;
   *) ;;
 
 esac
