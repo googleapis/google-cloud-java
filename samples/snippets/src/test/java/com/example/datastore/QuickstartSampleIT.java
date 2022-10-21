@@ -16,15 +16,13 @@
 
 package com.example.datastore;
 
-import static com.google.common.truth.Truth.assertThat;
-
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import com.rule.SystemsOutRule;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -33,8 +31,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class QuickstartSampleIT {
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
+
+  @Rule public final SystemsOutRule systemsOutRule = new SystemsOutRule();
 
   private static final void deleteTestEntity() {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -47,10 +45,6 @@ public class QuickstartSampleIT {
   @Before
   public void setUp() {
     deleteTestEntity();
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
@@ -62,8 +56,7 @@ public class QuickstartSampleIT {
   @Test
   public void testQuickstart() throws Exception {
     QuickstartSample.main();
-    String got = bout.toString();
-    assertThat(got).contains("Saved sampletask1: Buy milk");
-    assertThat(got).contains("Retrieved sampletask1: Buy milk");
+    systemsOutRule.assertContains("Saved sampletask1: Buy milk");
+    systemsOutRule.assertContains("Retrieved sampletask1: Buy milk");
   }
 }
