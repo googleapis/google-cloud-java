@@ -64,7 +64,7 @@ to add `google-cloud-discoveryengine` as a dependency in your code.
 ## About Discovery Engine API
 
 
-[Discovery Engine API][product-docs] A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.). Built by Cloud Retail API team using similar technologies, but an expansion to more generic verticals using JSON schema as polymorphic data representation.
+[Discovery Engine API][product-docs] A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.).
 
 See the [Discovery Engine API client library docs][javadocs] to learn how to
 use this Discovery Engine API Client Library.
