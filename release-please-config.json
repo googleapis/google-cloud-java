@@ -196,6 +196,9 @@
     "java-domains": {
       "component": "google-cloud-domains"
     },
+    "java-enterpriseknowledgegraph": {
+      "component": "google-cloud-enterpriseknowledgegraph"
+    },
     "java-errorreporting": {
       "component": "google-cloud-errorreporting"
     },

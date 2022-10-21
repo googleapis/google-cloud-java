@@ -73,6 +73,7 @@
     <module>java-dns</module>
     <module>java-document-ai</module>
     <module>java-domains</module>
+    <module>java-enterpriseknowledgegraph</module>
     <module>java-errorreporting</module>
     <module>java-essential-contacts</module>
     <module>java-eventarc</module>
