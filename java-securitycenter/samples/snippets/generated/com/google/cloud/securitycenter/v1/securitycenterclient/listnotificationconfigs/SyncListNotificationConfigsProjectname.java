@@ -16,34 +16,30 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START securitycenter_v1_generated_securitycenterclient_getnotificationconfig_sync]
-import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
+// [START securitycenter_v1_generated_securitycenterclient_listnotificationconfigs_projectname_sync]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
-import com.google.cloud.securitycenter.v1.NotificationConfigName;
+import com.google.cloud.securitycenter.v1.ProjectName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 
-public class SyncGetNotificationConfig {
+public class SyncListNotificationConfigsProjectname {
 
   public static void main(String[] args) throws Exception {
-    syncGetNotificationConfig();
+    syncListNotificationConfigsProjectname();
   }
 
-  public static void syncGetNotificationConfig() throws Exception {
+  public static void syncListNotificationConfigsProjectname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-      GetNotificationConfigRequest request =
-          GetNotificationConfigRequest.newBuilder()
-              .setName(
-                  NotificationConfigName.ofOrganizationNotificationConfigName(
-                          "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
-                      .toString())
-              .build();
-      NotificationConfig response = securityCenterClient.getNotificationConfig(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      for (NotificationConfig element :
+          securityCenterClient.listNotificationConfigs(parent).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END securitycenter_v1_generated_securitycenterclient_getnotificationconfig_sync]
+// [END securitycenter_v1_generated_securitycenterclient_listnotificationconfigs_projectname_sync]

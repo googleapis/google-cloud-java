@@ -74,4 +74,5 @@
     <module>proto-google-cloud-securitycenter-v1p1beta1</module>
     <module>google-cloud-securitycenter-bom</module>
   </modules>
-</project>
+
+  </project>
