@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -6,7 +6,7 @@
   <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
   <packaging>jar</packaging>
   <name>Google Discovery Engine API</name>
-  <description>Discovery Engine API A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.). Built by Cloud Retail API team using similar technologies, but an expansion to more generic verticals using JSON schema as polymorphic data representation.</description>
+  <description>Discovery Engine API A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.).</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-discoveryengine-parent</artifactId>
