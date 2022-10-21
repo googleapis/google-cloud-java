@@ -69,22 +69,22 @@ def main(ctx):
 )
 @click.option("--library-type", type=str)
 def generate(
-    api_shortname,
-    name_pretty,
-    product_docs,
-    api_description,
-    release_level,
-    distribution_name,
-    api_id,
-    requires_billing,
-    transport,
-    language,
-    destination_name,
-    proto_path,
-    cloud_api,
-    group_id,
-    owlbot_image,
-    library_type,
+        api_shortname,
+        name_pretty,
+        product_docs,
+        api_description,
+        release_level,
+        distribution_name,
+        api_id,
+        requires_billing,
+        transport,
+        language,
+        destination_name,
+        proto_path,
+        cloud_api,
+        group_id,
+        owlbot_image,
+        library_type,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -133,8 +133,9 @@ def generate(
 
     # Initialize workdir
     workdir = Path(f"{sys.path[0]}/../../java-{output_name}")
+    subprocess.check_call(["rm", "-fr", workdir], cwd="workspace")
     print(f"Creating a new module {workdir}")
-    os.makedirs(workdir, exist_ok=True)
+    os.makedirs(workdir, exist_ok=False)
     # write .repo-metadata.json file
     with open(workdir / ".repo-metadata.json", "w") as fp:
         json.dump(repo_metadata, fp, indent=2)
@@ -290,9 +291,8 @@ def generate(
     print(f"Please create a pull request:\n"
           f"  $ git checkout -b new_module_java-{output_name}\n"
           f"  $ git add .\n"
-          f"  $ git commit -m 'feat: [{api_shortname}] new module for {api_shortname}'"
+          f"  $ git commit -m 'feat: [{api_shortname}] new module for {api_shortname}'\n"
           f"  $ gh pr create --title 'feat: [{api_shortname}] new module for {api_shortname}'")
 
 if __name__ == "__main__":
     main()
-
