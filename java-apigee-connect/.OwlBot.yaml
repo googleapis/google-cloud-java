@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: apigeeconnect
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-apigee-connect/$1/proto-google-cloud-apigee-connect-$1/src
-    source: /google/cloud/apigeeconnect/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-apigee-connect/$1/grpc-google-cloud-apigee-connect-$1/src
-    source: /google/cloud/apigeeconnect/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-apigee-connect/$1/google-cloud-apigee-connect/src
-    source: /google/cloud/apigeeconnect/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-apigee-connect/$1/samples/snippets/generated
-    source: /google/cloud/apigeeconnect/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-apigee-connect/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-apigee-connect/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-apigee-connect/samples/snippets/generated
-  - /java-apigee-connect/grpc-google-.*/src
-  - /java-apigee-connect/proto-google-.*/src
-  - /java-apigee-connect/google-.*/src
+- "/java-apigee-connect/samples/snippets/generated"
+- "/java-apigee-connect/grpc-google-.*/src"
+- "/java-apigee-connect/proto-google-.*/src"
+- "/java-apigee-connect/google-.*/src"
+
+deep-preserve-regex:
+- "/java-apigee-connect/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-apigee-connect/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-apigee-connect/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-apigee-connect/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-apigee-connect/$1/proto-google-cloud-apigee-connect-$1/src"
+  source: "/google/cloud/apigeeconnect/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-apigee-connect/$1/grpc-google-cloud-apigee-connect-$1/src"
+  source: "/google/cloud/apigeeconnect/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-apigee-connect/$1/google-cloud-apigee-connect/src"
+  source: "/google/cloud/apigeeconnect/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-apigee-connect/$1/samples/snippets/generated"
+  source: "/google/cloud/apigeeconnect/(v.*)/.*-java/samples/snippets/generated"

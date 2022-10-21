@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: binaryauthorization
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-binary-authorization/$1/proto-google-cloud-binary-authorization-$1/src
-    source: /google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-binary-authorization/$1/grpc-google-cloud-binary-authorization-$1/src
-    source: /google/cloud/binaryauthorization/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src
-    source: /google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated
-    source: /google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-binary-authorization/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-binary-authorization/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-binary-authorization/samples/snippets/generated
-  - /java-binary-authorization/grpc-google-.*/src
-  - /java-binary-authorization/proto-google-.*/src
-  - /java-binary-authorization/google-.*/src
+- "/java-binary-authorization/samples/snippets/generated"
+- "/java-binary-authorization/grpc-google-.*/src"
+- "/java-binary-authorization/proto-google-.*/src"
+- "/java-binary-authorization/google-.*/src"
+
+deep-preserve-regex:
+- "/java-binary-authorization/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-binary-authorization/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-binary-authorization/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-binary-authorization/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-binary-authorization/$1/proto-google-cloud-binary-authorization-$1/src"
+  source: "/google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-binary-authorization/$1/grpc-google-cloud-binary-authorization-$1/src"
+  source: "/google/cloud/binaryauthorization/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src"
+  source: "/google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated"
+  source: "/google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated"

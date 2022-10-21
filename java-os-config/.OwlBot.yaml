@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: osconfig
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-os-config/$1/proto-google-cloud-os-config-$1/src
-    source: /google/cloud/osconfig/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-os-config/$1/grpc-google-cloud-os-config-$1/src
-    source: /google/cloud/osconfig/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-os-config/$1/google-cloud-os-config/src
-    source: /google/cloud/osconfig/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-os-config/$1/samples/snippets/generated
-    source: /google/cloud/osconfig/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-os-config/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-os-config/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-os-config/samples/snippets/generated
-  - /java-os-config/grpc-google-.*/src
-  - /java-os-config/proto-google-.*/src
-  - /java-os-config/google-.*/src
+- "/java-os-config/samples/snippets/generated"
+- "/java-os-config/grpc-google-.*/src"
+- "/java-os-config/proto-google-.*/src"
+- "/java-os-config/google-.*/src"
+
+deep-preserve-regex:
+- "/java-os-config/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-os-config/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-os-config/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-os-config/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-os-config/$1/proto-google-cloud-os-config-$1/src"
+  source: "/google/cloud/osconfig/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-os-config/$1/grpc-google-cloud-os-config-$1/src"
+  source: "/google/cloud/osconfig/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-os-config/$1/google-cloud-os-config/src"
+  source: "/google/cloud/osconfig/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-os-config/$1/samples/snippets/generated"
+  source: "/google/cloud/osconfig/(v.*)/.*-java/samples/snippets/generated"

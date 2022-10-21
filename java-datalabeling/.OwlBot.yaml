@@ -12,23 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: datalabeling
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-datalabeling/$1/proto-google-cloud-datalabeling-$1/src
-    source: /google/cloud/datalabeling/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-datalabeling/$1/grpc-google-cloud-datalabeling-$1/src
-    source: /google/cloud/datalabeling/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-datalabeling/$1/google-cloud-datalabeling/src
-    source: /google/cloud/datalabeling/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-datalabeling/$1/samples/snippets/generated
-    source: /google/cloud/datalabeling/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java
-  - /java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java
-  - /java-datalabeling/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-datalabeling/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-datalabeling/samples/snippets/generated
-  - /java-datalabeling/grpc-google-.*/src
-  - /java-datalabeling/proto-google-.*/src
-  - /java-datalabeling/google-.*/src
+- "/java-datalabeling/samples/snippets/generated"
+- "/java-datalabeling/grpc-google-.*/src"
+- "/java-datalabeling/proto-google-.*/src"
+- "/java-datalabeling/google-.*/src"
+
+deep-preserve-regex:
+- "/java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java"
+- "/java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java"
+- "/java-datalabeling/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-datalabeling/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-datalabeling/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-datalabeling/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-datalabeling/$1/proto-google-cloud-datalabeling-$1/src"
+  source: "/google/cloud/datalabeling/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-datalabeling/$1/grpc-google-cloud-datalabeling-$1/src"
+  source: "/google/cloud/datalabeling/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-datalabeling/$1/google-cloud-datalabeling/src"
+  source: "/google/cloud/datalabeling/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-datalabeling/$1/samples/snippets/generated"
+  source: "/google/cloud/datalabeling/(v.*)/.*-java/samples/snippets/generated"

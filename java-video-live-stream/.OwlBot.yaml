@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: livestream
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-video-live-stream/$1/proto-google-cloud-live-stream-$1/src
-    source: /google/cloud/video/livestream/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-video-live-stream/$1/grpc-google-cloud-live-stream-$1/src
-    source: /google/cloud/video/livestream/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-video-live-stream/$1/google-cloud-live-stream/src
-    source: /google/cloud/video/livestream/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-video-live-stream/$1/samples/snippets/generated
-    source: /google/cloud/video/livestream/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-video-live-stream/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-video-live-stream/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-video-live-stream/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-video-live-stream/samples/snippets/generated
-  - /java-video-live-stream/grpc-google-.*/src
-  - /java-video-live-stream/proto-google-.*/src
-  - /java-video-live-stream/google-.*/src
+- "/java-video-live-stream/samples/snippets/generated"
+- "/java-video-live-stream/grpc-google-.*/src"
+- "/java-video-live-stream/proto-google-.*/src"
+- "/java-video-live-stream/google-.*/src"
+
+deep-preserve-regex:
+- "/java-video-live-stream/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-video-live-stream/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-video-live-stream/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-video-live-stream/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-video-live-stream/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-video-live-stream/$1/proto-google-cloud-live-stream-$1/src"
+  source: "/google/cloud/video/livestream/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-video-live-stream/$1/grpc-google-cloud-live-stream-$1/src"
+  source: "/google/cloud/video/livestream/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-video-live-stream/$1/google-cloud-live-stream/src"
+  source: "/google/cloud/video/livestream/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-video-live-stream/$1/samples/snippets/generated"
+  source: "/google/cloud/video/livestream/(v.*)/.*-java/samples/snippets/generated"

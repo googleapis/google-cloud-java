@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: tpu
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-tpu/$1/proto-google-cloud-tpu-$1/src
-    source: /google/cloud/tpu/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-tpu/$1/grpc-google-cloud-tpu-$1/src
-    source: /google/cloud/tpu/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-tpu/$1/google-cloud-tpu/src
-    source: /google/cloud/tpu/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-tpu/$1/samples/snippets/generated
-    source: /google/cloud/tpu/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-tpu/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-tpu/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-tpu/samples/snippets/generated
-  - /java-tpu/grpc-google-.*/src
-  - /java-tpu/proto-google-.*/src
-  - /java-tpu/google-.*/src
+- "/java-tpu/samples/snippets/generated"
+- "/java-tpu/grpc-google-.*/src"
+- "/java-tpu/proto-google-.*/src"
+- "/java-tpu/google-.*/src"
+
+deep-preserve-regex:
+- "/java-tpu/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-tpu/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-tpu/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-tpu/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-tpu/$1/proto-google-cloud-tpu-$1/src"
+  source: "/google/cloud/tpu/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-tpu/$1/grpc-google-cloud-tpu-$1/src"
+  source: "/google/cloud/tpu/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-tpu/$1/google-cloud-tpu/src"
+  source: "/google/cloud/tpu/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-tpu/$1/samples/snippets/generated"
+  source: "/google/cloud/tpu/(v.*)/.*-java/samples/snippets/generated"

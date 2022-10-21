@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: networksecurity
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-network-security/$1/proto-google-cloud-network-security-$1/src
-    source: /google/cloud/networksecurity/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-network-security/$1/grpc-google-cloud-network-security-$1/src
-    source: /google/cloud/networksecurity/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-network-security/$1/google-cloud-network-security/src
-    source: /google/cloud/networksecurity/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-network-security/$1/samples/snippets/generated
-    source: /google/cloud/networksecurity/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-network-security/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-network-security/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-network-security/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-network-security/samples/snippets/generated
-  - /java-network-security/grpc-google-.*/src
-  - /java-network-security/proto-google-.*/src
-  - /java-network-security/google-.*/src
+- "/java-network-security/samples/snippets/generated"
+- "/java-network-security/grpc-google-.*/src"
+- "/java-network-security/proto-google-.*/src"
+- "/java-network-security/google-.*/src"
+
+deep-preserve-regex:
+- "/java-network-security/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-network-security/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-network-security/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-network-security/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-network-security/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-network-security/$1/proto-google-cloud-network-security-$1/src"
+  source: "/google/cloud/networksecurity/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-network-security/$1/grpc-google-cloud-network-security-$1/src"
+  source: "/google/cloud/networksecurity/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-network-security/$1/google-cloud-network-security/src"
+  source: "/google/cloud/networksecurity/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-network-security/$1/samples/snippets/generated"
+  source: "/google/cloud/networksecurity/(v.*)/.*-java/samples/snippets/generated"

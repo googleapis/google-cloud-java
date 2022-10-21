@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: automl
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-automl/$1/proto-google-cloud-automl-$1/src
-    source: /google/cloud/automl/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-automl/$1/grpc-google-cloud-automl-$1/src
-    source: /google/cloud/automl/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-automl/$1/google-cloud-automl/src
-    source: /google/cloud/automl/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-automl/$1/samples/snippets/generated
-    source: /google/cloud/automl/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-automl/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-automl/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-automl/samples/snippets/generated
-  - /java-automl/grpc-google-.*/src
-  - /java-automl/proto-google-.*/src
-  - /java-automl/google-.*/src
+- "/java-automl/samples/snippets/generated"
+- "/java-automl/grpc-google-.*/src"
+- "/java-automl/proto-google-.*/src"
+- "/java-automl/google-.*/src"
+
+deep-preserve-regex:
+- "/java-automl/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-automl/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-automl/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-automl/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-automl/$1/proto-google-cloud-automl-$1/src"
+  source: "/google/cloud/automl/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-automl/$1/grpc-google-cloud-automl-$1/src"
+  source: "/google/cloud/automl/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-automl/$1/google-cloud-automl/src"
+  source: "/google/cloud/automl/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-automl/$1/samples/snippets/generated"
+  source: "/google/cloud/automl/(v.*)/.*-java/samples/snippets/generated"

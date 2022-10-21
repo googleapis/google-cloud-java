@@ -12,24 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: cloudasset
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-asset/$1/proto-google-cloud-asset-$1/src
-    source: /google/cloud/asset/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-asset/$1/grpc-google-cloud-asset-$1/src
-    source: /google/cloud/asset/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-asset/$1/google-cloud-asset/src
-    source: /google/cloud/asset/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-asset/$1/samples/snippets/generated
-    source: /google/cloud/asset/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-asset/google-cloud-.*/src/test/java/com/google/cloud/.*/it
-  - /java-asset/google-cloud-asset/src/test/java/com/google/cloud/asset/v1/VPCServiceControlTest.java
-  - /java-asset/proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java
-  - /java-asset/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-asset/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-asset/samples/snippets/generated
-  - /java-asset/grpc-google-.*/src
-  - /java-asset/proto-google-.*/src
-  - /java-asset/google-.*/src
+- "/java-asset/samples/snippets/generated"
+- "/java-asset/grpc-google-.*/src"
+- "/java-asset/proto-google-.*/src"
+- "/java-asset/google-.*/src"
+
+deep-preserve-regex:
+- "/java-asset/google-cloud-.*/src/test/java/com/google/cloud/.*/it"
+- "/java-asset/google-cloud-asset/src/test/java/com/google/cloud/asset/v1/VPCServiceControlTest.java"
+- "/java-asset/proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java"
+- "/java-asset/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-asset/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-asset/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-asset/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-asset/$1/proto-google-cloud-asset-$1/src"
+  source: "/google/cloud/asset/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-asset/$1/grpc-google-cloud-asset-$1/src"
+  source: "/google/cloud/asset/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-asset/$1/google-cloud-asset/src"
+  source: "/google/cloud/asset/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-asset/$1/samples/snippets/generated"
+  source: "/google/cloud/asset/(v.*)/.*-java/samples/snippets/generated"

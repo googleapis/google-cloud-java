@@ -12,18 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: artifactregistry
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-artifact-registry/$1/proto-google-cloud-artifact-registry-$1/src
-    source: /google/devtools/artifactregistry/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-artifact-registry/$1/grpc-google-cloud-artifact-registry-$1/src
-    source: /google/devtools/artifactregistry/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-artifact-registry/$1/google-cloud-artifact-registry/src
-    source: /google/devtools/artifactregistry/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-artifact-registry/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-artifact-registry/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-artifact-registry/grpc-google-.*/src
-  - /java-artifact-registry/proto-google-.*/src
-  - /java-artifact-registry/google-.*/src
+- "/java-artifact-registry/grpc-google-.*/src"
+- "/java-artifact-registry/proto-google-.*/src"
+- "/java-artifact-registry/google-.*/src"
+
+deep-preserve-regex:
+- "/java-artifact-registry/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-artifact-registry/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-artifact-registry/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-artifact-registry/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-artifact-registry/$1/proto-google-cloud-artifact-registry-$1/src"
+  source: "/google/devtools/artifactregistry/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-artifact-registry/$1/grpc-google-cloud-artifact-registry-$1/src"
+  source: "/google/devtools/artifactregistry/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-artifact-registry/$1/google-cloud-artifact-registry/src"
+  source: "/google/devtools/artifactregistry/(v.*)/.*-java/gapic-google-.*/src"

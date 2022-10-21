@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: accessapproval
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-accessapproval/$1/proto-google-cloud-accessapproval-$1/src
-    source: /google/cloud/accessapproval/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-accessapproval/$1/grpc-google-cloud-accessapproval-$1/src
-    source: /google/cloud/accessapproval/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-accessapproval/$1/google-cloud-accessapproval/src
-    source: /google/cloud/accessapproval/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-accessapproval/$1/samples/snippets/generated
-    source: /google/cloud/accessapproval/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-accessapproval/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it
-  - /java-accessapproval/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-accessapproval/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-accessapproval/grpc-google-.*/src
-  - /java-accessapproval/proto-google-.*/src
-  - /java-accessapproval/google-.*/src
-  - /java-accessapproval/samples/snippets/generated
+- "/java-accessapproval/grpc-google-.*/src"
+- "/java-accessapproval/proto-google-.*/src"
+- "/java-accessapproval/google-.*/src"
+- "/java-accessapproval/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-accessapproval/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
+- "/java-accessapproval/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-accessapproval/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-accessapproval/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-accessapproval/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-accessapproval/$1/proto-google-cloud-accessapproval-$1/src"
+  source: "/google/cloud/accessapproval/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-accessapproval/$1/grpc-google-cloud-accessapproval-$1/src"
+  source: "/google/cloud/accessapproval/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-accessapproval/$1/google-cloud-accessapproval/src"
+  source: "/google/cloud/accessapproval/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-accessapproval/$1/samples/snippets/generated"
+  source: "/google/cloud/accessapproval/(v.*)/.*-java/samples/snippets/generated"

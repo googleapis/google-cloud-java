@@ -12,24 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: translate
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/java/com/google/cloud/translate
-    source: /google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/java/com/google/cloud/translate
-  - dest: /owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/proto/google/cloud/translate
-    source: /google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/proto/google/cloud/translate
-  - dest: /owl-bot-staging/java-translate/$1/grpc-google-cloud-translate-$1/src
-    source: /google/cloud/translate/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-translate/$1/google-cloud-translate/src
-    source: /google/cloud/translate/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-translate/$1/samples/snippets/generated
-    source: /google/cloud/translate/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-translate/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-translate/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-translate/samples/snippets/generated
-  - /java-translate/grpc-google-.*/src
-  - /java-translate/proto-google-.*/src
-  - /java-translate/google-.*/src/com/google/cloud/translate/v3
-  - /java-translate/google-.*/src/com/google/cloud/translate/v3beta1
+- "/java-translate/samples/snippets/generated"
+- "/java-translate/grpc-google-.*/src"
+- "/java-translate/proto-google-.*/src"
+- "/java-translate/google-.*/src/com/google/cloud/translate/v3"
+- "/java-translate/google-.*/src/com/google/cloud/translate/v3beta1"
+
+deep-preserve-regex:
+- "/java-translate/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-translate/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-translate/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-translate/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/java/com/google/cloud/translate"
+  source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/java/com/google/cloud/translate"
+- dest: "/owl-bot-staging/java-translate/$1/proto-google-cloud-translate-$1/src/main/proto/google/cloud/translate"
+  source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/proto/google/cloud/translate"
+- dest: "/owl-bot-staging/java-translate/$1/grpc-google-cloud-translate-$1/src"
+  source: "/google/cloud/translate/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-translate/$1/google-cloud-translate/src"
+  source: "/google/cloud/translate/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-translate/$1/samples/snippets/generated"
+  source: "/google/cloud/translate/(v.*)/.*-java/samples/snippets/generated"

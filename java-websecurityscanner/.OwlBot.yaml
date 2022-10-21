@@ -12,24 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: websecurityscanner
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-websecurityscanner/$1/proto-google-cloud-websecurityscanner-$1/src
-    source: /google/cloud/websecurityscanner/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-websecurityscanner/$1/grpc-google-cloud-websecurityscanner-$1/src
-    source: /google/cloud/websecurityscanner/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-websecurityscanner/$1/google-cloud-websecurityscanner/src
-    source: /google/cloud/websecurityscanner/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-websecurityscanner/$1/samples/snippets/generated
-    source: /google/cloud/websecurityscanner/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-websecurityscanner/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java
-  - /java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java
-  - /java-websecurityscanner/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-websecurityscanner/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-websecurityscanner/samples/snippets/generated
-  - /java-websecurityscanner/grpc-google-.*/src
-  - /java-websecurityscanner/proto-google-.*/src
-  - /java-websecurityscanner/google-.*/src
+- "/java-websecurityscanner/samples/snippets/generated"
+- "/java-websecurityscanner/grpc-google-.*/src"
+- "/java-websecurityscanner/proto-google-.*/src"
+- "/java-websecurityscanner/google-.*/src"
+
+deep-preserve-regex:
+- "/java-websecurityscanner/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
+- "/java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
+- "/java-websecurityscanner/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-websecurityscanner/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-websecurityscanner/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-websecurityscanner/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-websecurityscanner/$1/proto-google-cloud-websecurityscanner-$1/src"
+  source: "/google/cloud/websecurityscanner/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-websecurityscanner/$1/grpc-google-cloud-websecurityscanner-$1/src"
+  source: "/google/cloud/websecurityscanner/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-websecurityscanner/$1/google-cloud-websecurityscanner/src"
+  source: "/google/cloud/websecurityscanner/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-websecurityscanner/$1/samples/snippets/generated"
+  source: "/google/cloud/websecurityscanner/(v.*)/.*-java/samples/snippets/generated"

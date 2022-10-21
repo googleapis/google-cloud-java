@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: notification
 deep-preserve-regex:
-  - /java-notification/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-notification/google-.*/src/test/resources/META-INF/native-image/*
+- "/java-notification/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-notification/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-notification/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-notification/google-.*/src/test/resources/META-INF/native-image/.*"

@@ -12,23 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: datacatalog
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-datacatalog/$1/proto-google-cloud-datacatalog-$1/src
-    source: /google/cloud/datacatalog/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-datacatalog/$1/grpc-google-cloud-datacatalog-$1/src
-    source: /google/cloud/datacatalog/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-datacatalog/$1/google-cloud-datacatalog/src
-    source: /google/cloud/datacatalog/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-datacatalog/$1/samples/snippets/generated
-    source: /google/cloud/datacatalog/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-datacatalog/google-cloud-datacatalog/src/test/java/com/google/cloud/datacatalog/v1beta1/it/ITSystemTest.java
-  - /java-datacatalog/proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java
-  - /java-datacatalog/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-datacatalog/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-datacatalog/samples/snippets/generated
-  - /java-datacatalog/grpc-google-.*/src
-  - /java-datacatalog/proto-google-.*/src
-  - /java-datacatalog/google-.*/src
+- "/java-datacatalog/samples/snippets/generated"
+- "/java-datacatalog/grpc-google-.*/src"
+- "/java-datacatalog/proto-google-.*/src"
+- "/java-datacatalog/google-.*/src"
+
+deep-preserve-regex:
+- "/java-datacatalog/google-cloud-datacatalog/src/test/java/com/google/cloud/datacatalog/v1beta1/it/ITSystemTest.java"
+- "/java-datacatalog/proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java"
+- "/java-datacatalog/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-datacatalog/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-datacatalog/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-datacatalog/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-datacatalog/$1/proto-google-cloud-datacatalog-$1/src"
+  source: "/google/cloud/datacatalog/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-datacatalog/$1/grpc-google-cloud-datacatalog-$1/src"
+  source: "/google/cloud/datacatalog/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-datacatalog/$1/google-cloud-datacatalog/src"
+  source: "/google/cloud/datacatalog/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-datacatalog/$1/samples/snippets/generated"
+  source: "/google/cloud/datacatalog/(v.*)/.*-java/samples/snippets/generated"

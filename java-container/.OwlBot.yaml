@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: container
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-container/$1/proto-google-cloud-container-$1/src
-    source: /google/container/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-container/$1/grpc-google-cloud-container-$1/src
-    source: /google/container/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-container/$1/google-cloud-container/src
-    source: /google/container/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-container/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java
-  - /java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java
-  - /java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java
-  - /java-container/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-container/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-container/grpc-google-.*/src
-  - /java-container/proto-google-.*/src
-  - /java-container/google-.*/src
+- "/java-container/grpc-google-.*/src"
+- "/java-container/proto-google-.*/src"
+- "/java-container/google-.*/src"
+
+deep-preserve-regex:
+- "/java-container/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
+- "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
+- "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java"
+- "/java-container/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-container/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-container/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-container/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-container/$1/proto-google-cloud-container-$1/src"
+  source: "/google/container/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-container/$1/grpc-google-cloud-container-$1/src"
+  source: "/google/container/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-container/$1/google-cloud-container/src"
+  source: "/google/container/(v.*)/.*-java/gapic-google-.*/src"

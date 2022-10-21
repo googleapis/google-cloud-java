@@ -12,18 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: cloudbuild
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-cloudbuild/$1/proto-google-cloud-build-$1/src
-    source: /google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-cloudbuild/$1/grpc-google-cloud-build-$1/src
-    source: /google/devtools/cloudbuild/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-cloudbuild/$1/google-cloud-build/src
-    source: /google/devtools/cloudbuild/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-cloudbuild/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-cloudbuild/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-cloudbuild/grpc-google-.*/src
-  - /java-cloudbuild/proto-google-.*/src
-  - /java-cloudbuild/google-.*/src
+- "/java-cloudbuild/grpc-google-.*/src"
+- "/java-cloudbuild/proto-google-.*/src"
+- "/java-cloudbuild/google-.*/src"
+
+deep-preserve-regex:
+- "/java-cloudbuild/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-cloudbuild/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-cloudbuild/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-cloudbuild/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-cloudbuild/$1/proto-google-cloud-build-$1/src"
+  source: "/google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-cloudbuild/$1/grpc-google-cloud-build-$1/src"
+  source: "/google/devtools/cloudbuild/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-cloudbuild/$1/google-cloud-build/src"
+  source: "/google/devtools/cloudbuild/(v.*)/.*-java/gapic-google-.*/src"

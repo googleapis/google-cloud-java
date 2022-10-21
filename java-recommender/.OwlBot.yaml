@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: recommender
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-recommender/$1/proto-google-cloud-recommender-$1/src
-    source: /google/cloud/recommender/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-recommender/$1/grpc-google-cloud-recommender-$1/src
-    source: /google/cloud/recommender/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-recommender/$1/google-cloud-recommender/src
-    source: /google/cloud/recommender/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-recommender/$1/samples/snippets/generated
-    source: /google/cloud/recommender/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-recommender/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-recommender/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-recommender/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-recommender/samples/snippets/generated
-  - /java-recommender/grpc-google-.*/src
-  - /java-recommender/proto-google-.*/src
-  - /java-recommender/google-.*/src
+- "/java-recommender/samples/snippets/generated"
+- "/java-recommender/grpc-google-.*/src"
+- "/java-recommender/proto-google-.*/src"
+- "/java-recommender/google-.*/src"
+
+deep-preserve-regex:
+- "/java-recommender/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-recommender/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-recommender/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-recommender/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-recommender/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-recommender/$1/proto-google-cloud-recommender-$1/src"
+  source: "/google/cloud/recommender/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-recommender/$1/grpc-google-cloud-recommender-$1/src"
+  source: "/google/cloud/recommender/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-recommender/$1/google-cloud-recommender/src"
+  source: "/google/cloud/recommender/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-recommender/$1/samples/snippets/generated"
+  source: "/google/cloud/recommender/(v.*)/.*-java/samples/snippets/generated"

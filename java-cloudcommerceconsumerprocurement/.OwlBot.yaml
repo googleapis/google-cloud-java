@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: cloudcommerceconsumerprocurement
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/proto-google-cloud-cloudcommerceconsumerprocurement-$1/src
-    source: /google/cloud/commerce/consumer/procurement/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/grpc-google-cloud-cloudcommerceconsumerprocurement-$1/src
-    source: /google/cloud/commerce/consumer/procurement/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/google-cloud-cloudcommerceconsumerprocurement/src
-    source: /google/cloud/commerce/consumer/procurement/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-cloudcommerceconsumerprocurement/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-cloudcommerceconsumerprocurement/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-cloudcommerceconsumerprocurement/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-cloudcommerceconsumerprocurement/grpc-google-.*/src
-  - /java-cloudcommerceconsumerprocurement/proto-google-.*/src
-  - /java-cloudcommerceconsumerprocurement/google-.*/src
+- "/java-cloudcommerceconsumerprocurement/grpc-google-.*/src"
+- "/java-cloudcommerceconsumerprocurement/proto-google-.*/src"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src"
+
+deep-preserve-regex:
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/proto-google-cloud-cloudcommerceconsumerprocurement-$1/src"
+  source: "/google/cloud/commerce/consumer/procurement/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/grpc-google-cloud-cloudcommerceconsumerprocurement-$1/src"
+  source: "/google/cloud/commerce/consumer/procurement/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/google-cloud-cloudcommerceconsumerprocurement/src"
+  source: "/google/cloud/commerce/consumer/procurement/(v.*)/.*-java/gapic-google-.*/src"

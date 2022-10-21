@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: monitoring-dashboards
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-monitoring-dashboards/$1/proto-google-cloud-monitoring-dashboard-$1/src
-    source: /google/monitoring/dashboard/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-monitoring-dashboards/$1/grpc-google-cloud-monitoring-dashboard-$1/src
-    source: /google/monitoring/dashboard/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-monitoring-dashboards/$1/google-cloud-monitoring-dashboard/src
-    source: /google/monitoring/dashboard/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-monitoring-dashboards/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-monitoring-dashboards/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-monitoring-dashboards/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-monitoring-dashboards/grpc-google-.*/src
-  - /java-monitoring-dashboards/proto-google-.*/src
-  - /java-monitoring-dashboards/google-.*/src
+- "/java-monitoring-dashboards/grpc-google-.*/src"
+- "/java-monitoring-dashboards/proto-google-.*/src"
+- "/java-monitoring-dashboards/google-.*/src"
+
+deep-preserve-regex:
+- "/java-monitoring-dashboards/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-monitoring-dashboards/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-monitoring-dashboards/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-monitoring-dashboards/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-monitoring-dashboards/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-monitoring-dashboards/$1/proto-google-cloud-monitoring-dashboard-$1/src"
+  source: "/google/monitoring/dashboard/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-monitoring-dashboards/$1/grpc-google-cloud-monitoring-dashboard-$1/src"
+  source: "/google/monitoring/dashboard/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-monitoring-dashboards/$1/google-cloud-monitoring-dashboard/src"
+  source: "/google/monitoring/dashboard/(v.*)/.*-java/gapic-google-.*/src"

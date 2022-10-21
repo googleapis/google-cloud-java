@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: gke-backup
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-gke-backup/$1/proto-google-cloud-gke-backup-$1/src
-    source: /google/cloud/gkebackup/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-gke-backup/$1/grpc-google-cloud-gke-backup-$1/src
-    source: /google/cloud/gkebackup/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-gke-backup/$1/google-cloud-gke-backup/src
-    source: /google/cloud/gkebackup/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-gke-backup/$1/samples/snippets/generated
-    source: /google/cloud/gkebackup/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-gke-backup/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-gke-backup/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-gke-backup/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-gke-backup/samples/snippets/generated
-  - /java-gke-backup/grpc-google-.*/src
-  - /java-gke-backup/proto-google-.*/src
-  - /java-gke-backup/google-.*/src
+- "/java-gke-backup/samples/snippets/generated"
+- "/java-gke-backup/grpc-google-.*/src"
+- "/java-gke-backup/proto-google-.*/src"
+- "/java-gke-backup/google-.*/src"
+
+deep-preserve-regex:
+- "/java-gke-backup/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-gke-backup/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-gke-backup/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-gke-backup/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-gke-backup/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-gke-backup/$1/proto-google-cloud-gke-backup-$1/src"
+  source: "/google/cloud/gkebackup/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-gke-backup/$1/grpc-google-cloud-gke-backup-$1/src"
+  source: "/google/cloud/gkebackup/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-gke-backup/$1/google-cloud-gke-backup/src"
+  source: "/google/cloud/gkebackup/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-gke-backup/$1/samples/snippets/generated"
+  source: "/google/cloud/gkebackup/(v.*)/.*-java/samples/snippets/generated"

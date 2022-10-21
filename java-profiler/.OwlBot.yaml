@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: cloudprofiler
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-profiler/$1/proto-google-cloud-profiler-$1/src
-    source: /google/devtools/cloudprofiler/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-profiler/$1/grpc-google-cloud-profiler-$1/src
-    source: /google/devtools/cloudprofiler/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-profiler/$1/google-cloud-profiler/src
-    source: /google/devtools/cloudprofiler/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-profiler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-profiler/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-profiler/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-profiler/grpc-google-.*/src
-  - /java-profiler/proto-google-.*/src
-  - /java-profiler/google-.*/src
+- "/java-profiler/grpc-google-.*/src"
+- "/java-profiler/proto-google-.*/src"
+- "/java-profiler/google-.*/src"
+
+deep-preserve-regex:
+- "/java-profiler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-profiler/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-profiler/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-profiler/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-profiler/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-profiler/$1/proto-google-cloud-profiler-$1/src"
+  source: "/google/devtools/cloudprofiler/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-profiler/$1/grpc-google-cloud-profiler-$1/src"
+  source: "/google/devtools/cloudprofiler/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-profiler/$1/google-cloud-profiler/src"
+  source: "/google/devtools/cloudprofiler/(v.*)/.*-java/gapic-google-.*/src"

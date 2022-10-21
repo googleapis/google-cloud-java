@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: accesscontextmanager
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-accesscontextmanager/$1/proto-google-identity-accesscontextmanager-$1/src
-    source: /google/identity/accesscontextmanager/(v\d)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-accesscontextmanager/$1/grpc-google-identity-accesscontextmanager-$1/src
-    source: /google/identity/accesscontextmanager/(v\d)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-accesscontextmanager/$1/google-identity-accesscontextmanager/src
-    source: /google/identity/accesscontextmanager/(v\d)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-accesscontextmanager/type/proto-google-identity-accesscontextmanager-type/src
-    source: /google/identity/accesscontextmanager/type/.*-java/proto-google-.*/src
-deep-preserve-regex:
-  - /java-accesscontextmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-accesscontextmanager/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-accesscontextmanager/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-accesscontextmanager/proto-google-.*/src
+- "/java-accesscontextmanager/proto-google-.*/src"
+
+deep-preserve-regex:
+- "/java-accesscontextmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-accesscontextmanager/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-accesscontextmanager/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-accesscontextmanager/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-accesscontextmanager/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-accesscontextmanager/$1/proto-google-identity-accesscontextmanager-$1/src"
+  source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-accesscontextmanager/$1/grpc-google-identity-accesscontextmanager-$1/src"
+  source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-accesscontextmanager/$1/google-identity-accesscontextmanager/src"
+  source: "/google/identity/accesscontextmanager/(v\\d)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-accesscontextmanager/type/proto-google-identity-accesscontextmanager-type/src"
+  source: "/google/identity/accesscontextmanager/type/.*-java/proto-google-.*/src"

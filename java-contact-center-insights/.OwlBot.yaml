@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: contactcenterinsights
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-contact-center-insights/$1/proto-google-cloud-contact-center-insights-$1/src
-    source: /google/cloud/contactcenterinsights/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-contact-center-insights/$1/grpc-google-cloud-contact-center-insights-$1/src
-    source: /google/cloud/contactcenterinsights/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-contact-center-insights/$1/google-cloud-contact-center-insights/src
-    source: /google/cloud/contactcenterinsights/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-contact-center-insights/$1/samples/snippets/generated
-    source: /google/cloud/contactcenterinsights/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-contact-center-insights/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-contact-center-insights/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-contact-center-insights/grpc-google-.*/src
-  - /java-contact-center-insights/proto-google-.*/src
-  - /java-contact-center-insights/google-.*/src
-  - /java-contact-center-insights/samples/snippets/generated
+- "/java-contact-center-insights/grpc-google-.*/src"
+- "/java-contact-center-insights/proto-google-.*/src"
+- "/java-contact-center-insights/google-.*/src"
+- "/java-contact-center-insights/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-contact-center-insights/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-contact-center-insights/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-contact-center-insights/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-contact-center-insights/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-contact-center-insights/$1/proto-google-cloud-contact-center-insights-$1/src"
+  source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-contact-center-insights/$1/grpc-google-cloud-contact-center-insights-$1/src"
+  source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-contact-center-insights/$1/google-cloud-contact-center-insights/src"
+  source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-contact-center-insights/$1/samples/snippets/generated"
+  source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/samples/snippets/generated"

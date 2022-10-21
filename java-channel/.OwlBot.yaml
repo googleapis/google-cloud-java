@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: cloudchannel
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-channel/$1/proto-google-cloud-channel-$1/src
-    source: /google/cloud/channel/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-channel/$1/grpc-google-cloud-channel-$1/src
-    source: /google/cloud/channel/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-channel/$1/google-cloud-channel/src
-    source: /google/cloud/channel/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-channel/$1/samples/snippets/generated
-    source: /google/cloud/channel/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-channel/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-channel/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-channel/samples/snippets/generated
-  - /java-channel/grpc-google-.*/src
-  - /java-channel/proto-google-.*/src
-  - /java-channel/google-.*/src
+- "/java-channel/samples/snippets/generated"
+- "/java-channel/grpc-google-.*/src"
+- "/java-channel/proto-google-.*/src"
+- "/java-channel/google-.*/src"
+
+deep-preserve-regex:
+- "/java-channel/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-channel/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-channel/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-channel/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-channel/$1/proto-google-cloud-channel-$1/src"
+  source: "/google/cloud/channel/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-channel/$1/grpc-google-cloud-channel-$1/src"
+  source: "/google/cloud/channel/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-channel/$1/google-cloud-channel/src"
+  source: "/google/cloud/channel/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-channel/$1/samples/snippets/generated"
+  source: "/google/cloud/channel/(v.*)/.*-java/samples/snippets/generated"

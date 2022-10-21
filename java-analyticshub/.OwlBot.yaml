@@ -12,18 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-analyticshub/$1/proto-google-cloud-analyticshub-$1/src
-    source: /google/cloud/bigquery/analyticshub/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-analyticshub/$1/grpc-google-cloud-analyticshub-$1/src
-    source: /google/cloud/bigquery/analyticshub/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-analyticshub/$1/google-cloud-analyticshub/src
-    source: /google/cloud/bigquery/analyticshub/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-analyticshub/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-analyticshub/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-analyticshub/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-analyticshub/grpc-google-.*/src
-  - /java-analyticshub/proto-google-.*/src
-  - /java-analyticshub/google-.*/src
+- "/java-analyticshub/grpc-google-.*/src"
+- "/java-analyticshub/proto-google-.*/src"
+- "/java-analyticshub/google-.*/src"
+
+deep-preserve-regex:
+- "/java-analyticshub/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-analyticshub/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-analyticshub/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-analyticshub/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-analyticshub/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-analyticshub/$1/proto-google-cloud-analyticshub-$1/src"
+  source: "/google/cloud/bigquery/analyticshub/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-analyticshub/$1/grpc-google-cloud-analyticshub-$1/src"
+  source: "/google/cloud/bigquery/analyticshub/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-analyticshub/$1/google-cloud-analyticshub/src"
+  source: "/google/cloud/bigquery/analyticshub/(v.*)/.*-java/gapic-google-.*/src"

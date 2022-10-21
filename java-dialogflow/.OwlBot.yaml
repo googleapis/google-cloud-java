@@ -12,30 +12,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: dialogflow
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-dialogflow/$1/proto-google-cloud-dialogflow-$1/src
-    source: /google/cloud/dialogflow/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-dialogflow/$1/grpc-google-cloud-dialogflow-$1/src
-    source: /google/cloud/dialogflow/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-dialogflow/$1/google-cloud-dialogflow/src
-    source: /google/cloud/dialogflow/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-dialogflow/$1/samples/snippets/generated
-    source: /google/cloud/dialogflow/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-dialogflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-dialogflow/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentContextName.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java
-  - /java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java
-  - /java-dialogflow/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-dialogflow/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-dialogflow/samples/snippets/generated
-  - /java-dialogflow/grpc-google-.*/src
-  - /java-dialogflow/proto-google-.*/src
-  - /java-dialogflow/google-.*/src
+- "/java-dialogflow/samples/snippets/generated"
+- "/java-dialogflow/grpc-google-.*/src"
+- "/java-dialogflow/proto-google-.*/src"
+- "/java-dialogflow/google-.*/src"
+
+deep-preserve-regex:
+- "/java-dialogflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-dialogflow/google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2/ContextManagementSmokeTest.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ConversationModelName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2/src/main/java/com/google/cloud/dialogflow/v2/ProjectAgentName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ConversationModelName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentContextName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java"
+- "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java"
+- "/java-dialogflow/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-dialogflow/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-dialogflow/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-dialogflow/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-dialogflow/$1/proto-google-cloud-dialogflow-$1/src"
+  source: "/google/cloud/dialogflow/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-dialogflow/$1/grpc-google-cloud-dialogflow-$1/src"
+  source: "/google/cloud/dialogflow/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-dialogflow/$1/google-cloud-dialogflow/src"
+  source: "/google/cloud/dialogflow/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-dialogflow/$1/samples/snippets/generated"
+  source: "/google/cloud/dialogflow/(v.*)/.*-java/samples/snippets/generated"

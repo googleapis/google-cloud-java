@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: run
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-run/$1/proto-google-cloud-run-$1/src
-    source: /google/cloud/run/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-run/$1/grpc-google-cloud-run-$1/src
-    source: /google/cloud/run/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-run/$1/google-cloud-run/src
-    source: /google/cloud/run/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-run/$1/samples/snippets/generated
-    source: /google/cloud/run/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-run/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-run/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-run/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-run/samples/snippets/generated
-  - /java-run/grpc-google-.*/src
-  - /java-run/proto-google-.*/src
-  - /java-run/google-.*/src
+- "/java-run/samples/snippets/generated"
+- "/java-run/grpc-google-.*/src"
+- "/java-run/proto-google-.*/src"
+- "/java-run/google-.*/src"
+
+deep-preserve-regex:
+- "/java-run/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-run/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-run/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-run/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-run/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-run/$1/proto-google-cloud-run-$1/src"
+  source: "/google/cloud/run/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-run/$1/grpc-google-cloud-run-$1/src"
+  source: "/google/cloud/run/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-run/$1/google-cloud-run/src"
+  source: "/google/cloud/run/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-run/$1/samples/snippets/generated"
+  source: "/google/cloud/run/(v.*)/.*-java/samples/snippets/generated"

@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: cloudshell
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-shell/$1/proto-google-cloud-shell-$1/src
-    source: /google/cloud/shell/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-shell/$1/grpc-google-cloud-shell-$1/src
-    source: /google/cloud/shell/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-shell/$1/google-cloud-shell/src
-    source: /google/cloud/shell/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-shell/$1/samples/snippets/generated
-    source: /google/cloud/shell/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-shell/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-shell/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-shell/samples/snippets/generated
-  - /java-shell/grpc-google-.*/src
-  - /java-shell/proto-google-.*/src
-  - /java-shell/google-.*/src
+- "/java-shell/samples/snippets/generated"
+- "/java-shell/grpc-google-.*/src"
+- "/java-shell/proto-google-.*/src"
+- "/java-shell/google-.*/src"
+
+deep-preserve-regex:
+- "/java-shell/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-shell/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-shell/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-shell/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-shell/$1/proto-google-cloud-shell-$1/src"
+  source: "/google/cloud/shell/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-shell/$1/grpc-google-cloud-shell-$1/src"
+  source: "/google/cloud/shell/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-shell/$1/google-cloud-shell/src"
+  source: "/google/cloud/shell/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-shell/$1/samples/snippets/generated"
+  source: "/google/cloud/shell/(v.*)/.*-java/samples/snippets/generated"

@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: analyticshub
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-bigquery-data-exchange/$1/proto-google-cloud-bigquery-data-exchange-$1/src
-    source: /google/cloud/bigquery/dataexchange/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-bigquery-data-exchange/$1/grpc-google-cloud-bigquery-data-exchange-$1/src
-    source: /google/cloud/bigquery/dataexchange/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-bigquery-data-exchange/$1/google-cloud-bigquery-data-exchange/src
-    source: /google/cloud/bigquery/dataexchange/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-bigquery-data-exchange/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-bigquery-data-exchange/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-bigquery-data-exchange/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-bigquery-data-exchange/grpc-google-.*/src
-  - /java-bigquery-data-exchange/proto-google-.*/src
-  - /java-bigquery-data-exchange/google-.*/src
+- "/java-bigquery-data-exchange/grpc-google-.*/src"
+- "/java-bigquery-data-exchange/proto-google-.*/src"
+- "/java-bigquery-data-exchange/google-.*/src"
+
+deep-preserve-regex:
+- "/java-bigquery-data-exchange/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bigquery-data-exchange/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-bigquery-data-exchange/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-bigquery-data-exchange/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bigquery-data-exchange/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-bigquery-data-exchange/$1/proto-google-cloud-bigquery-data-exchange-$1/src"
+  source: "/google/cloud/bigquery/dataexchange/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-bigquery-data-exchange/$1/grpc-google-cloud-bigquery-data-exchange-$1/src"
+  source: "/google/cloud/bigquery/dataexchange/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-bigquery-data-exchange/$1/google-cloud-bigquery-data-exchange/src"
+  source: "/google/cloud/bigquery/dataexchange/(v.*)/.*-java/gapic-google-.*/src"

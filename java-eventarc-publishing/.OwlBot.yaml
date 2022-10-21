@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: eventarcpublishing
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-eventarc-publishing/$1/proto-google-cloud-eventarc-publishing-$1/src
-    source: /google/cloud/eventarc/publishing/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-eventarc-publishing/$1/grpc-google-cloud-eventarc-publishing-$1/src
-    source: /google/cloud/eventarc/publishing/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-eventarc-publishing/$1/google-cloud-eventarc-publishing/src
-    source: /google/cloud/eventarc/publishing/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-eventarc-publishing/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-eventarc-publishing/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-eventarc-publishing/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-eventarc-publishing/grpc-google-.*/src
-  - /java-eventarc-publishing/proto-google-.*/src
-  - /java-eventarc-publishing/google-.*/src
+- "/java-eventarc-publishing/grpc-google-.*/src"
+- "/java-eventarc-publishing/proto-google-.*/src"
+- "/java-eventarc-publishing/google-.*/src"
+
+deep-preserve-regex:
+- "/java-eventarc-publishing/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-eventarc-publishing/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-eventarc-publishing/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-eventarc-publishing/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-eventarc-publishing/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-eventarc-publishing/$1/proto-google-cloud-eventarc-publishing-$1/src"
+  source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-eventarc-publishing/$1/grpc-google-cloud-eventarc-publishing-$1/src"
+  source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-eventarc-publishing/$1/google-cloud-eventarc-publishing/src"
+  source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/gapic-google-.*/src"

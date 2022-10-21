@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: dataproc
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-dataproc/$1/proto-google-cloud-dataproc-$1/src
-    source: /google/cloud/dataproc/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-dataproc/$1/grpc-google-cloud-dataproc-$1/src
-    source: /google/cloud/dataproc/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-dataproc/$1/google-cloud-dataproc/src
-    source: /google/cloud/dataproc/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-dataproc/$1/samples/snippets/generated
-    source: /google/cloud/dataproc/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-dataproc/google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v.*/it/ITSystemTest.java
-  - /java-dataproc/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-dataproc/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-dataproc/samples/snippets/generated
-  - /java-dataproc/grpc-google-.*/src
-  - /java-dataproc/proto-google-.*/src
-  - /java-dataproc/google-.*/src
+- "/java-dataproc/samples/snippets/generated"
+- "/java-dataproc/grpc-google-.*/src"
+- "/java-dataproc/proto-google-.*/src"
+- "/java-dataproc/google-.*/src"
+
+deep-preserve-regex:
+- "/java-dataproc/google-cloud-dataproc/src/test/java/com/google/cloud/dataproc/v.*/it/ITSystemTest.java"
+- "/java-dataproc/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-dataproc/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-dataproc/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-dataproc/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-dataproc/$1/proto-google-cloud-dataproc-$1/src"
+  source: "/google/cloud/dataproc/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-dataproc/$1/grpc-google-cloud-dataproc-$1/src"
+  source: "/google/cloud/dataproc/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-dataproc/$1/google-cloud-dataproc/src"
+  source: "/google/cloud/dataproc/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-dataproc/$1/samples/snippets/generated"
+  source: "/google/cloud/dataproc/(v.*)/.*-java/samples/snippets/generated"

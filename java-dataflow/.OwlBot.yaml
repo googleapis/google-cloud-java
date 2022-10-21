@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: dataflow
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-dataflow/$1/proto-google-cloud-dataflow-$1/src
-    source: /google/dataflow/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-dataflow/$1/grpc-google-cloud-dataflow-$1/src
-    source: /google/dataflow/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-dataflow/$1/google-cloud-dataflow/src
-    source: /google/dataflow/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-dataflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-dataflow/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-dataflow/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-dataflow/grpc-google-.*/src
-  - /java-dataflow/proto-google-.*/src
-  - /java-dataflow/google-.*/src
+- "/java-dataflow/grpc-google-.*/src"
+- "/java-dataflow/proto-google-.*/src"
+- "/java-dataflow/google-.*/src"
+
+deep-preserve-regex:
+- "/java-dataflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-dataflow/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-dataflow/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-dataflow/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-dataflow/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-dataflow/$1/proto-google-cloud-dataflow-$1/src"
+  source: "/google/dataflow/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-dataflow/$1/grpc-google-cloud-dataflow-$1/src"
+  source: "/google/dataflow/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-dataflow/$1/google-cloud-dataflow/src"
+  source: "/google/dataflow/(v.*)/.*-java/gapic-google-.*/src"

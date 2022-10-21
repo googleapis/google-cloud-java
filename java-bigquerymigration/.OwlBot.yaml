@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: bigquerymigration
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-bigquerymigration/$1/proto-google-cloud-bigquerymigration-$1/src
-    source: /google/cloud/bigquery/migration/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-bigquerymigration/$1/grpc-google-cloud-bigquerymigration-$1/src
-    source: /google/cloud/bigquery/migration/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-bigquerymigration/$1/google-cloud-bigquerymigration/src
-    source: /google/cloud/bigquery/migration/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-bigquerymigration/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-bigquerymigration/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-bigquerymigration/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-bigquerymigration/grpc-google-.*/src
-  - /java-bigquerymigration/proto-google-.*/src
-  - /java-bigquerymigration/google-.*/src
+- "/java-bigquerymigration/grpc-google-.*/src"
+- "/java-bigquerymigration/proto-google-.*/src"
+- "/java-bigquerymigration/google-.*/src"
+
+deep-preserve-regex:
+- "/java-bigquerymigration/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bigquerymigration/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-bigquerymigration/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-bigquerymigration/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bigquerymigration/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-bigquerymigration/$1/proto-google-cloud-bigquerymigration-$1/src"
+  source: "/google/cloud/bigquery/migration/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-bigquerymigration/$1/grpc-google-cloud-bigquerymigration-$1/src"
+  source: "/google/cloud/bigquery/migration/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-bigquerymigration/$1/google-cloud-bigquerymigration/src"
+  source: "/google/cloud/bigquery/migration/(v.*)/.*-java/gapic-google-.*/src"

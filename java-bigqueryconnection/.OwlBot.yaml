@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: bigqueryconnection
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-bigqueryconnection/$1/proto-google-cloud-bigqueryconnection-$1/src
-    source: /google/cloud/bigquery/connection/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-bigqueryconnection/$1/grpc-google-cloud-bigqueryconnection-$1/src
-    source: /google/cloud/bigquery/connection/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-bigqueryconnection/$1/google-cloud-bigqueryconnection/src
-    source: /google/cloud/bigquery/connection/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-bigqueryconnection/google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java
-  - /java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/ConnectionProto.java
-  - /java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/ConnectionProto.java
-  - /java-bigqueryconnection/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-bigqueryconnection/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-bigqueryconnection/grpc-google-.*/src
-  - /java-bigqueryconnection/proto-google-.*/src
-  - /java-bigqueryconnection/google-.*/src
+- "/java-bigqueryconnection/grpc-google-.*/src"
+- "/java-bigqueryconnection/proto-google-.*/src"
+- "/java-bigqueryconnection/google-.*/src"
+
+deep-preserve-regex:
+- "/java-bigqueryconnection/google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
+- "/java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/v1/ConnectionProto.java"
+- "/java-bigqueryconnection/proto-google-cloud-bigqueryconnection-v1/src/main/java/com/google/cloud/bigquery/connection/ConnectionProto.java"
+- "/java-bigqueryconnection/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-bigqueryconnection/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-bigqueryconnection/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bigqueryconnection/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-bigqueryconnection/$1/proto-google-cloud-bigqueryconnection-$1/src"
+  source: "/google/cloud/bigquery/connection/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-bigqueryconnection/$1/grpc-google-cloud-bigqueryconnection-$1/src"
+  source: "/google/cloud/bigquery/connection/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-bigqueryconnection/$1/google-cloud-bigqueryconnection/src"
+  source: "/google/cloud/bigquery/connection/(v.*)/.*-java/gapic-google-.*/src"

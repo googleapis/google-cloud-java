@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: datastream
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-datastream/$1/proto-google-cloud-datastream-$1/src
-    source: /google/cloud/datastream/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-datastream/$1/grpc-google-cloud-datastream-$1/src
-    source: /google/cloud/datastream/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-datastream/$1/google-cloud-datastream/src
-    source: /google/cloud/datastream/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-datastream/$1/samples/snippets/generated
-    source: /google/cloud/datastream/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-datastream/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-datastream/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-datastream/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-datastream/samples/snippets/generated
-  - /java-datastream/grpc-google-.*/src
-  - /java-datastream/proto-google-.*/src
-  - /java-datastream/google-.*/src
+- "/java-datastream/samples/snippets/generated"
+- "/java-datastream/grpc-google-.*/src"
+- "/java-datastream/proto-google-.*/src"
+- "/java-datastream/google-.*/src"
+
+deep-preserve-regex:
+- "/java-datastream/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-datastream/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-datastream/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-datastream/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-datastream/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-datastream/$1/proto-google-cloud-datastream-$1/src"
+  source: "/google/cloud/datastream/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-datastream/$1/grpc-google-cloud-datastream-$1/src"
+  source: "/google/cloud/datastream/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-datastream/$1/google-cloud-datastream/src"
+  source: "/google/cloud/datastream/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-datastream/$1/samples/snippets/generated"
+  source: "/google/cloud/datastream/(v.*)/.*-java/samples/snippets/generated"

@@ -12,27 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: securitycenter
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-securitycenter/$1/proto-google-cloud-securitycenter-$1/src
-    source: /google/cloud/securitycenter/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-securitycenter/$1/grpc-google-cloud-securitycenter-$1/src
-    source: /google/cloud/securitycenter/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-securitycenter/$1/google-cloud-securitycenter/src
-    source: /google/cloud/securitycenter/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-securitycenter/$1/samples/snippets/generated
-    source: /google/cloud/securitycenter/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-securitycenter/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/UntypedSecuritymarksName.java
-  - /java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksNames.java
-  - /java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksName.java
-  - /java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/FindingSecurityMarksName.java
-  - /java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/AssetSecurityMarksName.java
-  - /java-securitycenter/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-securitycenter/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-securitycenter/samples/snippets/generated
-  - /java-securitycenter/grpc-google-.*/src
-  - /java-securitycenter/proto-google-.*/src
-  - /java-securitycenter/google-.*/src
+- "/java-securitycenter/samples/snippets/generated"
+- "/java-securitycenter/grpc-google-.*/src"
+- "/java-securitycenter/proto-google-.*/src"
+- "/java-securitycenter/google-.*/src"
+
+deep-preserve-regex:
+- "/java-securitycenter/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/UntypedSecuritymarksName.java"
+- "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksNames.java"
+- "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksName.java"
+- "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/FindingSecurityMarksName.java"
+- "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/AssetSecurityMarksName.java"
+- "/java-securitycenter/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-securitycenter/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-securitycenter/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-securitycenter/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-securitycenter/$1/proto-google-cloud-securitycenter-$1/src"
+  source: "/google/cloud/securitycenter/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-securitycenter/$1/grpc-google-cloud-securitycenter-$1/src"
+  source: "/google/cloud/securitycenter/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-securitycenter/$1/google-cloud-securitycenter/src"
+  source: "/google/cloud/securitycenter/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-securitycenter/$1/samples/snippets/generated"
+  source: "/google/cloud/securitycenter/(v.*)/.*-java/samples/snippets/generated"

@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: iamcredentials
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-iamcredentials/$1/proto-google-cloud-iamcredentials-$1/src
-    source: /google/iam/credentials/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-iamcredentials/$1/grpc-google-cloud-iamcredentials-$1/src
-    source: /google/iam/credentials/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-iamcredentials/$1/google-cloud-iamcredentials/src
-    source: /google/iam/credentials/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-iamcredentials/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-iamcredentials/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-iamcredentials/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-iamcredentials/grpc-google-.*/src
-  - /java-iamcredentials/proto-google-.*/src
-  - /java-iamcredentials/google-.*/src
+- "/java-iamcredentials/grpc-google-.*/src"
+- "/java-iamcredentials/proto-google-.*/src"
+- "/java-iamcredentials/google-.*/src"
+
+deep-preserve-regex:
+- "/java-iamcredentials/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-iamcredentials/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-iamcredentials/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-iamcredentials/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-iamcredentials/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-iamcredentials/$1/proto-google-cloud-iamcredentials-$1/src"
+  source: "/google/iam/credentials/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-iamcredentials/$1/grpc-google-cloud-iamcredentials-$1/src"
+  source: "/google/iam/credentials/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-iamcredentials/$1/google-cloud-iamcredentials/src"
+  source: "/google/iam/credentials/(v.*)/.*-java/gapic-google-.*/src"

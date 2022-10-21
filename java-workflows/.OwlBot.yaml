@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: workflows
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-workflows/$1/proto-google-cloud-workflows-$1/src
-    source: /google/cloud/workflows/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-workflows/$1/grpc-google-cloud-workflows-$1/src
-    source: /google/cloud/workflows/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-workflows/$1/google-cloud-workflows/src
-    source: /google/cloud/workflows/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-workflows/$1/samples/snippets/generated
-    source: /google/cloud/workflows/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-workflows/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-workflows/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-workflows/samples/snippets/generated
-  - /java-workflows/grpc-google-.*/src
-  - /java-workflows/proto-google-.*/src
-  - /java-workflows/google-.*/src
+- "/java-workflows/samples/snippets/generated"
+- "/java-workflows/grpc-google-.*/src"
+- "/java-workflows/proto-google-.*/src"
+- "/java-workflows/google-.*/src"
+
+deep-preserve-regex:
+- "/java-workflows/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-workflows/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-workflows/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-workflows/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-workflows/$1/proto-google-cloud-workflows-$1/src"
+  source: "/google/cloud/workflows/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-workflows/$1/grpc-google-cloud-workflows-$1/src"
+  source: "/google/cloud/workflows/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-workflows/$1/google-cloud-workflows/src"
+  source: "/google/cloud/workflows/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-workflows/$1/samples/snippets/generated"
+  source: "/google/cloud/workflows/(v.*)/.*-java/samples/snippets/generated"

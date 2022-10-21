@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: baremetalsolution
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-bare-metal-solution/$1/proto-google-cloud-bare-metal-solution-$1/src
-    source: /google/cloud/baremetalsolution/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-bare-metal-solution/$1/grpc-google-cloud-bare-metal-solution-$1/src
-    source: /google/cloud/baremetalsolution/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-bare-metal-solution/$1/google-cloud-bare-metal-solution/src
-    source: /google/cloud/baremetalsolution/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-bare-metal-solution/$1/samples/snippets/generated
-    source: /google/cloud/baremetalsolution/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-bare-metal-solution/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-bare-metal-solution/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-bare-metal-solution/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-bare-metal-solution/samples/snippets/generated
-  - /java-bare-metal-solution/grpc-google-.*/src
-  - /java-bare-metal-solution/proto-google-.*/src
-  - /java-bare-metal-solution/google-.*/src
+- "/java-bare-metal-solution/samples/snippets/generated"
+- "/java-bare-metal-solution/grpc-google-.*/src"
+- "/java-bare-metal-solution/proto-google-.*/src"
+- "/java-bare-metal-solution/google-.*/src"
+
+deep-preserve-regex:
+- "/java-bare-metal-solution/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bare-metal-solution/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-bare-metal-solution/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-bare-metal-solution/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bare-metal-solution/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-bare-metal-solution/$1/proto-google-cloud-bare-metal-solution-$1/src"
+  source: "/google/cloud/baremetalsolution/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-bare-metal-solution/$1/grpc-google-cloud-bare-metal-solution-$1/src"
+  source: "/google/cloud/baremetalsolution/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-bare-metal-solution/$1/google-cloud-bare-metal-solution/src"
+  source: "/google/cloud/baremetalsolution/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-bare-metal-solution/$1/samples/snippets/generated"
+  source: "/google/cloud/baremetalsolution/(v.*)/.*-java/samples/snippets/generated"

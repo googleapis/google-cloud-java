@@ -12,18 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: serviceusage
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-service-usage/$1/proto-google-cloud-service-usage-$1/src
-    source: /google/api/serviceusage/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-service-usage/$1/grpc-google-cloud-service-usage-$1/src
-    source: /google/api/serviceusage/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src
-    source: /google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-service-usage/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-service-usage/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-service-usage/grpc-google-.*/src
-  - /java-service-usage/proto-google-.*/src
-  - /java-service-usage/google-.*/src
+- "/java-service-usage/grpc-google-.*/src"
+- "/java-service-usage/proto-google-.*/src"
+- "/java-service-usage/google-.*/src"
+
+deep-preserve-regex:
+- "/java-service-usage/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-service-usage/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-service-usage/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-service-usage/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-service-usage/$1/proto-google-cloud-service-usage-$1/src"
+  source: "/google/api/serviceusage/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-service-usage/$1/grpc-google-cloud-service-usage-$1/src"
+  source: "/google/api/serviceusage/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src"
+  source: "/google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src"

@@ -12,18 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: area120tables
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-area120-tables/$1/proto-google-area120-tables-$1/src
-    source: /google/area120/tables/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-area120-tables/$1/grpc-google-area120-tables-$1/src
-    source: /google/area120/tables/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-area120-tables/$1/google-area120-tables/src
-    source: /google/area120/tables/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-area120-tables/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-area120-tables/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-area120-tables/grpc-google-.*/src
-  - /java-area120-tables/proto-google-.*/src
-  - /java-area120-tables/google-.*/src
+- "/java-area120-tables/grpc-google-.*/src"
+- "/java-area120-tables/proto-google-.*/src"
+- "/java-area120-tables/google-.*/src"
+
+deep-preserve-regex:
+- "/java-area120-tables/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-area120-tables/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-area120-tables/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-area120-tables/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-area120-tables/$1/proto-google-area120-tables-$1/src"
+  source: "/google/area120/tables/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-area120-tables/$1/grpc-google-area120-tables-$1/src"
+  source: "/google/area120/tables/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-area120-tables/$1/google-area120-tables/src"
+  source: "/google/area120/tables/(v.*)/.*-java/gapic-google-.*/src"

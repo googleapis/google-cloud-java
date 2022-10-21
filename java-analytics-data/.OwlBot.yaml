@@ -12,18 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: analyticsdata
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-analytics-data/$1/proto-google-analytics-data-$1/src
-    source: /google/analytics/data/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-analytics-data/$1/grpc-google-analytics-data-$1/src
-    source: /google/analytics/data/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-analytics-data/$1/google-analytics-data/src
-    source: /google/analytics/data/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-analytics-data/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-analytics-data/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-analytics-data/grpc-google-.*/src
-  - /java-analytics-data/proto-google-.*/src
-  - /java-analytics-data/google-.*/src
+- "/java-analytics-data/grpc-google-.*/src"
+- "/java-analytics-data/proto-google-.*/src"
+- "/java-analytics-data/google-.*/src"
+
+deep-preserve-regex:
+- "/java-analytics-data/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-analytics-data/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-analytics-data/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-analytics-data/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-analytics-data/$1/proto-google-analytics-data-$1/src"
+  source: "/google/analytics/data/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-analytics-data/$1/grpc-google-analytics-data-$1/src"
+  source: "/google/analytics/data/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-analytics-data/$1/google-analytics-data/src"
+  source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src"

@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: bigqueryreservation
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-bigqueryreservation/$1/proto-google-cloud-bigqueryreservation-$1/src
-    source: /google/cloud/bigquery/reservation/(v\d)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-bigqueryreservation/$1/grpc-google-cloud-bigqueryreservation-$1/src
-    source: /google/cloud/bigquery/reservation/(v\d)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-bigqueryreservation/$1/google-cloud-bigqueryreservation/src
-    source: /google/cloud/bigquery/reservation/(v\d)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-bigqueryreservation/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-bigqueryreservation/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-bigqueryreservation/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-bigqueryreservation/grpc-google-.*/src
-  - /java-bigqueryreservation/proto-google-.*/src
-  - /java-bigqueryreservation/google-.*/src
+- "/java-bigqueryreservation/grpc-google-.*/src"
+- "/java-bigqueryreservation/proto-google-.*/src"
+- "/java-bigqueryreservation/google-.*/src"
+
+deep-preserve-regex:
+- "/java-bigqueryreservation/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bigqueryreservation/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-bigqueryreservation/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-bigqueryreservation/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bigqueryreservation/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-bigqueryreservation/$1/proto-google-cloud-bigqueryreservation-$1/src"
+  source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-bigqueryreservation/$1/grpc-google-cloud-bigqueryreservation-$1/src"
+  source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-bigqueryreservation/$1/google-cloud-bigqueryreservation/src"
+  source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/gapic-google-.*/src"

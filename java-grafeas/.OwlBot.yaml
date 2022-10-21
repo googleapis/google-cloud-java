@@ -12,17 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: containeranalysis
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-grafeas/$1/src
-    source: /grafeas/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-grafeas/$1/src
-    source: /grafeas/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-grafeas/$1/src
-    source: /grafeas/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-grafeas/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-grafeas/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-grafeas/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /src
+- "/src"
+
+deep-preserve-regex:
+- "/java-grafeas/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-grafeas/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-grafeas/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-grafeas/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-grafeas/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-grafeas/$1/src"
+  source: "/grafeas/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-grafeas/$1/src"
+  source: "/grafeas/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-grafeas/$1/src"
+  source: "/grafeas/(v.*)/.*-java/gapic-google-.*/src"

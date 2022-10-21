@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: transcoder
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-video-transcoder/$1/proto-google-cloud-video-transcoder-$1/src
-    source: /google/cloud/video/transcoder/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-video-transcoder/$1/grpc-google-cloud-video-transcoder-$1/src
-    source: /google/cloud/video/transcoder/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-video-transcoder/$1/google-cloud-video-transcoder/src
-    source: /google/cloud/video/transcoder/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-video-transcoder/$1/samples/snippets/generated
-    source: /google/cloud/video/transcoder/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-video-transcoder/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-video-transcoder/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-video-transcoder/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-video-transcoder/samples/snippets/generated
-  - /java-video-transcoder/grpc-google-.*/src
-  - /java-video-transcoder/proto-google-.*/src
-  - /java-video-transcoder/google-.*/src
+- "/java-video-transcoder/samples/snippets/generated"
+- "/java-video-transcoder/grpc-google-.*/src"
+- "/java-video-transcoder/proto-google-.*/src"
+- "/java-video-transcoder/google-.*/src"
+
+deep-preserve-regex:
+- "/java-video-transcoder/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-video-transcoder/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-video-transcoder/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-video-transcoder/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-video-transcoder/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-video-transcoder/$1/proto-google-cloud-video-transcoder-$1/src"
+  source: "/google/cloud/video/transcoder/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-video-transcoder/$1/grpc-google-cloud-video-transcoder-$1/src"
+  source: "/google/cloud/video/transcoder/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-video-transcoder/$1/google-cloud-video-transcoder/src"
+  source: "/google/cloud/video/transcoder/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-video-transcoder/$1/samples/snippets/generated"
+  source: "/google/cloud/video/transcoder/(v.*)/.*-java/samples/snippets/generated"

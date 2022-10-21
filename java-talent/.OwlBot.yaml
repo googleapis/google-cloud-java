@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: jobs
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-talent/$1/proto-google-cloud-talent-$1/src
-    source: /google/cloud/talent/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-talent/$1/grpc-google-cloud-talent-$1/src
-    source: /google/cloud/talent/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-talent/$1/google-cloud-talent/src
-    source: /google/cloud/talent/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-talent/$1/samples/snippets/generated
-    source: /google/cloud/talent/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-talent/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-talent/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-talent/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-talent/samples/snippets/generated
-  - /java-talent/grpc-google-.*/src
-  - /java-talent/proto-google-.*/src
-  - /java-talent/google-.*/src
+- "/java-talent/samples/snippets/generated"
+- "/java-talent/grpc-google-.*/src"
+- "/java-talent/proto-google-.*/src"
+- "/java-talent/google-.*/src"
+
+deep-preserve-regex:
+- "/java-talent/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-talent/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-talent/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-talent/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-talent/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-talent/$1/proto-google-cloud-talent-$1/src"
+  source: "/google/cloud/talent/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-talent/$1/grpc-google-cloud-talent-$1/src"
+  source: "/google/cloud/talent/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-talent/$1/google-cloud-talent/src"
+  source: "/google/cloud/talent/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-talent/$1/samples/snippets/generated"
+  source: "/google/cloud/talent/(v.*)/.*-java/samples/snippets/generated"

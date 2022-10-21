@@ -12,29 +12,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: speech
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-speech/$1/proto-google-cloud-speech-$1/src
-    source: /google/cloud/speech/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-speech/$1/grpc-google-cloud-speech-$1/src
-    source: /google/cloud/speech/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-speech/$1/google-cloud-speech/src
-    source: /google/cloud/speech/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-speech/$1/samples/snippets/generated
-    source: /google/cloud/speech/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-speech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-speech/proto-google-cloud-speech-v1beta1/
-  - /java-speech/grpc-google-cloud-speech-v1beta1/
-  - /java-speech/google-cloud-speech/src/main/java/com/google/cloud/speech/v1beta1
-  - /java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1beta1
-  - /java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java
-  - /java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java
-  - /java-speech/google-cloud-speech/src/test/resources/hello.flac
-  - /java-speech/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-speech/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-speech/samples/snippets/generated
-  - /java-speech/grpc-google-.*/src
-  - /java-speech/proto-google-.*/src
-  - /java-speech/google-.*/src
+- "/java-speech/samples/snippets/generated"
+- "/java-speech/grpc-google-.*/src"
+- "/java-speech/proto-google-.*/src"
+- "/java-speech/google-.*/src"
+
+deep-preserve-regex:
+- "/java-speech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-speech/proto-google-cloud-speech-v1beta1/"
+- "/java-speech/grpc-google-cloud-speech-v1beta1/"
+- "/java-speech/google-cloud-speech/src/main/java/com/google/cloud/speech/v1beta1"
+- "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1beta1"
+- "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
+- "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
+- "/java-speech/google-cloud-speech/src/test/resources/hello.flac"
+- "/java-speech/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-speech/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-speech/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-speech/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-speech/$1/proto-google-cloud-speech-$1/src"
+  source: "/google/cloud/speech/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-speech/$1/grpc-google-cloud-speech-$1/src"
+  source: "/google/cloud/speech/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-speech/$1/google-cloud-speech/src"
+  source: "/google/cloud/speech/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-speech/$1/samples/snippets/generated"
+  source: "/google/cloud/speech/(v.*)/.*-java/samples/snippets/generated"

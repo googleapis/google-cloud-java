@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: policytroubleshooter
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-policy-troubleshooter/$1/proto-google-cloud-policy-troubleshooter-$1/src
-    source: /google/cloud/policytroubleshooter/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-policy-troubleshooter/$1/grpc-google-cloud-policy-troubleshooter-$1/src
-    source: /google/cloud/policytroubleshooter/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-policy-troubleshooter/$1/google-cloud-policy-troubleshooter/src
-    source: /google/cloud/policytroubleshooter/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-policy-troubleshooter/$1/samples/snippets/generated
-    source: /google/cloud/policytroubleshooter/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-policy-troubleshooter/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-policy-troubleshooter/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-policy-troubleshooter/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-policy-troubleshooter/samples/snippets/generated
-  - /java-policy-troubleshooter/grpc-google-.*/src
-  - /java-policy-troubleshooter/proto-google-.*/src
-  - /java-policy-troubleshooter/google-.*/src
+- "/java-policy-troubleshooter/samples/snippets/generated"
+- "/java-policy-troubleshooter/grpc-google-.*/src"
+- "/java-policy-troubleshooter/proto-google-.*/src"
+- "/java-policy-troubleshooter/google-.*/src"
+
+deep-preserve-regex:
+- "/java-policy-troubleshooter/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-policy-troubleshooter/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-policy-troubleshooter/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-policy-troubleshooter/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-policy-troubleshooter/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-policy-troubleshooter/$1/proto-google-cloud-policy-troubleshooter-$1/src"
+  source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-policy-troubleshooter/$1/grpc-google-cloud-policy-troubleshooter-$1/src"
+  source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-policy-troubleshooter/$1/google-cloud-policy-troubleshooter/src"
+  source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-policy-troubleshooter/$1/samples/snippets/generated"
+  source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/samples/snippets/generated"

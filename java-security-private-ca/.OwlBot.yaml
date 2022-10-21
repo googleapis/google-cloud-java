@@ -12,21 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: privateca
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-security-private-ca/$1/proto-google-cloud-security-private-ca-$1/src
-    source: /google/cloud/security/privateca/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-security-private-ca/$1/grpc-google-cloud-security-private-ca-$1/src
-    source: /google/cloud/security/privateca/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-security-private-ca/$1/google-cloud-security-private-ca/src
-    source: /google/cloud/security/privateca/v.*/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-security-private-ca/$1/samples/snippets/generated
-    source: /google/cloud/security/privateca/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-security-private-ca/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-security-private-ca/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-security-private-ca/samples/snippets/generated
-  - /java-security-private-ca/grpc-google-.*/src
-  - /java-security-private-ca/proto-google-.*/src
-  - /java-security-private-ca/google-.*/src
+- "/java-security-private-ca/samples/snippets/generated"
+- "/java-security-private-ca/grpc-google-.*/src"
+- "/java-security-private-ca/proto-google-.*/src"
+- "/java-security-private-ca/google-.*/src"
+
+deep-preserve-regex:
+- "/java-security-private-ca/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-security-private-ca/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-security-private-ca/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-security-private-ca/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-security-private-ca/$1/proto-google-cloud-security-private-ca-$1/src"
+  source: "/google/cloud/security/privateca/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-security-private-ca/$1/grpc-google-cloud-security-private-ca-$1/src"
+  source: "/google/cloud/security/privateca/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-security-private-ca/$1/google-cloud-security-private-ca/src"
+  source: "/google/cloud/security/privateca/v.*/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-security-private-ca/$1/samples/snippets/generated"
+  source: "/google/cloud/security/privateca/(v.*)/.*-java/samples/snippets/generated"

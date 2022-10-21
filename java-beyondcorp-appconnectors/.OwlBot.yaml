@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: beyondcorp-appconnectors
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-beyondcorp-appconnectors/$1/proto-google-cloud-beyondcorp-appconnectors-$1/src
-    source: /google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-beyondcorp-appconnectors/$1/grpc-google-cloud-beyondcorp-appconnectors-$1/src
-    source: /google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-beyondcorp-appconnectors/$1/google-cloud-beyondcorp-appconnectors/src
-    source: /google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-beyondcorp-appconnectors/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-beyondcorp-appconnectors/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-beyondcorp-appconnectors/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-beyondcorp-appconnectors/grpc-google-.*/src
-  - /java-beyondcorp-appconnectors/proto-google-.*/src
-  - /java-beyondcorp-appconnectors/google-.*/src
+- "/java-beyondcorp-appconnectors/grpc-google-.*/src"
+- "/java-beyondcorp-appconnectors/proto-google-.*/src"
+- "/java-beyondcorp-appconnectors/google-.*/src"
+
+deep-preserve-regex:
+- "/java-beyondcorp-appconnectors/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-beyondcorp-appconnectors/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-beyondcorp-appconnectors/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-beyondcorp-appconnectors/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-beyondcorp-appconnectors/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-beyondcorp-appconnectors/$1/proto-google-cloud-beyondcorp-appconnectors-$1/src"
+  source: "/google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-beyondcorp-appconnectors/$1/grpc-google-cloud-beyondcorp-appconnectors-$1/src"
+  source: "/google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-beyondcorp-appconnectors/$1/google-cloud-beyondcorp-appconnectors/src"
+  source: "/google/cloud/beyondcorp/appconnectors/(v.*)/.*-java/gapic-google-.*/src"

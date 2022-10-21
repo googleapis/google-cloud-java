@@ -12,22 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: apigateway
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-api-gateway/$1/proto-google-cloud-api-gateway-$1/src
-    source: /google/cloud/apigateway/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-api-gateway/$1/grpc-google-cloud-api-gateway-$1/src
-    source: /google/cloud/apigateway/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-api-gateway/$1/google-cloud-api-gateway/src
-    source: /google/cloud/apigateway/(v.*)/.*-java/gapic-google-.*/src
-  - dest: /owl-bot-staging/java-api-gateway/$1/samples/snippets/generated
-    source: /google/cloud/apigateway/(v.*)/.*-java/samples/snippets/generated
-deep-preserve-regex:
-  - /java-api-gateway/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-api-gateway/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-api-gateway/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-api-gateway/samples/snippets/generated
-  - /java-api-gateway/grpc-google-.*/src
-  - /java-api-gateway/proto-google-.*/src
-  - /java-api-gateway/google-.*/src
+- "/java-api-gateway/samples/snippets/generated"
+- "/java-api-gateway/grpc-google-.*/src"
+- "/java-api-gateway/proto-google-.*/src"
+- "/java-api-gateway/google-.*/src"
+
+deep-preserve-regex:
+- "/java-api-gateway/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-api-gateway/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-api-gateway/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-api-gateway/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-api-gateway/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-api-gateway/$1/proto-google-cloud-api-gateway-$1/src"
+  source: "/google/cloud/apigateway/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-api-gateway/$1/grpc-google-cloud-api-gateway-$1/src"
+  source: "/google/cloud/apigateway/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-api-gateway/$1/google-cloud-api-gateway/src"
+  source: "/google/cloud/apigateway/(v.*)/.*-java/gapic-google-.*/src"
+- dest: "/owl-bot-staging/java-api-gateway/$1/samples/snippets/generated"
+  source: "/google/cloud/apigateway/(v.*)/.*-java/samples/snippets/generated"

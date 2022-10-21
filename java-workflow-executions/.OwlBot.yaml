@@ -12,19 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-api-name: workflowexecutions
-deep-copy-regex:
-  - dest: /owl-bot-staging/java-workflow-executions/$1/proto-google-cloud-workflow-executions-$1/src
-    source: /google/cloud/workflows/executions/(v.*)/.*-java/proto-google-.*/src
-  - dest: /owl-bot-staging/java-workflow-executions/$1/grpc-google-cloud-workflow-executions-$1/src
-    source: /google/cloud/workflows/executions/(v.*)/.*-java/grpc-google-.*/src
-  - dest: /owl-bot-staging/java-workflow-executions/$1/google-cloud-workflow-executions/src
-    source: /google/cloud/workflows/executions/(v.*)/.*-java/gapic-google-.*/src
-deep-preserve-regex:
-  - /java-workflow-executions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
-  - /java-workflow-executions/google-.*/src/main/resources/META-INF/native-image/*
-  - /java-workflow-executions/google-.*/src/test/resources/META-INF/native-image/*
 deep-remove-regex:
-  - /java-workflow-executions/grpc-google-.*/src
-  - /java-workflow-executions/proto-google-.*/src
-  - /java-workflow-executions/google-.*/src
+- "/java-workflow-executions/grpc-google-.*/src"
+- "/java-workflow-executions/proto-google-.*/src"
+- "/java-workflow-executions/google-.*/src"
+
+deep-preserve-regex:
+- "/java-workflow-executions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-workflow-executions/google-.*/src/main/resources/META-INF/native-image/*"
+- "/java-workflow-executions/google-.*/src/test/resources/META-INF/native-image/*"
+- "/java-workflow-executions/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-workflow-executions/google-.*/src/test/resources/META-INF/native-image/.*"
+
+deep-copy-regex:
+- dest: "/owl-bot-staging/java-workflow-executions/$1/proto-google-cloud-workflow-executions-$1/src"
+  source: "/google/cloud/workflows/executions/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-workflow-executions/$1/grpc-google-cloud-workflow-executions-$1/src"
+  source: "/google/cloud/workflows/executions/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-workflow-executions/$1/google-cloud-workflow-executions/src"
+  source: "/google/cloud/workflows/executions/(v.*)/.*-java/gapic-google-.*/src"
