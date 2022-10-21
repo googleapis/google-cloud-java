@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/vmmigration/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vmmigration/$1/samples/snippets/generated"
 
-api-name: "vmmigration"
+api-name: vmmigration

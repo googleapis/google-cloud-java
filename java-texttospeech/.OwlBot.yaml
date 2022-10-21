@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/texttospeech/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-texttospeech/$1/samples/snippets/generated"
 
-api-name: "texttospeech"
+api-name: texttospeech

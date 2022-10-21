@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/webrisk/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-webrisk/$1/samples/snippets/generated"
 
-api-name: "webrisk"
+api-name: webrisk

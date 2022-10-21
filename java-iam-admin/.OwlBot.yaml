@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/iam/admin/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-iam-admin/$1/google-iam-admin/src"
 
-api-name: "iam-admin"
+api-name: iam-admin

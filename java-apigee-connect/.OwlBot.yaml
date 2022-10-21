@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/apigeeconnect/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-apigee-connect/$1/samples/snippets/generated"
 
-api-name: "apigeeconnect"
+api-name: apigeeconnect

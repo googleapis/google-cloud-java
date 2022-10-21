@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/video/stitcher/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-video-stitcher/$1/google-cloud-video-stitcher/src"
 
-api-name: "videostitcher"
+api-name: videostitcher

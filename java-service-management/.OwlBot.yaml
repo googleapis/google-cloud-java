@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/api/servicemanagement/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-service-management/$1/google-cloud-service-management/src"
 
-api-name: "servicemanagement"
+api-name: servicemanagement

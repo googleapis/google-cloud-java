@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/datastream/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datastream/$1/samples/snippets/generated"
 
-api-name: "datastream"
+api-name: datastream

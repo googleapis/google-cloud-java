@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/assuredworkloads/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-assured-workloads/$1/samples/snippets/generated"
 
-api-name: "assuredworkloads"
+api-name: assuredworkloads

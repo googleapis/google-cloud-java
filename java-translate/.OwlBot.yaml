@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/translate/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-translate/$1/samples/snippets/generated"
 
-api-name: "translate"
+api-name: translate

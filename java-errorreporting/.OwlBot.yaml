@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-errorreporting/$1/google-cloud-errorreporting/src"
 
-api-name: "clouderrorreporting"
+api-name: clouderrorreporting

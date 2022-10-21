@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-analytics-data/$1/google-analytics-data/src"
 
-api-name: "analyticsdata"
+api-name: analyticsdata

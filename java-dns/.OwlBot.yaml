@@ -16,4 +16,4 @@ deep-preserve-regex:
 - "/java-dns/google-.*/src/main/resources/META-INF/native-image/.*"
 - "/java-dns/google-.*/src/test/resources/META-INF/native-image/.*"
 
-api-name: "dns"
+api-name: dns

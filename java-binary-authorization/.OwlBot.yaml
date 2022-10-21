@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated"
 
-api-name: "binaryauthorization"
+api-name: binaryauthorization

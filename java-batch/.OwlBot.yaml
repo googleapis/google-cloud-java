@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/batch/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-batch/$1/google-cloud-batch/src"
 
-api-name: "batch"
+api-name: batch

@@ -41,4 +41,4 @@ deep-copy-regex:
 - source: "/google/cloud/dialogflow/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dialogflow/$1/samples/snippets/generated"
 
-api-name: "dialogflow"
+api-name: dialogflow

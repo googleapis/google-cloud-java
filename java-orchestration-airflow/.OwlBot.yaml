@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-orchestration-airflow/$1/samples/snippets/generated"
 
-api-name: "orchestration-airflow"
+api-name: orchestration-airflow

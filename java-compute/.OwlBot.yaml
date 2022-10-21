@@ -28,4 +28,4 @@ deep-copy-regex:
 - source: "/google/cloud/compute/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-compute/$1/google-cloud-compute/src"
 
-api-name: "compute"
+api-name: compute

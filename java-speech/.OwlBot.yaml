@@ -40,4 +40,4 @@ deep-copy-regex:
 - source: "/google/cloud/speech/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-speech/$1/samples/snippets/generated"
 
-api-name: "speech"
+api-name: speech

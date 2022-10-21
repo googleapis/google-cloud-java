@@ -16,4 +16,4 @@ deep-preserve-regex:
 - "/java-notification/google-.*/src/main/resources/META-INF/native-image/.*"
 - "/java-notification/google-.*/src/test/resources/META-INF/native-image/.*"
 
-api-name: "notification"
+api-name: notification

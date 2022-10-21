@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryreservation/$1/google-cloud-bigqueryreservation/src"
 
-api-name: "bigqueryreservation"
+api-name: bigqueryreservation

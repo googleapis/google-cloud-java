@@ -38,4 +38,4 @@ deep-copy-regex:
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-securitycenter/$1/samples/snippets/generated"
 
-api-name: "securitycenter"
+api-name: securitycenter

@@ -36,4 +36,4 @@ deep-copy-regex:
 - source: "/google/cloud/oslogin/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-os-login/$1/google-cloud-os-login/src"
 
-api-name: "oslogin"
+api-name: oslogin

@@ -37,4 +37,4 @@ deep-copy-regex:
 - source: "/google/cloud/tasks/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-tasks/$1/samples/snippets/generated"
 
-api-name: "cloudtasks"
+api-name: cloudtasks

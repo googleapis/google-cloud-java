@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/servicedirectory/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-servicedirectory/$1/samples/snippets/generated"
 
-api-name: "servicedirectory"
+api-name: servicedirectory

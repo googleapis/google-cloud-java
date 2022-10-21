@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-gke-connect-gateway/$1/samples/snippets/generated"
 
-api-name: "connectgateway"
+api-name: connectgateway

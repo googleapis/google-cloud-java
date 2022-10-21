@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/certificatemanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-certificate-manager/$1/samples/snippets/generated"
 
-api-name: "certificatemanager"
+api-name: certificatemanager

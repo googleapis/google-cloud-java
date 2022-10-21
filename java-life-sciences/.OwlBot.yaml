@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/lifesciences/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-life-sciences/$1/samples/snippets/generated"
 
-api-name: "lifesciences"
+api-name: lifesciences

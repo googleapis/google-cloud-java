@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/apigateway/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-api-gateway/$1/samples/snippets/generated"
 
-api-name: "apigateway"
+api-name: apigateway

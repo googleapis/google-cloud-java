@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/dataplex/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dataplex/$1/samples/snippets/generated"
 
-api-name: "dataplex"
+api-name: dataplex

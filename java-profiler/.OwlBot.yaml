@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/devtools/cloudprofiler/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-profiler/$1/google-cloud-profiler/src"
 
-api-name: "cloudprofiler"
+api-name: cloudprofiler

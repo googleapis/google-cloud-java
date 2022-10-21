@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-contact-center-insights/$1/samples/snippets/generated"
 
-api-name: "contactcenterinsights"
+api-name: contactcenterinsights

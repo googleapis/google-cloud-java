@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/clouddms/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dms/$1/samples/snippets/generated"
 
-api-name: "datamigration"
+api-name: datamigration

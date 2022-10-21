@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/redis/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-redis/$1/samples/snippets/generated"
 
-api-name: "redis"
+api-name: redis

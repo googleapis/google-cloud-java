@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/recommendationengine/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-recommendations-ai/$1/samples/snippets/generated"
 
-api-name: "recommendationengine"
+api-name: recommendationengine

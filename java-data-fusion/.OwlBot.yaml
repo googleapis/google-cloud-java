@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/datafusion/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-data-fusion/$1/samples/snippets/generated"
 
-api-name: "datafusion"
+api-name: datafusion

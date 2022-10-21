@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/storagetransfer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-storage-transfer/$1/google-cloud-storage-transfer/src"
 
-api-name: "storagetransfer"
+api-name: storagetransfer

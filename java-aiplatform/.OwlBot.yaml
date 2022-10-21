@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/aiplatform/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-aiplatform/$1/google-cloud-aiplatform/src"
 
-api-name: "aiplatform"
+api-name: aiplatform

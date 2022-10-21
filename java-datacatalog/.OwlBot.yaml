@@ -34,4 +34,4 @@ deep-copy-regex:
 - source: "/google/cloud/datacatalog/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datacatalog/$1/samples/snippets/generated"
 
-api-name: "datacatalog"
+api-name: datacatalog

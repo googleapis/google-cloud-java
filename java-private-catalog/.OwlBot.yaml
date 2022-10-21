@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/privatecatalog/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-private-catalog/$1/samples/snippets/generated"
 
-api-name: "cloudprivatecatalog"
+api-name: cloudprivatecatalog

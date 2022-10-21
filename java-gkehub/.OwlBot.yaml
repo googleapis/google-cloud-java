@@ -52,4 +52,4 @@ deep-copy-regex:
 - source: "/google/cloud/gkehub/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-gkehub/$1/samples/snippets/generated"
 
-api-name: "gkehub"
+api-name: gkehub

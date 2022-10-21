@@ -29,3 +29,5 @@ deep-copy-regex:
   source: "/google/cloud/security/publicca/(v.*)/.*-java/grpc-google-.*/src"
 - dest: "/owl-bot-staging/java-publicca/$1/google-cloud-publicca/src"
   source: "/google/cloud/security/publicca/(v.*)/.*-java/gapic-google-.*/src"
+
+api-name: null

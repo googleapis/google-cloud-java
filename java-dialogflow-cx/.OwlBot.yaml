@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dialogflow-cx/$1/google-cloud-dialogflow-cx/src"
 
-api-name: "dialogflow-cx"
+api-name: dialogflow-cx

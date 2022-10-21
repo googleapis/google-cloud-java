@@ -38,4 +38,4 @@ deep-copy-regex:
 - source: "/google/cloud/kms/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-kms/$1/samples/snippets/generated"
 
-api-name: "cloudkms"
+api-name: cloudkms

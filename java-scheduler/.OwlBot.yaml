@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/scheduler/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-scheduler/$1/samples/snippets/generated"
 
-api-name: "cloudscheduler"
+api-name: cloudscheduler

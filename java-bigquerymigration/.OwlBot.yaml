@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/migration/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigquerymigration/$1/google-cloud-bigquerymigration/src"
 
-api-name: "bigquerymigration"
+api-name: bigquerymigration

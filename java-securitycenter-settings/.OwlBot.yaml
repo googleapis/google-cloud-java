@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/securitycenter/settings/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-securitycenter-settings/$1/google-cloud-securitycenter-settings/src"
 
-api-name: "securitycenter"
+api-name: securitycenter

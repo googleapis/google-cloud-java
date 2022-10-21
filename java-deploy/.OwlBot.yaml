@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/deploy/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-deploy/$1/samples/snippets/generated"
 
-api-name: "clouddeploy"
+api-name: clouddeploy

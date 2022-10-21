@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/resourcemanager/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-resourcemanager/$1/samples/snippets/generated"
 
-api-name: "cloudresourcemanager"
+api-name: cloudresourcemanager

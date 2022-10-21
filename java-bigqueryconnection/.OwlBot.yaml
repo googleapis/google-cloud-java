@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryconnection/$1/google-cloud-bigqueryconnection/src"
 
-api-name: "bigqueryconnection"
+api-name: bigqueryconnection

@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/managedidentities/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-managed-identities/$1/samples/snippets/generated"
 
-api-name: "managedidentities"
+api-name: managedidentities

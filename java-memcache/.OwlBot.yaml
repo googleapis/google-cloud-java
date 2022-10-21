@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/memcache/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-memcache/$1/samples/snippets/generated"
 
-api-name: "memcache"
+api-name: memcache

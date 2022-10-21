@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-appengine-admin/$1/google-cloud-appengine-admin/src"
 
-api-name: "appengine"
+api-name: appengine

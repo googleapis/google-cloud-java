@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/security/privateca/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-security-private-ca/$1/samples/snippets/generated"
 
-api-name: "privateca"
+api-name: privateca

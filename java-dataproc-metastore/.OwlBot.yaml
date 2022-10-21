@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/metastore/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dataproc-metastore/$1/google-cloud-dataproc-metastore/src"
 
-api-name: "metastore"
+api-name: metastore

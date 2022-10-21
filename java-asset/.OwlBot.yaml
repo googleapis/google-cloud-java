@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/asset/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-asset/$1/samples/snippets/generated"
 
-api-name: "cloudasset"
+api-name: cloudasset

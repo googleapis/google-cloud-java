@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-mediatranslation/$1/samples/snippets/generated"
 
-api-name: "mediatranslation"
+api-name: mediatranslation

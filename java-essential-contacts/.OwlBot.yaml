@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-essential-contacts/$1/samples/snippets/generated"
 
-api-name: "essentialcontacts"
+api-name: essentialcontacts

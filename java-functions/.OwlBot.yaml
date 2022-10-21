@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/functions/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-functions/$1/samples/snippets/generated"
 
-api-name: "cloudfunctions"
+api-name: cloudfunctions

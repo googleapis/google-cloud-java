@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-trace/$1/google-cloud-trace/src"
 
-api-name: "cloudtrace"
+api-name: cloudtrace

@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-policy-troubleshooter/$1/samples/snippets/generated"
 
-api-name: "policytroubleshooter"
+api-name: policytroubleshooter

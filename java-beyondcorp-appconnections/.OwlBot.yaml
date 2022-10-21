@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/beyondcorp/appconnections/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-beyondcorp-appconnections/$1/google-cloud-beyondcorp-appconnections/src"
 
-api-name: "beyondcorp-appconnections"
+api-name: beyondcorp-appconnections

@@ -29,3 +29,5 @@ deep-copy-regex:
   source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/grpc-google-.*/src"
 - dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/google-cloud-bigquerydatapolicy/src"
   source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/gapic-google-.*/src"
+
+api-name: null

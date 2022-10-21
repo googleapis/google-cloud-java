@@ -30,4 +30,4 @@ deep-copy-regex:
 - source: "/google/api/servicecontrol/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-service-control/$1/google-cloud-service-control/src"
 
-api-name: "servicecontrol"
+api-name: servicecontrol

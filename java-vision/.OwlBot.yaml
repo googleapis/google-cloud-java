@@ -42,4 +42,4 @@ deep-copy-regex:
 - source: "/google/cloud/vision/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vision/$1/samples/snippets/generated"
 
-api-name: "vision"
+api-name: vision
