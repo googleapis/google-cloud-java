@@ -453,5 +453,40 @@ public interface TaskOrBuilder
    */
   com.google.cloud.dataplex.v1.Task.SparkTaskConfigOrBuilder getSparkOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Config related to running scheduled Notebooks.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  boolean hasNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Config related to running scheduled Notebooks.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+   *
+   * @return The notebook.
+   */
+  com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Config related to running scheduled Notebooks.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+   */
+  com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder getNotebookOrBuilder();
+
   public com.google.cloud.dataplex.v1.Task.ConfigCase getConfigCase();
 }
