@@ -42,6 +42,7 @@
   "java-contact-center-insights": "2.4.1-SNAPSHOT",
   "java-containeranalysis": "2.5.1-SNAPSHOT",
   "java-container": "2.7.1-SNAPSHOT",
+  "java-contentwarehouse": "0.0.1-SNAPSHOT",
   "java-datacatalog": "1.10.1-SNAPSHOT",
   "java-dataflow": "0.8.1-SNAPSHOT",
   "java-dataform": "0.3.1-SNAPSHOT",
