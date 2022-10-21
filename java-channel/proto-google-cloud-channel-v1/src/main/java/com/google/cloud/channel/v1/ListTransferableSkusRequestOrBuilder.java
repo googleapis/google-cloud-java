@@ -186,13 +186,13 @@ public interface ListTransferableSkusRequestOrBuilder
    *
    *
    * <pre>
-   * The super admin of the resold customer generates this token to
+   * Optional. The super admin of the resold customer generates this token to
    * authorize a reseller to access their Cloud Identity and purchase
    * entitlements on their behalf. You can omit this token after authorization.
    * See https://support.google.com/a/answer/7643790 for more details.
    * </pre>
    *
-   * <code>string auth_token = 5;</code>
+   * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The authToken.
    */
@@ -201,13 +201,13 @@ public interface ListTransferableSkusRequestOrBuilder
    *
    *
    * <pre>
-   * The super admin of the resold customer generates this token to
+   * Optional. The super admin of the resold customer generates this token to
    * authorize a reseller to access their Cloud Identity and purchase
    * entitlements on their behalf. You can omit this token after authorization.
    * See https://support.google.com/a/answer/7643790 for more details.
    * </pre>
    *
-   * <code>string auth_token = 5;</code>
+   * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for authToken.
    */

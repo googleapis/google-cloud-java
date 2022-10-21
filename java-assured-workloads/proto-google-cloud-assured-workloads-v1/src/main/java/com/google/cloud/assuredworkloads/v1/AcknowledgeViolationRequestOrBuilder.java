@@ -81,7 +81,8 @@ public interface AcknowledgeViolationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+   * Optional. This field is deprecated and will be removed in future version of the API.
+   * Name of the OrgPolicy which was modified with non-compliant change and
    * resulted in this violation.
    * Format:
    * projects/{project_number}/policies/{constraint_name}
@@ -89,16 +90,23 @@ public interface AcknowledgeViolationRequestOrBuilder
    * organizations/{organization_id}/policies/{constraint_name}
    * </pre>
    *
-   * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated
+   *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+   *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
    * @return The nonCompliantOrgPolicy.
    */
+  @java.lang.Deprecated
   java.lang.String getNonCompliantOrgPolicy();
   /**
    *
    *
    * <pre>
-   * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+   * Optional. This field is deprecated and will be removed in future version of the API.
+   * Name of the OrgPolicy which was modified with non-compliant change and
    * resulted in this violation.
    * Format:
    * projects/{project_number}/policies/{constraint_name}
@@ -106,9 +114,15 @@ public interface AcknowledgeViolationRequestOrBuilder
    * organizations/{organization_id}/policies/{constraint_name}
    * </pre>
    *
-   * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated
+   *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+   *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
    * @return The bytes for nonCompliantOrgPolicy.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getNonCompliantOrgPolicyBytes();
 }

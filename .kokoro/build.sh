@@ -73,13 +73,23 @@ case ${JOB_TYPE} in
     ;;
   graalvm)
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM checks -- No changes in relevant modules"
+    fi
     ;;
   graalvm17)
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
+    fi
     ;;
   samples)
     mvn -B \
@@ -103,7 +113,9 @@ case ${JOB_TYPE} in
 
     modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
     for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+      # Spaces are intentionally added -- Query is regex and array elements are space separated
+      # It tries to match the *exact* `module` text
+      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
         printf "Running now for %s\n" "${module}"
         pushd $module
         SAMPLES_DIR=samples

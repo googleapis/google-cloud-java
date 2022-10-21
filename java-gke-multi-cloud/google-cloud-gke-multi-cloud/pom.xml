@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-multi-cloud</artifactId>
-  <version>0.3.0</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
   <packaging>jar</packaging>
   <name>Google Anthos Multicloud</name>
   <description>Anthos Multicloud enables you to provision and manage GKE clusters running on AWS and Azure infrastructure through a centralized Google Cloud backed control plane.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gke-multi-cloud-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gke-multi-cloud</site.installationModule>

@@ -38,7 +38,9 @@ public class SyncDeleteNotificationConfig {
       DeleteNotificationConfigRequest request =
           DeleteNotificationConfigRequest.newBuilder()
               .setName(
-                  NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                  NotificationConfigName.ofOrganizationNotificationConfigName(
+                          "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                      .toString())
               .build();
       securityCenterClient.deleteNotificationConfig(request);
     }

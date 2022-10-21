@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalabeling</artifactId>
-  <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+  <version>0.124.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Labeling</name>
   <description>Java idiomatic client for Google Cloud Data Labeling</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datalabeling-parent</artifactId>
-    <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+    <version>0.124.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datalabeling</site.installationModule>

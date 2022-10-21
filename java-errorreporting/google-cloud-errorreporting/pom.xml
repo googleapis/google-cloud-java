@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.125.0-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+  <version>0.125.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Error Reporting</name>
   <description>Java idiomatic client for Google Cloud Error Reporting</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-errorreporting-parent</artifactId>
-    <version>0.125.0-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+    <version>0.125.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-errorreporting</site.installationModule>

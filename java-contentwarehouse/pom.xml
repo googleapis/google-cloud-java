@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-contentwarehouse-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
+  <name>Google Document AI Warehouse Parent</name>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud-contentwarehouse-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-contentwarehouse</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-contentwarehouse-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-contentwarehouse-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-contentwarehouse-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-contentwarehouse-v1:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-document-ai</artifactId>
+      <version>2.8.1-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+    </dependency>
+  </dependencies>
+
+  <modules>
+    <module>google-cloud-contentwarehouse</module>
+    <module>grpc-google-cloud-contentwarehouse-v1</module>
+    <module>proto-google-cloud-contentwarehouse-v1</module>
+    <module>google-cloud-contentwarehouse-bom</module>
+  </modules>
+</project>

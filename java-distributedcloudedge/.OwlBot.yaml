@@ -28,3 +28,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-distributedcloudedge/$1/grpc-google-cloud-distributedcloudedge-$1/src"
 - source: "/google/cloud/edgecontainer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-distributedcloudedge/$1/google-cloud-distributedcloudedge/src"
+
+api-name: distributedcloudedge

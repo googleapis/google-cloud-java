@@ -785,7 +785,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job notification.
+   * Deprecated: please use notifications instead.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];</code>
@@ -803,7 +803,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job notification.
+   * Deprecated: please use notifications instead.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];</code>
@@ -823,7 +823,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job notification.
+   * Deprecated: please use notifications instead.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];</code>
@@ -3688,7 +3688,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3706,7 +3706,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3730,7 +3730,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3754,7 +3754,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3776,7 +3776,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3804,7 +3804,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3826,7 +3826,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3842,7 +3842,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];
@@ -3862,7 +3862,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job notification.
+     * Deprecated: please use notifications instead.
      * </pre>
      *
      * <code>.google.cloud.batch.v1alpha.JobNotification notification = 10 [deprecated = true];

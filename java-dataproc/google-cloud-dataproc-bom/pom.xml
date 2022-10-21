@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-bom</artifactId>
-  <version>4.1.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+  <version>4.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,17 +23,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc</artifactId>
-        <version>4.1.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>4.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-v1</artifactId>
-        <version>4.1.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
+        <version>4.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-v1</artifactId>
-        <version>4.1.0</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
+        <version>4.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

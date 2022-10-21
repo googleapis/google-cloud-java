@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-management</artifactId>
-  <version>3.2.0</version><!-- {x-version-update:google-cloud-service-management:current} -->
+  <version>3.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
   <packaging>jar</packaging>
   <name>Google Service Management API</name>
   <description>is a foundational platform for creating, managing, securing, and consuming APIs and services across organizations. It is used by Google APIs, Cloud APIs, Cloud Endpoints, and API Gateway. Service Infrastructure provides a wide range of features to service consumers and service producers, including authentication, authorization, auditing, rate limiting, analytics, billing, logging, and monitoring.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-management-parent</artifactId>
-    <version>3.2.0</version><!-- {x-version-update:google-cloud-service-management:current} -->
+    <version>3.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-service-management</site.installationModule>

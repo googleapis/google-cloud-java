@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog-bom</artifactId>
-  <version>1.10.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+  <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,27 +23,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datacatalog-v1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.47.0</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
+        <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
+        <version>1.10.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1beta1</artifactId>
-        <version>0.47.0</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
+        <version>0.47.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

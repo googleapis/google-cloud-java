@@ -279,10 +279,10 @@ public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubS
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

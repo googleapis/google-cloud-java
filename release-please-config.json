@@ -133,6 +133,9 @@
     "java-container": {
       "component": "google-cloud-container"
     },
+    "java-contentwarehouse": {
+      "component": "google-cloud-contentwarehouse"
+    },
     "java-datacatalog": {
       "component": "google-cloud-datacatalog"
     },

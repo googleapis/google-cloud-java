@@ -1,0 +1,16 @@
+{
+  "api_shortname": "contentwarehouse",
+  "name_pretty": "Document AI Warehouse",
+  "product_documentation": "https://cloud.google.com/document-warehouse/docs/overview",
+  "api_description": "Document AI Warehouse is an integrated cloud-native GCP platform to store, search, organize, govern and analyze documents and their structured metadata.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-contentwarehouse/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-contentwarehouse",
+  "repo_short": "java-contentwarehouse",
+  "distribution_name": "com.google.cloud:google-cloud-contentwarehouse",
+  "api_id": "contentwarehouse.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

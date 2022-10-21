@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data</artifactId>
-  <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+  <version>0.15.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Data</name>
   <description>provides programmatic methods to access report data in Google Analytics App+Web properties.</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-data-parent</artifactId>
-    <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+    <version>0.15.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-data</site.installationModule>

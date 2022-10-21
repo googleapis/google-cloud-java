@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-video-stitcher:0.4.0:0.4.0
-proto-google-cloud-video-stitcher-v1:0.4.0:0.4.0
-grpc-google-cloud-video-stitcher-v1:0.4.0:0.4.0
+google-cloud-video-stitcher:0.4.0:0.4.1-SNAPSHOT
+proto-google-cloud-video-stitcher-v1:0.4.0:0.4.1-SNAPSHOT
+grpc-google-cloud-video-stitcher-v1:0.4.0:0.4.1-SNAPSHOT

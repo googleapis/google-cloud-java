@@ -52,6 +52,7 @@
     <module>java-contact-center-insights</module>
     <module>java-containeranalysis</module>
     <module>java-container</module>
+    <module>java-contentwarehouse</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>

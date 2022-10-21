@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-control</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
   <packaging>jar</packaging>
   <name>Google Service Control API</name>
   <description>Service Control API  is a foundational platform for creating, managing, securing, and consuming APIs and services across organizations. It is used by Google APIs, Cloud APIs, Cloud Endpoints, and API Gateway.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-control-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
+    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-service-control</site.installationModule>

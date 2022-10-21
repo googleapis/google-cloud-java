@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Variant of the specified [Speech model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
+ * Variant of the specified [Speech
+ * model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] to use.
  * See the [Cloud Speech
  * documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
  * for which models have different variants. For example, the "phone_call" model
@@ -77,8 +78,8 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <pre>
    * Use an enhanced model variant:
    * * If an enhanced variant does not exist for the given
-   *   [model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] and request language, Dialogflow falls
-   *   back to the standard variant.
+   *   [model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] and
+   *   request language, Dialogflow falls back to the standard variant.
    *   The [Cloud Speech
    *   documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
    *   describes which models have enhanced variants.
@@ -138,8 +139,8 @@ public enum SpeechModelVariant implements com.google.protobuf.ProtocolMessageEnu
    * <pre>
    * Use an enhanced model variant:
    * * If an enhanced variant does not exist for the given
-   *   [model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] and request language, Dialogflow falls
-   *   back to the standard variant.
+   *   [model][google.cloud.dialogflow.v2beta1.InputAudioConfig.model] and
+   *   request language, Dialogflow falls back to the standard variant.
    *   The [Cloud Speech
    *   documentation](https://cloud.google.com/speech-to-text/docs/enhanced-models)
    *   describes which models have enhanced variants.
