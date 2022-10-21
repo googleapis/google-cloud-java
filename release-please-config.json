@@ -175,6 +175,9 @@
     "java-dialogflow": {
       "component": "google-cloud-dialogflow"
     },
+    "java-discoveryengine": {
+      "component": "google-cloud-discoveryengine"
+    },
     "java-distributedcloudedge": {
       "component": "google-cloud-distributedcloudedge"
     },

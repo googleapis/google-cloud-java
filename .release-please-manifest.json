@@ -56,6 +56,7 @@
   "java-deploy": "1.2.1-SNAPSHOT",
   "java-dialogflow-cx": "0.15.1-SNAPSHOT",
   "java-dialogflow": "4.10.1-SNAPSHOT",
+  "java-discoveryengine": "0.0.1-SNAPSHOT",
   "java-distributedcloudedge": "0.1.1-SNAPSHOT",
   "java-dlp": "3.8.1-SNAPSHOT",
   "java-dms": "2.3.1-SNAPSHOT",
