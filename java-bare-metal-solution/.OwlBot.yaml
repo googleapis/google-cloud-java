@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-bare-metal-solution/samples/snippets/generated"
 - "/java-bare-metal-solution/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-bare-metal-solution/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bare-metal-solution/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bare-metal-solution/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/baremetalsolution/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/baremetalsolution/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-bare-metal-solution/$1/samples/snippets/generated"
 
-api-name: baremetalsolution
+api-name: "baremetalsolution"

@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-area120-tables/grpc-google-.*/src"
 - "/java-area120-tables/proto-google-.*/src"
 - "/java-area120-tables/google-.*/src"
+
+deep-preserve-regex:
+- "/java-area120-tables/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-area120-tables/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/area120/tables/(v.*)/.*-java/proto-google-.*/src"
@@ -26,4 +29,4 @@ deep-copy-regex:
 - source: "/google/area120/tables/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-area120-tables/$1/google-area120-tables/src"
 
-api-name: area120tables
+api-name: "area120tables"

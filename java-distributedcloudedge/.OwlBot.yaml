@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-distributedcloudedge/grpc-google-.*/src"
 - "/java-distributedcloudedge/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-distributedcloudedge/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-distributedcloudedge/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-distributedcloudedge/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/edgecontainer/(v.*)/.*-java/proto-google-.*/src"

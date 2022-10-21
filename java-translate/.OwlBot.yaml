@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-translate/samples/snippets/generated"
 - "/java-translate/grpc-google-.*/src"
@@ -20,6 +19,9 @@ deep-remove-regex:
 - "/java-translate/google-.*/src/com/google/cloud/translate/v3"
 - "/java-translate/google-.*/src/com/google/cloud/translate/v3beta1"
 
+deep-preserve-regex:
+- "/java-translate/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-translate/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/translate/(v.*)/.*-java/proto-google-.*/src/main/java/com/google/cloud/translate"
@@ -33,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/translate/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-translate/$1/samples/snippets/generated"
 
-api-name: translate
+api-name: "translate"

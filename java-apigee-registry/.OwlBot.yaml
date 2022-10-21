@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-apigee-registry/grpc-google-.*/src"
 - "/java-apigee-registry/proto-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-apigee-registry/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-apigee-registry/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-apigee-registry/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/proto-google-.*/src"
@@ -31,4 +32,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-apigee-registry/$1/google-cloud-apigee-registry/src"
 - source: "/google/cloud/apigeeregistry/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-apigee-registry/$1/samples/snippets/generated"
-api-name: apigee-registry
+
+api-name: "apigee-registry"

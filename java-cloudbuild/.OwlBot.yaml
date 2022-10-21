@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-cloudbuild/grpc-google-.*/src"
 - "/java-cloudbuild/proto-google-.*/src"
 - "/java-cloudbuild/google-.*/src"
+
+deep-preserve-regex:
+- "/java-cloudbuild/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-cloudbuild/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src"
@@ -26,4 +29,4 @@ deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-cloudbuild/$1/google-cloud-build/src"
 
-api-name: cloudbuild
+api-name: "cloudbuild"

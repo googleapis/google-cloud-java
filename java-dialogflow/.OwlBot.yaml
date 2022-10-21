@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-dialogflow/samples/snippets/generated"
 - "/java-dialogflow/grpc-google-.*/src"
@@ -29,7 +28,8 @@ deep-preserve-regex:
 - "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java"
 - "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java"
 - "/java-dialogflow/proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java"
-
+- "/java-dialogflow/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-dialogflow/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/dialogflow/(v.*)/.*-java/proto-google-.*/src"
@@ -41,4 +41,4 @@ deep-copy-regex:
 - source: "/google/cloud/dialogflow/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-dialogflow/$1/samples/snippets/generated"
 
-api-name: dialogflow
+api-name: "dialogflow"

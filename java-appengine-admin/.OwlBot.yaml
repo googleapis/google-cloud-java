@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-appengine-admin/grpc-google-.*/src"
 - "/java-appengine-admin/proto-google-.*/src"
 - "/java-appengine-admin/google-.*/src"
+
+deep-preserve-regex:
+- "/java-appengine-admin/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-appengine-admin/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/proto-google-.*/src"
@@ -26,4 +29,4 @@ deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-appengine-admin/$1/google-cloud-appengine-admin/src"
 
-api-name: appengine
+api-name: "appengine"

@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-recaptchaenterprise/samples/snippets/generated"
 - "/java-recaptchaenterprise/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-recaptchaenterprise/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-recaptchaenterprise/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-recaptchaenterprise/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/recaptchaenterprise/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/recaptchaenterprise/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-recaptchaenterprise/$1/samples/snippets/generated"
 
-api-name: recaptchaenterprise
+api-name: "recaptchaenterprise"

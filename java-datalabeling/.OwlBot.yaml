@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-datalabeling/samples/snippets/generated"
 - "/java-datalabeling/grpc-google-.*/src"
@@ -22,7 +21,8 @@ deep-remove-regex:
 deep-preserve-regex:
 - "/java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/v1beta1/it/ITSystemTest.java"
 - "/java-datalabeling/google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java"
-
+- "/java-datalabeling/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-datalabeling/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/datalabeling/(v.*)/.*-java/proto-google-.*/src"
@@ -34,4 +34,4 @@ deep-copy-regex:
 - source: "/google/cloud/datalabeling/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datalabeling/$1/samples/snippets/generated"
 
-api-name: datalabeling
+api-name: "datalabeling"

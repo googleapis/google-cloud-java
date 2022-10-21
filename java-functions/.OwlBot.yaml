@@ -12,13 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-functions/samples/snippets/generated"
 - "/java-functions/grpc-google-.*/src"
 - "/java-functions/proto-google-.*/src"
 - "/java-functions/google-.*/src"
 
+deep-preserve-regex:
+- "/java-functions/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-functions/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/functions/(v.*)/.*-java/proto-google-.*/src"
@@ -30,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/functions/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-functions/$1/samples/snippets/generated"
 
-api-name: cloudfunctions
+api-name: "cloudfunctions"

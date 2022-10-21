@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-datastream/samples/snippets/generated"
 - "/java-datastream/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-datastream/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-datastream/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-datastream/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/datastream/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/datastream/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datastream/$1/samples/snippets/generated"
 
-api-name: datastream
+api-name: "datastream"

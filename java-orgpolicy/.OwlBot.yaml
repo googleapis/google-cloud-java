@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-orgpolicy/samples/snippets/generated"
 - "/java-orgpolicy/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-orgpolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-orgpolicy/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-orgpolicy/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/orgpolicy/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/orgpolicy/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-orgpolicy/$1/samples/snippets/generated"
 
-api-name: orgpolicy
+api-name: "orgpolicy"

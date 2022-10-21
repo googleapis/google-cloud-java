@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-cloudcommerceconsumerprocurement/grpc-google-.*/src"
 - "/java-cloudcommerceconsumerprocurement/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-cloudcommerceconsumerprocurement/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-cloudcommerceconsumerprocurement/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/commerce/consumer/procurement/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/commerce/consumer/procurement/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/google-cloud-cloudcommerceconsumerprocurement/src"
 
-api-name: cloudcommerceconsumerprocurement
+api-name: "cloudcommerceconsumerprocurement"

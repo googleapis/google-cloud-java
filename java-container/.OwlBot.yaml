@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-container/grpc-google-.*/src"
 - "/java-container/proto-google-.*/src"
@@ -22,6 +21,8 @@ deep-preserve-regex:
 - "/java-container/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
 - "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
 - "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java"
+- "/java-container/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-container/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/container/(v.*)/.*-java/proto-google-.*/src"
@@ -31,4 +32,4 @@ deep-copy-regex:
 - source: "/google/container/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-container/$1/google-cloud-container/src"
 
-api-name: container
+api-name: "container"

@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-workflow-executions/grpc-google-.*/src"
 - "/java-workflow-executions/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-workflow-executions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-workflow-executions/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-workflow-executions/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/workflows/executions/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/workflows/executions/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-workflow-executions/$1/google-cloud-workflow-executions/src"
 
-api-name: workflowexecutions
+api-name: "workflowexecutions"

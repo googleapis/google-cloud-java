@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-dlp/grpc-google-.*/src"
 - "/java-dlp/proto-google-.*/src"
@@ -34,7 +33,8 @@ deep-preserve-regex:
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java"
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java"
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java"
-
+- "/java-dlp/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-dlp/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/privacy/dlp/(v.*)/.*-java/proto-google-.*/src"
@@ -44,4 +44,4 @@ deep-copy-regex:
 - source: "/google/privacy/dlp/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dlp/$1/google-cloud-dlp/src"
 
-api-name: dlp
+api-name: "dlp"

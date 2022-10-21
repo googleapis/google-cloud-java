@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-websecurityscanner/samples/snippets/generated"
 - "/java-websecurityscanner/grpc-google-.*/src"
@@ -23,7 +22,8 @@ deep-preserve-regex:
 - "/java-websecurityscanner/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlNegativeTest.java"
 - "/java-websecurityscanner/google-cloud-websecurityscanner/src/test/java/com/google/cloud/websecurityscanner/it/v1beta/VPCServiceControlPositiveTest.java"
-
+- "/java-websecurityscanner/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-websecurityscanner/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/websecurityscanner/(v.*)/.*-java/proto-google-.*/src"
@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/websecurityscanner/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-websecurityscanner/$1/samples/snippets/generated"
 
-api-name: websecurityscanner
+api-name: "websecurityscanner"

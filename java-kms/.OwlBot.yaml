@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-kms/samples/snippets/generated"
 - "/java-kms/grpc-google-.*/src"
@@ -26,6 +25,8 @@ deep-preserve-regex:
 - "/java-kms/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java"
 - "/java-kms/google-cloud-kms/src/test/java/com/google/cloud/kms/it/ITKmsTest.java"
 - "/java-kms/proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyPathName.java"
+- "/java-kms/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-kms/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/kms/(v.*)/.*-java/proto-google-.*/src"
@@ -37,4 +38,4 @@ deep-copy-regex:
 - source: "/google/cloud/kms/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-kms/$1/samples/snippets/generated"
 
-api-name: cloudkms
+api-name: "cloudkms"

@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-texttospeech/samples/snippets/generated"
 - "/java-texttospeech/grpc-google-.*/src"
@@ -23,7 +22,8 @@ deep-preserve-regex:
 - "/java-texttospeech/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-texttospeech/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1/TextToSpeechSmokeTest.java"
 - "/java-texttospeech/google-cloud-texttospeech/src/test/java/com/google/cloud/texttospeech/v1beta1/TextToSpeechSmokeTest.java"
-
+- "/java-texttospeech/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-texttospeech/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/texttospeech/(v.*)/.*-java/proto-google-.*/src"
@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/texttospeech/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-texttospeech/$1/samples/snippets/generated"
 
-api-name: texttospeech
+api-name: "texttospeech"

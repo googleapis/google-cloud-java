@@ -12,12 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/src"
 
 deep-preserve-regex:
 - "/java-grafeas/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-grafeas/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-grafeas/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/grafeas/(v.*)/.*-java/proto-google-.*/src"
@@ -27,4 +28,4 @@ deep-copy-regex:
 - source: "/grafeas/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-grafeas/$1/src"
 
-api-name: containeranalysis
+api-name: "containeranalysis"

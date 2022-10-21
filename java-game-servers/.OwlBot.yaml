@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-game-servers/grpc-google-.*/src"
 - "/java-game-servers/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-game-servers/google-cloud-game-servers/src/test/java/com/google/cloud/gaming/v.*/it/ITSystemTest.java"
+- "/java-game-servers/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-game-servers/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/gaming/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/gaming/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-game-servers/$1/google-cloud-game-servers/src"
 
-api-name: gameservices
+api-name: "gameservices"

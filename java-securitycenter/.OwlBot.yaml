@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-securitycenter/samples/snippets/generated"
 - "/java-securitycenter/grpc-google-.*/src"
@@ -26,6 +25,8 @@ deep-preserve-regex:
 - "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksName.java"
 - "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/FindingSecurityMarksName.java"
 - "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/AssetSecurityMarksName.java"
+- "/java-securitycenter/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-securitycenter/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/proto-google-.*/src"
@@ -37,4 +38,4 @@ deep-copy-regex:
 - source: "/google/cloud/securitycenter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-securitycenter/$1/samples/snippets/generated"
 
-api-name: securitycenter
+api-name: "securitycenter"

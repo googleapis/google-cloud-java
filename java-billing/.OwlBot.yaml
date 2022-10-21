@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-billing/samples/snippets/generated"
 - "/java-billing/grpc-google-.*/src"
 - "/java-billing/proto-google-.*/src"
 - "/java-billing/google-.*/src"
+
+deep-preserve-regex:
+- "/java-billing/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-billing/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/billing/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/billing/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-billing/$1/samples/snippets/generated"
 
-api-name: cloudbilling
+api-name: "cloudbilling"

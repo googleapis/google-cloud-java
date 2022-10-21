@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-tasks/samples/snippets/generated"
 - "/java-tasks/grpc-google-.*/src"
@@ -25,6 +24,8 @@ deep-preserve-regex:
 - "/java-tasks/proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"
 - "/java-tasks/proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java"
 - "/java-tasks/proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java"
+- "/java-tasks/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-tasks/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/tasks/(v.*)/.*-java/proto-google-.*/src"
@@ -36,4 +37,4 @@ deep-copy-regex:
 - source: "/google/cloud/tasks/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-tasks/$1/samples/snippets/generated"
 
-api-name: cloudtasks
+api-name: "cloudtasks"

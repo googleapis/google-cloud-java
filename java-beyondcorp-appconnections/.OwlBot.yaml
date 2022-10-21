@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-beyondcorp-appconnections/grpc-google-.*/src"
 - "/java-beyondcorp-appconnections/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-beyondcorp-appconnections/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-beyondcorp-appconnections/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-beyondcorp-appconnections/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/beyondcorp/appconnections/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/beyondcorp/appconnections/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-beyondcorp-appconnections/$1/google-cloud-beyondcorp-appconnections/src"
 
-api-name: beyondcorp-appconnections
+api-name: "beyondcorp-appconnections"

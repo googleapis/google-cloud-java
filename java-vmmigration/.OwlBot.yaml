@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-vmmigration/samples/snippets/generated"
 - "/java-vmmigration/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-vmmigration/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-vmmigration/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-vmmigration/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/vmmigration/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/vmmigration/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vmmigration/$1/samples/snippets/generated"
 
-api-name: vmmigration
+api-name: "vmmigration"

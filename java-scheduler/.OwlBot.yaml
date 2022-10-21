@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-scheduler/samples/snippets/generated"
 - "/java-scheduler/grpc-google-.*/src"
@@ -23,6 +22,8 @@ deep-preserve-regex:
 - "/java-scheduler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-scheduler/proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/ProjectName.java"
 - "/java-scheduler/proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/ProjectName.java"
+- "/java-scheduler/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-scheduler/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/scheduler/(v.*)/.*-java/proto-google-.*/src"
@@ -34,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/scheduler/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-scheduler/$1/samples/snippets/generated"
 
-api-name: cloudscheduler
+api-name: "cloudscheduler"

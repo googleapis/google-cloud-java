@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-private-catalog/samples/snippets/generated"
 - "/java-private-catalog/grpc-google-.*/src"
 - "/java-private-catalog/proto-google-.*/src"
 - "/java-private-catalog/google-.*/src"
+
+deep-preserve-regex:
+- "/java-private-catalog/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-private-catalog/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/privatecatalog/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/privatecatalog/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-private-catalog/$1/samples/snippets/generated"
 
-api-name: cloudprivatecatalog
+api-name: "cloudprivatecatalog"

@@ -12,5 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+deep-preserve-regex:
+- "/java-dns/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-dns/google-.*/src/test/resources/META-INF/native-image/.*"
 
-api-name: dns
+api-name: "dns"

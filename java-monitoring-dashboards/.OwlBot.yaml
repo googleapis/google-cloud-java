@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-monitoring-dashboards/grpc-google-.*/src"
 - "/java-monitoring-dashboards/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-monitoring-dashboards/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-monitoring-dashboards/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-monitoring-dashboards/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/monitoring/dashboard/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/monitoring/dashboard/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring-dashboards/$1/google-cloud-monitoring-dashboard/src"
 
-api-name: monitoring-dashboards
+api-name: "monitoring-dashboards"

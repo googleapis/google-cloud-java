@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-automl/samples/snippets/generated"
 - "/java-automl/grpc-google-.*/src"
 - "/java-automl/proto-google-.*/src"
 - "/java-automl/google-.*/src"
+
+deep-preserve-regex:
+- "/java-automl/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-automl/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/automl/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/automl/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-automl/$1/samples/snippets/generated"
 
-api-name: automl
+api-name: "automl"

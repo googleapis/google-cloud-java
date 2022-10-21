@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-accessapproval/grpc-google-.*/src"
 - "/java-accessapproval/proto-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-accessapproval/google-cloud-accessapproval/src/test/java/com/google/cloud/accessapproval/v1/it"
+- "/java-accessapproval/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-accessapproval/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/accessapproval/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-accessapproval/$1/samples/snippets/generated"
 
-api-name: accessapproval
+api-name: "accessapproval"

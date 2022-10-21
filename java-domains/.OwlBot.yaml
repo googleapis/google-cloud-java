@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-domains/samples/snippets/generated"
 - "/java-domains/grpc-google-.*/src"
 - "/java-domains/proto-google-.*/src"
 - "/java-domains/google-.*/src"
+
+deep-preserve-regex:
+- "/java-domains/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-domains/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/domains/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/domains/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-domains/$1/samples/snippets/generated"
 
-api-name: domains
+api-name: "domains"

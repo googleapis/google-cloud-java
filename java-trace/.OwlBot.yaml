@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-trace/grpc-google-.*/src"
 - "/java-trace/proto-google-.*/src"
@@ -22,7 +21,8 @@ deep-preserve-regex:
 - "/java-trace/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-trace/google-cloud-trace/src/test/java/com/google/cloud/trace/v1/VPCServiceControlTest.java"
 - "/java-trace/google-cloud-trace/src/test/java/com/google/cloud/trace/v2/VPCServiceControlTest.java"
-
+- "/java-trace/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-trace/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-trace/$1/google-cloud-trace/src"
 
-api-name: cloudtrace
+api-name: "cloudtrace"

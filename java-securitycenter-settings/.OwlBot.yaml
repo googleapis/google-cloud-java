@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-securitycenter-settings/grpc-google-.*/src"
 - "/java-securitycenter-settings/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-securitycenter-settings/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-securitycenter-settings/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-securitycenter-settings/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/securitycenter/settings/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/securitycenter/settings/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-securitycenter-settings/$1/google-cloud-securitycenter-settings/src"
 
-api-name: securitycenter
+api-name: "securitycenter"

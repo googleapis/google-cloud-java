@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-vision/samples/snippets/generated"
 - "/java-vision/grpc-google-.*/src"
@@ -30,6 +29,8 @@ deep-preserve-regex:
 - "/java-vision/google-cloud-vision/src/test/resources/puppies.jpg"
 - "/java-vision/google-cloud-vision/src/test/resources/text.jpg"
 - "/java-vision/google-cloud-vision/src/test/resources/wakeupcat.jpg"
+- "/java-vision/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-vision/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/vision/(v.*)/.*-java/proto-google-.*/src"
@@ -41,4 +42,4 @@ deep-copy-regex:
 - source: "/google/cloud/vision/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vision/$1/samples/snippets/generated"
 
-api-name: vision
+api-name: "vision"

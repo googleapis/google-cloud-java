@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-vpcaccess/samples/snippets/generated"
 - "/java-vpcaccess/grpc-google-.*/src"
 - "/java-vpcaccess/proto-google-.*/src"
 - "/java-vpcaccess/google-.*/src"
+
+deep-preserve-regex:
+- "/java-vpcaccess/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-vpcaccess/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/vpcaccess/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/vpcaccess/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vpcaccess/$1/samples/snippets/generated"
 
-api-name: vpcaccess
+api-name: "vpcaccess"

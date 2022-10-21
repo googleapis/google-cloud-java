@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-aiplatform/grpc-google-.*/src"
 - "/java-aiplatform/proto-google-.*/src"
 - "/java-aiplatform/google-.*/src/main/java/com/google/cloud/aiplatform/v1"
 - "/java-aiplatform/google-.*/src/main/java/com/google/cloud/aiplatform/v1beta1"
+
+deep-preserve-regex:
+- "/java-aiplatform/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-aiplatform/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/aiplatform/(v.*)/.*-java/proto-google-.*/src"
@@ -27,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/aiplatform/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-aiplatform/$1/google-cloud-aiplatform/src"
 
-api-name: aiplatform
+api-name: "aiplatform"

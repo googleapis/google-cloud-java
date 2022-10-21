@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-profiler/grpc-google-.*/src"
 - "/java-profiler/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-profiler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-profiler/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-profiler/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudprofiler/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/devtools/cloudprofiler/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-profiler/$1/google-cloud-profiler/src"
 
-api-name: cloudprofiler
+api-name: "cloudprofiler"

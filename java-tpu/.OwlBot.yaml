@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-tpu/samples/snippets/generated"
 - "/java-tpu/grpc-google-.*/src"
 - "/java-tpu/proto-google-.*/src"
 - "/java-tpu/google-.*/src"
+
+deep-preserve-regex:
+- "/java-tpu/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-tpu/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/tpu/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/tpu/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-tpu/$1/samples/snippets/generated"
 
-api-name: tpu
+api-name: "tpu"

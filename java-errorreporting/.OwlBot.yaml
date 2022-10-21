@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-errorreporting/grpc-google-.*/src"
 - "/java-errorreporting/proto-google-.*/src"
@@ -22,7 +21,8 @@ deep-preserve-regex:
 - "/java-errorreporting/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-errorreporting/google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java"
 - "/java-errorreporting/proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java"
-
+- "/java-errorreporting/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-errorreporting/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-errorreporting/$1/google-cloud-errorreporting/src"
 
-api-name: clouderrorreporting
+api-name: "clouderrorreporting"

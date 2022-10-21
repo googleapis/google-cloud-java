@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-monitoring/grpc-google-.*/src"
 - "/java-monitoring/proto-google-.*/src"
@@ -24,7 +23,8 @@ deep-preserve-regex:
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/AlertPolicyConditionName.java"
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOuterClass.java"
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/google/monitoring/v3/DroppedLabelsOuterClass.java"
-
+- "/java-monitoring/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-monitoring/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/monitoring/(v.*)/.*-java/proto-google-.*/src"
@@ -34,4 +34,4 @@ deep-copy-regex:
 - source: "/google/monitoring/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring/$1/google-cloud-monitoring/src"
 
-api-name: monitoring
+api-name: "monitoring"

@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-batch/grpc-google-.*/src"
 - "/java-batch/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-batch/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-batch/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-batch/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/batch/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/batch/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-batch/$1/google-cloud-batch/src"
 
-api-name: batch
+api-name: "batch"

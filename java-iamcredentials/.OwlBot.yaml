@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-iamcredentials/grpc-google-.*/src"
 - "/java-iamcredentials/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-iamcredentials/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-iamcredentials/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-iamcredentials/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/iam/credentials/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/iam/credentials/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-iamcredentials/$1/google-cloud-iamcredentials/src"
 
-api-name: iamcredentials
+api-name: "iamcredentials"

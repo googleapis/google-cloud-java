@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-video-intelligence/samples/snippets/generated"
 - "/java-video-intelligence/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-video-intelligence/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-video-intelligence/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-video-intelligence/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/videointelligence/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-video-intelligence/$1/samples/snippets/generated"
 
-api-name: videointelligence
+api-name: "videointelligence"

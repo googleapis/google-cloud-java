@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-gke-connect-gateway/samples/snippets/generated"
 - "/java-gke-connect-gateway/grpc-google-.*/src"
 - "/java-gke-connect-gateway/proto-google-.*/src"
 - "/java-gke-connect-gateway/google-.*/src"
+
+deep-preserve-regex:
+- "/java-gke-connect-gateway/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-gke-connect-gateway/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-gke-connect-gateway/$1/samples/snippets/generated"
 
-api-name: connectgateway
+api-name: "connectgateway"

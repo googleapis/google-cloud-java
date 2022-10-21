@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-recommendations-ai/samples/snippets/generated"
 - "/java-recommendations-ai/grpc-google-.*/src"
@@ -21,6 +20,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-recommendations-ai/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-recommendations-ai/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-recommendations-ai/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/recommendationengine/(v.*)/.*-java/proto-google-.*/src"
@@ -32,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/recommendationengine/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-recommendations-ai/$1/samples/snippets/generated"
 
-api-name: recommendationengine
+api-name: "recommendationengine"

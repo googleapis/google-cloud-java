@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-bigquerydatatransfer/grpc-google-.*/src"
 - "/java-bigquerydatatransfer/proto-google-.*/src"
@@ -65,6 +64,8 @@ deep-preserve-regex:
 - "/java-bigquerydatatransfer/proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java"
 - "/java-bigquerydatatransfer/proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java"
 - "/java-bigquerydatatransfer/proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java"
+- "/java-bigquerydatatransfer/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bigquerydatatransfer/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/proto-google-.*/src"
@@ -74,4 +75,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/google-cloud-bigquerydatatransfer/src"
 
-api-name: bigquerydatatransfer
+api-name: "bigquerydatatransfer"

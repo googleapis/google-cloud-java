@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-bigqueryreservation/grpc-google-.*/src"
 - "/java-bigqueryreservation/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-bigqueryreservation/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-bigqueryreservation/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-bigqueryreservation/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryreservation/$1/google-cloud-bigqueryreservation/src"
 
-api-name: bigqueryreservation
+api-name: "bigqueryreservation"

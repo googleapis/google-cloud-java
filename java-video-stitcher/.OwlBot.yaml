@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-video-stitcher/grpc-google-.*/src"
 - "/java-video-stitcher/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-video-stitcher/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-video-stitcher/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-video-stitcher/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/video/stitcher/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +30,4 @@ deep-copy-regex:
 - source: "/google/cloud/video/stitcher/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-video-stitcher/$1/google-cloud-video-stitcher/src"
 
-api-name: videostitcher
+api-name: "videostitcher"

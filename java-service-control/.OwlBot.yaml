@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-service-control/grpc-google-.*/src"
 - "/java-service-control/proto-google-.*/src"
@@ -20,6 +19,8 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-service-control/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-service-control/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-service-control/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/api/servicecontrol/(v.*)/.*-java/proto-google-.*/src"
@@ -28,4 +29,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-service-control/$1/grpc-google-cloud-service-control-$1/src"
 - source: "/google/api/servicecontrol/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-service-control/$1/google-cloud-service-control/src"
-api-name: servicecontrol
+
+api-name: "servicecontrol"

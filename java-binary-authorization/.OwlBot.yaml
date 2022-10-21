@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-binary-authorization/samples/snippets/generated"
 - "/java-binary-authorization/grpc-google-.*/src"
 - "/java-binary-authorization/proto-google-.*/src"
 - "/java-binary-authorization/google-.*/src"
+
+deep-preserve-regex:
+- "/java-binary-authorization/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-binary-authorization/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src"
@@ -29,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated"
 
-api-name: binaryauthorization
+api-name: "binaryauthorization"

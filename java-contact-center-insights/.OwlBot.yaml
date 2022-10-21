@@ -12,12 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-contact-center-insights/grpc-google-.*/src"
 - "/java-contact-center-insights/proto-google-.*/src"
 - "/java-contact-center-insights/google-.*/src"
 - "/java-contact-center-insights/samples/snippets/generated"
+
+deep-preserve-regex:
+- "/java-contact-center-insights/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-contact-center-insights/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/proto-google-.*/src"
@@ -27,6 +30,6 @@ deep-copy-regex:
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-contact-center-insights/$1/google-cloud-contact-center-insights/src"
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-contact-center-insights/$1/samples/snippets/generated"  
+  dest: "/owl-bot-staging/java-contact-center-insights/$1/samples/snippets/generated"
 
-api-name: contactcenterinsights
+api-name: "contactcenterinsights"

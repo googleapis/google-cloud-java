@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 deep-remove-regex:
 - "/java-datacatalog/samples/snippets/generated"
 - "/java-datacatalog/grpc-google-.*/src"
@@ -22,6 +21,8 @@ deep-remove-regex:
 deep-preserve-regex:
 - "/java-datacatalog/google-cloud-datacatalog/src/test/java/com/google/cloud/datacatalog/v1beta1/it/ITSystemTest.java"
 - "/java-datacatalog/proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java"
+- "/java-datacatalog/google-.*/src/main/resources/META-INF/native-image/.*"
+- "/java-datacatalog/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
 - source: "/google/cloud/datacatalog/(v.*)/.*-java/proto-google-.*/src"
@@ -33,4 +34,4 @@ deep-copy-regex:
 - source: "/google/cloud/datacatalog/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datacatalog/$1/samples/snippets/generated"
 
-api-name: datacatalog
+api-name: "datacatalog"
