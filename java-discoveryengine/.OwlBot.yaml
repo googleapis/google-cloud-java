@@ -28,3 +28,6 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-discoveryengine/$1/grpc-google-cloud-discoveryengine-$1/src"
 - source: "/google/cloud/discoveryengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-discoveryengine/$1/google-cloud-discoveryengine/src"
+
+
+api-name: java-discoveryengine
