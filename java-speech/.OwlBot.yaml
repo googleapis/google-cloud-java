@@ -28,6 +28,7 @@ deep-preserve-regex:
 - "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java"
 - "/java-speech/google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java"
 - "/java-speech/google-cloud-speech/src/test/resources/hello.flac"
+- "/google-cloud-speech/src/test/resources/META-INF/native-image/"
 
 
 deep-copy-regex:
