@@ -1,0 +1,16 @@
+{
+  "api_shortname": "enterpriseknowledgegraph",
+  "name_pretty": "Enterprise Knowledge Graph",
+  "product_documentation": "https://cloud.google.com/enterprise-knowledge-graph/docs/overview",
+  "api_description": "Enterprise Knowledge Graph organizes siloed information into organizational knowledge, which involves consolidating, standardizing, and reconciling data in an efficient and useful way.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-enterpriseknowledgegraph/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-enterpriseknowledgegraph",
+  "repo_short": "java-enterpriseknowledgegraph",
+  "distribution_name": "com.google.cloud:google-cloud-enterpriseknowledgegraph",
+  "api_id": "enterpriseknowledgegraph.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

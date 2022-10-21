@@ -63,6 +63,7 @@
   "java-dns": "2.2.1-SNAPSHOT",
   "java-document-ai": "2.8.1-SNAPSHOT",
   "java-domains": "1.1.1-SNAPSHOT",
+  "java-enterpriseknowledgegraph": "0.0.1-SNAPSHOT",
   "java-errorreporting": "0.125.1-beta-SNAPSHOT",
   "java-essential-contacts": "2.4.1-SNAPSHOT",
   "java-eventarc": "1.4.1-SNAPSHOT",

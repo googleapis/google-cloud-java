@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.enterpriseknowledgegraph.v1",
+  "libraryPackage": "com.google.cloud.enterpriseknowledgegraph.v1",
+  "services": {
+    "EnterpriseKnowledgeGraphService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EnterpriseKnowledgeGraphServiceClient",
+          "rpcs": {
+            "CancelEntityReconciliationJob": {
+              "methods": ["cancelEntityReconciliationJob", "cancelEntityReconciliationJob", "cancelEntityReconciliationJob", "cancelEntityReconciliationJobCallable"]
+            },
+            "CreateEntityReconciliationJob": {
+              "methods": ["createEntityReconciliationJob", "createEntityReconciliationJob", "createEntityReconciliationJob", "createEntityReconciliationJobCallable"]
+            },
+            "DeleteEntityReconciliationJob": {
+              "methods": ["deleteEntityReconciliationJob", "deleteEntityReconciliationJob", "deleteEntityReconciliationJob", "deleteEntityReconciliationJobCallable"]
+            },
+            "GetEntityReconciliationJob": {
+              "methods": ["getEntityReconciliationJob", "getEntityReconciliationJob", "getEntityReconciliationJob", "getEntityReconciliationJobCallable"]
+            },
+            "ListEntityReconciliationJobs": {
+              "methods": ["listEntityReconciliationJobs", "listEntityReconciliationJobs", "listEntityReconciliationJobs", "listEntityReconciliationJobsPagedCallable", "listEntityReconciliationJobsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
