@@ -1,0 +1,147 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.kms.v1",
+  "libraryPackage": "com.google.cloud.kms.v1",
+  "services": {
+    "EkmService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EkmServiceClient",
+          "rpcs": {
+            "CreateEkmConnection": {
+              "methods": ["createEkmConnection", "createEkmConnection", "createEkmConnection", "createEkmConnectionCallable"]
+            },
+            "GetEkmConnection": {
+              "methods": ["getEkmConnection", "getEkmConnection", "getEkmConnection", "getEkmConnectionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListEkmConnections": {
+              "methods": ["listEkmConnections", "listEkmConnections", "listEkmConnections", "listEkmConnectionsPagedCallable", "listEkmConnectionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateEkmConnection": {
+              "methods": ["updateEkmConnection", "updateEkmConnection", "updateEkmConnectionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "KeyManagementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "KeyManagementServiceClient",
+          "rpcs": {
+            "AsymmetricDecrypt": {
+              "methods": ["asymmetricDecrypt", "asymmetricDecrypt", "asymmetricDecrypt", "asymmetricDecryptCallable"]
+            },
+            "AsymmetricSign": {
+              "methods": ["asymmetricSign", "asymmetricSign", "asymmetricSign", "asymmetricSignCallable"]
+            },
+            "CreateCryptoKey": {
+              "methods": ["createCryptoKey", "createCryptoKey", "createCryptoKey", "createCryptoKeyCallable"]
+            },
+            "CreateCryptoKeyVersion": {
+              "methods": ["createCryptoKeyVersion", "createCryptoKeyVersion", "createCryptoKeyVersion", "createCryptoKeyVersionCallable"]
+            },
+            "CreateImportJob": {
+              "methods": ["createImportJob", "createImportJob", "createImportJob", "createImportJobCallable"]
+            },
+            "CreateKeyRing": {
+              "methods": ["createKeyRing", "createKeyRing", "createKeyRing", "createKeyRingCallable"]
+            },
+            "Decrypt": {
+              "methods": ["decrypt", "decrypt", "decrypt", "decryptCallable"]
+            },
+            "DestroyCryptoKeyVersion": {
+              "methods": ["destroyCryptoKeyVersion", "destroyCryptoKeyVersion", "destroyCryptoKeyVersion", "destroyCryptoKeyVersionCallable"]
+            },
+            "Encrypt": {
+              "methods": ["encrypt", "encrypt", "encrypt", "encryptCallable"]
+            },
+            "GenerateRandomBytes": {
+              "methods": ["generateRandomBytes", "generateRandomBytes", "generateRandomBytesCallable"]
+            },
+            "GetCryptoKey": {
+              "methods": ["getCryptoKey", "getCryptoKey", "getCryptoKey", "getCryptoKeyCallable"]
+            },
+            "GetCryptoKeyVersion": {
+              "methods": ["getCryptoKeyVersion", "getCryptoKeyVersion", "getCryptoKeyVersion", "getCryptoKeyVersionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetImportJob": {
+              "methods": ["getImportJob", "getImportJob", "getImportJob", "getImportJobCallable"]
+            },
+            "GetKeyRing": {
+              "methods": ["getKeyRing", "getKeyRing", "getKeyRing", "getKeyRingCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPublicKey": {
+              "methods": ["getPublicKey", "getPublicKey", "getPublicKey", "getPublicKeyCallable"]
+            },
+            "ImportCryptoKeyVersion": {
+              "methods": ["importCryptoKeyVersion", "importCryptoKeyVersionCallable"]
+            },
+            "ListCryptoKeyVersions": {
+              "methods": ["listCryptoKeyVersions", "listCryptoKeyVersions", "listCryptoKeyVersions", "listCryptoKeyVersionsPagedCallable", "listCryptoKeyVersionsCallable"]
+            },
+            "ListCryptoKeys": {
+              "methods": ["listCryptoKeys", "listCryptoKeys", "listCryptoKeys", "listCryptoKeysPagedCallable", "listCryptoKeysCallable"]
+            },
+            "ListImportJobs": {
+              "methods": ["listImportJobs", "listImportJobs", "listImportJobs", "listImportJobsPagedCallable", "listImportJobsCallable"]
+            },
+            "ListKeyRings": {
+              "methods": ["listKeyRings", "listKeyRings", "listKeyRings", "listKeyRingsPagedCallable", "listKeyRingsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "MacSign": {
+              "methods": ["macSign", "macSign", "macSign", "macSignCallable"]
+            },
+            "MacVerify": {
+              "methods": ["macVerify", "macVerify", "macVerify", "macVerifyCallable"]
+            },
+            "RestoreCryptoKeyVersion": {
+              "methods": ["restoreCryptoKeyVersion", "restoreCryptoKeyVersion", "restoreCryptoKeyVersion", "restoreCryptoKeyVersionCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCryptoKey": {
+              "methods": ["updateCryptoKey", "updateCryptoKey", "updateCryptoKeyCallable"]
+            },
+            "UpdateCryptoKeyPrimaryVersion": {
+              "methods": ["updateCryptoKeyPrimaryVersion", "updateCryptoKeyPrimaryVersion", "updateCryptoKeyPrimaryVersion", "updateCryptoKeyPrimaryVersionCallable"]
+            },
+            "UpdateCryptoKeyVersion": {
+              "methods": ["updateCryptoKeyVersion", "updateCryptoKeyVersion", "updateCryptoKeyVersionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
