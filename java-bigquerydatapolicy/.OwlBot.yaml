@@ -23,9 +23,9 @@ deep-preserve-regex:
 - "/java-bigquerydatapolicy/google-.*/src/test/resources/META-INF/native-image/.*"
 
 deep-copy-regex:
-- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/proto-google-cloud-bigquerydatapolicy-$1/src"
-- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/grpc-google-cloud-bigquerydatapolicy-$1/src"
-- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/google-cloud-bigquerydatapolicy/src"
+- dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/proto-google-cloud-bigquerydatapolicy-$1/src"
+  source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/proto-google-.*/src"
+- dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/grpc-google-cloud-bigquerydatapolicy-$1/src"
+  source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/grpc-google-.*/src"
+- dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/google-cloud-bigquerydatapolicy/src"
+  source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/gapic-google-.*/src"
