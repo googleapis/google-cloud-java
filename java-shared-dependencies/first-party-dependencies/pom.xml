@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>first-party-dependencies</artifactId>
   <packaging>pom</packaging>
-  <version>3.0.5</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.0.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Google Cloud First-party Shared Dependencies</name>
   <url>https://github.com/googleapis/java-shared-dependencies</url>
   <description>
