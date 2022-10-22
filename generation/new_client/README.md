@@ -21,6 +21,8 @@ Install Docker.
 
 ```
 $ git clone https://github.com/googleapis/google-cloud-java
+$ git checkout main
+$ git pull
 ```
 
 ### Install pyenv
@@ -119,8 +121,7 @@ document above.
 Run `new-client.py` with the arguments above:
 
 ```
-$ cd generation/new_client
-$ python3.9 new-client.py generate \
+$ python3.9 generation/new_client/new-client.py generate \
   --api_shortname=apikeys \
   --proto-path=google/api/apikeys \
   --name-pretty="API Keys API" \
@@ -128,15 +129,16 @@ $ python3.9 new-client.py generate \
   --api-description="API Keys lets you create and manage your API keys for your projects." \
 ```
 
-The command creates `workspace` directory in which it prepares the changes for
+The command creates changes for
 the new module in the monorepo. At the end (~ 10 minutes), it tells you to
 create a pull request in the monorepo:
 
 ```
 ...
-Prepared new library in workspace/monorepo/java-apikeys
-Please create a pull request from that directory:
-  $ cd /usr/local/google/home/suztomo/google-cloud-java/generation/new_client/workspace/monorepo
+Please create a pull request:
+  $ git checkout -b new_module_java-discoveryengine
+  $ git add .
+  $ git commit -m 'feat: [apikeys] new module for apikeys'
   $ gh pr create --title 'feat: [apikeys] new module for apikeys'
 ```
 
