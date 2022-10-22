@@ -47,6 +47,7 @@ case ${JOB_TYPE} in
         -Dcheckstyle.skip=true \
         -Dflatten.skip=true \
         -Danimal.sniffer.skip=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
         -T 1C \
         test
     RETURN_CODE=$?
@@ -74,6 +75,7 @@ case ${JOB_TYPE} in
         -Danimal.sniffer.skip=true \
         -Djacoco.skip=true \
         -DskipUnitTests=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
         -fae \
         -T 1C \
         verify
