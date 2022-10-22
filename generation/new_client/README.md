@@ -84,6 +84,15 @@ At the root of google-cloud-java repository clone, run:
 $ python3.9 -m pip install -r generation/new_client/requirements.txt
 ```
 
+### Install GitHub CLI (Optional)
+
+Install the GitHub CLI and login, if needed:
+
+```
+$ sudo apt-get install gh
+$ gh auth login
+```
+
 ## Run client generation script
 
 You will run new-client.py script with the following parameters.
@@ -146,12 +155,6 @@ Prepared new library in workspace/monorepo/java-apikeys
 Please create a pull request from that directory:
   $ cd /usr/local/google/home/${USER}/google-cloud-java/generation/new_client/workspace/monorepo
   $ gh pr create --title 'feat: [${API_SHORT_NAME}] new module for apikeys'
-```
-
-Install the Github CLI and login, if needed:
-```
-$ sudo apt-get install gh
-$ gh auth login
 ```
 
 Create a pull request from the change.
