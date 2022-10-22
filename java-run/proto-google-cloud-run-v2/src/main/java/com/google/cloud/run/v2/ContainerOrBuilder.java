@@ -455,4 +455,127 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.run.v2.VolumeMount volume_mounts = 8;</code>
    */
   com.google.cloud.run.v2.VolumeMountOrBuilder getVolumeMountsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Container's working directory.
+   * If not specified, the container runtime's default will be used, which
+   * might be configured in the container image.
+   * </pre>
+   *
+   * <code>string working_dir = 9;</code>
+   *
+   * @return The workingDir.
+   */
+  java.lang.String getWorkingDir();
+  /**
+   *
+   *
+   * <pre>
+   * Container's working directory.
+   * If not specified, the container runtime's default will be used, which
+   * might be configured in the container image.
+   * </pre>
+   *
+   * <code>string working_dir = 9;</code>
+   *
+   * @return The bytes for workingDir.
+   */
+  com.google.protobuf.ByteString getWorkingDirBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Periodic probe of container liveness.
+   * Container will be restarted if the probe fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+   *
+   * @return Whether the livenessProbe field is set.
+   */
+  boolean hasLivenessProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Periodic probe of container liveness.
+   * Container will be restarted if the probe fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+   *
+   * @return The livenessProbe.
+   */
+  com.google.cloud.run.v2.Probe getLivenessProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Periodic probe of container liveness.
+   * Container will be restarted if the probe fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+   */
+  com.google.cloud.run.v2.ProbeOrBuilder getLivenessProbeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Startup probe of application within the container.
+   * All other probes are disabled if a startup probe is provided, until it
+   * succeeds. Container will not be added to service endpoints if the probe
+   * fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+   *
+   * @return Whether the startupProbe field is set.
+   */
+  boolean hasStartupProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Startup probe of application within the container.
+   * All other probes are disabled if a startup probe is provided, until it
+   * succeeds. Container will not be added to service endpoints if the probe
+   * fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+   *
+   * @return The startupProbe.
+   */
+  com.google.cloud.run.v2.Probe getStartupProbe();
+  /**
+   *
+   *
+   * <pre>
+   * Startup probe of application within the container.
+   * All other probes are disabled if a startup probe is provided, until it
+   * succeeds. Container will not be added to service endpoints if the probe
+   * fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+   */
+  com.google.cloud.run.v2.ProbeOrBuilder getStartupProbeOrBuilder();
 }

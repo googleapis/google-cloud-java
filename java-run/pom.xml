@@ -50,4 +50,5 @@
     <module>proto-google-cloud-run-v2</module>
     <module>google-cloud-run-bom</module>
   </modules>
-</project>
+
+  </project>
