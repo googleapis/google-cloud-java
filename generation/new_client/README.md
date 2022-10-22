@@ -34,7 +34,15 @@ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer 
 | bash
 ```
 
-Follow the instruction in the output above to append lines in `$HOME/.bashrc`.
+Append the following lines to `$HOME/.bashrc`.
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
 Logout the shell and login again.
 
 Confirm pyenv installation succeeded:
@@ -76,6 +84,15 @@ At the root of google-cloud-java repository clone, run:
 
 ```
 $ python3.9 -m pip install -r generation/new_client/requirements.txt
+```
+
+### Install GitHub CLI (Optional)
+
+Install the GitHub CLI and login, if needed:
+
+```
+$ sudo apt-get install gh
+$ gh auth login
 ```
 
 ## Run client generation script
@@ -126,7 +143,7 @@ $ python3.9 generation/new_client/new-client.py generate \
   --proto-path=google/api/apikeys \
   --name-pretty="API Keys API" \
   --product-docs="https://cloud.google.com/api-keys/" \
-  --api-description="API Keys lets you create and manage your API keys for your projects." \
+  --api-description="API Keys lets you create and manage your API keys for your projects."
 ```
 
 The command creates changes for
