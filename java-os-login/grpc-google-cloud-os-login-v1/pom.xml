@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-os-login-v1</artifactId>
-  <version>2.3.0</version><!-- {x-version-update:grpc-google-cloud-os-login-v1:current} -->
+  <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-login-v1:current} -->
   <name>grpc-google-cloud-os-login-v1</name>
   <description>GRPC library for grpc-google-cloud-os-login-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-os-login-parent</artifactId>
-    <version>2.3.0</version><!-- {x-version-update:google-cloud-os-login:current} -->
+    <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-login:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -38,28 +38,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

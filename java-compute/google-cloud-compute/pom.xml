@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.14.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>jar</packaging>
   <name>Google Compute Engine</name>
   <description>Compute Engine delivers configurable virtual machines running in
@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-compute-parent</artifactId>
-    <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
+    <version>1.14.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute</site.installationModule>
@@ -85,50 +85,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <argLine>@{argLine} -Xmx1024m -XX:MaxPermSize=512m</argLine>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-    <profile>
-      <id>java17</id>
-      <activation>
-        <jdk>[17,)</jdk>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <argLine>@{argLine} -Xmx1024m</argLine>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>

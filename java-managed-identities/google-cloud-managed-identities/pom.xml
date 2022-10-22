@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-managed-identities</artifactId>
-  <version>1.2.0</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+  <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
   <packaging>jar</packaging>
   <name>Google Managed Service for Microsoft Active Directory</name>
   <description>is a highly available, hardened Google Cloud service running actual Microsoft AD that enables you to manage authentication and authorization for your AD-dependent workloads, automate AD server maintenance and security configuration, and connect your on-premises AD domain to the cloud.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-managed-identities-parent</artifactId>
-    <version>1.2.0</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+    <version>1.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-managed-identities</site.installationModule>
@@ -82,28 +82,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

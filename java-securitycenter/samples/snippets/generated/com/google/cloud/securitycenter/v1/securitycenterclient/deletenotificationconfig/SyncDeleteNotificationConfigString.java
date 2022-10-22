@@ -34,7 +34,10 @@ public class SyncDeleteNotificationConfigString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-      String name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString();
+      String name =
+          NotificationConfigName.ofOrganizationNotificationConfigName(
+                  "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+              .toString();
       securityCenterClient.deleteNotificationConfig(name);
     }
   }

@@ -52,6 +52,7 @@
     <module>java-contact-center-insights</module>
     <module>java-containeranalysis</module>
     <module>java-container</module>
+    <module>java-contentwarehouse</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
@@ -65,12 +66,14 @@
     <module>java-deploy</module>
     <module>java-dialogflow-cx</module>
     <module>java-dialogflow</module>
+    <module>java-discoveryengine</module>
     <module>java-distributedcloudedge</module>
     <module>java-dlp</module>
     <module>java-dms</module>
     <module>java-dns</module>
     <module>java-document-ai</module>
     <module>java-domains</module>
+    <module>java-enterpriseknowledgegraph</module>
     <module>java-errorreporting</module>
     <module>java-essential-contacts</module>
     <module>java-eventarc</module>

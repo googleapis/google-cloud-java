@@ -45,6 +45,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     orgPolicyConstraint_ = "";
     auditLogLink_ = "";
     nonCompliantOrgPolicy_ = "";
+    exceptionAuditLogLink_ = "";
   }
 
   @java.lang.Override
@@ -6532,6 +6533,63 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         : acknowledgementTime_;
   }
 
+  public static final int EXCEPTION_AUDIT_LOG_LINK_FIELD_NUMBER = 16;
+  private volatile java.lang.Object exceptionAuditLogLink_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Audit Log link to find business justification provided for violation
+   * exception. Format:
+   * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+   * </pre>
+   *
+   * <code>
+   * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The exceptionAuditLogLink.
+   */
+  @java.lang.Override
+  public java.lang.String getExceptionAuditLogLink() {
+    java.lang.Object ref = exceptionAuditLogLink_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      exceptionAuditLogLink_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Audit Log link to find business justification provided for violation
+   * exception. Format:
+   * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+   * </pre>
+   *
+   * <code>
+   * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for exceptionAuditLogLink.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExceptionAuditLogLinkBytes() {
+    java.lang.Object ref = exceptionAuditLogLink_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      exceptionAuditLogLink_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6586,6 +6644,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(15, getAcknowledgementTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exceptionAuditLogLink_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, exceptionAuditLogLink_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6636,6 +6697,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(15, getAcknowledgementTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(exceptionAuditLogLink_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, exceptionAuditLogLink_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6680,6 +6744,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     if (hasAcknowledgementTime()) {
       if (!getAcknowledgementTime().equals(other.getAcknowledgementTime())) return false;
     }
+    if (!getExceptionAuditLogLink().equals(other.getExceptionAuditLogLink())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6727,6 +6792,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ACKNOWLEDGEMENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getAcknowledgementTime().hashCode();
     }
+    hash = (37 * hash) + EXCEPTION_AUDIT_LOG_LINK_FIELD_NUMBER;
+    hash = (53 * hash) + getExceptionAuditLogLink().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6920,6 +6987,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         acknowledgementTimeBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      exceptionAuditLogLink_ = "";
+
       return this;
     }
 
@@ -6985,6 +7054,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00000001;
       }
+      result.exceptionAuditLogLink_ = exceptionAuditLogLink_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -7079,6 +7149,10 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAcknowledgementTime()) {
         mergeAcknowledgementTime(other.getAcknowledgementTime());
+      }
+      if (!other.getExceptionAuditLogLink().isEmpty()) {
+        exceptionAuditLogLink_ = other.exceptionAuditLogLink_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7185,6 +7259,12 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 122
+            case 130:
+              {
+                exceptionAuditLogLink_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9115,6 +9195,132 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         acknowledgementTime_ = null;
       }
       return acknowledgementTimeBuilder_;
+    }
+
+    private java.lang.Object exceptionAuditLogLink_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Audit Log link to find business justification provided for violation
+     * exception. Format:
+     * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+     * </pre>
+     *
+     * <code>
+     * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The exceptionAuditLogLink.
+     */
+    public java.lang.String getExceptionAuditLogLink() {
+      java.lang.Object ref = exceptionAuditLogLink_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        exceptionAuditLogLink_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Audit Log link to find business justification provided for violation
+     * exception. Format:
+     * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+     * </pre>
+     *
+     * <code>
+     * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for exceptionAuditLogLink.
+     */
+    public com.google.protobuf.ByteString getExceptionAuditLogLinkBytes() {
+      java.lang.Object ref = exceptionAuditLogLink_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        exceptionAuditLogLink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Audit Log link to find business justification provided for violation
+     * exception. Format:
+     * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+     * </pre>
+     *
+     * <code>
+     * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The exceptionAuditLogLink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExceptionAuditLogLink(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      exceptionAuditLogLink_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Audit Log link to find business justification provided for violation
+     * exception. Format:
+     * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+     * </pre>
+     *
+     * <code>
+     * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExceptionAuditLogLink() {
+
+      exceptionAuditLogLink_ = getDefaultInstance().getExceptionAuditLogLink();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. Audit Log link to find business justification provided for violation
+     * exception. Format:
+     * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+     * </pre>
+     *
+     * <code>
+     * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for exceptionAuditLogLink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExceptionAuditLogLinkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      exceptionAuditLogLink_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -127,6 +127,41 @@ public interface AllocationPolicyOrBuilder
    *
    *
    * <pre>
+   * Service account that VMs will run as.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  boolean hasServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Service account that VMs will run as.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+   *
+   * @return The serviceAccount.
+   */
+  com.google.cloud.batch.v1.ServiceAccount getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Service account that VMs will run as.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
+   */
+  com.google.cloud.batch.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Labels applied to all VM instances and other resources
    * created by AllocationPolicy.
    * Labels could be user provided or system generated.

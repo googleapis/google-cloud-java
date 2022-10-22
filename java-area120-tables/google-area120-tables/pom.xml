@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.8.0</version><!-- {x-version-update:google-area120-tables:current} -->
+  <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   <packaging>jar</packaging>
   <name>Google Area 120 Tables</name>
   <description>provides programmatic methods to the Area 120 Tables API.</description>
   <parent>
     <groupId>com.google.area120</groupId>
     <artifactId>google-area120-tables-parent</artifactId>
-    <version>0.8.0</version><!-- {x-version-update:google-area120-tables:current} -->
+    <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   </parent>
   <properties>
     <site.installationModule>google-area120-tables</site.installationModule>
@@ -98,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

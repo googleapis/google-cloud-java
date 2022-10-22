@@ -56,92 +56,6 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private SessionEvent(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userId_ = s;
-              break;
-            }
-          case 26:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sessionId_ = s;
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.Builder subBuilder = null;
-              if (detailCase_ == 5) {
-                subBuilder =
-                    ((com.google.cloud.dataplex.v1.SessionEvent.QueryDetail) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.cloud.dataplex.v1.SessionEvent.QueryDetail) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 5;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.LogsProto
         .internal_static_google_cloud_dataplex_v1_SessionEvent_descriptor;
@@ -181,7 +95,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Event for start of a session.
+     * Event when the session is assigned to a user.
      * </pre>
      *
      * <code>START = 1;</code>
@@ -207,6 +121,17 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>QUERY = 3;</code>
      */
     QUERY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Event for creation of a cluster. It is not yet assigned to a user.
+     * This comes before START in the sequence
+     * </pre>
+     *
+     * <code>CREATE = 4;</code>
+     */
+    CREATE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -224,7 +149,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Event for start of a session.
+     * Event when the session is assigned to a user.
      * </pre>
      *
      * <code>START = 1;</code>
@@ -250,6 +175,17 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>QUERY = 3;</code>
      */
     public static final int QUERY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Event for creation of a cluster. It is not yet assigned to a user.
+     * This comes before START in the sequence
+     * </pre>
+     *
+     * <code>CREATE = 4;</code>
+     */
+    public static final int CREATE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -283,6 +219,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           return STOP;
         case 3:
           return QUERY;
+        case 4:
+          return CREATE;
         default:
           return null;
       }
@@ -511,91 +449,6 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private QueryDetail(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                queryId_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                queryText_ = s;
-                break;
-              }
-            case 24:
-              {
-                int rawValue = input.readEnum();
-
-                engine_ = rawValue;
-                break;
-              }
-            case 34:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (duration_ != null) {
-                  subBuilder = duration_.toBuilder();
-                }
-                duration_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(duration_);
-                  duration_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 40:
-              {
-                resultSizeBytes_ = input.readInt64();
-                break;
-              }
-            case 48:
-              {
-                dataProcessedBytes_ = input.readInt64();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1024,7 +877,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (dataProcessedBytes_ != 0L) {
         output.writeInt64(6, dataProcessedBytes_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1053,7 +906,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (dataProcessedBytes_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, dataProcessedBytes_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1078,7 +931,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (getResultSizeBytes() != other.getResultSizeBytes()) return false;
       if (getDataProcessedBytes() != other.getDataProcessedBytes()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1103,7 +956,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getResultSizeBytes());
       hash = (37 * hash) + DATA_PROCESSED_BYTES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataProcessedBytes());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1235,17 +1088,10 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -1376,7 +1222,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         if (other.getDataProcessedBytes() != 0L) {
           setDataProcessedBytes(other.getDataProcessedBytes());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1391,18 +1237,67 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.SessionEvent.QueryDetail parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  queryId_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  queryText_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 24:
+                {
+                  engine_ = input.readEnum();
+
+                  break;
+                } // case 24
+              case 34:
+                {
+                  input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 34
+              case 40:
+                {
+                  resultSizeBytes_ = input.readInt64();
+
+                  break;
+                } // case 40
+              case 48:
+                {
+                  dataProcessedBytes_ = input.readInt64();
+
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.SessionEvent.QueryDetail) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -2027,7 +1922,19 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new QueryDetail(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -2145,7 +2052,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The information about the user that created the session.
+   * The information about the user that created the session. It will be the
+   * email address of the user.
    * </pre>
    *
    * <code>string user_id = 2;</code>
@@ -2168,7 +2076,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The information about the user that created the session.
+   * The information about the user that created the session. It will be the
+   * email address of the user.
    * </pre>
    *
    * <code>string user_id = 2;</code>
@@ -2326,6 +2235,91 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.SessionEvent.QueryDetail.getDefaultInstance();
   }
 
+  public static final int EVENT_SUCCEEDED_FIELD_NUMBER = 6;
+  private boolean eventSucceeded_;
+  /**
+   *
+   *
+   * <pre>
+   * The status of the event.
+   * </pre>
+   *
+   * <code>bool event_succeeded = 6;</code>
+   *
+   * @return The eventSucceeded.
+   */
+  @java.lang.Override
+  public boolean getEventSucceeded() {
+    return eventSucceeded_;
+  }
+
+  public static final int FAST_STARTUP_ENABLED_FIELD_NUMBER = 7;
+  private boolean fastStartupEnabled_;
+  /**
+   *
+   *
+   * <pre>
+   * If the session is associated with an Environment with fast startup enabled,
+   * and was pre-created before being assigned to a user.
+   * </pre>
+   *
+   * <code>bool fast_startup_enabled = 7;</code>
+   *
+   * @return The fastStartupEnabled.
+   */
+  @java.lang.Override
+  public boolean getFastStartupEnabled() {
+    return fastStartupEnabled_;
+  }
+
+  public static final int UNASSIGNED_DURATION_FIELD_NUMBER = 8;
+  private com.google.protobuf.Duration unassignedDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * The idle duration of a warm pooled session before it is assigned to user.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+   *
+   * @return Whether the unassignedDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnassignedDuration() {
+    return unassignedDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The idle duration of a warm pooled session before it is assigned to user.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+   *
+   * @return The unassignedDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getUnassignedDuration() {
+    return unassignedDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : unassignedDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The idle duration of a warm pooled session before it is assigned to user.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getUnassignedDurationOrBuilder() {
+    return getUnassignedDuration();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2356,7 +2350,16 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     if (detailCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.dataplex.v1.SessionEvent.QueryDetail) detail_);
     }
-    unknownFields.writeTo(output);
+    if (eventSucceeded_ != false) {
+      output.writeBool(6, eventSucceeded_);
+    }
+    if (fastStartupEnabled_ != false) {
+      output.writeBool(7, fastStartupEnabled_);
+    }
+    if (unassignedDuration_ != null) {
+      output.writeMessage(8, getUnassignedDuration());
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -2383,7 +2386,16 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.dataplex.v1.SessionEvent.QueryDetail) detail_);
     }
-    size += unknownFields.getSerializedSize();
+    if (eventSucceeded_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, eventSucceeded_);
+    }
+    if (fastStartupEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, fastStartupEnabled_);
+    }
+    if (unassignedDuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUnassignedDuration());
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -2403,6 +2415,12 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getUserId().equals(other.getUserId())) return false;
     if (!getSessionId().equals(other.getSessionId())) return false;
     if (type_ != other.type_) return false;
+    if (getEventSucceeded() != other.getEventSucceeded()) return false;
+    if (getFastStartupEnabled() != other.getFastStartupEnabled()) return false;
+    if (hasUnassignedDuration() != other.hasUnassignedDuration()) return false;
+    if (hasUnassignedDuration()) {
+      if (!getUnassignedDuration().equals(other.getUnassignedDuration())) return false;
+    }
     if (!getDetailCase().equals(other.getDetailCase())) return false;
     switch (detailCase_) {
       case 5:
@@ -2411,7 +2429,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -2430,6 +2448,14 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSessionId().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + EVENT_SUCCEEDED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEventSucceeded());
+    hash = (37 * hash) + FAST_STARTUP_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFastStartupEnabled());
+    if (hasUnassignedDuration()) {
+      hash = (37 * hash) + UNASSIGNED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getUnassignedDuration().hashCode();
+    }
     switch (detailCase_) {
       case 5:
         hash = (37 * hash) + QUERY_FIELD_NUMBER;
@@ -2438,7 +2464,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -2568,17 +2594,10 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataplex.v1.SessionEvent.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -2592,6 +2611,19 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
 
       type_ = 0;
 
+      if (queryBuilder_ != null) {
+        queryBuilder_.clear();
+      }
+      eventSucceeded_ = false;
+
+      fastStartupEnabled_ = false;
+
+      if (unassignedDurationBuilder_ == null) {
+        unassignedDuration_ = null;
+      } else {
+        unassignedDuration_ = null;
+        unassignedDurationBuilder_ = null;
+      }
       detailCase_ = 0;
       detail_ = null;
       return this;
@@ -2631,6 +2663,13 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.detail_ = queryBuilder_.build();
         }
+      }
+      result.eventSucceeded_ = eventSucceeded_;
+      result.fastStartupEnabled_ = fastStartupEnabled_;
+      if (unassignedDurationBuilder_ == null) {
+        result.unassignedDuration_ = unassignedDuration_;
+      } else {
+        result.unassignedDuration_ = unassignedDurationBuilder_.build();
       }
       result.detailCase_ = detailCase_;
       onBuilt();
@@ -2697,6 +2736,15 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      if (other.getEventSucceeded() != false) {
+        setEventSucceeded(other.getEventSucceeded());
+      }
+      if (other.getFastStartupEnabled() != false) {
+        setFastStartupEnabled(other.getFastStartupEnabled());
+      }
+      if (other.hasUnassignedDuration()) {
+        mergeUnassignedDuration(other.getUnassignedDuration());
+      }
       switch (other.getDetailCase()) {
         case QUERY:
           {
@@ -2708,7 +2756,7 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -2723,17 +2771,80 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataplex.v1.SessionEvent parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                message_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                userId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                sessionId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
+            case 32:
+              {
+                type_ = input.readEnum();
+
+                break;
+              } // case 32
+            case 42:
+              {
+                input.readMessage(getQueryFieldBuilder().getBuilder(), extensionRegistry);
+                detailCase_ = 5;
+                break;
+              } // case 42
+            case 48:
+              {
+                eventSucceeded_ = input.readBool();
+
+                break;
+              } // case 48
+            case 56:
+              {
+                fastStartupEnabled_ = input.readBool();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(
+                    getUnassignedDurationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataplex.v1.SessionEvent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2862,7 +2973,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The information about the user that created the session.
+     * The information about the user that created the session. It will be the
+     * email address of the user.
      * </pre>
      *
      * <code>string user_id = 2;</code>
@@ -2884,7 +2996,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The information about the user that created the session.
+     * The information about the user that created the session. It will be the
+     * email address of the user.
      * </pre>
      *
      * <code>string user_id = 2;</code>
@@ -2906,7 +3019,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The information about the user that created the session.
+     * The information about the user that created the session. It will be the
+     * email address of the user.
      * </pre>
      *
      * <code>string user_id = 2;</code>
@@ -2927,7 +3041,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The information about the user that created the session.
+     * The information about the user that created the session. It will be the
+     * email address of the user.
      * </pre>
      *
      * <code>string user_id = 2;</code>
@@ -2944,7 +3059,8 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The information about the user that created the session.
+     * The information about the user that created the session. It will be the
+     * email address of the user.
      * </pre>
      *
      * <code>string user_id = 2;</code>
@@ -3373,6 +3489,298 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
       return queryBuilder_;
     }
 
+    private boolean eventSucceeded_;
+    /**
+     *
+     *
+     * <pre>
+     * The status of the event.
+     * </pre>
+     *
+     * <code>bool event_succeeded = 6;</code>
+     *
+     * @return The eventSucceeded.
+     */
+    @java.lang.Override
+    public boolean getEventSucceeded() {
+      return eventSucceeded_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of the event.
+     * </pre>
+     *
+     * <code>bool event_succeeded = 6;</code>
+     *
+     * @param value The eventSucceeded to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventSucceeded(boolean value) {
+
+      eventSucceeded_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of the event.
+     * </pre>
+     *
+     * <code>bool event_succeeded = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEventSucceeded() {
+
+      eventSucceeded_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean fastStartupEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * If the session is associated with an Environment with fast startup enabled,
+     * and was pre-created before being assigned to a user.
+     * </pre>
+     *
+     * <code>bool fast_startup_enabled = 7;</code>
+     *
+     * @return The fastStartupEnabled.
+     */
+    @java.lang.Override
+    public boolean getFastStartupEnabled() {
+      return fastStartupEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the session is associated with an Environment with fast startup enabled,
+     * and was pre-created before being assigned to a user.
+     * </pre>
+     *
+     * <code>bool fast_startup_enabled = 7;</code>
+     *
+     * @param value The fastStartupEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFastStartupEnabled(boolean value) {
+
+      fastStartupEnabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the session is associated with an Environment with fast startup enabled,
+     * and was pre-created before being assigned to a user.
+     * </pre>
+     *
+     * <code>bool fast_startup_enabled = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFastStartupEnabled() {
+
+      fastStartupEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration unassignedDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        unassignedDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     *
+     * @return Whether the unassignedDuration field is set.
+     */
+    public boolean hasUnassignedDuration() {
+      return unassignedDurationBuilder_ != null || unassignedDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     *
+     * @return The unassignedDuration.
+     */
+    public com.google.protobuf.Duration getUnassignedDuration() {
+      if (unassignedDurationBuilder_ == null) {
+        return unassignedDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : unassignedDuration_;
+      } else {
+        return unassignedDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    public Builder setUnassignedDuration(com.google.protobuf.Duration value) {
+      if (unassignedDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        unassignedDuration_ = value;
+        onChanged();
+      } else {
+        unassignedDurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    public Builder setUnassignedDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (unassignedDurationBuilder_ == null) {
+        unassignedDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        unassignedDurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    public Builder mergeUnassignedDuration(com.google.protobuf.Duration value) {
+      if (unassignedDurationBuilder_ == null) {
+        if (unassignedDuration_ != null) {
+          unassignedDuration_ =
+              com.google.protobuf.Duration.newBuilder(unassignedDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          unassignedDuration_ = value;
+        }
+        onChanged();
+      } else {
+        unassignedDurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    public Builder clearUnassignedDuration() {
+      if (unassignedDurationBuilder_ == null) {
+        unassignedDuration_ = null;
+        onChanged();
+      } else {
+        unassignedDuration_ = null;
+        unassignedDurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    public com.google.protobuf.Duration.Builder getUnassignedDurationBuilder() {
+
+      onChanged();
+      return getUnassignedDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getUnassignedDurationOrBuilder() {
+      if (unassignedDurationBuilder_ != null) {
+        return unassignedDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return unassignedDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : unassignedDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The idle duration of a warm pooled session before it is assigned to user.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration unassigned_duration = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getUnassignedDurationFieldBuilder() {
+      if (unassignedDurationBuilder_ == null) {
+        unassignedDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getUnassignedDuration(), getParentForChildren(), isClean());
+        unassignedDuration_ = null;
+      }
+      return unassignedDurationBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -3405,7 +3813,18 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SessionEvent(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

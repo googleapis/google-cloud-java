@@ -178,7 +178,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+   * Optional. This field is deprecated and will be removed in future version of the API.
+   * Name of the OrgPolicy which was modified with non-compliant change and
    * resulted in this violation.
    * Format:
    * projects/{project_number}/policies/{constraint_name}
@@ -186,11 +187,17 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
    * organizations/{organization_id}/policies/{constraint_name}
    * </pre>
    *
-   * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated
+   *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+   *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
    * @return The nonCompliantOrgPolicy.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getNonCompliantOrgPolicy() {
     java.lang.Object ref = nonCompliantOrgPolicy_;
     if (ref instanceof java.lang.String) {
@@ -206,7 +213,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+   * Optional. This field is deprecated and will be removed in future version of the API.
+   * Name of the OrgPolicy which was modified with non-compliant change and
    * resulted in this violation.
    * Format:
    * projects/{project_number}/policies/{constraint_name}
@@ -214,11 +222,17 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
    * organizations/{organization_id}/policies/{constraint_name}
    * </pre>
    *
-   * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated
+   *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+   *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
    * @return The bytes for nonCompliantOrgPolicy.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getNonCompliantOrgPolicyBytes() {
     java.lang.Object ref = nonCompliantOrgPolicy_;
     if (ref instanceof java.lang.String) {
@@ -837,7 +851,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+     * Optional. This field is deprecated and will be removed in future version of the API.
+     * Name of the OrgPolicy which was modified with non-compliant change and
      * resulted in this violation.
      * Format:
      * projects/{project_number}/policies/{constraint_name}
@@ -845,10 +860,16 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      * organizations/{organization_id}/policies/{constraint_name}
      * </pre>
      *
-     * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+     *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
      * @return The nonCompliantOrgPolicy.
      */
+    @java.lang.Deprecated
     public java.lang.String getNonCompliantOrgPolicy() {
       java.lang.Object ref = nonCompliantOrgPolicy_;
       if (!(ref instanceof java.lang.String)) {
@@ -864,7 +885,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+     * Optional. This field is deprecated and will be removed in future version of the API.
+     * Name of the OrgPolicy which was modified with non-compliant change and
      * resulted in this violation.
      * Format:
      * projects/{project_number}/policies/{constraint_name}
@@ -872,10 +894,16 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      * organizations/{organization_id}/policies/{constraint_name}
      * </pre>
      *
-     * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+     *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
      * @return The bytes for nonCompliantOrgPolicy.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getNonCompliantOrgPolicyBytes() {
       java.lang.Object ref = nonCompliantOrgPolicy_;
       if (ref instanceof String) {
@@ -891,7 +919,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+     * Optional. This field is deprecated and will be removed in future version of the API.
+     * Name of the OrgPolicy which was modified with non-compliant change and
      * resulted in this violation.
      * Format:
      * projects/{project_number}/policies/{constraint_name}
@@ -899,11 +928,17 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      * organizations/{organization_id}/policies/{constraint_name}
      * </pre>
      *
-     * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+     *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
      * @param value The nonCompliantOrgPolicy to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNonCompliantOrgPolicy(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -917,7 +952,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+     * Optional. This field is deprecated and will be removed in future version of the API.
+     * Name of the OrgPolicy which was modified with non-compliant change and
      * resulted in this violation.
      * Format:
      * projects/{project_number}/policies/{constraint_name}
@@ -925,10 +961,16 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      * organizations/{organization_id}/policies/{constraint_name}
      * </pre>
      *
-     * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+     *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearNonCompliantOrgPolicy() {
 
       nonCompliantOrgPolicy_ = getDefaultInstance().getNonCompliantOrgPolicy();
@@ -939,7 +981,8 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. Name of the OrgPolicy which was modified with non-compliant change and
+     * Optional. This field is deprecated and will be removed in future version of the API.
+     * Name of the OrgPolicy which was modified with non-compliant change and
      * resulted in this violation.
      * Format:
      * projects/{project_number}/policies/{constraint_name}
@@ -947,11 +990,17 @@ public final class AcknowledgeViolationRequest extends com.google.protobuf.Gener
      * organizations/{organization_id}/policies/{constraint_name}
      * </pre>
      *
-     * <code>string non_compliant_org_policy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string non_compliant_org_policy = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest.non_compliant_org_policy is
+     *     deprecated. See google/cloud/assuredworkloads/v1/assuredworkloads.proto;l=584
      * @param value The bytes for nonCompliantOrgPolicy to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNonCompliantOrgPolicyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

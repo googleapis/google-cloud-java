@@ -23,7 +23,7 @@
               "methods": ["createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfigCallable"]
             },
             "CreateNotificationConfig": {
-              "methods": ["createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfigCallable"]
+              "methods": ["createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfigCallable"]
             },
             "CreateSource": {
               "methods": ["createSource", "createSource", "createSource", "createSourceCallable"]
@@ -74,7 +74,7 @@
               "methods": ["listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigsPagedCallable", "listMuteConfigsCallable"]
             },
             "ListNotificationConfigs": {
-              "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
+              "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
             },
             "ListSources": {
               "methods": ["listSources", "listSources", "listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]

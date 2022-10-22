@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform</artifactId>
-  <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+  <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Vertex AI</name>
   <description>Java client for Google Cloud Vertex AI services.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-aiplatform-parent</artifactId>
-    <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+    <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-aiplatform</site.installationModule>
@@ -118,28 +118,4 @@
       <artifactId>protobuf-java-util</artifactId>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

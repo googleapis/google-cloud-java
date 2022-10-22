@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gkehub</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   <packaging>jar</packaging>
   <name>Google GKE Hub API</name>
   <description>provides a unified way to work with Kubernetes clusters as part of Anthos, extending GKE to work in multiple environments. You have consistent, unified, and secure infrastructure, cluster, and container management, whether you're using Anthos on Google Cloud (with traditional GKE), hybrid cloud, or multiple public clouds.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gkehub-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gkehub</site.installationModule>
@@ -146,28 +146,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

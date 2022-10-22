@@ -29,11 +29,13 @@ public interface SpeechToTextConfigOrBuilder
    * <pre>
    * The speech model used in speech to text.
    * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
-   * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest] and
-   * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest] request.
-   * If enhanced model variant is specified and an enhanced
-   * version of the specified model for the language does not exist, then it
-   * would emit an error.
+   * `USE_ENHANCED`. It can be overridden in
+   * [AnalyzeContentRequest][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest]
+   * and
+   * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest]
+   * request. If enhanced model variant is specified and an enhanced version of
+   * the specified model for the language does not exist, then it would emit an
+   * error.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant speech_model_variant = 1;</code>
@@ -47,11 +49,13 @@ public interface SpeechToTextConfigOrBuilder
    * <pre>
    * The speech model used in speech to text.
    * `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
-   * `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest] and
-   * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest] request.
-   * If enhanced model variant is specified and an enhanced
-   * version of the specified model for the language does not exist, then it
-   * would emit an error.
+   * `USE_ENHANCED`. It can be overridden in
+   * [AnalyzeContentRequest][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest]
+   * and
+   * [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest]
+   * request. If enhanced model variant is specified and an enhanced version of
+   * the specified model for the language does not exist, then it would emit an
+   * error.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SpeechModelVariant speech_model_variant = 1;</code>
@@ -59,4 +63,41 @@ public interface SpeechToTextConfigOrBuilder
    * @return The speechModelVariant.
    */
   com.google.cloud.dialogflow.v2beta1.SpeechModelVariant getSpeechModelVariant();
+
+  /**
+   *
+   *
+   * <pre>
+   * Which Speech model to select. Select the model best suited to your domain
+   * to get best results. If a model is not explicitly specified, then a default
+   * model is used.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Which Speech model to select. Select the model best suited to your domain
+   * to get best results. If a model is not explicitly specified, then a default
+   * model is used.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
 }

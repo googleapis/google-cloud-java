@@ -456,4 +456,37 @@ public interface ViolationOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getAcknowledgementTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Audit Log link to find business justification provided for violation
+   * exception. Format:
+   * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+   * </pre>
+   *
+   * <code>
+   * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The exceptionAuditLogLink.
+   */
+  java.lang.String getExceptionAuditLogLink();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. Audit Log link to find business justification provided for violation
+   * exception. Format:
+   * https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+   * </pre>
+   *
+   * <code>
+   * string exception_audit_log_link = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for exceptionAuditLogLink.
+   */
+  com.google.protobuf.ByteString getExceptionAuditLogLinkBytes();
 }

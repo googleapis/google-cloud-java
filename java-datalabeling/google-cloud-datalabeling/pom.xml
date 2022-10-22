@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalabeling</artifactId>
-  <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+  <version>0.124.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Labeling</name>
   <description>Java idiomatic client for Google Cloud Data Labeling</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datalabeling-parent</artifactId>
-    <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+    <version>0.124.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datalabeling</site.installationModule>
@@ -86,28 +86,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

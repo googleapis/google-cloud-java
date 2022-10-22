@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence-bom</artifactId>
-  <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+  <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,70 +23,58 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1p1beta1</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1beta2</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta2:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
+        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1p2beta1</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p2beta1:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1p3beta1</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p3beta1:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1p3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1p3beta1</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p3beta1:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1beta2</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1p1beta1</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p1beta1:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:current} -->
+        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1p2beta1</artifactId>
-        <version>0.93.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p2beta1:current} -->
+        <version>0.93.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p2beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

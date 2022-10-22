@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud POM Parent</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -21,6 +21,7 @@
 
   <properties>
     <skipUnitTests>false</skipUnitTests>
+    <checkstyle.header.file>java.header</checkstyle.header.file>
   </properties>
 
   <developers>
@@ -56,4 +57,33 @@
     </license>
   </licenses>
 
+  <profiles>
+    <profile>
+      <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
+      <id>checkstyle-tests</id>
+      <activation>
+        <jdk>[11,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>checkstyle</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <configuration>
+                  <headerLocation>${checkstyle.header.file}</headerLocation>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

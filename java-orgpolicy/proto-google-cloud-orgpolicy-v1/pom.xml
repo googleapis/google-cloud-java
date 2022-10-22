@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
-  <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
   <name>proto-google-cloud-orgpolicy-v1</name>
   <description>PROTO library for proto-google-cloud-orgpolicy-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-orgpolicy-parent</artifactId>
-    <version>2.4.0</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
+    <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -18,13 +18,4 @@
       <artifactId>protobuf-java</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

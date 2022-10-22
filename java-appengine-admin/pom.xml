@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appengine-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
   <name>Google App Engine Admin API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,37 +29,20 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-appengine-admin</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-appengine-admin-v1</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-appengine-admin-v1:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-appengine-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-appengine-admin-v1</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-appengine-admin-v1:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-appengine-admin-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-appengine-admin</module>

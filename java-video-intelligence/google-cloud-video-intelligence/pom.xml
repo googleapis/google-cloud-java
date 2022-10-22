@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+  <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Video Intelligence</name>
   <description>Java idiomatic client for Google Cloud Video Intelligence</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-intelligence-parent</artifactId>
-    <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-video-intelligence</site.installationModule>
@@ -134,28 +134,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

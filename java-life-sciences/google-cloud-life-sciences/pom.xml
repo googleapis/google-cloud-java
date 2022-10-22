@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-life-sciences</artifactId>
-  <version>0.6.0</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+  <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Life Sciences</name>
   <description>Cloud Life Sciences is a suite of services and tools for managing, processing, and transforming life sciences data.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-life-sciences-parent</artifactId>
-    <version>0.6.0</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
+    <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-life-sciences:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-life-sciences</site.installationModule>
@@ -98,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

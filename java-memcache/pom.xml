@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-memcache-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-memcache:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
   <name>Google Cloud Memcache Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,47 +29,30 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-memcache-v1beta2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-memcache-v1beta2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-memcache-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-memcache-v1beta2</artifactId>
-        <version>0.11.0</version><!-- {x-version-update:grpc-google-cloud-memcache-v1beta2:current} -->
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-memcache-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-memcache-v1</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:proto-google-cloud-memcache-v1:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-memcache-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-memcache-v1</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:grpc-google-cloud-memcache-v1:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-memcache-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-memcache</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-memcache:current} -->
+        <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-memcache</module>

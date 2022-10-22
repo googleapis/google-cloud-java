@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-analytics-data-v1alpha</artifactId>
-  <version>0.15.0</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
+  <version>0.15.1-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
   <name>proto-google-analytics-data-v1alpha</name>
   <description>Proto library for google-analytics-data</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-data-parent</artifactId>
-    <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+    <version>0.15.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -22,13 +22,4 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

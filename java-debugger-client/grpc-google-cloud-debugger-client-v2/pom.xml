@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-debugger-client-v2</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:grpc-google-cloud-debugger-client-v2:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-debugger-client-v2:current} -->
   <name>grpc-google-cloud-debugger-client-v2</name>
   <description>GRPC library for google-cloud-debugger-client</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-debugger-client-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -38,28 +38,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

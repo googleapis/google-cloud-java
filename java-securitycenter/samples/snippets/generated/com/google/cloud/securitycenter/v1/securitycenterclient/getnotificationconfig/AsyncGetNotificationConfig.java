@@ -39,7 +39,9 @@ public class AsyncGetNotificationConfig {
       GetNotificationConfigRequest request =
           GetNotificationConfigRequest.newBuilder()
               .setName(
-                  NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                  NotificationConfigName.ofOrganizationNotificationConfigName(
+                          "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                      .toString())
               .build();
       ApiFuture<NotificationConfig> future =
           securityCenterClient.getNotificationConfigCallable().futureCall(request);

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-config</artifactId>
-  <version>2.6.0</version><!-- {x-version-update:google-cloud-os-config:current} -->
+  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
   <packaging>jar</packaging>
   <name>Google OS Config API</name>
   <description>provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-os-config-parent</artifactId>
-    <version>2.6.0</version><!-- {x-version-update:google-cloud-os-config:current} -->
+    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-os-config</site.installationModule>
@@ -115,28 +115,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

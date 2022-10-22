@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc-metastore-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
   <name>Google Dataproc Metastore Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,57 +29,40 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc-metastore</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-metastore-v1beta</artifactId>
-        <version>0.9.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1beta:current} -->
+        <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-metastore-v1alpha</artifactId>
-        <version>0.9.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1alpha:current} -->
+        <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataproc-metastore-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataproc-metastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1beta</artifactId>
-        <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1beta:current} -->
+        <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1alpha</artifactId>
-        <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
+        <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataproc-metastore-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataproc-metastore-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-dataproc-metastore</module>
