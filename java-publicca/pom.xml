@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-publicca-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-publicca:current} -->
   <name>Google Public Certificate Authority Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-publicca</artifactId>
-        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
+        <version>0.2.0</version><!-- {x-version-update:google-cloud-publicca:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-publicca-v1beta1</artifactId>
-        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-publicca-v1beta1:current} -->
+        <version>0.2.0</version><!-- {x-version-update:grpc-google-cloud-publicca-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-publicca-v1beta1</artifactId>
-        <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-publicca-v1beta1:current} -->
+        <version>0.2.0</version><!-- {x-version-update:proto-google-cloud-publicca-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

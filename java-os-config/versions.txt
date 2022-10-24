@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-os-config:2.6.0:2.6.1-SNAPSHOT
-grpc-google-cloud-os-config-v1:2.6.0:2.6.1-SNAPSHOT
-grpc-google-cloud-os-config-v1beta:2.6.0:2.6.1-SNAPSHOT
-grpc-google-cloud-os-config-v1alpha:2.6.0:2.6.1-SNAPSHOT
-proto-google-cloud-os-config-v1:2.6.0:2.6.1-SNAPSHOT
-proto-google-cloud-os-config-v1alpha:2.6.0:2.6.1-SNAPSHOT
-proto-google-cloud-os-config-v1beta:2.6.0:2.6.1-SNAPSHOT
+google-cloud-os-config:2.7.0:2.7.0
+grpc-google-cloud-os-config-v1:2.7.0:2.7.0
+grpc-google-cloud-os-config-v1beta:2.7.0:2.7.0
+grpc-google-cloud-os-config-v1alpha:2.7.0:2.7.0
+proto-google-cloud-os-config-v1:2.7.0:2.7.0
+proto-google-cloud-os-config-v1alpha:2.7.0:2.7.0
+proto-google-cloud-os-config-v1beta:2.7.0:2.7.0
