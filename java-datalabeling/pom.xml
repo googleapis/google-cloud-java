@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datalabeling-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.90.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+  <version>0.125.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
   <name>Google Cloud Data Labeling Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
