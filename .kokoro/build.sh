@@ -48,11 +48,11 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
 
-      terraform -version
-      source ./.terraform/helpers/init.sh "$module_list"
-      source ./.terraform/helpers/plan.sh
-      source ./.terraform/helpers/apply.sh
-      source ./.terraform/helpers/populate-env.sh
+#      terraform -version
+#      source ./.terraform/helpers/init.sh "$module_list"
+#      source ./.terraform/helpers/plan.sh
+#      source ./.terraform/helpers/apply.sh
+#      source ./.terraform/helpers/populate-env.sh
 
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
@@ -74,7 +74,7 @@ case ${JOB_TYPE} in
         verify
       RETURN_CODE=$?
 
-      source ./.terraform/helpers/destroy.sh
+#      source ./.terraform/helpers/destroy.sh
 
       printf "Finished Integration Tests for:\n%s\n" "${module_list}"
     else
