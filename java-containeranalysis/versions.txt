@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-containeranalysis-v1:2.5.0:2.5.1-SNAPSHOT
-proto-google-cloud-containeranalysis-v1beta1:0.95.0:0.95.1-SNAPSHOT
-grpc-google-cloud-containeranalysis-v1beta1:0.95.0:0.95.1-SNAPSHOT
-grpc-google-cloud-containeranalysis-v1:2.5.0:2.5.1-SNAPSHOT
-google-cloud-containeranalysis:2.5.0:2.5.1-SNAPSHOT
+proto-google-cloud-containeranalysis-v1:2.6.0:2.6.0
+proto-google-cloud-containeranalysis-v1beta1:0.96.0:0.96.0
+grpc-google-cloud-containeranalysis-v1beta1:0.96.0:0.96.0
+grpc-google-cloud-containeranalysis-v1:2.6.0:2.6.0
+google-cloud-containeranalysis:2.6.0:2.6.0

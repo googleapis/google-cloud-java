@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-identity-accesscontextmanager:1.5.0:1.5.1-SNAPSHOT
-grpc-google-identity-accesscontextmanager-v1:1.5.0:1.5.1-SNAPSHOT
-proto-google-identity-accesscontextmanager-v1:1.5.0:1.5.1-SNAPSHOT
-proto-google-identity-accesscontextmanager-type:1.5.0:1.5.1-SNAPSHOT
+google-identity-accesscontextmanager:1.6.0:1.6.0
+grpc-google-identity-accesscontextmanager-v1:1.6.0:1.6.0
+proto-google-identity-accesscontextmanager-v1:1.6.0:1.6.0
+proto-google-identity-accesscontextmanager-type:1.6.0:1.6.0

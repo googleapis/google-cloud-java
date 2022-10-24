@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-recommendations-ai-v1beta1</artifactId>
-  <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
+  <version>0.12.0</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
   <name>proto-google-cloud-recommendations-ai-v1beta1</name>
   <description>PROTO library for proto-google-cloud-recommendations-ai-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recommendations-ai-parent</artifactId>
-    <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+    <version>0.12.0</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
   </parent>
   <dependencies>
     <dependency>

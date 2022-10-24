@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
-  <version>0.94.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
+  <version>0.95.0</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
   <name>grpc-google-cloud-tasks-v2beta2</name>
   <description>GRPC library for grpc-google-cloud-tasks-v2beta2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tasks-parent</artifactId>
-    <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+    <version>2.5.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
   </parent>
   <dependencies>
     <dependency>

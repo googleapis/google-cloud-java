@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+  <version>2.8.0</version><!-- {x-version-update:google-cloud-kms:current} -->
   <name>Google Cloud KMS Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,22 +29,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
-        <version>0.98.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+        <version>0.99.0</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-kms-v1</artifactId>
-        <version>0.98.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
+        <version>0.99.0</version><!-- {x-version-update:grpc-google-cloud-kms-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms</artifactId>
-        <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <version>2.8.0</version><!-- {x-version-update:google-cloud-kms:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms-bom</artifactId>
-        <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms-bom:current} -->
+        <version>2.8.0</version><!-- {x-version-update:google-cloud-kms-bom:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

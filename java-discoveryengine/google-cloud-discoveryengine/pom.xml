@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-discoveryengine</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
   <packaging>jar</packaging>
   <name>Google Discovery Engine API</name>
   <description>Discovery Engine API A Cloud API that offers search and recommendation discoverability for documents from different industry verticals (e.g. media, retail, etc.).</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-discoveryengine-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-discoveryengine</site.installationModule>

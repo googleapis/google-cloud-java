@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-data-fusion-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+  <version>1.5.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
   <name>Google Cloud Data Fusion Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-data-fusion</artifactId>
-        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-data-fusion-v1beta1</artifactId>
-        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-data-fusion-v1beta1:current} -->
+        <version>0.9.0</version><!-- {x-version-update:grpc-google-cloud-data-fusion-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-data-fusion-v1</artifactId>
-        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-data-fusion-v1:current} -->
+        <version>1.5.0</version><!-- {x-version-update:grpc-google-cloud-data-fusion-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-data-fusion-v1beta1</artifactId>
-        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-data-fusion-v1beta1:current} -->
+        <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-data-fusion-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-data-fusion-v1</artifactId>
-        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-data-fusion-v1:current} -->
+        <version>1.5.0</version><!-- {x-version-update:proto-google-cloud-data-fusion-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

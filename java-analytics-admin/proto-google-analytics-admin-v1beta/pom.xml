@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-analytics-admin-v1beta</artifactId>
-  <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
+  <version>0.15.0</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
   <name>proto-google-analytics-admin-v1beta</name>
   <description>Proto library for google-analytics-admin</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
-    <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+    <version>0.15.0</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <dependencies>
     <dependency>

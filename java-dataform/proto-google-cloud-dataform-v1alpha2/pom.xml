@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-dataform-v1alpha2</artifactId>
-  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataform-v1alpha2:current} -->
+  <version>0.4.0</version><!-- {x-version-update:proto-google-cloud-dataform-v1alpha2:current} -->
   <name>proto-google-cloud-dataform-v1alpha2</name>
   <description>Proto library for google-cloud-dataform</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataform-parent</artifactId>
-    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
+    <version>0.4.0</version><!-- {x-version-update:google-cloud-dataform:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-notification</artifactId>
-  <version>0.123.21-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
+  <version>0.123.21-beta</version><!-- {x-version-update:google-cloud-notification:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Pub/Sub Notifications for GCS</name>
   <description>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
   <properties>

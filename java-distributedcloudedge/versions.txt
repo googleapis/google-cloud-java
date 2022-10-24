@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-distributedcloudedge:0.1.0:0.1.1-SNAPSHOT
-proto-google-cloud-distributedcloudedge-v1:0.1.0:0.1.1-SNAPSHOT
-grpc-google-cloud-distributedcloudedge-v1:0.1.0:0.1.1-SNAPSHOT
+google-cloud-distributedcloudedge:0.2.0:0.2.0
+proto-google-cloud-distributedcloudedge-v1:0.2.0:0.2.0
+grpc-google-cloud-distributedcloudedge-v1:0.2.0:0.2.0

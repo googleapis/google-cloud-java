@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-run:0.4.0:0.4.1-SNAPSHOT
-proto-google-cloud-run-v2:0.4.0:0.4.1-SNAPSHOT
-grpc-google-cloud-run-v2:0.4.0:0.4.1-SNAPSHOT
+google-cloud-run:0.5.0:0.5.0
+proto-google-cloud-run-v2:0.5.0:0.5.0
+grpc-google-cloud-run-v2:0.5.0:0.5.0

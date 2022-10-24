@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-retail-v2beta</artifactId>
-  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-retail-v2beta:current} -->
+  <version>2.7.0</version><!-- {x-version-update:grpc-google-cloud-retail-v2beta:current} -->
   <name>grpc-google-cloud-retail-v2beta</name>
   <description>GRPC library for google-cloud-retail</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-retail-parent</artifactId>
-    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-retail:current} -->
+    <version>2.7.0</version><!-- {x-version-update:google-cloud-retail:current} -->
   </parent>
   <dependencies>
     <dependency>
