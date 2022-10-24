@@ -33,7 +33,7 @@ public class PartialListClustersException extends RuntimeException {
    */
   @InternalApi
   public PartialListClustersException(List<String> unavailableZones, List<Cluster> clusters) {
-    super("Failed to list all instances, some zones where unavailable");
+    super("Failed to list all clusters, some zones were unavailable");
     this.unavailableZones = ImmutableList.copyOf(unavailableZones);
     this.clusters = ImmutableList.copyOf(clusters);
   }
