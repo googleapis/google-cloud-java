@@ -34,7 +34,7 @@ jobs:
               --name-pretty="API Keys API" \
               --product-docs="https://cloud.google.com/api-keys/" \
               --api-description="API Keys lets you create and manage your API keys for your projects." \
-              --googleapis-gen-url=https://yoshi-code-bot:${{ secrets.YOSHI_CODE_BOT_TOKEN }}@github.com/googleapis/googleapis-gen.git
+              --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_TOKEN }}@github.com/googleapis/googleapis-gen.git
       - name: Push to branch
         run: |
           git add --all
