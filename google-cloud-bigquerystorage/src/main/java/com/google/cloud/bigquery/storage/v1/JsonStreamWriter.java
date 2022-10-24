@@ -77,7 +77,11 @@ public class JsonStreamWriter implements AutoCloseable {
     this.descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(builder.tableSchema);
 
-    streamWriterBuilder = StreamWriter.newBuilder(builder.streamName);
+    if (builder.client == null) {
+      streamWriterBuilder = StreamWriter.newBuilder(builder.streamName);
+    } else {
+      streamWriterBuilder = StreamWriter.newBuilder(builder.streamName, builder.client);
+    }
     this.protoSchema = ProtoSchemaConverter.convert(this.descriptor);
     this.totalMessageSize = protoSchema.getSerializedSize();
     this.client = builder.client;

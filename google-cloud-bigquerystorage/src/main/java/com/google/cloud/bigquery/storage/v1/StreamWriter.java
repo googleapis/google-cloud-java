@@ -19,7 +19,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auto.value.AutoOneOf;
 import com.google.auto.value.AutoValue;
@@ -276,10 +275,6 @@ public class StreamWriter implements AutoCloseable {
               .setCredentialsProvider(builder.credentialsProvider)
               .setTransportChannelProvider(builder.channelProvider)
               .setEndpoint(builder.endpoint)
-              // (b/185842996): Temporily fix this by explicitly providing the header.
-              .setHeaderProvider(
-                  FixedHeaderProvider.create(
-                      "x-goog-request-params", "write_stream=" + this.streamName))
               .build();
       testOnlyClientCreatedTimes++;
       return BigQueryWriteClient.create(stubSettings);
@@ -391,11 +386,7 @@ public class StreamWriter implements AutoCloseable {
     singleConnectionOrConnectionPool.close(this);
   }
 
-  /**
-   * Constructs a new {@link StreamWriterV2.Builder} using the given stream and client. AppendRows
-   * needs special headers to be added to client, so a passed in client will not work. This should
-   * be used by test only.
-   */
+  /** Constructs a new {@link StreamWriterV2.Builder} using the given stream and client. */
   public static StreamWriter.Builder newBuilder(String streamName, BigQueryWriteClient client) {
     return new StreamWriter.Builder(streamName, client);
   }
