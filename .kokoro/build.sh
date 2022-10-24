@@ -47,6 +47,13 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
+
+      terraform -version
+      source ./.terraform/helpers/init.sh "$module_list"
+      source ./.terraform/helpers/plan.sh
+      source ./.terraform/helpers/apply.sh
+      source ./.terraform/helpers/populate-env.sh
+
       install_modules
       printf "Running Integration Tests for:\n%s\n" "${module_list}"
       mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -66,6 +73,9 @@ case ${JOB_TYPE} in
         -T 1C \
         verify
       RETURN_CODE=$?
+
+      source ./.terraform/helpers/destroy.sh
+
       printf "Finished Integration Tests for:\n%s\n" "${module_list}"
     else
       echo "No Integration Tests to run"
