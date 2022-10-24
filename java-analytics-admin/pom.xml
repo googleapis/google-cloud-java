@@ -4,7 +4,7 @@
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+  <version>0.15.0</version><!-- {x-version-update:google-analytics-admin:current} -->
   <name>Google Analytics Admin Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-admin</artifactId>
-        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+        <version>0.15.0</version><!-- {x-version-update:google-analytics-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-admin-v1beta</artifactId>
-        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
+        <version>0.15.0</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-admin-v1beta</artifactId>
-        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
+        <version>0.15.0</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-admin-v1alpha</artifactId>
-        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1alpha:current} -->
+        <version>0.15.0</version><!-- {x-version-update:proto-google-analytics-admin-v1alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-analytics-admin-v1alpha</artifactId>
-        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
+        <version>0.15.0</version><!-- {x-version-update:grpc-google-analytics-admin-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
