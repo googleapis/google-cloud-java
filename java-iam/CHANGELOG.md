@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.5](https://github.com/googleapis/java-iam/compare/v1.6.4...v1.6.5) (2022-10-24)
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20221016-2.0.0 ([#479](https://github.com/googleapis/java-iam/issues/479)) ([728084c](https://github.com/googleapis/java-iam/commit/728084cba18609a511dd04d67a59a8b0a4c2a63d))
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.12.1 ([#478](https://github.com/googleapis/java-iam/issues/478)) ([94e2ca1](https://github.com/googleapis/java-iam/commit/94e2ca1930ec67bf1d837e044c8a72d64b6eae45))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.5 ([#486](https://github.com/googleapis/java-iam/issues/486)) ([292042e](https://github.com/googleapis/java-iam/commit/292042ea315d3bff5b07e86b73d82fa290364a8a))
+* Update dependency com.google.cloud:google-iam-policy to v1.6.4 ([#475](https://github.com/googleapis/java-iam/issues/475)) ([b86f46c](https://github.com/googleapis/java-iam/commit/b86f46cd9115b5d07d867766e37d402d054768a2))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.8 ([#481](https://github.com/googleapis/java-iam/issues/481)) ([cb74130](https://github.com/googleapis/java-iam/commit/cb741301c1add6eb5e790de44caa7961e2ea055d))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.8 ([#482](https://github.com/googleapis/java-iam/issues/482)) ([176de6c](https://github.com/googleapis/java-iam/commit/176de6cb499db8fde987f69df35038d9872fad25))
+* Update dependency io.grpc:grpc-protobuf to v1.50.0 ([#476](https://github.com/googleapis/java-iam/issues/476)) ([358383f](https://github.com/googleapis/java-iam/commit/358383fef13874226454c05464a615651ec5b0fb))
+* Update dependency io.grpc:grpc-protobuf to v1.50.2 ([#483](https://github.com/googleapis/java-iam/issues/483)) ([3c9999b](https://github.com/googleapis/java-iam/commit/3c9999b9b4daca5aa343005ca89055f7172ba2dc))
+* Update dependency io.grpc:grpc-stub to v1.50.2 ([#477](https://github.com/googleapis/java-iam/issues/477)) ([e2255ec](https://github.com/googleapis/java-iam/commit/e2255ecfe43a7aef250802cd1829771d4b3691d8))
+
 ## [1.6.4](https://github.com/googleapis/java-iam/compare/v1.6.3...v1.6.4) (2022-10-10)
 
 
