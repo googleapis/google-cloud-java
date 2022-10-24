@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.23](https://github.com/googleapis/java-core/compare/v2.8.22...v2.8.23) (2022-10-24)
+
+
+### Dependencies
+
+* Update dependency io.grpc:grpc-bom to v1.50.2 ([#990](https://github.com/googleapis/java-core/issues/990)) ([42b1081](https://github.com/googleapis/java-core/commit/42b108100173041925cc705f596f388bab26d954))
+* Update dependency org.easymock:easymock to v5 ([#980](https://github.com/googleapis/java-core/issues/980)) ([64be350](https://github.com/googleapis/java-core/commit/64be350d3713af1a95ca51997194a15c7292f7ae))
+
 ## [2.8.22](https://github.com/googleapis/java-core/compare/v2.8.21...v2.8.22) (2022-10-19)
 
 
