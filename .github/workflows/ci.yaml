@@ -72,6 +72,16 @@ jobs:
     - run: java -version
     - run: mvn com.coveo:fmt-maven-plugin:check -B -ntp
     - run: mvn checkstyle:check@checkstyle -B -ntp
+  enforcer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+      - run: java -version
+      - run: mvn enforcer:enforce@enforce -T 1C
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:

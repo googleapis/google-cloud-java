@@ -8,6 +8,10 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <properties>
+    <enforcer.skip>true</enforcer.skip>
+  </properties>
+
   <modules>
     <module>gapic-libraries-bom</module>
     <module>google-cloud-jar-parent</module>

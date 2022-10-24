@@ -100,7 +100,7 @@ cp ../../gapic_bom_versions.txt gapic-libraries-bom/versions.txt
 git add --all
 git commit -am 'chore: delete non-auto-generated samples'
 
-../../update_versions.sh
+../../update_versions.sh -s
 ../../apply_current_versions.sh
 
 git add --all
@@ -118,7 +118,7 @@ git add --all
 git commit -am 'chore: remove and disable owlbot postprocessor templates'
 
 for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh ../../set_owlbot_config.sh $F; done
-git commit -am 'chore: set owlbot copy config'
+git commit -am 'chore: set owlbot copy config' --allow-empty
 
 # create a monorepo/diff repo
 cd ..

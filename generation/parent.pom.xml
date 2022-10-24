@@ -8,6 +8,10 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <properties>
+    <enforcer.skip>true</enforcer.skip>
+  </properties>
+
   <modules>
   </modules>
 
