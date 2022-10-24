@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-datastore-admin-v1</artifactId>
-  <version>2.12.3</version><!-- {x-version-update:grpc-google-cloud-datastore-admin-v1:current} -->
+  <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastore-admin-v1:current} -->
   <name>grpc-google-cloud-datastore-admin-v1</name>
   <description>GRPC library for google-cloud-datastore</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore-parent</artifactId>
-    <version>2.12.3</version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </parent>
   <dependencies>
     <dependency>
