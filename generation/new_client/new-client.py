@@ -132,8 +132,8 @@ def generate(
         repo_metadata["requires_billing"] = True
 
     # Initialize workdir
-    workdir = Path(f"{sys.path[0]}/../../java-{output_name}")
-    subprocess.check_call(["rm", "-fr", workdir], cwd="workspace")
+    workdir = Path(f"{sys.path[0]}/../../java-{output_name}").resolve()
+    subprocess.run(["rm", "-fr", workdir])
     print(f"Creating a new module {workdir}")
     os.makedirs(workdir, exist_ok=False)
     # write .repo-metadata.json file
@@ -184,9 +184,9 @@ def generate(
         "--user",
         f"{user}:{group}",
         "-v",
-        f"{workdir.resolve()}:/repo",
+        f"{workdir}:/repo",
         "-v",
-        ""f"{workdir.resolve()}""/gen/googleapis-gen:/googleapis-gen",
+        ""f"{workdir}""/gen/googleapis-gen:/googleapis-gen",
         "-w",
         "/repo",
         "--env", "HOME=/tmp",
