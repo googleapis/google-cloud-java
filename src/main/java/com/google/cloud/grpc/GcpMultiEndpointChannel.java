@@ -38,6 +38,8 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -213,6 +215,27 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         .build();
   }
 
+  private ManagedChannelBuilder<?> channelBuilderForEndpoint(String endpoint) {
+    String serviceAddress;
+    // Assume https by default.
+    int port = 443;
+    try {
+      URL url = new URL(endpoint);
+      serviceAddress = url.getHost();
+      port = url.getPort() < 0 ? url.getDefaultPort() : url.getPort();
+    } catch (MalformedURLException ex) {
+      // When no protocol is specified, fallback to plain host:port parsing.
+      int colon = endpoint.lastIndexOf(':');
+      if (colon < 0) {
+        serviceAddress = endpoint;
+      } else {
+        serviceAddress = endpoint.substring(0, colon);
+        port = Integer.parseInt(endpoint.substring(colon + 1));
+      }
+    }
+    return ManagedChannelBuilder.forAddress(serviceAddress, port);
+  }
+
   /**
    * Update the list of MultiEndpoint configurations.
    *
@@ -270,18 +293,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
           if (options.getChannelCredentials() != null) {
             managedChannelBuilder = Grpc.newChannelBuilder(e, options.getChannelCredentials());
           } else {
-            String serviceAddress;
-            int port;
-            int colon = e.lastIndexOf(':');
-            if (colon < 0) {
-              serviceAddress = e;
-              // Assume https by default.
-              port = 443;
-            } else {
-              serviceAddress = e.substring(0, colon);
-              port = Integer.parseInt(e.substring(colon + 1));
-            }
-            managedChannelBuilder = ManagedChannelBuilder.forAddress(serviceAddress, port);
+            managedChannelBuilder = channelBuilderForEndpoint(e);
           }
           if (options.getChannelConfigurator() != null) {
             managedChannelBuilder = options.getChannelConfigurator().apply(managedChannelBuilder);

@@ -522,7 +522,8 @@ public final class SpannerIntegrationTest {
     // Follower-first multi-endpoint endpoints.
     final List<String> followerEndpoints = new ArrayList<>();
     final String leaderEndpoint = "us-east4.googleapis.com:443";
-    final String followerEndpoint = "us-east1.googleapis.com:443";
+    // Test endpoint with protocol specified.
+    final String followerEndpoint = "https://us-east1.googleapis.com:443";
     leaderEndpoints.add(leaderEndpoint);
     leaderEndpoints.add(followerEndpoint);
     followerEndpoints.add(followerEndpoint);
@@ -677,8 +678,8 @@ public final class SpannerIntegrationTest {
     contextFor.apply("follower").run(readQuery);
     assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
 
-    // Replace leader endpoints.
-    final String newLeaderEndpoint = "us-west1.googleapis.com:443";
+    // Replace leader endpoints. Try endpoint with default port.
+    final String newLeaderEndpoint = "https://us-west1.googleapis.com";
     leaderEndpoints.clear();
     leaderEndpoints.add(newLeaderEndpoint);
     leaderEndpoints.add(followerEndpoint);
