@@ -4,6 +4,7 @@
   ],
   "includePaths": [
     "pom.xml",
+    "google-cloud-pom-parent/pom.xml",
     "google-cloud-jar-parent/pom.xml"
   ]
 }
