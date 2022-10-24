@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-gke-connect-gateway:0.5.0:0.5.1-SNAPSHOT
-grpc-google-cloud-gke-connect-gateway-v1beta1:0.5.0:0.5.1-SNAPSHOT
-proto-google-cloud-gke-connect-gateway-v1beta1:0.5.0:0.5.1-SNAPSHOT
+google-cloud-gke-connect-gateway:0.6.0:0.6.0
+grpc-google-cloud-gke-connect-gateway-v1beta1:0.6.0:0.6.0
+proto-google-cloud-gke-connect-gateway-v1beta1:0.6.0:0.6.0

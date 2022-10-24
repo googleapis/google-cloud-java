@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-ids:1.3.0:1.3.1-SNAPSHOT
-grpc-google-cloud-ids-v1:1.3.0:1.3.1-SNAPSHOT
-proto-google-cloud-ids-v1:1.3.0:1.3.1-SNAPSHOT
+google-cloud-ids:1.4.0:1.4.0
+grpc-google-cloud-ids-v1:1.4.0:1.4.0
+proto-google-cloud-ids-v1:1.4.0:1.4.0
