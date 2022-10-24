@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerymigration-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+  <version>0.8.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
   <name>Google BigQuery Migration Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerymigration</artifactId>
-        <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+        <version>0.8.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerymigration-v2</artifactId>
-        <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2:current} -->
+        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerymigration-v2</artifactId>
-        <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2:current} -->
+        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerymigration-v2alpha</artifactId>
-        <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2alpha:current} -->
+        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-bigquerymigration-v2alpha:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerymigration-v2alpha</artifactId>
-        <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
+        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

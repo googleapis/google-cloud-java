@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-certificate-manager</artifactId>
-  <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-certificate-manager:current} -->
+  <version>0.8.0</version><!-- {x-version-update:google-cloud-certificate-manager:current} -->
   <packaging>jar</packaging>
   <name>Google Certificate Manager</name>
   <description>Certificate Manager lets you acquire and manage TLS (SSL) certificates for use with Cloud Load Balancing.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-certificate-manager-parent</artifactId>
-    <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-certificate-manager:current} -->
+    <version>0.8.0</version><!-- {x-version-update:google-cloud-certificate-manager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-certificate-manager</site.installationModule>
