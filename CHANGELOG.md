@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.3](https://github.com/googleapis/java-datastore/compare/v2.12.2...v2.12.3) (2022-10-24)
+
+
+### Dependencies
+
+* Update dependency org.easymock:easymock to v5.0.1 ([#896](https://github.com/googleapis/java-datastore/issues/896)) ([0382c3d](https://github.com/googleapis/java-datastore/commit/0382c3ddfcf13192e483e371ab470f2dd83607aa))
+
 ## [2.12.2](https://github.com/googleapis/java-datastore/compare/v2.12.1...v2.12.2) (2022-10-21)
 
 
