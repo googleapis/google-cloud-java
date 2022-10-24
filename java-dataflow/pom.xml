@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataflow-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+  <version>0.9.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   <name>Google Dataflow Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataflow</artifactId>
-        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+        <version>0.9.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataflow-v1beta3</artifactId>
-        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataflow-v1beta3:current} -->
+        <version>0.9.0</version><!-- {x-version-update:grpc-google-cloud-dataflow-v1beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataflow-v1beta3</artifactId>
-        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dataflow-v1beta3:current} -->
+        <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-dataflow-v1beta3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
