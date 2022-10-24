@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
   <packaging>jar</packaging>
-  <version>2.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+  <version>2.3.0</version><!-- {x-version-update:google-cloud-dns:current} -->
   <name>Google Cloud DNS Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
