@@ -52,7 +52,12 @@ echo "Version: ${VERSION}"
 
 # Check this BOM against a few java client libraries
 # java-bigquery
-git clone "https://github.com/googleapis/${REPO}.git" --depth=1
+if [ -z "${REPO_TAG}" ]; then
+  git clone "https://github.com/googleapis/${REPO}.git" --depth=1
+else
+  git clone "https://github.com/googleapis/${REPO}.git" --depth=1 --branch "${REPO_TAG}"
+fi
+
 pushd ${REPO}
 
 # replace version
@@ -68,6 +73,22 @@ case ${JOB_TYPE} in
 dependencies)
     .kokoro/dependencies.sh
     RETURN_CODE=$?
+    ;;
+flatten-plugin)
+    # This creates .flattened-pom.xml
+    .kokoro/build.sh
+    pushd google-cloud-*
+    mvn dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
+        | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
+    echo "Diff from the expected file (${EXPECTED_DEPENDENCIES_LIST}):"
+    diff "${scriptDir}/${EXPECTED_DEPENDENCIES_LIST}" .actual-flattened-dependencies-list.txt
+    RETURN_CODE=$?
+    if [ "${RETURN_CODE}" == 0 ]; then
+      echo "No diff."
+    else
+      echo "There was a diff."
+    fi
+    popd
     ;;
 *)
     # This reads the JOB_TYPE environmental variable
