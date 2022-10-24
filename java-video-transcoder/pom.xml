@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-transcoder-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+  <version>1.4.0</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
   <name>Google Video Transcoder Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-transcoder</artifactId>
-        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-transcoder-v1</artifactId>
-        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-video-transcoder-v1:current} -->
+        <version>1.4.0</version><!-- {x-version-update:proto-google-cloud-video-transcoder-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-transcoder-v1</artifactId>
-        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-video-transcoder-v1:current} -->
+        <version>1.4.0</version><!-- {x-version-update:grpc-google-cloud-video-transcoder-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
