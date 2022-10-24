@@ -120,7 +120,7 @@ public interface InputConfigOrBuilder
    * <pre>
    * Optional. Provide the bigquery table containing the previous results if
    * cluster ID stability is desired. Format is
-   * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+   * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
    * </pre>
    *
    * <code>
@@ -136,7 +136,7 @@ public interface InputConfigOrBuilder
    * <pre>
    * Optional. Provide the bigquery table containing the previous results if
    * cluster ID stability is desired. Format is
-   * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+   * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
    * </pre>
    *
    * <code>

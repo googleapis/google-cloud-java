@@ -473,7 +473,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Provide the bigquery table containing the previous results if
    * cluster ID stability is desired. Format is
-   * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+   * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
    * </pre>
    *
    * <code>
@@ -500,7 +500,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Provide the bigquery table containing the previous results if
    * cluster ID stability is desired. Format is
-   * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+   * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
    * </pre>
    *
    * <code>
@@ -1471,7 +1471,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Provide the bigquery table containing the previous results if
      * cluster ID stability is desired. Format is
-     * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+     * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -1497,7 +1497,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Provide the bigquery table containing the previous results if
      * cluster ID stability is desired. Format is
-     * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+     * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -1523,7 +1523,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Provide the bigquery table containing the previous results if
      * cluster ID stability is desired. Format is
-     * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+     * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -1548,7 +1548,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Provide the bigquery table containing the previous results if
      * cluster ID stability is desired. Format is
-     * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+     * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -1569,7 +1569,7 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Provide the bigquery table containing the previous results if
      * cluster ID stability is desired. Format is
-     * “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;".
+     * `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>

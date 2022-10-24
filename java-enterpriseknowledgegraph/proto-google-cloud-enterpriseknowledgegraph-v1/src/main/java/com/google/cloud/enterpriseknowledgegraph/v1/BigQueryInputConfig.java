@@ -74,7 +74,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+   * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+   * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
    * </pre>
    *
    * <code>
@@ -531,7 +531,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+     * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -555,7 +555,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+     * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -579,7 +579,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+     * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -602,7 +602,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+     * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>
@@ -621,7 +621,7 @@ public final class BigQueryInputConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Format is “projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;”.
+     * Required. Format is `projects/&#42;&#47;datasets/&#42;&#47;tables/&#42;`.
      * </pre>
      *
      * <code>

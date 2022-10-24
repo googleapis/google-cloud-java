@@ -76,9 +76,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, separate clusters by their geographic region (from geocoding).
      * Uses the following entity features:
-     *  - schema.org/addressLocality
-     *  - schema.org/addressRegion
-     *  - schema.org/addressCountry
+     * - schema.org/addressLocality
+     * - schema.org/addressRegion
+     * - schema.org/addressCountry
      * Warning: processing will no longer be regionalized!
      * </pre>
      *
@@ -143,9 +143,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If true, separate clusters by their geographic region (from geocoding).
      * Uses the following entity features:
-     *  - schema.org/addressLocality
-     *  - schema.org/addressRegion
-     *  - schema.org/addressCountry
+     * - schema.org/addressLocality
+     * - schema.org/addressRegion
+     * - schema.org/addressCountry
      * Warning: processing will no longer be regionalized!
      * </pre>
      *
@@ -507,9 +507,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If true, separate clusters by their geographic region (from geocoding).
        * Uses the following entity features:
-       *  - schema.org/addressLocality
-       *  - schema.org/addressRegion
-       *  - schema.org/addressCountry
+       * - schema.org/addressLocality
+       * - schema.org/addressRegion
+       * - schema.org/addressCountry
        * Warning: processing will no longer be regionalized!
        * </pre>
        *
@@ -527,9 +527,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If true, separate clusters by their geographic region (from geocoding).
        * Uses the following entity features:
-       *  - schema.org/addressLocality
-       *  - schema.org/addressRegion
-       *  - schema.org/addressCountry
+       * - schema.org/addressLocality
+       * - schema.org/addressRegion
+       * - schema.org/addressCountry
        * Warning: processing will no longer be regionalized!
        * </pre>
        *
@@ -550,9 +550,9 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If true, separate clusters by their geographic region (from geocoding).
        * Uses the following entity features:
-       *  - schema.org/addressLocality
-       *  - schema.org/addressRegion
-       *  - schema.org/addressCountry
+       * - schema.org/addressLocality
+       * - schema.org/addressRegion
+       * - schema.org/addressCountry
        * Warning: processing will no longer be regionalized!
        * </pre>
        *
