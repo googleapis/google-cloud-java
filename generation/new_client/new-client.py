@@ -68,6 +68,7 @@ def main(ctx):
     "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
 )
 @click.option("--library-type", type=str)
+@click.option("--googleapis-gen-url", type=str, default="https://github.com/googleapis/googleapis-gen.git")
 def generate(
     api_shortname,
     name_pretty,
@@ -85,6 +86,7 @@ def generate(
     group_id,
     owlbot_image,
     library_type,
+    googleapis_gen_url,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -175,7 +177,7 @@ def generate(
 
     # run owlbot copy
     print("Cloning googleapis-gen...")
-    subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
+    subprocess.check_call(["git", "clone", googleapis_gen_url, "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
     copy_code_parameters = [
         "docker",
