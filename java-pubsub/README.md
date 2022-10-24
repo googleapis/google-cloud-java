@@ -58,13 +58,13 @@ implementation 'com.google.cloud:google-cloud-pubsub'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-pubsub:1.120.21'
+implementation 'com.google.cloud:google-cloud-pubsub:1.120.22'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.120.21"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "1.120.22"
 ```
 
 ## Authentication
