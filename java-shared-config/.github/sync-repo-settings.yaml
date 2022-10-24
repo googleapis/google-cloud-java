@@ -40,6 +40,7 @@ branchProtectionRules:
     - "dependencies (11, java-spanner)"
     - "dependencies (11, java-storage)"
     - "dependencies (11, java-pubsub)"
+    - "flatten-plugin-check"
     - "build (8, java-trace, test)"
     - "build (8, java-trace, lint)"
     - "build (8, java-trace, clirr)"

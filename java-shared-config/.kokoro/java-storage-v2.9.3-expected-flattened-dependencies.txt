@@ -13,6 +13,7 @@ com.google.cloud:google-cloud-core-http:jar:2.8.0:compile
 com.google.cloud:google-cloud-core:jar:2.8.0:compile
 com.google.code.findbugs:jsr305:jar:3.0.2:compile
 com.google.code.gson:gson:jar:2.9.0:compile
+com.google.errorprone:error_prone_annotations:jar:2.14.0:compile
 com.google.guava:failureaccess:jar:1.0.1:compile
 com.google.guava:guava:jar:31.1-jre:compile
 com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
