@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-network-security-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.8.0</version><!-- {x-version-update:google-cloud-network-security:current} -->
+  <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
   <name>Google Network Security API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-network-security</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:google-cloud-network-security:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-network-security-v1</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-network-security-v1:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-network-security-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-network-security-v1</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-network-security-v1:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-security-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-network-security-v1beta1</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-network-security-v1beta1:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-security-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-network-security-v1beta1</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-network-security-v1beta1:current} -->
+        <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-network-security-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
