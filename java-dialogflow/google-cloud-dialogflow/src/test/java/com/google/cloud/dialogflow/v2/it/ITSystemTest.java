@@ -76,7 +76,7 @@ public class ITSystemTest {
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final ProjectName PROJECT_NAME = ProjectName.of(PROJECT_ID);
   private static final ProjectAgentName PROJECT_AGENT_NAME = ProjectAgentName.of(PROJECT_ID);
-  private static final String DEFAULT_DISPLAY_NAME = "google-cloud-java-tests";
+  private static final String DEFAULT_DISPLAY_NAME = "google-cloud-java-tests-3b2d2e";
   private static final String DISPLAY_NAME =
       System.getProperty("dialogflow.agent", DEFAULT_DISPLAY_NAME);
   private static final String TIME_ZONE = "America/Los_Angeles";
@@ -184,7 +184,6 @@ public class ITSystemTest {
     SearchAgentsRequest request =
         SearchAgentsRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
     for (Agent actualAgent : agentsClient.searchAgents(request).iterateAll()) {
-      System.out.println("Agent display name: " + actualAgent.getDisplayName());
       assertEquals(PROJECT_NAME.toString(), actualAgent.getParent());
       assertEquals(DISPLAY_NAME, actualAgent.getDisplayName());
       assertEquals(DEFAULT_LANGUAGE_CODE, actualAgent.getDefaultLanguageCode());
@@ -200,7 +199,6 @@ public class ITSystemTest {
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
     Agent actualAgent = agentsClient.getAgent(request);
-    System.out.println("Agent display name: " + actualAgent.getDisplayName());
     assertEquals(PROJECT_NAME.toString(), actualAgent.getParent());
     assertEquals(DISPLAY_NAME, actualAgent.getDisplayName());
     assertEquals(DEFAULT_LANGUAGE_CODE, actualAgent.getDefaultLanguageCode());
