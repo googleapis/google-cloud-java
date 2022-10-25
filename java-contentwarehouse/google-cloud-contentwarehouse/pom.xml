@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contentwarehouse</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
+  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
   <packaging>jar</packaging>
   <name>Google Document AI Warehouse</name>
   <description>Document AI Warehouse Document AI Warehouse is an integrated cloud-native GCP platform to store, search, organize, govern and analyze documents and their structured metadata.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contentwarehouse-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
+    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-contentwarehouse</site.installationModule>
