@@ -700,7 +700,10 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. To clear fields in the
+   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *
@@ -743,7 +746,10 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. To clear fields in the
+   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *
@@ -779,7 +785,10 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. To clear fields in the
+   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *
@@ -813,7 +822,10 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. To clear fields in the
+   * rule, leave the fields empty and specify them in the updateMask. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *

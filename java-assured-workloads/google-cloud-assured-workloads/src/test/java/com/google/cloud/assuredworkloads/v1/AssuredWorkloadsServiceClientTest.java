@@ -666,6 +666,7 @@ public class AssuredWorkloadsServiceClientTest {
             .setRemediation(Violation.Remediation.newBuilder().build())
             .setAcknowledged(true)
             .setAcknowledgementTime(Timestamp.newBuilder().build())
+            .setExceptionAuditLogLink("exceptionAuditLogLink814000882")
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 
@@ -719,6 +720,7 @@ public class AssuredWorkloadsServiceClientTest {
             .setRemediation(Violation.Remediation.newBuilder().build())
             .setAcknowledged(true)
             .setAcknowledgementTime(Timestamp.newBuilder().build())
+            .setExceptionAuditLogLink("exceptionAuditLogLink814000882")
             .build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
 

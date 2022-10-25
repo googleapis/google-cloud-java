@@ -326,7 +326,8 @@ public final class WebRiskServiceGrpc {
      * content, the site will be added to the [Google's Social Engineering
      * lists](https://support.google.com/webmasters/answer/6350487/) in order to
      * protect users that could get exposed to this threat in the future. Only
-     * projects with CREATE_SUBMISSION_USERS visibility can use this method.
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
      * </pre>
      */
     public void createSubmission(
@@ -456,7 +457,8 @@ public final class WebRiskServiceGrpc {
      * content, the site will be added to the [Google's Social Engineering
      * lists](https://support.google.com/webmasters/answer/6350487/) in order to
      * protect users that could get exposed to this threat in the future. Only
-     * projects with CREATE_SUBMISSION_USERS visibility can use this method.
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
      * </pre>
      */
     public void createSubmission(
@@ -550,7 +552,8 @@ public final class WebRiskServiceGrpc {
      * content, the site will be added to the [Google's Social Engineering
      * lists](https://support.google.com/webmasters/answer/6350487/) in order to
      * protect users that could get exposed to this threat in the future. Only
-     * projects with CREATE_SUBMISSION_USERS visibility can use this method.
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
      * </pre>
      */
     public com.google.webrisk.v1.Submission createSubmission(
@@ -644,7 +647,8 @@ public final class WebRiskServiceGrpc {
      * content, the site will be added to the [Google's Social Engineering
      * lists](https://support.google.com/webmasters/answer/6350487/) in order to
      * protect users that could get exposed to this threat in the future. Only
-     * projects with CREATE_SUBMISSION_USERS visibility can use this method.
+     * allowlisted projects can use this method during Early Access. Please reach
+     * out to Sales or your customer engineer to obtain access.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.webrisk.v1.Submission>

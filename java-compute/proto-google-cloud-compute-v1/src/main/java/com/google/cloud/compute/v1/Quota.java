@@ -340,6 +340,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     STATIC_ADDRESSES(93624049),
     /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
     STATIC_BYOIP_ADDRESSES(275809649),
+    /** <code>STATIC_EXTERNAL_IPV6_ADDRESS_RANGES = 472346774;</code> */
+    STATIC_EXTERNAL_IPV6_ADDRESS_RANGES(472346774),
     /** <code>SUBNETWORKS = 421330469;</code> */
     SUBNETWORKS(421330469),
     /** <code>T2A_CPUS = 522170599;</code> */
@@ -634,6 +636,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int STATIC_ADDRESSES_VALUE = 93624049;
     /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
     public static final int STATIC_BYOIP_ADDRESSES_VALUE = 275809649;
+    /** <code>STATIC_EXTERNAL_IPV6_ADDRESS_RANGES = 472346774;</code> */
+    public static final int STATIC_EXTERNAL_IPV6_ADDRESS_RANGES_VALUE = 472346774;
     /** <code>SUBNETWORKS = 421330469;</code> */
     public static final int SUBNETWORKS_VALUE = 421330469;
     /** <code>T2A_CPUS = 522170599;</code> */
@@ -925,6 +929,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return STATIC_ADDRESSES;
         case 275809649:
           return STATIC_BYOIP_ADDRESSES;
+        case 472346774:
+          return STATIC_EXTERNAL_IPV6_ADDRESS_RANGES;
         case 421330469:
           return SUBNETWORKS;
         case 522170599:

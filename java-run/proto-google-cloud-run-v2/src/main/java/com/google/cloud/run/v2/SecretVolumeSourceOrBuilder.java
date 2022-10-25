@@ -130,7 +130,7 @@ public interface SecretVolumeSourceOrBuilder
    *
    * <pre>
    * Integer representation of mode bits to use on created files by default.
-   * Must be a value between 0000 and 0777 (octal), defaulting to 0644.
+   * Must be a value between 0000 and 0777 (octal), defaulting to 0444.
    * Directories within the path are not affected by  this setting.
    * Notes
    * * Internally, a umask of 0222 will be applied to any non-zero value.

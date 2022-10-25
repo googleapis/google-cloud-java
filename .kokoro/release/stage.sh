@@ -16,7 +16,8 @@
 set -eo pipefail
 
 # Start the releasetool reporter
-python3 -m pip install gcp-releasetool
+requirementsFile=$(realpath $(dirname "$0")/../../)/.kokoro/requirements.txt
+python3 -m pip install --require-hashes -r $requirementsFile
 python3 -m releasetool publish-reporter-script > /tmp/publisher-script; source /tmp/publisher-script
 
 source $(dirname "$0")/common.sh

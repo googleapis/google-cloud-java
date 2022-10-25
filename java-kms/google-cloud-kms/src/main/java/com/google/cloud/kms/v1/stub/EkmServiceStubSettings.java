@@ -17,6 +17,7 @@
 package com.google.cloud.kms.v1.stub;
 
 import static com.google.cloud.kms.v1.EkmServiceClient.ListEkmConnectionsPagedResponse;
+import static com.google.cloud.kms.v1.EkmServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -49,6 +50,10 @@ import com.google.cloud.kms.v1.GetEkmConnectionRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -113,6 +118,10 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
       createEkmConnectionSettings;
   private final UnaryCallSettings<UpdateEkmConnectionRequest, EkmConnection>
       updateEkmConnectionSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -158,6 +167,42 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListEkmConnectionsRequest, ListEkmConnectionsResponse, ListEkmConnectionsPagedResponse>
       LIST_EKM_CONNECTIONS_PAGE_STR_FACT =
@@ -176,6 +221,23 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
                       PageContext.create(
                           callable, LIST_EKM_CONNECTIONS_PAGE_STR_DESC, request, context);
               return ListEkmConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -201,6 +263,17 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
   public UnaryCallSettings<UpdateEkmConnectionRequest, EkmConnection>
       updateEkmConnectionSettings() {
     return updateEkmConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -329,6 +402,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     getEkmConnectionSettings = settingsBuilder.getEkmConnectionSettings().build();
     createEkmConnectionSettings = settingsBuilder.createEkmConnectionSettings().build();
     updateEkmConnectionSettings = settingsBuilder.updateEkmConnectionSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -346,6 +421,10 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
         createEkmConnectionSettings;
     private final UnaryCallSettings.Builder<UpdateEkmConnectionRequest, EkmConnection>
         updateEkmConnectionSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -361,6 +440,7 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -380,6 +460,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -394,6 +476,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
       getEkmConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEkmConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEkmConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -404,6 +488,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
               getEkmConnectionSettings,
               createEkmConnectionSettings,
               updateEkmConnectionSettings,
+              listLocationsSettings,
+              getLocationSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -417,6 +503,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
       getEkmConnectionSettings = settings.getEkmConnectionSettings.toBuilder();
       createEkmConnectionSettings = settings.createEkmConnectionSettings.toBuilder();
       updateEkmConnectionSettings = settings.updateEkmConnectionSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -427,6 +515,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
               getEkmConnectionSettings,
               createEkmConnectionSettings,
               updateEkmConnectionSettings,
+              listLocationsSettings,
+              getLocationSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -478,6 +568,16 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
           .updateEkmConnectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .setIamPolicySettings()
@@ -535,6 +635,18 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     public UnaryCallSettings.Builder<UpdateEkmConnectionRequest, EkmConnection>
         updateEkmConnectionSettings() {
       return updateEkmConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

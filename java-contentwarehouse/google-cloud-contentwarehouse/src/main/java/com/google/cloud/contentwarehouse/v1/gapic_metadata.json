@@ -1,0 +1,132 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.contentwarehouse.v1",
+  "libraryPackage": "com.google.cloud.contentwarehouse.v1",
+  "services": {
+    "DocumentLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentLinkServiceClient",
+          "rpcs": {
+            "CreateDocumentLink": {
+              "methods": ["createDocumentLink", "createDocumentLink", "createDocumentLink", "createDocumentLinkCallable"]
+            },
+            "DeleteDocumentLink": {
+              "methods": ["deleteDocumentLink", "deleteDocumentLink", "deleteDocumentLink", "deleteDocumentLinkCallable"]
+            },
+            "ListLinkedSources": {
+              "methods": ["listLinkedSources", "listLinkedSources", "listLinkedSources", "listLinkedSourcesPagedCallable", "listLinkedSourcesCallable"]
+            },
+            "ListLinkedTargets": {
+              "methods": ["listLinkedTargets", "listLinkedTargets", "listLinkedTargets", "listLinkedTargetsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DocumentSchemaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentSchemaServiceClient",
+          "rpcs": {
+            "CreateDocumentSchema": {
+              "methods": ["createDocumentSchema", "createDocumentSchema", "createDocumentSchema", "createDocumentSchemaCallable"]
+            },
+            "DeleteDocumentSchema": {
+              "methods": ["deleteDocumentSchema", "deleteDocumentSchema", "deleteDocumentSchema", "deleteDocumentSchemaCallable"]
+            },
+            "GetDocumentSchema": {
+              "methods": ["getDocumentSchema", "getDocumentSchema", "getDocumentSchema", "getDocumentSchemaCallable"]
+            },
+            "ListDocumentSchemas": {
+              "methods": ["listDocumentSchemas", "listDocumentSchemas", "listDocumentSchemas", "listDocumentSchemasPagedCallable", "listDocumentSchemasCallable"]
+            },
+            "UpdateDocumentSchema": {
+              "methods": ["updateDocumentSchema", "updateDocumentSchema", "updateDocumentSchema", "updateDocumentSchemaCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DocumentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentServiceClient",
+          "rpcs": {
+            "CreateDocument": {
+              "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
+            },
+            "DeleteDocument": {
+              "methods": ["deleteDocument", "deleteDocument", "deleteDocument", "deleteDocumentCallable"]
+            },
+            "FetchAcl": {
+              "methods": ["fetchAcl", "fetchAcl", "fetchAclCallable"]
+            },
+            "GetDocument": {
+              "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
+            },
+            "SearchDocuments": {
+              "methods": ["searchDocuments", "searchDocuments", "searchDocuments", "searchDocumentsPagedCallable", "searchDocumentsCallable"]
+            },
+            "SetAcl": {
+              "methods": ["setAcl", "setAcl", "setAclCallable"]
+            },
+            "UpdateDocument": {
+              "methods": ["updateDocument", "updateDocument", "updateDocument", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RuleSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RuleSetServiceClient",
+          "rpcs": {
+            "CreateRuleSet": {
+              "methods": ["createRuleSet", "createRuleSet", "createRuleSet", "createRuleSetCallable"]
+            },
+            "DeleteRuleSet": {
+              "methods": ["deleteRuleSet", "deleteRuleSet", "deleteRuleSet", "deleteRuleSetCallable"]
+            },
+            "GetRuleSet": {
+              "methods": ["getRuleSet", "getRuleSet", "getRuleSet", "getRuleSetCallable"]
+            },
+            "ListRuleSets": {
+              "methods": ["listRuleSets", "listRuleSets", "listRuleSets", "listRuleSetsPagedCallable", "listRuleSetsCallable"]
+            },
+            "UpdateRuleSet": {
+              "methods": ["updateRuleSet", "updateRuleSet", "updateRuleSet", "updateRuleSetCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SynonymSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SynonymSetServiceClient",
+          "rpcs": {
+            "CreateSynonymSet": {
+              "methods": ["createSynonymSet", "createSynonymSet", "createSynonymSet", "createSynonymSetCallable"]
+            },
+            "DeleteSynonymSet": {
+              "methods": ["deleteSynonymSet", "deleteSynonymSet", "deleteSynonymSet", "deleteSynonymSetCallable"]
+            },
+            "GetSynonymSet": {
+              "methods": ["getSynonymSet", "getSynonymSet", "getSynonymSet", "getSynonymSetCallable"]
+            },
+            "ListSynonymSets": {
+              "methods": ["listSynonymSets", "listSynonymSets", "listSynonymSets", "listSynonymSetsPagedCallable", "listSynonymSetsCallable"]
+            },
+            "UpdateSynonymSet": {
+              "methods": ["updateSynonymSet", "updateSynonymSet", "updateSynonymSet", "updateSynonymSetCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

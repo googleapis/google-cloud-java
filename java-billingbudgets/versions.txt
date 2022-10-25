@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-billingbudgets:2.4.0:2.4.0
-grpc-google-cloud-billingbudgets-v1beta1:0.13.0:0.13.0
-grpc-google-cloud-billingbudgets-v1:2.4.0:2.4.0
-proto-google-cloud-billingbudgets-v1beta1:0.13.0:0.13.0
-proto-google-cloud-billingbudgets-v1:2.4.0:2.4.0
+google-cloud-billingbudgets:2.5.0:2.5.0
+grpc-google-cloud-billingbudgets-v1beta1:0.14.0:0.14.0
+grpc-google-cloud-billingbudgets-v1:2.5.0:2.5.0
+proto-google-cloud-billingbudgets-v1beta1:0.14.0:0.14.0
+proto-google-cloud-billingbudgets-v1:2.5.0:2.5.0

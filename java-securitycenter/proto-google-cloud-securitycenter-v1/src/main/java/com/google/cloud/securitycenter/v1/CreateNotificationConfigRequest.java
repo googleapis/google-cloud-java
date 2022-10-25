@@ -75,8 +75,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of the new notification config's parent. Its format is
-   * "organizations/[organization_id]".
+   * Required. Resource name of the new notification config's parent. Its format
+   * is "organizations/[organization_id]", "folders/[folder_id]", or
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -101,8 +102,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of the new notification config's parent. Its format is
-   * "organizations/[organization_id]".
+   * Required. Resource name of the new notification config's parent. Its format
+   * is "organizations/[organization_id]", "folders/[folder_id]", or
+   * "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -185,8 +187,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The notification config being created. The name and the service account
-   * will be ignored as they are both output only fields on this resource.
+   * Required. The notification config being created. The name and the service
+   * account will be ignored as they are both output only fields on this
+   * resource.
    * </pre>
    *
    * <code>
@@ -203,8 +206,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The notification config being created. The name and the service account
-   * will be ignored as they are both output only fields on this resource.
+   * Required. The notification config being created. The name and the service
+   * account will be ignored as they are both output only fields on this
+   * resource.
    * </pre>
    *
    * <code>
@@ -223,8 +227,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The notification config being created. The name and the service account
-   * will be ignored as they are both output only fields on this resource.
+   * Required. The notification config being created. The name and the service
+   * account will be ignored as they are both output only fields on this
+   * resource.
    * </pre>
    *
    * <code>
@@ -637,8 +642,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format is
-     * "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format
+     * is "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -662,8 +668,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format is
-     * "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format
+     * is "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -687,8 +694,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format is
-     * "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format
+     * is "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -711,8 +719,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format is
-     * "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format
+     * is "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -731,8 +740,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format is
-     * "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format
+     * is "organizations/[organization_id]", "folders/[folder_id]", or
+     * "projects/[project_id]".
      * </pre>
      *
      * <code>
@@ -884,8 +894,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -901,8 +912,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -924,8 +936,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -950,8 +963,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -973,8 +987,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -1003,8 +1018,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -1026,8 +1042,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -1044,8 +1061,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>
@@ -1066,8 +1084,9 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The notification config being created. The name and the service account
-     * will be ignored as they are both output only fields on this resource.
+     * Required. The notification config being created. The name and the service
+     * account will be ignored as they are both output only fields on this
+     * resource.
      * </pre>
      *
      * <code>

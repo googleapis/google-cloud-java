@@ -17,6 +17,7 @@
 package com.google.cloud.kms.v1;
 
 import static com.google.cloud.kms.v1.EkmServiceClient.ListEkmConnectionsPagedResponse;
+import static com.google.cloud.kms.v1.EkmServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.kms.v1.stub.EkmServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -98,6 +103,17 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
   public UnaryCallSettings<UpdateEkmConnectionRequest, EkmConnection>
       updateEkmConnectionSettings() {
     return ((EkmServiceStubSettings) getStubSettings()).updateEkmConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((EkmServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((EkmServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -253,6 +269,18 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
     public UnaryCallSettings.Builder<UpdateEkmConnectionRequest, EkmConnection>
         updateEkmConnectionSettings() {
       return getStubSettingsBuilder().updateEkmConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

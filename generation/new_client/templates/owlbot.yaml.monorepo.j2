@@ -29,3 +29,5 @@ deep-copy-regex:
 - source: "/{{ proto_path }}/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/{{ module_name }}/$1/{{ artifact_name }}/src"
 {% endif %}
+
+api-name: {{ module_name }}

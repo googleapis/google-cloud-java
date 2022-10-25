@@ -21,6 +21,8 @@ Install Docker.
 
 ```
 $ git clone https://github.com/googleapis/google-cloud-java
+$ git checkout main
+$ git pull
 ```
 
 ### Install pyenv
@@ -32,7 +34,15 @@ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer 
 | bash
 ```
 
-Follow the instruction in the output above to append lines in `$HOME/.bashrc`.
+Append the following lines to `$HOME/.bashrc`.
+
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
 Logout the shell and login again.
 
 Confirm pyenv installation succeeded:
@@ -74,6 +84,15 @@ At the root of google-cloud-java repository clone, run:
 
 ```
 $ python3.9 -m pip install -r generation/new_client/requirements.txt
+```
+
+### Install GitHub CLI (Optional)
+
+Install the GitHub CLI and login, if needed:
+
+```
+$ sudo apt-get install gh
+$ gh auth login
 ```
 
 ## Run client generation script
@@ -119,24 +138,24 @@ document above.
 Run `new-client.py` with the arguments above:
 
 ```
-$ cd generation/new_client
-$ python3.9 new-client.py generate \
+$ python3.9 generation/new_client/new-client.py generate \
   --api_shortname=apikeys \
   --proto-path=google/api/apikeys \
   --name-pretty="API Keys API" \
   --product-docs="https://cloud.google.com/api-keys/" \
-  --api-description="API Keys lets you create and manage your API keys for your projects." \
+  --api-description="API Keys lets you create and manage your API keys for your projects."
 ```
 
-The command creates `workspace` directory in which it prepares the changes for
+The command creates changes for
 the new module in the monorepo. At the end (~ 10 minutes), it tells you to
 create a pull request in the monorepo:
 
 ```
 ...
-Prepared new library in workspace/monorepo/java-apikeys
-Please create a pull request from that directory:
-  $ cd /usr/local/google/home/suztomo/google-cloud-java/generation/new_client/workspace/monorepo
+Please create a pull request:
+  $ git checkout -b new_module_java-discoveryengine
+  $ git add .
+  $ git commit -m 'feat: [apikeys] new module for apikeys'
   $ gh pr create --title 'feat: [apikeys] new module for apikeys'
 ```
 

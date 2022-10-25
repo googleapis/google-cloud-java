@@ -1279,6 +1279,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>NON_ZERO_EXIT_CODE = 2;</code>
      */
     NON_ZERO_EXIT_CODE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The execution was cancelled by users.
+     * </pre>
+     *
+     * <code>CANCELLED = 3;</code>
+     */
+    CANCELLED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -1313,6 +1323,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>NON_ZERO_EXIT_CODE = 2;</code>
      */
     public static final int NON_ZERO_EXIT_CODE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The execution was cancelled by users.
+     * </pre>
+     *
+     * <code>CANCELLED = 3;</code>
+     */
+    public static final int CANCELLED_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1344,6 +1364,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return JOB_STATUS_SERVICE_POLLING_ERROR;
         case 2:
           return NON_ZERO_EXIT_CODE;
+        case 3:
+          return CANCELLED;
         default:
           return null;
       }

@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-dms:2.3.0:2.3.0
-grpc-google-cloud-dms-v1:2.3.0:2.3.0
-proto-google-cloud-dms-v1:2.3.0:2.3.0
+google-cloud-dms:2.4.0:2.4.0
+grpc-google-cloud-dms-v1:2.4.0:2.4.0
+proto-google-cloud-dms-v1:2.4.0:2.4.0

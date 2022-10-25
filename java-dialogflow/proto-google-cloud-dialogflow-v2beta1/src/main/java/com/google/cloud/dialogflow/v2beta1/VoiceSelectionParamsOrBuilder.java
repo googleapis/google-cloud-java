@@ -62,9 +62,10 @@ public interface VoiceSelectionParamsOrBuilder
    * <pre>
    * Optional. The preferred gender of the voice. If not set, the service will
    * choose a voice based on the other parameters such as language_code and
-   * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
-   * voice of the appropriate gender is not available, the synthesizer should
-   * substitute a voice with a different gender rather than failing the request.
+   * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note
+   * that this is only a preference, not requirement. If a voice of the
+   * appropriate gender is not available, the synthesizer should substitute a
+   * voice with a different gender rather than failing the request.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2;</code>
@@ -78,9 +79,10 @@ public interface VoiceSelectionParamsOrBuilder
    * <pre>
    * Optional. The preferred gender of the voice. If not set, the service will
    * choose a voice based on the other parameters such as language_code and
-   * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note that this is only a preference, not requirement. If a
-   * voice of the appropriate gender is not available, the synthesizer should
-   * substitute a voice with a different gender rather than failing the request.
+   * [name][google.cloud.dialogflow.v2beta1.VoiceSelectionParams.name]. Note
+   * that this is only a preference, not requirement. If a voice of the
+   * appropriate gender is not available, the synthesizer should substitute a
+   * voice with a different gender rather than failing the request.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SsmlVoiceGender ssml_gender = 2;</code>

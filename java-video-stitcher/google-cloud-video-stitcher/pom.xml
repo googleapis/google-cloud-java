@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-stitcher</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
+  <version>0.5.0</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
   <packaging>jar</packaging>
   <name>Google Video Stitcher API</name>
   <description>Video Stitcher API allows you to manipulate video content to dynamically insert ads prior to delivery to client devices.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-stitcher-parent</artifactId>
-    <version>0.4.0</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
+    <version>0.5.0</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-video-stitcher</site.installationModule>
@@ -82,28 +82,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

@@ -74,8 +74,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should be
-   * "organizations/[organization_id], folders/[folder_id], or
+   * Required. Resource name of the parent of sources to list. Its format should
+   * be "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
    *
@@ -101,8 +101,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should be
-   * "organizations/[organization_id], folders/[folder_id], or
+   * Required. Resource name of the parent of sources to list. Its format should
+   * be "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
    *
@@ -576,8 +576,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -602,8 +602,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -628,8 +628,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -653,8 +653,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -674,8 +674,8 @@ public final class ListSourcesRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *

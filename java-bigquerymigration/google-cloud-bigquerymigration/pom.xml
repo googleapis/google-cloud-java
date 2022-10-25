@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerymigration</artifactId>
-  <version>0.7.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+  <version>0.8.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
   <packaging>jar</packaging>
   <name>Google BigQuery Migration</name>
   <description>BigQuery Migration BigQuery Migration API</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerymigration-parent</artifactId>
-    <version>0.7.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+    <version>0.8.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerymigration</site.installationModule>
@@ -107,28 +107,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

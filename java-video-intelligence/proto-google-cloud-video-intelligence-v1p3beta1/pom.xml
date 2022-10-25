@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-video-intelligence-v1p3beta1</artifactId>
-  <version>0.93.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p3beta1:current} -->
+  <version>0.94.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1p3beta1:current} -->
   <name>proto-google-cloud-video-intelligence-v1p3beta1</name>
   <description>PROTO library for proto-google-cloud-video-intelligence-v1p3beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-intelligence-parent</artifactId>
-    <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <version>2.4.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -22,13 +22,4 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

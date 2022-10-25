@@ -42,7 +42,7 @@ public final class ConditionProto {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/run/v2/condition.proto\022\023g"
           + "oogle.cloud.run.v2\032\037google/protobuf/time"
-          + "stamp.proto\"\325\013\n\tCondition\022\014\n\004type\030\001 \001(\t\022"
+          + "stamp.proto\"\344\013\n\tCondition\022\014\n\004type\030\001 \001(\t\022"
           + "3\n\005state\030\002 \001(\0162$.google.cloud.run.v2.Con"
           + "dition.State\022\017\n\007message\030\003 \001(\t\0228\n\024last_tr"
           + "ansition_time\030\004 \001(\0132\032.google.protobuf.Ti"
@@ -76,13 +76,13 @@ public final class ConditionProto {
           + "IZED_PATH_RESPONSE_PENDING\020\007\022!\n\035MIN_INST"
           + "ANCES_NOT_PROVISIONED\020\010\022!\n\035ACTIVE_REVISI"
           + "ON_LIMIT_REACHED\020\t\022\021\n\rNO_DEPLOYMENT\020\n\022\030\n"
-          + "\024HEALTH_CHECK_SKIPPED\020\013\"o\n\017ExecutionReas"
+          + "\024HEALTH_CHECK_SKIPPED\020\013\"~\n\017ExecutionReas"
           + "on\022\036\n\032EXECUTION_REASON_UNDEFINED\020\000\022$\n JO"
           + "B_STATUS_SERVICE_POLLING_ERROR\020\001\022\026\n\022NON_"
-          + "ZERO_EXIT_CODE\020\002B\t\n\007reasonsBc\n\027com.googl"
-          + "e.cloud.run.v2B\016ConditionProtoP\001Z6google"
-          + ".golang.org/genproto/googleapis/cloud/ru"
-          + "n/v2;runb\006proto3"
+          + "ZERO_EXIT_CODE\020\002\022\r\n\tCANCELLED\020\003B\t\n\007reaso"
+          + "nsBc\n\027com.google.cloud.run.v2B\016Condition"
+          + "ProtoP\001Z6google.golang.org/genproto/goog"
+          + "leapis/cloud/run/v2;runb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

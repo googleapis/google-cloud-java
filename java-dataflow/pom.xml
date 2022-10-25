@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataflow-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.8.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+  <version>0.9.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   <name>Google Dataflow Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,37 +29,20 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataflow</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+        <version>0.9.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dataflow-v1beta3</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:grpc-google-cloud-dataflow-v1beta3:current} -->
+        <version>0.9.0</version><!-- {x-version-update:grpc-google-cloud-dataflow-v1beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dataflow-v1beta3</artifactId>
-        <version>0.8.0</version><!-- {x-version-update:proto-google-cloud-dataflow-v1beta3:current} -->
+        <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-dataflow-v1beta3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-dataflow</module>

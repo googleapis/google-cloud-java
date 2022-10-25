@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   <packaging>jar</packaging>
   <name>Google BigQuery DataPolicy API</name>
   <description>BigQuery DataPolicy API </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerydatapolicy-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerydatapolicy</site.installationModule>
@@ -110,28 +110,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

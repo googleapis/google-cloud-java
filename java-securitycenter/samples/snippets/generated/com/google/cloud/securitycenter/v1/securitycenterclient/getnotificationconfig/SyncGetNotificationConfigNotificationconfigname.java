@@ -35,7 +35,8 @@ public class SyncGetNotificationConfigNotificationconfigname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
       NotificationConfigName name =
-          NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+          NotificationConfigName.ofOrganizationNotificationConfigName(
+              "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
       NotificationConfig response = securityCenterClient.getNotificationConfig(name);
     }
   }

@@ -297,6 +297,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*}/notificationConfigs",
+                          "/v1/{parent=projects/*}/notificationConfigs")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -372,6 +375,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/notificationConfigs/*}",
+                          "/v1/{name=projects/*/notificationConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -514,6 +520,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/notificationConfigs/*}",
+                          "/v1/{name=projects/*/notificationConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -819,6 +828,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*}/notificationConfigs",
+                          "/v1/{parent=projects/*}/notificationConfigs")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1209,6 +1221,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                                 request.getNotificationConfig().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{notificationConfig.name=folders/*/notificationConfigs/*}",
+                          "/v1/{notificationConfig.name=projects/*/notificationConfigs/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

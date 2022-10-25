@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contact-center-insights</artifactId>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+  <version>2.5.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
   <packaging>jar</packaging>
   <name>Google CCAI Insights</name>
   <description>CCAI Insights  helps users detect and visualize patterns in their contact center data.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contact-center-insights-parent</artifactId>
-    <version>2.4.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+    <version>2.5.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-contact-center-insights</site.installationModule>
@@ -98,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

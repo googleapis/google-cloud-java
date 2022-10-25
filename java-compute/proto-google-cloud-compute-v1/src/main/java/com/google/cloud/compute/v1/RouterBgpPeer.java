@@ -45,6 +45,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     ipAddress_ = "";
     ipv6NexthopAddress_ = "";
     managementType_ = "";
+    md5AuthenticationKeyName_ = "";
     name_ = "";
     peerIpAddress_ = "";
     peerIpv6NexthopAddress_ = "";
@@ -1272,6 +1273,70 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MD5_AUTHENTICATION_KEY_NAME_FIELD_NUMBER = 281075345;
+  private volatile java.lang.Object md5AuthenticationKeyName_;
+  /**
+   *
+   *
+   * <pre>
+   * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+   * </pre>
+   *
+   * <code>optional string md5_authentication_key_name = 281075345;</code>
+   *
+   * @return Whether the md5AuthenticationKeyName field is set.
+   */
+  @java.lang.Override
+  public boolean hasMd5AuthenticationKeyName() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+   * </pre>
+   *
+   * <code>optional string md5_authentication_key_name = 281075345;</code>
+   *
+   * @return The md5AuthenticationKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getMd5AuthenticationKeyName() {
+    java.lang.Object ref = md5AuthenticationKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      md5AuthenticationKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+   * </pre>
+   *
+   * <code>optional string md5_authentication_key_name = 281075345;</code>
+   *
+   * @return The bytes for md5AuthenticationKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMd5AuthenticationKeyNameBytes() {
+    java.lang.Object ref = md5AuthenticationKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      md5AuthenticationKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
   /**
@@ -1287,7 +1352,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1351,7 +1416,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerAsn() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1384,7 +1449,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpAddress() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1448,7 +1513,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpv6NexthopAddress() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1512,7 +1577,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRouterApplianceInstance() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1578,7 +1643,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(97440, getBfd());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     for (int i = 0; i < advertisedGroups_.size(); i++) {
@@ -1591,7 +1656,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeUInt32(69573151, peerAsn_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1603,8 +1668,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(186486332, advertisedRoutePriority_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 281075345, md5AuthenticationKeyName_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 311764355, enable_);
@@ -1618,11 +1687,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 437854673, interfaceName_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 468312989, routerApplianceInstance_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 491486608, peerIpv6NexthopAddress_);
     }
@@ -1638,7 +1707,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(97440, getBfd());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     {
@@ -1658,7 +1727,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(69573151, peerAsn_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1672,8 +1741,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               186486332, advertisedRoutePriority_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              281075345, md5AuthenticationKeyName_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(311764355, enable_);
@@ -1687,12 +1761,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(437854673, interfaceName_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               468312989, routerApplianceInstance_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               491486608, peerIpv6NexthopAddress_);
@@ -1750,6 +1824,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasManagementType() != other.hasManagementType()) return false;
     if (hasManagementType()) {
       if (!getManagementType().equals(other.getManagementType())) return false;
+    }
+    if (hasMd5AuthenticationKeyName() != other.hasMd5AuthenticationKeyName()) return false;
+    if (hasMd5AuthenticationKeyName()) {
+      if (!getMd5AuthenticationKeyName().equals(other.getMd5AuthenticationKeyName())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -1825,6 +1903,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasManagementType()) {
       hash = (37 * hash) + MANAGEMENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getManagementType().hashCode();
+    }
+    if (hasMd5AuthenticationKeyName()) {
+      hash = (37 * hash) + MD5_AUTHENTICATION_KEY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMd5AuthenticationKeyName().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -2024,16 +2106,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000200);
       managementType_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      name_ = "";
+      md5AuthenticationKeyName_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      peerAsn_ = 0;
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
-      peerIpAddress_ = "";
+      peerAsn_ = 0;
       bitField0_ = (bitField0_ & ~0x00002000);
-      peerIpv6NexthopAddress_ = "";
+      peerIpAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
-      routerApplianceInstance_ = "";
+      peerIpv6NexthopAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
+      routerApplianceInstance_ = "";
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -2120,21 +2204,25 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
-      result.name_ = name_;
+      result.md5AuthenticationKeyName_ = md5AuthenticationKeyName_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.peerAsn_ = peerAsn_;
         to_bitField0_ |= 0x00000400;
       }
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.peerAsn_ = peerAsn_;
         to_bitField0_ |= 0x00000800;
       }
-      result.peerIpAddress_ = peerIpAddress_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
-      result.peerIpv6NexthopAddress_ = peerIpv6NexthopAddress_;
+      result.peerIpAddress_ = peerIpAddress_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
         to_bitField0_ |= 0x00002000;
+      }
+      result.peerIpv6NexthopAddress_ = peerIpv6NexthopAddress_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00004000;
       }
       result.routerApplianceInstance_ = routerApplianceInstance_;
       result.bitField0_ = to_bitField0_;
@@ -2263,8 +2351,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         managementType_ = other.managementType_;
         onChanged();
       }
-      if (other.hasName()) {
+      if (other.hasMd5AuthenticationKeyName()) {
         bitField0_ |= 0x00000800;
+        md5AuthenticationKeyName_ = other.md5AuthenticationKeyName_;
+        onChanged();
+      }
+      if (other.hasName()) {
+        bitField0_ |= 0x00001000;
         name_ = other.name_;
         onChanged();
       }
@@ -2272,17 +2365,17 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         setPeerAsn(other.getPeerAsn());
       }
       if (other.hasPeerIpAddress()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         peerIpAddress_ = other.peerIpAddress_;
         onChanged();
       }
       if (other.hasPeerIpv6NexthopAddress()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         peerIpv6NexthopAddress_ = other.peerIpv6NexthopAddress_;
         onChanged();
       }
       if (other.hasRouterApplianceInstance()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         routerApplianceInstance_ = other.routerApplianceInstance_;
         onChanged();
       }
@@ -2321,7 +2414,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 26989658
             case 168524210:
@@ -2354,7 +2447,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 556585208:
               {
                 peerAsn_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 556585208
             case 1389628850:
@@ -2378,9 +2471,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 1661886154:
               {
                 peerIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1661886154
+            case -2046364534:
+              {
+                md5AuthenticationKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case -2046364534
             case -1800852454:
               {
                 enable_ = input.readStringRequireUtf8();
@@ -2408,13 +2507,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case -548463382:
               {
                 routerApplianceInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -548463382
             case -363074430:
               {
                 peerIpv6NexthopAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -363074430
             default:
@@ -4071,6 +4170,126 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object md5AuthenticationKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * </pre>
+     *
+     * <code>optional string md5_authentication_key_name = 281075345;</code>
+     *
+     * @return Whether the md5AuthenticationKeyName field is set.
+     */
+    public boolean hasMd5AuthenticationKeyName() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * </pre>
+     *
+     * <code>optional string md5_authentication_key_name = 281075345;</code>
+     *
+     * @return The md5AuthenticationKeyName.
+     */
+    public java.lang.String getMd5AuthenticationKeyName() {
+      java.lang.Object ref = md5AuthenticationKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        md5AuthenticationKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * </pre>
+     *
+     * <code>optional string md5_authentication_key_name = 281075345;</code>
+     *
+     * @return The bytes for md5AuthenticationKeyName.
+     */
+    public com.google.protobuf.ByteString getMd5AuthenticationKeyNameBytes() {
+      java.lang.Object ref = md5AuthenticationKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        md5AuthenticationKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * </pre>
+     *
+     * <code>optional string md5_authentication_key_name = 281075345;</code>
+     *
+     * @param value The md5AuthenticationKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMd5AuthenticationKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      md5AuthenticationKeyName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * </pre>
+     *
+     * <code>optional string md5_authentication_key_name = 281075345;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMd5AuthenticationKeyName() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      md5AuthenticationKeyName_ = getDefaultInstance().getMd5AuthenticationKeyName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * </pre>
+     *
+     * <code>optional string md5_authentication_key_name = 281075345;</code>
+     *
+     * @param value The bytes for md5AuthenticationKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMd5AuthenticationKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      md5AuthenticationKeyName_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -4084,7 +4303,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4146,7 +4365,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       name_ = value;
       onChanged();
       return this;
@@ -4163,7 +4382,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -4185,7 +4404,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       name_ = value;
       onChanged();
       return this;
@@ -4205,7 +4424,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPeerAsn() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4235,7 +4454,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPeerAsn(int value) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       peerAsn_ = value;
       onChanged();
       return this;
@@ -4252,7 +4471,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerAsn() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       peerAsn_ = 0;
       onChanged();
       return this;
@@ -4271,7 +4490,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpAddress field is set.
      */
     public boolean hasPeerIpAddress() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4333,7 +4552,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       peerIpAddress_ = value;
       onChanged();
       return this;
@@ -4350,7 +4569,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerIpAddress() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
       onChanged();
       return this;
@@ -4372,7 +4591,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       peerIpAddress_ = value;
       onChanged();
       return this;
@@ -4391,7 +4610,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpv6NexthopAddress field is set.
      */
     public boolean hasPeerIpv6NexthopAddress() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4453,7 +4672,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       peerIpv6NexthopAddress_ = value;
       onChanged();
       return this;
@@ -4470,7 +4689,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerIpv6NexthopAddress() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       peerIpv6NexthopAddress_ = getDefaultInstance().getPeerIpv6NexthopAddress();
       onChanged();
       return this;
@@ -4492,7 +4711,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       peerIpv6NexthopAddress_ = value;
       onChanged();
       return this;
@@ -4511,7 +4730,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routerApplianceInstance field is set.
      */
     public boolean hasRouterApplianceInstance() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4573,7 +4792,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       routerApplianceInstance_ = value;
       onChanged();
       return this;
@@ -4590,7 +4809,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRouterApplianceInstance() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       routerApplianceInstance_ = getDefaultInstance().getRouterApplianceInstance();
       onChanged();
       return this;
@@ -4612,7 +4831,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       routerApplianceInstance_ = value;
       onChanged();
       return this;

@@ -29,7 +29,7 @@ public interface ListServicesRequestOrBuilder
    * <pre>
    * Required. The location and project to list resources on.
    * Location must be a valid GCP region, and may not be the "-" wildcard.
-   * Format: projects/{projectnumber}/locations/{location}
+   * Format: projects/{project}/locations/{location}
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListServicesRequestOrBuilder
    * <pre>
    * Required. The location and project to list resources on.
    * Location must be a valid GCP region, and may not be the "-" wildcard.
-   * Format: projects/{projectnumber}/locations/{location}
+   * Format: projects/{project}/locations/{location}
    * </pre>
    *
    * <code>

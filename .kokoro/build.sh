@@ -39,10 +39,23 @@ fi
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
+  test)
+    retry_with_backoff 3 10 \
+      mvn -B -ntp \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -T 1C \
+        test
+    RETURN_CODE=$?
+    echo "Finished running unit tests"
+    ;;
   integration)
     generate_modified_modules_list
     if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      # Combine each entry with a comma
       module_list=$(
         IFS=,
         echo "${modified_module_list[*]}"
@@ -71,6 +84,7 @@ case ${JOB_TYPE} in
         -Danimal.sniffer.skip=true \
         -Djacoco.skip=true \
         -DskipUnitTests=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
         -fae \
         -T 1C \
         verify
@@ -85,65 +99,23 @@ case ${JOB_TYPE} in
     ;;
   graalvm)
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM checks -- No changes in relevant modules"
+    fi
     ;;
   graalvm17)
     generate_graalvm_modules_list
-    install_modules
-    run_graalvm_tests
-    ;;
-  samples)
-    mvn -B \
-      -pl "!gapic-libraries-bom" \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -DskipTests=true \
-      -Djacoco.skip=true \
-      -T 1C \
-      install
-
-    for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-      [[ -f "${FILE}" ]] || continue
-      source "${FILE}"
-    done
-
-    modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-    for module in $modules; do
-      if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-        printf "Running now for %s\n" "${module}"
-        pushd $module
-        SAMPLES_DIR=samples
-        # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ submodules otherwise.
-        if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]; then
-          SAMPLES_DIR=samples/snapshot
-        fi
-
-        if [[ -f ${SAMPLES_DIR}/pom.xml ]]; then
-          pushd ${SAMPLES_DIR}
-          mvn -B \
-            -ntp \
-            -DtrimStackTrace=false \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -fae \
-            verify
-          RETURN_CODE=$?
-          popd
-        else
-          echo "no sample pom.xml found - skipping sample tests"
-        fi
-        popd
-      fi
-    done
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
+    fi
     ;;
   *) ;;
 

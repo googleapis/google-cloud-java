@@ -74,8 +74,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The location and project in which this service should be created.
-   * Format: projects/{projectnumber}/locations/{location}
+   * The location and project in which this service should be created.
+   * Format: projects/{project}/locations/{location}
+   * Only lowercase characters, digits, and hyphens.
    * </pre>
    *
    * <code>
@@ -100,8 +101,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The location and project in which this service should be created.
-   * Format: projects/{projectnumber}/locations/{location}
+   * The location and project in which this service should be created.
+   * Format: projects/{project}/locations/{location}
+   * Only lowercase characters, digits, and hyphens.
    * </pre>
    *
    * <code>
@@ -178,8 +180,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique identifier for the Service. The name of the service becomes
-   * {parent}/services/{service_id}.
+   * Required. The unique identifier for the Service. It must begin with letter,
+   * and may not end with hyphen; must contain fewer than 50 characters.
+   * The name of the service becomes {parent}/services/{service_id}.
    * </pre>
    *
    * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -202,8 +205,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique identifier for the Service. The name of the service becomes
-   * {parent}/services/{service_id}.
+   * Required. The unique identifier for the Service. It must begin with letter,
+   * and may not end with hyphen; must contain fewer than 50 characters.
+   * The name of the service becomes {parent}/services/{service_id}.
    * </pre>
    *
    * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -653,8 +657,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The location and project in which this service should be created.
-     * Format: projects/{projectnumber}/locations/{location}
+     * The location and project in which this service should be created.
+     * Format: projects/{project}/locations/{location}
+     * Only lowercase characters, digits, and hyphens.
      * </pre>
      *
      * <code>
@@ -678,8 +683,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The location and project in which this service should be created.
-     * Format: projects/{projectnumber}/locations/{location}
+     * The location and project in which this service should be created.
+     * Format: projects/{project}/locations/{location}
+     * Only lowercase characters, digits, and hyphens.
      * </pre>
      *
      * <code>
@@ -703,8 +709,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The location and project in which this service should be created.
-     * Format: projects/{projectnumber}/locations/{location}
+     * The location and project in which this service should be created.
+     * Format: projects/{project}/locations/{location}
+     * Only lowercase characters, digits, and hyphens.
      * </pre>
      *
      * <code>
@@ -727,8 +734,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The location and project in which this service should be created.
-     * Format: projects/{projectnumber}/locations/{location}
+     * The location and project in which this service should be created.
+     * Format: projects/{project}/locations/{location}
+     * Only lowercase characters, digits, and hyphens.
      * </pre>
      *
      * <code>
@@ -747,8 +755,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The location and project in which this service should be created.
-     * Format: projects/{projectnumber}/locations/{location}
+     * The location and project in which this service should be created.
+     * Format: projects/{project}/locations/{location}
+     * Only lowercase characters, digits, and hyphens.
      * </pre>
      *
      * <code>
@@ -962,8 +971,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique identifier for the Service. The name of the service becomes
-     * {parent}/services/{service_id}.
+     * Required. The unique identifier for the Service. It must begin with letter,
+     * and may not end with hyphen; must contain fewer than 50 characters.
+     * The name of the service becomes {parent}/services/{service_id}.
      * </pre>
      *
      * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -985,8 +995,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique identifier for the Service. The name of the service becomes
-     * {parent}/services/{service_id}.
+     * Required. The unique identifier for the Service. It must begin with letter,
+     * and may not end with hyphen; must contain fewer than 50 characters.
+     * The name of the service becomes {parent}/services/{service_id}.
      * </pre>
      *
      * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1008,8 +1019,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique identifier for the Service. The name of the service becomes
-     * {parent}/services/{service_id}.
+     * Required. The unique identifier for the Service. It must begin with letter,
+     * and may not end with hyphen; must contain fewer than 50 characters.
+     * The name of the service becomes {parent}/services/{service_id}.
      * </pre>
      *
      * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1030,8 +1042,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique identifier for the Service. The name of the service becomes
-     * {parent}/services/{service_id}.
+     * Required. The unique identifier for the Service. It must begin with letter,
+     * and may not end with hyphen; must contain fewer than 50 characters.
+     * The name of the service becomes {parent}/services/{service_id}.
      * </pre>
      *
      * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1048,8 +1061,9 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique identifier for the Service. The name of the service becomes
-     * {parent}/services/{service_id}.
+     * Required. The unique identifier for the Service. It must begin with letter,
+     * and may not end with hyphen; must contain fewer than 50 characters.
+     * The name of the service becomes {parent}/services/{service_id}.
      * </pre>
      *
      * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

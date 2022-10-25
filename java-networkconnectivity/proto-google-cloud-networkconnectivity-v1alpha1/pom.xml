@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-networkconnectivity-v1alpha1</artifactId>
-  <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
+  <version>0.10.0</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
   <name>proto-google-cloud-networkconnectivity-v1alpha1</name>
   <description>Proto library for google-cloud-networkconnectivity</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-networkconnectivity-parent</artifactId>
-    <version>1.3.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+    <version>1.4.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -30,13 +30,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

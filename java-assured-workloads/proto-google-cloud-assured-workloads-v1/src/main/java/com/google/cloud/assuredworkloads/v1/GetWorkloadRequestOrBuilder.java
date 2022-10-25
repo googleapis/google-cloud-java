@@ -27,7 +27,7 @@ public interface GetWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Workload to fetch. This is the workloads's
+   * Required. The resource name of the Workload to fetch. This is the workload's
    * relative path in the API, formatted as
    * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
    * For example,
@@ -45,7 +45,7 @@ public interface GetWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Workload to fetch. This is the workloads's
+   * Required. The resource name of the Workload to fetch. This is the workload's
    * relative path in the API, formatted as
    * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
    * For example,

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gsuite-addons</artifactId>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+  <version>2.5.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   <packaging>jar</packaging>
   <name>Google Google Workspace Add-ons API</name>
   <description>Google Workspace Add-ons API are customized applications that integrate with Google Workspace productivity applications.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gsuite-addons-parent</artifactId>
-    <version>2.4.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+    <version>2.5.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gsuite-addons</site.installationModule>
@@ -98,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

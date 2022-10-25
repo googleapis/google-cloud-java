@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
-  <version>0.108.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
+  <version>0.109.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
   <name>proto-google-cloud-dialogflow-v2beta1</name>
   <description>PROTO library for proto-google-cloud-dialogflow-v2beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-parent</artifactId>
-    <version>4.10.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+    <version>4.11.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -30,13 +30,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

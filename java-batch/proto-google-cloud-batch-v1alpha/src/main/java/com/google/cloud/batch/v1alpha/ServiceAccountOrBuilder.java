@@ -28,7 +28,9 @@ public interface ServiceAccountOrBuilder
    *
    * <pre>
    * Email address of the service account. If not specified, the default
-   * Compute Engine service account for the project will be used.
+   * Compute Engine service account for the project will be used. If instance
+   * template is being used, the service account has to be specified in the
+   * instance template and it has to match the email field here.
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -41,7 +43,9 @@ public interface ServiceAccountOrBuilder
    *
    * <pre>
    * Email address of the service account. If not specified, the default
-   * Compute Engine service account for the project will be used.
+   * Compute Engine service account for the project will be used. If instance
+   * template is being used, the service account has to be specified in the
+   * instance template and it has to match the email field here.
    * </pre>
    *
    * <code>string email = 1;</code>
@@ -58,10 +62,13 @@ public interface ServiceAccountOrBuilder
    * addition to the cloud-platform API scope that will be added by default.
    * </pre>
    *
-   * <code>repeated string scopes = 2;</code>
+   * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
+   *     google/cloud/batch/v1alpha/job.proto;l=562
    * @return A list containing the scopes.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getScopesList();
   /**
    *
@@ -71,10 +78,13 @@ public interface ServiceAccountOrBuilder
    * addition to the cloud-platform API scope that will be added by default.
    * </pre>
    *
-   * <code>repeated string scopes = 2;</code>
+   * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
+   *     google/cloud/batch/v1alpha/job.proto;l=562
    * @return The count of scopes.
    */
+  @java.lang.Deprecated
   int getScopesCount();
   /**
    *
@@ -84,11 +94,14 @@ public interface ServiceAccountOrBuilder
    * addition to the cloud-platform API scope that will be added by default.
    * </pre>
    *
-   * <code>repeated string scopes = 2;</code>
+   * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
+   *     google/cloud/batch/v1alpha/job.proto;l=562
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getScopes(int index);
   /**
    *
@@ -98,10 +111,13 @@ public interface ServiceAccountOrBuilder
    * addition to the cloud-platform API scope that will be added by default.
    * </pre>
    *
-   * <code>repeated string scopes = 2;</code>
+   * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
+   *     google/cloud/batch/v1alpha/job.proto;l=562
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getScopesBytes(int index);
 }

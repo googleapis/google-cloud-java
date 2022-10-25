@@ -41,15 +41,10 @@ jobs:
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
-    - run: |
-        mvn -B -ntp \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -T 1C \
-            test
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: test
+        JOB_NAME: units-${{matrix.java}}
   windows:
     runs-on: windows-latest
     steps:
@@ -62,18 +57,10 @@ jobs:
         java-version: 11
         cache: 'maven'
     - run: java -version
-    - run: |
-        mvn -B -ntp \
-            -Dclirr.skip=true \
-            -Denforcer.skip=true \
-            -Dcheckstyle.skip=true \
-            -Dflatten.skip=true \
-            -Danimal.sniffer.skip=true \
-            -T 1C \
-            test
-      shell: bash
+    - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
+        JOB_NAME: windows-units
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -85,6 +72,16 @@ jobs:
     - run: java -version
     - run: mvn com.coveo:fmt-maven-plugin:check -B -ntp
     - run: mvn checkstyle:check@checkstyle -B -ntp
+  enforcer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+      - run: java -version
+      - run: mvn enforcer:enforce@enforce -T 1C
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:

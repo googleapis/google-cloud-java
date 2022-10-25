@@ -22,7 +22,7 @@ package com.google.webrisk.v1;
  *
  *
  * <pre>
- * The type of threat. This maps dirrectly to the threat list a threat may
+ * The type of threat. This maps directly to the threat list a threat may
  * belong to.
  * </pre>
  *
@@ -33,7 +33,7 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unknown.
+   * No entries should match this threat type. This threat type is unused.
    * </pre>
    *
    * <code>THREAT_TYPE_UNSPECIFIED = 0;</code>
@@ -69,6 +69,17 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNWANTED_SOFTWARE = 3;</code>
    */
   UNWANTED_SOFTWARE(3),
+  /**
+   *
+   *
+   * <pre>
+   * A list of extended coverage social engineering URIs targeting any
+   * platform.
+   * </pre>
+   *
+   * <code>SOCIAL_ENGINEERING_EXTENDED_COVERAGE = 4;</code>
+   */
+  SOCIAL_ENGINEERING_EXTENDED_COVERAGE(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -76,7 +87,7 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unknown.
+   * No entries should match this threat type. This threat type is unused.
    * </pre>
    *
    * <code>THREAT_TYPE_UNSPECIFIED = 0;</code>
@@ -112,6 +123,17 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNWANTED_SOFTWARE = 3;</code>
    */
   public static final int UNWANTED_SOFTWARE_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * A list of extended coverage social engineering URIs targeting any
+   * platform.
+   * </pre>
+   *
+   * <code>SOCIAL_ENGINEERING_EXTENDED_COVERAGE = 4;</code>
+   */
+  public static final int SOCIAL_ENGINEERING_EXTENDED_COVERAGE_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,6 +167,8 @@ public enum ThreatType implements com.google.protobuf.ProtocolMessageEnum {
         return SOCIAL_ENGINEERING;
       case 3:
         return UNWANTED_SOFTWARE;
+      case 4:
+        return SOCIAL_ENGINEERING_EXTENDED_COVERAGE;
       default:
         return null;
     }

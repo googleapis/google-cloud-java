@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>gapic-libraries-bom</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.0</version><!-- {x-version-update:gapic-libraries-bom:current} -->
+  <version>0.2.0</version><!-- {x-version-update:gapic-libraries-bom:current} -->
   <name>Google Cloud Java BOM</name>
   <description>
     BOM for the libraries in google-cloud-java repository. Users should not
@@ -15,7 +15,7 @@
   <parent>
     <artifactId>google-cloud-pom-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -24,703 +24,703 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-accessapproval-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-identity-accesscontextmanager-bom</artifactId>
-        <version>1.5.0</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+        <version>1.6.0</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform-bom</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+        <version>3.6.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-api-gateway-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-api-gateway:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-api-gateway:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-apigee-connect-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-apigee-connect:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-apigee-connect:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-appengine-admin-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-artifact-registry-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-asset-bom</artifactId>
-        <version>3.8.0</version><!-- {x-version-update:google-cloud-asset:current} -->
+        <version>3.9.0</version><!-- {x-version-update:google-cloud-asset:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-assured-workloads-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-assured-workloads:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-automl-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-automl:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-automl:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigqueryconnection-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigqueryreservation-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-billingbudgets-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-billing-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-billing:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-billing:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-binary-authorization-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-channel-bom</artifactId>
-        <version>3.8.0</version><!-- {x-version-update:google-cloud-channel:current} -->
+        <version>3.9.0</version><!-- {x-version-update:google-cloud-channel:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-build-bom</artifactId>
-        <version>3.6.0</version><!-- {x-version-update:google-cloud-build:current} -->
+        <version>3.7.0</version><!-- {x-version-update:google-cloud-build:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute-bom</artifactId>
-        <version>1.14.0</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>1.15.0</version><!-- {x-version-update:google-cloud-compute:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-contact-center-insights-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container-bom</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>2.8.0</version><!-- {x-version-update:google-cloud-container:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog-bom</artifactId>
-        <version>1.10.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+        <version>1.11.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-data-fusion-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datalabeling-bom</artifactId>
-        <version>0.124.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
+        <version>0.125.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataplex-bom</artifactId>
-        <version>1.2.0</version><!-- {x-version-update:google-cloud-dataplex:current} -->
+        <version>1.3.0</version><!-- {x-version-update:google-cloud-dataplex:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc-bom</artifactId>
-        <version>4.1.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+        <version>4.2.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataproc-metastore-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-dataproc-metastore:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastream-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-datastream:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-datastream:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-debugger-client-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-deploy-bom</artifactId>
-        <version>1.2.0</version><!-- {x-version-update:google-cloud-deploy:current} -->
+        <version>1.3.0</version><!-- {x-version-update:google-cloud-deploy:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow-bom</artifactId>
-        <version>4.10.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>4.11.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp-bom</artifactId>
-        <version>3.8.0</version><!-- {x-version-update:google-cloud-dlp:current} -->
+        <version>3.9.0</version><!-- {x-version-update:google-cloud-dlp:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dms-bom</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:google-cloud-dms:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-dms:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-document-ai-bom</artifactId>
-        <version>2.8.0</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+        <version>2.9.0</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-domains-bom</artifactId>
-        <version>1.1.0</version><!-- {x-version-update:google-cloud-domains:current} -->
+        <version>1.2.0</version><!-- {x-version-update:google-cloud-domains:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting-bom</artifactId>
-        <version>0.125.0-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+        <version>0.126.0-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-essential-contacts-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-eventarc-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-eventarc:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-eventarc:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-filestore-bom</artifactId>
-        <version>1.5.0</version><!-- {x-version-update:google-cloud-filestore:current} -->
+        <version>1.6.0</version><!-- {x-version-update:google-cloud-filestore:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-functions-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-functions:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-functions:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-game-servers-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gkehub-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gsuite-addons-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-gsuite-addons:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-admin-bom</artifactId>
-        <version>2.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
+        <version>3.0.0</version><!-- {x-version-update:google-iam-admin:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iamcredentials-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-ids-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-ids:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-ids:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iot-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-iot:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-iot:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms-bom</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <version>2.8.0</version><!-- {x-version-update:google-cloud-kms:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-language-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-language:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-language:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-managed-identities-bom</artifactId>
-        <version>1.2.0</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
+        <version>1.3.0</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-mediatranslation-bom</artifactId>
-        <version>0.10.0</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
+        <version>0.11.0</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-memcache-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-memcache:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-memcache:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-dashboard-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-bom</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>3.6.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-networkconnectivity-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-network-management-bom</artifactId>
-        <version>1.5.0</version><!-- {x-version-update:google-cloud-network-management:current} -->
+        <version>1.6.0</version><!-- {x-version-update:google-cloud-network-management:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notebooks-bom</artifactId>
-        <version>1.2.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
+        <version>1.3.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-optimization-bom</artifactId>
-        <version>1.2.0</version><!-- {x-version-update:google-cloud-optimization:current} -->
+        <version>1.3.0</version><!-- {x-version-update:google-cloud-optimization:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-orchestration-airflow-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-orgpolicy-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-config-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-os-config:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-os-config:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-login-bom</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:google-cloud-os-login:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-os-login:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-phishingprotection-bom</artifactId>
-        <version>0.35.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+        <version>0.36.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-policy-troubleshooter-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-profiler-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-profiler:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-profiler:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recaptchaenterprise-bom</artifactId>
-        <version>3.1.0</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
+        <version>3.2.0</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recommender-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis-bom</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:google-cloud-redis:current} -->
+        <version>2.8.0</version><!-- {x-version-update:google-cloud-redis:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager-bom</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>1.7.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resource-settings-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-retail-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-retail:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-retail:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-scheduler-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-scheduler:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-secretmanager-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-secretmanager:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-securitycenter-bom</artifactId>
-        <version>2.12.0</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
+        <version>2.13.0</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-security-private-ca-bom</artifactId>
-        <version>2.6.0</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-control-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-servicedirectory-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-management-bom</artifactId>
-        <version>3.2.0</version><!-- {x-version-update:google-cloud-service-management:current} -->
+        <version>3.3.0</version><!-- {x-version-update:google-cloud-service-management:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-usage-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shell-bom</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:google-cloud-shell:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-shell:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech-bom</artifactId>
-        <version>3.0.0</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <version>4.0.0</version><!-- {x-version-update:google-cloud-speech:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage-transfer-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-talent-bom</artifactId>
-        <version>2.5.0</version> <!-- {x-version-update:google-cloud-talent:current} -->
+        <version>2.6.0</version> <!-- {x-version-update:google-cloud-talent:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tasks-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-texttospeech-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tpu-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-trace:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-trace:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-translate-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-translate:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-translate:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence-bom</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-transcoder-bom</artifactId>
-        <version>1.3.0</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+        <version>1.4.0</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vision-bom</artifactId>
-        <version>3.2.0</version><!-- {x-version-update:google-cloud-vision:current} -->
+        <version>3.3.0</version><!-- {x-version-update:google-cloud-vision:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vmmigration-bom</artifactId>
-        <version>1.4.0</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
+        <version>1.5.0</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vpcaccess-bom</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-vpcaccess:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-webrisk-bom</artifactId>
-        <version>2.3.0</version><!-- {x-version-update:google-cloud-webrisk:current} -->
+        <version>2.4.0</version><!-- {x-version-update:google-cloud-webrisk:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-websecurityscanner-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflow-executions-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflows-bom</artifactId>
-        <version>2.4.0</version><!-- {x-version-update:google-cloud-workflows:current} -->
+        <version>2.5.0</version><!-- {x-version-update:google-cloud-workflows:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dns</artifactId>
-        <version>2.2.0</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <version>2.3.0</version><!-- {x-version-update:google-cloud-dns:current} -->
       </dependency>
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:grafeas:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
       <dependency>
           <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notification</artifactId>
-        <version>0.123.20-beta</version><!-- {x-version-update:google-cloud-notification:current} -->
+        <version>0.123.21-beta</version><!-- {x-version-update:google-cloud-notification:current} -->
       </dependency>
 
     </dependencies>

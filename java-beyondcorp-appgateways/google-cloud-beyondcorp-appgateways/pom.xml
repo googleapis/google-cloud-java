@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-appgateways</artifactId>
-  <version>0.2.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   <packaging>jar</packaging>
   <name>Google BeyondCorp AppGateways</name>
   <description>BeyondCorp AppGateways A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-appgateways-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-beyondcorp-appgateways</site.installationModule>
@@ -92,28 +92,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>
