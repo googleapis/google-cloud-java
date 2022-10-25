@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-cx-bom</artifactId>
-  <version>0.16.0</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+  <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,27 +27,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow-cx</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+        <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
+        <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-cx-v3</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
+        <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-cx-v3beta1</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3beta1:current} -->
+        <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-cx-v3</artifactId>
-        <version>0.16.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3:current} -->
+        <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

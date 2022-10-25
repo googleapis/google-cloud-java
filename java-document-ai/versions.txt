@@ -1,12 +1,12 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-document-ai:2.9.0:2.9.0
-grpc-google-cloud-document-ai-v1beta1:0.21.0:0.21.0
-grpc-google-cloud-document-ai-v1beta2:0.21.0:0.21.0
-grpc-google-cloud-document-ai-v1beta3:0.21.0:0.21.0
-grpc-google-cloud-document-ai-v1:2.9.0:2.9.0
-proto-google-cloud-document-ai-v1beta1:0.21.0:0.21.0
-proto-google-cloud-document-ai-v1beta2:0.21.0:0.21.0
-proto-google-cloud-document-ai-v1beta3:0.21.0:0.21.0
-proto-google-cloud-document-ai-v1:2.9.0:2.9.0
+google-cloud-document-ai:2.9.0:2.9.1-SNAPSHOT
+grpc-google-cloud-document-ai-v1beta1:0.21.0:0.21.1-SNAPSHOT
+grpc-google-cloud-document-ai-v1beta2:0.21.0:0.21.1-SNAPSHOT
+grpc-google-cloud-document-ai-v1beta3:0.21.0:0.21.1-SNAPSHOT
+grpc-google-cloud-document-ai-v1:2.9.0:2.9.1-SNAPSHOT
+proto-google-cloud-document-ai-v1beta1:0.21.0:0.21.1-SNAPSHOT
+proto-google-cloud-document-ai-v1beta2:0.21.0:0.21.1-SNAPSHOT
+proto-google-cloud-document-ai-v1beta3:0.21.0:0.21.1-SNAPSHOT
+proto-google-cloud-document-ai-v1:2.9.0:2.9.1-SNAPSHOT

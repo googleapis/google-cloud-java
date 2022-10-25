@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-api-gateway-v1</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-api-gateway-v1:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-api-gateway-v1:current} -->
   <name>grpc-google-cloud-api-gateway-v1</name>
   <description>GRPC library for google-cloud-api-gateway</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-api-gateway-parent</artifactId>
-    <version>2.5.0</version><!-- {x-version-update:google-cloud-api-gateway:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-api-gateway:current} -->
   </parent>
   <dependencies>
     <dependency>

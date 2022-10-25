@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence</artifactId>
-  <version>2.4.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Video Intelligence</name>
   <description>Java idiomatic client for Google Cloud Video Intelligence</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-intelligence-parent</artifactId>
-    <version>2.4.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-video-intelligence</site.installationModule>

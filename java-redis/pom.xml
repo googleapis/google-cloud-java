@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-redis-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.8.0</version><!-- {x-version-update:google-cloud-redis:current} -->
+  <version>2.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
   <name>Google Cloud Redis Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1</artifactId>
-        <version>2.8.0</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+        <version>2.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
-        <version>0.96.0</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
+        <version>0.96.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
-        <version>0.96.0</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
+        <version>0.96.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-redis-v1</artifactId>
-        <version>2.8.0</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
+        <version>2.8.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis</artifactId>
-        <version>2.8.0</version><!-- {x-version-update:google-cloud-redis:current} -->
+        <version>2.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

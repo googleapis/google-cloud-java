@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-game-servers-v1</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-game-servers-v1:current} -->
   <name>proto-google-cloud-game-servers-v1</name>
   <description>PROTO library for proto-google-cloud-game-servers-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-game-servers-parent</artifactId>
-    <version>2.5.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   </parent>
   <dependencies>
     <dependency>

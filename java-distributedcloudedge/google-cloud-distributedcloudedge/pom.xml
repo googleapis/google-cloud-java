@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-distributedcloudedge</artifactId>
-  <version>0.2.0</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
+  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
   <packaging>jar</packaging>
   <name>Google Google Distributed Cloud Edge</name>
   <description>Google Distributed Cloud Edge Google Distributed Cloud Edge allows you to run Kubernetes clusters on dedicated hardware provided and maintained by Google that is separate from the Google Cloud data center.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-distributedcloudedge-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-distributedcloudedge:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-distributedcloudedge</site.installationModule>
