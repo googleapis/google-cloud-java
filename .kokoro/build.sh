@@ -48,6 +48,8 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
 
+      set -x
+
       terraform -version
       source ./.terraform/helpers/init.sh "$module_list"
       source ./.terraform/helpers/plan.sh
