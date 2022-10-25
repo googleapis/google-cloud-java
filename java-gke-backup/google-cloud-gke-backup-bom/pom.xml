@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-backup-bom</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-backup</artifactId>
-        <version>0.4.0</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
+        <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-backup:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gke-backup-v1</artifactId>
-        <version>0.4.0</version><!-- {x-version-update:grpc-google-cloud-gke-backup-v1:current} -->
+        <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-backup-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gke-backup-v1</artifactId>
-        <version>0.4.0</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
+        <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-backup-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
