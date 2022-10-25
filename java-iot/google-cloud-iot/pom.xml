@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iot</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-iot:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-iot:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud IoT Core</name>
   <description>Java idiomatic client for Google Cloud IoT Core</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-iot-parent</artifactId>
-    <version>2.5.0</version><!-- {x-version-update:google-cloud-iot:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-iot:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-iot</site.installationModule>

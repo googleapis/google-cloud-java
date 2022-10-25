@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-scheduler-bom</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,27 +23,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-scheduler</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.90.0</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
+        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.90.0</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
+        <version>0.90.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

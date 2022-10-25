@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-batch</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:google-cloud-batch:current} -->
+  <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
   <packaging>jar</packaging>
   <name>Google Google Cloud Batch</name>
   <description>Google Cloud Batch n/a</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-batch-parent</artifactId>
-    <version>0.5.0</version><!-- {x-version-update:google-cloud-batch:current} -->
+    <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-batch:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-batch</site.installationModule>

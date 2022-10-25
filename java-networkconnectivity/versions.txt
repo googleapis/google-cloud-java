@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-networkconnectivity:1.4.0:1.4.0
-grpc-google-cloud-networkconnectivity-v1alpha1:0.10.0:0.10.0
-grpc-google-cloud-networkconnectivity-v1:1.4.0:1.4.0
-proto-google-cloud-networkconnectivity-v1alpha1:0.10.0:0.10.0
-proto-google-cloud-networkconnectivity-v1:1.4.0:1.4.0
+google-cloud-networkconnectivity:1.4.0:1.4.1-SNAPSHOT
+grpc-google-cloud-networkconnectivity-v1alpha1:0.10.0:0.10.1-SNAPSHOT
+grpc-google-cloud-networkconnectivity-v1:1.4.0:1.4.1-SNAPSHOT
+proto-google-cloud-networkconnectivity-v1alpha1:0.10.0:0.10.1-SNAPSHOT
+proto-google-cloud-networkconnectivity-v1:1.4.0:1.4.1-SNAPSHOT

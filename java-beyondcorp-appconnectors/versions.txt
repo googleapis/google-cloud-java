@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-beyondcorp-appconnectors:0.3.0:0.3.0
-proto-google-cloud-beyondcorp-appconnectors-v1:0.3.0:0.3.0
-grpc-google-cloud-beyondcorp-appconnectors-v1:0.3.0:0.3.0
+google-cloud-beyondcorp-appconnectors:0.3.0:0.3.1-SNAPSHOT
+proto-google-cloud-beyondcorp-appconnectors-v1:0.3.0:0.3.1-SNAPSHOT
+grpc-google-cloud-beyondcorp-appconnectors-v1:0.3.0:0.3.1-SNAPSHOT

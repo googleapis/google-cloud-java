@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-monitoring:3.6.0:3.6.0
-grpc-google-cloud-monitoring-v3:3.6.0:3.6.0
-proto-google-cloud-monitoring-v3:3.6.0:3.6.0
+google-cloud-monitoring:3.6.0:3.6.1-SNAPSHOT
+grpc-google-cloud-monitoring-v3:3.6.0:3.6.1-SNAPSHOT
+proto-google-cloud-monitoring-v3:3.6.0:3.6.1-SNAPSHOT
