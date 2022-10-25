@@ -83,6 +83,7 @@ deep-preserve-regex:
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/Exceptions.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ConnectionWorker.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerPool.java"
+- "/google-cloud-bigquerystorage/src/main/resources/META-INF/native-image/"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/storage/(v.*)/.*-java/proto-google-.*/src"
