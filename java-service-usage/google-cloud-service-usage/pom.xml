@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-usage</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
   <packaging>jar</packaging>
   <name>Google Service Usage</name>
   <description>Service Usage is an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-usage-parent</artifactId>
-    <version>2.5.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-service-usage</site.installationModule>
